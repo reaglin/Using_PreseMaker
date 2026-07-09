@@ -101,7 +101,7 @@ pre { background: var(--code-bg); border: 1px solid var(--code-border); border-r
 
 <p>PreseMaker sees that the highest Bloom's level among the three outcomes is <em>Analyze</em>, which matches the standard's required level. No cognitive-depth gap is flagged. Outcomes A and B are lower, but they do not create a problem — they may represent scaffolding steps toward the higher-order objective.</p>
 
-<p>The flip side is equally important: if <em>no</em> learning outcomes are aligned to a standard at all, a cognitive-depth gap will exist by default, regardless of what materials are present in the course. There is nothing for the check to find on the outcomes side, so the highest outcome level is effectively zero — lower than any Bloom's level the standard might carry. Adding a rich library of resources does nothing to resolve this; the resolution requires aligning at least one appropriately leveled learning outcome to the standard.</p>
+<p>The flip side is equally important, and it is easy to get backwards: if <em>no</em> learning outcomes are aligned to a standard at all, PreseMaker does <strong>not</strong> flag a cognitive-depth gap. The check needs two known levels to compare — the standard's and the deepest aligned outcome's — and with no aligned outcomes the second value is simply unknown. Rather than report a gap it cannot substantiate, the view reports no gap and the depth of that standard remains undetermined. This is worth remembering, because an absence of the warning marker does not by itself mean a standard is covered at the right depth; it may mean nothing has been aligned to it yet. Aligning at least one appropriately leveled learning outcome is what makes the depth check meaningful in the first place.</p>
 
 <p><strong>How the Comparison Determines a Gap</strong></p>
 
@@ -144,7 +144,7 @@ pre { background: var(--code-bg); border: 1px solid var(--code-border); border-r
     <tr>
       <td>Any level</td>
       <td>No outcomes aligned</td>
-      <td>Gap flagged — nothing to compare</td>
+      <td>No gap flagged — depth is undetermined, nothing to compare</td>
     </tr>
   </tbody>
 </table>

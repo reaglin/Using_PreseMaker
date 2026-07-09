@@ -98,9 +98,9 @@ pre { background: var(--code-bg); border: 1px solid var(--code-border); border-r
       <td>aistudio.google.com / console.cloud.google.com</td>
     </tr>
     <tr>
-      <td>xAI</td>
-      <td>Grok</td>
-      <td>console.x.ai</td>
+      <td>Mistral AI</td>
+      <td>Mistral</td>
+      <td>console.mistral.ai</td>
     </tr>
   </tbody>
 </table>
@@ -132,7 +132,7 @@ pre { background: var(--code-bg); border: 1px solid var(--code-border); border-r
 
 <ul>
   <li><strong>Open the Settings panel.</strong> In PreseMaker, navigate to the Settings area. This is typically accessible from the main menu or a gear icon in the application toolbar. The Settings panel contains configuration options for the application, including all AI provider integrations.</li>
-  <li><strong>Locate the API key entry fields.</strong> Within Settings, you will find clearly labeled text fields for each of the four supported providers — Anthropic, OpenAI, Google, and xAI. Each field is dedicated to one provider's key and will not accept a key intended for a different provider.</li>
+  <li><strong>Locate the API key entry fields.</strong> Within Settings, you will find clearly labeled text fields for each of the four supported providers — Anthropic, OpenAI, Google, and Mistral AI. Each field is dedicated to one provider's key and will not accept a key intended for a different provider.</li>
   <li><strong>Paste your key into the correct field.</strong> Click into the field that corresponds to the provider whose key you just generated and paste your key. Ensure you are pasting into the <em>matching</em> provider's field. For example, an Anthropic Claude key must go into the Anthropic field — entering it in the OpenAI field will result in failed API requests because the key format and authentication endpoint will not match.</li>
   <li><strong>Save your settings.</strong> Click the Save or Apply button to confirm your entry. PreseMaker will process and store the key at this point. After saving, the field will typically display a masked representation (for example, <code>sk-ant-••••••••••••••••••••••••WXYZ</code>) to confirm the key is stored without exposing it visually.</li>
 </ul>
@@ -148,7 +148,7 @@ pre { background: var(--code-bg); border: 1px solid var(--code-border); border-r
   <li><strong>Storage location.</strong> The encrypted key is written to a file called <code>app_settings.json</code>, located inside your Windows user profile directory. A typical path looks like this:</li>
 </ul>
 
-<pre><code>C:\Users\YourUsername\AppData\Roaming\PreseMaker\app_settings.json</code></pre>
+<pre><code>C:\Users\YourUsername\Documents\PreseMaker\app_settings.json</code></pre>
 
 <ul>
   <li><strong>User-account binding.</strong> DPAPI ties the encrypted data to the specific Windows user account that performed the encryption. This means that even if another user on the same computer were to copy <code>app_settings.json</code> to their own profile, they could not decrypt the keys — the decryption will fail because it is happening under a different user account. This is a strong, OS-enforced protection that does not rely on PreseMaker storing its own master password.</li>
@@ -171,11 +171,11 @@ pre { background: var(--code-bg); border: 1px solid var(--code-border); border-r
 
 <ul>
   <li><strong>At least one valid key must be present.</strong> PreseMaker requires a minimum of one active, valid API key stored in Settings. If no key has been entered at all, every AI-powered feature — content generation, question creation, feedback drafting, and so on — will be unavailable or will display an error prompting you to configure a key.</li>
-  <li><strong>The active provider and the stored key must match.</strong> PreseMaker's Settings include an <em>Active AI Provider</em> dropdown that determines which provider's model PreseMaker will use for AI requests at any given time. If you select <em>Anthropic (Claude)</em> as your active provider but have only entered an OpenAI key — or have entered the Anthropic key in the wrong field — AI requests will fail. The key stored must correspond to the currently selected active provider.</li>
+  <li><strong>The active provider and the stored key do not have to match.</strong> PreseMaker's Settings include an <em>Active AI Provider</em> dropdown that determines which provider's model PreseMaker will use for AI requests. If the provider selected there has no key on file, PreseMaker automatically uses whichever provider does have one — so selecting <em>Anthropic (Claude)</em> while holding only an OpenAI key works fine, and entering a single key requires no further configuration. What <em>will</em> fail is entering a key in the wrong provider's field: keys are provider-specific and are not interchangeable, so an Anthropic key pasted into the OpenAI field will never authenticate.</li>
   <li><strong>Multiple keys for flexibility.</strong> You may optionally enter keys for more than one provider simultaneously. Doing so gives you the flexibility to switch the Active AI Provider dropdown between, for example, Claude and GPT-4o without needing to re-enter credentials each time. This is useful for comparing outputs between models or for switching to a different provider if one is temporarily unavailable.</li>
   <li><strong>Validate your key before heavy use.</strong> An easy way to confirm a key is working is to attempt a small AI action in PreseMaker immediately after saving the key. If the action completes successfully, the key is valid and correctly matched to the active provider. If you receive an authentication error, double-check that you copied the full key without truncation, that it is in the correct provider field, and that the active provider dropdown matches.</li>
 </ul>
-        <div class="notes"><strong>Notes</strong>The four supported providers referenced in the table (Anthropic, OpenAI, Google, xAI) should be verified against the current PreseMaker release notes if new providers are added in future versions. The DPAPI storage path example uses a typical AppData\Roaming location — confirm the exact subfolder name used by PreseMaker if it differs from the example shown.</div>
+        <div class="notes"><strong>Notes</strong>The four supported providers referenced in the table (Anthropic, OpenAI, Google, Mistral AI) should be verified against the current PreseMaker release notes if new providers are added in future versions. The DPAPI-encrypted settings file is stored in the user's Documents folder, at Documents\PreseMaker\app_settings.json.</div>
       </div>
     </details>
   </main>

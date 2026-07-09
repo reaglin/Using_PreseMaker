@@ -45,11 +45,6 @@
     "type": "Content"
   },
   {
-    "title": "Interpreting and Responding to Generation Failures",
-    "href": "content/_interactive.html",
-    "type": "Content"
-  },
-  {
     "title": "Configuring AI Providers per Task and Using the Prompt Button \u2014 Topic Prompt (Source)",
     "href": "source-materials/source-1.html",
     "type": "Source-materials"

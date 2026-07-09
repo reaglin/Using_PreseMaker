@@ -153,7 +153,7 @@ pre { background: var(--code-bg); border: 1px solid var(--code-border); border-r
 
 <p>Changing the active provider takes effect immediately. There is no restart required. As soon as you save the new selection, the very next AI request PreseMaker makes will be routed to the newly selected provider. This makes it straightforward to experiment: you can generate a quiz with one provider, switch the active provider in Settings, generate a second quiz, and compare the outputs side by side.</p>
 
-<p>Note that selecting a provider for which you have not yet entered an API key will cause AI requests to fail. PreseMaker cannot authenticate with a provider unless a valid key for that provider is present. The recommended workflow is to enter a key first, then set that provider as active.</p>
+<p>Note what happens if you select a provider for which you have not yet entered an API key: PreseMaker does not fail. It automatically uses whichever provider <em>does</em> have a key on file. If you have entered only one key, PreseMaker selects that provider for you, so a single key is all the configuration required. This selection is based on which keys exist — it is not a retry after a failure. What PreseMaker cannot do is authenticate when no provider has a key at all, so the one thing you must do is enter at least one valid key, in the field belonging to the provider that issued it.</p>
 
 <p><strong>One Provider Handles Every Task — No Per-Task Routing</strong></p>
 
