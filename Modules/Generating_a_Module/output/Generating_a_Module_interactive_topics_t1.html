@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How PreseMaker Analyzes Source Material</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>How PreseMaker Analyzes Source Material</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>How PreseMaker Analyzes Source Material</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you upload source material to PreseMaker, you are setting the entire course-creation process in motion. Everything that follows — the proposed modules, the sequencing of topics, the identification of learning priorities — flows directly from what the AI reads and interprets in that initial upload. Understanding how PreseMaker analyzes your source material gives you meaningful control over the quality of the output, because you can shape the input before the AI ever begins its work.</p>
+
+<p>This analysis process unfolds across several interconnected stages: ingesting and parsing the raw content, identifying the key themes and content areas embedded within it, generating a structural proposal, and applying a set of internal decision-making principles that determine how the AI weights and organizes what it finds. Each stage builds on the one before it, and each is influenced by choices you make as the course designer.</p>
+
+<p><strong>Uploading Source Material to PreseMaker</strong></p>
+
+<p>PreseMaker treats your uploaded source material as the authoritative foundation for all subsequent analysis. The AI does not draw on external databases or general knowledge to fill in gaps — it works with what you provide. This makes the upload moment critically important. Whatever you give PreseMaker becomes the universe from which it constructs a course.</p>
+
+<p>The practical implication is straightforward: the quality and completeness of your uploaded material directly determines the accuracy and usefulness of the AI's output. If you upload a comprehensive, well-organized document that covers the full scope of the course you intend to build, PreseMaker has everything it needs to produce a coherent and detailed structural proposal. If you upload a partial draft, a loosely assembled set of notes, or a document that covers only some of the intended course content, the AI's proposal will reflect those limitations — not because it has made an error, but because it is faithfully analyzing what it received.</p>
+
+<p>Before uploading, it is worth investing time in reviewing your source material with the following considerations in mind:</p>
+
+<ul>
+  <li><strong>Completeness:</strong> Does the material represent the full scope of the course, or are major topics missing? If certain subject areas will be covered in the course but are absent from the source document, they will not appear in the AI's initial proposal.</li>
+  <li><strong>Organization:</strong> Is the material structured in a way that reflects how you want the course to flow? Well-organized source material with clear headings, logical section breaks, and consistent formatting gives the AI stronger signals to work with.</li>
+  <li><strong>Depth and balance:</strong> Are the most important topics given adequate coverage in the source? A topic mentioned briefly in one sentence will be weighted differently than a topic explored across several pages.</li>
+  <li><strong>Clarity:</strong> Is the language clear and unambiguous? Content that uses consistent terminology is easier for the AI to parse accurately than content that uses multiple different terms interchangeably for the same concept.</li>
+</ul>
+
+<p>Think of the upload as a briefing you are giving the AI. The more thorough and well-prepared that briefing is, the better the AI can do its job.</p>
+
+<p><strong>Reading and Parsing the Content</strong></p>
+
+<p>Once your source material is uploaded, PreseMaker begins reading and parsing it. This is not a simple word-count or keyword-frequency operation — the AI engages in a more layered process of linguistic and structural analysis designed to surface how ideas are organized and related within the document.</p>
+
+<p>At the vocabulary level, PreseMaker scans for the terms, phrases, and concepts that appear throughout the text. It notes which terms appear frequently, which appear in prominent positions (such as in headings or at the start of sections), and which appear in close proximity to one another — because proximity is often a signal of conceptual relationship.</p>
+
+<p>At the structural level, the AI breaks the content into analyzable segments. These segments are not arbitrary divisions; they are identified based on cues already present in the document. A numbered list of topics, a set of chapter headings, a series of bold subheadings, a consistent pattern of paragraph breaks — all of these serve as structural signals that guide how the AI divides the content into units for analysis.</p>
+
+<p>Consider the difference between these two versions of the same content:</p>
+
+<ul>
+  <li><strong>Version A (unstructured):</strong> A block of continuous prose covering project management fundamentals, agile methodology, stakeholder communication, and risk assessment, with no headings or visual breaks.</li>
+  <li><strong>Version B (structured):</strong> The same content, but divided into clearly labeled sections: "Project Management Fundamentals," "Introduction to Agile Methodology," "Stakeholder Communication Strategies," and "Risk Assessment Frameworks."</li>
+</ul>
+
+<p>In Version B, PreseMaker can immediately recognize four distinct content areas because the structural cues are explicit. In Version A, the AI must infer those divisions from context and content patterns alone, which introduces more variability into the analysis. This does not mean unstructured content cannot be analyzed effectively, but it does mean that well-structured source material consistently produces more precise parsing results.</p>
+
+<p><strong>Identifying Key Themes and Content Areas</strong></p>
+
+<p>With the content parsed into segments, PreseMaker moves into its thematic analysis phase. Here, the AI's task is to group related ideas together into coherent content clusters — the conceptual building blocks that will eventually become proposed modules.</p>
+
+<p>The grouping process is driven by semantic relationships. The AI looks for ideas that share vocabulary, reference common concepts, or develop the same underlying subject. For example, in a source document about financial literacy, passages discussing budgeting, expense tracking, and savings goals would likely be grouped together because they share conceptual territory, even if they appear in different sections of the document.</p>
+
+<p>Frequency and depth of coverage play a significant role in how themes are weighted. A concept that appears repeatedly across the document, or that is explored in substantial detail within a particular section, is treated as a primary theme — a subject that the source material clearly regards as important and that likely warrants its own module in the course structure. Conversely, a topic mentioned only briefly and without elaboration may be flagged as a secondary or supporting idea, potentially suited for inclusion within a broader module rather than standing alone.</p>
+
+<p>This thematic mapping forms what might be called the conceptual backbone of the proposed course structure. By the end of this phase, PreseMaker has essentially produced an internal map of the source material: here are the major subjects, here is how they relate to one another, and here is a rough sense of their relative importance based on how the source material treats them.</p>
+
+<p>A practical example helps illustrate this. Imagine uploading a source document on workplace safety. The document includes:</p>
+
+<ul>
+  <li>Thirty pages on hazard identification and risk assessment procedures</li>
+  <li>Twenty pages on emergency response protocols</li>
+  <li>Fifteen pages on personal protective equipment (PPE) standards</li>
+  <li>Five pages on incident reporting and documentation</li>
+  <li>Two paragraphs on the general history of occupational health legislation</li>
+</ul>
+
+<p>PreseMaker's thematic analysis would likely surface hazard identification, emergency response, and PPE as primary content clusters, and incident reporting as a significant secondary area. The brief historical overview would almost certainly be treated as introductory or contextual material rather than a standalone module theme, because its depth of coverage is minimal relative to the other areas.</p>
+
+<p><strong>Generating an Initial Structural Proposal</strong></p>
+
+<p>With the thematic map in hand, PreseMaker generates its initial structural proposal. This proposal translates the AI's content analysis into a concrete, ordered sequence of proposed modules, each corresponding to one of the major content areas identified during thematic analysis.</p>
+
+<p>The sequencing logic applied at this stage takes into account the relationships between themes. Content areas that serve as conceptual prerequisites for others tend to be placed earlier in the sequence. Foundational or introductory themes come before advanced or specialized ones. This mirrors the pedagogical principle that learners need context and foundational knowledge before they can engage productively with more complex material.</p>
+
+<p>Using the workplace safety example from above, a structural proposal might look like this:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Proposed Module</th>
+      <th>Primary Content Source</th>
+      <th>Rationale for Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Module 1: Introduction to Workplace Safety</td>
+      <td>Historical overview + general principles</td>
+      <td>Contextual foundation before technical content</td>
+    </tr>
+    <tr>
+      <td>Module 2: Hazard Identification and Risk Assessment</td>
+      <td>30-page hazard assessment section</td>
+      <td>Core technical skill; prerequisite for response planning</td>
+    </tr>
+    <tr>
+      <td>Module 3: Personal Protective Equipment Standards</td>
+      <td>15-page PPE section</td>
+      <td>Practical application of hazard mitigation</td>
+    </tr>
+    <tr>
+      <td>Module 4: Emergency Response Protocols</td>
+      <td>20-page emergency response section</td>
+      <td>Builds on hazard awareness and PPE knowledge</td>
+    </tr>
+    <tr>
+      <td>Module 5: Incident Reporting and Documentation</td>
+      <td>Incident reporting section</td>
+      <td>Post-event process; logical endpoint of safety cycle</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>It is important to understand that this proposal is exactly that — a proposal. PreseMaker presents the structural suggestion to the user for review before any course structure is finalized. The AI's analysis informs a starting point, not a final decision. You retain full authority to accept, modify, reorder, combine, or reject any element of the proposal based on your pedagogical judgment, your knowledge of your learners, and your understanding of the course's goals.</p>
+
+<p><strong>What Drives the AI's Decisions</strong></p>
+
+<p>Behind every aspect of PreseMaker's analysis and proposal is a set of decision-making principles that the AI applies consistently. Understanding these principles helps you anticipate the AI's behavior and make more strategic choices about how you prepare and upload your source material.</p>
+
+<p><strong>Density and depth as signals of importance.</strong> The single most powerful signal PreseMaker reads is how much space and detail the source material devotes to a topic. A topic that occupies twenty pages of detailed explanation, worked examples, and elaborated principles is interpreted as a high-priority subject. A topic covered in a brief paragraph is not. This means that if you want a particular subject to receive module-level prominence in the proposed structure, you need to ensure it is treated with proportional depth in your source material. If your source material underrepresents a topic that you know should be a course priority, you may want to supplement it before uploading.</p>
+
+<p><strong>Explicit organizational markers as module boundaries.</strong> Chapter titles, numbered sections, bold headers, and consistent formatting breaks all function as strong signals for where one content area ends and another begins. The AI treats these markers as authoritative guidance on how the original author organized the material. When you include clear, consistent structural markers in your source document, you are effectively giving PreseMaker a roadmap — and the AI will follow it. This is why well-structured source material tends to produce structural proposals that closely match the original document's organization.</p>
+
+<p><strong>Balancing breadth and depth for teachability.</strong> One of the more nuanced aspects of the AI's decision-making is its attempt to balance comprehensiveness against teachability. A source document may cover dozens of distinct topics. If each topic were proposed as its own module, the resulting course structure might be technically complete but practically unwieldy — too fragmented to support coherent learning progressions. Conversely, if all topics were collapsed into a small number of very broad modules, the course might be manageable but superficial.</p>
+
+<p>PreseMaker applies a balancing logic: topics with sufficient depth and distinctiveness are proposed as standalone modules, while closely related or less-developed topics may be grouped together within a single module. The AI is essentially asking: <em>does this content area have enough substance and distinctiveness to justify its own learning unit, or does it belong as a component within a broader one?</em></p>
+
+<p>This balancing act is one of the areas where your review of the proposal is most valuable. You bring knowledge about your learners' prior experience, the course's intended duration, and the practical constraints of delivery — all of which the AI does not have access to. The AI can propose a structure that is logical given the source material; you can refine it to be appropriate for the actual teaching and learning context.</p>
+
+<p>In summary, PreseMaker's analysis of your source material is a sophisticated, multi-stage process that moves from raw ingestion through parsing, thematic clustering, and structural proposal generation. At every stage, the quality of your input shapes the quality of the output — and at every stage, the AI's work is designed to support your decision-making rather than replace it.</p>
+        <div class="notes"><strong>Notes</strong>Covers all five subtopic clusters in depth: uploading considerations, parsing mechanics, thematic identification, structural proposal generation, and the AI&#39;s internal decision-making drivers. Includes a worked example (workplace safety document) carried across multiple sections for continuity, plus an HTML table illustrating a sample structural proposal. No headings used per formatting constraints — transitions between subtopic areas are handled through bold lead-ins within paragraph flow.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

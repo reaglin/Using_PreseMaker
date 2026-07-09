@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Generated Course Creation</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>AI-Generated Course Creation</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>AI-Generated Course Creation</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Building a course from scratch has traditionally demanded significant time and instructional design expertise. You need to decide which topics matter, how to sequence them logically, how granular each section should be, and how to ensure the overall structure supports genuine learning outcomes. PreseMaker's AI-generated course creation feature compresses much of that upfront work into an automated process — one where you supply the raw material and the system proposes an organized, coherent course structure in return. Understanding how this process works, when it makes sense to use it, and how to feed it the right inputs will help you get the most out of the capability.</p>
+
+<p><strong>What AI-Generated Course Creation Actually Does</strong></p>
+
+<p>When you trigger AI course generation in PreseMaker, you are not simply asking the system to reformat a document. The AI reads and interprets the content you provide, identifies the major themes and concepts present, infers logical relationships between those concepts, and then proposes a module-by-module structure that reflects how a learner might best progress through the material. Each proposed module typically comes with a title, a set of subtopics, and an initial content draft drawn from your source materials.</p>
+
+<p>The practical effect is that you go from a pile of raw inputs — slides, documents, notes, transcripts — to a structured, navigable course outline in a fraction of the time it would take to build that same structure manually. The output is a <em>starting point</em>, not a finished product. Think of it the way a skilled researcher might produce a detailed annotated outline before writing begins: the heavy lifting of organization is done, but your judgment, voice, and refinements are still essential to turn the draft into something polished and effective.</p>
+
+<p>Three characteristics define what makes this approach valuable:</p>
+<ul>
+  <li><strong>Speed:</strong> The AI processes large volumes of source content far faster than a human editor working alone, generating a full draft structure in minutes rather than hours or days.</li>
+  <li><strong>Pattern recognition:</strong> Because the AI analyzes all your inputs simultaneously, it can surface thematic connections and logical groupings that might not be immediately obvious when you are looking at individual documents one at a time.</li>
+  <li><strong>Editability:</strong> The generated structure is fully open to revision. You can reorder modules, rename topics, expand thin sections, collapse redundant ones, and inject your own expertise at every level.</li>
+</ul>
+
+<p><strong>When to Choose AI Generation Over Building Manually</strong></p>
+
+<p>AI generation is not always the right tool, and choosing between it and manual course building is a real decision worth thinking through carefully.</p>
+
+<p>AI generation is the stronger choice when:</p>
+<ul>
+  <li><strong>You have substantial existing content.</strong> If you are converting an existing training program, a set of internal knowledge-base articles, a library of slide decks, or a lengthy subject-matter document into a course, the AI has rich material to work from and can produce a genuinely useful draft. The more content you provide, the more accurate and comprehensive the generated structure tends to be.</li>
+  <li><strong>You want a rapid first draft.</strong> When stakeholders need to see a course prototype quickly, or when you are exploring whether a topic area has enough depth to justify a full course, AI generation lets you validate the concept fast without committing to extensive manual work upfront.</li>
+  <li><strong>Your source materials are varied or unstructured.</strong> If your content comes from multiple authors, formats, or systems, the AI can identify the logical groupings and sequences that would take considerable effort to derive manually. It acts as a synthesizer, pulling coherence out of fragmented inputs.</li>
+</ul>
+
+<p>Manual building is the stronger choice when:</p>
+<ul>
+  <li><strong>You have a precise instructional design already mapped out.</strong> If a learning designer has produced a detailed storyboard or a specific pedagogical sequence that must be followed exactly, building manually gives you complete control over every element without needing to correct or override AI suggestions.</li>
+  <li><strong>Your content is highly proprietary or sensitive.</strong> In some organizational contexts, uploading source materials to an AI system requires additional data governance consideration, making a manual approach preferable by policy.</li>
+  <li><strong>The course is very short or simple.</strong> For a three-slide microlesson covering a single narrow procedure, the overhead of AI generation adds little value compared to simply building it directly.</li>
+</ul>
+
+<p>In practice, many experienced users choose a hybrid approach: use AI generation to produce the skeleton, then apply manual editing to bring it fully in line with their learning objectives and organizational standards.</p>
+
+<p><strong>The Inputs That Drive AI Course Generation</strong></p>
+
+<p>The quality of the AI's output depends directly on the quality and completeness of the inputs you provide. PreseMaker accepts a broad range of source types, which means you rarely need to convert your existing materials into a special format before using them.</p>
+
+<p>Accepted input types include:</p>
+<ul>
+  <li><strong>PowerPoint files:</strong> Slide decks are among the most common inputs. The AI reads both the visible slide text and any speaker notes, treating the notes as elaboration on the slide content. A well-annotated deck with detailed notes will generate a richer course than a deck with sparse bullet points alone.</li>
+  <li><strong>Written descriptions:</strong> You can type or paste a plain-text description of what you want the course to cover. This is especially useful when you have clear expertise in a subject but do not yet have formal documents — you can describe the concepts directly and let the AI structure them.</li>
+  <li><strong>Documents:</strong> Word files, PDFs, and similar formatted documents are parsed for their text content. Structured documents with headings and sections give the AI strong signals about how content is already organized.</li>
+  <li><strong>Web pages:</strong> You can provide URLs to relevant web content. The AI retrieves and processes the text from those pages as source material.</li>
+  <li><strong>Pasted text:</strong> Raw text pasted directly into the input area is treated identically to uploaded documents, making it easy to pull in content from any source quickly.</li>
+  <li><strong>YouTube transcripts:</strong> Video content is accessible through its transcript. Providing a YouTube URL allows the AI to extract and analyze the spoken content of the video, which is particularly useful for subject matter that exists primarily in recorded lecture or demonstration form.</li>
+</ul>
+
+<p>A few principles govern how to get the most from these inputs:</p>
+<ul>
+  <li><strong>Comprehensiveness matters.</strong> Providing more relevant content gives the AI more context. A single two-page overview will produce a shallow structure. A 40-page manual, a slide deck, and a supporting article will produce a far more detailed and accurate course outline.</li>
+  <li><strong>Relevance matters equally.</strong> Including tangential or off-topic materials can dilute the AI's focus. If you are building a course on onboarding procedures, adding a lengthy document on company history might cause the AI to give that history undue structural weight.</li>
+  <li><strong>Clarity in descriptions helps.</strong> When using written descriptions as input, being explicit about scope, audience, and key outcomes gives the AI valuable framing information that shapes every downstream decision it makes about structure.</li>
+</ul>
+
+<p><strong>Primary Sources vs. Secondary Sources: Why the Distinction Matters</strong></p>
+
+<p>PreseMaker allows you to designate your inputs as either primary or secondary sources, and this designation has a meaningful effect on how the AI generates the course.</p>
+
+<p><strong>Primary sources</strong> are the materials the AI treats as authoritative and central. They define the backbone of the course — the core topics, the sequence of modules, and the principal learning objectives. If you are building a course around a comprehensive product training manual, that manual should be your primary source. The AI will use it to set the scope and the structural logic of the course, ensuring the generated outline faithfully reflects the manual's coverage and emphasis.</p>
+
+<p><strong>Secondary sources</strong> are supplementary materials that the AI draws on to enrich, elaborate, or contextualize the primary content. They fill in gaps, provide examples, offer alternative explanations, or add depth to sections that the primary source covers only briefly. For example, if your primary source is a concise policy document, you might add a secondary source consisting of case studies or FAQ documents that illustrate how the policy applies in practice. The AI will incorporate that material without allowing it to override or restructure the course logic established by the primary source.</p>
+
+<p>The practical implication is straightforward: be deliberate about which materials you designate as primary. Designating multiple competing documents as primary sources can create ambiguity about the intended course structure. A common best practice is to identify your single most authoritative, comprehensive piece of content as the primary source and treat everything else as secondary enrichment.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source Type</th>
+      <th>Role in Generation</th>
+      <th>Best Used For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Primary</td>
+      <td>Defines core structure, module sequence, and learning objectives</td>
+      <td>Comprehensive manuals, authoritative training documents, detailed slide decks</td>
+    </tr>
+    <tr>
+      <td>Secondary</td>
+      <td>Enriches and elaborates on primary content without overriding structure</td>
+      <td>Case studies, FAQs, supporting articles, example libraries, transcripts</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Initiating AI Course Generation in PreseMaker: The Workflow Step by Step</strong></p>
+
+<p>The process of launching an AI-generated course in PreseMaker is deliberately straightforward. Here is how it unfolds:</p>
+
+<ul>
+  <li><strong>Start from the Course Manager.</strong> The Course Manager is the central hub where your existing courses are listed and where new course creation begins. From here, you initiate the creation of a new course. You will be presented with two paths: an empty course, which drops you into a fully manual build environment, and the AI-generated option, which starts the generation workflow.</li>
+  <li><strong>Select the AI-generated option.</strong> Choosing this option signals to PreseMaker that you want the system to propose a course structure rather than starting with a blank canvas. This takes you to the source material upload and configuration screen.</li>
+  <li><strong>Provide your source materials.</strong> You upload, link, or paste the inputs you have prepared. At this stage you also designate which materials are primary and which are secondary. You may also have the opportunity to add a brief description of your intended audience or learning goals, which gives the AI additional framing context.</li>
+  <li><strong>Initiate generation.</strong> Once your materials are in place, you trigger the generation process. The AI analyzes your inputs and constructs the proposed course structure. Depending on the volume of material, this may take anywhere from a few seconds to a couple of minutes.</li>
+  <li><strong>Review the generated structure.</strong> The result is a full course outline — modules, topics, and initial content drafts — presented in PreseMaker's editing environment. You can immediately see how the AI interpreted your materials and where it made structural decisions.</li>
+  <li><strong>Edit, refine, and develop.</strong> From this point, the course is yours to shape. You can reorder modules by dragging them into a different sequence, rename or merge topics, expand sections where the AI's draft is thin, delete sections that are out of scope, and add your own original content wherever the generated material needs a human touch. All of the platform's standard course-building tools are available to you once the initial structure has been generated.</li>
+</ul>
+
+<p>One important mindset to bring to this workflow is that reviewing the generated output critically is part of the process. The AI makes reasonable inferences from your materials, but it does not have your organizational context, your knowledge of the learner audience, or your judgment about which concepts deserve more emphasis. Treating the generated draft as a sophisticated first pass — rather than a finished product — is the key to using AI course generation effectively.</p>
+        <div class="notes"><strong>Notes</strong>Topic covers PreseMaker&#39;s AI course generation feature. All platform-specific UI details (Course Manager, primary/secondary source designation, generation workflow) are described as provided in the source subtopics. The comparison table for primary vs. secondary sources was added to improve conceptual clarity. No heading tags were used per formatting requirements.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

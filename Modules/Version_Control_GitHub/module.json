@@ -1,0 +1,9 @@
+{
+  "Id": "134fcf86-d6ab-41b7-963f-407818da1b4d",
+  "Name": "Version Control, GitHub Pages, and Course Repository Integration",
+  "Description": "This lesson covers managing a course as a git repository for change tracking and collaboration, pushing the course website live through GitHub Pages, and using PreseMaker\u0027s course repository integration for importing, exporting, and sharing materials. Learners will be able to describe each sharing option and identify which best suits a given use case.",
+  "CreatedBy": "Ron Eaglin",
+  "CreatedDate": "2026-07-08T19:07:39.5345664-04:00",
+  "LastModifiedDate": "2026-07-08T19:07:39.5355379-04:00",
+  "Actions": []
+}

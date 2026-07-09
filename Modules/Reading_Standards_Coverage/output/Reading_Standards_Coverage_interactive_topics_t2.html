@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding What the Coverage View Displays</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Understanding What the Coverage View Displays</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Understanding What the Coverage View Displays</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>The Coverage View is the central dashboard for understanding how well a course addresses its mapped standards. Rather than requiring instructors to cross-reference multiple reports, it consolidates every critical piece of alignment information into a single, scannable display. Each standard that has been mapped to the course appears as its own row, and that row carries everything needed to judge whether the standard is being adequately taught, practiced, and assessed. Understanding exactly what each element means — and how those elements work together — allows instructors to move from a vague sense that "coverage looks okay" to a precise, evidence-based picture of where their course is strong and where it has gaps.</p>
+
+<p>The sections below walk through every component of the Coverage View in the order you encounter it when reading across a row, then explain the summary-level indicators that appear at the top of the view.</p>
+
+<p><strong>The Standard Row Layout</strong></p>
+
+<p>Every mapped standard occupies its own row in the Coverage View, and each row is structured identically so that scanning down the list is fast and consistent. The leftmost element is the <strong>standard code</strong>, which is the unique alphanumeric identifier assigned to that standard within its framework — for example, a Common Core math standard might carry a code like <em>CCSS.MATH.CONTENT.6.RP.A.1</em>, while a state science standard might use a shorter district-defined code. This code is the authoritative label for the standard; it is what appears in curriculum documents, accreditation reports, and alignment maps, so it serves as the anchor that ties the Coverage View back to those external references.</p>
+
+<p>Directly beside the code is the <strong>full statement of the standard</strong> — the complete, unabbreviated description of what learners are expected to know or be able to do. Showing the full statement rather than a truncated label is deliberate: a code alone is easy to misremember, and decisions about whether a quiz item genuinely covers a standard require reading the actual language. For instance, a standard that says <em>"Explain how the structure of DNA determines the structure of proteins"</em> demands something quite different from one that merely says <em>"Identify the components of DNA,"</em> even if both fall under the same broad topic. Having the complete statement on the row means instructors never have to leave the view to look up what a code actually means.</p>
+
+<p>To the right of the statement, the row displays <strong>counts of aligned assignments, quiz items, and activities</strong>. These counts are presented as discrete numbers for each content type rather than a single combined total, because the type of alignment matters as much as the quantity. A standard supported by twelve assignments but zero quiz items is in a very different instructional situation than one supported by two assignments and four quiz items. Seeing the breakdown at a glance lets instructors immediately spot imbalances — such as a standard that is heavily resourced with activities yet never assessed — without needing to open any sub-report.</p>
+
+<p>Together, the code, full statement, and item counts form a self-contained summary of <em>what</em> the standard is and <em>how much</em> course material is connected to it. Everything else on the row then speaks to the <em>quality</em> of that coverage.</p>
+
+<p><strong>The Cognitive (Bloom's) Level Column</strong></p>
+
+<p>One of the most analytically powerful columns in the Coverage View is the cognitive level column, which records the depth of thinking that a standard demands using the widely recognized framework of Bloom's Taxonomy. Bloom's Taxonomy organizes cognitive work into six levels arranged from lower-order to higher-order thinking:</p>
+
+<ul>
+  <li><strong>Remembering</strong> — recalling facts, definitions, or procedures from memory</li>
+  <li><strong>Understanding</strong> — explaining ideas or concepts in one's own words</li>
+  <li><strong>Applying</strong> — using knowledge to solve problems in new situations</li>
+  <li><strong>Analyzing</strong> — breaking information into components and examining relationships</li>
+  <li><strong>Evaluating</strong> — making judgments about value or quality based on criteria</li>
+  <li><strong>Creating</strong> — producing new or original work by combining elements</li>
+</ul>
+
+<p>In the Coverage View, the cognitive level column shows the Bloom's level for the <strong>standard itself</strong> — determined by the verbs and demands embedded in the standard's language — and, where applicable, the Bloom's level assigned to the <strong>learning outcomes</strong> that have been written to address it. Displaying both on the same row enables a direct, side-by-side comparison. If a standard is written at the <em>Evaluating</em> level but the learning outcomes aligned to it are all written at the <em>Remembering</em> or <em>Understanding</em> level, the course has articulated goals that do not reach the intellectual depth the standard requires.</p>
+
+<p>This comparison is central to one of the most common and consequential alignment problems: courses where content is present in sufficient quantity but insufficient depth. An instructor might have ten quiz items aligned to a standard, yet if every one of those items asks students to recall a definition rather than evaluate an argument, the standard is not meaningfully covered — at least not at the level it demands. The cognitive level column makes this discrepancy visible directly on the standard's row rather than burying it in a separate analysis report.</p>
+
+<p>Consider a concrete example. Suppose a history standard reads: <em>"Evaluate the relative significance of economic, political, and social factors in causing the First World War."</em> The verb <em>evaluate</em> places this at Bloom's fifth level. If the course's aligned quiz items all ask students to <em>list</em> the causes of the war or <em>identify</em> which factor historians emphasize, those items are operating at the <em>Remembering</em> or <em>Understanding</em> level — three to four levels below the standard. The cognitive column exposes this gap immediately.</p>
+
+<p><strong>The Tiered Status Field</strong></p>
+
+<p>The tiered status field provides a single, plain-language label that summarizes the overall state of alignment for each standard. There are four possible values, and they form a progression from complete absence of alignment to full assessment coverage:</p>
+
+<ul>
+  <li><strong>Not aligned</strong> — Nothing in the course has been mapped to this standard. The standard appears in the framework the course is associated with, but no assignment, activity, quiz item, or learning outcome has been connected to it. This is the most foundational gap: the course does not address the standard at all.</li>
+  <li><strong>Not addressed</strong> — The standard has been mapped to the course — meaning someone has indicated the course should cover it — but no actual course materials currently practice or assess it. This status often surfaces after a curriculum revision where new standards were added to a course's alignment profile but the corresponding materials have not yet been created or updated.</li>
+  <li><strong>Practiced only</strong> — The standard is engaged through assignments or learning activities, but no quiz or assessment item directly covers it. Students encounter the concept and work with it, but their mastery is never formally measured. This status is common in project-based or discussion-heavy courses where assessment design has not kept pace with instructional design.</li>
+  <li><strong>Assessed</strong> — At least one quiz or assessment item directly covers the standard. This is the minimum threshold for full coverage: the course not only teaches and practices the standard but also formally measures whether students have achieved it.</li>
+</ul>
+
+<p>The four-tier structure is intentional because each status implies a different remediation action. <em>Not aligned</em> requires a curriculum-mapping decision. <em>Not addressed</em> requires content creation or assignment mapping. <em>Practiced only</strong> requires adding or tagging assessment items. <em>Assessed</em> requires no immediate action on coverage, though the cognitive depth column may still flag a quality issue even when the quantity threshold is met.</p>
+
+<p>It is worth noting what <em>Assessed</em> does and does not guarantee. It confirms that at least one measurement exists, but it does not confirm that the measurement is at the right cognitive depth, that it is sufficiently reliable, or that students are performing well on it. The Coverage View presents the status field alongside the cognitive column and the gap flag precisely so that instructors read those elements together rather than treating <em>Assessed</em> as a blanket seal of approval.</p>
+
+<p><strong>The Coverage Headline Summary</strong></p>
+
+<p>Above the individual standard rows, the Coverage View displays a headline summary that distills the state of the entire course's alignment into two key figures. These figures are designed to give instructors an immediate, high-level orientation before they read the rows in detail.</p>
+
+<p>The first figure is the <strong>percentage of aligned standards that are actually assessed</strong>. For example, a headline might read <em>"47 of 60 aligned standards are assessed (78%)"</em>. This tells the instructor at a glance how far the course is from complete assessment coverage. A low percentage — say, 40% — signals that a large fraction of the standards the course claims to address are never formally measured, which is a systemic problem rather than an isolated gap. A high percentage — say, 92% — suggests that coverage is largely complete and only a few standards need attention.</p>
+
+<p>The second figure is the <strong>count of standards with a cognitive-depth gap</strong>. A cognitive-depth gap exists when the Bloom's level of the course's aligned materials (outcomes, assignments, or quiz items) falls below the Bloom's level demanded by the standard itself. The headline might read <em>"12 standards have a cognitive-depth gap"</em>. This figure is reported separately from the assessment percentage because a standard can be <em>Assessed</em> — fully meeting the quantity threshold — while still having a depth gap. In other words, being assessed is necessary but not sufficient for high-quality coverage.</p>
+
+<p>Together, the two headline figures create a prioritization framework. Standards that are both <em>not assessed</em> and have a <em>depth gap</em> need the most urgent attention because they fail on two dimensions simultaneously. Standards that are <em>assessed</em> but have a <em>depth gap</em> need qualitative improvement — better or harder assessment items — rather than more items. Standards that are <em>assessed</em> with no depth gap are in good shape and can be set aside while the instructor focuses elsewhere.</p>
+
+<p><strong>The Inline Cognitive-Depth Gap Flag</strong></p>
+
+<p>While the headline summary reports the total count of depth gaps across the course, the inline cognitive-depth gap flag brings that information back down to the level of the individual standard. The flag — typically a warning icon or marker — appears directly on the standard's row, positioned so that it is impossible to miss when reading across that row. This placement is deliberate: it keeps the depth-gap warning in context, right next to the standard statement, the status field, and the item counts, so that the instructor sees all the relevant information together rather than having to correlate a separate warning report against the main table.</p>
+
+<p>Hovering over or selecting the flag reveals a <strong>tooltip</strong> that provides additional detail about the nature of the gap. The tooltip might specify, for example, that the standard demands <em>Analyzing</em> (Bloom's level 4) while the highest-level aligned quiz item reaches only <em>Understanding</em> (Bloom's level 2), making the depth shortfall concrete and actionable rather than abstract.</p>
+
+<p>A critical design principle of the gap flag is that the required depth is determined <strong>solely by the standard's own cognitive level</strong>, not by any external program benchmark, institutional rubric, or administrative setting. If a standard's language — its verbs, its demands, its context — places it at the <em>Creating</em> level, then <em>Creating</em> is the threshold the course's materials must reach to avoid triggering the flag. This prevents the gap calculation from being distorted by organizational policies that might set different expectations for different programs or departments. The standard itself is the authority, which keeps the flag objective and consistent across all courses that align to the same standards framework.</p>
+
+<p>The practical implication is straightforward: when an instructor sees the gap flag on a row, they know that even if the status field reads <em>Assessed</em>, the intellectual rigor of the assessment does not yet match what the standard requires. The fix is not to add more items of the same type, but to revise or supplement existing items with tasks that operate at a higher cognitive level — moving from multiple-choice recall questions, for instance, toward case analyses, argument evaluations, or synthesis tasks that genuinely reflect what the standard demands.</p>
+
+<p>The table below summarizes the full set of Coverage View elements, what each one communicates, and the primary action it informs:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Coverage View Element</th>
+      <th>What It Shows</th>
+      <th>Primary Action It Informs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Standard Code</td>
+      <td>Unique identifier linking the row to the official standards framework</td>
+      <td>Cross-referencing with curriculum documents and accreditation maps</td>
+    </tr>
+    <tr>
+      <td>Full Standard Statement</td>
+      <td>Complete description of what learners must know or do</td>
+      <td>Judging whether aligned items genuinely address the standard's language</td>
+    </tr>
+    <tr>
+      <td>Item Counts (assignments, quizzes, activities)</td>
+      <td>Number of course materials linked to the standard, broken down by type</td>
+      <td>Identifying quantity imbalances, such as many activities but no assessments</td>
+    </tr>
+    <tr>
+      <td>Cognitive (Bloom's) Level Column</td>
+      <td>Bloom's level of the standard and of aligned learning outcomes</td>
+      <td>Comparing required intellectual depth against what is taught and assessed</td>
+    </tr>
+    <tr>
+      <td>Tiered Status Field</td>
+      <td>Not aligned / Not addressed / Practiced only / Assessed</td>
+      <td>Determining what type of remediation is needed (mapping, content, assessment)</td>
+    </tr>
+    <tr>
+      <td>Coverage Headline Summary</td>
+      <td>% of standards assessed; count of standards with depth gaps</td>
+      <td>Gauging overall course health and prioritizing which standards need attention first</td>
+    </tr>
+    <tr>
+      <td>Inline Cognitive-Depth Gap Flag</td>
+      <td>Warning marker on rows where coverage depth falls short of the standard's level</td>
+      <td>Identifying where assessment items must be upgraded in cognitive rigor, not just quantity</td>
+    </tr>
+  </tbody>
+</table>
+        <div class="notes"><strong>Notes</strong>The four-tier status system (Not aligned → Not addressed → Practiced only → Assessed) and the separation of the cognitive-depth gap from the assessment-completeness percentage are the two most conceptually important distinctions in this topic. Examples and the summary table reinforce that being &quot;Assessed&quot; is necessary but not sufficient — cognitive depth is a second, independent dimension of coverage quality.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

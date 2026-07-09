@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How PreseMaker Generates SLOs from Module Topics</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>How PreseMaker Generates SLOs from Module Topics</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>How PreseMaker Generates SLOs from Module Topics</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When an instructor provides PreseMaker with a set of module topics, one of the first and most consequential tasks the system performs is generating <strong>Student Learning Outcomes (SLOs)</strong> — precise, actionable statements that define exactly what a learner should be able to demonstrate by the end of instruction. This process is not a simple template-fill exercise. It is a multi-stage pipeline that reads the meaning of each topic, evaluates the appropriate depth of cognitive engagement, selects language that makes outcomes both observable and assessable, and then uses those outcomes as the architectural foundation for everything that follows. Understanding how this pipeline works gives instructors and course designers insight into why PreseMaker-generated content is consistently purposeful, appropriately leveled, and pedagogically defensible.</p>
+
+<p><strong>Topic Content Analysis</strong> is the entry point into SLO generation. Before PreseMaker can write a single outcome, it must understand what each topic is actually about — not just its label, but its scope, its intent, and the kind of knowledge it involves. To accomplish this, PreseMaker scans each topic's title and accompanying summary, treating them as signals of the primary subject matter. A topic titled <em>"Introduction to Network Protocols"</em> signals foundational declarative knowledge. A topic titled <em>"Troubleshooting TCP/IP Connectivity Errors"</em> signals procedural and diagnostic knowledge requiring higher cognitive engagement. These are meaningfully different, and the analysis step captures that difference.</p>
+
+<p>Beyond the title, PreseMaker extracts <strong>key concepts</strong>, <strong>domain-specific actions</strong>, and <strong>knowledge areas</strong> embedded in the topic description. For example, a topic summary that mentions "identifying types," "comparing characteristics," and "explaining the role of" will surface those cognitive cues as raw material for outcome construction. This content-parsing step is what ensures that every SLO generated is <em>relevant</em> — grounded in the actual subject matter — and <em>specific</em> enough to be instructionally useful. A vague topic produces a vague outcome only if the analysis stage fails to surface meaningful content signals. PreseMaker is designed to push toward specificity at this stage rather than defer it.</p>
+
+<p>With a clear picture of what the topic contains, PreseMaker moves to <strong>Mapping Topics to Bloom's Cognitive Levels</strong>. Bloom's Revised Taxonomy describes a hierarchy of cognitive complexity, moving from lower-order to higher-order thinking across six levels. PreseMaker evaluates whether a given topic is asking learners to operate at one or more of these levels:</p>
+
+<ul>
+  <li><strong>Remember</strong> — Recalling facts, definitions, or previously learned information (e.g., listing the OSI model layers)</li>
+  <li><strong>Understand</strong> — Interpreting or explaining meaning from information (e.g., describing why the transport layer manages end-to-end communication)</li>
+  <li><strong>Apply</strong> — Using knowledge to carry out a procedure in a given situation (e.g., configuring a subnet mask for a specified network)</li>
+  <li><strong>Analyze</strong> — Breaking information into parts and examining relationships (e.g., diagnosing why a packet is being dropped at a specific router)</li>
+  <li><strong>Evaluate</strong> — Making judgments based on criteria (e.g., recommending a routing protocol given performance and cost constraints)</li>
+  <li><strong>Create</strong> — Producing a new or original product by combining elements (e.g., designing a segmented network topology for a multi-site organization)</li>
+</ul>
+
+<p>The nature of the topic's language is the primary guide for this mapping. Topics that use words like "overview," "define," or "identify" point toward <em>Remember</em> or <em>Understand</em>. Topics that frame learning around tasks, scenarios, or decisions point toward <em>Apply</em>, <em>Analyze</em>, or <em>Evaluate</em>. Topics that involve building, designing, or producing something point toward <em>Create</em>. Crucially, this mapping step prevents a common design error known as <strong>cognitive misalignment</strong> — the mistake of assigning a high-order outcome (such as "evaluate" or "design") to a topic that is explicitly introductory in scope, or conversely, assigning only recall-level outcomes to a topic that demands critical analysis. Misaligned outcomes mislead both learners and instructors about what is actually being expected, and they undermine the validity of any assessments built on those outcomes.</p>
+
+<p>Once the appropriate Bloom's level is identified, PreseMaker proceeds to <strong>Selecting Action Verbs Aligned to Bloom's Levels</strong>. Action verbs are the operational heart of a well-formed SLO. They describe what the learner will visibly, measurably <em>do</em> to demonstrate that learning has occurred. Each level of Bloom's Taxonomy has an established vocabulary of verbs associated with it, and choosing the right verb is not merely a stylistic preference — it determines whether an outcome is assessable at all. A statement like "learners will understand networking" is not assessable because "understand" is internal and unobservable. A statement like "learners will <em>explain</em> how the TCP three-way handshake establishes a connection" is assessable because "explain" implies a producible artifact — a written response, a verbal account, a diagram with annotations.</p>
+
+<p>The following table illustrates example action verbs PreseMaker draws from at each Bloom's level:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bloom's Level</th>
+      <th>Example Action Verbs</th>
+      <th>Typical Topic Signals</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Remember</td>
+      <td>list, define, recall, identify, name, label</td>
+      <td>"Introduction to…", "Overview of…", "Types of…"</td>
+    </tr>
+    <tr>
+      <td>Understand</td>
+      <td>explain, describe, summarize, classify, paraphrase, illustrate</td>
+      <td>"How X works", "The role of X", "Characteristics of X"</td>
+    </tr>
+    <tr>
+      <td>Apply</td>
+      <td>use, execute, implement, calculate, demonstrate, solve</td>
+      <td>"Using X to…", "Performing X", "Applying X in a scenario"</td>
+    </tr>
+    <tr>
+      <td>Analyze</td>
+      <td>differentiate, compare, examine, deconstruct, diagnose, attribute</td>
+      <td>"Troubleshooting X", "Comparing X and Y", "Examining the causes of…"</td>
+    </tr>
+    <tr>
+      <td>Evaluate</td>
+      <td>judge, recommend, justify, critique, defend, select</td>
+      <td>"Choosing between X and Y", "Assessing the effectiveness of…"</td>
+    </tr>
+    <tr>
+      <td>Create</td>
+      <td>design, construct, develop, compose, formulate, produce</td>
+      <td>"Building X", "Designing a solution for…", "Developing a plan to…"</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>PreseMaker selects from this vocabulary with dual criteria: the verb must be <em>level-appropriate</em> (matching the Bloom's tier determined in the previous step) and <em>contextually meaningful</em> (natural within the domain and topic being described). For a networking topic at the Apply level, "implement" or "configure" is more meaningful than the generic "use," because it signals the specific kind of action that networking professionals actually perform. This contextual sensitivity is what makes PreseMaker-generated SLOs read as professionally crafted rather than algorithmically generic.</p>
+
+<p><strong>Constructing the SLO Statement</strong> is the synthesis step where all prior analysis converges into a complete, well-formed outcome. A properly constructed SLO answers three questions in a single statement: <em>Who</em> is doing the learning? <em>What cognitive action</em> are they performing? <em>On what content or in what context?</em> PreseMaker writes every SLO in learner-centered language — the subject is always the learner, not the instructor. Compare these two framings:</p>
+
+<ul>
+  <li><em>Instructor-centered (incorrect):</em> "This module will cover the principles of subnetting."</li>
+  <li><em>Learner-centered (correct):</em> "Learners will calculate valid subnet ranges given a specified IP address and prefix length."</li>
+</ul>
+
+<p>The first statement describes what the course does. The second describes what the learner will be able to demonstrate. Only the second can drive assessment design, because only the second specifies an observable behavior. PreseMaker enforces this learner-centered framing across all generated SLOs.</p>
+
+<p>When a topic spans <strong>more than one cognitive level or concept area</strong>, PreseMaker may generate multiple SLOs for a single topic. This is appropriate and expected. A topic on "Error Detection and Correction in Data Transmission" might legitimately require learners to both <em>explain</em> the difference between error detection and error correction (Understand level) and <em>apply</em> a checksum algorithm to a sample data packet (Apply level). Collapsing these into one SLO would produce an awkward, compound statement that is difficult to assess cleanly. Two distinct SLOs, each with its own verb and scope, serve assessment design far better.</p>
+
+<p>Finally, the SLOs do not exist in isolation — they serve as <strong>Targets for Subsequent Content Generation</strong>. Every piece of instructional content that PreseMaker generates downstream from the SLO stage — explanatory text, worked examples, practice questions, assessments, and summaries — is explicitly designed to help learners achieve one or more of the module's stated SLOs. This is what instructional designers call an <strong>SLO-first</strong> or <strong>backward design</strong> approach: you define the desired outcomes before you create any content, then build content that directly serves those outcomes.</p>
+
+<p>This approach has two major practical consequences. First, it prevents <strong>scope creep</strong> — the tendency for instructional content to drift into tangentially related but ultimately non-essential material. If a piece of content does not contribute to any of the module's SLOs, it has no justification for inclusion. Second, it gives both learners and instructors a concrete, usable <strong>checklist</strong>. Learners can review the SLOs before beginning a module to set expectations, revisit them during study to self-assess progress, and use them after completing the module to confirm readiness. Instructors can use the same list to verify that assessment items, activities, and explanatory content are collectively and sufficiently covering all critical learning targets — with nothing important omitted and nothing irrelevant included.</p>
+
+<p>Together, these five stages — content analysis, Bloom's mapping, verb selection, statement construction, and downstream targeting — form a coherent, reproducible process that transforms a bare topic list into a set of educationally grounded, cognitively appropriate, and instructionally actionable Student Learning Outcomes. This is how PreseMaker ensures that module design begins with clarity of purpose rather than defaulting to content coverage as its organizing principle.</p>
+        <div class="notes"><strong>Notes</strong>This topic covers the full SLO generation pipeline in PreseMaker. Instructors reviewing this content should note that the Bloom&#39;s level mapping table can serve double duty as a quick reference guide when they are manually reviewing or editing PreseMaker-generated SLOs. The distinction between instructor-centered and learner-centered framing is a particularly high-value teaching moment and worth emphasizing in any live instruction or facilitation built around this module.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

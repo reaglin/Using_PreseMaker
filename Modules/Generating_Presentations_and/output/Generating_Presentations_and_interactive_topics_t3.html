@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding the Narrated Presentation Option</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Understanding the Narrated Presentation Option</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Understanding the Narrated Presentation Option</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When generating a presentation, there are two fundamentally different outputs available: a <strong>standard presentation</strong> and a <strong>narrated presentation</strong>. Understanding the distinction between these two options — and appreciating the technical pipeline that makes narrated presentations possible — is essential for choosing the right format and setting appropriate expectations for the final product.</p>
+
+<p>A <strong>standard generated presentation</strong> produces a set of slides accompanied by speaker notes. The slides contain the visual content: headings, bullet points, diagrams, and supporting imagery. The speaker notes sit beneath each slide and are written to give a human presenter — or a self-study reader — the language and context needed to explain what is on screen. In this model, the pacing, the voice, and the delivery are entirely in the hands of a person. The presentation is a tool that a presenter picks up and uses; it does not play itself.</p>
+
+<p>A <strong>narrated presentation</strong> goes several steps further. It takes those same speaker notes and converts them into spoken audio using a text-to-speech engine. That audio is then embedded directly into the presentation alongside the slides, and each slide is given a precise display duration that matches the length of its corresponding audio track. The result is a presentation that plays itself from beginning to end, advancing automatically through every slide in perfect sync with the spoken narration — no presenter required.</p>
+
+<p>This distinction has important practical consequences. A standard presentation is passive; it waits for a human to drive it. A narrated presentation is active; it delivers the learning experience autonomously and consistently every single time it is played. A learner can open the file, press play, and receive a complete, structured lesson without any additional support or facilitation.</p>
+
+<p><strong>The role of speaker notes in narration</strong> is central to understanding how the system works. In a standard presentation, speaker notes are essentially a script for the presenter — useful, but optional in the sense that a confident presenter might improvise around them. In a narrated presentation, the speaker notes become the <em>sole source</em> of the spoken content. Every word that the learner hears originates directly from the text written in those notes.</p>
+
+<p>Because of this, speaker notes in a narrated presentation are authored on a <strong>per-slide basis</strong>, with careful attention to how they align with the visual content on screen at that moment. If a slide introduces a three-step process, the speaker notes for that slide should explain each of those three steps in spoken language that complements — rather than simply duplicates — the text on screen. The notes are written to guide the learner's attention, provide context, offer examples, and bridge the gap between what is visually displayed and what the learner needs to understand. Well-crafted speaker notes produce narration that feels natural and purposeful rather than mechanical or redundant.</p>
+
+<p>Consider a concrete example. Suppose a slide displays the following bullet points:</p>
+
+<ul>
+  <li>Define the project scope</li>
+  <li>Identify key stakeholders</li>
+  <li>Establish a timeline</li>
+</ul>
+
+<p>A weak set of speaker notes would simply read those bullets aloud verbatim. Strong speaker notes, by contrast, would say something like: <em>"The first step in any successful project is defining its scope — that means setting clear boundaries around what the project will and will not include. Next, you need to identify your key stakeholders, the people whose input or approval will shape the project's direction. Finally, establishing a realistic timeline gives everyone a shared understanding of when deliverables are due and how work will be sequenced."</em> This version adds explanation and meaning, turning three static phrases into a spoken lesson.</p>
+
+<p><strong>Text-to-speech conversion</strong> is the technical mechanism that transforms written speaker notes into audio. Once the speaker notes are authored, a text-to-speech engine processes each slide's notes independently and generates a corresponding audio track for that slide. This conversion happens <strong>automatically</strong> as part of the narrated presentation generation process — the author does not need to record their voice, hire a voice actor, or manage audio files manually.</p>
+
+<p>The audio produced by the text-to-speech engine is embedded <strong>directly into the presentation file</strong> rather than stored as a separate asset that the presentation links to externally. This is a critical design choice. If audio were stored externally, the presentation would break the moment the audio files were moved, renamed, or deleted. By embedding the audio inside the file itself, the presentation becomes fully self-contained: the file you share is the complete experience.</p>
+
+<p><strong>Slide timing and synchronization</strong> is what transforms a collection of slides-with-audio into a genuinely cohesive learning experience. Each slide's display duration is calculated to match the length of its audio narration precisely. When the narration for a given slide finishes, the presentation automatically advances to the next slide — and the next slide's narration begins playing immediately.</p>
+
+<p>This automatic synchronization solves a problem that plagues manually timed presentations: the mismatch between what the learner is hearing and what they are seeing. In a poorly timed presentation, a learner might still be reading the content on slide three while the audio has already moved on to explaining slide four. In a narrated presentation with synchronized timing, this never happens. The learner is always looking at exactly the slide being discussed at that moment, because the slide does not change until the discussion of it is complete.</p>
+
+<p>The following table summarizes the key differences between a standard presentation and a narrated presentation across the dimensions that matter most for learners and authors:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Standard Presentation</th>
+      <th>Narrated Presentation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Speaker notes purpose</td>
+      <td>Script or reference for a human presenter</td>
+      <td>Source text for text-to-speech audio generation</td>
+    </tr>
+    <tr>
+      <td>Audio</td>
+      <td>None embedded; delivery is live or silent self-study</td>
+      <td>Generated automatically and embedded in the file</td>
+    </tr>
+    <tr>
+      <td>Slide advancement</td>
+      <td>Manual; controlled by presenter or reader</td>
+      <td>Automatic; triggered when each slide's audio ends</td>
+    </tr>
+    <tr>
+      <td>Pacing</td>
+      <td>Set by the person presenting or reading</td>
+      <td>Set programmatically based on audio duration</td>
+    </tr>
+    <tr>
+      <td>Output format</td>
+      <td>Slides and notes as static, readable content</td>
+      <td>Single self-playing file with visuals, audio, and timing</td>
+    </tr>
+    <tr>
+      <td>Presenter required</td>
+      <td>Yes, for live delivery</td>
+      <td>No; the presentation delivers itself</td>
+    </tr>
+    <tr>
+      <td>Additional authoring steps</td>
+      <td>None beyond slide and note creation</td>
+      <td>Speaker note authoring, TTS conversion, timing configuration</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>The end result is a single cohesive output.</strong> All of the components that make up the learning experience — the visual slides, the spoken narration, and the timing logic that ties them together — are packaged into one file. There are no companion audio folders to distribute alongside the presentation, no timing configuration files to keep in sync, and no instructions to the learner about which audio track corresponds to which slide. Everything is in one place, and it all works together automatically.</p>
+
+<p>This integration makes the narrated presentation immediately ready for <strong>deployment or sharing</strong>. The file can be sent directly to a learner, uploaded to a learning management system, posted to an intranet, or distributed through any channel that accepts the file format — and in every case, the recipient gets the complete experience simply by opening and playing it.</p>
+
+<p>It is worth appreciating the full pipeline that produces this output. A standard presentation requires two authoring steps: creating the slides and writing the notes. A narrated presentation requires those same two steps plus three more: the speaker notes must be crafted specifically for spoken delivery, the text-to-speech engine must process each slide's notes and generate audio, and the timing system must configure each slide's duration based on the audio length. These additional steps happen largely behind the scenes, but understanding that they exist explains why the narrated option produces a more complex and more capable output than its standard counterpart.</p>
+        <div class="notes"><strong>Notes</strong>Introduction to the narrated presentation feature and how it differs from a standard generated presentation. Explains the end-to-end concept of combining slides, speaker notes, audio, and timing into a single cohesive output.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

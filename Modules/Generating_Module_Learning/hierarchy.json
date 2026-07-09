@@ -1,0 +1,1030 @@
+{
+  "ModuleFolderName": "Generating_Module_Learning",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:23:51.1334688-04:00",
+  "ModifiedDate": "2026-07-08T19:26:10.9004655-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "f570ec9c-f348-463a-995f-4a2fd2ace68d",
+      "Title": "Introduction to Student Learning Outcomes (SLOs)",
+      "Summary": "This topic introduces the concept of student learning outcomes and explains their role as measurable targets that guide instructional design. Learners will understand why well-crafted SLOs are foundational to effective e-learning modules.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:23:51.1334688-04:00",
+      "ModifiedDate": "2026-07-08T19:23:51.1334688-04:00",
+      "Elements": [
+        {
+          "Id": "553dac7d-abe0-48f0-8c81-2b60eacfe5fe",
+          "TopicId": "f570ec9c-f348-463a-995f-4a2fd2ace68d",
+          "Title": "What Are Student Learning Outcomes?",
+          "BodyText": "Student learning outcomes (SLOs) are clear, measurable statements that describe what learners should know, understand, or be able to do by the end of a module.",
+          "Notes": "SLOs differ from general goals or objectives in that they focus specifically on demonstrable learner performance rather than instructor intentions.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:24:07.2668771-04:00",
+          "ModifiedDate": "2026-07-08T19:24:07.2668771-04:00",
+          "Items": [
+            {
+              "Id": "c3620f5a-c745-4f18-8890-c47d4b45fa96",
+              "Text": "SLOs articulate the specific knowledge, skills, or attitudes learners are expected to acquire.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d6d91202-5e31-428d-a6d0-5cd618927f95",
+              "Text": "They are written from the learner\u0027s perspective, describing what the student will be able to demonstrate.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d42c663c-c182-4c34-aac9-952b9a52a24f",
+              "Text": "Effective SLOs are observable and measurable, making it possible to assess whether learning has occurred.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "95b836ba-2d3c-4149-a700-f4a206a0a338",
+          "TopicId": "f570ec9c-f348-463a-995f-4a2fd2ace68d",
+          "Title": "Why SLOs Are Foundational to Instructional Design",
+          "BodyText": "Well-crafted SLOs serve as the blueprint for every instructional decision made during the design of an e-learning module.",
+          "Notes": "Without clearly defined outcomes, content, assessments, and activities risk becoming misaligned or unfocused.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:24:07.2668771-04:00",
+          "ModifiedDate": "2026-07-08T19:24:07.2668771-04:00",
+          "Items": [
+            {
+              "Id": "54586361-33ea-46d7-89ee-2995a9ed59db",
+              "Text": "SLOs guide the selection of content, ensuring only relevant material is included in the module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c09ade57-efd6-4cea-910c-da79518822f7",
+              "Text": "They establish the criteria against which assessments and activities are designed and evaluated.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "84ea00f3-fdef-4257-9ac9-467533ad24ed",
+              "Text": "All subsequent content generation in a module flows directly from the targets set by the SLOs.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "5d14cff4-a814-4440-8c01-6385159b901f",
+          "TopicId": "f570ec9c-f348-463a-995f-4a2fd2ace68d",
+          "Title": "SLOs as Measurable Targets",
+          "BodyText": "The defining characteristic of a strong SLO is measurability \u2014 it must be possible to observe and evaluate whether a learner has achieved the outcome.",
+          "Notes": "Vague language such as \u0027understand\u0027 or \u0027appreciate\u0027 should be replaced with action verbs that correspond to specific, assessable behaviors.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:24:07.2668771-04:00",
+          "ModifiedDate": "2026-07-08T19:24:07.2668771-04:00",
+          "Items": [
+            {
+              "Id": "86511f75-7add-4294-9c2c-7d0fc08077be",
+              "Text": "Measurable SLOs use precise action verbs that describe an observable learner behavior.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "27207910-a4f3-471e-bb80-491eb88a2630",
+              "Text": "They specify the condition or context under which the behavior should be demonstrated when appropriate.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7eb7f7b8-fce2-4d4f-8444-69a2737f9277",
+              "Text": "Measurability allows instructors and systems to objectively determine learner mastery.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "cf43fbe2-0cbf-4bd5-bd4d-8dc762806356",
+          "TopicId": "f570ec9c-f348-463a-995f-4a2fd2ace68d",
+          "Title": "The Relationship Between SLOs and Module Topics",
+          "BodyText": "SLOs are grounded in the specific topics covered within a module, ensuring that outcomes are directly aligned with the content learners will encounter.",
+          "Notes": "In PreseMaker, SLOs are generated based on a module\u0027s topics, creating a direct link between what is taught and what is expected to be learned.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:24:07.2668771-04:00",
+          "ModifiedDate": "2026-07-08T19:24:07.2668771-04:00",
+          "Items": [
+            {
+              "Id": "2b183c6c-971e-4a19-b104-c915b6a77cb6",
+              "Text": "Each SLO should map clearly to one or more topics within the module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "62c07f7d-fabf-479f-8b01-8e4e9f863086",
+              "Text": "Topic-aligned SLOs prevent scope creep by keeping learning expectations tied to actual instructional content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "18febcd4-b2f5-4275-9317-6f17feff85a5",
+              "Text": "This alignment ensures coherence between what is taught, practiced, and assessed.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f3e5ded6-acba-4d50-ae28-ed096242ac65",
+          "TopicId": "f570ec9c-f348-463a-995f-4a2fd2ace68d",
+          "Title": "Characteristics of Well-Crafted SLOs",
+          "BodyText": "High-quality SLOs share a set of defining characteristics that make them effective guides for both instructional design and learner performance.",
+          "Notes": "A commonly referenced framework for evaluating outcome quality is the SMART criteria \u2014 Specific, Measurable, Achievable, Relevant, and Time-bound.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:24:07.2668771-04:00",
+          "ModifiedDate": "2026-07-08T19:24:07.2668771-04:00",
+          "Items": [
+            {
+              "Id": "e9783544-fa7c-4d1a-840c-e7fd090782f5",
+              "Text": "Effective SLOs are specific enough to communicate a clear expectation without ambiguity.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "97fd44fe-f6a4-4268-a229-1088884cd33a",
+              "Text": "They are realistic and achievable within the scope and timeframe of the module.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a75893b1-edd0-4cb3-a812-6678271b46ca",
+              "Text": "Well-crafted SLOs are relevant to the learner\u0027s context, goals, or professional application.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "276a4b25-4e3e-48ea-911e-bc3c608a6bf7",
+      "Title": "Overview of Bloom\u0027s Taxonomy Cognitive Levels",
+      "Summary": "This topic provides a practical overview of the six cognitive levels in Bloom\u0027s Taxonomy, from Remember to Create. Learners will explore what each level means in the context of designing and assessing learning outcomes.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:23:51.1334688-04:00",
+      "ModifiedDate": "2026-07-08T19:23:51.1334688-04:00",
+      "Elements": [
+        {
+          "Id": "ebf17bd8-581a-4783-af0b-c17873b62a74",
+          "TopicId": "276a4b25-4e3e-48ea-911e-bc3c608a6bf7",
+          "Title": "The Remember Level: Recalling Foundational Knowledge",
+          "BodyText": "The Remember level is the foundation of Bloom\u0027s Taxonomy, focusing on a learner\u0027s ability to retrieve previously learned information from memory.",
+          "Notes": "This level is appropriate for outcomes that require learners to recognize definitions, list steps, or name key concepts before deeper processing begins.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:24:30.7311101-04:00",
+          "ModifiedDate": "2026-07-08T19:24:30.7311101-04:00",
+          "Items": [
+            {
+              "Id": "5b59542a-9c0e-4656-8154-17b5912a61d9",
+              "Text": "Remember-level outcomes use action verbs such as define, list, recall, identify, and name.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "233e60de-d140-455f-9569-d5d5711c0324",
+              "Text": "This level establishes the baseline knowledge learners need before progressing to higher cognitive tasks.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "611c2cbd-7b01-42cd-bbd0-ac9b036c8c05",
+              "Text": "Assessments at this level typically include matching exercises, multiple-choice recall questions, or fill-in-the-blank activities.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "38a29a8c-3ee6-45c6-b5de-58554a4dac78",
+          "TopicId": "276a4b25-4e3e-48ea-911e-bc3c608a6bf7",
+          "Title": "The Understand Level: Making Sense of Information",
+          "BodyText": "The Understand level asks learners to interpret, classify, or explain ideas and concepts in their own words, demonstrating genuine comprehension.",
+          "Notes": "Understand-level outcomes are common in introductory modules where learners must grasp meaning before applying skills.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:24:30.7311101-04:00",
+          "ModifiedDate": "2026-07-08T19:24:30.7311101-04:00",
+          "Items": [
+            {
+              "Id": "d88d5614-41d4-4db4-85bf-8fde5840ef79",
+              "Text": "Key verbs for this level include explain, summarize, paraphrase, describe, and classify.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2f659ca3-2308-4c90-996a-feae5b79c77d",
+              "Text": "Learners demonstrate understanding by restating concepts, giving examples, or distinguishing between related ideas.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "dc485e8f-20d1-4b8e-9fbd-980edd6d1876",
+              "Text": "This level moves beyond simple memorization to require meaningful interpretation of content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "1de3497a-3024-4373-b29a-6af8b6cd6f86",
+          "TopicId": "276a4b25-4e3e-48ea-911e-bc3c608a6bf7",
+          "Title": "The Apply Level: Using Knowledge in Context",
+          "BodyText": "At the Apply level, learners use acquired knowledge and skills to carry out tasks or solve problems in new or familiar situations.",
+          "Notes": "This level is ideal for module outcomes tied to procedural skills, tool usage, or scenario-based tasks.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:24:30.7311101-04:00",
+          "ModifiedDate": "2026-07-08T19:24:30.7311101-04:00",
+          "Items": [
+            {
+              "Id": "c10f1531-fe9d-4f15-97f4-30a67a453f23",
+              "Text": "Common action verbs include use, execute, implement, demonstrate, and perform.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d995f526-5b38-447e-855c-3ae8962e417d",
+              "Text": "Apply-level outcomes shift learners from passive understanding to active doing, making content immediately practical.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b22fd741-6ae5-41f0-a0a3-2da5b704400a",
+              "Text": "Assessments often include simulations, case studies, hands-on exercises, or step-by-step demonstrations.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "013bb04a-14d4-41d5-92fd-e0d8cc5208f0",
+          "TopicId": "276a4b25-4e3e-48ea-911e-bc3c608a6bf7",
+          "Title": "The Analyze Level: Breaking Down Complex Ideas",
+          "BodyText": "The Analyze level requires learners to deconstruct information into component parts, examine relationships, and draw distinctions between elements.",
+          "Notes": "This level supports critical thinking and is well suited to outcomes involving comparison, troubleshooting, or pattern recognition.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:24:30.7311101-04:00",
+          "ModifiedDate": "2026-07-08T19:24:30.7311101-04:00",
+          "Items": [
+            {
+              "Id": "b5b781ee-d488-4eea-a0a7-e94ccf55c5ec",
+              "Text": "Representative verbs include differentiate, compare, contrast, examine, and deconstruct.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "95daf357-e176-4fce-921b-a9f334689f2e",
+              "Text": "Learners at this level must identify assumptions, causes, or structural relationships within content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6602f72d-8afe-403b-a68f-523de4e7bfb9",
+              "Text": "Analyze-level outcomes are appropriate when learners need to evaluate competing ideas or interpret complex data.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c5dd4386-b789-448c-9120-2acd0283cd23",
+          "TopicId": "276a4b25-4e3e-48ea-911e-bc3c608a6bf7",
+          "Title": "The Evaluate Level: Making Informed Judgments",
+          "BodyText": "The Evaluate level involves making judgments about the value, quality, or credibility of information, methods, or solutions based on established criteria.",
+          "Notes": "Evaluate-level outcomes are common in advanced modules where learners must critique work, justify decisions, or recommend approaches.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:24:30.7311101-04:00",
+          "ModifiedDate": "2026-07-08T19:24:30.7311101-04:00",
+          "Items": [
+            {
+              "Id": "1e17c65d-d610-470b-8a1d-fff5b7f16a96",
+              "Text": "Action verbs at this level include assess, critique, justify, defend, argue, and prioritize.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3e41be8c-2ba4-4ae2-8918-1ffba4bfa790",
+              "Text": "Learners must apply standards or criteria to support their conclusions rather than simply stating opinions.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b63940f4-e841-4882-b14f-4f84634d1ef8",
+              "Text": "This level often culminates in reflective activities, peer review tasks, or written justification assignments.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "20176a64-afb1-4658-a79c-d383c989dc4c",
+          "TopicId": "276a4b25-4e3e-48ea-911e-bc3c608a6bf7",
+          "Title": "The Create Level: Producing Something New",
+          "BodyText": "The Create level, the highest in Bloom\u0027s Taxonomy, challenges learners to synthesize knowledge and skills to design, construct, or produce original work.",
+          "Notes": "Create-level outcomes are best used when a module culminates in a project, design task, or novel solution that integrates all prior learning.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:24:30.7311101-04:00",
+          "ModifiedDate": "2026-07-08T19:24:30.7311101-04:00",
+          "Items": [
+            {
+              "Id": "959e86ed-d329-458d-b107-f765de9acb51",
+              "Text": "Key verbs include design, develop, construct, formulate, compose, and produce.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "405f4353-4594-4694-a1d6-c7832b7b8ef8",
+              "Text": "Learners at this level reorganize existing knowledge into new patterns or structures to generate something that did not exist before.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5ec3aa52-e0c6-4440-bbc7-3d8d0076e4ca",
+              "Text": "Assessments typically involve capstone projects, original designs, written compositions, or prototype development.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "997f6fbf-4f79-4958-ab2e-a3df4adb4793",
+          "TopicId": "276a4b25-4e3e-48ea-911e-bc3c608a6bf7",
+          "Title": "Selecting the Right Cognitive Level for Learning Outcomes",
+          "BodyText": "Choosing an appropriate Bloom\u0027s level for each module outcome ensures that outcomes are both achievable within the scope of instruction and aligned to the intended depth of learning.",
+          "Notes": "Not every module requires outcomes at all six levels; the chosen level should reflect the learner\u0027s prior knowledge, the module\u0027s purpose, and the time available for instruction.",
+          "SortOrder": 6,
+          "CreatedDate": "2026-07-08T19:24:30.7311101-04:00",
+          "ModifiedDate": "2026-07-08T19:24:30.7311101-04:00",
+          "Items": [
+            {
+              "Id": "df33d46e-7dcf-46df-9d12-c0000e40cbff",
+              "Text": "Higher cognitive levels such as Analyze, Evaluate, and Create are not inherently better \u2014 the correct level depends on the instructional goal.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "86a96e59-da40-4600-891d-3a35a4b84a97",
+              "Text": "Outcomes calibrated too high may frustrate learners, while outcomes set too low may fail to build meaningful competency.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "612fb227-d9aa-49c9-8a32-d1c75d2a8ad5",
+              "Text": "Aligning outcomes to the right Bloom\u0027s level creates a clear target that guides subsequent content, assessments, and activities throughout the module.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "ca9e93a2-3517-42e3-8838-79bee5a25680",
+      "Title": "How PreseMaker Generates SLOs from Module Topics",
+      "Summary": "This topic explains the process PreseMaker uses to automatically generate student learning outcomes grounded in a module\u0027s specific topics. Learners will see how topic content is analyzed and mapped to appropriate cognitive levels.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:23:51.1334688-04:00",
+      "ModifiedDate": "2026-07-08T19:23:51.1334688-04:00",
+      "Elements": [
+        {
+          "Id": "3f700b15-1886-48f2-a442-9a070447a875",
+          "TopicId": "ca9e93a2-3517-42e3-8838-79bee5a25680",
+          "Title": "Topic Content Analysis",
+          "BodyText": "PreseMaker begins SLO generation by analyzing the specific topics provided for a module, extracting the core concepts and knowledge domains present in each one.",
+          "Notes": "This analysis ensures that every generated outcome is anchored to actual module content rather than generic subject-matter templates.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:24:49.7079134-04:00",
+          "ModifiedDate": "2026-07-08T19:24:49.7079134-04:00",
+          "Items": [
+            {
+              "Id": "9d063bd3-0689-41d8-ae7b-d9bc6b0f2079",
+              "Text": "PreseMaker scans each topic\u0027s title and summary to identify the primary subject matter and intended scope.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6a30b06f-73bd-4eb5-8ebd-e56fd15bf62c",
+              "Text": "Key concepts, actions, and knowledge areas are extracted to form the raw material for outcome construction.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "096e35bd-1fee-4c3b-ad15-44befad545c4",
+              "Text": "This content-parsing step ensures relevance and specificity in every generated SLO.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d269226e-47bb-4594-9402-ffc8d63b1e82",
+          "TopicId": "ca9e93a2-3517-42e3-8838-79bee5a25680",
+          "Title": "Mapping Topics to Bloom\u0027s Cognitive Levels",
+          "BodyText": "Once topic content is analyzed, PreseMaker maps each concept to an appropriate level within Bloom\u0027s Taxonomy based on the complexity and nature of the learning expected.",
+          "Notes": "For example, a topic introducing foundational definitions would map to the Remember or Understand levels, while a topic requiring design or evaluation tasks would map to higher levels.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:24:49.7079134-04:00",
+          "ModifiedDate": "2026-07-08T19:24:49.7079134-04:00",
+          "Items": [
+            {
+              "Id": "b4ef8e7b-05f4-4f75-ad56-326eee6e8525",
+              "Text": "PreseMaker evaluates whether the topic calls for Remember, Understand, Apply, Analyze, Evaluate, or Create.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f41b5e60-3562-408f-b2d0-d475889d4cc6",
+              "Text": "The nature of the topic\u0027s verbs, tasks, and concepts guides the selection of the most fitting Bloom\u0027s level.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "666dee97-2a26-4b53-84bc-58e787994aac",
+              "Text": "This mapping prevents cognitive misalignment, such as assigning a higher-order outcome to a purely introductory topic.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6c1f5784-852e-4620-ba29-8a7fc9f935ea",
+          "TopicId": "ca9e93a2-3517-42e3-8838-79bee5a25680",
+          "Title": "Selecting Action Verbs Aligned to Bloom\u0027s Levels",
+          "BodyText": "PreseMaker selects precise action verbs associated with the identified Bloom\u0027s level to construct measurable, observable student learning outcomes.",
+          "Notes": "Action verbs like \u0027identify\u0027 or \u0027recall\u0027 signal lower-order thinking, while verbs like \u0027design,\u0027 \u0027critique,\u0027 or \u0027evaluate\u0027 signal higher-order expectations.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:24:49.7079134-04:00",
+          "ModifiedDate": "2026-07-08T19:24:49.7079134-04:00",
+          "Items": [
+            {
+              "Id": "a20eb6df-d4e9-4870-8b5e-76e68d5a7915",
+              "Text": "Each Bloom\u0027s level has a defined set of action verbs that describe observable learner behaviors at that cognitive stage.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3afadb49-8a0d-439a-a503-997a6939dd0e",
+              "Text": "PreseMaker chooses verbs that are both level-appropriate and contextually meaningful to the topic\u0027s subject matter.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "15a0d561-1814-4ad5-889f-811e7fa5474c",
+              "Text": "Using precise action verbs makes outcomes assessable and directly tied to instructional intent.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "ac7798a9-d249-47d5-b7af-651c102b968d",
+          "TopicId": "ca9e93a2-3517-42e3-8838-79bee5a25680",
+          "Title": "Constructing the SLO Statement",
+          "BodyText": "PreseMaker combines the topic\u0027s subject matter with the selected action verb and cognitive level to automatically draft a complete, well-formed SLO statement.",
+          "Notes": "A well-formed SLO typically follows the pattern: \u0027Learners will be able to [action verb] [content/concept] [condition or standard if applicable].\u0027",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:24:49.7079134-04:00",
+          "ModifiedDate": "2026-07-08T19:24:49.7079134-04:00",
+          "Items": [
+            {
+              "Id": "50a44e20-6ef3-477f-a3b0-936c40e56a4a",
+              "Text": "The generated statement clearly names what the learner will do, at what cognitive level, and in relation to which content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6e648277-e7f6-4d3a-a08f-a8d32179c6ad",
+              "Text": "PreseMaker ensures each SLO is written in learner-centered language, focusing on demonstrable outcomes rather than instructor activities.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "68b3b919-c690-4e4c-bff9-9b60bc729a94",
+              "Text": "Multiple SLOs may be generated per topic when a topic spans more than one cognitive level or concept area.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "583a5197-3de5-4125-a61c-dca2bbf1c201",
+          "TopicId": "ca9e93a2-3517-42e3-8838-79bee5a25680",
+          "Title": "SLOs as Targets for Subsequent Content Generation",
+          "BodyText": "The generated SLOs do not stand alone \u2014 they serve as the foundational targets that guide all further content PreseMaker creates for the module.",
+          "Notes": "Subsequent elements such as assessments, examples, and instructional explanations are aligned back to these SLOs to ensure coherence across the entire module.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:24:49.7079134-04:00",
+          "ModifiedDate": "2026-07-08T19:24:49.7079134-04:00",
+          "Items": [
+            {
+              "Id": "951667db-9ce1-4477-89bc-96c37bbf3ab8",
+              "Text": "Every piece of instructional content generated downstream is designed to help learners achieve one or more of the module\u0027s SLOs.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4ebb070b-a685-4993-b331-cbcb617bfc30",
+              "Text": "This SLO-first approach ensures that module content remains purposeful and avoids scope creep into irrelevant material.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "0890ad12-107a-45b0-ac40-3aee5bf630c0",
+              "Text": "Learners and instructors can use the SLOs as a checklist to verify that all critical learning targets have been addressed.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "8b22ebbe-3cc2-4a85-86b1-ecca5df08a31",
+      "Title": "Calibrating Outcomes to Bloom\u0027s Taxonomy Levels",
+      "Summary": "This topic focuses on how generated outcomes are aligned and calibrated to the correct Bloom\u0027s Taxonomy cognitive level for the intended learning goal. Learners will recognize the characteristics that distinguish outcomes at different cognitive levels.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:23:51.1334688-04:00",
+      "ModifiedDate": "2026-07-08T19:23:51.1334688-04:00",
+      "Elements": [
+        {
+          "Id": "67084661-07e0-4292-bdc2-092947728093",
+          "TopicId": "8b22ebbe-3cc2-4a85-86b1-ecca5df08a31",
+          "Title": "Understanding Bloom\u0027s Taxonomy as a Calibration Framework",
+          "BodyText": "Bloom\u0027s Taxonomy organizes cognitive skills into six hierarchical levels, from basic recall to complex evaluation and creation. Calibrating outcomes means intentionally matching the cognitive demand of a learning outcome to the appropriate level.",
+          "Notes": "The six levels in ascending order are: Remember, Understand, Apply, Analyze, Evaluate, and Create. Each level demands progressively more complex thinking from the learner.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:25:17.9423717-04:00",
+          "ModifiedDate": "2026-07-08T19:25:17.9423717-04:00",
+          "Items": [
+            {
+              "Id": "df2d62f7-4945-4c39-83c9-96706d00024b",
+              "Text": "Lower levels (Remember, Understand) focus on knowledge acquisition and comprehension, while upper levels (Analyze, Evaluate, Create) require critical thinking and synthesis.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "cf2288bb-0c74-4865-96b2-8f8944db65d4",
+              "Text": "Choosing the correct level ensures the outcome reflects what learners are truly expected to do, not just what they will be exposed to.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3b9b4a6e-cc53-44bc-8dac-a52ebf2b1b6d",
+              "Text": "Miscalibrated outcomes set inaccurate expectations and can lead to assessments that are either too trivial or too demanding for the module\u0027s intent.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "0952b2f2-1993-45f8-a4d1-dcf8b8f93b29",
+          "TopicId": "8b22ebbe-3cc2-4a85-86b1-ecca5df08a31",
+          "Title": "Identifying the Intended Cognitive Demand of a Learning Goal",
+          "BodyText": "Before calibrating an outcome, it is essential to determine what cognitive work the learner is actually expected to perform by the end of the module. The intended learning goal drives the selection of the appropriate Bloom\u0027s level.",
+          "Notes": "Ask: Should learners be able to recall a definition, apply a procedure, or critique a design? The answer points directly to the correct taxonomy level.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:25:17.9423717-04:00",
+          "ModifiedDate": "2026-07-08T19:25:17.9423717-04:00",
+          "Items": [
+            {
+              "Id": "f1606682-4b04-487c-8e34-e78b446ca448",
+              "Text": "Introductory modules typically target lower-order levels such as Remember or Understand, where the goal is building foundational knowledge.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d5813223-e432-4834-b7bd-5d640636369a",
+              "Text": "Intermediate or applied modules often target Apply or Analyze, requiring learners to use knowledge in context or break down complex information.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7ffc74a4-a547-45f4-9ef1-1480478f9c6f",
+              "Text": "Advanced modules may target Evaluate or Create, expecting learners to make judgments or produce original work based on their learning.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "73099208-4d83-487a-89ac-3c4b38636ebd",
+          "TopicId": "8b22ebbe-3cc2-4a85-86b1-ecca5df08a31",
+          "Title": "Recognizing Distinguishing Characteristics of Each Cognitive Level",
+          "BodyText": "Each Bloom\u0027s level has distinct characteristics in terms of the mental processes involved and the types of tasks that demonstrate mastery. Recognizing these characteristics helps confirm whether an outcome is correctly calibrated.",
+          "Notes": "For example, an outcome at the Understand level might ask learners to \u0027explain\u0027 or \u0027summarize,\u0027 while an Analyze level outcome would ask learners to \u0027differentiate\u0027 or \u0027examine relationships.\u0027",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:25:17.9423717-04:00",
+          "ModifiedDate": "2026-07-08T19:25:17.9423717-04:00",
+          "Items": [
+            {
+              "Id": "022070f7-4df2-40b6-ab4a-856dd9b9e73f",
+              "Text": "Remember-level outcomes involve retrieval of facts, definitions, or procedures without requiring deeper processing.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9a886df3-a894-41a8-a5aa-4d069113799e",
+              "Text": "Understand-level outcomes require learners to interpret, classify, or paraphrase information in their own terms.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b9ef7310-aec5-4feb-ab26-603478aa9617",
+              "Text": "Apply-level outcomes ask learners to execute or implement knowledge in a new or practical situation.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "1f2ec30a-3b4a-49c2-bb5a-5da6ec763e72",
+              "Text": "Analyze-level outcomes require learners to deconstruct information, identify patterns, or examine cause-and-effect relationships.",
+              "SortOrder": 3
+            },
+            {
+              "Id": "fd496dac-aca0-4f35-96f9-de3aec121cee",
+              "Text": "Evaluate and Create-level outcomes demand judgment, defense of positions, or the production of novel solutions or artifacts.",
+              "SortOrder": 4
+            }
+          ]
+        },
+        {
+          "Id": "8a2291ae-6f9b-42e4-bdff-a254c2db6fbf",
+          "TopicId": "8b22ebbe-3cc2-4a85-86b1-ecca5df08a31",
+          "Title": "Using Action Verbs as Calibration Signals",
+          "BodyText": "Action verbs are the primary linguistic signal that anchors a learning outcome to a specific Bloom\u0027s level. Selecting the right verb ensures the outcome communicates the precise cognitive expectation.",
+          "Notes": "Common calibration errors include using vague verbs like \u0027understand\u0027 or \u0027know,\u0027 which do not map cleanly to any single Bloom\u0027s level and make assessment difficult.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:25:17.9423717-04:00",
+          "ModifiedDate": "2026-07-08T19:25:17.9423717-04:00",
+          "Items": [
+            {
+              "Id": "f7f07335-3e5b-451a-aa4c-fd4e35fcf954",
+              "Text": "Verbs such as \u0027list,\u0027 \u0027recall,\u0027 and \u0027identify\u0027 signal Remember-level outcomes focused on retrieval.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d9874796-ce57-4651-92e7-ac0c6f1e97ca",
+              "Text": "Verbs such as \u0027explain,\u0027 \u0027describe,\u0027 and \u0027summarize\u0027 signal Understand-level outcomes focused on interpretation.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8440ea6f-7b46-45b2-af40-3e5f888c5a52",
+              "Text": "Verbs such as \u0027apply,\u0027 \u0027demonstrate,\u0027 and \u0027use\u0027 signal Apply-level outcomes, while \u0027compare,\u0027 \u0027differentiate,\u0027 and \u0027examine\u0027 signal Analyze-level outcomes.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "a8d55a0b-00e2-460d-a82b-ae53667c0f78",
+              "Text": "Evaluative verbs include \u0027justify,\u0027 \u0027critique,\u0027 and \u0027assess,\u0027 whereas creative verbs include \u0027design,\u0027 \u0027construct,\u0027 and \u0027develop.\u0027",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "dcf6e039-965a-4848-bf70-a1124375e527",
+          "TopicId": "8b22ebbe-3cc2-4a85-86b1-ecca5df08a31",
+          "Title": "Avoiding Common Calibration Mismatches",
+          "BodyText": "A calibration mismatch occurs when the stated outcome verb or cognitive demand does not align with the module\u0027s actual instructional content or assessment expectations. Recognizing these mismatches is a key quality-control skill.",
+          "Notes": "A frequent mismatch is writing a Create-level outcome for a module that only presents foundational concepts with no opportunity for synthesis or production.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:25:17.9423717-04:00",
+          "ModifiedDate": "2026-07-08T19:25:17.9423717-04:00",
+          "Items": [
+            {
+              "Id": "3ad94376-8b92-43c8-8e01-2de8b32fe2dd",
+              "Text": "Over-calibration happens when an outcome sets a higher cognitive level than the content or assessments actually support, creating an unachievable expectation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b83c38c8-921a-4b88-9670-f1efb28fc184",
+              "Text": "Under-calibration happens when an outcome sets a lower cognitive level than what the content genuinely demands, underrepresenting the true learning challenge.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6d0e9f00-068d-45d1-b4ed-c3652d2452c0",
+              "Text": "Reviewing the alignment between the outcome verb, the instructional activities, and the assessment tasks is the most reliable way to detect and correct mismatches.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c40f127e-a312-46ec-a15c-09abd6a80137",
+          "TopicId": "8b22ebbe-3cc2-4a85-86b1-ecca5df08a31",
+          "Title": "Confirming Calibration by Reviewing Generated Outcomes",
+          "BodyText": "Once outcomes are generated, learners should critically review them to confirm that each outcome\u0027s cognitive level matches the topic\u0027s instructional intent. This review process builds fluency in recognizing well-calibrated versus poorly calibrated outcomes.",
+          "Notes": "During review, ask: Does the verb match the intended level? Does the scope of the outcome fit what is teachable and assessable within this module?",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:25:17.9423717-04:00",
+          "ModifiedDate": "2026-07-08T19:25:17.9423717-04:00",
+          "Items": [
+            {
+              "Id": "2a04e4e4-bef2-4c6f-94f4-f0fdafb2829d",
+              "Text": "Check that the action verb in each outcome corresponds to the characteristics of the intended Bloom\u0027s level rather than a neighboring level.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1816e73f-3e2e-4da4-b72c-6c9b3dfbf3f4",
+              "Text": "Verify that the cognitive demand expressed in the outcome is achievable given the module\u0027s content depth and available learning time.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7ccf0b73-707a-4877-8293-fd304b2208e8",
+              "Text": "If an outcome feels misaligned, adjust the verb or reframe the scope rather than changing the subject matter of the outcome.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "112c2a76-f0b6-4371-aa17-2e64af7f56a6",
+      "Title": "Reviewing and Interpreting Generated Learning Outcomes",
+      "Summary": "This topic guides learners through the process of reviewing PreseMaker-generated SLOs and evaluating their clarity, accuracy, and appropriateness. Learners will develop the ability to interpret and assess the quality of auto-generated outcomes.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:23:51.1334688-04:00",
+      "ModifiedDate": "2026-07-08T19:23:51.1334688-04:00",
+      "Elements": [
+        {
+          "Id": "f6d8e521-d51a-4cd1-98b4-8eaf517b61b2",
+          "TopicId": "112c2a76-f0b6-4371-aa17-2e64af7f56a6",
+          "Title": "Understanding What PreseMaker Generates",
+          "BodyText": "Before evaluating auto-generated SLOs, learners must understand what PreseMaker produces and why.",
+          "Notes": "PreseMaker uses the module\u0027s topic list to construct outcomes automatically, assigning each outcome an appropriate Bloom\u0027s level. Knowing this helps reviewers assess whether the output reflects the intended instructional intent.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:25:40.6638954-04:00",
+          "ModifiedDate": "2026-07-08T19:25:40.6638954-04:00",
+          "Items": [
+            {
+              "Id": "a38b9ca3-4eba-4305-9231-6ea4c46935ca",
+              "Text": "Each generated SLO is tied to a specific module topic and is assigned an appropriate Bloom\u0027s Taxonomy cognitive level.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "640cb999-1d92-4986-bdf0-64760f2c5815",
+              "Text": "The outcome is expressed as a measurable statement beginning with an action verb aligned to that cognitive level.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c569cd10-e16d-4605-896e-7f6942ae3446",
+              "Text": "Understanding the generation logic helps reviewers distinguish intentional design choices from errors or misalignments.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "03584bfd-d401-4502-8737-3625c3d83985",
+          "TopicId": "112c2a76-f0b6-4371-aa17-2e64af7f56a6",
+          "Title": "Checking Clarity of Generated Outcomes",
+          "BodyText": "A well-formed SLO must be clearly written so that both instructors and learners can understand what is expected.",
+          "Notes": "Clarity issues often arise when action verbs are vague or when the object of learning is too broad or ambiguous. For example, \u0027understand concepts\u0027 is unclear, while \u0027explain the relationship between X and Y\u0027 is precise.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:25:40.6638954-04:00",
+          "ModifiedDate": "2026-07-08T19:25:40.6638954-04:00",
+          "Items": [
+            {
+              "Id": "70e44e0d-4e54-4066-bdf9-6ecf5e6e0dc0",
+              "Text": "Evaluate whether the action verb is specific and unambiguous, avoiding terms like \u0027know\u0027 or \u0027understand\u0027 that are difficult to measure.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f59e9e42-f9c6-4335-b91d-d0b08a5172d2",
+              "Text": "Confirm the outcome describes a single, discrete learning behavior rather than combining multiple expectations into one statement.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "99c1e5a3-574d-41b5-ba4f-2bbe84df2849",
+              "Text": "Assess whether the language is accessible to the intended learner audience without unnecessary jargon.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d0b92d5d-3e6a-4544-80ac-ccd497961fff",
+          "TopicId": "112c2a76-f0b6-4371-aa17-2e64af7f56a6",
+          "Title": "Verifying Accuracy and Topic Alignment",
+          "BodyText": "Generated outcomes must accurately reflect the subject matter of the corresponding module topic.",
+          "Notes": "Misalignment can occur when PreseMaker interprets a topic title too broadly or narrowly. Reviewers should cross-reference the generated outcome against the topic\u0027s intended instructional scope.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:25:40.6638954-04:00",
+          "ModifiedDate": "2026-07-08T19:25:40.6638954-04:00",
+          "Items": [
+            {
+              "Id": "7a2591bd-c24b-4307-8981-e18ae2819c71",
+              "Text": "Compare each SLO to its source topic to confirm the outcome addresses the correct content area.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6f642075-c522-44f7-af5d-80b75b1df882",
+              "Text": "Check that no critical concepts from the topic have been omitted or misrepresented in the generated statement.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ff1384cc-bb15-4824-9ed0-6b1af6f31765",
+              "Text": "Identify outcomes that may have drifted into adjacent topics, which could cause overlap or gaps in the module\u0027s coverage.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "fc4dfbbd-64ad-4527-a0e0-2d59eeeacd9e",
+          "TopicId": "112c2a76-f0b6-4371-aa17-2e64af7f56a6",
+          "Title": "Assessing Appropriateness of Bloom\u0027s Level",
+          "BodyText": "Each SLO should reflect a cognitive demand that is appropriate for the learner level and instructional purpose of the module.",
+          "Notes": "For example, an introductory module may appropriately target Remember or Understand levels, while a professional development module might demand Apply or Analyze. Mismatched cognitive levels can make outcomes too easy or unrealistically demanding.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:25:40.6638954-04:00",
+          "ModifiedDate": "2026-07-08T19:25:40.6638954-04:00",
+          "Items": [
+            {
+              "Id": "3f7006d9-f40a-406d-b300-775a22d0196d",
+              "Text": "Verify that the action verb in the SLO corresponds to the Bloom\u0027s Taxonomy level PreseMaker assigned it.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "158912a1-5f86-4cf7-9bfc-370a2d30bb4f",
+              "Text": "Consider whether the cognitive demand matches the learners\u0027 prior knowledge and the module\u0027s position in a broader curriculum.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9f410bc9-659f-48cd-b945-9b3ace235d05",
+              "Text": "Flag outcomes where the Bloom\u0027s level seems inconsistent with the depth of content actually covered in the topic.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "04ab2c62-5bc5-4ca2-b713-7b38143b6e03",
+          "TopicId": "112c2a76-f0b6-4371-aa17-2e64af7f56a6",
+          "Title": "Identifying Common Quality Issues",
+          "BodyText": "Reviewers should be familiar with recurring problems that appear in auto-generated outcomes so they can spot and correct them efficiently.",
+          "Notes": "Common issues include overly generic verbs, compound outcomes that blend two behaviors, and outcomes that are technically correct but not measurable in practice.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:25:40.6638954-04:00",
+          "ModifiedDate": "2026-07-08T19:25:40.6638954-04:00",
+          "Items": [
+            {
+              "Id": "9ba5972d-f021-42e3-9d6f-ce12ed67e290",
+              "Text": "Watch for outcomes that use weak or unmeasurable verbs such as \u0027appreciate,\u0027 \u0027be aware of,\u0027 or \u0027understand.\u0027",
+              "SortOrder": 0
+            },
+            {
+              "Id": "fd4db397-3284-4953-8bae-b871a4ef56c2",
+              "Text": "Look for compound statements joined by \u0027and\u0027 that attempt to capture multiple behaviors, which should be separated into distinct outcomes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3c243bab-8fd6-4724-988c-db6046c4da7d",
+              "Text": "Identify outcomes that are too broad to realistically assess within a single module\u0027s scope.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "04aa3061-6540-4fd8-9f0b-3050a339fd99",
+          "TopicId": "112c2a76-f0b6-4371-aa17-2e64af7f56a6",
+          "Title": "Using Outcomes as a Quality Benchmark for the Module",
+          "BodyText": "Approved SLOs serve as the foundational targets against which all subsequent module content is measured.",
+          "Notes": "Reviewers should consider not just the quality of individual outcomes but also whether the full set of SLOs collectively represents a coherent and complete picture of what learners will achieve.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:25:40.6638954-04:00",
+          "ModifiedDate": "2026-07-08T19:25:40.6638954-04:00",
+          "Items": [
+            {
+              "Id": "554b8716-ecb0-4d4a-a8d3-99a2ec8cb33c",
+              "Text": "Assess the complete set of generated outcomes to ensure they collectively cover the module\u0027s scope without significant redundancy or gaps.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0526c535-c226-4ce6-8d7e-f0eccd06e148",
+              "Text": "Confirm that the outcomes, taken together, represent a progression or logical grouping of learning expectations.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d58f29b1-f45d-48e9-8bf9-a56d7df2e81c",
+              "Text": "Recognize that any weakness in the reviewed SLOs will cascade into misaligned assessments and content in later stages of module development.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "83a9ff85-6334-42d3-bce1-eceb021de68d",
+      "Title": "SLOs as the Foundation for Subsequent Content Generation",
+      "Summary": "This topic explains how finalized learning outcomes serve as the driving targets for all content, assessments, and activities generated within a module. Learners will understand the cascading role SLOs play throughout the PreseMaker content development workflow.",
+      "SortOrder": 5,
+      "CreatedDate": "2026-07-08T19:23:51.1334688-04:00",
+      "ModifiedDate": "2026-07-08T19:23:51.1334688-04:00",
+      "Elements": [
+        {
+          "Id": "c75860bf-9939-482f-ab72-b781d5024267",
+          "TopicId": "83a9ff85-6334-42d3-bce1-eceb021de68d",
+          "Title": "Approved SLOs as Content Generation Targets",
+          "BodyText": "Once learning outcomes are reviewed and finalized, they become the definitive targets that guide everything PreseMaker generates within the module.",
+          "Notes": "Think of finalized SLOs as a contract between the instructional design process and the learner \u2014 every piece of content produced must serve at least one outcome.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:26:10.8953724-04:00",
+          "ModifiedDate": "2026-07-08T19:26:10.8953724-04:00",
+          "Items": [
+            {
+              "Id": "3620c000-9094-41e6-8a48-fa77f45c3468",
+              "Text": "Approved SLOs signal to PreseMaker exactly what knowledge, skills, or behaviors learners must demonstrate by the end of the module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4632fb2d-0fad-4292-8066-83c005232fd3",
+              "Text": "Content is generated to serve the topics and/or outcomes you choose to target.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ca7852ff-1fe1-4d8b-8816-73be768bee70",
+              "Text": "This outcome-first approach prevents content bloat and keeps the module focused and purposeful.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b12c00c4-c3c5-4dd6-8b3c-faec66bedba5",
+          "TopicId": "83a9ff85-6334-42d3-bce1-eceb021de68d",
+          "Title": "The Cascading Role of SLOs in the Workflow",
+          "BodyText": "SLOs sit at the top of a cascading hierarchy in the PreseMaker content development workflow, with all downstream elements flowing from them.",
+          "Notes": "Visualize a waterfall: SLOs are the source, and instructional content, assessments, and activities are the streams that flow from it.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:26:10.8953724-04:00",
+          "ModifiedDate": "2026-07-08T19:26:10.8953724-04:00",
+          "Items": [
+            {
+              "Id": "4d2f9439-1199-48ce-9bbd-9ab5f2b8ba5d",
+              "Text": "Each subsequent workflow stage \u2014 content writing, assessment design, and activity creation \u2014 receives the finalized SLOs as its primary input.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ec202c93-6d06-4440-8e63-11cb9f3b568b",
+              "Text": "Editing an outcome affects future generation; already-generated materials are updated by regenerating them (there is no automatic cascade).",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d0a2165b-61b7-449b-b400-94cb0635c690",
+              "Text": "Understanding this hierarchy helps course authors prioritize outcome quality before moving forward in the workflow.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "7dd2c366-7980-4548-a9bb-83a3630d0033",
+          "TopicId": "83a9ff85-6334-42d3-bce1-eceb021de68d",
+          "Title": "SLOs Driving Instructional Content Selection",
+          "BodyText": "The specific Bloom\u0027s level and action verb embedded in each SLO directly determine the type and depth of instructional content PreseMaker generates.",
+          "Notes": "For example, an SLO written at the \u0027Analyze\u0027 level will prompt more complex explanatory content, case studies, or comparisons than one written at the \u0027Remember\u0027 level.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:26:10.8953724-04:00",
+          "ModifiedDate": "2026-07-08T19:26:10.8953724-04:00",
+          "Items": [
+            {
+              "Id": "8d64626b-bdf9-44a7-9ac7-fc4566e67b4a",
+              "Text": "Bloom\u0027s cognitive level in the SLO signals whether content should focus on recall, comprehension, application, analysis, evaluation, or creation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2fcd41d5-069f-4acc-b925-1d486aa4759d",
+              "Text": "PreseMaker maps each SLO\u0027s action verb to a content style, ensuring explanations, examples, and depth match the intended cognitive demand.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "690a0d4c-7584-4861-a17a-709114f11a4f",
+              "Text": "This alignment ensures learners are exposed to material that genuinely prepares them to meet each outcome.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d8eb7405-1a37-4d1b-a16c-8ec069878e5f",
+          "TopicId": "83a9ff85-6334-42d3-bce1-eceb021de68d",
+          "Title": "SLOs as the Blueprint for Assessments",
+          "BodyText": "Assessments within a module are constructed to measure learner achievement of the finalized SLOs, ensuring evaluations are valid and purposeful.",
+          "Notes": "An assessment question tied to an \u0027Evaluate\u0027 SLO will look very different from one tied to a \u0027Define\u0027 SLO \u2014 the SLO sets the performance standard.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:26:10.8953724-04:00",
+          "ModifiedDate": "2026-07-08T19:26:10.8953724-04:00",
+          "Items": [
+            {
+              "Id": "aadc1554-c78a-4be7-aaa2-49a4e2030ec5",
+              "Text": "Generated items can be tagged with the outcome they target.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "65de4e43-b6ad-4632-924f-33e1040daea4",
+              "Text": "The Bloom\u0027s level of the SLO determines the cognitive complexity required in the assessment, such as recall questions versus scenario-based judgment tasks.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4b32358d-7c9b-4134-b65d-f66c36d40ec7",
+              "Text": "This traceability allows instructors to verify that their assessments are measuring what the module actually intends to teach.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "261b32a6-3c15-4b2a-8626-0dd7c70809bf",
+          "TopicId": "83a9ff85-6334-42d3-bce1-eceb021de68d",
+          "Title": "SLOs Guiding Activity and Practice Design",
+          "BodyText": "Learning activities and practice exercises are designed to give learners opportunities to rehearse and develop the competencies described in the SLOs before being assessed.",
+          "Notes": "Activities serve as scaffolding \u2014 they bridge instructional content and summative assessment by letting learners practice at the cognitive level the SLO demands.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:26:10.8953724-04:00",
+          "ModifiedDate": "2026-07-08T19:26:10.8953724-04:00",
+          "Items": [
+            {
+              "Id": "a8f77948-7f15-4712-abfa-d5bb2a5eb315",
+              "Text": "PreseMaker uses the finalized SLOs to select activity formats that match the required cognitive level, such as sorting tasks for lower-order outcomes or case analyses for higher-order ones.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "533fd5ca-81e5-4433-98aa-64bdf016a0bb",
+              "Text": "Activities are sequenced so that learners progressively build toward meeting each SLO rather than encountering it cold in an assessment.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "67db1a90-cd94-4c06-8668-161f905c8f03",
+              "Text": "Without clearly defined SLOs, activity design risks becoming generic and disconnected from measurable learning goals.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "7c9d89c2-b3ce-4041-859d-eff7957981f2",
+          "TopicId": "83a9ff85-6334-42d3-bce1-eceb021de68d",
+          "Title": "Maintaining Alignment Throughout the Module",
+          "BodyText": "The integrity of the entire module depends on maintaining consistent alignment between SLOs and every content element generated from them.",
+          "Notes": "PreseMaker\u0027s workflow is designed to surface misalignments early, but course authors share responsibility for reviewing that each element genuinely serves its linked SLO.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:26:10.8953724-04:00",
+          "ModifiedDate": "2026-07-08T19:26:10.8953724-04:00",
+          "Items": [
+            {
+              "Id": "2589bceb-d4f7-4bb4-ac4f-782b65eb0d57",
+              "Text": "Alignment means that what is taught, practiced, and assessed all point to the same demonstrated competency described in the SLO.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a34d3a21-e23b-4351-8148-e1b2c45c6796",
+              "Text": "Misalignment \u2014 such as assessing a skill at a higher Bloom\u0027s level than the SLO specifies \u2014 can unfairly disadvantage learners or undermine course credibility.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7d096bc5-5a2d-46f3-aef3-3b417c3247d5",
+              "Text": "Regularly referencing finalized SLOs during content review helps authors catch gaps or redundancies before a module is published.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 35
+}

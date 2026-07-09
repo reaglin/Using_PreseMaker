@@ -1,0 +1,9 @@
+{
+  "Id": "1f1a1e1c-8d3e-484e-9aed-7b703b3b9200",
+  "Name": "Batch Actions: Generating Content Across Multiple Modules at Once",
+  "Description": "This lesson introduces course-level Batch Actions in the Course Manager, allowing instructors to generate topics, outcomes, quizzes, presentations, or text documents across many modules in a single run. Learners will practice selecting which modules to include, reading live batch progress, and safely halting a batch run while keeping completed work.",
+  "CreatedBy": "Ron Eaglin",
+  "CreatedDate": "2026-07-08T19:07:39.5085861-04:00",
+  "LastModifiedDate": "2026-07-08T19:07:39.5108467-04:00",
+  "Actions": []
+}

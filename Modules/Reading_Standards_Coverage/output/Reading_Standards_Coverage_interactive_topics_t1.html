@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to the Standards Coverage View</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Introduction to the Standards Coverage View</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Introduction to the Standards Coverage View</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>The <strong>Standards Coverage View</strong> is a dedicated interface within PreseMaker designed to give instructors a comprehensive, at-a-glance evaluation of how well their course addresses its intended learning standards. Rather than forcing educators to piece together alignment information from scattered assignment settings or separate reports, this view consolidates everything into a single, structured display. You can assess both the <em>breadth</em> of your coverage — meaning how many of your standards are touched at all — and the <em>depth</em> of your coverage — meaning whether the cognitive rigor of your materials actually matches what each standard demands. Because standards alignment is central to instructional quality and accreditation readiness, having both dimensions visible in one place represents a significant practical advantage for course design and review.</p>
+
+<p>It is worth noting that the view currently carries a <strong>'System in Development'</strong> label. This designation is intentional and transparent: it signals to users that the feature is actively being refined, that additional capabilities may be added over time, and that some behaviors or displays could change in future updates. Instructors should engage with the view knowing it already delivers meaningful, actionable information while understanding that its full feature set is still maturing.</p>
+
+<p>When you open the Standards Coverage View, the first thing you encounter is the <strong>headline summary</strong> — a concise, high-level statement positioned prominently above the detailed rows. The headline is engineered to answer two critical questions instantly, without requiring you to read through every individual standard entry. First, it communicates the <em>proportion of standards that are assessed</em>, giving you an immediate sense of how complete your course's coverage is as a whole. For example, a headline might indicate that 14 out of 20 standards have at least one assessment item aligned to them, making it immediately obvious that six standards still lack any evaluative component. Second, the headline surfaces the <em>number of standards with a depth gap</em> — situations where the cognitive level of the aligned materials does not meet the level the standard requires. These two concerns are surfaced simultaneously because they represent the two most actionable dimensions of alignment quality: you need both sufficient coverage and sufficient rigor.</p>
+
+<p>Below the headline, each standard in your course appears as its own <strong>row</strong> in the view. Every row is built to communicate several pieces of information at once, reducing the need to click into individual settings to understand a standard's status. Specifically, each row displays:</p>
+
+<ul>
+  <li><strong>The standard's code</strong> — the short alphanumeric identifier used to reference it within a framework (for example, <code>RL.9-10.1</code> or <code>CCSS.MATH.CONTENT.HSA-REI.B.3</code>).</li>
+  <li><strong>The full standard statement</strong> — the complete written description of what the standard expects students to know or be able to do, so you never have to look it up externally while working in the view.</li>
+  <li><strong>The designated cognitive (Bloom's) level</strong> — the level of intellectual demand the standard requires, drawn from Bloom's Taxonomy (such as <em>Remember</em>, <em>Understand</em>, <em>Apply</em>, <em>Analyze</em>, <em>Evaluate</em>, or <em>Create</em>). This level serves as the benchmark against which your materials' rigor is measured.</li>
+  <li><strong>Counts of aligned materials</strong> — numerical indicators showing how many assignments, quiz items, and activities have been mapped to that standard. These counts give you a quick inventory of how much supporting material exists, making it easy to spot standards that are covered by only a single item versus those with robust multi-modal support.</li>
+  <li><strong>A Status indicator</strong> — a visual label that communicates the current state of coverage for that specific standard (described in detail below).</li>
+</ul>
+
+<p>The <strong>tiered status system</strong> is one of the most practically useful features of each row. Rather than a simple covered/not-covered binary, the system uses four distinct tiers that reflect meaningful qualitative differences in how well a standard is being addressed:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>What It Means</th>
+      <th>Instructional Implication</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Not aligned</strong></td>
+      <td>Nothing in the course has been mapped to this standard at all.</td>
+      <td>The standard is entirely absent from the course. Instructors need to either add and align content or decide consciously to exclude it.</td>
+    </tr>
+    <tr>
+      <td><strong>Not addressed</strong></td>
+      <td>The standard has been mapped to the course (it appears in the framework), but no actual materials — no assignments, quiz items, or activities — have yet been aligned to it.</td>
+      <td>The standard is acknowledged but dormant. Materials need to be created or aligned before students have any opportunity to engage with it.</td>
+    </tr>
+    <tr>
+      <td><strong>Practiced only</strong></td>
+      <td>The standard is covered by at least one assignment or activity, giving students practice with the skill or concept, but no quiz item assesses it.</td>
+      <td>Students are engaging with the standard through practice, but there is no evaluative checkpoint. Adding an assessment item would move this standard to the highest tier.</td>
+    </tr>
+    <tr>
+      <td><strong>Assessed</strong></td>
+      <td>At least one quiz or assessment item is aligned to the standard.</td>
+      <td>This is the highest achievable tier. The standard is both practiced and formally evaluated, which supports both learning and accountability.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Understanding the distinction between <em>Not aligned</em> and <em>Not addressed</em> is particularly important. A standard that is <em>not aligned</em> does not yet exist in the course's mapped framework — it has never been connected to the course design. A standard that is <em>not addressed</em>, by contrast, has been formally recognized as part of the course's intended standards set, but no instructional materials have yet been linked to it. This distinction helps instructors determine whether their next step is to build and align new content or simply to connect existing content to a standard that is already in scope.</p>
+
+<p>Beyond the status tiers, the Standards Coverage View also performs <strong>cognitive-depth checking</strong> inline — automatically, without any separate step required. When the system detects a <em>depth gap</em> — meaning the Bloom's level of the aligned materials is lower than the Bloom's level the standard requires — a <strong>warning marker</strong> appears directly on the affected standard's row. Hovering over this marker reveals a <strong>tooltip</strong> that explains the specific mismatch, such as noting that a standard requires <em>Analyze</em>-level thinking but the only aligned quiz item is written at the <em>Remember</em> level. This inline placement means you can spot depth gaps as you scan through the list, without navigating to a separate diagnostic panel.</p>
+
+<p>Importantly, the depth check is <strong>built directly into the view</strong> — there is no separate button to click to run the check, and it happens automatically whenever the view loads or updates. Depth-gap warnings are also <strong>reflected in the headline summary</strong>, so even before you scroll through individual rows, you have a sense of how many standards are affected by rigor mismatches across the entire course. However, there is currently <strong>no option to export a standalone depth report</strong>; the depth-gap information is surfaced exclusively within the view itself, consistent with the philosophy of keeping all alignment evaluation in one consolidated place.</p>
+
+<p>Taken together, the headline summary, the tiered status rows, and the inline cognitive-depth warnings make the Standards Coverage View a tightly integrated tool for diagnosing and improving course alignment. An instructor reviewing a course before a program review, for instance, could open this view and within seconds understand that 70% of standards are assessed, 3 standards have no materials at all, and 4 standards carry depth warnings — and then immediately begin addressing the most critical gaps by working directly within the same interface.</p>
+        <div class="notes"><strong>Notes</strong>Overview of the Standards Coverage view in PreseMaker, including its current development status and the headline summary it provides about a course&#39;s standards alignment.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

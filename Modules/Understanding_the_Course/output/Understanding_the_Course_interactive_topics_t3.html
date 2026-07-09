@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topics and Generated Materials</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Topics and Generated Materials</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Topics and Generated Materials</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When building a course in PreseMaker, the most fundamental unit of instructional content is the <strong>topic</strong>. Topics are where the actual subject matter lives — they are the precise, focused containers that hold the ideas, concepts, and skills a learner is expected to engage with. Understanding how topics are created, organized, and connected to generated materials is essential for anyone authoring content in PreseMaker, because every piece of output the system produces traces its origins back to a topic. This section explores the full lifecycle of a topic: how it fits inside a module, how it contributes to a logical learning progression, and how it drives the generation of slides, text, assessments, and more.</p>
+
+<p><strong>Topics as Building Blocks Within Modules</strong></p>
+
+<p>Think of a module as a chapter in a textbook and a topic as an individual section within that chapter. Just as a chapter on "The Water Cycle" might contain sections on evaporation, condensation, and precipitation, a PreseMaker module on the same subject would contain separate topics covering each of those concepts. This parallel is deliberate: breaking complex subject matter into discrete topics gives both the author and the learner a clearer, more manageable experience.</p>
+
+<p>Each module in PreseMaker contains one or more topics that, taken together, cover everything the module is designed to teach. No single topic needs to carry the entire burden of a module's subject matter; instead, topics divide and share that responsibility. This division of labor has a direct effect on quality. When a topic is tightly focused on a single idea or skill, the materials generated from it are more coherent, more precise, and easier for learners to absorb. A topic that tries to cover too much ground produces sprawling, unfocused output. A well-scoped topic produces clean, purposeful content.</p>
+
+<p>Topics are also <strong>sequenced</strong> within a module. The order in which topics appear is not arbitrary — it reflects a deliberate instructional design decision. Foundational concepts should appear before advanced ones. Prerequisite knowledge should be established before it is applied. PreseMaker respects and preserves this sequence, meaning learners encounter topics in the order the author intended, creating a logical learning progression that builds understanding step by step.</p>
+
+<p>For example, consider a module titled "Introduction to Data Analysis." It might contain the following topics in sequence:</p>
+
+<ul>
+  <li>What is Data Analysis? (foundational definition and purpose)</li>
+  <li>Types of Data (quantitative vs. qualitative, structured vs. unstructured)</li>
+  <li>Basic Statistical Concepts (mean, median, mode, variance)</li>
+  <li>Introducing Data Visualization (charts, graphs, and when to use them)</li>
+</ul>
+
+<p>Each topic builds on the one before it. A learner who encounters "Introducing Data Visualization" without first understanding "Types of Data" or "Basic Statistical Concepts" would be at a significant disadvantage. The sequencing of topics within the module prevents this problem and ensures the learning experience is cumulative rather than fragmented.</p>
+
+<p><strong>How Topics Nest Inside Modules</strong></p>
+
+<p>In PreseMaker's architecture, a topic <em>cannot exist independently</em>. Every topic must be assigned to a module. This is a structural rule, not simply a convention. A topic without a parent module has no context, no position in the course hierarchy, and no connection to the broader instructional goals of the course. The requirement that every topic belongs to a module ensures that no content floats free of its organizational purpose.</p>
+
+<p>The nesting relationship between modules and topics allows complex subjects to be broken into manageable, teachable pieces. A single module can hold multiple topics, and the authoring interface in PreseMaker reflects this nesting visually, showing topics indented beneath their parent module. This makes it easy for authors to see at a glance how a module's content is distributed across its topics, to reorder topics within the module, and to identify areas where coverage may be too dense or too sparse.</p>
+
+<p>Consider the difference between these two approaches to a module on "Cybersecurity Fundamentals":</p>
+
+<ul>
+  <li><strong>Poor approach — one broad topic:</strong> A single topic called "Everything About Cybersecurity" that attempts to cover threats, defenses, policies, and incident response in one place. The generated content would be overwhelming and unfocused.</li>
+  <li><strong>Better approach — multiple focused topics:</strong> Separate topics for "Common Cyber Threats," "Password Security and Authentication," "Network Defense Basics," and "Responding to a Security Incident." Each topic is manageable, and the generated materials for each are sharp and relevant.</li>
+</ul>
+
+<p>The nesting structure also has practical implications during authoring. When an author navigates the PreseMaker interface, they move through a tree-like structure: they select a course, drill into a module, and then select an individual topic to work on. This navigation mirrors the nesting relationship and keeps authors oriented within the larger course structure even as they focus on a single topic's details.</p>
+
+<p><strong>From Topic to Generated Content</strong></p>
+
+<p>The most powerful aspect of topics in PreseMaker is their role as the <strong>input source</strong> for content generation. When an author defines a topic — specifying its title, its subject matter, its learning objectives, and any additional context — that definition becomes the blueprint PreseMaker uses to generate materials. The system reads the topic's details and produces output that is scoped specifically to what that topic is about. Output does not bleed across topics; it stays within the boundaries of the topic that produced it.</p>
+
+<p>This scoping is critically important. It means that when PreseMaker generates a set of slides for a topic on "Password Security and Authentication," those slides will not suddenly introduce content about network defense or incident response. The generated output is disciplined and bounded by the topic's defined subject matter.</p>
+
+<p>Equally important is the relationship between a topic's details and its generated output: <strong>changing a topic's details changes its output</strong>. If an author edits a topic's title, adjusts its described scope, or updates its learning objectives, regenerating content for that topic will produce different materials that reflect the updated definition. This gives authors precise control — they can iterate on a topic's definition until it is right, then generate content with confidence that the output will match their intent. It also means authors should take care when editing topics for which content has already been generated and approved, since regeneration will replace the existing materials.</p>
+
+<p><strong>Types of Materials Generated from Topics</strong></p>
+
+<p>PreseMaker can generate several distinct types of instructional materials from a single topic. Each type serves a different pedagogical purpose, and together they create a complete, multi-layered learning experience for the learner.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Material Type</th>
+      <th>Instructional Purpose</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Slides</td>
+      <td>Introduce and present core concepts visually</td>
+      <td>A slide deck showing the three stages of the water cycle with diagrams</td>
+    </tr>
+    <tr>
+      <td>Explanatory Text</td>
+      <td>Provide in-depth written explanation of the topic's concepts</td>
+      <td>A detailed written passage explaining how evaporation transfers water from surfaces to the atmosphere</td>
+    </tr>
+    <tr>
+      <td>Key Points</td>
+      <td>Summarize and reinforce the most important takeaways</td>
+      <td>A bulleted list of the five most critical facts about condensation</td>
+    </tr>
+    <tr>
+      <td>Notes</td>
+      <td>Support the presenter or instructor with background context and delivery guidance</td>
+      <td>Speaker notes attached to each slide suggesting how to pace the explanation</td>
+    </tr>
+    <tr>
+      <td>Assessment Items</td>
+      <td>Test learner understanding and measure knowledge retention</td>
+      <td>Multiple-choice questions asking learners to identify what triggers precipitation</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Each of these material types is generated with the same topic as its source, so they are all coherent with one another. The slides, the explanatory text, the key points, and the assessment questions all address the same subject matter because they all derive from the same topic definition. This coherence is one of the significant advantages of PreseMaker's topic-driven generation model — it eliminates the inconsistency that can occur when different parts of a course's materials are created independently and without a shared reference point.</p>
+
+<p>All generated materials are also <strong>linked back to their source topic</strong> within PreseMaker's course structure. This linkage means that an author can always see which topic a given piece of content came from, and can navigate directly from a material item back to its parent topic if edits or regeneration are needed.</p>
+
+<p><strong>The Structural Chain: Course → Module → Topic → Materials</strong></p>
+
+<p>PreseMaker organizes everything within a clear, hierarchical structural chain. Understanding this chain is fundamental to understanding how the platform works:</p>
+
+<ul>
+  <li>A <strong>course</strong> is the top-level container. It represents the complete learning experience — for example, "Introduction to Project Management."</li>
+  <li>A <strong>module</strong> is a major subdivision of the course. It groups related topics together — for example, "Module 3: Risk Management."</li>
+  <li>A <strong>topic</strong> is a focused unit of instruction within a module — for example, "Identifying Project Risks."</li>
+  <li><strong>Generated materials</strong> are the actual content artifacts produced from each topic — slides, text, assessments, and so on.</li>
+</ul>
+
+<p>Each level of this chain depends on the level above it. A topic must belong to a module. A module must belong to a course. Generated materials must be tied to a topic. This dependency is not a limitation — it is the source of the system's organizational power. Because every piece of content is traceable through the chain, nothing is ever orphaned or ambiguous. An author can always answer the question: "Where did this content come from, and why does it exist?" by tracing the material back through its topic, its module, and its course.</p>
+
+<p>The structural chain also means that <strong>changes at any level cascade downward</strong>. If a module is renamed, that change is reflected in how the topics within it are displayed and referenced. If a module is moved to a different position within the course, its topics and their generated materials move with it, maintaining their internal relationships intact. If a course's overall scope is changed — for example, if a course is narrowed from a general audience to a specialist audience — the author should revisit topics and regenerate materials, because the cascade effect means the top-level change has implications all the way down to individual content items.</p>
+
+<p>This cascading behavior is a strong reason why PreseMaker encourages authors to think carefully about structure before generating materials in bulk. Getting the course, module, and topic definitions right from the start minimizes the need for disruptive structural changes later.</p>
+
+<p><strong>Connecting Structure to Output</strong></p>
+
+<p>The connection between PreseMaker's structural hierarchy and its generated output is not just an organizational convenience — it is what makes the platform's content generation both powerful and reliable. Because every piece of output corresponds to a specific topic, authors always know exactly where content came from. There is no ambiguity about which part of the course a given slide or assessment question belongs to.</p>
+
+<p>This correspondence also enables <strong>targeted refinement</strong>. If an author reviews the generated materials for a course and finds that the content for one particular topic is not quite right — perhaps the explanatory text is too technical, or the assessment questions are testing the wrong skills — they can edit that topic's definition and regenerate materials for <em>just that topic</em>, without touching any other topic's content. The isolation of each topic's generated materials from all other topics means that fixing one area of a course does not introduce risk or disruption elsewhere.</p>
+
+<p>This is a significant advantage over traditional content creation workflows, where all materials for a course might be stored in a single document or file, making it difficult to update one section without accidentally affecting others. PreseMaker's structure ensures clean separation between topics while maintaining coherent connections within the course as a whole.</p>
+
+<p>Finally, the structural connection between topics and materials supports <strong>consistent, organized course delivery</strong>. Learners moving through a course in PreseMaker experience content that follows a clear, intentional structure — module by module, topic by topic — with materials that are coherent at every level. The structure the author builds during the design phase translates directly into the experience the learner has during the learning phase, making the investment in thoughtful topic design directly visible in the quality and clarity of the delivered course.</p>
+        <div class="notes"><strong>Notes</strong>Examines how topics nest within modules and how PreseMaker generates content materials from those topics, connecting structure to output.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

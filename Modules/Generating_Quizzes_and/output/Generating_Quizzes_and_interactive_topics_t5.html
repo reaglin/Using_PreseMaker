@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exporting to LMS-Compatible Formats</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Exporting to LMS-Compatible Formats</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Exporting to LMS-Compatible Formats</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Exporting a question bank is the bridge between the content you have carefully generated and the learning environment where students will actually encounter it. No matter how well-crafted your questions are, they deliver value only when they arrive inside your Learning Management System (LMS) in a form the platform can read, render, and score correctly. This module walks through every dimension of that process: understanding the file formats available, choosing the right one for your platform, configuring the export settings to preserve all the assessment design decisions you have already made, aligning exported banks to course topics and outcomes, following best practices that prevent avoidable errors, and resolving the issues that arise when things do not go smoothly the first time.</p>
+
+<p><strong>Understanding LMS-Compatible Export Formats</strong></p>
+
+<p>Before you click any export button, it is worth understanding what these file formats actually are and why they exist. Learning management systems are built by many different vendors, yet educators need to move assessment content between them. Interoperability standards solve this problem by defining a common language that both the exporting tool and the receiving LMS can speak.</p>
+
+<p><strong>QTI (Question and Test Interoperability)</strong> is the most widely accepted of these standards. Maintained by IMS Global (now 1EdTech), QTI packages questions, answer choices, scoring rules, and feedback into a structured XML archive. Because it is a published open standard, major platforms have built native support for it:</p>
+
+<ul>
+  <li><strong>Canvas (Instructure)</strong> supports QTI 1.2 imports via its built-in question bank importer and QTI 2.1 through compatible tools.</li>
+  <li><strong>Moodle</strong> can import QTI 2.1 packages directly through its Question Bank interface.</li>
+  <li><strong>Blackboard (Anthology)</strong> has historically used its own variant of QTI 1.2 and offers import wizards in the Test, Survey, and Pool Manager.</li>
+  <li><strong>D2L Brightspace</strong>, <strong>Sakai</strong>, and several other platforms also include QTI import pathways, though the supported version may differ.</li>
+</ul>
+
+<p>The key advantage of QTI is portability: a QTI file you export today can, in principle, be imported into a different LMS next year if your institution switches platforms. It also preserves rich metadata — point values, difficulty levels, topic tags, and feedback strings — in a standardised way.</p>
+
+<p><strong>WPProQuiz</strong> is a purpose-built export format for the <em>WP-Pro-Quiz</em> plugin used on WordPress-powered sites and e-learning setups built on the LearnDash or similar WordPress LMS frameworks. The export produces an XML file formatted specifically for that plugin's import routine. It is not an open interoperability standard; it is a proprietary format understood only by WP-Pro-Quiz. Its advantage is deep compatibility with that specific ecosystem, including support for WP-Pro-Quiz-specific question behaviours such as timed questions and custom result messages.</p>
+
+<p>The decision rule is straightforward:</p>
+
+<ul>
+  <li>Use <strong>QTI</strong> when your destination is a dedicated LMS (Canvas, Moodle, Blackboard, Brightspace, etc.) that has a QTI import pathway.</li>
+  <li>Use <strong>WPProQuiz</strong> when you deliver quizzes through a WordPress site running the WP-Pro-Quiz plugin, regardless of whether a separate LMS is also in use.</li>
+</ul>
+
+<p>Always verify which formats your target LMS supports <em>before</em> you begin the export process. Discovering after a large export that your LMS requires a different QTI version — or does not support QTI at all — wastes time and may require re-authoring metadata.</p>
+
+<p><strong>Selecting the Right Export Format for Your LMS</strong></p>
+
+<p>Choosing a format is not purely a technical decision; it involves understanding your platform version, your administrator's configuration choices, and sometimes your institution's data governance policies. A structured approach prevents mismatches.</p>
+
+<p><strong>Step 1 — Identify your LMS platform and version.</strong> LMS vendors update their import capabilities with major releases. Canvas Classic Quizzes and New Quizzes, for example, handle QTI imports differently. Moodle 4.x improved its QTI 2.1 handling compared with Moodle 3.x. The version matters.</p>
+
+<p><strong>Step 2 — Consult your LMS documentation or administrator.</strong> Most LMS platforms publish an "Importing Questions" or "Question Bank" article in their help centre specifying the exact format and version they recommend. Your LMS administrator may also have institution-specific guidance — for instance, some institutions disable certain import features for security or licensing reasons.</p>
+
+<p><strong>Step 3 — Select the format in the export tool.</strong> Once you know what your LMS accepts, choose the matching option. If your LMS supports multiple versions of QTI, choose the version explicitly recommended in the documentation rather than assuming the latest is always best.</p>
+
+<p><strong>Step 4 — Test before committing.</strong> Export a small sample — five to ten questions covering different question types — and import it into a sandbox or test course in your LMS. This catches format incompatibilities, encoding problems, and unsupported question types before they affect a live course. The cost of a test import is minutes; the cost of discovering problems after a 500-question export can be hours of manual remediation.</p>
+
+<p><strong>Configuring Export Settings</strong></p>
+
+<p>Most export tools offer a configuration panel before generating the output file. Each setting has a concrete effect on how questions behave inside the LMS, and making deliberate choices here preserves the integrity of your assessment design.</p>
+
+<p><strong>Answer key inclusion.</strong> When the exported file will be loaded into an instructor question bank for future quiz assembly, including the answer key is essential — the LMS needs to know which answer is correct in order to auto-score responses. However, if you are exporting a file for learners to use as a self-study resource outside the LMS (for example, a printed or PDF version), removing the answer key from the export protects assessment security. Enable this setting for LMS imports; consider disabling it for learner-facing non-LMS distributions.</p>
+
+<p><strong>Point values.</strong> Including point values in the export carries your weighting decisions directly into the LMS. If Question 3 is worth 3 points and Question 7 is worth 1 point because of their respective difficulty levels, that weighting will appear automatically in the LMS quiz builder rather than defaulting every question to 1 point. This saves significant manual work when building exams.</p>
+
+<p><strong>Difficulty tags and metadata.</strong> Tags such as "Easy," "Medium," and "Hard" — or Bloom's taxonomy levels — travel with the question when included in the export. In platforms like Canvas or Moodle, these tags surface as filterable metadata in the question bank, making it easy to assemble quizzes with a deliberate difficulty distribution later.</p>
+
+<p><strong>Category mapping.</strong> Your internal question categories (e.g., "Unit 2 — Cell Biology," "Week 4 — Photosynthesis") may not match the folder or category names in your LMS. The export configuration often allows you to map source categories to destination categories so that questions land in the right LMS bank folders automatically rather than all arriving in an uncategorised pile.</p>
+
+<p><strong>Feedback field settings.</strong> Many question-generation tools allow per-question feedback strings: a message shown to learners who select a correct answer and a different message for those who select an incorrect answer. If your LMS supports automated feedback (Canvas, Moodle, and Blackboard all do), including these strings in the export means learners receive immediate, contextual explanations without any additional configuration in the LMS. Verify that your feedback text uses only characters and formatting your LMS's feedback renderer supports; rich HTML in feedback fields can cause rendering issues in some platforms.</p>
+
+<p><strong>Exporting Question Banks Aligned to Topics and Outcomes</strong></p>
+
+<p>A common use case for LMS exports is distributing assessments across course modules rather than uploading a single monolithic question bank. Achieving this cleanly requires that alignment work happen <em>before</em> export, not after.</p>
+
+<p><strong>Using the Content Source Selector.</strong> When generating a question bank, the Content Source Selector lets you target specific topics, chapters, learning outcomes, or competency standards. Questions generated from a narrowly defined source are inherently aligned to that source. When you export that bank, every question in the file carries alignment to the chosen topic or outcome, making it straightforward to load it into the corresponding LMS module or course week.</p>
+
+<p>For example, imagine a ten-week biology course. If you generate a separate question bank for each week's content using the Content Source Selector — Week 1 targeting cell structure, Week 2 targeting membrane transport, and so on — you can then export each bank separately and import each file into its matching course module. Instructors building a Week 3 quiz see only Week 3 questions in their bank, which reduces clutter and prevents accidental cross-topic leakage in formative assessments.</p>
+
+<p><strong>Exporting by outcome segment.</strong> If your institution maps assessments to programme-level outcomes or accreditation standards, exporting banks segmented by outcome allows assessment coordinators to pull outcome-specific questions across multiple courses without manually tagging questions after the fact. The alignment is embedded in the QTI metadata and readable by LMS reporting tools that support outcomes-based assessment frameworks.</p>
+
+<p><strong>Best Practices for Seamless LMS Integration</strong></p>
+
+<p>Even when format and settings are correct, large or complex imports can encounter unexpected friction. The following practices reduce that friction systematically.</p>
+
+<ul>
+  <li><strong>Always perform a test import first.</strong> Export a representative sample — include at least one of every question type present in the full bank — and import it into a test or sandbox course. Inspect every question: does the stem display correctly? Do all answer options appear? Does the correct answer get marked? Does feedback render? Only after confirming a clean result should you proceed with the full export.</li>
+  <li><strong>Maintain a version log.</strong> Keep a simple record of every exported file: the date of export, the format and version used, the number of questions, the topics covered, and any settings that differed from defaults. This log is invaluable when troubleshooting ("Was the broken import the 14 March QTI 1.2 file or the 22 March QTI 2.1 file?") and when reusing banks in future course offerings.</li>
+  <li><strong>Review question rendering post-import.</strong> After importing, open several questions in the LMS's question preview or edit mode. Check that mathematical notation (if using LaTeX or MathJax), image embeds, tables within question stems, and code snippets all display as intended. Some LMS platforms strip or re-encode certain HTML tags during import.</li>
+  <li><strong>Coordinate with LMS administrators for large imports.</strong> Many LMS platforms impose file size limits on individual imports, rate limits on API-based imports, or permission restrictions that prevent non-admin users from importing into shared question banks. Alerting your administrator before uploading a 2,000-question bank avoids failed uploads and potential account flags.</li>
+  <li><strong>Document post-import manual adjustments.</strong> If you discover after import that a certain question type needs to be manually reconfigured in the LMS (for instance, matching questions that arrive as multiple-choice due to a format limitation), document exactly what was changed. Then update the source question bank or export template so the same manual fix is not required every time you re-export.</li>
+</ul>
+
+<p><strong>Troubleshooting Common Export and Import Issues</strong></p>
+
+<p>Even well-prepared exports sometimes fail or produce unexpected results. Understanding the most frequent causes helps you diagnose and resolve problems efficiently.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symptom</th>
+      <th>Likely Cause</th>
+      <th>Resolution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Certain question types fail to import or are skipped</td>
+      <td>The LMS does not natively support that question type (e.g., drag-and-drop, hotspot, or fill-in-the-blank variants)</td>
+      <td>Check LMS documentation for supported QTI interaction types; consider substituting an equivalent supported type, or install the relevant LMS plugin if one exists</td>
+    </tr>
+    <tr>
+      <td>Question text appears garbled with strange symbols (e.g., â€™ instead of an apostrophe)</td>
+      <td>Character encoding mismatch — the export file uses UTF-8 but the LMS is reading it as Latin-1 (ISO-8859-1), or vice versa</td>
+      <td>Confirm the export tool outputs UTF-8; open the file in a text editor to verify encoding; re-export specifying UTF-8 explicitly if the option exists; ask your LMS administrator to check the platform's default import encoding</td>
+    </tr>
+    <tr>
+      <td>Import log reports "structural errors" or the import completes with 0 questions added</td>
+      <td>The QTI version in the file does not match the version the LMS expects, or required XML elements are missing</td>
+      <td>Re-export selecting a different QTI version; validate the exported XML against the QTI schema using a free online validator; consult the LMS's import error code documentation</td>
+    </tr>
+    <tr>
+      <td>Feedback text does not appear after import</td>
+      <td>The LMS's import parser ignores or strips feedback fields from the QTI file, or the feedback is stored in a non-standard element</td>
+      <td>Check whether your LMS version supports feedback import from QTI; if not, feedback may need to be entered manually or via a bulk-edit tool within the LMS</td>
+    </tr>
+    <tr>
+      <td>Point values all reset to 1 after import</td>
+      <td>The LMS overrides imported point values with its own default, or the point value element in the QTI file uses a namespace the LMS does not recognise</td>
+      <td>Re-apply point values using the LMS's bulk question edit feature; raise the issue with LMS support and provide a sample file for them to inspect</td>
+    </tr>
+    <tr>
+      <td>Images or media do not display after import</td>
+      <td>Media files were not bundled inside the QTI package, or the LMS's media library requires separate upload</td>
+      <td>Ensure the export tool bundles all media inside the ZIP archive; if the LMS uses a separate media library, upload assets there and relink questions manually</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When a problem is not self-explanatory from the LMS import log, two resources are particularly useful: the LMS vendor's official support portal (which often contains import error code look-up tables) and community forums such as the Canvas Community, Moodle Forums, or Blackboard Behind the Blackboard. Platform-specific quirks — such as Blackboard's requirement that QTI pool files be wrapped in a specific manifest structure, or Moodle's sensitivity to how feedback nodes are ordered — are often documented in community threads by instructors who encountered the same issue before you.</p>
+
+<p>A disciplined approach to exporting — understanding your formats, configuring settings deliberately, aligning banks to topics before export, testing before committing, maintaining records, and knowing how to diagnose failures — transforms the export step from a potential bottleneck into a reliable, repeatable part of your course-development workflow.</p>
+        <div class="notes"><strong>Notes</strong>Covers all six subtopic clusters for Topic 1: format overview (QTI and WPProQuiz), format selection guidance, export configuration settings, topic/outcome alignment, best practices, and troubleshooting. A comparison table for troubleshooting common issues is included as a proper HTML table. No heading tags used per instructions.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

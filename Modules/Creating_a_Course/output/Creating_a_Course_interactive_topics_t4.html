@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accepted Source Material Types</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Accepted Source Material Types</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Accepted Source Material Types</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When building a course in PreseMaker, one of the first decisions you will make is what source material to provide. PreseMaker is designed to accept content in many different forms, recognizing that instructional designers, subject matter experts, and trainers rarely start from scratch. You might already have a polished slide deck, a policy document, a webpage you trust, or even a YouTube video that explains a concept perfectly. Rather than forcing you to reformat or retype existing material, PreseMaker meets you where you are. The platform reads, parses, and interprets each source type, then uses that information to suggest course topics, subtopics, and content elements automatically. Understanding the supported source material types — and the strengths each one brings — helps you choose the best starting point for any course project.</p>
+
+<p><strong>PowerPoint Files</strong> are one of the most common starting points for course creators because slide decks are already a staple of training and education environments. When you upload a PowerPoint file directly into PreseMaker, the platform extracts three layers of information from the file: slide titles, body text, and speaker notes. Slide titles naturally map to course topics or module headings. Body text, which typically contains bullet points and key statements, becomes the raw material for explanations, learning objectives, and on-screen content. Speaker notes — often the most detailed and nuanced part of a presentation — are especially valuable because they capture the narrative a presenter would deliver verbally, giving PreseMaker richer context to work with.</p>
+
+<p>For example, imagine a corporate trainer who has spent months refining a 40-slide onboarding presentation. Rather than rebuilding that content from the ground up inside a course authoring tool, the trainer uploads the PowerPoint file into PreseMaker. The platform reads each slide, identifies the structure, and uses that structure to propose a course outline complete with modules and subtopics. This dramatically reduces duplication of effort and preserves the instructional thinking that already went into the original presentation.</p>
+
+<p><strong>Written Descriptions</strong> offer a flexible starting point when you do not have existing materials but have a clear idea of what the course should cover. Instead of uploading a file, you type a description directly into PreseMaker. This description might explain the course topic, define the intended audience, outline the learning goals, or summarize the scope of content to be covered. The AI reads your description and uses it to suggest a course structure, including potential topics, subtopics, and content elements that align with what you have described.</p>
+
+<p>Descriptions can be brief or detailed depending on how much guidance you want to provide. A short description such as <em>"A course on workplace fire safety for new manufacturing employees, covering evacuation procedures, fire extinguisher use, and reporting protocols"</em> gives the AI enough to generate a solid starting outline. A longer, more detailed description that also explains the regulatory context, the audience's prior knowledge level, and specific scenarios to include will result in even more targeted suggestions. Written descriptions are ideal when you are starting a new course from concept and want PreseMaker to help you build the structure.</p>
+
+<p><strong>Documents</strong> allow you to bring in detailed written content from files such as Word documents, PDFs, or other text-based file formats. When you upload a document, PreseMaker parses the text and maps relevant sections to course topics and content elements. Documents tend to contain denser, more comprehensive information than a slide deck, making them especially well-suited for converting reference materials, procedure manuals, compliance guides, or technical documentation into interactive course content.</p>
+
+<p>Consider a situation where a company's safety team has a 60-page Standard Operating Procedure manual. That document contains everything a new employee needs to know, but it is not in a format conducive to learning. By uploading the document into PreseMaker, the platform identifies key sections, extracts instructional content, and organizes it into a learnable course structure. What once required hours of manual content conversion can be accomplished in a fraction of the time. Documents are particularly powerful when the source material is already well-organized and thorough.</p>
+
+<p><strong>Web Pages</strong> provide a way to use live, online content as the source for a course. Rather than copying text manually, you paste a URL into PreseMaker and the platform retrieves and processes the text found on that page. The extracted content is then analyzed and used to populate relevant course elements. This approach is especially useful when authoritative information already exists online — for instance, a government health agency's guidelines, an industry association's best practices page, or a product's official documentation site.</p>
+
+<p>One of the key advantages of using web pages as source material is that the content tends to be current. Online resources are updated regularly, and pulling from a URL means you are drawing from the most recent version of that information rather than a static document that may become outdated. It also eliminates the need to manually transcribe or copy-paste large amounts of text, reducing both the time investment and the risk of transcription errors.</p>
+
+<p><strong>Pasted Text</strong> is the most flexible source material type because it accommodates virtually any text-based content regardless of its original format or location. You simply copy text from any source — an email thread, an internal report, a set of meeting notes, a research article, a script, or any other written material — and paste it directly into the PreseMaker source material field. From that point, PreseMaker processes the pasted text the same way it would handle an uploaded document or a written description, extracting meaningful content and using it to build course elements.</p>
+
+<p>This format is especially valuable in situations where content exists in systems or formats that do not lend themselves to direct file uploads. For example, a subject matter expert might share their knowledge in a long email. A project manager might have detailed notes in a shared online document that cannot be easily exported. A trainer might want to repurpose content from a printed report they have digitized. In all of these cases, copy-and-paste becomes a universal bridge between any content source and PreseMaker's course building engine.</p>
+
+<p><strong>YouTube Transcripts</strong> represent an innovative source type that bridges the world of video-based learning with structured e-learning course formats. When you paste a YouTube video URL into PreseMaker, the platform accesses the video's transcript — either the auto-generated captions created by YouTube's speech recognition system or manually uploaded captions provided by the video's creator. That transcript text is then analyzed to identify key concepts, important topics, and content elements that can be translated into a course structure.</p>
+
+<p>This capability is particularly powerful because enormous amounts of instructional content already exist in video form on YouTube. Lectures, tutorials, expert interviews, product demonstrations, and explainer videos are all potential source material. Instead of treating that content as incompatible with structured course development, PreseMaker allows you to leverage it directly. For example, a training manager who finds a well-produced 20-minute YouTube tutorial on a software tool the team is adopting can paste the URL into PreseMaker, let the platform extract the transcript, and use that transcript to generate a structured course covering the same material in an interactive, assessable format.</p>
+
+<p>The table below summarizes each accepted source material type, how it is provided to PreseMaker, and its primary strengths:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source Material Type</th>
+      <th>How It Is Provided</th>
+      <th>Primary Strength</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PowerPoint Files</td>
+      <td>Upload a .pptx or .ppt file directly</td>
+      <td>Repurposes existing, refined presentation materials quickly</td>
+    </tr>
+    <tr>
+      <td>Written Descriptions</td>
+      <td>Type a description into PreseMaker</td>
+      <td>Ideal for starting from concept; guides AI-driven structure suggestions</td>
+    </tr>
+    <tr>
+      <td>Documents</td>
+      <td>Upload a document file (e.g., PDF, Word)</td>
+      <td>Converts dense reference or procedural material into course content</td>
+    </tr>
+    <tr>
+      <td>Web Pages</td>
+      <td>Paste a URL into PreseMaker</td>
+      <td>Uses current online information without manual transcription</td>
+    </tr>
+    <tr>
+      <td>Pasted Text</td>
+      <td>Copy and paste text into the source field</td>
+      <td>Highly flexible; works with content from any text-based source</td>
+    </tr>
+    <tr>
+      <td>YouTube Transcripts</td>
+      <td>Paste a YouTube video URL</td>
+      <td>Converts video-based learning content into structured course elements</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Each source material type is designed to reduce the effort required to build a course by leveraging content that already exists in some form. Whether you are working from a legacy slide deck, a freshly written description, a policy manual, a trusted website, copied notes, or a video tutorial, PreseMaker provides a pathway to turn that material into a structured, interactive learning experience. Choosing the right source type — or combining several — gives you the flexibility to start any course project from wherever your best content already lives.</p>
+        <div class="notes"><strong>Notes</strong>PreseMaker supports a variety of source material formats including PowerPoint files, written descriptions, documents, web pages, pasted text, and YouTube transcripts. Learners will explore each type and understand how they are used to populate course content.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

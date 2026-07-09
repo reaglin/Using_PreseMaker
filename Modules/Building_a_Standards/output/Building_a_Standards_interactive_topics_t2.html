@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building the Library with AI</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Building the Library with AI</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Building the Library with AI</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Building a Standards Library with AI assistance is one of the most powerful efficiency features available in PreseMaker. Rather than manually typing out every standard code and its accompanying wording, you can point the AI toward a standards framework and let it do the heavy lifting — extracting, organizing, and storing the standards so they are ready to apply across any course you create. Understanding how this process works, and where its boundaries lie, will help you get clean, reliable results and avoid the pitfalls that come with unchecked AI output.</p>
+
+<p>The process follows a logical sequence: you provide input, the AI extracts the standards it finds, you review what was extracted, and then you save the results to the library. Each stage has meaningful implications for how trustworthy your library will ultimately be.</p>
+
+<p><strong>Providing Input to the AI</strong></p>
+
+<p>The first decision you make when building a library is what kind of input to give the AI. There are three options, and they are not equivalent — the type of input you choose directly affects how accurate the extraction will be.</p>
+
+<ul>
+  <li><strong>Framework description:</strong> You type a name or description of the standards framework, such as "Next Generation Science Standards, Grade 5" or "Common Core State Standards for Mathematics, High School Algebra." This tells the AI <em>which</em> body of standards you are interested in without giving it an actual document to read. The AI draws on its training data to recognize the framework and attempt to surface the relevant standards. This approach is convenient when you do not have a source URL handy, but it is the least reliable method because the AI is working from memory rather than live text. Standard codes and exact wording can drift from what the official source actually states.</li>
+  <li><strong>URL:</strong> You paste a web address pointing to a standards page — for example, a state education department's page listing grade-level reading standards. When a URL is provided, the AI fetches and reads the content of that page, giving it real text to work from rather than relying on training memory alone. This produces more reliable extraction because the codes and wording come from an actual source. The trade-off is that some standards pages are protected, require a login, or are rendered in ways that prevent the AI from reading them successfully.</li>
+  <li><strong>Pasted text:</strong> You copy text directly from a standards document — a PDF, a webpage, a downloaded file — and paste it into the input field. This is especially useful in two situations: when the URL of a page cannot be accessed by the AI, and when you want to focus extraction on a specific section of a larger document rather than letting the AI attempt to process everything. For instance, if a comprehensive framework document covers kindergarten through twelfth grade across multiple subjects, you might paste only the third-grade English Language Arts section to keep the extracted library focused and manageable.</li>
+</ul>
+
+<p>Choosing the right input type is not just a technical decision — it is a quality decision. The closer your input is to the actual authoritative text, the more your extracted standards will reflect what those standards genuinely say.</p>
+
+<p><strong>How the AI Extracts Standards</strong></p>
+
+<p>Once input is received, the AI parses it to identify discrete, individual standards. This means it looks for patterns that signal a standard: a code or identifier (such as "CCSS.ELA-LITERACY.RI.4.3" or "HS-PS1-1"), paired with the descriptive statement that defines what students should know or be able to do.</p>
+
+<p>The extraction process works across all three input types — framework description, URL, and pasted text. However, what the AI actually has to work with differs significantly depending on your input:</p>
+
+<ul>
+  <li>When given a <strong>framework description only</strong>, the AI reconstructs standards from its training knowledge. It may get many of them right, but codes can be slightly off, wording may be paraphrased rather than quoted verbatim, and occasionally standards may be generated that do not exist in the official source at all. These are sometimes called "hallucinated" standards — plausible-sounding but not real.</li>
+  <li>When given a <strong>URL or pasted text</strong>, the AI is reading actual source content, so it can extract codes and wording as they appear in the document. Accuracy is substantially higher, though it is still possible for the AI to mis-parse formatting, combine adjacent standards, or miss standards buried in footnotes or non-standard layouts.</li>
+</ul>
+
+<p>It is also worth knowing that the extraction feature is still labeled <em>System in Development</em> within PreseMaker. This designation signals that the underlying behavior, the rules governing how extraction works, and what the system requires from you may continue to change as the feature matures. Treat current behavior as a strong starting point, but stay alert to updates that might affect your workflow.</p>
+
+<p><strong>Reviewing Extracted Standards</strong></p>
+
+<p>After extraction, PreseMaker presents you with the standards the AI identified so you can look them over before anything is saved. This review step is not a formality — it is a critical quality gate, and skipping it can introduce errors that then propagate across every course that draws from the library.</p>
+
+<p>During review, you are checking for several things:</p>
+
+<ul>
+  <li><strong>Code accuracy:</strong> Does the identifier shown (e.g., "CCSS.MATH.CONTENT.6.RP.A.1") match what appears in the official standards document? Even small differences — a missing letter, a shifted number — can cause confusion when educators or administrators look up the standard.</li>
+  <li><strong>Wording fidelity:</strong> Is the standard's descriptive text quoted accurately, or has it been paraphrased? Official standards often have precise, legally or policy-significant language. "Understand" and "apply" are not interchangeable in a standards context.</li>
+  <li><strong>Unfamiliar entries:</strong> If you see a standard you do not recognize, or one that does not sound like the framework you requested, treat that as a warning sign. Cross-reference it against the official source before allowing it into the library.</li>
+</ul>
+
+<p>The review step is especially critical when the input was a framework description rather than a URL or pasted text. In those cases, some extracted standards may be approximate reconstructions, and a small number may be entirely invented. Catching these before they are saved prevents them from being embedded in course materials that learners and stakeholders will rely on.</p>
+
+<p><strong>Saving Standards to the Library</strong></p>
+
+<p>Once you have reviewed the extracted standards and are satisfied with their accuracy, you save them to the library. Saving locks in the collection as a persistent, reusable resource. From that point forward, whenever you are working on a course and need to align content to those standards, you can pull directly from the library rather than repeating the extraction process.</p>
+
+<p>This build-once, reuse-often model is the central efficiency argument for the Standards Library feature. Consider what it replaces: without the library, every new course would require you to look up the relevant standards, copy their codes and wording, and re-enter them into PreseMaker. With the library, that work happens once. Whether you are building three courses or thirty that align to the same framework, the extraction and review effort is a one-time investment.</p>
+
+<p>The library also supports consistency. Because every course draws from the same saved set of standards, there is no risk of one course using a slightly different wording of a standard than another, or a code being mis-transcribed in a fresh copy-paste. Uniformity across your course catalog becomes much easier to maintain.</p>
+
+<p><strong>The Verified vs. Unverified Marker</strong></p>
+
+<p>Each standard saved to the library carries one of two markers: <em>Verified</em> or <em>Unverified</em>. Understanding what these labels mean — and what they do not mean — is essential to using the library responsibly.</p>
+
+<ul>
+  <li><strong>Verified</strong> means the standard was extracted from content the AI could actually read — either a URL it successfully fetched or text you directly pasted in. The AI had a real source document in front of it during extraction, so the codes and wording are drawn from that document rather than reconstructed from memory. Verified is a statement about <em>provenance</em>: where the standard came from.</li>
+  <li><strong>Unverified</strong> means the standard was produced from a framework name or description alone. No actual source text was available for the AI to read, so the standard was generated from the AI's training knowledge. Unverified standards may be accurate, but they may also be approximate or, in some cases, entirely fabricated. They require cross-checking against the official source before you rely on them in course materials.</li>
+</ul>
+
+<p>There are several things the Verified marker does <em>not</em> mean, and misreading it can create a false sense of security:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>What "Verified" Means</th>
+      <th>What "Verified" Does NOT Mean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>The standard was extracted from a real source the AI could read (URL or pasted text)</td>
+      <td>A human expert has reviewed and approved the standard</td>
+    </tr>
+    <tr>
+      <td>The code and wording reflect what appeared in that source document</td>
+      <td>A confidence percentage or accuracy score has been calculated</td>
+    </tr>
+    <tr>
+      <td>The extraction had a real textual basis, not just training memory</td>
+      <td>The standard is in a pending-approval queue awaiting sign-off</td>
+    </tr>
+    <tr>
+      <td>Provenance is traceable to a specific input you provided</td>
+      <td>The standard is guaranteed to be error-free or perfectly quoted</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In practice, the most reliable workflow is to use a URL or pasted text whenever possible, review all extracted standards carefully regardless of their marker, and spot-check Verified standards against the official source for high-stakes courses where exact wording matters. Treat Unverified standards as drafts that need confirmation rather than finished entries ready for publication.</p>
+
+<p>Together, these four stages — providing input, extraction, review, and saving — form a complete, repeatable workflow for populating a Standards Library. Done carefully the first time, this process creates a dependable foundation that makes every subsequent course build faster, more consistent, and better aligned to the standards that matter to your learners and your organization.</p>
+        <div class="notes"><strong>Notes</strong>Covers how learners provide PreseMaker with a standards framework description, a web page URL, or pasted text from a standards source so the AI can extract and populate the library. Describes the review and save workflow after extraction. The Verified/Unverified distinction is a key conceptual point — emphasize provenance framing over any notion of human approval or scoring.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

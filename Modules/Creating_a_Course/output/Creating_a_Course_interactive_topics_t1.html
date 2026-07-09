@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to the Course Manager</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Introduction to the Course Manager</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Introduction to the Course Manager</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you first launch PreseMaker, the very first screen that greets you is the <strong>Course Manager</strong>. Far from being a simple menu or a basic list, the Course Manager is the operational heart of the entire application — a centralized hub where every course-related action begins and, in many cases, ends. Whether you are creating a brand-new course from scratch, continuing work on an existing project, or simply switching between multiple courses in development, the Course Manager is where you go. Understanding it thoroughly is the essential first step to working efficiently in PreseMaker, because every other part of the application flows outward from this single screen.</p>
+
+<p>Think of the Course Manager the way you might think of a project dashboard in any professional tool: it gives you a bird's-eye view of everything you are working on, surfaces the most important actions you need to take, and keeps your work organized so that nothing falls through the cracks. Authors return to it constantly throughout the course creation lifecycle, not just at the very beginning. That pattern of returning — to start something new, to pick up where you left off, to compare or reorganize courses — is built into how PreseMaker is designed to be used.</p>
+
+<p><strong>What Is the Course Manager?</strong></p>
+
+<p>At its most fundamental level, the Course Manager is the first screen users encounter when launching PreseMaker. This is intentional design: PreseMaker places course management at the forefront because managing courses <em>is</em> the primary activity of its users. Rather than dropping you into a blank workspace or asking you to navigate through a series of menus to find your work, PreseMaker brings your courses directly into view the moment the application opens.</p>
+
+<p>The Course Manager provides a <strong>single location</strong> from which all courses can be accessed, created, and managed. This means you do not need to navigate to different parts of the application to perform different high-level tasks. Creating a new course? You do it from the Course Manager. Opening an existing course to continue editing? Also the Course Manager. Reviewing what courses are currently in the system? Still the Course Manager. This consolidation of access points is deliberate — it reduces friction and cognitive overhead, especially for authors who are juggling multiple projects simultaneously.</p>
+
+<p>Because authors and learners return to the Course Manager throughout the course creation workflow, it also functions as an orientation anchor. If you ever feel lost in the application — deep in a content generation step, for example, or mid-way through configuring source materials — returning to the Course Manager resets your context and lets you re-approach your work with a clear view of the bigger picture.</p>
+
+<p><strong>The Course Manager as the Starting Point for Course Creation</strong></p>
+
+<p>One of the Course Manager's most important roles is as the <em>launchpad</em> for new course creation. Authors initiate the course creation process directly from the Course Manager screen — there is no separate "New Project" wizard buried elsewhere in the application. This immediacy is part of what makes PreseMaker's workflow feel cohesive: the same place you manage your existing courses is the same place you spin up new ones.</p>
+
+<p>Critically, the Course Manager supports <strong>multiple creation paths</strong>, acknowledging that not all authors come to course creation with the same starting point or the same needs:</p>
+
+<ul>
+  <li><strong>Starting with an empty course:</strong> This path gives authors a blank slate. You define the course structure, add content, and build everything up from the ground level. This approach suits authors who have a very specific vision and want full manual control over the course's architecture from the very first step.</li>
+  <li><strong>Generating a course with AI:</strong> This path leverages PreseMaker's artificial intelligence capabilities to accelerate course creation. Rather than beginning with nothing, the AI can help scaffold a course structure, suggest content, or even generate draft material based on inputs you provide. This is particularly valuable when working under time constraints or when you need a strong starting point that you can then refine and customize.</li>
+</ul>
+
+<p>These two paths are not mutually exclusive in spirit — an AI-generated course can be extensively edited, and a manually created course can incorporate AI-assisted content at later stages. But the <em>choice</em> of which path to take is made right at the Course Manager, reinforcing its role as the true starting point of any course creation effort.</p>
+
+<p>Another important aspect of the Course Manager as a starting point is its support for <strong>context switching</strong>. If you are working on one course and realize you need to begin a completely different project, returning to the Course Manager allows you to do that without losing your place or disrupting your existing work. This ability to switch between courses or begin new ones at any stage of development makes the Course Manager a living workspace rather than a one-time setup screen.</p>
+
+<p><strong>Navigating the Course Manager Interface</strong></p>
+
+<p>The Course Manager's interface is built around clarity and efficiency. When you look at the screen, the most prominent feature is the <strong>listing of all courses</strong> currently available within the system. Every course that has been created or imported appears here, giving you an immediate inventory of your work. This listing is your primary reference point — it tells you what exists, and from it you can take action on any course in the collection.</p>
+
+<p>Key actions are accessible directly from the Course Manager screen without requiring you to open a course first. The most important of these is the ability to <strong>create a new course</strong>, which is surfaced prominently so that new project creation is never more than one or two clicks away. This design philosophy — keeping high-frequency actions immediately visible — reflects an understanding that authors often need to move quickly, especially in production environments where multiple courses are being developed in parallel.</p>
+
+<p>The overall layout of the Course Manager is designed to <strong>orient users quickly</strong>. When someone sits down to work in PreseMaker — whether it is their first session or their fiftieth — they should be able to glance at the Course Manager and immediately understand the state of their work. Which courses exist? Which ones are they working on actively? What do they need to do next? The interface answers these questions visually, so authors can move into course creation or editing without unnecessary steps or confusion.</p>
+
+<p>This orientation function is especially important for new users who are still building familiarity with PreseMaker. By making the Course Manager the first thing you see and by keeping its layout logical and uncluttered, PreseMaker ensures that the learning curve for navigating the application is as gentle as possible.</p>
+
+<p><strong>The Course Manager's Role in the Overall Workflow</strong></p>
+
+<p>Zooming out from the individual features of the Course Manager, it is worth appreciating its strategic role in the <em>overall</em> PreseMaker workflow. The Course Manager is not just an entry point — it is a <strong>connective tissue</strong> that links together the major phases of course development: course setup, source material management, and content generation.</p>
+
+<p>Consider how a typical course development session might unfold:</p>
+
+<ul>
+  <li>An author opens PreseMaker and lands on the Course Manager. They see their current projects.</li>
+  <li>They select an existing course to continue working on it, which takes them into the course editing environment where they manage source materials — documents, presentations, or other inputs that will feed the course content.</li>
+  <li>After adding new source materials, they trigger content generation, either manually or with AI assistance.</li>
+  <li>Once that work session is complete, they return to the Course Manager — perhaps to check on another course, to start a new one, or simply to close out for the day.</li>
+</ul>
+
+<p>This cycle — Course Manager → course work → Course Manager — repeats throughout a project's life. The Course Manager's ability to present a unified view of all courses means that <strong>authors can track and manage multiple courses simultaneously</strong> without losing context. If you are developing three courses at once, the Course Manager shows you all three, allows you to move between them fluidly, and keeps each one accessible without the overhead of managing separate files or workspaces manually.</p>
+
+<p>Returning to the Course Manager between tasks is also a <strong>best practice for maintaining an organized and efficient development process</strong>. It provides a natural checkpoint — a moment to step back, assess where each course stands, and decide intentionally what to work on next. In this sense, the Course Manager is not just a technical feature of PreseMaker; it is also a workflow aid that encourages structured, deliberate course development rather than ad-hoc navigation through the application.</p>
+
+<p>The following table summarizes the key functions of the Course Manager and the role each plays in the course creation workflow:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Function</th>
+      <th>Description</th>
+      <th>Workflow Relevance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Course Listing</td>
+      <td>Displays all courses currently available in the system</td>
+      <td>Gives authors an immediate inventory and access point for all projects</td>
+    </tr>
+    <tr>
+      <td>Course Creation (Empty)</td>
+      <td>Initiates a new blank course from the Course Manager screen</td>
+      <td>Starting point for authors who want full manual control from the outset</td>
+    </tr>
+    <tr>
+      <td>Course Creation (AI-Assisted)</td>
+      <td>Launches AI-powered course generation directly from the Course Manager</td>
+      <td>Accelerates course scaffolding for authors working under time pressure or seeking a strong draft foundation</td>
+    </tr>
+    <tr>
+      <td>Course Access and Switching</td>
+      <td>Allows authors to open any listed course or switch between courses at any stage</td>
+      <td>Supports parallel management of multiple active projects without disrupting workflow</td>
+    </tr>
+    <tr>
+      <td>Workflow Orientation</td>
+      <td>Serves as the home screen and return point throughout the course development lifecycle</td>
+      <td>Provides a structured checkpoint between tasks and keeps the overall development process organized</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In summary, the Course Manager is far more than an administrative screen. It is the home base of PreseMaker — the place where course creation begins, where ongoing work is tracked, where multiple projects are held in view simultaneously, and where authors return again and again as their work progresses. Mastering the Course Manager means mastering the rhythm of working in PreseMaker, and that foundation will make every subsequent step in the course creation process clearer and more efficient.</p>
+        <div class="notes"><strong>Notes</strong>The Course Manager is the home screen of PreseMaker and serves as the central hub for all course management activities. Learners should come away understanding not only what the Course Manager displays and allows them to do, but why its design as a unified, always-accessible hub is integral to an organized and efficient course development workflow. Emphasis should be placed on the two course creation paths (empty vs. AI-assisted) and on the habit of returning to the Course Manager as a natural checkpoint throughout the development lifecycle.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

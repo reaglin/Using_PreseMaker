@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course and Module Storage as Folders on Disk</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Course and Module Storage as Folders on Disk</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Course and Module Storage as Folders on Disk</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you work inside PreseMaker, everything you see on screen — your courses, your modules, your slides, your media — has a direct, one-to-one counterpart sitting on your computer's file system as ordinary folders and files. This is not an abstraction or a hidden database: the storage model is a transparent folder hierarchy that mirrors the logical structure you interact with inside the application. Understanding how this hierarchy is organized is essential for anyone who wants to manage course content confidently, collaborate with others, recover from problems, or simply know where their work actually lives.</p>
+
+<p>The design philosophy behind folder-based storage is straightforward: keep things visible, portable, and compatible with the tools people already know. Rather than locking content inside a proprietary binary file or an opaque database that only the application can read, PreseMaker places every asset, every configuration file, and every piece of generated content into a conventional directory tree that any operating system can browse, copy, compress, or search. This section walks through every layer of that hierarchy in depth.</p>
+
+<p><strong>Courses as Top-Level Folders</strong></p>
+
+<p>The outermost container in the hierarchy is the <em>course folder</em>. When you start a new course in PreseMaker, the application immediately creates a dedicated folder on disk to hold everything related to that course. You do not have to create this folder manually — PreseMaker handles it automatically the moment you confirm the new course. The folder name is derived from the course title you assign inside the application, so if you name your course <em>Introduction to Data Privacy</em>, PreseMaker will create a folder with a corresponding name such as <code>Introduction to Data Privacy</code> (or a filesystem-safe variant of it) in the location you specified during setup.</p>
+
+<p>Everything that belongs to that course — every module, every media file, every setting, every piece of generated output — lives inside this one top-level folder. There is no situation in which part of a course is stored elsewhere while the rest remains here; the course folder is self-contained by design. This means that to move a course to a different drive, share it with a colleague, or archive it for safekeeping, you only ever need to work with that single folder. Copy it, compress it, move it — the entire course travels with it.</p>
+
+<p>A practical consequence of this design is that the course folder's location on your machine is the single most important path to remember. If you need to back up your work, you back up that folder. If you need to hand the project to someone else, you hand them that folder. The application itself is separate from the content; the course folder <em>is</em> the course.</p>
+
+<p><strong>Modules as Subfolders Within the Course Folder</strong></p>
+
+<p>Inside the course folder, each module is represented by its own subfolder. When you create a module in PreseMaker, the application creates that subfolder immediately. When you delete a module, the application removes it from the course structure. The folder name for each module is derived from the module's name at the time it is created and is designed to remain <em>stable</em> — meaning it does not automatically change if you later rename the module in the interface.</p>
+
+<p>This stability is intentional and important. Content files inside a module subfolder — slides, media references, configuration data — contain paths and references that point to other files using the folder name as part of the address. If renaming a module caused the underlying folder name to change, every one of those internal references would break simultaneously. Instead, PreseMaker separates two distinct concepts:</p>
+
+<ul>
+  <li><strong>Display name:</strong> the human-readable label you see on screen when you work with the module. This can be changed freely through the application, and the change is saved into the module's metadata file.</li>
+  <li><strong>Folder name:</strong> the actual directory name on disk, which acts as a stable identifier. It is set when the module is first created and does not change when you rename the module.</li>
+</ul>
+
+<p>For example, imagine you create a module called <em>Module 1 – Overview</em>. PreseMaker creates a subfolder named something like <code>Module_1_Overview</code>. Later you decide the module should be called <em>Getting Started</em>. Inside PreseMaker you rename it, and the display name updates immediately everywhere in the interface. But on disk, the folder is still named <code>Module_1_Overview</code>, and every file path that pointed into that folder continues to work without modification.</p>
+
+<p>Module <em>order</em> within a course is handled the same way: it is tracked in metadata, not encoded in folder names. If you have five modules and drag the third one to the first position, the folders on disk do not change their names or move — only the ordering information recorded in the course's configuration is updated. This means folder names are never prefixed with numbers like <code>01_</code>, <code>02_</code>, and so on, because such a scheme would require renaming folders every time you reorder content.</p>
+
+<p><strong>Relationship Between On-Screen Structure and File Hierarchy</strong></p>
+
+<p>The visual structure you see in PreseMaker's interface is a direct reflection of the folder hierarchy on disk, but the relationship has important nuances depending on the type of change you make. The table below summarizes how each common operation maps to what happens on disk:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Action in PreseMaker</th>
+      <th>Effect on Disk</th>
+      <th>Effect on Metadata</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Create a new module</td>
+      <td>New subfolder created inside the course folder</td>
+      <td>Module entry added to course configuration</td>
+    </tr>
+    <tr>
+      <td>Delete a module</td>
+      <td>Module subfolder removed from the course folder</td>
+      <td>Module entry removed from course configuration</td>
+    </tr>
+    <tr>
+      <td>Rename a module</td>
+      <td>No change to folder name</td>
+      <td>Display name updated in module metadata</td>
+    </tr>
+    <tr>
+      <td>Reorder modules</td>
+      <td>No change to folder names or positions</td>
+      <td>Order values updated in course configuration</td>
+    </tr>
+    <tr>
+      <td>Add content to a module</td>
+      <td>Files written into the module's subfolder</td>
+      <td>References updated in module metadata</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The critical implication of this design is that PreseMaker expects to be the <em>sole manager</em> of the folder hierarchy. If you use your operating system's file explorer or a terminal to manually rename a module subfolder, move it, or delete files within it without going through PreseMaker, the application's metadata will still contain the old folder name. The next time you open the course, PreseMaker will look for a folder that no longer exists at the expected path, and the affected module will appear broken, empty, or missing entirely.</p>
+
+<p>This does not mean the folder structure is fragile — it means the structure should be modified <em>through the application</em>, which keeps the metadata and the file system synchronized. However, knowing that the folder structure is transparent and human-readable is a powerful troubleshooting tool: if something looks wrong on screen, you can open the course folder, inspect what is actually there, and compare it with what PreseMaker expects. In many cases, a missing module that looks like a catastrophic failure is simply a folder that was accidentally moved, which can be corrected by moving it back.</p>
+
+<p><strong>Contents Stored Inside a Module Subfolder</strong></p>
+
+<p>Each module subfolder contains several categories of files, each serving a distinct purpose in how PreseMaker reads and displays the module:</p>
+
+<ul>
+  <li><strong>Source material files:</strong> the raw content you authored or imported for the module — text, outlines, scripts, or other input that forms the basis of the module's learning material.</li>
+  <li><strong>Generated topic content:</strong> the output that PreseMaker produces from source material, stored as structured files the application reads to render slides, pages, or other deliverable formats.</li>
+  <li><strong>Module configuration data:</strong> a metadata file (or set of files) that records the module's display name, its order within the course, its settings, and references to all the content and assets it uses. This is the file PreseMaker consults first when opening a module.</li>
+  <li><strong>Asset subdirectories:</strong> dedicated folders within the module subfolder that hold media referenced by the module — images, documents, audio clips, or video files. Keeping assets in a predictable location inside the module subfolder means that when the entire course folder is moved or shared, the relative paths from configuration files to assets remain valid without any path updates.</li>
+</ul>
+
+<p>Every time you open a module in PreseMaker, the application reads these files fresh from disk. There is no persistent in-memory cache that might show you a stale version of the content — what you see on screen is always a reflection of what is currently stored in the subfolder. This makes the storage model highly reliable: saving your work means the files are updated on disk immediately, and reopening the module or restarting the application will always show the latest saved state.</p>
+
+<p><strong>Practical Benefits of the Folder-Based Storage Model</strong></p>
+
+<p>The decision to use a transparent folder hierarchy rather than a proprietary database has a range of concrete, everyday advantages that become apparent as soon as you start managing real course content at scale.</p>
+
+<ul>
+  <li><strong>Simple sharing and collaboration:</strong> Because the entire course is a single top-level folder, sharing it requires nothing more than copying or compressing that folder and sending it to a collaborator. There are no export steps, no special archive formats to create, and no import wizards on the receiving end — the recipient simply places the folder in their PreseMaker courses directory and opens it.</li>
+  <li><strong>Compatibility with version control:</strong> Tools like Git, which are standard in software development for tracking changes over time, work naturally with folder trees full of text-based files. A PreseMaker course folder can be initialized as a Git repository, giving course authors a full history of every change made to every file, the ability to revert to any previous state, and the ability to merge contributions from multiple authors using branching workflows.</li>
+  <li><strong>Backup utilities work without configuration:</strong> Any backup tool — whether a simple scheduled copy, a cloud sync service like Dropbox or OneDrive, or an enterprise backup system — will correctly back up a PreseMaker course folder because it is just a folder. There is no need to schedule database exports or use application-specific backup commands.</li>
+  <li><strong>File system search finds content directly:</strong> Because content is stored as readable files rather than inside a binary database, operating system search tools can locate specific text, file names, or media assets across an entire course instantly. If you need to find every module that references a particular image file, a simple file system search will surface it.</li>
+  <li><strong>Content recovery is straightforward:</strong> If a module becomes corrupted or content is accidentally deleted, recovery does not require specialized database repair tools. You can restore individual files from a backup, inspect the configuration metadata in a text editor to understand what is missing, or reconstruct the folder structure manually. The human-readable nature of the storage format means the content is never locked away in an inaccessible form.</li>
+  <li><strong>Reduced vendor lock-in:</strong> A folder of readable files is inherently more portable than proprietary binary formats. Even if circumstances required migrating away from PreseMaker in the future, the underlying content — text, images, documents — would remain accessible and usable.</li>
+</ul>
+
+<p>Together, these benefits make the folder-based storage model a practical and resilient foundation for course authoring. The more clearly you understand how the on-screen structure maps to folders and files on disk, the more confidently you can manage, protect, share, and troubleshoot your course content.</p>
+        <div class="notes"><strong>Notes</strong>Explains how PreseMaker organizes courses and modules as a folder hierarchy on the local file system. Learners understand the relationship between the on-screen structure and the underlying file storage.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How PreseMaker Routes Tasks to Providers</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>How PreseMaker Routes Tasks to Providers</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>How PreseMaker Routes Tasks to Providers</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Every time PreseMaker runs a task — generating a slide outline, writing speaker notes, creating imagery, or any other AI-driven operation — it needs to know which provider to send that task to. The mechanism it uses to make that decision is called routing. Understanding how routing works in PreseMaker is essential for getting predictable results, managing costs, and knowing exactly what to do when something goes wrong. The routing model is deliberately simple and deterministic: one task type always maps to exactly one provider, the decision is made immediately when the task is triggered, and there are no hidden layers of logic running in the background.</p>
+
+<p>At the foundation of PreseMaker's routing system is the <strong>default provider</strong>. Think of the default provider as the catch-all handler for any task type that has not been given a specific, explicit assignment. When you first configure PreseMaker and connect your AI providers, you designate one of those providers as the default. From that point on, any task that runs without a dedicated per-task assignment will be sent automatically to the default provider — no additional configuration required on your part.</p>
+
+<p>This matters for a practical reason: PreseMaker supports a wide range of task types, and it is entirely normal to configure specific assignments for only a handful of them while leaving the rest unassigned. Without a default provider, those unassigned tasks would have nowhere to go. The default provider ensures that <em>every</em> task has a valid handler, even tasks you have never thought about configuring individually. Setting a thoughtful default — typically a capable, general-purpose provider you trust for quality and reliability — means PreseMaker can operate fully even with a minimal configuration.</p>
+
+<p>Beyond the default, PreseMaker allows you to configure <strong>per-task provider assignments</strong>. A per-task assignment is a direct mapping between one specific task type and one specific provider. When an assignment exists for a task type, that assignment takes complete precedence over the default provider for that task type, and only that task type. Every other task type is unaffected and continues to route however it was previously configured — either to its own specific assignment or to the default.</p>
+
+<p>Per-task assignments are managed in PreseMaker's Settings, where you will find a list of recognized task types alongside a selector for each one. Any provider you have already connected and configured will appear as an option. This setup gives you fine-grained control over how your provider resources are used. For example, you might assign a fast, low-cost provider to a high-volume task like bullet-point generation, while reserving a slower but higher-quality provider for a task like executive summary writing where output quality is the priority. The ability to optimize on a task-by-task basis — for cost, speed, or quality — is the primary reason per-task assignments exist.</p>
+
+<p>To see how the default and per-task assignments work together, consider a concrete example. Suppose you have connected three providers — Provider A, Provider B, and Provider C — and made the following configuration:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task Type</th>
+      <th>Specific Assignment</th>
+      <th>Provider That Runs It</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Slide outline generation</td>
+      <td>Provider B</td>
+      <td>Provider B</td>
+    </tr>
+    <tr>
+      <td>Speaker notes</td>
+      <td>Provider C</td>
+      <td>Provider C</td>
+    </tr>
+    <tr>
+      <td>Image prompt creation</td>
+      <td><em>None</em></td>
+      <td>Provider A (default)</td>
+    </tr>
+    <tr>
+      <td>Title suggestions</td>
+      <td><em>None</em></td>
+      <td>Provider A (default)</td>
+    </tr>
+    <tr>
+      <td>Translation</td>
+      <td><em>None</em></td>
+      <td>Provider A (default)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In this example, Provider A is the default. Slide outline generation and speaker notes have explicit assignments to Provider B and Provider C respectively. All remaining task types — image prompt creation, title suggestions, translation, and any others not listed — fall through to Provider A automatically. The logic PreseMaker applies when any task fires is straightforward: <em>does this task type have a specific assignment? If yes, use it. If no, use the default.</em> That is the entire decision tree.</p>
+
+<p>A critical aspect of PreseMaker's routing design is that <strong>one task type maps to exactly one provider at any given time</strong>. There is no concept of shared routing, split routing, or load balancing across providers for a single task type. When PreseMaker resolves which provider to use, it performs a single, immediate lookup — it finds the assignment for the task type (or the default), and it sends the task there. There is no runtime evaluation of provider availability, no comparison of response times, and no weighing of options. The decision is made once, instantly, and executed.</p>
+
+<p>Related to this is the absence of any <strong>priority ranking between providers</strong>. PreseMaker has no concept of a "first choice" or "second choice" provider for a given task. You cannot configure a ranked list such as "try Provider A first, then Provider B, then Provider C." The routing system simply does not have that concept. Every routing decision is binary: either a specific assignment exists and is used, or the single default provider is used. There is no ordering, no weighting, and no preference hierarchy among your connected providers.</p>
+
+<p>This also means there is <strong>no automatic fallback between providers</strong>. If the assigned provider for a task experiences a failure — the API returns an error, the provider is temporarily unavailable, a quota is exceeded, or any other problem occurs — PreseMaker does not silently retry the task with a different provider. Instead, PreseMaker surfaces a failure dialog, informing you that the task could not be completed. The outcome is a visible, explicit failure, not a transparent retry that might mask which provider is actually handling your work.</p>
+
+<p>The implication for users is important: resolving a provider failure always requires a deliberate action on your part. You have two paths available. First, you can address the underlying cause of the failure — for instance, checking your API key, reviewing your account quota with the provider, or waiting for the provider's service to recover — and then re-run the task. Second, if you want to continue working immediately using a different provider, you can go into Settings, update the assignment for that task type to point to a different provider, and then re-run the task. Either way, the decision about which provider handles your work remains yours, made explicitly, rather than being made quietly in the background by PreseMaker's routing logic.</p>
+
+<p>The overall design philosophy behind PreseMaker's routing model is <strong>transparency and predictability</strong>. Because routing is deterministic — a lookup with no branching beyond "specific assignment or default" — you always know which provider will handle a given task before you run it. Because there is no automatic fallback, you always know that a failure with Provider X means Provider X was the one that failed, not that the system already tried Providers Y and Z without telling you. This makes it straightforward to audit your provider usage, manage costs accurately, and troubleshoot problems without ambiguity about what happened behind the scenes.</p>
+        <div class="notes"><strong>Notes</strong>Describes the logic PreseMaker uses to select the correct provider when running a task, including the role of the default provider. Clarifies that there is no priority ranking or automatic fallback between providers.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

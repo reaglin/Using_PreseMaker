@@ -1,0 +1,735 @@
+{
+  "ModuleFolderName": "Publishing_a_Course",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:46:34.0982794-04:00",
+  "ModifiedDate": "2026-07-08T19:48:01.0306327-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "e8b1687f-e5e9-4a43-9857-768367f4a9fc",
+      "Title": "Introduction to PreseMaker\u0027s Publish Feature",
+      "Summary": "An overview of what the publish feature does in PreseMaker and why it is used to assemble course modules into a browsable website.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:46:34.0982794-04:00",
+      "ModifiedDate": "2026-07-08T19:46:34.0982794-04:00",
+      "Elements": [
+        {
+          "Id": "c987239d-dd3c-4427-ad41-e8c6487879a9",
+          "TopicId": "e8b1687f-e5e9-4a43-9857-768367f4a9fc",
+          "Title": "What Is the Publish Feature?",
+          "BodyText": "PreseMaker\u0027s publish feature is a built-in tool that assembles a course\u0027s individual modules into a single, cohesive browsable website.",
+          "Notes": "Think of it as the final packaging step that transforms separately authored modules into a unified site learners can navigate.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:46:47.2083698-04:00",
+          "ModifiedDate": "2026-07-08T19:46:47.2083698-04:00",
+          "Items": [
+            {
+              "Id": "6e11b310-e999-4565-b9ed-a69cc2394bca",
+              "Text": "The publish feature collects all course modules and organizes them into a structured website format.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "67527854-3741-4fd5-aa21-d54038fc9df3",
+              "Text": "It automates the assembly process, removing the need to manually link or arrange module files.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3836742b-e3c0-4883-b5da-bf410687beb1",
+              "Text": "The result is a browsable site where learners can move between modules without additional configuration.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c9c2fe56-c597-47aa-96a1-65d10a678a9b",
+          "TopicId": "e8b1687f-e5e9-4a43-9857-768367f4a9fc",
+          "Title": "The Role of Each Module\u0027s HTML Index",
+          "BodyText": "Each module in PreseMaker has an HTML index file that serves as its landing page within the published website.",
+          "Notes": "The HTML index is the entry point for a module \u2014 the first page a learner sees when navigating to that section of the course site.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:46:47.2083698-04:00",
+          "ModifiedDate": "2026-07-08T19:46:47.2083698-04:00",
+          "Items": [
+            {
+              "Id": "02445c7c-9ccf-4537-accb-a88380684e81",
+              "Text": "Every module contributes one HTML index file, which acts as its dedicated starting page.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2331dc25-7222-42f5-9f7b-262b1eec021b",
+              "Text": "The publish feature uses these index files as the anchor points when building the site\u0027s navigation structure.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "21774159-1e23-458f-bf04-9fc47d1488fd",
+              "Text": "Ensuring each module has a properly formed HTML index is essential for the published site to function correctly.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "635d9a84-8730-4c02-aa9b-5b7097e9f89f",
+          "TopicId": "e8b1687f-e5e9-4a43-9857-768367f4a9fc",
+          "Title": "How Publishing Refreshes Module Content",
+          "BodyText": "Before building the site, PreseMaker\u0027s publish feature refreshes each module\u0027s HTML index to ensure it reflects the most current content.",
+          "Notes": "This refresh step is automatic and occurs as part of the publish process, so learners always see up-to-date material.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:46:47.2083698-04:00",
+          "ModifiedDate": "2026-07-08T19:46:47.2083698-04:00",
+          "Items": [
+            {
+              "Id": "0fe01daf-dd28-471e-916f-d00952cb1d85",
+              "Text": "Publishing triggers a content refresh so that any recent edits or additions are captured before the site is assembled.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "12cf9e9f-482f-41bb-adc8-14972a29e1ca",
+              "Text": "This prevents outdated versions of a module from appearing in the live website.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a06a8bf0-d145-4fa4-a1bf-83356866aafa",
+              "Text": "The refresh step ensures consistency between what authors have created and what learners ultimately browse.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4faa971f-cb6e-4d9a-9019-2226ee7e0177",
+          "TopicId": "e8b1687f-e5e9-4a43-9857-768367f4a9fc",
+          "Title": "Why the Publish Feature Is Used",
+          "BodyText": "The publish feature exists to give course authors a reliable, repeatable way to deliver a complete and current course website to learners.",
+          "Notes": "Without a dedicated publish step, authors would need to manually update links, re-export files, and verify content currency across every module.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:46:47.2083698-04:00",
+          "ModifiedDate": "2026-07-08T19:46:47.2083698-04:00",
+          "Items": [
+            {
+              "Id": "49e9ef12-c9db-4868-99bb-664621ecde97",
+              "Text": "It consolidates multiple modules into one browsable experience, reducing complexity for both authors and learners.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c709fd49-4e1b-493c-a703-a25f2ef47fd4",
+              "Text": "By bundling assembly and content refresh into a single action, it saves time and reduces the risk of publishing errors.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "550489cb-19be-4b54-a65d-a28fba3069d1",
+              "Text": "It provides a consistent output format, making the course site predictable and easy to maintain over time.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "692ddd66-0b17-42f2-bf84-dc55e92d1c16",
+      "Title": "Understanding Module HTML Index Pages",
+      "Summary": "Explains the role of each module\u0027s HTML index file as its landing page and how it represents the module\u0027s content within the published site.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:46:34.0982794-04:00",
+      "ModifiedDate": "2026-07-08T19:46:34.0982794-04:00",
+      "Elements": [
+        {
+          "Id": "c159912f-4e5a-492c-a929-919d5b995712",
+          "TopicId": "692ddd66-0b17-42f2-bf84-dc55e92d1c16",
+          "Title": "What Is a Module HTML Index Page?",
+          "BodyText": "Each module in a course website has a dedicated HTML index file that acts as its primary entry point.",
+          "Notes": "Think of it like the front door of each module \u2014 it is the first page a learner lands on when navigating to that module within the published site.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:47:04.8155711-04:00",
+          "ModifiedDate": "2026-07-08T19:47:04.8155711-04:00",
+          "Items": [
+            {
+              "Id": "01adacb8-e8fc-43f0-800f-8d55739498df",
+              "Text": "The HTML index file is automatically associated with its module and carries the module\u0027s name and identity within the site structure.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "274567da-e87d-43a4-838f-1d3c97a45aec",
+              "Text": "It is a standard HTML file, meaning it can be opened and viewed in any web browser without special software.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a60974e1-1034-4f64-8fd9-db1d8550d758",
+              "Text": "Every module has its own distinct index file, keeping each module\u0027s content self-contained and independently accessible.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "dc53faf8-c81d-4594-9f16-ccc6ce28f517",
+          "TopicId": "692ddd66-0b17-42f2-bf84-dc55e92d1c16",
+          "Title": "The Landing Page Role of the Index File",
+          "BodyText": "The module HTML index page serves as the landing page \u2014 the starting point learners reach when they navigate to a specific module.",
+          "Notes": "In a multi-module course site, each module\u0027s index page provides a consistent entry point, making navigation predictable and organized for learners.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:47:04.8155711-04:00",
+          "ModifiedDate": "2026-07-08T19:47:04.8155711-04:00",
+          "Items": [
+            {
+              "Id": "8d605f4b-2aae-4d47-9278-5ad8c6611de5",
+              "Text": "When a learner clicks on a module link within the course website, they are directed to that module\u0027s HTML index page first.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b82ff8db-4484-4ff0-b7f6-0a1f04f2a53a",
+              "Text": "The index page orients the learner by presenting the module\u0027s content in a structured, accessible way.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1a50c48d-b78c-4d47-aacf-6d8b88d49296",
+              "Text": "Acting as a landing page, the index file anchors the module\u0027s position within the broader course site hierarchy.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "ac321b9f-12f4-42db-8911-ab050ce8e717",
+          "TopicId": "692ddd66-0b17-42f2-bf84-dc55e92d1c16",
+          "Title": "How the Index Page Represents Module Content",
+          "BodyText": "The HTML index file reflects the current state of a module\u0027s content, serving as a snapshot of what that module contains.",
+          "Notes": "If content within a module is updated, the index page must also be updated to accurately represent those changes to learners visiting the site.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:47:04.8155711-04:00",
+          "ModifiedDate": "2026-07-08T19:47:04.8155711-04:00",
+          "Items": [
+            {
+              "Id": "4dc33050-9b65-4907-8d64-8c13c5f2f4db",
+              "Text": "The index page surfaces the module\u0027s key content elements, giving learners an accurate representation of what the module includes.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4fe1ff1d-579d-4e35-97b5-48a18e47724f",
+              "Text": "Any content added, removed, or modified within a module should ultimately be reflected in the module\u0027s index page.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4a997591-ae0d-4da8-8217-264390f1a80c",
+              "Text": "The index file bridges the raw module content and the published website, translating internal content into a browsable web page.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "0bb5574d-840e-4ae1-9c36-415bf7638011",
+          "TopicId": "692ddd66-0b17-42f2-bf84-dc55e92d1c16",
+          "Title": "Publishing Refreshes the HTML Index",
+          "BodyText": "Using PreseMaker\u0027s publish feature automatically refreshes each module\u0027s HTML index file before the course site is built.",
+          "Notes": "This refresh step is critical \u2014 it ensures that the published site always reflects the most recent version of each module\u0027s content rather than an outdated snapshot.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:47:04.8155711-04:00",
+          "ModifiedDate": "2026-07-08T19:47:04.8155711-04:00",
+          "Items": [
+            {
+              "Id": "f492103f-68fa-49d2-ad66-10c6df212bde",
+              "Text": "Each time the publish feature is run, PreseMaker regenerates the HTML index files to incorporate the latest module content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "5f92f26c-d36d-4ff9-9cc1-5bdf28123fb5",
+              "Text": "Refreshing the index during publishing prevents outdated or mismatched content from appearing on the live course website.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "301a4ab3-63e8-48ac-b0b8-214ff189fb9c",
+              "Text": "The publish-and-refresh cycle ensures consistency between what is authored in the module and what learners see on the site.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "bbb14c86-5a74-4d6e-aec7-9c351b53a6dc",
+          "TopicId": "692ddd66-0b17-42f2-bf84-dc55e92d1c16",
+          "Title": "Index Pages Within the Site Structure",
+          "BodyText": "Module HTML index pages are the building blocks that allow individual modules to integrate into the larger course website.",
+          "Notes": "A well-structured course site relies on each module\u0027s index page being properly formed so that site-wide navigation and linking function correctly.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:47:04.8155711-04:00",
+          "ModifiedDate": "2026-07-08T19:47:04.8155711-04:00",
+          "Items": [
+            {
+              "Id": "c20ae3d1-d07e-494f-acbe-fd4a9ea08646",
+              "Text": "Each module\u0027s index page is linked from the course\u0027s main site navigation, enabling learners to browse between modules seamlessly.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2d4eb18c-4f24-487f-a669-06979d7098df",
+              "Text": "The index files collectively form the navigable layer of the course website, with each representing one module\u0027s content area.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8808506b-87fb-4b3c-9d98-94a7961d38ab",
+              "Text": "Proper index pages ensure the published site is coherent and that no module is orphaned or unreachable within the site structure.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "b91ffdd8-4b5f-41db-b131-85fd7ba19b81",
+      "Title": "How Publishing Refreshes Module Content",
+      "Summary": "Describes the process by which publishing updates each module\u0027s HTML index to reflect the most current content before the website is built.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:46:34.0982794-04:00",
+      "ModifiedDate": "2026-07-08T19:46:34.0982794-04:00",
+      "Elements": [
+        {
+          "Id": "b6957365-5dd6-419e-8372-91ed8c98ef56",
+          "TopicId": "b91ffdd8-4b5f-41db-b131-85fd7ba19b81",
+          "Title": "The Role of the HTML Index in Each Module",
+          "BodyText": "Each module in PreseMaker has an HTML index file that serves as its landing page within the course website.",
+          "Notes": "Think of the HTML index as the front door to a module \u2014 it is the first file a browser loads when a learner navigates to that module.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:47:23.5077132-04:00",
+          "ModifiedDate": "2026-07-08T19:47:23.5077132-04:00",
+          "Items": [
+            {
+              "Id": "f7723339-a007-4944-bb3b-64f3a6bd6c0f",
+              "Text": "The HTML index file aggregates and represents all of the content belonging to its module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "13c379ae-b4e8-4f2d-9e94-cbfda552a93f",
+              "Text": "When the course website is browsed, visitors arrive at a module\u0027s HTML index before accessing individual pieces of content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "25158c0a-3db3-40e9-8eca-14d92a16efb1",
+              "Text": "Keeping this file current is essential for ensuring learners see accurate and complete module information.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "1002afe3-af9e-48e3-a5e8-8ffbf0d80aa9",
+          "TopicId": "b91ffdd8-4b5f-41db-b131-85fd7ba19b81",
+          "Title": "What Triggers a Content Refresh",
+          "BodyText": "The publishing action in PreseMaker is the event that triggers a refresh of each module\u0027s HTML index.",
+          "Notes": "A refresh does not happen automatically as content is edited; it is specifically initiated when the instructor or author invokes the publish feature.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:47:23.5077132-04:00",
+          "ModifiedDate": "2026-07-08T19:47:23.5077132-04:00",
+          "Items": [
+            {
+              "Id": "dd4e987f-1170-47c0-993b-caf420f2c366",
+              "Text": "Initiating the publish feature signals PreseMaker to scan each module for its most current content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7ea7b237-4a14-485a-b269-2345df2a8efa",
+              "Text": "Any additions, edits, or deletions made to module content since the last publish are captured during this refresh step.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4303643e-30ae-4be4-b461-775b99ef2e31",
+              "Text": "Without publishing, the HTML index may reflect outdated content from a previous build.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "58950515-157a-429e-a678-ecd95940b3be",
+          "TopicId": "b91ffdd8-4b5f-41db-b131-85fd7ba19b81",
+          "Title": "How PreseMaker Updates the HTML Index",
+          "BodyText": "During publishing, PreseMaker rewrites each module\u0027s HTML index to incorporate the latest content before assembling the full site.",
+          "Notes": "This rewrite process ensures that the index is not simply appended to but is fully regenerated to reflect the current state of the module.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:47:23.5077132-04:00",
+          "ModifiedDate": "2026-07-08T19:47:23.5077132-04:00",
+          "Items": [
+            {
+              "Id": "654c8fb2-ce82-4354-b276-d02466767329",
+              "Text": "PreseMaker reads the current state of all content items within a module and regenerates the HTML index accordingly.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e1fbeb95-168f-4433-8ba6-0d25f252bdc8",
+              "Text": "The regenerated index replaces the previous version, eliminating stale links or missing entries.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "231924fb-bc3f-434d-ba8e-94a05f20cff9",
+              "Text": "This step updates each module whose HTML index is out of date, so the published site reflects the latest content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4e475b73-972e-4046-84b8-f83aff1f31e9",
+          "TopicId": "b91ffdd8-4b5f-41db-b131-85fd7ba19b81",
+          "Title": "Sequence: Refresh Before Build",
+          "BodyText": "The content refresh of each module\u0027s HTML index is completed before the overall course website is built, ensuring the site is assembled from up-to-date files.",
+          "Notes": "The deliberate ordering \u2014 refresh first, build second \u2014 means the website construction phase always works from accurate source files.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:47:23.5077132-04:00",
+          "ModifiedDate": "2026-07-08T19:47:23.5077132-04:00",
+          "Items": [
+            {
+              "Id": "7918d7e5-326a-4fb6-b2db-988cb27092ea",
+              "Text": "PreseMaker follows a defined sequence: update each module\u0027s HTML index first, then compile those indexes into the browsable website.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9d31c3c2-b4b0-494a-863b-808a310f5aed",
+              "Text": "This ordering prevents the website build from using a mix of current and outdated module indexes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "891a1af4-2f28-4e27-8926-20f1f0b6351f",
+              "Text": "Learners who access the published site can therefore trust that each module landing page reflects the most recent content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "27b881a7-cbc0-450f-a672-8808d89b296a",
+          "TopicId": "b91ffdd8-4b5f-41db-b131-85fd7ba19b81",
+          "Title": "Impact on the Browsable Course Website",
+          "BodyText": "Because each module\u0027s HTML index is refreshed before the site is built, the resulting browsable website accurately mirrors the current state of all course content.",
+          "Notes": "This end-to-end consistency is the primary benefit of the publish-then-build workflow.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:47:23.5077132-04:00",
+          "ModifiedDate": "2026-07-08T19:47:23.5077132-04:00",
+          "Items": [
+            {
+              "Id": "42f6c0f4-b360-44b7-b2d8-f931cc4ec82e",
+              "Text": "Learners navigating the site encounter module landing pages that list only current, valid content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "8976e44a-1109-4339-9b40-5922b8cccca9",
+              "Text": "Instructors can confidently share or deploy the published site knowing it reflects their latest changes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2e60bd82-e78e-4455-8ec2-6c5aa01ebbc8",
+              "Text": "Any module-level updates made after the last publish will not appear on the live site until the publish feature is run again.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "11b2beb6-c235-48fd-a361-f6c3e96f3bc9",
+      "Title": "Assembling Modules into a Course Website",
+      "Summary": "Walks learners through the steps of combining individual course modules into a cohesive, browsable website structure using PreseMaker.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:46:34.0982794-04:00",
+      "ModifiedDate": "2026-07-08T19:46:34.0982794-04:00",
+      "Elements": [
+        {
+          "Id": "0afa2727-ddd1-4508-af13-aef44add051d",
+          "TopicId": "11b2beb6-c235-48fd-a361-f6c3e96f3bc9",
+          "Title": "Overview of the Course Website Assembly Process",
+          "BodyText": "Assembling a course website in PreseMaker means combining multiple individual modules into a single, cohesive, browsable structure.",
+          "Notes": "Think of each module as a chapter in a book; the course website is the bound volume that ties them all together.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:47:39.5149874-04:00",
+          "ModifiedDate": "2026-07-08T19:47:39.5149874-04:00",
+          "Items": [
+            {
+              "Id": "17ca03fb-460a-4d20-bb43-ca9e8b6f6efb",
+              "Text": "PreseMaker\u0027s publish feature serves as the central tool for combining modules into a unified website.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "5e780718-0118-41ea-8b54-4ea53cc378f4",
+              "Text": "The result is a browsable site where learners can navigate from one module to another seamlessly.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a7a518ba-f5a1-4b61-8587-85a21127e54d",
+              "Text": "Understanding the overall process first helps prevent missteps when working through individual steps.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b9bf57cd-3761-472c-8392-be9b0b057802",
+          "TopicId": "11b2beb6-c235-48fd-a361-f6c3e96f3bc9",
+          "Title": "The Role of Each Module\u0027s HTML Index File",
+          "BodyText": "Every module in PreseMaker has an HTML index file that acts as its landing page within the larger course website.",
+          "Notes": "The index file is automatically generated by PreseMaker and serves as the entry point learners reach when they navigate to that module.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:47:39.5149874-04:00",
+          "ModifiedDate": "2026-07-08T19:47:39.5149874-04:00",
+          "Items": [
+            {
+              "Id": "22bb9413-327e-41b4-98c3-0c54cce5a9ba",
+              "Text": "The HTML index file is the first page a learner sees when they enter a specific module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e154d495-e6c9-435d-9105-8b9ee705b137",
+              "Text": "Each module\u0027s index file links to that module\u0027s individual lessons, topics, or assets.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f21ab255-c49e-4df1-a229-47431c7cfe99",
+              "Text": "Keeping index files current is essential so learners always land on accurate, up-to-date content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "9a8ae579-6983-429e-a670-91d6759e3360",
+          "TopicId": "11b2beb6-c235-48fd-a361-f6c3e96f3bc9",
+          "Title": "How Publishing Refreshes Module Content",
+          "BodyText": "Before PreseMaker builds the full course site, it refreshes each module\u0027s HTML index to ensure the latest content is reflected.",
+          "Notes": "This automatic refresh step prevents outdated information from appearing on the live site without requiring manual file updates.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:47:39.5149874-04:00",
+          "ModifiedDate": "2026-07-08T19:47:39.5149874-04:00",
+          "Items": [
+            {
+              "Id": "7a025b39-5d57-4241-b6ab-6a8eaf71720e",
+              "Text": "Publishing triggers a refresh of every module\u0027s HTML index, incorporating any recent edits or additions.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d05899d0-0faf-4016-9437-7b9fae17e646",
+              "Text": "This means the assembled website always represents the most current state of each module at the time of publishing.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "aee8e63f-4fc2-4d88-831d-822462029c89",
+              "Text": "Learners and instructors can trust that content visible on the site matches the latest saved version of each module.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6bf3f383-94e8-4a92-b13e-7df969c324cb",
+          "TopicId": "11b2beb6-c235-48fd-a361-f6c3e96f3bc9",
+          "Title": "Using PreseMaker\u0027s Publish Feature to Build the Site",
+          "BodyText": "The publish feature in PreseMaker is the primary mechanism for converting a collection of modules into a complete, navigable course website.",
+          "Notes": "Locating and initiating the publish function correctly is a critical hands-on skill covered in this topic.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:47:39.5149874-04:00",
+          "ModifiedDate": "2026-07-08T19:47:39.5149874-04:00",
+          "Items": [
+            {
+              "Id": "4bb030ed-cb3b-41ce-949b-521de9aaf5cd",
+              "Text": "Learners must locate the publish feature within PreseMaker\u0027s interface before beginning the assembly process.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4b2f37c2-595b-44f8-959d-948be5018a63",
+              "Text": "Initiating publish starts the sequence of refreshing module indexes and then compiling them into the site structure.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c6ae3702-e4f8-4921-a36a-4a6f6914a175",
+              "Text": "Completing the publish process produces a fully linked website ready for learner access.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d7ec720e-1fe7-479a-a40d-cbe15ba1570d",
+          "TopicId": "11b2beb6-c235-48fd-a361-f6c3e96f3bc9",
+          "Title": "Ensuring a Cohesive Navigation Structure",
+          "BodyText": "A well-assembled course website provides clear, consistent navigation so learners can move between modules without confusion.",
+          "Notes": "PreseMaker handles much of the structural linking automatically, but understanding how modules connect helps instructors verify the site behaves as expected.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:47:39.5149874-04:00",
+          "ModifiedDate": "2026-07-08T19:47:39.5149874-04:00",
+          "Items": [
+            {
+              "Id": "4d0a7caf-e887-497b-bf07-9fb2c15d6cd5",
+              "Text": "PreseMaker automatically generates navigation links between modules based on the order and structure defined in the course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "5baf56db-5ab7-4d7e-b654-b28da0e48777",
+              "Text": "Instructors should review the assembled site to confirm all modules appear in the correct sequence and are accessible.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d05a8653-846c-442e-b33f-eb7f986404f7",
+              "Text": "Consistent navigation reduces learner frustration and supports a smooth, uninterrupted learning experience.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "9543e4b4-0552-4da7-8721-cc62594241f7",
+      "Title": "Keeping the Course Website Current",
+      "Summary": "Covers best practices and workflows for re-publishing and maintaining an up-to-date course website as module content evolves over time.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:46:34.0982794-04:00",
+      "ModifiedDate": "2026-07-08T19:46:34.0982794-04:00",
+      "Elements": [
+        {
+          "Id": "bda9a2ec-2f23-47b9-9dba-fe38ae899a07",
+          "TopicId": "9543e4b4-0552-4da7-8721-cc62594241f7",
+          "Title": "Understanding Why Re-Publishing Is Necessary",
+          "BodyText": "Each time module content changes, the HTML index for that module must be refreshed before the course website accurately reflects those updates.",
+          "Notes": "Think of the HTML index as a snapshot of the module at a given point in time; without re-publishing, visitors see outdated content.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:48:01.0305635-04:00",
+          "ModifiedDate": "2026-07-08T19:48:01.0305635-04:00",
+          "Items": [
+            {
+              "Id": "603b2de9-06ee-4305-9734-b49372fe0523",
+              "Text": "PreseMaker\u0027s publish feature regenerates each module\u0027s HTML index to incorporate the latest content changes.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f21c89af-b1f2-4b54-9da0-fbfd5016e709",
+              "Text": "Skipping re-publication after edits means the live website will display stale or incorrect information.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "25775708-aacd-4ab8-b783-53004ed1c437",
+              "Text": "Re-publishing ensures that the browsable site and each module\u0027s landing page stay synchronized with the source content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6353ae33-683b-406e-863d-2db06fd07fbf",
+          "TopicId": "9543e4b4-0552-4da7-8721-cc62594241f7",
+          "Title": "Identifying When to Re-Publish",
+          "BodyText": "Knowing the right triggers for re-publishing helps maintain a consistently accurate course website without unnecessary extra work.",
+          "Notes": "Establishing a checklist of change types that require re-publishing can reduce the risk of accidentally leaving the site out of date.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:48:01.0305635-04:00",
+          "ModifiedDate": "2026-07-08T19:48:01.0305635-04:00",
+          "Items": [
+            {
+              "Id": "048105bb-caad-485f-a8d1-73f50659d15c",
+              "Text": "Re-publish whenever text, media, or structural changes are made to any module within the course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b9fa8a74-bf13-4aef-8432-aca99f270615",
+              "Text": "Additions or removals of entire modules require a full site re-publish so the navigation and index reflect the new structure.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "aa34fda3-1758-46fc-a6ef-b094fb9de95a",
+              "Text": "Minor cosmetic or metadata updates may also necessitate re-publishing if they affect the generated HTML index.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d6ffcd05-792e-497f-9546-a31501184cda",
+          "TopicId": "9543e4b4-0552-4da7-8721-cc62594241f7",
+          "Title": "The Re-Publishing Workflow in PreseMaker",
+          "BodyText": "Re-publishing a course website in PreseMaker follows the same core steps as the initial publish, ensuring each module\u0027s HTML index is rebuilt before the site is assembled.",
+          "Notes": "Consistently following the same workflow each time reduces errors and ensures no module is accidentally left un-refreshed.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:48:01.0305635-04:00",
+          "ModifiedDate": "2026-07-08T19:48:01.0305635-04:00",
+          "Items": [
+            {
+              "Id": "325387f8-8eb3-4121-a091-5fa3a91c1146",
+              "Text": "Open the course in PreseMaker and navigate to the publish feature to begin the update process.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "46134f7f-f13d-45d3-b996-a7a3281913a9",
+              "Text": "PreseMaker refreshes each module\u0027s HTML index during the publish run, capturing all recent content changes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f083c968-519b-46d9-b82b-9762ebd07f3a",
+              "Text": "Once all module indexes are regenerated, the full browsable website is rebuilt and ready for distribution.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "19dfbff8-8ca8-479b-b33a-36e18cdaa59b",
+          "TopicId": "9543e4b4-0552-4da7-8721-cc62594241f7",
+          "Title": "Managing Multiple Modules During Updates",
+          "BodyText": "Courses with several modules require careful coordination to ensure every changed module is re-published and no landing page is left outdated.",
+          "Notes": "Maintaining a simple log of which modules were edited and when can streamline the re-publishing process for large courses.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:48:01.0305635-04:00",
+          "ModifiedDate": "2026-07-08T19:48:01.0305635-04:00",
+          "Items": [
+            {
+              "Id": "da772bf1-1d97-419e-8a84-94da225deeb7",
+              "Text": "Track which modules have been modified since the last publish to target only those that need refreshing.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "dda108aa-6d4e-4d34-b1a4-fcaaca8f7932",
+              "Text": "Re-publishing the entire course at once is the safest approach when multiple modules have been updated simultaneously.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "769613ee-cc4c-4622-8e56-8b821400dbf3",
+              "Text": "Verify each module\u0027s HTML index after publishing to confirm the latest content is correctly reflected on its landing page.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d4a621f2-6880-403f-a625-5de5f6e9ab94",
+          "TopicId": "9543e4b4-0552-4da7-8721-cc62594241f7",
+          "Title": "Verifying the Updated Course Website",
+          "BodyText": "After re-publishing, a review step confirms that all changes appear correctly across the live course website and each module\u0027s landing page.",
+          "Notes": "Spot-checking a sample of recently edited content in a browser helps catch any publishing errors before learners encounter them.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:48:01.0305635-04:00",
+          "ModifiedDate": "2026-07-08T19:48:01.0305635-04:00",
+          "Items": [
+            {
+              "Id": "af5f78f1-a79e-4cbe-8087-261f0158e051",
+              "Text": "Browse the regenerated site to confirm that updated module content is visible and accurate.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "021f3914-be0a-4e29-b423-e13d4ff1058b",
+              "Text": "Check each affected module\u0027s HTML index page to ensure it serves as a correct and complete landing page.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "79a321da-c475-42c4-a6b6-df8d7f4cc418",
+              "Text": "Look for broken links, missing media, or layout issues that may have been introduced during the re-publish process.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "598fd309-bc5f-464f-aa41-2d73f1ec51aa",
+          "TopicId": "9543e4b4-0552-4da7-8721-cc62594241f7",
+          "Title": "Establishing a Maintenance Cadence",
+          "BodyText": "Setting a regular schedule or clear policy for re-publishing keeps the course website reliably current without requiring ad hoc decisions each time content changes.",
+          "Notes": "For courses under active development, a publish-on-save or end-of-session habit can prevent the site from falling behind the source content.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:48:01.0305635-04:00",
+          "ModifiedDate": "2026-07-08T19:48:01.0305635-04:00",
+          "Items": [
+            {
+              "Id": "d604087e-194a-416e-a2cd-3c6a63d3214c",
+              "Text": "Define a publishing cadence\u2014such as after every editing session or at the end of each development sprint\u2014to build consistency.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d329eeb7-0305-4f8d-a141-0f2e13dc3645",
+              "Text": "Communicate the update schedule to stakeholders so they know when to expect the live site to reflect recent changes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b7116155-9d28-47d7-905a-1640a93638d0",
+              "Text": "Periodic full re-publishes, even without major edits, can catch any drift between source content and the published website.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 25
+}

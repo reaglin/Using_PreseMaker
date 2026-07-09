@@ -1,0 +1,9 @@
+{
+  "Id": "a9633b3a-9179-4d4c-b51a-3d7d2ec690fd",
+  "Name": "AI Providers and API Keys: Setting Up Your Connection",
+  "Description": "This lesson explains how PreseMaker connects to external AI providers \u2014 including Anthropic Claude, Google Gemini, OpenAI, and Mistral \u2014 and why API keys are required. Learners will walk through obtaining a key, entering it in the Settings screen, and understanding how keys are encrypted and stored locally.",
+  "CreatedBy": "Ron Eaglin",
+  "CreatedDate": "2026-07-08T19:07:39.3690228-04:00",
+  "LastModifiedDate": "2026-07-08T19:07:39.370306-04:00",
+  "Actions": []
+}

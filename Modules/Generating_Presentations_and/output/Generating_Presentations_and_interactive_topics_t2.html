@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generating a PowerPoint Slide Deck from Module Topics</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Generating a PowerPoint Slide Deck from Module Topics</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Generating a PowerPoint Slide Deck from Module Topics</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Creating a polished PowerPoint presentation from scratch is one of the most time-intensive tasks in instructional design. The AI-driven slide deck generator built into the Module Editor eliminates much of that manual effort by reading the topics you have already created and automatically transforming them into a structured, presentation-ready PowerPoint file. Understanding how each stage of this workflow operates — from preparing your content to downloading the finished file — allows you to get the best possible output and spend your remaining energy on refinement rather than construction.</p>
+
+<p><strong>Accessing the Slide Deck Generator in the Module Editor</strong></p>
+
+<p>Before the generator can do anything useful, your module content must be in good shape. The slide deck tool draws entirely from the topics that already exist inside the Module Editor, so the quality and completeness of those topics directly determines the quality of the slides that come out the other end. With that principle in mind, your first step is always to open the Module Editor and confirm that every topic you want represented in the presentation has been created, titled clearly, and arranged in the order you intend the slides to follow.</p>
+
+<p>Topic order matters because the generator mirrors it exactly. If "Introduction to Data Privacy" sits above "Regulatory Frameworks" in the Module Editor, that same sequence will appear in the exported PowerPoint. Take a moment to drag and reorder topics if necessary before you trigger generation, because reordering slides manually after export is far more tedious than reordering topics before you begin.</p>
+
+<p>Once your topics are ready, locate the presentation generation option within the Module Editor interface. This control is typically found in the module-level toolbar or an options menu rather than inside any individual topic. The important detail to know is that <strong>the tool remains inactive until at least one module topic exists</strong>. If the button appears greyed out or unavailable, the most common cause is simply that no topics have been added yet. Add your first topic, save it, and the option will become selectable. This prerequisite exists because the AI has nothing to process without source content — the generator is a transformation tool, not a content creation tool starting from zero.</p>
+
+<p><strong>How Module Topics Are Mapped to Slides</strong></p>
+
+<p>The mapping relationship between topics and slides follows a straightforward rule: <strong>each topic in the module is treated as a primary unit and generates at least one dedicated slide</strong>. A topic with a modest amount of content will typically produce a single slide. A topic containing a large volume of detail — multiple subtopics, lengthy explanations, several distinct concepts — may cause the AI to distribute that content across two or more slides to avoid overcrowding any single one.</p>
+
+<p>To populate each slide, the AI reads the topic's full body content and performs an extraction process. It identifies the main heading or title of the topic and uses that as the slide title. It then scans the body for the most important concepts, key terms, and supporting details, condensing them into concise bullet points or short phrases appropriate for a presentation context. The AI is specifically tuned to strip away the verbose, explanatory prose that works well in a reading document but feels cluttered on a projected slide, retaining only the essential informational skeleton.</p>
+
+<p>Consider this example. Suppose one of your module topics reads as follows in the editor:</p>
+
+<pre><code>Topic Title: Active Listening Techniques
+
+Body: Active listening is a communication skill that requires the listener to fully
+concentrate on the speaker, understand the message, and respond thoughtfully.
+Key techniques include maintaining eye contact, avoiding interruptions, paraphrasing
+to confirm understanding, and asking open-ended follow-up questions. Research
+consistently shows that teams whose managers practice active listening report higher
+engagement and fewer misunderstandings.
+</code></pre>
+
+<p>The AI would extract from this a slide that looks something like the following:</p>
+
+<pre><code>Slide Title: Active Listening Techniques
+
+• Requires full concentration and thoughtful response
+• Maintain eye contact; avoid interruptions
+• Paraphrase to confirm understanding
+• Ask open-ended follow-up questions
+• Linked to higher team engagement and fewer misunderstandings
+</code></pre>
+
+<p>The narrative explanation is gone, but every concrete, actionable point survives in a form that a presenter can speak to naturally. This extraction logic is why well-written, detailed module topics produce far better slides than sparse or vague ones — the AI can only surface value that is already present in the source material.</p>
+
+<p>The resulting slide order mirrors the topic order established in the Module Editor precisely and without exception. There is no automatic reordering based on content type or inferred importance. The sequence you set in the editor is the sequence the audience will see, which reinforces why deliberate ordering before generation is worthwhile.</p>
+
+<p><strong>Initiating the AI-Driven Generation Process</strong></p>
+
+<p>When you are satisfied with your topic content and order, select the option to generate a PowerPoint slide deck. This action sends all module topic data to the AI and begins the processing pipeline. You do not need to select individual topics or configure slides one at a time — the generator processes the entire module in a single operation.</p>
+
+<p>Once triggered, the AI moves through several internal steps. It reads each topic's title and body content, determines an appropriate slide layout for the content type and volume, writes the slide title, formats the body content into bullet points or structured text blocks, and sequences all slides in topic order. Where a topic's content is rich enough to warrant it, the AI may also generate a brief transitional or summary slide to help the presentation flow naturally between major sections.</p>
+
+<p>Generation time is not instantaneous and <strong>will vary depending on two factors: the number of topics in the module and the total volume of content each topic contains</strong>. A module with five short topics may complete in under a minute. A module with twenty dense topics covering complex technical material could take several minutes. During this period it is best to leave the Module Editor open and avoid navigating away, as doing so may interrupt the process. A progress indicator or status message will typically signal when the AI is working and when it has finished.</p>
+
+<p>No configuration choices are required from you during generation. The AI handles layout selection, text condensation, and formatting automatically. This hands-off approach is intentional — the goal is speed and consistency rather than granular slide-by-slide customization, which is better handled as a post-export refinement step.</p>
+
+<p><strong>Reviewing the Organized Slide Structure</strong></p>
+
+<p>Once generation completes, the system presents you with a view of the organized slide structure before you export. This review stage is an opportunity to scan the output and catch anything that needs attention prior to downloading the file.</p>
+
+<p>Each slide carries a title derived directly from the corresponding module topic. If your topic was titled "Onboarding Compliance Requirements," the slide title will read "Onboarding Compliance Requirements." This direct inheritance means that clear, professional topic titles in the Module Editor translate immediately into clear, professional slide titles — another reason that thoughtful topic naming pays dividends.</p>
+
+<p>The body content on each slide has been condensed into presentation-appropriate language. You should expect to see shorter sentences, bullet-point fragments, and the removal of transitional or explanatory phrasing. This is correct behavior. Slides are speaking aids, not documents. If you notice that a critical nuance from your topic body has been omitted, make a note to address it verbally during the presentation or add it as a speaker note after export.</p>
+
+<p>Slides are grouped and sequenced to support a logical instructional flow from start to finish. If your module was structured to move from foundational concepts to applied skills to assessment preparation, that same arc will be visible in the slide deck. Reviewing the structure holistically — not just slide by slide — helps you confirm that the narrative thread of your instruction is intact and that no major section feels abrupt or disconnected from what precedes and follows it.</p>
+
+<p>The table below summarizes how elements from the Module Editor are reflected in the generated slide deck:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module Editor Element</th>
+      <th>Corresponding Slide Element</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Topic title</td>
+      <td>Slide title</td>
+      <td>Used verbatim; clear titles produce cleaner slides</td>
+    </tr>
+    <tr>
+      <td>Topic body content</td>
+      <td>Slide bullet points / body text</td>
+      <td>AI condenses prose into concise, scannable points</td>
+    </tr>
+    <tr>
+      <td>Topic order in Module Editor</td>
+      <td>Slide sequence in the deck</td>
+      <td>Mirrored exactly; reorder topics before generating</td>
+    </tr>
+    <tr>
+      <td>Topic volume (length/density)</td>
+      <td>Number of slides per topic</td>
+      <td>Dense topics may expand to multiple slides automatically</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Completing and Exporting the PowerPoint Slide Deck</strong></p>
+
+<p>After reviewing the slide structure and confirming you are satisfied with the output, you proceed to export. The completed deck is made available for download as a standard <strong>.pptx</strong> file, which is the format used by Microsoft PowerPoint and supported by other major presentation applications including Google Slides, Apple Keynote, and LibreOffice Impress.</p>
+
+<p>The exported file retains everything the AI structured during generation: slide titles, body text, bullet formatting, and the overall layout applied to each slide. The file is self-contained, meaning it does not require any connection back to the Module Editor once downloaded. You can share it, store it, attach it to a course, or open it immediately for editing.</p>
+
+<p>Opening the exported file in a compatible presentation application is the recommended next step for anyone who wants to make manual refinements. Common post-export tasks include adjusting visual design and color themes to match organizational branding, adding images or diagrams that illustrate key points, inserting speaker notes beneath each slide to guide the presenter, fine-tuning bullet phrasing where the AI's condensation altered a meaning slightly, and adding a title slide or closing slide that the module topics did not explicitly cover.</p>
+
+<p>It is worth emphasizing that the AI-generated slide deck is a <em>starting point</em>, not a finished product that requires no human attention. The generator's value is that it eliminates the blank-canvas problem and the time-consuming work of transferring content from one medium to another. By the time you open the exported file, the structural and editorial scaffolding is already in place, and your effort can focus entirely on polish, personalization, and presentation strategy rather than building slides from nothing.</p>
+        <div class="notes"><strong>Notes</strong>Step-by-step walkthrough of initiating and completing the AI-driven slide deck generation process within the Module Editor. Covers how module topics are mapped and transformed into organized PowerPoint slides.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

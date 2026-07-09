@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Using the Course Repository Service</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Using the Course Repository Service</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Using the Course Repository Service</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>PreseMaker includes built-in integration with an external <strong>Course Repository Service</strong> — a dedicated platform designed so that educators can share finished or in-progress course materials with one another and reuse content that colleagues have already built. Rather than forcing you to visit a separate website, download files manually, and then re-upload them into your project, PreseMaker handles every part of the exchange — browsing, importing, and publishing — from inside the application itself. Understanding what the service is, how to connect to it, and how it compares to PreseMaker's other sharing and version-control features will help you take full advantage of this collaborative content ecosystem.</p>
+
+<p>The Course Repository Service is, at its core, a <strong>content-sharing network for instructors</strong>. Think of it as a library where educators deposit course materials they are willing to share and withdraw materials that other educators have deposited. An example of such a service is <em>floridacourserepo.com</em>, which aggregates course content from participating institutions and individual instructors. Any instructor whose PreseMaker installation is pointed at that service can browse its catalog, pull materials into their own project, adapt them, and — if they choose — contribute their own work back to the catalog so others can benefit in turn. The emphasis throughout is on <strong>reuse and collaboration around content</strong>, not on tracking a history of edits or producing a live website.</p>
+
+<p>It is equally important to understand what the Course Repository Service is <em>not</em>. It is not a Git repository, and none of the concepts or mechanics associated with Git apply here. There are no commits, no branches, no merges, no pull requests, no personal access tokens, and no command-line interactions of any kind. The service exists purely to let instructors share course materials; PreseMaker abstracts away all of the underlying network communication so that the workflow stays visual and straightforward.</p>
+
+<p><strong>Connecting to the Repository Service from PreseMaker</strong> is the first practical step. Because the integration lives inside the application, you initiate and manage the connection entirely through PreseMaker's own interface — you never need to open a browser, navigate to the service's website directly, or configure anything outside the app. When you provide PreseMaker with the details it needs — typically the address of the repository service you want to use — the application stores those settings so that you do not have to re-enter them at the start of every working session. Once the connection is established, PreseMaker communicates with the external service in the background, presenting you with a familiar in-app experience rather than bouncing you between different tools.</p>
+
+<p>The practical effect of this design is that switching between working on your own course content and interacting with the shared repository feels seamless. PreseMaker remembers where your repository service is located and handles authentication and communication on your behalf, keeping the focus on the course materials themselves rather than on the mechanics of connecting to an external system.</p>
+
+<p><strong>Importing course materials from the repository</strong> is one of the two primary actions the integration supports. Once your connection is active, PreseMaker gives you the ability to search or browse the catalog of materials that other educators have published. You might search by subject area, keyword, course level, or contributor, depending on what the service exposes. When you find something useful — a set of slides, a structured lesson, an assessment bank, or an entire course skeleton — you select it and PreseMaker imports it directly into your working project. The import process requires no manual downloading of files to your desktop and no separate re-uploading step; PreseMaker fetches the content and places it where you need it.</p>
+
+<p>Once imported, the materials are fully yours to work with inside PreseMaker. You can use them exactly as they arrived — if a colleague has already built a well-structured module on a topic you also teach, you may find it needs little or no adjustment — or you can modify, extend, and reshape them to fit your own course design, terminology, and learning objectives. The repository model therefore saves time not just by providing ready-made content but by giving you a meaningful starting point that you can customize rather than building from a blank slate.</p>
+
+<p><strong>Publishing your own materials to the repository</strong> is the reciprocal action. When you have built course content that you believe would be valuable to other instructors — whether it is a polished, finished course or a strong working draft — PreseMaker provides a publish option that sends that content to the external repository service directly from within the application. Once published, your materials appear in the catalog and become importable by any other educator who uses the same repository service. You are contributing to the shared library in the same way you benefit from it when you import someone else's work.</p>
+
+<p>Publishing in this context is focused entirely on <strong>content sharing and reuse</strong>. It is not about deploying a live website for students to visit, and it is not about creating a version snapshot for your own future reference. It is specifically the act of making your course materials available in a form that another instructor can import into their own PreseMaker project and build upon.</p>
+
+<p>Because PreseMaker also includes other features that involve exporting or sharing your work, it is worth being precise about <strong>how the repository service differs from those other features</strong>. The table below summarizes the key distinctions:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Primary Purpose</th>
+      <th>Audience</th>
+      <th>What It Produces</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Course Repository Service</strong></td>
+      <td>Share and reuse course content with other instructors</td>
+      <td>Other educators using the same repository service</td>
+      <td>Importable course materials in the shared catalog</td>
+    </tr>
+    <tr>
+      <td><strong>Git Version Control</strong></td>
+      <td>Track changes to your course over time; maintain a history of edits</td>
+      <td>Yourself (and any collaborators on the same project)</td>
+      <td>A versioned history of your project files</td>
+    </tr>
+    <tr>
+      <td><strong>GitHub Pages Publishing</strong></td>
+      <td>Deploy your course as a live website with a public web address</td>
+      <td>Students and anyone with the URL</td>
+      <td>A publicly accessible website hosted on GitHub Pages</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Git version control inside PreseMaker is concerned with <em>your own course over time</em>. Every time you commit a change, Git records a snapshot so that you can look back at earlier states of the course, understand what changed and when, and recover from mistakes. The repository service has nothing to do with this history-keeping function; it is not tracking the evolution of your work but rather making a version of that work available for others to take and use.</p>
+
+<p>GitHub Pages publishing, meanwhile, is concerned with <em>delivery to learners</em>. When you publish to GitHub Pages, you are generating a live website — a public URL that students can open in a browser to view and interact with your course. This is a deployment action, not a sharing-with-colleagues action. A student visiting your GitHub Pages site cannot import your course into their own PreseMaker installation; they simply see the rendered output. The repository service, by contrast, makes the underlying course materials available in a form that another <em>instructor</em> can import and edit.</p>
+
+<p>Keeping these distinctions clear helps you choose the right tool for each goal. If you want to <strong>save your progress and maintain a history</strong>, use Git. If you want to <strong>give students a website to visit</strong>, use GitHub Pages. If you want to <strong>share reusable course materials with fellow instructors</strong> or bring someone else's materials into your own project, use the Course Repository Service — all without leaving PreseMaker.</p>
+        <div class="notes"><strong>Notes</strong>The topic contrasts the repository service with Git version control and GitHub Pages publishing to prevent common confusion. The table provides a quick-reference summary of the three features side by side. No Git commands, tokens, or branch concepts are introduced, consistent with the source notes.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

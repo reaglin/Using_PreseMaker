@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking Coverage: Tagging Content to Outcomes and Spotting Gaps — Using PreseMaker</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-bg: #f5f6f8;
+      --color-surface: #ffffff;
+      --color-border: #e2e5ea;
+      --color-primary: #2a5fa5;
+      --color-primary-dark: #1e4a84;
+      --color-accent: #3d7dd4;
+      --color-text: #1e2330;
+      --color-text-secondary: #4f5767;
+      --color-badge-bg: #eef2f9;
+      --color-badge-text: #2a5fa5;
+      --color-filetype-bg: #f0f4fa;
+      --color-filetype-text: #4f5767;
+      --color-source-bg: #f5f7fb;
+      --color-source-border: #c5d0e0;
+      --color-source-text: #5a6a84;
+      --color-header-bg: #1e2e4a;
+      --color-header-text: #ffffff;
+      --color-header-sub: #a8bcd4;
+      --radius: 8px;
+      --shadow: 0 1px 4px rgba(0,0,0,0.08), 0 2px 12px rgba(0,0,0,0.06);
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Header ─────────────────────────────────── */
+    header {
+      background-color: var(--color-header-bg);
+      color: var(--color-header-text);
+      padding: 2.5rem 1.5rem 2rem;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .course-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-header-sub);
+      margin-bottom: 0.55rem;
+    }
+
+    header h1 {
+      font-size: clamp(1.35rem, 3vw, 1.9rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--color-header-text);
+      margin-bottom: 0.9rem;
+      max-width: 720px;
+    }
+
+    header p {
+      font-size: 0.975rem;
+      color: var(--color-header-sub);
+      max-width: 680px;
+      line-height: 1.7;
+    }
+
+    /* ── Main layout ─────────────────────────────── */
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1.5rem 3rem;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    /* ── Card grid ───────────────────────────────── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr));
+      gap: 1rem;
+    }
+
+    /* ── Card ────────────────────────────────────── */
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.25rem 1.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 3px 14px rgba(0,0,0,0.11), 0 1px 4px rgba(0,0,0,0.07);
+      border-color: #c5cdd8;
+    }
+
+    /* ── Card header row ─────────────────────────── */
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.18em 0.6em;
+      border-radius: 3px;
+      background: var(--color-badge-bg);
+      color: var(--color-badge-text);
+      white-space: nowrap;
+    }
+
+    .filetype {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      font-family: 'Courier New', Courier, monospace;
+      letter-spacing: 0.03em;
+      padding: 0.18em 0.55em;
+      border-radius: 3px;
+      background: var(--color-filetype-bg);
+      color: var(--color-filetype-text);
+      border: 1px solid var(--color-border);
+      white-space: nowrap;
+    }
+
+    /* ── Card title ──────────────────────────────── */
+    .card-title {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 0.65rem;
+    }
+
+    .card-title-text {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--color-text);
+    }
+
+    .card-title-text a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    .card-title-text a:hover {
+      color: var(--color-primary-dark);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .card-title-text a:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* ── Source link ─────────────────────────────── */
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3em;
+      font-size: 0.73rem;
+      font-weight: 500;
+      color: var(--color-source-text);
+      text-decoration: none;
+      background: var(--color-source-bg);
+      border: 1px solid var(--color-source-border);
+      border-radius: 4px;
+      padding: 0.18em 0.55em;
+      white-space: nowrap;
+      transition: background 0.15s, border-color 0.15s;
+      flex-shrink: 0;
+    }
+
+    .source-link:hover {
+      background: #eaeff8;
+      border-color: #a0b2cc;
+      color: var(--color-primary-dark);
+    }
+
+    .source-link:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    .source-link svg {
+      flex-shrink: 0;
+    }
+
+    /* ── Card description ────────────────────────── */
+    .card-description {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ── Footer ──────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.78rem;
+      color: #8a93a3;
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* ── Responsive tweaks ───────────────────────── */
+    @media (max-width: 600px) {
+      header {
+        padding: 2rem 1.1rem 1.6rem;
+      }
+
+      main {
+        padding: 0 1rem 2.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .card {
+        padding: 1.1rem 1.1rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <span class="course-label">Using PreseMaker</span>
+      <h1>Tracking Coverage: Tagging Content to Outcomes and Spotting Gaps</h1>
+      <p>
+        This module walks you through PreseMaker's content-tagging system — from understanding how
+        learning items are linked to outcomes, to building coverage views, identifying curriculum
+        gaps, and closing the loop between planning, teaching, and assessment. Browse the artifacts
+        below to explore readings, topic outlines, and supporting materials for this module.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <p class="section-label">Module Artifacts &mdash; 6 items</p>
+
+    <div class="card-grid">
+
+      <!-- Card 1: Module Topics -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge">Module Topics</span>
+          <span class="filetype">.json</span>
+        </div>
+        <div class="card-title">
+          <span class="card-title-text">
+            <a href="module_topics.html">Module Topics</a>
+          </span>
+          <a class="source-link" href="../hierarchy.json">
+            <svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.5 10.5v3a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 2v8M5 5l3-3 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            source file
+          </a>
+        </div>
+        <p class="card-description">
+          A structured outline of the module's topics and subtopics — covering content tagging,
+          outcome tagging for generated and instructor-created items, coverage views, gap
+          identification, and closing the planning-teaching-assessment loop — used by instructors
+          and designers to understand the full scope of the module at a glance.
+        </p>
+      </div>
+
+      <!-- Card 2: Introduction to Content Tagging -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge">Topic Detail</span>
+          <span class="filetype">.html</span>
+        </div>
+        <div class="card-title">
+          <span class="card-title-text">
+            <a href="Tracking_Coverage_Tagging_interactive_topics_t1.html">Introduction to Content Tagging</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that defines content tagging, explains why it is used to link learning items
+          to specific outcomes, and describes the types of content that receive tags, giving
+          learners the foundational vocabulary needed before working with PreseMaker's tagging
+          features.
+        </p>
+      </div>
+
+      <!-- Card 3: How Generated Items Are Tagged to Outcomes -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge">Topic Detail</span>
+          <span class="filetype">.html</span>
+        </div>
+        <div class="card-title">
+          <span class="card-title-text">
+            <a href="Tracking_Coverage_Tagging_interactive_topics_t2.html">How Generated Items Are Tagged to Outcomes</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that explains how PreseMaker assigns outcome tags to AI-generated items and
+          how instructors tag items they create manually, helping learners understand the mechanics
+          behind keeping every piece of content tied to a defined learning objective.
+        </p>
+      </div>
+
+      <!-- Card 4: Building and Reading a Coverage View -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge">Topic Detail</span>
+          <span class="filetype">.html</span>
+        </div>
+        <div class="card-title">
+          <span class="card-title-text">
+            <a href="Tracking_Coverage_Tagging_interactive_topics_t3.html">Building and Reading a Coverage View</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that describes what a coverage view is, how tagged content aggregates into
+          the report, and how to interpret the resulting map of outcomes to content items,
+          enabling instructors and designers to use the report as an analytical tool for course
+          review.
+        </p>
+      </div>
+
+      <!-- Card 5: Identifying Gaps in Coverage -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge">Topic Detail</span>
+          <span class="filetype">.html</span>
+        </div>
+        <div class="card-title">
+          <span class="card-title-text">
+            <a href="Tracking_Coverage_Tagging_interactive_topics_t4.html">Identifying Gaps in Coverage</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that explains how to read a coverage report to detect learning outcomes with
+          insufficient or missing content, and how to act on those findings, guiding instructors
+          through the process of diagnosing and addressing curriculum gaps.
+        </p>
+      </div>
+
+      <!-- Card 6: Closing the Loop (Topic Detail) -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge">Topic Detail</span>
+          <span class="filetype">.html</span>
+        </div>
+        <div class="card-title">
+          <span class="card-title-text">
+            <a href="Tracking_Coverage_Tagging_interactive_topics_t5.html">Closing the Loop Between Planning, Teaching, and Assessment</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that presents curriculum design as a continuous cycle in which planning,
+          teaching, and assessment inform each other, showing learners how coverage data and
+          tagging practices are used to align and refine all three phases over time.
+        </p>
+      </div>
+
+      <!-- Card 7: Closing the Loop (Text Content) -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge">Text Content</span>
+          <span class="filetype">.html</span>
+        </div>
+        <div class="card-title">
+          <span class="card-title-text">
+            <a href="Tracking_Coverage_Tagging_interactive.html">Closing the Loop Between Planning, Teaching, and Assessment</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A duplicate of the reading that presents curriculum design as a continuous cycle in
+          which planning, teaching, and assessment inform each other, showing learners how
+          coverage data and tagging practices are used to align and refine all three phases
+          over time.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    Using PreseMaker &mdash; Tracking Coverage: Tagging Content to Outcomes and Spotting Gaps
+  </footer>
+
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body>
+</html>

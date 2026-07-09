@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Persistent Settings Per Course</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Persistent Settings Per Course</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Persistent Settings Per Course</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When working within a course, instructors regularly perform a set of tasks — generating quizzes, building presentations, producing study guides, and other structured outputs — through a feature called Common Actions. One of the most practical aspects of this system is that it does not treat every session as a blank slate. Instead, it <strong>remembers the configuration choices an instructor has already made</strong> and stores them in association with the specific course where those choices were defined. This is what is meant by <em>persistent settings</em>: the task selections, preferences, and configurations an instructor defines do not disappear when the session ends. They persist, waiting exactly as they were left, ready to be used again the next time that course is opened.</p>
+
+<p>Understanding this feature in depth requires looking at several interconnected dimensions: what persistence actually means in practice, how settings are scoped to individual courses, the time-saving implications for instructors, how consistency across a course is maintained, and how the feature supports instructors who return to a course after a break.</p>
+
+<p><strong>What 'Persistent Settings' Means in Common Actions</strong></p>
+
+<p>Persistent settings refers to the system's ability to capture and retain an instructor's configuration choices across sessions. When an instructor opens Common Actions for a course and selects, for example, that they want to generate a multiple-choice quiz and a visual presentation for each module, those selections are recorded by the system and linked to that course. The next time the instructor opens Common Actions for the same course — whether that is the next day, the following week, or a month later — those same options are already checked, already configured, and already reflecting the choices that were previously made.</p>
+
+<p>This means the instructor is never starting from zero. The system acts as an institutional memory for that course's processing preferences. Rather than navigating through every available task option and determining which ones apply each time, the instructor simply arrives at a pre-populated configuration and can move directly into running the tasks. This is not a minor convenience — it represents a fundamental shift in how instructors interact with the tool over the lifecycle of a course.</p>
+
+<p>It is also worth being explicit about what persistence does <em>not</em> do: it does not lock an instructor into a configuration. Settings can always be changed. The persistence simply means that the last saved configuration is the default presented to the instructor, not that the instructor is prevented from making adjustments. If course needs evolve mid-term and a new task type needs to be added, the instructor can update the configuration, and that updated configuration then becomes the new persistent state for the course going forward.</p>
+
+<p><strong>Per-Course Scope of Saved Settings</strong></p>
+
+<p>A critical design principle behind this feature is that persistence is <em>course-specific</em>. Each course maintains its own completely independent settings profile. The configuration saved for one course has no effect whatsoever on the configuration of any other course. This separation is intentional and reflects a straightforward reality of academic instruction: different courses have different requirements.</p>
+
+<p>Consider an instructor managing three courses simultaneously. One is an introductory survey course where the priority is generating comprehension quizzes and simplified summaries for each module. The second is an advanced seminar where the instructor wants detailed discussion prompts and annotated reading guides. The third is a skills-based course where interactive scenario exercises are the primary output. Each of these courses demands a completely different Common Actions configuration. Because settings are scoped per course, the instructor can define each profile independently, and the system keeps them entirely separate.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Course</th>
+      <th>Enabled Tasks</th>
+      <th>Effect on Other Courses</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Introductory Survey Course</td>
+      <td>Quiz Generation, Module Summaries</td>
+      <td>None — settings are isolated to this course only</td>
+    </tr>
+    <tr>
+      <td>Advanced Seminar</td>
+      <td>Discussion Prompts, Annotated Reading Guides</td>
+      <td>None — settings are isolated to this course only</td>
+    </tr>
+    <tr>
+      <td>Skills-Based Course</td>
+      <td>Scenario Exercises, Practice Assessments</td>
+      <td>None — settings are isolated to this course only</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This per-course scoping means instructors can manage a complex portfolio of courses without any risk of cross-contamination between configurations. There is no need to manually separate settings, maintain personal records of which tasks apply to which course, or perform a reset before working on a different course. The system itself enforces the separation, and each course simply presents its own profile when opened.</p>
+
+<p><strong>Time-Saving Benefit of Settings Memory</strong></p>
+
+<p>The efficiency gains produced by persistent settings accumulate significantly over the course of a term. To appreciate this, consider the alternative: if settings were not saved, every time an instructor opened Common Actions to process a module, they would need to review the full list of available tasks, determine which apply to the current course, make the appropriate selections, and verify nothing was missed — before any actual work could begin. Multiplied across dozens of modules and repeated across every session throughout the term, this configuration overhead becomes a substantial burden.</p>
+
+<p>With persistent settings, that overhead is reduced to a one-time investment. The instructor defines the configuration once — or updates it as needed — and from that point forward, every return to that course's Common Actions begins with everything already in place. The instructor can immediately focus on the substantive work of reviewing and running tasks rather than spending cognitive energy and time on setup that has already been done.</p>
+
+<p>This benefit is particularly pronounced for courses with a large number of modules. A course structured around fifteen or twenty modules, each requiring the same set of tasks to be run, would demand fifteen or twenty separate configuration sessions in the absence of persistence. With persistent settings, the instructor runs through setup once and processes all subsequent modules without repeating that step. The time saved is not trivial — it is time redirected toward higher-value activities like reviewing outputs, refining content, and supporting learners.</p>
+
+<p>There is also a cognitive benefit that complements the time savings. When instructors do not need to remember and manually reproduce a configuration each time, they are freed from a low-level but recurring mental load. This reduction in cognitive overhead allows the instructor to maintain focus on the content and quality of the course rather than on the mechanics of configuring the tool that supports it.</p>
+
+<p><strong>Consistency Across Module Processing</strong></p>
+
+<p>Beyond saving time, persistent settings play an important role in ensuring that a course is processed consistently from one module to the next. When the same configuration is applied automatically each time, every module in the course receives exactly the same set of outputs. If the course is designed so that each module includes a quiz, a summary, and a presentation, then every module will have a quiz, a summary, and a presentation — not because the instructor carefully verified the selections each time, but because the system applied the stored configuration without variation.</p>
+
+<p>This consistency has meaningful implications for learner experience. A course in which every module is structured the same way — with the same types of supporting materials present — feels organized, professional, and intentional. Learners benefit from predictability: they know what to expect at each module and can develop efficient habits around how they engage with course materials. A module that unexpectedly lacks a quiz or a study guide — because the instructor forgot to select that task during one session — disrupts that predictability and can leave learners without resources they have come to rely on.</p>
+
+<p>Persistent settings significantly reduce the risk of these kinds of omission errors. Human error in repetitive configuration tasks is a well-documented phenomenon: the more times an instructor manually verifies and selects the same options, the higher the cumulative probability that at some point a selection will be missed. By removing the need for repeated manual configuration, the system removes the primary mechanism through which such errors occur. The configuration is set once and applied uniformly, making accidental inconsistency far less likely.</p>
+
+<ul>
+  <li><strong>Uniform outputs:</strong> Every module receives the same task types, ensuring no module is inadvertently left missing a resource.</li>
+  <li><strong>Reduced error risk:</strong> Removing repeated manual selection eliminates the most common source of omission errors in task configuration.</li>
+  <li><strong>Professional coherence:</strong> Consistent outputs across all modules create a structured, cohesive course experience for learners.</li>
+  <li><strong>Simplified quality assurance:</strong> Instructors reviewing completed modules can focus on content quality rather than checking whether the correct tasks were run.</li>
+</ul>
+
+<p><strong>Returning to a Course After a Break</strong></p>
+
+<p>Academic course development rarely happens in a single uninterrupted session. Instructors build courses in phases, often pausing for weeks or even months between bursts of development activity. A course that is partially built in the fall may not be returned to until the following spring. When an instructor comes back after such a gap, there is a natural risk of discontinuity: what tasks were being run? What configuration was in place? What was the intended structure of the remaining modules?</p>
+
+<p>Persistent settings directly address the configuration component of this challenge. When an instructor reopens a course after any length of time, the Common Actions configuration is exactly as it was when they last worked on it. There is no expiration, no automatic reset, no need to reconstruct choices from memory. The instructor sees the same pre-populated settings they defined during their last session and can resume processing modules immediately, confident that the configuration matches what was used for all the modules already completed.</p>
+
+<p>This continuity eliminates a particular type of frustration that instructors without persistent settings would face: the need to maintain external documentation — a notepad, a spreadsheet, a personal memo — recording which tasks were enabled for a given course, so that the configuration could be reproduced after a break. Persistent settings make that external record-keeping unnecessary. The system itself is the record. The configuration lives within the course, always accessible, always current, always reflecting the last deliberate choices the instructor made.</p>
+
+<p>For instructors managing ongoing course maintenance — returning to an existing course to update modules, add new content, or respond to learner feedback — this feature is equally valuable. The course's established configuration remains intact, meaning that new or updated modules can be processed through exactly the same task pipeline as all the original modules. The updated content is handled consistently with everything that came before it, maintaining the uniformity of the course without requiring any additional configuration effort from the instructor.</p>
+
+<p>In summary, persistent settings per course represent a thoughtfully designed feature that respects an instructor's time, reduces the potential for error, enforces meaningful separation between different courses, and supports the kind of long-term, iterative course development that characterizes real academic work. The configuration an instructor defines is an investment that pays dividends across every subsequent session with that course, compounding in value as the number of modules processed grows and as the course moves through successive terms of use.</p>
+        <div class="notes"><strong>Notes</strong>Describes how Common Actions remembers configuration settings on a per-course basis so instructors do not need to reconfigure tasks each time they return. Covers practical time-saving benefits, per-course isolation of settings, consistency across module processing, and continuity after breaks in course development.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

@@ -1,0 +1,1299 @@
+{
+  "ModuleFolderName": "Generating_Quizzes_and",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:30:59.4571995-04:00",
+  "ModifiedDate": "2026-07-08T19:33:36.4189931-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "a5c063a4-a875-40d2-b0c8-152ebfab5974",
+      "Title": "Introduction to Quiz and Assignment Generation",
+      "Summary": "Overview of the purpose and benefits of generating quizzes and assignments within the platform. Establishes the foundational concepts learners need before beginning the generation process.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:30:59.4571995-04:00",
+      "ModifiedDate": "2026-07-08T19:30:59.4571995-04:00",
+      "Elements": [
+        {
+          "Id": "29fa00a3-8dd4-4893-a988-6787a6a1bcd6",
+          "TopicId": "a5c063a4-a875-40d2-b0c8-152ebfab5974",
+          "Title": "Purpose of Quiz and Assignment Generation",
+          "BodyText": "The platform enables educators to automatically generate quizzes and assignments that are aligned with specific learning outcomes and module content.",
+          "Notes": "This removes the burden of manually crafting every assessment item from scratch, freeing instructors to focus on instructional quality.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:31:17.0886281-04:00",
+          "ModifiedDate": "2026-07-08T19:31:17.0886281-04:00",
+          "Items": [
+            {
+              "Id": "b4b4a285-ff9b-415e-bc44-22fc49f34656",
+              "Text": "Quizzes are used to measure learner comprehension and retention of key concepts covered in a module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b364872c-ebb7-4a1f-8850-5f27228f4fc1",
+              "Text": "Assignments provide structured tasks that allow learners to apply, analyze, or demonstrate their understanding in a more extended format.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1f8bf712-977f-4cb5-9ee8-bf1a9faf7d9a",
+              "Text": "Both assessment types work together to create a balanced evaluation strategy within a course.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "5ddf5eaf-7c10-42aa-927d-a6191714f799",
+          "TopicId": "a5c063a4-a875-40d2-b0c8-152ebfab5974",
+          "Title": "Benefits of Generating Assessments Within the Platform",
+          "BodyText": "Using the platform\u0027s built-in generation tools offers significant advantages over creating assessments externally.",
+          "Notes": "Consistency between course content and assessments is one of the most cited challenges in instructional design; this platform directly addresses that gap.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:31:17.0886281-04:00",
+          "ModifiedDate": "2026-07-08T19:31:17.0886281-04:00",
+          "Items": [
+            {
+              "Id": "52832f8d-6f57-4d15-b074-98b9e932b69f",
+              "Text": "Assessments are automatically tied to the source content, ensuring relevance and reducing misalignment between what is taught and what is tested.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "55c9fa6e-3d52-4aa9-b70d-ce36db428d88",
+              "Text": "The generation process saves time by producing multiple question types and assignment structures in a single workflow.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c19f6cd8-a2b5-4582-8767-932ca9b490cb",
+              "Text": "LMS-compatible export formats mean generated content can be deployed to learners without additional reformatting steps.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "61eae73e-605d-4515-b92d-daa5c529cf8a",
+          "TopicId": "a5c063a4-a875-40d2-b0c8-152ebfab5974",
+          "Title": "Key Assessment Types Supported",
+          "BodyText": "The platform supports the creation of diverse question types and structured assignment tasks to meet varied instructional needs.",
+          "Notes": "Offering multiple question types allows instructors to assess different cognitive levels, from basic recall to higher-order thinking.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:31:17.0886281-04:00",
+          "ModifiedDate": "2026-07-08T19:31:17.0886281-04:00",
+          "Items": [
+            {
+              "Id": "544def9e-dd72-41bb-b659-a7362998b9be",
+              "Text": "Question banks can include multiple question types such as multiple choice, true/false, short answer, and others.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "8ecf28bc-7756-45db-b8f7-93ee23c04364",
+              "Text": "Structured assignment tasks provide learners with clear instructions and criteria for completing more in-depth work.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8690c465-7d42-4555-bdc2-ce5ab6221ff8",
+              "Text": "Having a variety of assessment formats within a single generated bank gives instructors flexibility when building their final assessments.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a571e4b9-a79b-4929-a1ed-f5458f71a5ef",
+          "TopicId": "a5c063a4-a875-40d2-b0c8-152ebfab5974",
+          "Title": "Role of the Content Source Selector",
+          "BodyText": "Before generating quizzes or assignments, learners must understand how to use the content source selector to target the right topics and outcomes.",
+          "Notes": "The content source selector is a foundational step in the generation workflow; skipping or misusing it can result in assessments that do not reflect the intended learning goals.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:31:17.0886281-04:00",
+          "ModifiedDate": "2026-07-08T19:31:17.0886281-04:00",
+          "Items": [
+            {
+              "Id": "5311f1e7-cd05-4d1b-a3a0-75aea027a24d",
+              "Text": "The content source selector allows users to specify which module topics or learning outcomes should inform the generated assessment content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7fcef89e-8569-4774-9120-d4e69e4d7230",
+              "Text": "Targeting specific outcomes ensures that each question or task directly supports the goals established in the module plan.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8cf68ec9-b662-4e94-b903-e6f3f5132806",
+              "Text": "Proper use of the selector is a prerequisite skill that must be established before beginning the actual generation process.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "208ba3ff-4083-4d3c-bc94-11b6c1b46ea2",
+          "TopicId": "a5c063a4-a875-40d2-b0c8-152ebfab5974",
+          "Title": "Alignment Between Assessment and Module Plan",
+          "BodyText": "A core principle of this module is ensuring that all generated assessments remain tightly aligned with the overall module plan.",
+          "Notes": "Assessment alignment is a recognized best practice in instructional design and is often evaluated during course quality reviews.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:31:17.0886281-04:00",
+          "ModifiedDate": "2026-07-08T19:31:17.0886281-04:00",
+          "Items": [
+            {
+              "Id": "aa625f4a-8cdd-43c4-abf3-7a2fe3894c4e",
+              "Text": "Alignment means that the skills and knowledge being tested directly correspond to what was taught within the module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e21446f5-c192-4809-a7db-3b910560ef7b",
+              "Text": "The platform\u0027s generation workflow is designed to enforce this alignment by drawing assessment content from the selected source material.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "586a4b7b-209f-402d-aca8-734d098f66c5",
+              "Text": "Learners will practice confirming alignment as part of the generation process before finalizing any quiz or assignment.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "b6764447-d439-4156-aae4-62a14b7b4fe7",
+      "Title": "Understanding Question Types",
+      "Summary": "Explores the range of question types available for building question banks, such as multiple choice, short answer, and true/false. Learners understand when and why to use each type for effective assessment.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:30:59.4571995-04:00",
+      "ModifiedDate": "2026-07-08T19:30:59.4571995-04:00",
+      "Elements": [
+        {
+          "Id": "1d0e5bf3-bb9b-406f-8e85-30b3b93778e3",
+          "TopicId": "b6764447-d439-4156-aae4-62a14b7b4fe7",
+          "Title": "Multiple Choice Questions",
+          "BodyText": "Multiple choice questions (MCQs) present a stem prompt alongside several answer options, with one or more correct answers.",
+          "Notes": "MCQs are widely used in LMS platforms and are ideal for large cohorts because they can be graded automatically.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:31:40.8255048-04:00",
+          "ModifiedDate": "2026-07-08T19:31:40.8255048-04:00",
+          "Items": [
+            {
+              "Id": "0e40f47f-7062-42fa-9ac4-397071190bb6",
+              "Text": "Use MCQs to assess recognition of facts, concepts, or procedures at scale.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "de666da8-5b06-4c5c-a475-bb0e22bceb07",
+              "Text": "Include three to five plausible distractors to increase discrimination between learners who know the material and those who do not.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4356ac3c-df81-4286-9b4b-059da1505a5e",
+              "Text": "MCQs are best suited for lower-to-middle cognitive levels such as recall, comprehension, and application.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "a2beceab-bd8a-42e8-bb14-cddfa851e4a4",
+              "Text": "Avoid trick questions or double-negative phrasing, which can measure test-taking skill rather than content knowledge.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "848a4767-18bd-4754-ba38-22f1b313b3bf",
+          "TopicId": "b6764447-d439-4156-aae4-62a14b7b4fe7",
+          "Title": "True/False Questions",
+          "BodyText": "True/false questions ask learners to evaluate a single declarative statement and determine whether it is correct or incorrect.",
+          "Notes": "Because there is a 50% chance of guessing correctly, true/false items are most effective when used to address common misconceptions or paired with a justification requirement.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:31:40.8255048-04:00",
+          "ModifiedDate": "2026-07-08T19:31:40.8255048-04:00",
+          "Items": [
+            {
+              "Id": "679eb5d4-6ba2-4c02-8e10-0b5ea93b6327",
+              "Text": "Use true/false questions for quick knowledge checks or to surface and correct common learner misconceptions.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "42580cef-1e4d-4cfc-bfdf-36387dab805d",
+              "Text": "Keep statements unambiguous and avoid absolute terms like \u0027always\u0027 or \u0027never\u0027 that give away the answer.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "247449f6-5df5-4024-8f2a-5e9250171cfc",
+              "Text": "Adding a follow-up prompt asking learners to explain their reasoning increases the cognitive demand and assessment value.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3e724c15-a074-49c2-aed4-a232d067a97f",
+          "TopicId": "b6764447-d439-4156-aae4-62a14b7b4fe7",
+          "Title": "Short Answer Questions",
+          "BodyText": "Short answer questions require learners to produce a brief written response\u2014typically a word, phrase, or a few sentences\u2014rather than selecting from options.",
+          "Notes": "Short answer questions are harder to auto-grade but provide richer evidence of understanding and are well-suited for formative assessment.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:31:40.8255048-04:00",
+          "ModifiedDate": "2026-07-08T19:31:40.8255048-04:00",
+          "Items": [
+            {
+              "Id": "77672b95-ad71-4e28-a814-56c1c1fa4523",
+              "Text": "Use short answer questions to assess recall, explanation, or application where precise vocabulary or reasoning matters.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "13633d1a-530e-46c4-a374-76db19e52662",
+              "Text": "Define an expected word or sentence count in the prompt to set learner expectations and simplify grading.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "bd900a44-73aa-42d4-acb3-c4026048d1a5",
+              "Text": "When adding short answer questions to a question bank, include a model answer or key terms to support consistent grading.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "58d14935-44d7-4e68-922a-0bcbaa7a7fa9",
+              "Text": "Short answer formats are effective for assessing higher cognitive levels such as analysis and synthesis.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "e9ed424a-ea1b-48ac-b930-ad9cbf577fe3",
+          "TopicId": "b6764447-d439-4156-aae4-62a14b7b4fe7",
+          "Title": "Matching and Other Structured Question Types",
+          "BodyText": "Beyond the core three types, question banks can include matching, ordering, multiselect, and written-response formats that add variety and target specific learning outcomes.",
+          "Notes": "Varying question types within a quiz reduces monotony and allows a broader range of outcomes to be assessed in a single assessment.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:31:40.8255048-04:00",
+          "ModifiedDate": "2026-07-08T19:31:40.8255048-04:00",
+          "Items": [
+            {
+              "Id": "6ebc9e7d-1fdc-4e2b-b177-4930e550bb7f",
+              "Text": "Matching questions are effective for testing relationships between terms, concepts, and definitions.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0a8d4dee-8d27-4912-970e-bcc1febc57d6",
+              "Text": "Ordering or sequencing questions assess procedural knowledge where the correct sequence of steps matters.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c1fb2906-2eb5-4b36-9799-7b6f8678be2f",
+              "Text": "Multiselect questions ask learners to choose all correct options from a list, testing fuller understanding than single-answer items.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "47ac9677-656f-45c6-9a9c-64299e94ee72",
+              "Text": "Selecting the right mix of question types ensures that different cognitive skills are measured across a single quiz.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "cc0d983a-fdbe-4d9e-828a-9c0ac403827a",
+          "TopicId": "b6764447-d439-4156-aae4-62a14b7b4fe7",
+          "Title": "Choosing the Right Question Type for the Learning Outcome",
+          "BodyText": "Selecting an appropriate question type is a deliberate instructional decision driven by the learning outcome being assessed and the cognitive level it targets.",
+          "Notes": "Bloom\u0027s Taxonomy provides a useful framework: lower levels (remember, understand) align well with MCQs and true/false, while higher levels (apply, analyze, evaluate) benefit from short answer or structured response formats.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:31:40.8255048-04:00",
+          "ModifiedDate": "2026-07-08T19:31:40.8255048-04:00",
+          "Items": [
+            {
+              "Id": "c1f571da-ebed-4b05-9316-f75c0285e49c",
+              "Text": "Map each question type to the specific outcome it is meant to measure before building the question bank.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "50c6fb2d-b4b9-4b30-a7f6-e76147199662",
+              "Text": "Factual recall outcomes are efficiently assessed with MCQs or true/false, minimizing grading overhead.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "83b91cec-c996-4a4a-b6c3-00e367760048",
+              "Text": "Outcomes requiring explanation, analysis, or original thinking call for short answer or open-response formats.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "adcbe43c-5bf8-4c7f-b008-9dfda373da90",
+              "Text": "Aligning question type to outcome improves assessment validity, ensuring the test actually measures what it is intended to measure.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "f9d6d30b-6c8b-4125-8fac-ba0b3f18f72d",
+          "TopicId": "b6764447-d439-4156-aae4-62a14b7b4fe7",
+          "Title": "Building a Balanced Question Bank",
+          "BodyText": "A question bank is a repository of categorized questions from which quizzes and assignments are drawn, and balance across question types strengthens its overall effectiveness.",
+          "Notes": "When generating a question bank, using the content source selector to target specific topics and outcomes ensures that each section of the module is proportionally represented.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:31:40.8255048-04:00",
+          "ModifiedDate": "2026-07-08T19:31:40.8255048-04:00",
+          "Items": [
+            {
+              "Id": "e66a6d23-49df-4eab-8446-67496fbb346b",
+              "Text": "Include a mix of question types to assess a range of cognitive skills and reduce the impact of any single format\u0027s limitations.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "162fee2a-6dc0-49de-8d26-1f6279b61b7c",
+              "Text": "Organize bank questions by topic, outcome, or difficulty level to make quiz assembly faster and more targeted.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3b779b6e-02f8-4c26-8121-abb84e03d4a7",
+              "Text": "Regularly review and update question banks to retire outdated items and add questions aligned to revised outcomes.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "e07d2499-542b-4b5a-b25d-cd3918a8bccb",
+              "Text": "A well-structured question bank supports both formative check-ins and summative assessments drawn from the same pool.",
+              "SortOrder": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "130ef596-4cb8-47ad-b815-2f7e9f9a308e",
+      "Title": "Using the Content Source Selector",
+      "Summary": "Guides learners through targeting specific topics and learning outcomes using the content source selector tool. Ensures that generated assessments are aligned with the module plan and intended learning goals.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:30:59.4571995-04:00",
+      "ModifiedDate": "2026-07-08T19:30:59.4571995-04:00",
+      "Elements": [
+        {
+          "Id": "b39fab93-ce25-4463-85d4-e862555bd6a5",
+          "TopicId": "130ef596-4cb8-47ad-b815-2f7e9f9a308e",
+          "Title": "What Is the Content Source Selector?",
+          "BodyText": "The content source selector is a tool that allows you to specify which topics, outcomes, or sections of your module plan should inform the generated assessment content.",
+          "Notes": "Think of it as a filter: instead of generating generic questions, you point the tool at a precise portion of your curriculum so every item traces back to your intended learning goals.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:32:02.9932391-04:00",
+          "ModifiedDate": "2026-07-08T19:32:02.9932391-04:00",
+          "Items": [
+            {
+              "Id": "f939a099-c4ac-4b81-8d89-0cb3b9e40e9a",
+              "Text": "The selector connects your assessment directly to the module plan, preventing misaligned or off-topic questions.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4140001f-b0d4-4a52-aa9f-30297723aaf7",
+              "Text": "It can reference individual topics, clusters of related outcomes, or the full module depending on the scope of assessment needed.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "81e11259-6f7d-459d-a0ba-b631a2010a7f",
+              "Text": "Using the selector is a prerequisite step before triggering any quiz or assignment generation.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "dc009193-c606-4eca-8204-2980da760404",
+          "TopicId": "130ef596-4cb8-47ad-b815-2f7e9f9a308e",
+          "Title": "Locating and Opening the Selector",
+          "BodyText": "Before generating a quiz or assignment, learners must navigate to the content source selector within the assessment generation interface.",
+          "Notes": "The Content Source Selector is Step 1 of the generator form, where you choose the topics and/or outcomes the questions should target.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:32:02.9932391-04:00",
+          "ModifiedDate": "2026-07-08T19:32:02.9932391-04:00",
+          "Items": [
+            {
+              "Id": "d3996447-01b9-4364-af50-be1fb8c4f6b0",
+              "Text": "Open the Generating Quizzes and Assignments module and proceed to the generation workflow.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e5e36799-bfc7-4147-9930-ea265f5d9d59",
+              "Text": "Look for the \u0027Content Source\u0027 or \u0027Source Selector\u0027 option at Step 1, before choosing question types or counts.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "597027c4-83bb-4b7e-8cb0-aa966cf4ebd2",
+              "Text": "Ensure your module plan has been saved and is accessible so the selector can reference it accurately.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "18916d2e-e87b-4a48-bf62-efb885df102e",
+          "TopicId": "130ef596-4cb8-47ad-b815-2f7e9f9a308e",
+          "Title": "Targeting Specific Topics",
+          "BodyText": "Once the selector is open, you can drill down to individual topics within your module to focus the assessment on a precise area of content.",
+          "Notes": "For example, if your module covers five topics but your quiz covers only Topic 3, selecting only that topic ensures no questions are drawn from unrelated sections.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:32:02.9932391-04:00",
+          "ModifiedDate": "2026-07-08T19:32:02.9932391-04:00",
+          "Items": [
+            {
+              "Id": "5a6ab519-dd23-4190-a4c5-27c5ca44f4d6",
+              "Text": "Browse the topic list populated from your module plan and check only the topics relevant to the current assessment.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6450910b-0e3c-4806-8c31-33ef56ecd8e2",
+              "Text": "Selecting a topic automatically scopes the question generation to the concepts, terminology, and skills covered within it.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4ea40ef4-1d14-4376-baee-f7526a659ab4",
+              "Text": "You may select multiple topics if the assessment is intended to span several related areas of the module.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f2ed7625-63d3-43d4-a741-79c46c67016f",
+          "TopicId": "130ef596-4cb8-47ad-b815-2f7e9f9a308e",
+          "Title": "Aligning with Intended Learning Outcomes",
+          "BodyText": "Beyond topics, the content source selector allows you to target specific learning outcomes, ensuring each generated question maps to a measurable goal.",
+          "Notes": "Outcome-level targeting is especially useful when you need to demonstrate curriculum alignment for accreditation or instructional design reviews.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:32:02.9932391-04:00",
+          "ModifiedDate": "2026-07-08T19:32:02.9932391-04:00",
+          "Items": [
+            {
+              "Id": "5456e7ab-77b9-4945-903f-d69aa34570a6",
+              "Text": "Expand a selected topic within the selector to view its associated learning outcomes and choose the ones to assess.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "78631bba-f4ca-46af-b6c5-d9efd04660c5",
+              "Text": "Mapping questions to outcomes ensures the assessment measures exactly what learners are expected to know or demonstrate.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "78221a01-bbdf-4ded-94eb-6f0e8cd18cd3",
+              "Text": "Unselected outcomes will be excluded from generation, keeping the assessment focused and purposeful.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "81012694-a6bf-4ca5-bcc6-5485e2f47b26",
+          "TopicId": "130ef596-4cb8-47ad-b815-2f7e9f9a308e",
+          "Title": "Confirming Your Selection Before Generating",
+          "BodyText": "After making your topic and outcome selections, it is important to review and confirm your choices to avoid generating misaligned content.",
+          "Notes": "A summary view or confirmation step is typically presented before generation begins, showing a count of selected topics and outcomes.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:32:02.9932391-04:00",
+          "ModifiedDate": "2026-07-08T19:32:02.9932391-04:00",
+          "Items": [
+            {
+              "Id": "e13af5c2-71a7-43c0-beb0-1b0c8f9bcf75",
+              "Text": "Review the summary of selected sources to verify all intended topics and outcomes are included and no unintended ones are checked.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "435bcd24-3b63-40a9-8215-b16dcb58f046",
+              "Text": "Correct any errors by returning to the selector and adjusting your choices before proceeding.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "bfa44a39-2903-48fd-9ff6-0a3c7f1a7c50",
+              "Text": "Confirming the selection locks the source scope and passes it as a parameter to the quiz or assignment generation engine.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b6879386-936d-4903-b194-8e4173a431fc",
+          "TopicId": "130ef596-4cb8-47ad-b815-2f7e9f9a308e",
+          "Title": "How Selector Choices Influence Generated Output",
+          "BodyText": "The topics and outcomes you select directly shape the content, vocabulary, and cognitive level of the questions and tasks that are generated.",
+          "Notes": "For instance, selecting a higher-order outcome such as \u0027evaluate\u0027 will prompt the tool to generate analytical questions rather than simple recall items.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:32:02.9932391-04:00",
+          "ModifiedDate": "2026-07-08T19:32:02.9932391-04:00",
+          "Items": [
+            {
+              "Id": "5ac42aba-8f90-4056-8bc8-b3593b74337f",
+              "Text": "Narrow selections produce tightly focused assessments, while broader selections yield comprehensive quizzes spanning multiple concepts.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0e4485c0-2dc2-4219-9f28-7ee0f9b22853",
+              "Text": "The language and context of generated questions will reflect the specific terminology used in the selected topics and outcomes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a6f8d98b-9258-40b8-9178-84029b980786",
+              "Text": "Alignment between selector choices and the module plan ensures the final assessment is coherent and ready for LMS export without major revisions.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "f038351e-1d53-4900-9126-25eac4f2ba11",
+      "Title": "Building and Generating Question Banks",
+      "Summary": "Covers the step-by-step process of configuring and generating a question bank based on selected content sources and question types. Learners practice creating comprehensive banks ready for use in assessments.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:30:59.4571995-04:00",
+      "ModifiedDate": "2026-07-08T19:30:59.4571995-04:00",
+      "Elements": [
+        {
+          "Id": "36f105d3-72b8-43be-9b0a-bb9a43c4698f",
+          "TopicId": "f038351e-1d53-4900-9126-25eac4f2ba11",
+          "Title": "Selecting Content Sources for the Question Bank",
+          "BodyText": "The first step in building a question bank is identifying and selecting the specific content sources that will drive question generation.",
+          "Notes": "Content sources may include module plans, learning outcomes, uploaded documents, or topic outlines. Selecting precise sources ensures generated questions are aligned to intended instructional goals.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:32:27.0672848-04:00",
+          "ModifiedDate": "2026-07-08T19:32:27.0672848-04:00",
+          "Items": [
+            {
+              "Id": "6693c546-a527-4d29-838a-9fa7cf4ceea6",
+              "Text": "Use the content source selector to target specific topics, modules, or learning outcomes relevant to your assessment.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2282f4cc-3fa3-4b3d-949f-bf2b353c0213",
+              "Text": "Narrow your selection to avoid off-topic questions and improve alignment between assessment and course content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "388559fd-9460-4212-ba1c-88dc5d6b9895",
+              "Text": "Review the selected sources before proceeding to confirm they represent the full scope of content to be assessed.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "28eb68fc-a7f3-4d00-9e82-d1547d80ede6",
+          "TopicId": "f038351e-1d53-4900-9126-25eac4f2ba11",
+          "Title": "Choosing Question Types for the Bank",
+          "BodyText": "A comprehensive question bank draws on multiple question types to assess learners at different cognitive levels.",
+          "Notes": "The available question types include multiple choice, true/false, multiselect, short answer, matching, ordering, and written response. Mixing types broadens assessment coverage and accommodates different learner responses.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:32:27.0672848-04:00",
+          "ModifiedDate": "2026-07-08T19:32:27.0672848-04:00",
+          "Items": [
+            {
+              "Id": "8e3af071-003b-46ea-b687-bcbf636bc479",
+              "Text": "Select from available question types such as multiple choice, true/false, multiselect, short answer, matching, ordering, and written response to build variety into the bank.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "46c2ba41-cc6e-408e-a017-e5d4c686c024",
+              "Text": "Match question types to the learning outcomes being assessed \u2014 for example, use written-response questions for higher-order thinking and multiple choice for recall.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8619bb0e-4803-4e8c-8b49-ec952a8ee76e",
+              "Text": "Confirm the quantity of each question type needed before generating, so the bank meets your assessment design requirements.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a0b4d8a5-0589-4eb0-848d-6da8cfe6e32e",
+          "TopicId": "f038351e-1d53-4900-9126-25eac4f2ba11",
+          "Title": "Configuring Question Bank Parameters",
+          "BodyText": "Before generating, learners must configure key parameters that control the scope, depth, and structure of the question bank.",
+          "Notes": "Parameters typically include the number of questions per type, difficulty level, bloom\u0027s taxonomy level targeting, and any topic weighting preferences.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:32:27.0672848-04:00",
+          "ModifiedDate": "2026-07-08T19:32:27.0672848-04:00",
+          "Items": [
+            {
+              "Id": "d156b34d-e508-4859-86a4-6a1cde04da92",
+              "Text": "Set the total number of questions and specify how many should come from each selected topic or content source.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ad2ed9fb-3245-4d6d-aa67-827c17f1dbce",
+              "Text": "Adjust difficulty or cognitive level settings to ensure the bank includes a balanced range from foundational recall to applied analysis.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "01fff2d4-4379-4788-8dd4-46e1aa54b9c1",
+              "Text": "Review all configuration settings as a checklist step before initiating generation to avoid incomplete or misaligned output.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "e7b071a9-dc8d-4abc-a234-089c57f5ced1",
+          "TopicId": "f038351e-1d53-4900-9126-25eac4f2ba11",
+          "Title": "Generating the Question Bank",
+          "BodyText": "Once sources and parameters are configured, the generation step produces the full set of questions ready for review.",
+          "Notes": "Generation is typically an automated process triggered after all settings are confirmed. The system draws from the selected content sources to produce contextually relevant questions.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:32:27.0672848-04:00",
+          "ModifiedDate": "2026-07-08T19:32:27.0672848-04:00",
+          "Items": [
+            {
+              "Id": "3ddd789f-9003-409a-9c36-4a155e2a01df",
+              "Text": "Initiate generation only after verifying that content sources, question types, and parameters are all correctly configured.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "aa34137e-3a2b-4ab7-abc8-ad9bacf3c65b",
+              "Text": "The system will process the selected content and produce a draft question bank populated with all specified question types.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3d32410b-01e3-4371-bc96-96d073948e07",
+              "Text": "Generation time may vary depending on the volume of content sources and the total number of questions requested.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f49d1bc2-09c1-494a-9c83-4f965b59738c",
+          "TopicId": "f038351e-1d53-4900-9126-25eac4f2ba11",
+          "Title": "Reviewing and Editing Generated Questions",
+          "BodyText": "After generation, each question in the bank should be reviewed for accuracy, clarity, and alignment before the bank is finalized.",
+          "Notes": "Editing may involve rewriting ambiguous questions, adjusting answer choices, or removing duplicates. This step ensures quality and instructional integrity of the bank.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:32:27.0672848-04:00",
+          "ModifiedDate": "2026-07-08T19:32:27.0672848-04:00",
+          "Items": [
+            {
+              "Id": "d78b420f-e9a0-475f-9b2c-8dd9cef254b0",
+              "Text": "Read each generated question carefully to confirm it accurately reflects the intended learning outcome or content area.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "46529875-5a67-43e9-8b6b-6bf6954700b7",
+              "Text": "Edit or delete any questions that are unclear, redundant, or misaligned with the selected sources.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "19536936-09b1-4800-9489-99d7bd04cafd",
+              "Text": "Verify that answer keys, correct responses, and distractors (for multiple choice) are accurate and unambiguous.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "15eeffd9-f214-463a-ac10-bc2f3a10ecc0",
+          "TopicId": "f038351e-1d53-4900-9126-25eac4f2ba11",
+          "Title": "Organizing and Tagging Questions in the Bank",
+          "BodyText": "Organizing questions with tags, categories, or metadata makes the question bank easier to manage and reuse across multiple assessments.",
+          "Notes": "Tags might include topic name, difficulty level, question type, or bloom\u0027s taxonomy level. Well-organized banks allow instructors to pull targeted subsets for different quizzes or assignments.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:32:27.0672848-04:00",
+          "ModifiedDate": "2026-07-08T19:32:27.0672848-04:00",
+          "Items": [
+            {
+              "Id": "07745488-cc00-4337-87d0-cf55068388e8",
+              "Text": "Assign tags or category labels to each question based on topic, difficulty, or learning outcome for easy filtering later.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a7ef4dbf-57bc-4ab4-b49b-c9a826b580ac",
+              "Text": "Group questions by section or unit to mirror the structure of the course module plan.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b03c668f-1a71-4b2d-9c3f-d673e2cbe6be",
+              "Text": "Organized tagging enables rapid creation of future assessments by allowing selective pulls from the existing bank.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "2b995398-24e8-4ae3-86bc-023081ecad06",
+          "TopicId": "f038351e-1d53-4900-9126-25eac4f2ba11",
+          "Title": "Finalizing the Question Bank for Assessment Use",
+          "BodyText": "The final step is confirming the question bank is complete, accurate, and ready to be deployed in quizzes or assignments.",
+          "Notes": "A finalized bank is comprehensive, covering all targeted topics and outcomes, and is formatted correctly for the intended assessment platform or LMS.",
+          "SortOrder": 6,
+          "CreatedDate": "2026-07-08T19:32:27.0672848-04:00",
+          "ModifiedDate": "2026-07-08T19:32:27.0672848-04:00",
+          "Items": [
+            {
+              "Id": "a3476a07-e3fe-4cae-91c8-d71e5b3dc33b",
+              "Text": "Conduct a final count to ensure the bank meets the required number and variety of questions across all selected topics.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "66aaab1a-44ed-45b6-9516-150c9f30876d",
+              "Text": "Confirm the bank covers all learning outcomes identified during the content source selection phase.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "42abbf3b-7980-4c71-ba81-12ce74366aaa",
+              "Text": "Save or export the finalized question bank in a format compatible with your LMS or assessment tool for immediate use.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "ea72eb53-de2f-4060-a43b-f790d9924ef5",
+      "Title": "Exporting to LMS-Compatible Formats",
+      "Summary": "Explains how to export generated question banks into formats compatible with popular learning management systems. Addresses format options, export settings, and best practices for seamless LMS integration.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:30:59.4571995-04:00",
+      "ModifiedDate": "2026-07-08T19:30:59.4571995-04:00",
+      "Elements": [
+        {
+          "Id": "e6e67fbe-1531-4d2a-907e-5954e952d4c2",
+          "TopicId": "ea72eb53-de2f-4060-a43b-f790d9924ef5",
+          "Title": "Understanding LMS-Compatible Export Formats",
+          "BodyText": "Different learning management systems support different file formats for importing question banks and assessments. Choosing the correct format before exporting ensures your content can be uploaded without manual rework.",
+          "Notes": "PreseMaker exports quiz banks in two formats: QTI (Question and Test Interoperability), for importing into a learning-management system, and WPProQuiz, for the WordPress WP-Pro-Quiz plugin.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:32:53.1811977-04:00",
+          "ModifiedDate": "2026-07-08T19:32:53.1811977-04:00",
+          "Items": [
+            {
+              "Id": "fedfca80-8f57-401a-ae07-4ad81c69ea79",
+              "Text": "QTI is a widely accepted standard supported by platforms such as Canvas, Moodle, and Blackboard.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "94400d76-ffbd-43f0-a34a-e9f8cd42552e",
+              "Text": "WPProQuiz export produces a file for the WordPress WP-Pro-Quiz plugin, so you can publish the quiz on a WordPress site.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7f88fc8d-c16e-4011-9038-f99404086c5e",
+              "Text": "Choose QTI when your learning-management system can import QTI question banks; choose WPProQuiz when you deliver quizzes through WordPress.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "ba20f876-20b9-4351-9c5e-fa7bf0cb6788",
+              "Text": "Always verify which formats your target LMS supports before beginning the export process.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "8cb5f7ee-cc1c-4353-bff6-063580be6d50",
+          "TopicId": "ea72eb53-de2f-4060-a43b-f790d9924ef5",
+          "Title": "Selecting the Right Export Format for Your LMS",
+          "BodyText": "Matching your export format to your specific LMS version and configuration is a critical first step. Mismatched formats can result in failed imports or loss of question data.",
+          "Notes": "PreseMaker offers two export formats: QTI for importing into a learning-management system, and WPProQuiz for the WordPress WP-Pro-Quiz plugin. Choose based on where the quiz will be delivered.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:32:53.1811977-04:00",
+          "ModifiedDate": "2026-07-08T19:32:53.1811977-04:00",
+          "Items": [
+            {
+              "Id": "764b3238-50ba-4319-bd2d-71448da62d8b",
+              "Text": "Identify your LMS platform and version before selecting an export format in the tool.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "36ce76b9-b422-4647-b8d4-ea3dab4ca22a",
+              "Text": "Consult your LMS documentation or administrator to confirm which format and version is recommended.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ea427e42-d929-4c8b-b746-c86f5f7871bd",
+              "Text": "Choose QTI to import into a learning-management system, or WPProQuiz if you use the WordPress WP-Pro-Quiz plugin.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "f84a5294-378d-4cce-87b1-0a1dc6b1ce49",
+              "Text": "Test a small sample export before exporting your full question bank to catch compatibility issues early.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "c2285bd2-b71b-47ad-ac8a-97c1153d89f1",
+          "TopicId": "ea72eb53-de2f-4060-a43b-f790d9924ef5",
+          "Title": "Configuring Export Settings",
+          "BodyText": "Export settings allow you to control what metadata, question types, and structural elements are included in the exported file. Properly configured settings reduce the need for post-import corrections inside the LMS.",
+          "Notes": "Export settings typically include options for including correct answer keys, feedback text, point values, tags, and question categorization.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:32:53.1811977-04:00",
+          "ModifiedDate": "2026-07-08T19:32:53.1811977-04:00",
+          "Items": [
+            {
+              "Id": "e04116a2-3e87-4250-b555-ddc05b20858f",
+              "Text": "Enable or disable answer key inclusion depending on whether the file will be used by instructors or shared with learners.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "435b3951-db9b-4647-9fbd-0f42be75dfab",
+              "Text": "Include point values and difficulty tags in the export to preserve assessment design decisions within the LMS.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "851ec401-0ee6-4ec9-bcae-d0c876a63df2",
+              "Text": "Map your internal question categories to LMS-specific category structures during export configuration.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "fa949883-8bdd-4dbd-976f-bd234fed84a4",
+              "Text": "Review feedback field settings to ensure automated feedback text transfers correctly to the LMS.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "7b441e89-11ce-42e5-93b8-f7a0a3a9aab6",
+          "TopicId": "ea72eb53-de2f-4060-a43b-f790d9924ef5",
+          "Title": "Exporting Question Banks Aligned to Topics and Outcomes",
+          "BodyText": "Before exporting, use the content source selector to ensure the question bank is scoped to the correct topics and learning outcomes. This alignment guarantees that exported assessments reflect the intended module plan.",
+          "Notes": "Exporting a question bank that was generated with specific outcome alignment preserves that structure in the LMS, making it easier to map assessments to curriculum standards.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:32:53.1811977-04:00",
+          "ModifiedDate": "2026-07-08T19:32:53.1811977-04:00",
+          "Items": [
+            {
+              "Id": "143f832b-e202-4748-a2ad-66f8ac746104",
+              "Text": "Confirm that the question bank was generated using the content source selector targeting the appropriate topics before initiating the export.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e4aa2d1e-8b18-4655-b174-e76f9196a2f7",
+              "Text": "Generating the bank with the Content Source Selector keeps its questions aligned to the chosen topics and outcomes; you can then export the aligned bank as QTI or WPProQuiz.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a602d0e8-199c-46e2-bec5-dd99af32f00b",
+              "Text": "Exporting by topic or outcome segment allows instructors to distribute assessments across course modules rather than uploading everything at once.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d9c05241-66d8-41ca-842a-d3f4aa130f74",
+          "TopicId": "ea72eb53-de2f-4060-a43b-f790d9924ef5",
+          "Title": "Best Practices for Seamless LMS Integration",
+          "BodyText": "Following a consistent export and import workflow minimizes errors and ensures assessment content functions as intended inside the LMS. Establishing best practices saves time across repeated export cycles.",
+          "Notes": "Creating a checklist for each export\u2014covering format selection, settings review, test import, and post-import verification\u2014helps teams maintain quality at scale.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:32:53.1811977-04:00",
+          "ModifiedDate": "2026-07-08T19:32:53.1811977-04:00",
+          "Items": [
+            {
+              "Id": "0a8b8179-0c49-4300-82fa-9a0415e4f01f",
+              "Text": "Always perform a test import of a small exported file into the LMS before uploading the full question bank.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9a585a7d-339b-4f74-81c5-eb87bffc6162",
+              "Text": "Keep a version log of exported files with dates and format details to support troubleshooting and reuse.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d183f677-bd3b-4e80-9536-b92fcdf8c961",
+              "Text": "Review question rendering in the LMS after import to confirm formatting, media embeds, and answer options display correctly.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "1e08de76-4066-4246-9e15-6e42872ca839",
+              "Text": "Coordinate with LMS administrators when importing large question banks to avoid system limits or permission issues.",
+              "SortOrder": 3
+            },
+            {
+              "Id": "573923f4-9bbb-4f8a-9dd6-e0a871e46405",
+              "Text": "Document any manual adjustments made post-import so the source file can be updated to prevent recurrence.",
+              "SortOrder": 4
+            }
+          ]
+        },
+        {
+          "Id": "a3864a9d-7eb1-455f-808c-0d1ef1c182d7",
+          "TopicId": "ea72eb53-de2f-4060-a43b-f790d9924ef5",
+          "Title": "Troubleshooting Common Export and Import Issues",
+          "BodyText": "Even with careful preparation, export and import processes can produce errors due to format mismatches, unsupported question types, or encoding issues. Knowing how to identify and resolve common problems speeds up the integration process.",
+          "Notes": "LMS import logs are the first place to check when an import fails or produces unexpected results; most platforms generate detailed error reports.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:32:53.1811977-04:00",
+          "ModifiedDate": "2026-07-08T19:32:53.1811977-04:00",
+          "Items": [
+            {
+              "Id": "8d48304d-a0e4-411a-a14f-6127184d79ff",
+              "Text": "If question types fail to import, check whether your LMS supports those types natively or requires a plugin.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2b75c955-135d-419a-886a-1563f68a6265",
+              "Text": "Character encoding mismatches, especially with special characters or rich text, are a frequent cause of garbled question text after import.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "42ceb51b-8ae9-4618-81dc-496a53a58094",
+              "Text": "Re-export with adjusted settings or a different format if the LMS import log reports structural errors.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "7ae1f824-6590-4619-b71a-8f19e9c96a39",
+              "Text": "Contact LMS support or consult community forums for platform-specific import error codes that are not self-explanatory.",
+              "SortOrder": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "d713201c-8fbe-4939-b746-730673465577",
+      "Title": "Creating Structured Assignment Tasks",
+      "Summary": "Focuses on producing well-structured assignment tasks that align with module outcomes and learner needs. Learners explore how to define task parameters, instructions, and evaluation criteria during generation.",
+      "SortOrder": 5,
+      "CreatedDate": "2026-07-08T19:30:59.4571995-04:00",
+      "ModifiedDate": "2026-07-08T19:30:59.4571995-04:00",
+      "Elements": [
+        {
+          "Id": "040ba771-f724-4ebd-a8b6-dcace9ee8223",
+          "TopicId": "d713201c-8fbe-4939-b746-730673465577",
+          "Title": "Defining Task Parameters",
+          "BodyText": "Before generating an assignment task, it is essential to establish clear parameters that shape the scope and expectations of the work.",
+          "Notes": "Parameters act as the blueprint for the assignment, ensuring the generated output remains focused and relevant to the learning context.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:33:13.4230305-04:00",
+          "ModifiedDate": "2026-07-08T19:33:13.4230305-04:00",
+          "Items": [
+            {
+              "Id": "36a1d4fb-3d80-4e1c-ad18-6d71ea072474",
+              "Text": "Specify the subject area, topic focus, and level of complexity to guide the generation process.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b1121af8-526d-4a4f-98c4-ff7025e6424c",
+              "Text": "Set constraints such as word count, format type (e.g., essay, report, case study), and submission requirements.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "58ae2449-7077-4e0d-9546-2a6930aa55fb",
+              "Text": "Align parameters with the module plan to ensure the task reflects intended learning outcomes.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "3357ed8b-4e18-4cdd-be1c-d08936af4b70",
+              "Text": "Review parameters before generating to avoid vague or misaligned task descriptions.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "81c3fd41-c138-429e-8772-1e7188bf11fa",
+          "TopicId": "d713201c-8fbe-4939-b746-730673465577",
+          "Title": "Aligning Tasks with Module Outcomes",
+          "BodyText": "Effective assignment tasks must directly connect to the module\u0027s learning outcomes to ensure learners are assessed on the right competencies.",
+          "Notes": "Using the content source selector to target specific outcomes before generating helps maintain this alignment automatically.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:33:13.4230305-04:00",
+          "ModifiedDate": "2026-07-08T19:33:13.4230305-04:00",
+          "Items": [
+            {
+              "Id": "f8c0e4a5-b757-4c09-a1ce-f6c0bdab136e",
+              "Text": "Use the content source selector to identify and target the specific outcomes relevant to the assignment.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a7291f90-35bc-40a0-9f7f-e72805e81e25",
+              "Text": "Ensure each task component maps to at least one stated learning outcome from the module plan.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9d7877ed-6916-4613-ad28-00bd35283f71",
+              "Text": "Avoid generating tasks that assess knowledge or skills outside the defined scope of the module.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "f11c09f8-a13f-4fc6-9f98-098e9de330d9",
+              "Text": "Review the generated task against outcome statements to confirm full coverage and relevance.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "15d2279e-370b-4f6f-8430-8b61785901bb",
+          "TopicId": "d713201c-8fbe-4939-b746-730673465577",
+          "Title": "Writing Clear and Complete Instructions",
+          "BodyText": "Well-structured assignment tasks include precise instructions that tell learners exactly what is expected of them.",
+          "Notes": "Ambiguous instructions are one of the most common causes of learner confusion and poor assessment outcomes.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:33:13.4230305-04:00",
+          "ModifiedDate": "2026-07-08T19:33:13.4230305-04:00",
+          "Items": [
+            {
+              "Id": "15971c1b-ebc6-4260-8ac6-9d27bbc2ca41",
+              "Text": "Include a clear task description that explains what the learner must produce or demonstrate.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "be6a8cf6-ad02-4869-880b-87d54bb4d6f9",
+              "Text": "Specify any required steps, sources, tools, or methodologies the learner should use.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "884d033c-1158-4b16-a30e-27ed7450c804",
+              "Text": "State the purpose of the task so learners understand the \u0027why\u0027 behind the activity.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "0cccccda-e7ac-4cf1-9a20-32a3534bc888",
+              "Text": "Use plain, direct language and avoid jargon that could create misunderstanding.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "2cab2463-e79f-48ad-a13f-d2781bf9874f",
+          "TopicId": "d713201c-8fbe-4939-b746-730673465577",
+          "Title": "Defining Evaluation Criteria",
+          "BodyText": "Evaluation criteria make the basis for grading transparent and help learners understand how their work will be assessed.",
+          "Notes": "Criteria generated alongside the task ensure consistency between the task design and its assessment rubric.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:33:13.4230305-04:00",
+          "ModifiedDate": "2026-07-08T19:33:13.4230305-04:00",
+          "Items": [
+            {
+              "Id": "bf99a956-529c-43c0-bd91-2069e04add0c",
+              "Text": "Generate evaluation criteria that correspond directly to the task instructions and learning outcomes.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "320be5eb-699b-4d53-bb46-9af342e721ac",
+              "Text": "Break criteria into discrete, observable performance indicators to support fair and consistent marking.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "11bc7b67-5974-4efb-a82f-f5d45d688aa3",
+              "Text": "Assign relative weighting to each criterion to reflect its importance within the overall task.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "dfe2e3a0-5886-4a0f-9d59-e601388f11b3",
+              "Text": "Present criteria to learners in advance so they can self-assess before submission.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "fac9f3aa-a362-4694-9403-76d31b24dc75",
+          "TopicId": "d713201c-8fbe-4939-b746-730673465577",
+          "Title": "Structuring the Assignment Layout",
+          "BodyText": "The physical structure and formatting of an assignment task influence how clearly learners receive and interpret it.",
+          "Notes": "A consistent layout also makes assignments easier to review, revise, and reuse across different cohorts.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:33:13.4230305-04:00",
+          "ModifiedDate": "2026-07-08T19:33:13.4230305-04:00",
+          "Items": [
+            {
+              "Id": "a92a5f25-7c7a-4688-9eca-1543e10e134a",
+              "Text": "Organize the task into clearly labeled sections such as overview, instructions, resources, and submission details.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "57d00ab9-8e55-4f98-90fa-d0dc15f5dfc8",
+              "Text": "Use headings, bullet points, or numbered steps to improve readability and reduce cognitive load.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "702507b8-2076-4b31-9140-194eae6b31e9",
+              "Text": "Include deadline information, submission format, and any platform-specific requirements within the layout.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "58a17497-cec4-450c-b93d-fa4edd926db8",
+              "Text": "Ensure the structure is consistent with other assignments in the module for a cohesive learner experience.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "2b25b89f-523e-4ae4-813e-cc2ef6dd7c51",
+          "TopicId": "d713201c-8fbe-4939-b746-730673465577",
+          "Title": "Adapting Tasks to Learner Needs",
+          "BodyText": "Structured assignment tasks should be tailored to the profile, prior knowledge, and context of the intended learner group.",
+          "Notes": "Adjusting complexity, scaffolding, and context examples during generation increases task relevance and learner engagement.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:33:13.4230305-04:00",
+          "ModifiedDate": "2026-07-08T19:33:13.4230305-04:00",
+          "Items": [
+            {
+              "Id": "92c2b5f4-8ba6-44af-8f83-4e085610a32b",
+              "Text": "Consider learner experience level when setting task complexity and the degree of guidance provided.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "8143ead9-c823-40bb-b507-71689c7a4c0e",
+              "Text": "Incorporate real-world scenarios or examples relevant to the learners\u0027 professional or academic context.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "81ffed44-76c0-4db4-8e10-3755ad23fccb",
+              "Text": "Provide scaffolding elements such as templates or guiding questions for learners who need additional support.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "f3fa33bf-47f2-412f-bb88-5b1bff0ec852",
+              "Text": "Review the generated task from the learner\u0027s perspective to identify any gaps in clarity or accessibility.",
+              "SortOrder": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "b88f9093-f5bc-4b68-ba5e-e95dccf8aa3d",
+      "Title": "Aligning Assessments with the Module Plan",
+      "Summary": "Reinforces strategies for ensuring consistency and alignment between generated quizzes, assignments, and the overall module plan. Learners review and validate their assessments against intended topics and outcomes.",
+      "SortOrder": 6,
+      "CreatedDate": "2026-07-08T19:30:59.4571995-04:00",
+      "ModifiedDate": "2026-07-08T19:30:59.4571995-04:00",
+      "Elements": [
+        {
+          "Id": "30834ba0-cb64-45ba-8cab-d511faa51cb6",
+          "TopicId": "b88f9093-f5bc-4b68-ba5e-e95dccf8aa3d",
+          "Title": "Understanding Assessment Alignment",
+          "BodyText": "Assessment alignment means ensuring that every quiz question and assignment task directly corresponds to the intended topics and learning outcomes in your module plan.",
+          "Notes": "Misaligned assessments can test content learners were never exposed to, or miss critical outcomes entirely, undermining both learner confidence and instructional validity.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:33:36.4159353-04:00",
+          "ModifiedDate": "2026-07-08T19:33:36.4159353-04:00",
+          "Items": [
+            {
+              "Id": "b1451baf-f34b-4cf5-bc9b-423db1271be2",
+              "Text": "Each assessment item should map back to at least one specific learning outcome stated in the module plan.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "50c36887-8ea6-46ef-8508-ec1c4b963529",
+              "Text": "Aligned assessments provide accurate evidence of whether learners have achieved the intended goals.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e329b661-fb70-473e-a497-85ab1d135e72",
+              "Text": "Reviewing alignment before finalizing assessments prevents gaps and redundancies in coverage.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4426fc59-fb0d-47e2-a165-5e638c81d785",
+          "TopicId": "b88f9093-f5bc-4b68-ba5e-e95dccf8aa3d",
+          "Title": "Using the Content Source Selector for Targeted Generation",
+          "BodyText": "The content source selector allows you to specify which topics and outcomes should inform the quiz or assignment being generated, ensuring relevance from the start.",
+          "Notes": "Selecting a broad or incorrect source scope is a common cause of misaligned assessments; always confirm your selection matches the module section you are assessing.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:33:36.4159353-04:00",
+          "ModifiedDate": "2026-07-08T19:33:36.4159353-04:00",
+          "Items": [
+            {
+              "Id": "de02d0f7-aff7-4906-928d-9f863cd64cff",
+              "Text": "Use the content source selector to narrow generation to a specific topic rather than the entire module when assessing discrete concepts.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "cc3bf386-96d5-45ee-9058-16220f2bbfc0",
+              "Text": "Targeting outcomes through the selector reduces the chance of off-topic questions appearing in your question bank.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2dd8b366-2563-4781-b5bf-924ba6a9c487",
+              "Text": "Revisit your selector settings each time you generate a new assessment to confirm the scope is correct.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "e80ac4ca-5718-4202-99cf-fba6c597f3ff",
+          "TopicId": "b88f9093-f5bc-4b68-ba5e-e95dccf8aa3d",
+          "Title": "Mapping Questions and Tasks to Learning Outcomes",
+          "BodyText": "After generating a quiz or assignment, each item should be explicitly traced to one or more learning outcomes listed in the module plan.",
+          "Notes": "A simple alignment matrix \u2014 listing outcomes in rows and assessment items in columns \u2014 is a practical tool for visualizing and confirming coverage.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:33:36.4159353-04:00",
+          "ModifiedDate": "2026-07-08T19:33:36.4159353-04:00",
+          "Items": [
+            {
+              "Id": "f08980a1-d8c1-4680-951a-2a561e689a12",
+              "Text": "Tag or label each generated question with the corresponding outcome to make validation systematic.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "64282849-df4c-4429-8a8e-38d0d8d5e15f",
+              "Text": "Identify any outcomes that have no associated assessment items and generate additional questions to cover them.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6f5ef352-18e1-4a15-a6fe-3e4bdf8b07be",
+              "Text": "Flag questions that cannot be traced to any outcome as candidates for removal or revision.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "7c70a1b4-1292-4231-acc2-75e6a3c77652",
+          "TopicId": "b88f9093-f5bc-4b68-ba5e-e95dccf8aa3d",
+          "Title": "Reviewing Generated Assessments Against the Module Plan",
+          "BodyText": "A structured review process compares the full set of generated questions and assignments against the module plan to confirm completeness and consistency.",
+          "Notes": "Reviewing as a final step \u2014 rather than assuming the generation process alone guarantees alignment \u2014 is a best practice that catches edge cases and errors.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:33:36.4159353-04:00",
+          "ModifiedDate": "2026-07-08T19:33:36.4159353-04:00",
+          "Items": [
+            {
+              "Id": "56aef074-604e-49fd-aaba-dff867fda7dc",
+              "Text": "Compare the topic coverage of your assessment to the topic list in the module plan to spot missing or over-represented areas.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c59e686d-e10c-493a-ab16-61230132398c",
+              "Text": "Check that the cognitive level of questions (recall, application, analysis) matches the depth implied by the learning outcomes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9188eb51-0c7e-4723-8099-b1ca5dd05b6a",
+              "Text": "Document any discrepancies found during review so they can be corrected before the assessment is published.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "7d3082b9-9fc8-456c-94eb-aa4dad0d3fc1",
+          "TopicId": "b88f9093-f5bc-4b68-ba5e-e95dccf8aa3d",
+          "Title": "Validating Assignments for Outcome Consistency",
+          "BodyText": "Structured assignment tasks must also be validated to confirm that their instructions, deliverables, and criteria reflect the intended learning outcomes of the module.",
+          "Notes": "An assignment may appear relevant in topic but still be misaligned if its success criteria measure a different skill level than what the outcome specifies.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:33:36.4159353-04:00",
+          "ModifiedDate": "2026-07-08T19:33:36.4159353-04:00",
+          "Items": [
+            {
+              "Id": "48ba4e13-3b9e-4041-84e4-8cd92960a375",
+              "Text": "Compare each assignment\u0027s stated objective to the corresponding module outcome to verify they are describing the same expected performance.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "96a617f2-4aa3-4dee-ac48-004b48789e10",
+              "Text": "Ensure that rubric criteria or grading guidelines reflect the language and standards of the intended outcomes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b5a135b1-8b97-4228-9b8e-818e9b65c4ee",
+              "Text": "Revise assignment prompts where the required task diverges from what the learning outcome actually demands.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "0456bfce-4490-4831-8f8c-e6450f23205d",
+          "TopicId": "b88f9093-f5bc-4b68-ba5e-e95dccf8aa3d",
+          "Title": "Iterating to Achieve Full Alignment",
+          "BodyText": "Alignment is rarely perfect on the first generation pass; an iterative cycle of generating, reviewing, adjusting, and re-validating is the recommended workflow.",
+          "Notes": "Short iteration cycles \u2014 focusing on one topic section at a time \u2014 are more efficient than attempting to align an entire module\u0027s assessments in a single review.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:33:36.4159353-04:00",
+          "ModifiedDate": "2026-07-08T19:33:36.4159353-04:00",
+          "Items": [
+            {
+              "Id": "2cc7f5b3-5cca-4f88-a79a-a469b3affb82",
+              "Text": "After identifying gaps or mismatches, adjust source selector settings or prompt parameters and regenerate only the affected items.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b2556951-e2a3-4b13-a2a5-d139c5324227",
+              "Text": "Re-validate revised items against the module plan before accepting them into the final question bank.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7408e3b9-346a-40a8-b662-289df1938757",
+              "Text": "Keep a record of changes made during iteration to support quality assurance and future module updates.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 42
+}

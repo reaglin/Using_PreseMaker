@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Module Manager: Central Hub for Module Setup</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>The Module Manager: Central Hub for Module Setup</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>The Module Manager: Central Hub for Module Setup</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you begin working with modules in PreseMaker, nearly every action you take flows through a single, unified interface: the <strong>Module Manager</strong>. Rather than scattering configuration options across multiple screens or requiring you to jump between different areas of the application, the Module Manager brings everything together into one place. It is the command center from which you start new modules, monitor their progress, configure their settings, and ultimately prepare them for content generation or authoring. Understanding how the Module Manager works — and why it is designed the way it is — is the foundation for working efficiently in PreseMaker.</p>
+
+<p>The Module Manager is not simply a list of files or a passive directory. It is an <em>active workspace</em> that responds to what you have done and tells you what still needs to be done. From the moment you launch PreseMaker and decide to work with a module, the Module Manager is where that work begins and where it is coordinated from start to finish.</p>
+
+<p><strong>What Is the Module Manager?</strong></p>
+
+<p>At its core, the Module Manager is the primary interface users interact with when starting, tracking, or configuring any module. Before it existed as a consolidated hub, users of similar authoring tools often had to navigate away to separate screens to complete different setup tasks — perhaps visiting one screen to name a module, another to set its source, and yet another to configure generation options. The Module Manager eliminates that fragmentation entirely. Every module-related action is surfaced in one location, so your workflow is never interrupted by unnecessary navigation.</p>
+
+<p>Accessing the Module Manager is typically the first step after launching PreseMaker and deciding to work with a module. This immediacy is intentional: the design philosophy is that a user who has decided to work on a module should be able to reach the relevant controls without delay or detour. The moment you open or create a module, the Module Manager is your context, and it remains your context throughout the setup process.</p>
+
+<p>This consolidation has a practical benefit that becomes especially clear when you are managing multiple modules simultaneously. Because all module-related actions live in one interface, you never lose your place. You do not need to remember which screen controls which aspect of setup — the Module Manager surfaces everything you need based on where you are in the process.</p>
+
+<p><strong>Organizing Modules Within the Manager</strong></p>
+
+<p>One of the Module Manager's most important organizational features is that each module appears as a <em>distinct entry</em> within the interface. Rather than presenting modules as identical rows in a flat list, the Module Manager gives each module enough visual identity that you can quickly locate and select the one you want to work on, even when many modules are present.</p>
+
+<p>This distinction extends to helping users recognize where each module stands in the overall process. At a glance, you can distinguish between a module that was just created and has no content yet, a module that is partially configured, and a module that is fully prepared and ready for the next stage. This at-a-glance differentiation reduces the cognitive overhead of managing a complex project with many moving parts.</p>
+
+<p>Importantly, the Module Manager supports working on several modules from the same interface <em>without losing context</em>. If you are setting up one module and need to quickly check the status of another, you can do so within the same workspace. There is no need to close one module's context and open another in a completely different part of the application. This side-by-side management capability is especially valuable for instructional designers and content teams who are simultaneously developing multiple learning modules at different stages of completion.</p>
+
+<p><strong>Tracking Module Status: Empty to Content-Ready</strong></p>
+
+<p>One of the Module Manager's most practically useful features is its <strong>status tracking system</strong>. Every module moves through a lifecycle, and the Module Manager makes that lifecycle visible at every step.</p>
+
+<p>When a module is first created — regardless of how it was created — it begins in an <strong>empty</strong> status. This status is an explicit signal: no content has been added yet, no configuration has been applied, and the module is essentially a clean slate. The empty status is not a problem or an error; it is simply the correct starting point, and the Module Manager treats it as such by immediately surfacing the actions needed to move forward.</p>
+
+<p>As you complete setup steps — adding source content, configuring generation parameters, applying metadata, or completing other required configuration tasks — the Module Manager updates the module's status to reflect that progress. This dynamic updating means you always have an accurate, current picture of where each module stands. You do not need to remember which steps you have completed or keep a separate checklist; the Module Manager tracks it for you.</p>
+
+<p>The progression of status states can be understood as a pipeline with a clear destination:</p>
+
+<ul>
+  <li><strong>Empty:</strong> The module has been created but no configuration or content has been added. This is the starting state for every new module.</li>
+  <li><strong>In Progress / Partially Configured:</strong> One or more setup steps have been completed, but the module is not yet ready for generation or authoring. The Module Manager will indicate what remains to be done.</li>
+  <li><strong>Content-Ready:</strong> All required setup steps have been completed. The module is fully prepared for AI generation or further authoring work. This is the target state that the entire setup process is designed to reach.</li>
+</ul>
+
+<p>The <strong>content-ready</strong> status is particularly significant because it is the gateway to the next phase of work. A module that has reached content-ready status can be submitted for AI generation, handed off for manual authoring, or advanced to the next stage of the production workflow. The Module Manager's status tracking ensures that modules do not move forward prematurely — a module must satisfy the requirements of each stage before its status advances.</p>
+
+<p>This approach to status tracking protects content quality by making incomplete setup visible rather than invisible. If a required configuration step has been skipped, the module's status will reflect that, and the Module Manager will surface the missing action rather than allowing the module to proceed with gaps in its setup.</p>
+
+<p><strong>Guiding Users Through the Setup Process</strong></p>
+
+<p>The Module Manager is not simply a passive display of information — it actively <em>guides</em> users through the setup process. At each stage, the interface surfaces the necessary actions so users always know what to do next. This is a deliberate design choice: rather than requiring users to know in advance what every setup step is and in what order to perform them, the Module Manager makes the required next action visible and accessible from wherever you currently are.</p>
+
+<p>Setup milestones are made visible within the manager, which significantly reduces the chance of accidentally skipping a required configuration step. For new users, this guidance is especially valuable because it removes the need to consult external documentation just to understand the correct sequence of actions. For experienced users, it provides a reliable confirmation that nothing has been missed, even when working quickly across multiple modules.</p>
+
+<p>Consider a practical example: suppose you have created a new module and the Module Manager shows it in empty status. The interface will highlight or surface the action needed to move forward — perhaps prompting you to define the module's source content or configure its generation settings. Once you complete that step, the status updates and the next required action becomes visible. This step-by-step surfacing of actions continues until the module reaches content-ready status, at which point the setup workflow is complete.</p>
+
+<p>This guided approach is consistent <em>regardless of how the module was created</em>. Whether you started from AI generation, added content from an existing folder on disk, or imported a module from a file or external repository, the Module Manager presents the same structured workflow path. Users do not need to learn different procedures for different creation methods — the interface normalizes the experience so that post-creation setup always follows the same logic.</p>
+
+<p><strong>Supporting All Three Creation Methods</strong></p>
+
+<p>PreseMaker supports three distinct methods for bringing a module into existence: generating one with AI, adding one from an existing folder on disk, and importing one from a file or connected repository. Each method has its own starting point and its own initial conditions, but once a module enters the Module Manager, all three are treated identically.</p>
+
+<ul>
+  <li><strong>AI Generation:</strong> A module created through AI generation begins in the Module Manager as an empty or partially configured entry, ready to have its generation parameters defined and refined before the AI process runs.</li>
+  <li><strong>Added from Disk:</strong> A module sourced from an existing folder on disk enters the Module Manager with its source content already associated, but may still require configuration steps — such as metadata or structural settings — before reaching content-ready status.</li>
+  <li><strong>Imported from File or Repository:</strong> A module brought in through import may arrive with various levels of pre-existing configuration, but the Module Manager will identify any gaps and guide the user through completing the necessary steps.</li>
+</ul>
+
+<p>The unifying principle is that the Module Manager <strong>normalizes the experience</strong> across all three methods. Post-creation steps are handled identically regardless of how the module originated. This is an important architectural decision because it means users do not need to develop separate mental models for working with AI-generated modules versus disk-sourced modules versus imported modules. The workflow is the same; only the starting conditions differ.</p>
+
+<p>This normalization also enables something practically powerful: you can <em>mix modules from different creation methods and manage them side by side</em> within the same Module Manager interface without any difference in workflow. An AI-generated module and a disk-sourced module sitting next to each other in the Module Manager will follow the same status progression, respond to the same actions, and ultimately reach content-ready status through the same process. There is no second-class treatment for any creation method — all modules are equal within the manager once they have been created.</p>
+
+<p>This design philosophy — consolidation, consistency, and active guidance — makes the Module Manager far more than a simple list or dashboard. It is the structural backbone of the module creation and setup process in PreseMaker, and mastering how it works is the first and most important step toward working efficiently with the platform as a whole.</p>
+        <div class="notes"><strong>Notes</strong>Introduces the Module Manager interface as the central workspace that organizes and guides users through module creation. Explains how it tracks module status from empty to content-ready. No code examples or tables are required for this conceptual topic; the content is organized using structured prose and lists for clarity.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

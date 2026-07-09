@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building and Reading a Coverage View</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Building and Reading a Coverage View</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Building and Reading a Coverage View</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>A <strong>coverage view</strong> is one of the most powerful analytical tools available to instructional designers and course developers. At its core, it is a structured report that maps every learning outcome in a course to the content items — quiz questions, assignments, and activities — that have been tagged to address it. Rather than requiring a manual audit of every piece of content, the coverage view is generated automatically by the system as soon as content items carry outcome tags. This makes it a <em>live reflection</em> of the current state of the course: it does not show you what you intended to cover, but what you have actually tagged and therefore formally associated with each outcome. As you generate new items, adjust existing ones, or remove tags, the view updates immediately, giving you a real-time picture of where your course stands at any moment.</p>
+
+<p>Understanding what a coverage view is — and what it is not — is essential before learning to read one effectively. It is not a judgment of the quality of your content; it is a structural map. It tells you whether an outcome is <em>represented</em> in your content ecosystem, by how much, and through which types of items. This distinction matters because a course can have technically high coverage while still delivering shallow or misaligned learning experiences. The coverage view is the starting point for a deeper analysis, not the final word on course quality.</p>
+
+<p>The foundation of any coverage view is the <strong>tagging process</strong>. When an author tags a content item with an outcome, they are creating a formal association: "This item addresses this outcome." The aggregation engine collects all of those associations and organizes them by outcome, pulling together every tagged item into a single, scannable report. Because the logic is purely associative, the aggregation is both immediate and precise. Adding a tag to an item causes that item to appear under the corresponding outcome in the coverage view the next time the view is refreshed or regenerated. Removing a tag withdraws that item from the outcome's coverage record. There is no delay, no manual reconciliation required.</p>
+
+<p>A single content item can carry multiple outcome tags simultaneously, and when it does, it contributes to each of those outcomes in the coverage view. For example, a case-study assignment tagged to both a critical-thinking outcome and a domain-knowledge outcome will appear under both rows in the report. This reflects the reality that well-designed learning activities often address more than one goal at the same time. However, it also means that a small number of rich, multi-tagged items can create the appearance of broad coverage when the underlying reality is that only a few items are doing most of the work. Reading the view with this in mind is part of interpreting it accurately.</p>
+
+<p>When you open a coverage view, the report is <strong>organized by learning outcome</strong>. Each outcome occupies its own row or section, and beneath or beside it you can see the associated quiz questions, assignments, and activities that have been tagged to it. A count is typically displayed next to each outcome, showing the total number of items associated with it. A count of zero signals a complete gap — no content of any kind has been tagged to that outcome. A count greater than zero confirms that at least something addresses the outcome, though the count alone does not tell you whether that coverage is adequate.</p>
+
+<p>For any given outcome, looking more closely reveals the <em>composition</em> of its coverage: how many items come from quizzes versus assignments versus activities. This breakdown is important because different content types serve different instructional purposes. A quiz question tests recall or comprehension. An assignment might demand application, analysis, or synthesis. An activity might provide guided practice or exploration. Knowing how an outcome's coverage is distributed across these types tells you not just that the outcome is addressed, but <em>how</em> it is addressed.</p>
+
+<p>Scanning the full list of outcomes in the coverage view quickly reveals which outcomes still have no associated items. These uncovered outcomes stand out because their count reads zero and no content items appear beneath them. They represent complete gaps in the course — situations where the course officially commits to an outcome but provides no tagged content to pursue or assess it. Complete gaps are the most urgent issues a coverage view can surface.</p>
+
+<p><strong>Coverage density</strong> refers to the raw number of items tagged to a given outcome. An outcome with ten tagged items has higher density than one with a single tagged item. Higher density generally means more reinforcement opportunities: learners encounter the outcome in more places, have more chances to practice it, and are assessed on it more than once. This is generally desirable for outcomes that are central to the course's goals. However, density is a quantity measure, not a quality measure. Ten redundant items that all test the same surface-level recall in the same way are not meaningfully better than two items that do the same thing.</p>
+
+<p><strong>Coverage depth</strong>, by contrast, considers the variety and cognitive level of tagged items. An outcome that is addressed by a basic recall quiz question, a mid-course application assignment, and a culminating synthesis project has depth: it is engaged at progressively higher levels of thinking and at multiple points in the learning sequence. An outcome addressed only by three similarly-constructed multiple-choice questions has density without depth. Distinguishing between these two dimensions — how many items versus what kinds of items — is the analytical skill that separates a surface-level reading of the coverage view from a genuine course quality assessment.</p>
+
+<p>Practically, this means that when you look at a coverage view, you should ask not only "how many items are tagged here?" but also "what types of items are they, and at what cognitive level do they operate?" A single activity that asks learners to apply a concept in an authentic context may provide more meaningful coverage than three quiz questions that ask learners to recall a definition. The coverage view surfaces the structure; your professional judgment as a designer interprets the meaning.</p>
+
+<p>When an outcome appears in <strong>multiple content categories</strong> — quiz questions and assignments and activities — and those items are distributed across early, middle, and late portions of the course sequence, the outcome can generally be considered well-covered. This pattern indicates that the course is scaffolding learners toward the outcome progressively: introducing it through an activity, building fluency through practice, and then assessing it formally through a quiz or assignment. Seeing this kind of distributed, multi-modal coverage across an outcome is a positive signal.</p>
+
+<p>Confirming which outcomes are well-covered is valuable not just for celebration but for <em>prioritization</em>. Course revision time and authoring effort are finite. If a coverage view shows that five outcomes already have robust, varied, well-distributed content, a design team can confidently direct its energy toward the outcomes that are sparse or missing rather than over-building areas that are already strong. Without the coverage view, teams often work from intuition or memory, which tends to favor outcomes they remember working on recently rather than those that actually need attention.</p>
+
+<p><strong>Identifying under-covered or uncovered outcomes</strong> is where the coverage view most directly drives action. An outcome with no associated items of any type is a complete gap. The course has committed to that outcome — it is listed in the course documentation, perhaps visible to students — but nothing in the content ecosystem has been formally connected to it. Complete gaps must be addressed through one of two actions: either new content must be created and tagged to the outcome, or the outcome must be reconsidered and potentially removed if it does not belong in the course.</p>
+
+<p>Partial coverage is more nuanced. An outcome that appears in only one content category — for example, only in activities, with no quiz questions and no assignments — is partially covered. Learners are exposed to the outcome and perhaps practice it, but there is no formal assessment tied to it. This situation might be acceptable by design: some outcomes are appropriately addressed only through low-stakes practice. But it might also represent an oversight, particularly if the outcome is high-stakes or central to certification, compliance, or program-level goals. The coverage view surfaces this pattern; the designer's job is to decide whether the pattern is intentional.</p>
+
+<p>A specific and common gap pattern is an outcome that has activities and assignments but no quiz questions. In this configuration, the outcome is taught and practiced but not formally assessed through direct questioning. This can indicate that the outcome is present in the course experientially but lacks the kind of targeted measurement that allows instructors and designers to verify whether learners have actually achieved it. Conversely, an outcome with quiz questions but no activities or assignments may be assessed without being sufficiently taught or practiced — a different but equally important problem.</p>
+
+<p>The coverage view is most powerful when used as an <strong>ongoing planning tool</strong> rather than a one-time report generated at the end of course development. Checking the view after adding a batch of new items confirms that tags were applied correctly and that the system registered the associations as expected. It is easy to forget to tag an item, to accidentally tag it to the wrong outcome, or to tag a draft version while the published version remains untagged. Running the coverage view after each authoring session provides immediate feedback and catches these errors before they accumulate.</p>
+
+<p>In collaborative course development environments, the coverage view can anchor planning meetings. When a team gathers to assign authoring tasks for the next sprint or revision cycle, the coverage view provides an objective basis for those conversations. Rather than relying on individual recollections of what has or has not been built, the team can open the view and see, at a glance, which outcomes are still missing content, which are partial, and which are complete. This allows task assignment to be driven by actual course needs rather than by habit or assumption.</p>
+
+<p>Over the course of a program's lifetime, comparing coverage views from successive revisions can reveal whether the course is improving in alignment, staying flat, or — importantly — introducing new gaps. When content is updated, restructured, or replaced, tags can be lost or orphaned. A new version of a quiz might not carry forward the outcome tags from the previous version. A restructured assignment might be re-tagged to a different outcome, inadvertently leaving the original outcome uncovered. Systematic comparison of coverage views between course versions makes these regressions visible and actionable.</p>
+
+<p>The following table summarizes common coverage patterns visible in a coverage view and their typical instructional implications:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Coverage Pattern</th>
+      <th>What It Looks Like in the View</th>
+      <th>Typical Implication</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Complete gap</td>
+      <td>Outcome count = 0; no items listed under the outcome</td>
+      <td>No content addresses this outcome; must add tagged items or remove the outcome</td>
+    </tr>
+    <tr>
+      <td>Single-type coverage</td>
+      <td>Outcome count &gt; 0 but all items are from one category (e.g., only activities)</td>
+      <td>Outcome is partially addressed; may lack assessment or practice reinforcement</td>
+    </tr>
+    <tr>
+      <td>Assessment without practice</td>
+      <td>Quiz questions tagged to outcome, but no activities or assignments</td>
+      <td>Outcome is tested but may not be sufficiently taught or practiced</td>
+    </tr>
+    <tr>
+      <td>Practice without assessment</td>
+      <td>Activities and/or assignments tagged, but no quiz questions</td>
+      <td>Outcome is taught and practiced but not formally measured</td>
+    </tr>
+    <tr>
+      <td>Well-distributed coverage</td>
+      <td>Items from multiple categories, spread across early, middle, and late course positions</td>
+      <td>Strong scaffolding and reinforcement; outcome is likely well-addressed</td>
+    </tr>
+    <tr>
+      <td>High density, low depth</td>
+      <td>Many items tagged, but all from the same category or at the same cognitive level</td>
+      <td>Quantity is present but variety is lacking; consider adding higher-order or different-type items</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Putting all of this together, reading a coverage view is a skill that combines mechanical literacy — knowing what the numbers and categories mean — with analytical judgment about what those patterns imply for learner success. The view will not tell you automatically that a course is good or bad. It will tell you, with precision, what has been formally associated with each outcome and through what types of content. From that structural information, an experienced designer can quickly identify where a course is aligned, where it is fragile, and where it has genuine gaps that will prevent learners from achieving what the course promises.</p>
+        <div class="notes"><strong>Notes</strong>Covers all listed subtopics in depth: definition and live-update nature of the coverage view, tag-based aggregation mechanics, reading the organized view and counts, coverage density vs. depth, spotting well-covered outcomes, identifying partial and complete gaps, and ongoing use as a planning and revision tool. Includes a summary table of common coverage patterns and their implications.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

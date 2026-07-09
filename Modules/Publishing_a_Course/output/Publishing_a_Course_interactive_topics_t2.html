@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Module HTML Index Pages</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Understanding Module HTML Index Pages</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Understanding Module HTML Index Pages</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Every module within a course built in PreseMaker is represented on the published website by a dedicated HTML file known as the module HTML index page. This file is the authoritative web presence for its module — it is what a learner actually encounters when they navigate to that module on the live site. Understanding what this file is, how it is created, and what role it plays is fundamental to understanding how PreseMaker translates authored content into a coherent, browsable course website.</p>
+
+<p>The concept is straightforward in principle but rich in implication. A course is composed of multiple modules, and each module contains its own body of learning content. For that content to be accessible on the web, it must be represented by a file that a browser can open and render. The HTML index page is exactly that file — a standard HTML document that any modern web browser can open without plugins, special software, or additional configuration. Because it is plain HTML, it is universally compatible and immediately usable by learners on any device or platform.</p>
+
+<p><strong>What Is a Module HTML Index Page?</strong></p>
+
+<p>At its most basic level, a module HTML index page is a file automatically generated and associated with a specific module. It carries the module's name and identity, meaning the file is not a generic template shared across modules — each module has its own distinct index file. This one-to-one relationship between a module and its index file is deliberate and important: it keeps each module's content self-contained and independently accessible. A learner or instructor can navigate directly to a specific module's index page without having to pass through any other module's content.</p>
+
+<p>Because it is a standard HTML file, it behaves exactly as any web page does. It can be bookmarked, linked to directly, opened in a browser tab, and rendered on any device that supports a web browser. There is no proprietary format to decode and no special viewer to install. This universality is one of the key practical advantages of the index page approach.</p>
+
+<p>The association between a module and its index file is managed automatically by PreseMaker. Authors do not need to manually create or name these files — the system handles that relationship, ensuring the file's name and metadata correspond correctly to the module it represents. This automatic association means that when the module is updated, the system knows exactly which index file needs to be refreshed.</p>
+
+<p><strong>The Landing Page Role of the Index File</strong></p>
+
+<p>When a learner is browsing the course website and clicks on a link to a particular module, the destination of that click is the module's HTML index page. In web development terminology, a page that serves as the first point of entry for a section of a site is called a <em>landing page</em>, and the module index file fulfills exactly this role. It is the front door to the module's content area.</p>
+
+<p>This landing page function means the index file has an orienting responsibility. A learner arriving at the index page should be able to understand what the module contains and how to engage with its content. The page presents the module's material in a structured, accessible way, giving the learner a clear picture of what they have entered. Rather than dropping a learner into an undifferentiated mass of content, the index page provides organization and context.</p>
+
+<p>The landing page role also anchors the module within the broader course site hierarchy. Just as a building has a main entrance that connects it to the street and to a larger neighborhood, the index page connects the module to the overall course website. It is the point where the course's navigation system hands off control to the module's own content area. This positional role means the index page is not merely decorative or optional — it is a structural requirement for the module to function as part of the site.</p>
+
+<p><strong>How the Index Page Represents Module Content</strong></p>
+
+<p>The index page does not merely announce that a module exists — it actively surfaces the module's key content elements, giving learners an accurate and useful representation of what the module includes. Think of it as a window into the module: what appears on the index page reflects the actual substance of the module's authored content.</p>
+
+<p>This representative function has a direct practical consequence for authors. Any content that is added to a module, removed from it, or modified within it should ultimately be reflected in the module's index page. If a new topic is added to the module, the index page should represent that addition. If a section is removed, it should no longer appear. The index page and the module's internal content must stay in sync, because the index page is what learners see — a mismatch between the two creates confusion and undermines trust in the course materials.</p>
+
+<p>The index file acts as a bridge between the raw module content — which exists in PreseMaker's authoring environment — and the published website that learners access. The authoring environment is where content is created and organized; the index page is how that content is translated into a browsable, navigable web page. Without the index page performing this translation, the module's content would exist internally but would have no accessible web representation.</p>
+
+<p>Consider a concrete example: suppose a module contains five learning topics, a quiz, and a set of downloadable resources. The module's HTML index page would represent all of these elements in an organized, linked format — learners can see what is available and navigate to any component directly. If the author later adds a sixth topic, publishing the module updates the index page to include that new topic alongside the original five. The index page thus always presents the module's current, complete content inventory to the learner.</p>
+
+<p><strong>Publishing Refreshes the HTML Index</strong></p>
+
+<p>The index page is not a static file that is created once and left alone. It is a <em>generated</em> file, meaning it is produced and reproduced by PreseMaker each time the publish feature is run. Every time an author publishes their course or a specific module, PreseMaker regenerates the HTML index files to incorporate the latest module content. This regeneration is what keeps the published site accurate and up to date.</p>
+
+<p>The importance of this refresh cycle cannot be overstated. Without it, an author could make significant changes to a module — adding content, restructuring topics, removing outdated material — and those changes would exist in the authoring environment but would never appear on the live website. Learners would see an outdated version of the module, potentially missing new content or encountering links to content that has been removed. The publish-and-refresh cycle eliminates this problem by ensuring the index page is always regenerated from the current state of the module.</p>
+
+<p>This mechanism also prevents a subtler problem: mismatched content. If part of a module is updated but the index page is not refreshed, the index page might link to resources that have changed or moved, producing broken links or inconsistent experiences. By regenerating the entire index page on each publish, PreseMaker ensures that what is described and linked on the index page matches what actually exists in the published module.</p>
+
+<p>The practical workflow implication is clear: authors should publish their course after making meaningful changes to a module's content. The act of publishing is what makes changes real and visible on the live site. Authoring and publishing are distinct steps, and the index page refresh happens during the publishing step — not during authoring.</p>
+
+<p><strong>Index Pages Within the Site Structure</strong></p>
+
+<p>No module exists in isolation within a course. Each module is part of a larger course site that learners navigate as a whole. The module HTML index pages collectively form the navigable layer of the course website — each index page represents one module's content area, and together they make up the set of destinations a learner can visit within the course.</p>
+
+<p>Each module's index page is linked from the course's main site navigation. This means that the top-level navigation of the course site — the menu or list of modules a learner sees when they first arrive — consists of links pointing to individual module index pages. When a learner selects a module from the course menu, they are following a link to that module's index page. This structure creates a clean, hierarchical site architecture: the course level connects to module index pages, and module index pages connect to individual content components within the module.</p>
+
+<p>This architecture has an important implication for site coherence. If a module's index page is missing, malformed, or not properly linked from the navigation, that module becomes effectively unreachable — what site architects call an <em>orphaned</em> page. Learners browsing the course would have no way to find it through normal navigation. PreseMaker's automatic generation and linking of index pages during publishing is designed to prevent exactly this situation. By regenerating index pages and maintaining their links within the navigation structure, the system ensures that every module remains reachable and that the published site functions as a unified, coherent whole.</p>
+
+<p>The following table summarizes the key characteristics and functions of a module HTML index page:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Characteristic</th>
+      <th>Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>File type</td>
+      <td>Standard HTML file, viewable in any web browser without special software</td>
+    </tr>
+    <tr>
+      <td>Scope</td>
+      <td>One index file per module; each is distinct and self-contained</td>
+    </tr>
+    <tr>
+      <td>Primary role</td>
+      <td>Landing page — the first page a learner sees when navigating to a module</td>
+    </tr>
+    <tr>
+      <td>Content relationship</td>
+      <td>Reflects the current content of the module; must stay in sync with module changes</td>
+    </tr>
+    <tr>
+      <td>Generation method</td>
+      <td>Automatically regenerated by PreseMaker each time the publish feature is run</td>
+    </tr>
+    <tr>
+      <td>Site structure role</td>
+      <td>Linked from course navigation; prevents modules from becoming orphaned or unreachable</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In summary, the module HTML index page is the essential web-facing representation of a module. It is automatically managed, universally compatible, and regenerated on every publish to stay accurate. It serves as the entry point for learners, the bridge between authored content and the live site, and a structural node within the course website's navigation hierarchy. A well-functioning set of index pages is what transforms a collection of authored modules into a coherent, navigable course website.</p>
+        <div class="notes"><strong>Notes</strong>Explains the role of each module&#39;s HTML index file as its landing page and how it represents the module&#39;s content within the published site.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

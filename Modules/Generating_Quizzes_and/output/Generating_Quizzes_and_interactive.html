@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aligning Assessments with the Module Plan</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Aligning Assessments with the Module Plan</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Aligning Assessments with the Module Plan</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>One of the most critical responsibilities in instructional design is ensuring that every assessment you create genuinely measures what your module sets out to teach. When assessments are misaligned — asking about content that was never covered, or testing at a cognitive level that doesn't match the learning outcomes — the data they produce is misleading. Learners may pass assessments without having achieved the intended goals, or struggle with items that demand skills the module never developed. <strong>Assessment alignment</strong> is the practice of systematically connecting every quiz question, assignment, and evaluation task back to the specific learning outcomes declared in the module plan, ensuring that your assessments serve as accurate, trustworthy evidence of learner achievement.</p>
+
+<p>Achieving alignment is not a single step but an ongoing cycle: you plan outcomes, generate or design assessments, map items to outcomes, review for gaps and mismatches, revise, and re-validate. Understanding each stage of this cycle — and the tools and strategies available at each stage — is what allows instructors and course designers to build assessments that are both fair to learners and meaningful as measures of learning.</p>
+
+<p><strong>Understanding Assessment Alignment</strong></p>
+
+<p>Assessment alignment begins with a clear, shared understanding of what alignment actually means in practice. At its most fundamental level, alignment means that every assessment item — every question, prompt, or task — can be traced directly to at least one specific learning outcome stated in the module plan. If a question cannot be linked to an outcome, it has no justification for being in the assessment. If an outcome has no associated question or task, the assessment provides no evidence that learners achieved it.</p>
+
+<p>Aligned assessments fulfill a precise measurement function: they provide <em>accurate evidence</em> of whether learners have achieved the intended goals. Consider a module outcome such as "Learners will be able to calculate the net present value of a cash flow series." An aligned assessment includes calculation problems that require exactly that skill. An unaligned assessment might include a definition question asking what net present value means — which tests recall of terminology, not the ability to perform the calculation. The result is data that flatters learners who have memorized definitions while revealing nothing about their computational competence.</p>
+
+<p>Reviewing alignment <em>before</em> finalizing assessments is essential because it is far easier to correct gaps and redundancies at the design stage than after learners have already completed an assessment. A gap occurs when one or more learning outcomes are not covered by any assessment item, meaning those outcomes are essentially invisible in the evaluation. A redundancy occurs when a disproportionate number of items cover the same narrow outcome while others go untested. Both problems distort the picture of learner achievement and undermine the credibility of your assessment.</p>
+
+<p>A practical way to internalize this principle is to think of the module plan as a contract with learners: the outcomes describe what they will be able to do by the end of the module, and the assessments are the evidence that the contract has been fulfilled. Every clause of the contract deserves coverage; no clause deserves to monopolize the evidence.</p>
+
+<p><strong>Using the Content Source Selector for Targeted Generation</strong></p>
+
+<p>When generating assessments with an AI-assisted authoring tool, one of the most powerful features available is the <em>content source selector</em> — the mechanism that lets you specify exactly which portion of the module's content should inform the generation of questions. Understanding how to use this selector strategically is essential for producing focused, relevant assessment items.</p>
+
+<p>The core principle is straightforward: use the content source selector to narrow generation to a <strong>specific topic</strong> rather than the entire module when you are assessing discrete concepts. Suppose your module covers five topics: data types, control flow, functions, error handling, and file I/O. If you generate a quiz intended specifically to assess learners' understanding of functions, but your source selector is set to the entire module, the generator may produce questions about data types or error handling that are irrelevant to the quiz's purpose. By restricting the selector to the functions topic, you ensure that every generated item is topically appropriate.</p>
+
+<p>Targeting outcomes through the selector also <em>reduces the chance of off-topic questions</em> appearing in your question bank — a problem that is particularly acute when module content is dense or when topics overlap thematically. Off-topic questions are not just a quality nuisance; they can introduce construct-irrelevant variance into your assessment, meaning learners' scores are partly determined by their knowledge of things the assessment was never meant to measure.</p>
+
+<p>Importantly, you should <strong>revisit your selector settings each time you generate a new assessment</strong> to confirm the scope is correct. It is easy to forget that the selector was left on a broad setting from a previous session, which can silently corrupt a new batch of questions. Building a habit of checking the selector before every generation run is a small investment that prevents significant rework later.</p>
+
+<p>Here is a practical illustration of how selector settings correspond to assessment scope:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Assessment Purpose</th>
+      <th>Recommended Selector Setting</th>
+      <th>Expected Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>End-of-module summative quiz covering all five topics</td>
+      <td>Entire module</td>
+      <td>Questions drawn proportionally from all topics</td>
+    </tr>
+    <tr>
+      <td>Formative check on Topic 3 (Functions) only</td>
+      <td>Topic 3 only</td>
+      <td>All questions relate to functions; no off-topic items</td>
+    </tr>
+    <tr>
+      <td>Mid-module quiz covering Topics 1 and 2</td>
+      <td>Topics 1 and 2</td>
+      <td>Questions cover data types and control flow exclusively</td>
+    </tr>
+    <tr>
+      <td>Assignment on a single subtopic (e.g., recursive functions)</td>
+      <td>Specific subtopic within Topic 3</td>
+      <td>Highly focused items on recursion only</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Mapping Questions and Tasks to Learning Outcomes</strong></p>
+
+<p>Once you have generated a set of questions or tasks, the next step is systematic mapping: explicitly connecting each item to the learning outcome or outcomes it is intended to assess. This process transforms an unstructured collection of questions into a <em>validated instrument</em> whose coverage can be verified, communicated, and audited.</p>
+
+<p>The most effective method is to <strong>tag or label each generated question</strong> with the corresponding outcome identifier. If your module plan numbers its outcomes (e.g., LO1, LO2, LO3), each question in your bank should carry one or more of those labels. This makes validation systematic: instead of reading each question and trying to remember which outcome it relates to, you can sort your question bank by outcome tag and immediately see which outcomes are covered and how many items each has.</p>
+
+<p>Consider a module on professional writing with the following outcomes:</p>
+
+<ul>
+  <li><strong>LO1:</strong> Identify the structural components of a business report.</li>
+  <li><strong>LO2:</strong> Apply plain-language principles to revise unclear sentences.</li>
+  <li><strong>LO3:</strong> Construct a properly formatted executive summary.</li>
+</ul>
+
+<p>A question such as "Which of the following is a standard section found in a business report?" maps clearly to LO1. A task asking learners to rewrite a jargon-heavy paragraph maps to LO2. A longer writing prompt requiring learners to produce an executive summary for a provided scenario maps to LO3. When tagged, you can instantly confirm that all three outcomes have coverage.</p>
+
+<p>The mapping process also reveals two critical problems. First, you may find that certain outcomes have <strong>no associated assessment items</strong>. This is a coverage gap: the outcome exists in the module plan but is invisible in the assessment. The remedy is to generate additional questions specifically targeting those uncovered outcomes, using the content source selector set to the relevant topic. Second, you may find questions that <strong>cannot be traced to any outcome</strong> — items that seemed relevant when generated but, on reflection, assess content or skills outside the scope of the module's declared goals. These should be flagged as candidates for removal or revision rather than simply left in the bank, where they will silently distort learner scores.</p>
+
+<p><strong>Reviewing Generated Assessments Against the Module Plan</strong></p>
+
+<p>Mapping questions to outcomes is a granular, item-level process. Reviewing assessments against the module plan is the complementary <em>holistic</em> process: stepping back to evaluate whether the assessment as a whole reflects the structure, emphasis, and intellectual depth of the module.</p>
+
+<p>Begin by comparing the <strong>topic coverage</strong> of your assessment to the topic list in the module plan. If the module covers six topics and your assessment draws heavily from two of them while barely touching the others, the distribution is misrepresenting the module's scope. A useful diagnostic tool is a simple coverage matrix:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module Topic</th>
+      <th>Number of Items in Assessment</th>
+      <th>Percentage of Assessment</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Topic 1: Data Types</td>
+      <td>4</td>
+      <td>20%</td>
+      <td>Adequate</td>
+    </tr>
+    <tr>
+      <td>Topic 2: Control Flow</td>
+      <td>6</td>
+      <td>30%</td>
+      <td>Over-represented</td>
+    </tr>
+    <tr>
+      <td>Topic 3: Functions</td>
+      <td>4</td>
+      <td>20%</td>
+      <td>Adequate</td>
+    </tr>
+    <tr>
+      <td>Topic 4: Error Handling</td>
+      <td>1</td>
+      <td>5%</td>
+      <td>Under-represented</td>
+    </tr>
+    <tr>
+      <td>Topic 5: File I/O</td>
+      <td>5</td>
+      <td>25%</td>
+      <td>Adequate</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This matrix immediately shows that Topic 2 is over-represented and Topic 4 is under-represented. You can then adjust by removing some control flow items and generating additional error handling questions.</p>
+
+<p>Beyond topic distribution, check that the <strong>cognitive level</strong> of questions matches the depth implied by the learning outcomes. Bloom's Taxonomy provides a widely used framework for categorizing cognitive demand: knowledge/recall, comprehension, application, analysis, evaluation, and creation. A learning outcome that says "learners will be able to <em>evaluate</em> competing project management methodologies" implies analytical and evaluative thinking. If all associated assessment items are recall-level multiple choice questions ("Which of the following is a feature of Agile?"), the assessment is measuring something shallower than what the outcome demands.</p>
+
+<p>The cognitive alignment check is perhaps the most frequently neglected aspect of assessment review, because off-level questions often <em>look</em> relevant — they address the right topic — but they don't require the right depth of thinking. An outcome demanding application should be assessed with questions that require learners to apply knowledge to a new situation, not just recognize or recall it.</p>
+
+<p>Finally, <strong>document any discrepancies</strong> found during review. This is not bureaucratic formality; documentation serves a practical purpose. Without a record of what was found and corrected, the same problems can recur in future iterations of the module, and quality assurance reviewers have no audit trail to follow.</p>
+
+<p><strong>Validating Assignments for Outcome Consistency</strong></p>
+
+<p>While quiz questions can often be evaluated against outcomes quickly, <em>assignments</em> — longer, more complex tasks such as essays, projects, case analyses, or presentations — require a more layered validation process. The central question is whether the assignment, as written, actually demands the performance described in the learning outcome it is supposed to assess.</p>
+
+<p>Start by comparing each assignment's <strong>stated objective</strong> to the corresponding module outcome. The objective and the outcome should be describing the same expected performance, even if they use slightly different language. For example, if a module outcome states "Learners will construct a data visualization that accurately represents a provided dataset," and the assignment objective says "Demonstrate your understanding of data presentation," there is a mismatch. The outcome specifies construction of a visualization; the objective describes a vague demonstration of understanding. The assignment needs to be rewritten so that it explicitly requires learners to build the visualization.</p>
+
+<p>Next, examine the <strong>rubric criteria or grading guidelines</strong>. Rubrics are the operational definition of success on an assignment: they translate the outcome into observable, gradable behaviors. If the rubric criteria do not reflect the language and standards of the intended outcome, then graders and learners are working from a different definition of success than the module plan intends. A rubric for the data visualization assignment should include criteria directly addressing accuracy of data representation, appropriate choice of chart type, labeling, and visual clarity — not generic criteria like "effort" or "creativity" that could apply to any task.</p>
+
+<p>The third layer of validation is examining whether the <strong>assignment prompt</strong> itself could be completed successfully without actually achieving the learning outcome. This is the "proxy task" problem: learners find a way to satisfy the surface requirements of the assignment without engaging in the intended learning. For instance, if an assignment meant to assess analytical writing can be completed by summarizing source material rather than analyzing it, the prompt needs to be revised to make analysis an inescapable requirement — for example, by explicitly asking learners to compare, evaluate, or argue rather than describe or summarize.</p>
+
+<p><strong>Iterating to Achieve Full Alignment</strong></p>
+
+<p>Alignment is rarely achieved perfectly on the first pass. The review and validation processes described above will almost always surface some items that need adjustment. The iteration phase is where those adjustments are made systematically, with the goal of bringing every assessment item into full alignment with the module plan before the assessment is published or administered.</p>
+
+<p>When you have identified specific gaps or mismatches, the most efficient approach is to <strong>adjust source selector settings or prompt parameters and regenerate only the affected items</strong>, rather than regenerating the entire assessment. If LO4 (on error handling) is under-covered, set your selector to the error handling topic and generate a targeted batch of questions. If existing questions for LO2 are at recall level but the outcome demands application, revise your generation prompt to specify application-level items (e.g., "Generate questions that ask learners to apply the principle in a new scenario") and regenerate only those items.</p>
+
+<p>After regenerating or revising items, <strong>re-validate them against the module plan</strong> before accepting them into the final question bank. It is a common mistake to assume that a regenerated item is automatically better than the one it replaced. The new item must go through the same mapping and cognitive-level check as the original. This step closes the loop and ensures the iteration actually solved the problem rather than introducing a new one.</p>
+
+<p>Finally, <strong>keep a record of changes made during iteration</strong>. This record serves multiple purposes. For immediate quality assurance, it provides evidence that identified problems were addressed. For future module updates, it creates a change log that helps the next person working on the module understand what was adjusted and why, preventing well-intentioned "improvements" that re-introduce previously corrected problems. A simple log entry might look like this:</p>
+
+<pre><code>Date: 2024-11-15
+Issue: LO4 (Error Handling) had only 1 item in the 20-question quiz (5% coverage; target 15%).
+Action: Set content source selector to Topic 4 subtopics; generated 8 new application-level items.
+Items selected for bank: Q4-A, Q4-C, Q4-E (3 items added; coverage now 20%).
+Items rejected: Q4-B (off-topic), Q4-D (recall level, not application).
+Re-validated: All 3 accepted items tagged LO4; cognitive level confirmed as application.
+</code></pre>
+
+<p>This level of documentation transforms what might feel like tedious record-keeping into a genuine quality asset — one that supports continuous improvement of the module and builds confidence that the assessments you publish are aligned, valid, and fair.</p>
+        <div class="notes"><strong>Notes</strong>Reinforces strategies for ensuring consistency and alignment between generated quizzes, assignments, and the overall module plan. Learners review and validate their assessments against intended topics and outcomes.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

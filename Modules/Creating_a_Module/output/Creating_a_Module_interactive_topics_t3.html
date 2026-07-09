@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Method 2: Adding an Existing Module Folder from Disk</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Method 2: Adding an Existing Module Folder from Disk</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Method 2: Adding an Existing Module Folder from Disk</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When working with PreseMaker, there are situations where a module folder already exists on your local disk — perhaps from a previous working session, a backup, or work done on another machine that has since been transferred over. Rather than recreating the module from scratch, PreseMaker provides a dedicated method for bringing that existing folder directly into the application. This is referred to as <strong>Method 2: Adding an Existing Module Folder from Disk</strong>. Understanding this method thoroughly will save you time and help you avoid common pitfalls that arise when the folder is not properly prepared or located.</p>
+
+<p>The fundamental principle behind this method is straightforward: <strong>PreseMaker references the folder's location on your disk rather than duplicating or importing its contents into a separate internal store.</strong> This means the module data stays exactly where it is, and PreseMaker simply points to it. As a practical consequence, if you move or rename the folder after adding it, PreseMaker may lose track of it. It is therefore important to settle on a permanent, accessible location for the folder before you begin the process.</p>
+
+<p>This method is particularly well suited to a few common scenarios. If you started building a module in an earlier PreseMaker session and the project folder is still intact on your drive, you can re-attach it without losing any of the work already done. Similarly, if a colleague prepared a module folder and copied it to your machine, you can bring it into your own PreseMaker environment using this same approach. The key prerequisite in every case is that <strong>the module folder must already exist on your local disk before you begin</strong>.</p>
+
+<p><strong>Locating the Existing Module Folder</strong></p>
+
+<p>Before opening PreseMaker, it is good practice to confirm the precise location of the module folder using your operating system's file explorer or terminal. Navigate to the directory where the folder is stored and verify a few important conditions:</p>
+
+<ul>
+  <li><strong>Accessibility:</strong> The folder must be fully accessible to your user account. Folders that are locked by another process, set to read-only at the system level, or protected by permissions that exclude your account can cause PreseMaker to fail during the validation step.</li>
+  <li><strong>Visibility:</strong> Ensure the folder is not hidden. Some transfer or archiving tools mark folders as hidden on Windows or prepend a dot to the folder name on macOS and Linux. PreseMaker's browser dialog may not display hidden folders by default, and even if you type the path manually, certain hidden-folder restrictions can interfere with access.</li>
+  <li><strong>Drive connectivity:</strong> If the folder resides on an external drive, a network share, or a cloud-synced location, confirm that the drive is mounted and fully synced before proceeding. A folder path that points to a disconnected drive will appear broken to PreseMaker, even if the path string looks correct.</li>
+  <li><strong>Full path notation:</strong> Make a note of the complete, absolute path to the folder — for example, <code>C:\Users\YourName\Projects\ModuleName</code> on Windows or <code>/Users/yourname/projects/ModuleName</code> on macOS. You will likely need to supply this path during the import step, and having it written down or copied to your clipboard avoids transcription errors.</li>
+</ul>
+
+<p><strong>Folder Structure Requirements</strong></p>
+
+<p>Not every folder on your disk can be recognized as a PreseMaker module simply by pointing the application at it. PreseMaker performs a structural inspection of the folder, and the folder must meet specific criteria to pass that inspection. Understanding these requirements helps you diagnose problems if recognition fails.</p>
+
+<ul>
+  <li><strong>Configuration markers:</strong> PreseMaker expects to find one or more configuration or manifest files inside the folder that identify it as a legitimate module. These files are typically created automatically when you first build or export a module through PreseMaker. If the folder was assembled manually or came from a non-standard source, these marker files may be absent, causing the recognition step to fail.</li>
+  <li><strong>Naming conventions:</strong> Subfolders and key files within the module folder must follow the internal naming conventions that PreseMaker uses. For example, asset subfolders, content definition files, and metadata files are expected to have specific names. Renaming these components — even with minor capitalization differences on case-sensitive file systems — can break recognition.</li>
+  <li><strong>Completeness and integrity:</strong> A partially transferred folder, one that was interrupted mid-copy, or one whose files have become corrupted may pass some checks but fail others. PreseMaker may flag specific missing or unreadable files. In these cases, the safest approach is to obtain a fresh, complete copy of the module folder from the original source before attempting to add it again.</li>
+</ul>
+
+<p>A helpful way to think about the structure requirements is to compare a known-good module folder against the one you are trying to add. If you have a module that PreseMaker already recognizes, you can inspect its folder layout and use it as a reference template:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Expected Location</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Module manifest file</td>
+      <td>Root of the module folder</td>
+      <td>Identifies the folder as a PreseMaker module and stores metadata</td>
+    </tr>
+    <tr>
+      <td>Content definition file(s)</td>
+      <td>Root or designated subfolder</td>
+      <td>Defines topics, subtopics, and content structure</td>
+    </tr>
+    <tr>
+      <td>Assets subfolder</td>
+      <td>Named subfolder within the module folder</td>
+      <td>Holds images, media, and other supporting files</td>
+    </tr>
+    <tr>
+      <td>Configuration subfolder</td>
+      <td>Named subfolder within the module folder</td>
+      <td>Stores settings, style preferences, and generation parameters</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Adding the Folder Through the Module Manager</strong></p>
+
+<p>With the folder confirmed to be accessible and structurally sound, you are ready to bring it into PreseMaker. The Module Manager is the central hub for all module-related operations within the application, and it is where this method is initiated.</p>
+
+<ul>
+  <li>Open PreseMaker and navigate to the <strong>Module Manager</strong>. Depending on your version of PreseMaker, this may be accessible from the main dashboard, a dedicated menu option, or a sidebar panel.</li>
+  <li>Within the Module Manager, look for the option to <strong>add an existing module from disk</strong>. This is typically labeled distinctly from the option to create a brand-new module, so take care to select the correct action. Choosing the wrong option could initiate a new-module creation workflow instead of the import workflow.</li>
+  <li>You will be presented with either a <strong>browse dialog</strong> — a standard operating-system file picker — or a <strong>path-entry text field</strong> where you can type the folder path directly. Both methods lead to the same outcome. Using the browse dialog is generally more reliable because it eliminates the risk of path typos, while typing the path directly can be faster if you already have it copied to your clipboard.</li>
+  <li>Select or enter the path to your module folder and confirm your selection. PreseMaker will immediately begin its scan of the folder upon submission.</li>
+</ul>
+
+<p><strong>Validation and Recognition by PreseMaker</strong></p>
+
+<p>Once the folder path is submitted, PreseMaker does not simply trust that the folder is valid — it runs a <strong>validation process</strong> to confirm that the folder contains everything it needs to function as a module within the application.</p>
+
+<p>During validation, PreseMaker checks for the presence of required files, inspects configuration markers for correctness, and verifies that key structural elements are intact. This process happens quickly in most cases, but for large module folders with many assets, it may take a few moments.</p>
+
+<ul>
+  <li><strong>Successful validation:</strong> If the folder passes all checks, it will appear as a new entry in the Module Manager's module list. The module's name, as stored in its manifest, will be displayed alongside any other modules you have previously created or imported. From this moment, PreseMaker treats this module exactly as if it had been created natively within the current session.</li>
+  <li><strong>Failed validation:</strong> If the folder does not pass validation, PreseMaker will typically display an error message indicating what went wrong. Common error causes include missing manifest files, unexpected folder structures, or unreadable files. Use the error details to diagnose the issue — for instance, a missing manifest file suggests the folder may not be a genuine PreseMaker module folder, while a permissions error points to an access problem that needs to be resolved at the operating system level.</li>
+  <li><strong>Partial recognition:</strong> In some edge cases, PreseMaker may recognize the folder as a module but flag certain elements as incomplete or outdated. This can happen when the module was created with an older version of PreseMaker. The application may offer to upgrade or repair the module structure automatically, which is generally safe to accept.</li>
+</ul>
+
+<p><strong>Next Steps After Adding the Folder</strong></p>
+
+<p>Once the module has been successfully validated and added, it becomes a fully functional part of your PreseMaker workspace. The transition from "folder on disk" to "active PreseMaker module" is seamless from this point forward.</p>
+
+<ul>
+  <li>The module will appear in the <strong>Module Manager list</strong> alongside all other modules you have created or imported. You can click on it to select it and begin interacting with it just as you would any other module.</li>
+  <li>Before making any changes, it is advisable to <strong>open the module and review its existing content</strong>. This lets you confirm that the import was successful, that all topics and subtopics are present, and that any assets or media referenced within the module have loaded correctly. Missing assets are a common symptom of a folder that was transferred without its subfolder contents intact.</li>
+  <li>Once you have confirmed the module's content is complete and correct, it is <strong>fully ready to be used with PreseMaker's content generation tools</strong>. You can edit topics, add new subtopics, run content generation processes, and export output just as you would with any module that was created from scratch within PreseMaker.</li>
+  <li>As a final best practice, consider keeping a note of the folder's location on disk — especially if it resides outside your default PreseMaker working directory. Because PreseMaker references the folder rather than copying it, keeping the folder in a stable, backed-up location protects your work from accidental loss.</li>
+</ul>
+        <div class="notes"><strong>Notes</strong>Explains how to bring a pre-existing module folder stored locally on disk into PreseMaker. Covers the steps and requirements for the folder to be recognized correctly.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

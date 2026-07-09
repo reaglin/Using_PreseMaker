@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generating Presentations and Narrated Presentations – Using PreseMaker</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-bg: #f4f6f9;
+      --color-surface: #ffffff;
+      --color-primary: #2c5f8a;
+      --color-primary-dark: #1e4266;
+      --color-accent: #3a8fc7;
+      --color-accent-light: #e8f3fb;
+      --color-text: #1e2630;
+      --color-text-muted: #5a6a7a;
+      --color-border: #d5dee8;
+      --color-badge-bg: #eef2f7;
+      --color-badge-text: #3d5570;
+      --color-filetype-bg: #e2f0e8;
+      --color-filetype-text: #2a6640;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-hover: 0 6px 18px rgba(0,0,0,0.13);
+      --font: 'Segoe UI', Arial, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 60%, var(--color-accent) 100%);
+      color: #fff;
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+    }
+
+    header .course-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50px;
+      padding: 0.25rem 0.9rem;
+      margin-bottom: 1rem;
+      color: #daeeff;
+    }
+
+    header h1 {
+      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+
+    header p {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1rem;
+      color: #cde6f8;
+      line-height: 1.65;
+    }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 0 1.25rem 3rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .section-header .count {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      background: var(--color-badge-bg);
+      border-radius: 50px;
+      padding: 0.15rem 0.65rem;
+      font-weight: 600;
+    }
+
+    /* ── Card grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    /* coloured top stripe keyed to type */
+    .card::before {
+      content: '';
+      display: block;
+      height: 4px;
+      background: var(--stripe-color, var(--color-accent));
+    }
+
+    .card[data-type="Module Topics"]::before   { --stripe-color: #2c5f8a; }
+    .card[data-type="Topic Detail"]::before    { --stripe-color: #3a8fc7; }
+    .card[data-type="Text Content"]::before    { --stripe-color: #6aab6a; }
+
+    .card-body {
+      padding: 1.2rem 1.25rem 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    /* meta row */
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border-radius: 4px;
+      padding: 0.2rem 0.55rem;
+      white-space: nowrap;
+    }
+
+    .badge-type {
+      background: var(--color-badge-bg);
+      color: var(--color-badge-text);
+    }
+
+    .badge-filetype {
+      background: var(--color-filetype-bg);
+      color: var(--color-filetype-text);
+      font-family: 'Courier New', monospace;
+    }
+
+    /* card title row */
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.35;
+    }
+
+    .card-title a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    .card-title a:hover {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      background: var(--color-badge-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      text-decoration: none;
+      white-space: nowrap;
+      vertical-align: middle;
+      margin-left: 0.45rem;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .source-link:hover {
+      background: var(--color-accent-light);
+      color: var(--color-primary);
+      border-color: var(--color-accent);
+    }
+
+    .source-link svg {
+      flex-shrink: 0;
+    }
+
+    .card-description {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
+      font-size: 0.8rem;
+      color: #8a9ab0;
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* ── Responsive tweaks ── */
+    @media (max-width: 480px) {
+      header {
+        padding: 2rem 1.25rem 2rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="course-label">Using PreseMaker</div>
+    <h1>Generating Presentations and Narrated Presentations</h1>
+    <p>
+      Explore how PreseMaker's Module Editor automates the creation of PowerPoint slide decks and narrated presentations — from AI-driven slide generation and speaker-note authoring to text-to-speech conversion and audio synchronisation.
+    </p>
+  </header>
+
+  <main>
+    <div class="section-header">
+      <h2>Module Artifacts</h2>
+      <span class="count">8 items</span>
+    </div>
+
+    <div class="card-grid">
+
+      <!-- 1 · Module Topics -->
+      <div class="card" data-type="Module Topics">
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="badge badge-type">Module Topics</span>
+            <span class="badge badge-filetype">.json</span>
+          </div>
+          <div class="card-title">
+            <a href="module_topics.html">Module Topics</a>
+            <a class="source-link" href="../hierarchy.json" title="View raw source file">
+              <svg width="11" height="11" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M6 6l4 4M10 6v4H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              source file
+            </a>
+          </div>
+          <p class="card-description">
+            A structured outline of all topics covered in this module — including AI-generated presentations, slide deck generation, narration options, speaker notes, text-to-speech conversion, and audio embedding — used by learners and instructors to navigate and preview the module's scope.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2 · Introduction to AI-Generated Presentations -->
+      <div class="card" data-type="Topic Detail">
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="badge badge-type">Topic Detail</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title">
+            <a href="Generating_Presentations_and_interactive_topics_t1.html">Introduction to AI-Generated Presentations</a>
+          </div>
+          <p class="card-description">
+            An introductory reading that explains what AI-generated presentations are, how PreseMaker's Module Editor uses existing module topics to automate slide creation, and why this approach reduces the manual effort traditionally required in instructional design.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 · Generating a PowerPoint Slide Deck -->
+      <div class="card" data-type="Topic Detail">
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="badge badge-type">Topic Detail</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title">
+            <a href="Generating_Presentations_and_interactive_topics_t2.html">Generating a PowerPoint Slide Deck from Module Topics</a>
+          </div>
+          <p class="card-description">
+            A reading that walks learners through how to access and use the Module Editor's AI-driven slide deck generator, explaining how existing module topics are mapped to individual slides and how to initiate the automated PowerPoint generation process.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 · Understanding the Narrated Presentation Option -->
+      <div class="card" data-type="Topic Detail">
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="badge badge-type">Topic Detail</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title">
+            <a href="Generating_Presentations_and_interactive_topics_t3.html">Understanding the Narrated Presentation Option</a>
+          </div>
+          <p class="card-description">
+            A reading that distinguishes between standard and narrated presentation outputs in PreseMaker, describing the technical pipeline behind narrated presentations and helping learners decide which output type suits their instructional needs.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5 · Writing Per-Slide Speaker Notes -->
+      <div class="card" data-type="Topic Detail">
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="badge badge-type">Topic Detail</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title">
+            <a href="Generating_Presentations_and_interactive_topics_t4.html">Writing Per-Slide Speaker Notes</a>
+          </div>
+          <p class="card-description">
+            A reading focused on writing effective per-slide speaker notes within PreseMaker, explaining that these notes serve as the actual script for text-to-speech audio and guiding learners on how to draft, refine, and align notes with slide visuals.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 · Converting Speaker Notes to Spoken Audio -->
+      <div class="card" data-type="Topic Detail">
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="badge badge-type">Topic Detail</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title">
+            <a href="Generating_Presentations_and_interactive_topics_t5.html">Converting Speaker Notes to Spoken Audio with Text-to-Speech</a>
+          </div>
+          <p class="card-description">
+            A reading that explains how PreseMaker's text-to-speech engine converts written speaker notes into synthesized spoken audio for each slide, covering the conversion process and how it eliminates the need for manual voice recording.
+          </p>
+        </div>
+      </div>
+
+      <!-- 7 · Embedding Audio and Timing into Slides (Topic Detail) -->
+      <div class="card" data-type="Topic Detail">
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="badge badge-type">Topic Detail</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title">
+            <a href="Generating_Presentations_and_interactive_topics_t6.html">Embedding Audio and Timing into Slides</a>
+          </div>
+          <p class="card-description">
+            A reading describing how PreseMaker embeds TTS-generated audio clips into the PowerPoint file and synchronises each clip with its corresponding slide, including how slide timing is set so the presentation advances automatically with the narration.
+          </p>
+        </div>
+      </div>
+
+      <!-- 8 · Embedding Audio and Timing into Slides (Text Content) -->
+      <div class="card" data-type="Text Content">
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="badge badge-type">Text Content</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title">
+            <a href="Generating_Presentations_and_interactive.html">Embedding Audio and Timing into Slides</a>
+          </div>
+          <p class="card-description">
+            A reading describing how PreseMaker embeds TTS-generated audio clips into the PowerPoint file and synchronises each clip with its corresponding slide, including how slide timing is set so the presentation advances automatically with the narration.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /.card-grid -->
+  </main>
+
+  <footer>
+    <p>Using PreseMaker &mdash; Generating Presentations and Narrated Presentations</p>
+  </footer>
+
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body>
+</html>

@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choosing and Configuring Modules for a Batch Run</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Choosing and Configuring Modules for a Batch Run</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Choosing and Configuring Modules for a Batch Run</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you need to generate learning content across an entire course at once, manually working through each module one by one is time-consuming and inconsistent. The batch run feature solves this by letting you select multiple modules, choose a content type, configure settings, and trigger generation for all of them in a single operation. Understanding how to navigate to batch actions, make smart module selections, and configure settings correctly ensures you get consistent, high-quality output across your course without redundant effort.</p>
+
+<p>Batch actions operate at the <strong>course level</strong>, not at the individual module level. This is an important distinction. When you are inside a single module editing its details or reviewing its topics, you will not find the batch action controls there. Instead, you need to step back to the <strong>Course Manager</strong>, which provides a course-wide view of all your modules together. Think of the Course Manager as the command center for your entire course — it is the place where you can see every module at a glance and apply actions that span across all of them simultaneously. Before you begin, confirm that your course already has at least one module with generated topics in place. The batch content generation actions — such as generating quizzes, presentations, or text documents — depend on topic data already existing within the modules. If your modules are empty shells without topics, the AI will not have the context it needs to produce meaningful content.</p>
+
+<p>Once you are in the Course Manager and have located the Batch Actions feature, your first task is <strong>deciding which modules to include</strong> in the run. The module selection interface presents you with a list of all modules in your course, each with a checkbox or toggle that lets you include or exclude it. For courses with many modules, a <em>Select All</em> option lets you check every module instantly — this is the most efficient starting point when you want broad coverage. From there, you can deselect any modules that should be excluded from the current batch. Common reasons to exclude a module might include modules that are still being drafted, modules where content has already been generated and does not need to be regenerated, or modules that require a different configuration than the rest of the batch. Reviewing your selection carefully before proceeding is essential: the batch action will attempt to generate content for <em>every</em> checked module, so an accidental inclusion can result in unwanted content being produced that then needs to be reviewed or deleted.</p>
+
+<p>With your modules selected, the next step is <strong>choosing the type of content to generate</strong>. Batch actions are not a single one-size-fits-all command — they are separate, distinct actions, each targeting a specific content format. The available options typically include:</p>
+
+<ul>
+  <li><strong>Generate Module Topics and Outcomes</strong> — creates the topic structure and learning outcomes for each selected module, useful when building a course from scratch or restructuring existing modules.</li>
+  <li><strong>Generate Quizzes</strong> — produces assessment questions tied to the content of each selected module's topics.</li>
+  <li><strong>Generate Presentations</strong> — builds slide-based presentation content derived from the module topics, suitable for lectures or learner-facing slide decks.</li>
+  <li><strong>Generate Text Documents</strong> — creates written learning materials, such as reading content or study guides, based on the module topics.</li>
+</ul>
+
+<p>You run <em>one</em> batch action at a time. If you need both quizzes and presentations for the same set of modules, you will run the quiz batch first, then return and run the presentation batch separately, selecting the same modules again. This design gives you precise control — you are never forced to generate every content type at once, and you can stage your production in whatever order matches your workflow.</p>
+
+<p>After selecting your content type, you will reach the <strong>batch settings configuration</strong> screen, where you define the parameters that the AI will apply uniformly to all selected modules in this run. The available settings differ depending on which content type you chose:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content Type</th>
+      <th>Key Settings to Configure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Quizzes</td>
+      <td>Number of questions, question types (multiple choice, true/false, short answer, etc.), optional hints, optional feedback per answer</td>
+    </tr>
+    <tr>
+      <td>Presentations</td>
+      <td>Target audience, tone (formal, conversational, instructional), number of slides per module</td>
+    </tr>
+    <tr>
+      <td>Text Documents</td>
+      <td>Document format (e.g., structured notes, narrative prose), theme or instructional focus</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Because these settings are applied <strong>uniformly</strong> across all selected modules, it is worth pausing to think about whether a single configuration truly fits every module you have checked. For example, if your course includes both introductory modules intended for beginners and advanced modules for experienced practitioners, a single audience setting in a presentation batch may not be ideal for every module. In cases like this, you have two practical options: run separate batch actions — one for the introductory modules with beginner-level settings, and another for the advanced modules with different settings — or accept the uniform settings and make manual adjustments to individual outputs after the batch completes. Neither approach is wrong; the right choice depends on how much variation exists across your modules and how much post-generation editing you are prepared to do.</p>
+
+<p>The AI draws on <strong>course-level context and individual module titles</strong> to shape the content it generates. This means the quality and relevance of the batch output is directly tied to how well your course details are filled in and how descriptive your module titles are. A module titled <em>Unit 3</em> gives the AI very little to work with, while a module titled <em>Managing Conflict in Remote Teams</em> provides rich context that will produce far more targeted and useful content. Before running a batch, take a moment to review your module titles and course description to ensure they accurately represent what each module covers. This small investment of time pays significant dividends in the quality of the generated output.</p>
+
+<p>The final step before launching the batch run is a <strong>confirmation review</strong>. At this stage, you should methodically check three things. First, scan the list of selected modules one more time — confirm that every module you intended to include is checked, and that no module you intended to exclude has been accidentally left checked. Second, verify that the content type you selected matches your current goal. It is easy to proceed with the wrong action type selected if you were previously exploring the interface. Third, review the configured settings one final time to ensure question counts, slide numbers, tone settings, and any other parameters reflect your intentions for this batch. When you are confident that everything is correct, click the designated <em>Start</em> or <em>Run</em> button to initiate the batch action. The system will begin processing each selected module in sequence, applying your chosen content type and settings to each one. Depending on the number of modules selected and the complexity of the content type, this process may take some time to complete, after which you can review the generated content within each module.</p>
+        <div class="notes"><strong>Notes</strong>Instructors should be encouraged to test batch settings on a small selection of two or three modules before running a full course-wide batch, especially when working with a new content type or unfamiliar settings. This allows them to review representative output and adjust settings before committing to a full run.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

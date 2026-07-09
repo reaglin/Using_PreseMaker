@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Method 3: Importing from a File or Repository</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Method 3: Importing from a File or Repository</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Method 3: Importing from a File or Repository</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When working within PreseMaker, there are several ways to bring a module into your working environment. The third method — importing from a file or a remote repository — is specifically designed for situations where a module already exists as a packaged, distributable unit. Rather than building a module from scratch or pointing PreseMaker to a folder you have manually organized on your filesystem, this approach lets you receive, retrieve, and register a module through a guided intake workflow. It is the most practical path when modules are being shared between team members, distributed across organizational environments, or pulled from a centralized hosting source. Understanding when and how to use this method will save time, reduce setup errors, and ensure that modules are consistently registered in a state that is immediately ready for use.</p>
+
+<p><strong>What Is the Import Method?</strong></p>
+
+<p>The import method is a structured workflow within PreseMaker that accepts a module from an external source — either a packaged archive file stored locally or a remote repository accessible via a URL — and registers it inside the Module Manager so it becomes available for content generation and editing. The key distinction from other methods is that the module already exists in a complete, self-contained form before the import begins. You are not creating or configuring the module's structure; you are receiving it and letting PreseMaker process it into your environment.</p>
+
+<p>This approach is particularly valuable in collaborative or distributed contexts. When a module has been authored by one team and needs to be reused by another, packaging and importing is far more reliable than manually transferring individual files. PreseMaker handles the intake process internally, so the person importing the module does not need to understand the module's internal folder structure or know exactly where files should be placed on disk. The import workflow abstracts those details and ensures the module lands in a valid, registered state.</p>
+
+<p>Another important characteristic of this method is that it supports distribution across different installations. A module packaged on one machine can be imported on another without requiring those machines to share a network drive or have identical directory structures. This makes the import method the right tool for cross-environment reuse, such as moving a module from a development environment to a production one, or sharing work between colleagues who are in different offices or organizations.</p>
+
+<p><strong>When to Use This Method</strong></p>
+
+<p>Choosing the correct import method depends on where the module currently exists and how it arrived in your possession. The file-and-repository import method is the right choice in three primary scenarios.</p>
+
+<ul>
+  <li><strong>A colleague has shared a packaged module file with you.</strong> When a team member exports or packages a module from their own PreseMaker installation and sends it to you — via email, a shared drive, a file transfer service, or any other delivery mechanism — you will receive an archive file. This file is not meant to be manually unpacked and placed somewhere on your filesystem. Instead, you use the import workflow to hand it directly to PreseMaker, which processes and registers it correctly.</li>
+  <li><strong>You need to pull a module from a remote repository.</strong> Organizations often maintain hosted repositories of approved or standardized modules. These repositories may be internal company servers or externally hosted platforms. Rather than downloading and then manually placing files, the repository-based import points PreseMaker directly at the source, and the application handles the retrieval and registration in a single operation.</li>
+  <li><strong>The module has not yet been extracted or placed in a local directory.</strong> If you have a packaged module file but have not yet unzipped or organized its contents into a local folder, the import method is preferable to the folder-based method. There is no need to manually prepare the filesystem. PreseMaker reads the archive or repository source and performs the extraction and registration itself.</li>
+</ul>
+
+<p>Conversely, if you already have a module's folder structure present and organized on your local machine or network drive, the folder-based method may be more direct. The import method shines precisely when the module is in a packaged or remote state that has not yet been integrated into your local environment.</p>
+
+<p><strong>Supported Source Types</strong></p>
+
+<p>The import workflow supports two distinct source types, each suited to a different distribution scenario. Both ultimately produce the same result — a registered, available module inside the Module Manager — but they differ in where the module originates and how PreseMaker retrieves it.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source Type</th>
+      <th>Description</th>
+      <th>Typical Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>File-based import</strong></td>
+      <td>A packaged module archive stored on your local computer or an accessible network drive. You browse to the file's location and select it within the import workflow.</td>
+      <td>Receiving a module from a colleague, importing a module from a USB drive or shared folder, or importing a previously exported backup of a module.</td>
+    </tr>
+    <tr>
+      <td><strong>Repository-based import</strong></td>
+      <td>A remote location — such as a hosted organizational repository — identified by a URL or connection string. PreseMaker connects to the repository and retrieves the module directly.</td>
+      <td>Pulling standardized or approved modules from a team's central module library, fetching updates to a shared module, or onboarding a new installation with an established module set.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In the file-based scenario, the archive is typically a compressed package that bundles everything the module needs — its configuration, content definitions, metadata, and any associated assets. PreseMaker knows how to read this package format, so the user simply provides the file path and lets the application do the rest.</p>
+
+<p>In the repository-based scenario, the user provides a URL or connection reference pointing to a hosted location. PreseMaker contacts that location, downloads the necessary module data, and registers it — all within the import workflow. This is especially useful when an organization wants to maintain a single source of truth for its modules and ensure all team members are working from the same, up-to-date version.</p>
+
+<p><strong>Steps to Import a Module</strong></p>
+
+<p>The import process follows a clear, sequential workflow. Each step is handled within the PreseMaker interface, and no manual filesystem manipulation is required at any point.</p>
+
+<ul>
+  <li><strong>Open the Module Manager.</strong> Navigate to the Module Manager within PreseMaker. This is the central hub for all module-related operations. From here, locate and select the option to import a module from a file or repository. This option initiates the import workflow.</li>
+  <li><strong>Choose your source type.</strong> The import workflow will prompt you to specify whether you are importing from a local file or from a remote repository. Select the appropriate option based on where your module currently resides. If you are importing from a file, you will be asked to browse to the archive on your computer or network drive and select it. If you are importing from a repository, you will be prompted to enter the repository's URL or connection details.</li>
+  <li><strong>Provide the required path or URL.</strong> Supply the exact location of the module. For a file-based import, this means navigating to and selecting the packaged archive file. For a repository-based import, this means entering a valid URL or repository address. Accuracy here is important — an incorrect path or URL will prevent PreseMaker from locating the module.</li>
+  <li><strong>PreseMaker validates and processes the source.</strong> Once you confirm the source, PreseMaker inspects the provided file or repository to verify that it contains a valid, compatible module. This validation step catches issues such as corrupt archives, incompatible module versions, or unreachable repository addresses before any changes are made to your environment. If validation succeeds, PreseMaker proceeds to extract and register the module.</li>
+  <li><strong>The module is registered and becomes available.</strong> After successful processing, the module appears in the Module Manager alongside any other modules already present in your environment. It is now in an active, registered state and is ready for content generation or further editing, exactly as if it had been created locally or added through another method.</li>
+</ul>
+
+<p>The linear nature of this workflow is intentional. Each step confirms that the previous one succeeded before proceeding, which minimizes the risk of partially registered or broken modules entering your environment.</p>
+
+<p><strong>Role of the Module Manager in This Method</strong></p>
+
+<p>The Module Manager is not simply a passive display of available modules; it is the active hub through which the entire import workflow is initiated, monitored, and confirmed. Every aspect of the file-and-repository import method runs through it, which keeps the process centralized and consistent.</p>
+
+<p>When the import begins, the Module Manager provides the interface controls that allow you to specify your source type and input the required path or URL. As PreseMaker processes the import, the Module Manager reflects the current status — whether validation is in progress, the module is being retrieved, or the registration has been completed. This visibility is important in repository-based imports, where network latency might mean the process takes a moment longer than a local file import.</p>
+
+<p>Once the import finishes successfully, the Module Manager displays a confirmation and the newly imported module appears in the module list. At this point, the module has transitioned from an external, packaged state to an internal, registered state within PreseMaker. It is no longer sitting in an archive on your desktop or waiting in a remote repository — it is fully integrated into your PreseMaker environment and subject to all the same operations as any other module: content generation, editing, exporting, and so on.</p>
+
+<p>By centralizing the import workflow within the Module Manager, PreseMaker ensures that there is a single, authoritative record of which modules are registered and available. This prevents the kind of ambiguity that can arise when modules are added by manually placing files in directories, where the application may or may not be aware of their presence until a separate discovery or refresh step is performed. With the import method, registration is explicit and immediate.</p>
+        <div class="notes"><strong>Notes</strong>Describes how to import a module using a file or a remote repository source. Highlights the scenarios where this method is most appropriate and the steps involved.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

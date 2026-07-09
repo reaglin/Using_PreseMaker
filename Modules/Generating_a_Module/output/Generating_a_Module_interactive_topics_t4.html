@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adjusting and Replacing the Module Breakdown</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Adjusting and Replacing the Module Breakdown</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Adjusting and Replacing the Module Breakdown</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Once an AI-suggested module breakdown has been generated, it is rarely a perfect fit straight out of the box. Course designs evolve, learning objectives shift, and the phrasing or ordering that an AI produces may not match the instructor's vision. PreseMaker therefore provides a layered set of tools that let you work at whatever level of change you need — tweaking a single title, reshuffling the sequence, deepening or narrowing a module's scope, or throwing out the entire structure and starting fresh. Understanding exactly what each operation does, and what it leaves untouched, prevents accidental data loss and keeps your project folder stable throughout the editing process.</p>
+
+<p><strong>Editing Individual Module Titles</strong></p>
+
+<p>The simplest form of adjustment is renaming a module. Every module in the breakdown is displayed with an editable title field. Clicking directly on that field activates inline editing — the text becomes a cursor-ready input without opening any separate dialog or navigating away from the breakdown view. You simply type the replacement name and the change is registered immediately when you click elsewhere or press Enter.</p>
+
+<p>It is important to understand the distinction between a module's <em>display title</em> and its <em>underlying folder name</em>. When PreseMaker first creates a module, it derives a stable folder name from the original AI-generated title — typically by lowercasing it, replacing spaces with hyphens or underscores, and stripping special characters. This folder name is written to disk and is what the application uses internally to locate assets, draft content, and configuration files associated with that module. When you edit the display title afterward, only the human-readable label is updated; the folder name on disk stays exactly as it was. This means that any file paths, links, or references you have already established for that module continue to work correctly even after you rename it several times.</p>
+
+<p>For example, suppose the AI suggested a module titled <em>"Introduction to Data Structures"</em> and the resulting folder was named <code>introduction-to-data-structures</code>. If you change the display title to <em>"Foundations of Data Organisation"</em> to better match your course vocabulary, all existing files remain under <code>introduction-to-data-structures/</code> and nothing breaks. The learner-facing and author-facing name simply becomes the new label.</p>
+
+<p>Choosing precise, descriptive titles pays dividends later. A title like <em>"Advanced Sorting Algorithms"</em> communicates far more to both co-authors and learners than a generic <em>"Module 4"</em>. Custom titles also make the course easier to audit against learning objectives, because you can read down the breakdown list and immediately verify whether every intended outcome has a corresponding module.</p>
+
+<p><strong>Reordering Modules in the Breakdown</strong></p>
+
+<p>The sequence in which modules are presented is as pedagogically significant as their content. A learner who encounters assessment techniques before data collection methods, for instance, will struggle to apply what they have learned. PreseMaker lets you reorder the breakdown either by dragging a module row to a new position in the list or by using explicit up/down arrow controls beside each row — useful when drag-and-drop is impractical on smaller screens or with assistive technology.</p>
+
+<p>When you move a module, PreseMaker updates each affected module's stored <em>order value</em> — a numeric index that determines the sequence in which modules appear across all views, exports, and navigation menus. Crucially, folder names are not changed during reordering. A module whose folder is named <code>module-03-ethics</code> does not get renamed to <code>module-01-ethics</code> just because you moved it to the top of the list; the folder name is a stable identifier, not a position marker. This design means you can reorder freely without invalidating internal links or asset references.</p>
+
+<p>After making several reordering changes, it is good practice to read through the full list top-to-bottom and ask whether the flow makes sense as a learning journey. Specific things to verify:</p>
+
+<ul>
+  <li>Does each module assume only knowledge that has been covered in earlier modules?</li>
+  <li>Are prerequisite concepts introduced before the modules that depend on them?</li>
+  <li>Do any modules that were designed as a pair or sequence still appear adjacent to each other?</li>
+  <li>Does the overall arc move from foundational concepts toward applied or evaluative work in a way that matches your instructional design model?</li>
+</ul>
+
+<p>If you discover a dependency conflict — for example, a module on "Regression Analysis" sitting before a module on "Descriptive Statistics" — reordering alone resolves it without any need to touch the modules' actual content.</p>
+
+<p><strong>Modifying Individual Module Descriptions or Scope</strong></p>
+
+<p>Beyond the title, each module carries a description and a list of subtopics that define its scope. These can be edited independently without affecting any other module in the breakdown. Clicking on a module row expands its detail panel, revealing text fields for the description and an editable list of subtopics or learning outcomes.</p>
+
+<p>You might <em>narrow</em> a module's scope when the AI has bundled too many distinct concepts into one entry. For instance, an AI-generated module called <em>"Security and Compliance"</em> might list subtopics covering network firewalls, data encryption, GDPR obligations, audit logging, and incident response — enough material for two or three separate modules. Removing some subtopics from this module's detail panel (and later adding a new module to house them) keeps the scope coherent without requiring a full regeneration.</p>
+
+<p>You might <em>broaden</em> a module's scope when the AI has been overly conservative. If a module on <em>"HTTP Basics"</em> omits HTTPS and TLS, you can add those as subtopics directly in the detail panel to signal that the module should address the secure transport layer as well.</p>
+
+<p>A key operational advantage of this approach is that editing one module's description or subtopic list does <strong>not</strong> trigger a full regeneration of the entire breakdown. The rest of the structure stays exactly as it is. This makes targeted modifications safe and low-risk — you are doing surgical editing, not reconstructing the building from the ground up.</p>
+
+<p><strong>Replacing the Entire AI-Suggested Structure</strong></p>
+
+<p>Sometimes incremental edits are not enough. If the AI-generated breakdown is structured around the wrong framework, covers the wrong depth, or simply does not resemble the course you are trying to build, replacing the entire structure is the right move. PreseMaker provides a <em>Regenerate</em> or <em>Replace Breakdown</em> option that discards the current proposal and asks the AI to produce a completely new module structure from scratch.</p>
+
+<p>Before triggering this action, there is one critical caution: <strong>any manual edits made to the existing breakdown will be permanently lost</strong>. If you have spent time renaming modules, writing custom descriptions, or carefully arranging the order, none of that work carries over to the new proposal. PreseMaker will replace the entire structure with a freshly generated one. The recommended habit is to take a note — or a screenshot — of any elements from the current breakdown that you want to preserve, so you can re-apply them to the new structure after it is generated.</p>
+
+<p>Multiple regeneration attempts are permitted. If the first replacement proposal is still not quite right, you can regenerate again. Each attempt is independent, giving you a different AI-produced interpretation of your inputs. There is no penalty for regenerating several times; the goal is to find a starting structure that is close enough to your ideal that the remaining gap can be closed through targeted edits rather than another full regeneration.</p>
+
+<p><strong>Regenerating a Proposal with Revised Inputs</strong></p>
+
+<p>Rather than regenerating with identical inputs and hoping for a different result, a more effective strategy is to revise the inputs before triggering regeneration. The inputs PreseMaker passes to the AI typically include:</p>
+
+<ul>
+  <li>A written course description or learning objective statement</li>
+  <li>Uploaded or pasted source materials (syllabi, reference documents, subject outlines)</li>
+  <li>Any configuration parameters you have set, such as the desired number of modules, audience level, or instructional approach</li>
+</ul>
+
+<p>If the previous breakdown produced modules that were too high-level, adding more granular source material or expanding your description to mention specific topics you want covered will steer the AI toward a more detailed structure. If the modules were too numerous and granular, simplifying your description or reducing the requested module count gives the AI permission to consolidate.</p>
+
+<p>When you trigger the regeneration, PreseMaker bundles your revised description and updated source materials together and passes them to the AI model. The resulting proposal reflects these adjusted parameters rather than simply re-running the original request. Once the new proposal appears, comparing it side-by-side with your notes from the previous version helps you make an informed judgment: does the new structure better serve your learning objectives? Are the module boundaries cleaner? Is the sequence more logical? This comparison step prevents you from accepting a new proposal out of impatience only to discover later that the previous one had strengths worth preserving.</p>
+
+<p><strong>Confirming and Locking the Final Breakdown</strong></p>
+
+<p>When you are satisfied that the module titles are accurate, the sequence is logical, the descriptions are appropriately scoped, and the structure as a whole reflects your course design, you confirm the breakdown. This final confirmation step is deliberate — PreseMaker uses it as the trigger to write the structure to the course's on-disk folder system, creating the actual directories that will house each module's content, assets, and configuration.</p>
+
+<p>Before confirming, a final review pass is strongly recommended. The following checklist captures the most important things to verify:</p>
+
+<ul>
+  <li>Every module title accurately reflects what that module will teach</li>
+  <li>The module sequence flows logically from foundational to advanced, or follows whatever pedagogical pattern the course demands</li>
+  <li>No two modules overlap significantly in scope</li>
+  <li>All major course learning objectives map to at least one module</li>
+  <li>The total number of modules is realistic for the course's intended duration</li>
+</ul>
+
+<p>Once you confirm, the structure is <em>locked</em> in the sense that the folder system has been committed to disk. Individual modules can still be opened and edited — you can continue to refine titles, update descriptions, and adjust subtopics — but performing a wholesale replacement of the entire breakdown at this point would require restarting the breakdown generation process from the beginning, because the on-disk structure would need to be rebuilt. This is why the confirmation step is framed as a significant threshold: it is the point at which the course structure moves from a proposal into an active project.</p>
+
+<p>The table below summarises what each type of adjustment changes and what it leaves unchanged, providing a quick reference for deciding which operation is appropriate for a given situation.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Operation</th>
+      <th>What Changes</th>
+      <th>What Stays the Same</th>
+      <th>Risk of Data Loss</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Edit module title</td>
+      <td>Display name of that module</td>
+      <td>Folder name, all other modules, file paths</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>Reorder modules</td>
+      <td>Stored order value for affected modules</td>
+      <td>Folder names, module content, descriptions</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>Edit module description / subtopics</td>
+      <td>Description and subtopic list for that module</td>
+      <td>All other modules, folder names, order</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>Regenerate / Replace breakdown</td>
+      <td>Entire module structure (titles, order, descriptions)</td>
+      <td>Nothing from the previous proposal is retained</td>
+      <td>High — all manual edits are lost</td>
+    </tr>
+    <tr>
+      <td>Regenerate with revised inputs</td>
+      <td>Entire module structure, based on updated parameters</td>
+      <td>Nothing from the previous proposal is retained</td>
+      <td>High — all manual edits are lost</td>
+    </tr>
+    <tr>
+      <td>Confirm / Lock breakdown</td>
+      <td>Writes folder structure to disk; locks wholesale replacement</td>
+      <td>Individual module editing remains available</td>
+      <td>None (but reverting requires restarting the process)</td>
+    </tr>
+  </tbody>
+</table>
+        <div class="notes"><strong>Notes</strong>Covers all six subtopic clusters from the brief: editing titles, reordering, modifying scope, replacing the full structure, regenerating with revised inputs, and confirming/locking. The table at the end provides a consolidated reference. No headings used; structure is created entirely through bold labels and paragraph breaks as required.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

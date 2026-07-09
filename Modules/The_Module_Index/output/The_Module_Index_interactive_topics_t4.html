@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The HTML Index as a Self-Contained Browsable Module</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>The HTML Index as a Self-Contained Browsable Module</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>The HTML Index as a Self-Contained Browsable Module</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When a module is generated, the system produces an <strong>HTML index file</strong> that acts as a single, self-contained browsable landing page for everything the module contains. Rather than requiring a user to log into a platform, navigate a dashboard, or run any special software, this one file brings together the complete catalogue of artifacts, metadata, topics, and subtopics into a structured, clickable document that any modern web browser can render instantly. Understanding what this file is, how it is built, and how to use it effectively is fundamental to getting the most out of a generated module — whether you are the original author, a reviewer, a colleague receiving a copy, or a learner returning to the material offline.</p>
+
+<p>The HTML index is best thought of as a <strong>mirror of the module's structure</strong>. Every topic, subtopic, and content element that exists within the module is reflected inside this file in the same hierarchical arrangement. Nothing is flattened, reordered, or omitted. If the module was organised into four main topics each containing several subtopics, the HTML index presents exactly that organisation, preserving the logical relationships that were established during authoring. This means that browsing the index closely replicates the experience of reviewing materials inside the platform itself, but without any dependency on that platform being available.</p>
+
+<p><strong>What the HTML Index Is</strong></p>
+
+<p>At its core, the HTML index is a structured HTML file that consolidates all generated artifacts and their associated metadata into one place. Artifacts might include topic explanations, quiz questions, learning objectives, scenario content, knowledge checks, or any other content elements the module produces. Each of these artifacts is catalogued within the file along with relevant metadata — such as the topic it belongs to, its type, and any identifiers needed to locate it in the broader output folder.</p>
+
+<p>Because the file is written in standard HTML, it carries no proprietary format requirements. Opening it is as simple as double-clicking the file in a file explorer or dragging it into an open browser window. There is no installation step, no account login, and no dependency on a live internet connection. The browser reads the HTML and renders the full module catalogue immediately. This simplicity is intentional: the HTML index is designed to be universally accessible to anyone who has a device with a web browser, which in practice means virtually any modern computer, tablet, or smartphone.</p>
+
+<p><strong>Portability of the HTML Index</strong></p>
+
+<p>One of the most practically valuable qualities of the HTML index is its <strong>portability</strong>. Because it needs no server to function, the entire output folder can be copied to a USB drive, attached to an email, uploaded to a shared file storage service, or moved between computers running entirely different operating systems — Windows, macOS, Linux — and it will work identically on all of them, provided the whole output folder travels together.</p>
+
+<p>This last point is important and worth emphasising clearly. The HTML index links to the module's other files — supporting documents, media assets, supplementary resources — using <strong>relative paths</strong>. A relative path describes the location of a file in relation to the index file itself, rather than as an absolute address on a specific machine. For example, a link inside the index might point to <code>./artifacts/topic_01_quiz.html</code>, meaning "look for a file called <code>topic_01_quiz.html</code> inside a folder called <code>artifacts</code> that sits alongside this index file." As long as the folder structure remains intact — that is, the index file and all the other files stay in their original positions relative to one another — every link will resolve correctly regardless of where the parent folder has been moved or copied.</p>
+
+<p>If the index file is extracted from its folder and moved elsewhere on its own, the relative links will break because the files they point to are no longer at the expected relative locations. The practical rule is straightforward: <strong>keep the whole output folder together</strong>. Move it, copy it, or share it as a unit, and the index will function perfectly anywhere.</p>
+
+<p>This portability makes the HTML index an excellent vehicle for distributing a complete module snapshot to colleagues, subject matter experts, stakeholders, or clients who need to review the content without being given access to the authoring platform. They receive a folder, open the index, and have immediate access to everything.</p>
+
+<p><strong>Using the HTML Index Offline</strong></p>
+
+<p>Because the HTML index and its linked files are all local — stored on the device or in the folder the user has access to — the entire browsing experience operates <strong>without any network connection</strong>. A learner can download the output folder once while connected, then open and revisit the index repeatedly in a location with no internet access: on a long flight, in a remote facility, on a device in a restricted network environment, or simply at home with the router switched off.</p>
+
+<p>Every navigation action that would be available when online remains available offline. Clicking a topic link loads the topic content. Clicking a subtopic drills down into the relevant artifacts. Browsing back and forward through the index works through the browser's standard navigation controls. Nothing is fetched from a remote server during these interactions because everything needed has already been saved locally within the output folder.</p>
+
+<p>This continuity of access is particularly valuable in training and education contexts where connectivity cannot be guaranteed. A workforce spread across field locations, a group of students in an area with poor infrastructure, or an individual learner who simply prefers to work without distractions can all engage with the full module content reliably, on their own schedule, without depending on a live connection being available at the moment they sit down to study.</p>
+
+<p><strong>The HTML Index as a Shareable Reference</strong></p>
+
+<p>Beyond individual offline use, the HTML index serves a powerful function as a <strong>shareable reference document</strong>. In any collaborative content development process, there is a recurring need to share work-in-progress or completed materials with reviewers, managers, instructional design peers, subject matter experts, or client stakeholders. The HTML index is an ideal vehicle for this because it communicates the full module in its organised, structured form — not as a pile of disconnected files, but as a coherent catalogue that reflects exactly how the module is laid out.</p>
+
+<p>When a reviewer receives the output folder and opens the index, they see the content in precisely the same organised form as the original author. Topics appear in the correct order, subtopics are nested appropriately under their parent topics, and all artifacts are accessible in context. This shared view eliminates the confusion that can arise when materials are shared piecemeal — where a reviewer might receive individual files without a clear sense of how they relate to each other or where they sit within the broader module structure.</p>
+
+<p>Crucially, the reviewer needs no special software, no platform account, no licence, and no credentials of any kind. They open the folder, open the index file in a browser, and begin reviewing. Feedback can be given against a clear, navigable structure rather than against a flat list of disconnected exports.</p>
+
+<p><strong>Navigating Content Within the HTML Index</strong></p>
+
+<p>The HTML index is designed to be <strong>navigated interactively</strong>, not scrolled through linearly from top to bottom. Users can click through topics and subtopics to move directly to the content they are interested in, bypassing sections that are not currently relevant. This makes it practical to locate a specific artifact — a particular quiz, a specific scenario, a learning objective for a given subtopic — quickly and without having to wade through unrelated material.</p>
+
+<p>The navigation structure within the index reflects the logical hierarchy of the module. At the top level, the major topics are presented. Within each topic, the subtopics are accessible. Within each subtopic, the individual artifacts are catalogued. This layered structure means the index scales well even for large modules with many topics and a high artifact count: users drill down from broad to specific rather than facing an undifferentiated wall of content.</p>
+
+<p>For users who are already familiar with the platform's interface for reviewing generated materials, navigating the HTML index will feel intuitive because the experience is intentionally designed to replicate the in-platform browsing experience as closely as possible. The hierarchy, the labelling of content types, and the overall organisation all correspond to what a user would encounter when reviewing the same module inside the authoring system.</p>
+
+<p><strong>The HTML Index as a Complete Module Snapshot</strong></p>
+
+<p>Every artifact catalogued in the module at the time the index was generated is represented within the HTML file. There is no selective inclusion or partial view — the index is a <strong>complete snapshot</strong> of the module's state at a specific moment. This comprehensiveness is what makes the file so useful not just for immediate sharing and offline access, but also for <strong>archiving</strong>.</p>
+
+<p>At key milestones in a module's development — after an initial draft is complete, after a round of review feedback has been incorporated, after a final sign-off — generating and saving an HTML index creates a permanent, browsable record of exactly what the module looked like at that point. Because the index is a static HTML file rather than a live database view, it will not change after it is saved. It is a true snapshot: frozen at the moment of generation.</p>
+
+<p>This archival quality becomes especially valuable when a module undergoes significant revision over time. By comparing two index snapshots — one from an earlier milestone and one from a later stage — an author or project manager can observe concretely how the module evolved: which topics were added, which artifacts were revised, which content elements were removed or restructured. The following table illustrates how snapshot comparison might be used across a typical module development timeline:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Milestone</th>
+      <th>Snapshot Purpose</th>
+      <th>What the Snapshot Captures</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Initial draft complete</td>
+      <td>Baseline record of first-pass content</td>
+      <td>All topics, subtopics, and artifacts as initially generated</td>
+    </tr>
+    <tr>
+      <td>Post-SME review</td>
+      <td>Record of content after subject matter expert feedback</td>
+      <td>Revised artifacts, added clarifications, removed inaccuracies</td>
+    </tr>
+    <tr>
+      <td>Post-stakeholder review</td>
+      <td>Record after client or management sign-off pass</td>
+      <td>Structural changes, reordered topics, updated learning objectives</td>
+    </tr>
+    <tr>
+      <td>Final approved version</td>
+      <td>Archival record of the module as approved for delivery</td>
+      <td>Complete, finalised catalog of all artifacts in approved state</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Because each snapshot is a self-contained folder, these archived versions can be stored alongside one another without any risk of one overwriting another. Naming the output folders clearly — for instance, including the date or milestone name in the folder name — ensures that any specific historical version can be located and opened immediately whenever it is needed.</p>
+
+<p>In summary, the HTML index is far more than a convenient export. It is a fully functional, portable, offline-capable, shareable, and archivable representation of an entire module — one that any browser can open, any person can navigate without training, and any team can rely on as a shared reference point throughout a module's development lifecycle.</p>
+        <div class="notes"><strong>Notes</strong>Describes how the HTML index functions as a browsable landing page for the entire module. Highlights how to move or share it (keep its output folder together) and its use as an offline reference.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

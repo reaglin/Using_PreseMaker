@@ -1,0 +1,821 @@
+{
+  "ModuleFolderName": "Generating_Interactive_Activ",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:33:50.9678647-04:00",
+  "ModifiedDate": "2026-07-08T19:35:30.2438393-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "f6a40e18-7404-4a84-952c-b20a42cfc5dd",
+      "Title": "Introduction to Interactive Activity Templates",
+      "Summary": "An overview of PreseMaker\u0027s library of game-like interactive activity templates and their role in enhancing learner engagement. This topic establishes the purpose and value of using pre-built templates for instructional content.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:33:50.9678647-04:00",
+      "ModifiedDate": "2026-07-08T19:33:50.9678647-04:00",
+      "Elements": [
+        {
+          "Id": "3afee9e9-f95b-428b-bfb1-9d30283ed7d7",
+          "TopicId": "f6a40e18-7404-4a84-952c-b20a42cfc5dd",
+          "Title": "What Are Interactive Activity Templates?",
+          "BodyText": "PreseMaker provides a library of pre-built, game-like interactive activity templates designed to transform instructional content into engaging learner experiences.",
+          "Notes": "Think of these templates as ready-made frameworks: the AI proposes a few activity concept options from your topics, you pick one, and it generates the finished activity, so you do not build from scratch.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:34:10.013947-04:00",
+          "ModifiedDate": "2026-07-08T19:34:10.013947-04:00",
+          "Items": [
+            {
+              "Id": "2cbfc98e-3e1e-4fd3-84c2-42e623925107",
+              "Text": "Templates are pre-structured formats that accept instructional content and render it as an interactive exercise.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b1be0d72-5053-43c6-b767-d47ba0943078",
+              "Text": "They are described as \u0027game-like\u0027 because they incorporate mechanics such as matching, recall, and puzzle-solving to motivate learners.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1fa1688e-832f-42d7-a9d1-ab496a84437a",
+              "Text": "Using pre-built templates significantly reduces the time and effort required to produce polished, functional activities.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c56dad73-19a7-47db-be63-2fad5faa0662",
+          "TopicId": "f6a40e18-7404-4a84-952c-b20a42cfc5dd",
+          "Title": "The Role of Templates in Learner Engagement",
+          "BodyText": "Interactive activity templates serve a deliberate instructional purpose: to increase learner engagement by presenting content in participatory, rather than passive, formats.",
+          "Notes": "Research in instructional design consistently shows that active recall and interaction improve retention compared to reading or watching alone.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:34:10.013947-04:00",
+          "ModifiedDate": "2026-07-08T19:34:10.013947-04:00",
+          "Items": [
+            {
+              "Id": "9300b8e0-50fb-418d-a2c0-430461bf1fb3",
+              "Text": "Passive content consumption is replaced by active participation, which supports deeper cognitive processing.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "73e494d3-b8dc-4cea-8110-06c5ff55e823",
+              "Text": "Game-like mechanics introduce an element of challenge and reward that sustains learner motivation.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9b5000ad-5a2b-4ce5-a950-659b6d197a24",
+              "Text": "Templates ensure engagement strategies are consistently applied across a module without requiring custom design work for each activity.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a97fb168-11a5-43b2-b365-7f32d5baa540",
+          "TopicId": "f6a40e18-7404-4a84-952c-b20a42cfc5dd",
+          "Title": "Overview of Available Template Types",
+          "BodyText": "PreseMaker\u0027s library includes several distinct template types, each suited to different instructional goals and content structures.",
+          "Notes": "Choosing the right template type depends on your learning objective \u2014 for example, vocabulary acquisition pairs well with flashcards or crosswords, while concept association suits matching activities.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:34:10.013947-04:00",
+          "ModifiedDate": "2026-07-08T19:34:10.013947-04:00",
+          "Items": [
+            {
+              "Id": "ddbacf3c-1926-45dd-8995-34cf823cc393",
+              "Text": "Matching activities ask learners to pair related terms, definitions, or concepts, reinforcing associative knowledge.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7709083f-befe-4597-b999-c2d7d9e5c434",
+              "Text": "Flashcard templates support memorization and self-quizzing by presenting information in a flip-card format.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "23d9e33c-86f4-4eba-96a1-c8b33cc4e0ee",
+              "Text": "Cloze passages present text with strategic blanks that learners must complete, promoting reading comprehension and recall.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "f6f126c9-9c8c-423c-bba7-30024453e0fe",
+              "Text": "Crossword puzzle templates are built from key terms and their definitions, combining vocabulary practice with puzzle-solving engagement.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "2903a256-4763-48c9-8504-5a9e693b9327",
+          "TopicId": "f6a40e18-7404-4a84-952c-b20a42cfc5dd",
+          "Title": "The Value of Using Pre-Built Templates",
+          "BodyText": "Pre-built templates provide a structured starting point that standardizes quality and accelerates content production for instructors and course designers.",
+          "Notes": "Even instructors with no background in instructional design or game development can produce professional-quality interactive activities using PreseMaker\u0027s template library.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:34:10.013947-04:00",
+          "ModifiedDate": "2026-07-08T19:34:10.013947-04:00",
+          "Items": [
+            {
+              "Id": "683eb345-89f7-4a36-be20-1dc596e77996",
+              "Text": "Templates encode instructional best practices by design, so users benefit from proven activity structures automatically.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "fc6e3ebe-9314-4caf-9449-db4a689e761c",
+              "Text": "Consistency across activities is easier to maintain when all exercises draw from the same library of vetted formats.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "20858f7a-3727-4245-ba08-d7f89319eb21",
+              "Text": "Pre-built templates lower the barrier to entry, allowing any instructor to generate interactive content without specialized technical skills.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d2350d54-ce3d-4bd8-a566-a85cef81a3d3",
+          "TopicId": "f6a40e18-7404-4a84-952c-b20a42cfc5dd",
+          "Title": "How Templates Fit Within the Module Workflow",
+          "BodyText": "Interactive activity templates are one component of PreseMaker\u0027s broader content generation workflow, working alongside custom materials to produce a complete set of module artifacts.",
+          "Notes": "All generated activities, whether template-based or custom, are organized and accessible through the Module Index, providing a single location to review all produced content.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:34:10.013947-04:00",
+          "ModifiedDate": "2026-07-08T19:34:10.013947-04:00",
+          "Items": [
+            {
+              "Id": "dc913f17-a22b-4ff8-8ab3-3984f1070e4f",
+              "Text": "Templates are generated from the same source content used throughout the module, ensuring alignment between activities and instructional goals.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2aa21c81-f7dd-411f-be0e-4b23f34f519a",
+              "Text": "Learners are expected to generate at least one interactive activity as a practical application within this module.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ad5f752c-ca07-4ab3-aeba-6887016a0f61",
+              "Text": "All produced artifacts, including interactive activities, are stored and located in the Module Index for easy access and review.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "8f848102-60ad-4a74-9265-d5bad8a6507d",
+      "Title": "Matching and Flashcard Activities",
+      "Summary": "A focused look at how to use matching and flashcard templates built from key terms within PreseMaker. Learners explore how these activity types reinforce vocabulary and concept recognition.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:33:50.9678647-04:00",
+      "ModifiedDate": "2026-07-08T19:33:50.9678647-04:00",
+      "Elements": [
+        {
+          "Id": "902d50d0-9801-41eb-a78e-b19e9940e82c",
+          "TopicId": "8f848102-60ad-4a74-9265-d5bad8a6507d",
+          "Title": "Overview of Matching and Flashcard Templates in PreseMaker",
+          "BodyText": "PreseMaker provides built-in templates specifically designed for matching and flashcard activities, making it easy to generate structured practice materials directly from course content.",
+          "Notes": "These templates are part of PreseMaker\u0027s broader library of game-like interactive activity formats, all accessible from the same activity generation interface.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:34:31.7691346-04:00",
+          "ModifiedDate": "2026-07-08T19:34:31.7691346-04:00",
+          "Items": [
+            {
+              "Id": "5cb152ac-6506-4dbc-b96b-6de0bc86cd72",
+              "Text": "Matching and flashcard templates are built by the AI from key terms and definitions drawn from the module content, after you choose the activity concept to generate.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3f7d1d6b-a1eb-4779-bd05-e0004e3454d0",
+              "Text": "Both activity types are designed to require minimal setup, allowing instructors to generate ready-to-use materials quickly.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c0610646-a7f0-4727-a72f-ff782dbf6bcd",
+              "Text": "Templates can be located and launched from within PreseMaker\u0027s interactive activity library alongside other formats such as cloze passages and crossword puzzles.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "dc6d028a-6cea-4412-8c28-7f085d2215ce",
+          "TopicId": "8f848102-60ad-4a74-9265-d5bad8a6507d",
+          "Title": "How Matching Activities Are Built from Key Terms",
+          "BodyText": "Matching activities in PreseMaker pair key terms with their corresponding definitions or descriptions, challenging learners to correctly connect related items.",
+          "Notes": "The automatic extraction of key terms ensures that matching pairs are directly relevant to the module\u0027s learning objectives rather than generic examples.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:34:31.7691346-04:00",
+          "ModifiedDate": "2026-07-08T19:34:31.7691346-04:00",
+          "Items": [
+            {
+              "Id": "e50b5f11-3661-4b42-a903-a8c8ef788723",
+              "Text": "PreseMaker scans the source content to identify key terms and uses them as the basis for generating term-definition pairs.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "967973f5-46b9-4c3b-afa0-c27c6f7bec26",
+              "Text": "Learners are presented with two columns or sets of items and must draw connections between matching pairs.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "879150c6-5f06-48d7-8f7b-d138f01eb775",
+              "Text": "The activity reinforces recognition of vocabulary by requiring active recall rather than passive reading.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "db9289b1-cd6d-4a0f-b512-6811bd6b3535",
+          "TopicId": "8f848102-60ad-4a74-9265-d5bad8a6507d",
+          "Title": "How Flashcard Activities Are Structured",
+          "BodyText": "Flashcard activities present one side of a term-definition pair at a time, prompting the learner to recall the corresponding information before flipping to confirm.",
+          "Notes": "The flip mechanic of digital flashcards mimics traditional study card methods while benefiting from automated content population within PreseMaker.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:34:31.7691346-04:00",
+          "ModifiedDate": "2026-07-08T19:34:31.7691346-04:00",
+          "Items": [
+            {
+              "Id": "8f9b7a30-9c8c-4974-94ef-44e4da19eb92",
+              "Text": "Each flashcard is generated from a key term pulled from the module content, with the term displayed on one side and its definition or explanation on the other.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "48978f6f-9b69-4ff8-aa9c-f1fa11b8bc93",
+              "Text": "Learners self-assess by attempting to recall the answer before revealing it, supporting active retrieval practice.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "30298026-57b1-405b-8f58-ceee5b0d4c6d",
+              "Text": "Flashcard sets can cover an entire module\u0027s vocabulary, giving learners a comprehensive review tool in a single generated artifact.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "98a54376-d617-4999-b90b-f880f5e394b0",
+          "TopicId": "8f848102-60ad-4a74-9265-d5bad8a6507d",
+          "Title": "Vocabulary and Concept Recognition as Learning Goals",
+          "BodyText": "Both matching and flashcard activities are specifically designed to reinforce vocabulary acquisition and concept recognition, two foundational skills for deeper content mastery.",
+          "Notes": "Repeated exposure through these activity types helps move key terms from short-term recognition into longer-term retention.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:34:31.7691346-04:00",
+          "ModifiedDate": "2026-07-08T19:34:31.7691346-04:00",
+          "Items": [
+            {
+              "Id": "2bcbd871-5fbb-4a3d-9ac9-16b75d2e2ccf",
+              "Text": "Vocabulary reinforcement through these activities helps learners internalize terminology before applying it in more complex tasks.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e006c360-74f1-48df-b2e7-c69e0b2367dd",
+              "Text": "Concept recognition is strengthened when learners repeatedly associate terms with their meanings across multiple practice attempts.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "aa2c73d8-cc52-4180-905f-dc025ea26925",
+              "Text": "These activity types are especially effective early in a module when learners are building their foundational understanding of new content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "88e3e798-63a5-4b8c-a580-634e65c41f12",
+          "TopicId": "8f848102-60ad-4a74-9265-d5bad8a6507d",
+          "Title": "Generating a Matching or Flashcard Activity in PreseMaker",
+          "BodyText": "The process of generating a matching or flashcard activity in PreseMaker follows a straightforward workflow within the interactive activity generator.",
+          "Notes": "Completing this generation step also produces an artifact that will appear in the Module Index, making it easy to locate and share.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:34:31.7691346-04:00",
+          "ModifiedDate": "2026-07-08T19:34:31.7691346-04:00",
+          "Items": [
+            {
+              "Id": "0698441c-49d7-4c6c-bf5c-238271231f1d",
+              "Text": "Select the desired activity type \u2014 matching or flashcard \u2014 from PreseMaker\u0027s interactive activity template library.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c4d32939-2892-4124-9387-2757a252a470",
+              "Text": "PreseMaker automatically populates the template with key terms and corresponding content drawn from the active module.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3eedfea5-fa7a-4ee3-a3ac-da6c7fbdb7c9",
+              "Text": "Once generated, the activity is saved as a module artifact and can be accessed, reviewed, or distributed directly from the Module Index.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b1fab29a-5c8d-4c87-a8e8-972fa0b3dabd",
+          "TopicId": "8f848102-60ad-4a74-9265-d5bad8a6507d",
+          "Title": "Locating Generated Activity Artifacts in the Module Index",
+          "BodyText": "After a matching or flashcard activity is created, PreseMaker stores it as a traceable artifact within the Module Index for easy retrieval.",
+          "Notes": "Keeping all generated materials in the Module Index ensures that instructors and learners have a single organized location for all produced content.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:34:31.7691346-04:00",
+          "ModifiedDate": "2026-07-08T19:34:31.7691346-04:00",
+          "Items": [
+            {
+              "Id": "67986f7b-ff84-4f24-b143-a7c8b85162c8",
+              "Text": "The Module Index serves as a centralized record of all artifacts produced during a module session, including interactive activities.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "cc72882d-8e92-4733-b846-1d5c1bd9fcc1",
+              "Text": "Each generated matching or flashcard activity appears as a distinct entry, labeled by type and associated module content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "411ca434-e3cb-40eb-a203-5b20f1ff9fa5",
+              "Text": "Instructors can use the Module Index to confirm that activities were successfully generated and to access them for distribution or review.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "b812fd3c-47db-4a62-b443-211780ae50a2",
+      "Title": "Cloze Passages and Crossword Puzzles",
+      "Summary": "An exploration of cloze passage and crossword puzzle templates as tools for contextual and word-level practice. This topic covers how key terms are used to automatically populate these activity formats.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:33:50.9678647-04:00",
+      "ModifiedDate": "2026-07-08T19:33:50.9678647-04:00",
+      "Elements": [
+        {
+          "Id": "6b5d29f4-b8a0-445f-8b55-89015b96e41b",
+          "TopicId": "b812fd3c-47db-4a62-b443-211780ae50a2",
+          "Title": "What Are Cloze Passages?",
+          "BodyText": "A cloze passage is a reading activity in which specific words are removed from a text and learners must fill in the blanks from memory or context.",
+          "Notes": "Cloze passages are widely used in language learning and content-area instruction because they require learners to engage with meaning at the sentence and paragraph level.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:34:54.4376535-04:00",
+          "ModifiedDate": "2026-07-08T19:34:54.4376535-04:00",
+          "Items": [
+            {
+              "Id": "fe362bfc-fbf6-4f0b-8afb-792cd297560d",
+              "Text": "In PreseMaker, cloze passages are automatically generated by pulling key terms from the module and embedding them as blanks within contextually relevant sentences.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b22e0baa-57ad-4e67-b243-96d061f2260a",
+              "Text": "Learners must recall or recognize the correct term based on surrounding context, reinforcing deeper understanding rather than simple memorization.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "04e7bfbc-51fa-42bd-9fb1-61d16e1d6fb1",
+              "Text": "The surrounding text provides semantic clues, making cloze passages especially effective for vocabulary in context and reading comprehension.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "ae3ce447-8c14-4808-a24a-4fdad1d0c24e",
+          "TopicId": "b812fd3c-47db-4a62-b443-211780ae50a2",
+          "Title": "How Key Terms Populate Cloze Passages",
+          "BodyText": "PreseMaker uses the module\u0027s AI-selected key terms to decide which words to remove and replace with blanks in the generated passage.",
+          "Notes": "This automation ensures alignment between instructional content and assessment, so learners are tested on exactly the vocabulary emphasized in the module.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:34:54.4376535-04:00",
+          "ModifiedDate": "2026-07-08T19:34:54.4376535-04:00",
+          "Items": [
+            {
+              "Id": "f9e1b834-50f4-4ef5-a079-7677237786fe",
+              "Text": "The AI selects key terms from the module topic content, and each becomes a candidate blank in the cloze passage.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "cf45ea98-903c-4f45-a3b4-049f0ed409b3",
+              "Text": "The surrounding sentences are drawn from module content, ensuring the activity reflects authentic instructional language rather than generic filler text.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "771200a6-e888-45ed-ae09-c921106475f3",
+              "Text": "Instructors do not need to manually edit the passage \u2014 the template handles placement and formatting of blanks automatically.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "70c78fd0-8e61-4848-9322-fadd668c2046",
+          "TopicId": "b812fd3c-47db-4a62-b443-211780ae50a2",
+          "Title": "Introduction to Crossword Puzzle Templates",
+          "BodyText": "Crossword puzzles in PreseMaker are word-level activities that challenge learners to recall key terms based on definitional or contextual clues.",
+          "Notes": "Crosswords add a game-like quality to vocabulary review, increasing engagement while reinforcing spelling and word recognition alongside meaning.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:34:54.4376535-04:00",
+          "ModifiedDate": "2026-07-08T19:34:54.4376535-04:00",
+          "Items": [
+            {
+              "Id": "0fc64d1c-2d9d-4bd1-8f0e-5410658ae968",
+              "Text": "The crossword template arranges key terms in an interlocking grid format, with across and down clues automatically generated from module definitions.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "24efa8b6-32a9-4926-b04b-209ea5d92b4b",
+              "Text": "Learners must correctly spell each term to complete the puzzle, adding an orthographic dimension to vocabulary practice.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8fcf3fba-addc-4725-8f4b-db5768b73655",
+              "Text": "The puzzle format encourages repeated attempts and self-checking, supporting low-stakes retrieval practice.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "2a2bf21b-64c7-454d-90f9-87e7b3886bca",
+          "TopicId": "b812fd3c-47db-4a62-b443-211780ae50a2",
+          "Title": "How Key Terms Populate Crossword Puzzles",
+          "BodyText": "Similar to cloze passages, crossword puzzles are automatically built from the module\u0027s key terms, with each term serving as an answer entry in the grid.",
+          "Notes": "PreseMaker\u0027s algorithm arranges terms to maximize grid interlocking, and clues are derived from associated definitions or descriptions tied to each key term.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:34:54.4376535-04:00",
+          "ModifiedDate": "2026-07-08T19:34:54.4376535-04:00",
+          "Items": [
+            {
+              "Id": "868f1f52-32dd-4fde-8b8a-eac3b8e50cf7",
+              "Text": "Each key term is mapped to a clue, which may be its definition, a usage example, or a descriptive phrase from the module content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "5f54c9fe-cee5-43ee-a0f0-911866752a4d",
+              "Text": "The system determines grid layout automatically, fitting as many key terms as possible into an interlocking structure.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8b565735-7081-429b-8ab3-52982fe62cf6",
+              "Text": "Instructors can review the generated puzzle to verify clue accuracy before making it available to learners.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "7cceaabb-95de-44f6-8850-eeea4166ee09",
+          "TopicId": "b812fd3c-47db-4a62-b443-211780ae50a2",
+          "Title": "Contextual vs. Word-Level Practice",
+          "BodyText": "Cloze passages and crossword puzzles serve complementary roles: cloze passages emphasize vocabulary in context, while crosswords focus on word-level recall and spelling.",
+          "Notes": "Using both activity types together provides a more complete vocabulary learning experience, addressing recognition, recall, spelling, and contextual understanding.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:34:54.4376535-04:00",
+          "ModifiedDate": "2026-07-08T19:34:54.4376535-04:00",
+          "Items": [
+            {
+              "Id": "3c12c13c-4317-41bc-8ec2-289e5a5c4083",
+              "Text": "Cloze passages require learners to interpret surrounding text to identify a missing term, strengthening reading comprehension alongside vocabulary.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "848a5603-c1a6-4afd-97c3-6559111bfafb",
+              "Text": "Crossword puzzles isolate individual terms and test direct recall from a clue, making them effective for reinforcing definitions and spelling.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5c693b44-39cb-46fe-adf0-5d589de76841",
+              "Text": "Pairing these two formats within a single module addresses multiple dimensions of word knowledge as recommended by vocabulary research.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "2f1c9ae4-6abf-47a4-b97e-9d3f10ee9fb6",
+          "TopicId": "b812fd3c-47db-4a62-b443-211780ae50a2",
+          "Title": "Locating Generated Artifacts in the Module Index",
+          "BodyText": "Once a cloze passage or crossword puzzle is generated, PreseMaker saves the activity as an artifact accessible through the Module Index.",
+          "Notes": "The Module Index serves as a central repository for all produced materials, making it easy for instructors to review, share, or revisit any generated activity.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:34:54.4376535-04:00",
+          "ModifiedDate": "2026-07-08T19:34:54.4376535-04:00",
+          "Items": [
+            {
+              "Id": "77d1b08c-eedb-481e-abd3-b795895009ff",
+              "Text": "Each generated activity is automatically labeled and timestamped within the Module Index for easy identification.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "72027977-e109-4aff-bb65-665aff90ec12",
+              "Text": "Instructors can open, preview, or export cloze passages and crossword puzzles directly from the Module Index without regenerating them.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "549df8e4-c418-4020-b69f-3e7b65ad93ca",
+              "Text": "Keeping all artifacts in one location ensures that cloze passages and crossword puzzles remain aligned with the most recent version of the module\u0027s key terms.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "0a3d7c6e-509b-47ba-bc8a-9b206fd0f899",
+      "Title": "Generating Custom Materials",
+      "Summary": "An introduction to PreseMaker\u0027s custom materials generator, which allows instructors to define and produce tailored content beyond the standard template library. Learners discover how to configure and generate instructor-specific artifacts.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:33:50.9678647-04:00",
+      "ModifiedDate": "2026-07-08T19:33:50.9678647-04:00",
+      "Elements": [
+        {
+          "Id": "fca5b2d2-1ad0-4aff-a281-a183a410caab",
+          "TopicId": "0a3d7c6e-509b-47ba-bc8a-9b206fd0f899",
+          "Title": "What Is the Custom Materials Generator?",
+          "BodyText": "PreseMaker\u0027s custom materials generator is a dedicated tool that allows instructors to define and produce tailored content that goes beyond the standard template library.",
+          "Notes": "Unlike pre-built activity templates, the custom materials generator gives instructors direct control over the type, structure, and content of the artifacts they produce.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:35:10.679483-04:00",
+          "ModifiedDate": "2026-07-08T19:35:10.679483-04:00",
+          "Items": [
+            {
+              "Id": "60152cd4-253d-4f23-a134-b68ee0b92c51",
+              "Text": "The generator is designed for instructor-specific artifacts that do not fit into standard interactive activity templates.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f9bb079d-8b36-4731-aff0-a7268702bfb7",
+              "Text": "It expands the range of deliverables an instructor can create within a single PreseMaker module.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b990ad63-f8ae-478e-bda4-0d1f534d2078",
+              "Text": "Access to the custom materials generator is available from within the same module workflow used for interactive activities.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "34126553-4725-4441-b175-a3b6426da672",
+          "TopicId": "0a3d7c6e-509b-47ba-bc8a-9b206fd0f899",
+          "Title": "Defining Your Custom Material Type",
+          "BodyText": "Before generating content, instructors must specify what type of custom material they want to produce, shaping how PreseMaker structures the output.",
+          "Notes": "Examples of instructor-defined material types may include study guides, rubrics, lesson outlines, or differentiated handouts tailored to specific learner needs.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:35:10.679483-04:00",
+          "ModifiedDate": "2026-07-08T19:35:10.679483-04:00",
+          "Items": [
+            {
+              "Id": "c710ff0b-0a58-4ff0-9bb5-407b9e906aeb",
+              "Text": "Custom Materials is a prompt-driven generator: describing the material you want tells PreseMaker what HTML content to produce.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e7c392bd-af6b-4cd1-bfb0-354d588b3eb5",
+              "Text": "Instructors should align their chosen material type with a clear instructional purpose before configuring further settings.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "04667670-40d3-4dff-9d8b-e55e710c9b38",
+              "Text": "What you ask for in your instructions shapes the content PreseMaker generates.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "34520410-208b-4583-ba85-c85bfc3062f9",
+          "TopicId": "0a3d7c6e-509b-47ba-bc8a-9b206fd0f899",
+          "Title": "Configuring the Generator Settings",
+          "BodyText": "You describe the material you want and supply details such as topic focus, audience level, and content scope, and PreseMaker generates the custom HTML.",
+          "Notes": "Careful configuration ensures the generated artifact closely matches classroom needs and reduces the need for manual editing after production.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:35:10.679483-04:00",
+          "ModifiedDate": "2026-07-08T19:35:10.679483-04:00",
+          "Items": [
+            {
+              "Id": "4401d3b8-e668-4fd0-be57-302012494755",
+              "Text": "Configuration fields typically include the subject or topic, the intended audience, and any specific content requirements.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "fb4b45fd-9dc7-497f-a3f5-77b23d9df6d8",
+              "Text": "Instructors can adjust scope settings to control the depth and breadth of the generated material.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b84d53d5-ee89-4677-80ee-91e797bdec50",
+              "Text": "Providing precise inputs during configuration leads to more accurate and usable output artifacts.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "408df42f-7a0b-4940-bde8-42469cfe2fef",
+          "TopicId": "0a3d7c6e-509b-47ba-bc8a-9b206fd0f899",
+          "Title": "Generating the Custom Artifact",
+          "BodyText": "After configuration is complete, instructors initiate the generation process, and PreseMaker produces the custom material based on the defined parameters.",
+          "Notes": "Generation time may vary depending on the complexity of the material type and the amount of content specified during configuration.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:35:10.679483-04:00",
+          "ModifiedDate": "2026-07-08T19:35:10.679483-04:00",
+          "Items": [
+            {
+              "Id": "78ebab12-946c-4800-a809-0fe1e47e9a83",
+              "Text": "Triggering generation submits all configuration inputs to PreseMaker\u0027s content engine for processing.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2cce573a-a8ba-4599-a408-ce06c0ee88b1",
+              "Text": "The system produces a complete artifact ready for review, editing, or direct classroom use.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "41c9ad3b-b777-4293-ae18-eebfeccacc48",
+              "Text": "Instructors should review the generated output to confirm it meets their instructional intent before distributing it.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "030b3c97-206d-4dc6-af94-789236fbc9b0",
+          "TopicId": "0a3d7c6e-509b-47ba-bc8a-9b206fd0f899",
+          "Title": "Locating Produced Artifacts in the Module Index",
+          "BodyText": "All custom materials generated within a module are stored and accessible through the Module Index, serving as a centralized repository for produced content.",
+          "Notes": "The Module Index provides a consistent location for instructors to retrieve, review, and manage every artifact generated during a session.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:35:10.679483-04:00",
+          "ModifiedDate": "2026-07-08T19:35:10.679483-04:00",
+          "Items": [
+            {
+              "Id": "d1428727-820a-4d93-967c-6a240fd98abd",
+              "Text": "Navigating to the Module Index after generation displays all artifacts produced within that module, including custom materials.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "011181c0-bf0b-4111-af22-68783d476883",
+              "Text": "Instructors can use the Module Index to compare, organize, or export their generated content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "aacc6a15-1524-4c6f-9b8b-f587ae6058d5",
+              "Text": "Keeping all artifacts in the Module Index ensures nothing is lost between sessions and supports efficient content management.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "7e4f50cf-55e7-4c99-b687-973d1d40d687",
+      "Title": "Locating Artifacts in the Module Index",
+      "Summary": "A practical guide to finding and managing all generated activities and materials through the Module Index. This topic ensures learners can reliably access and organize every artifact produced during the module.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:33:50.9678647-04:00",
+      "ModifiedDate": "2026-07-08T19:33:50.9678647-04:00",
+      "Elements": [
+        {
+          "Id": "1354d9fd-dd0e-4564-80fa-f2f4101faeb3",
+          "TopicId": "7e4f50cf-55e7-4c99-b687-973d1d40d687",
+          "Title": "What Is the Module Index?",
+          "BodyText": "The Module Index is a centralized hub within PreseMaker that catalogs every artifact generated during a module session.",
+          "Notes": "Think of it as a persistent inventory or table of contents for all your produced content \u2014 it updates automatically each time a new artifact is created.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:35:30.2436854-04:00",
+          "ModifiedDate": "2026-07-08T19:35:30.2436854-04:00",
+          "Items": [
+            {
+              "Id": "bd54a3de-300b-4916-bdd5-d78d39646299",
+              "Text": "The Module Index records all interactive activities and custom materials produced within the current module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e92e55ad-3fad-41c7-9bbd-f89d5caa95aa",
+              "Text": "It is accessible at any point during or after content generation, ensuring no artifact is lost or overlooked.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4a2146be-2a68-41bd-88e7-459089403f7c",
+              "Text": "The Module Index is organized by artifact type, not a chronological log, and it is an author tool for managing generated files rather than a learner view.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "638e8370-13c9-4fa8-8891-46d6b92f816a",
+          "TopicId": "7e4f50cf-55e7-4c99-b687-973d1d40d687",
+          "Title": "Navigating to the Module Index",
+          "BodyText": "Reaching the Module Index requires only a few steps from anywhere within PreseMaker.",
+          "Notes": "The navigation path may vary slightly depending on your PreseMaker version, but the Module Index is consistently available from the main module toolbar or sidebar.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:35:30.2436854-04:00",
+          "ModifiedDate": "2026-07-08T19:35:30.2436854-04:00",
+          "Items": [
+            {
+              "Id": "f49f5773-3b6e-4bd4-ae02-b03c97ad20f1",
+              "Text": "Locate the Module Index link or icon in the primary navigation bar or sidebar of your active module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9406321b-bc43-4177-ae32-75ab8ab57854",
+              "Text": "Clicking the Module Index entry loads a full list of all artifacts associated with that module session.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5290f7df-5888-437f-842d-87d94c130074",
+              "Text": "You can return to the Module Index at any time without losing progress on any open activity.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "ac08a1d2-47b2-41b0-b5bb-bcfaa070e823",
+          "TopicId": "7e4f50cf-55e7-4c99-b687-973d1d40d687",
+          "Title": "Identifying Different Artifact Types",
+          "BodyText": "The Module Index labels each artifact by type so learners can quickly distinguish between interactive activities and custom materials.",
+          "Notes": "For example, an interactive activity is listed under the activity type, distinct from a text document or a quiz, making it easy to filter or scan the index by type.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:35:30.2436854-04:00",
+          "ModifiedDate": "2026-07-08T19:35:30.2436854-04:00",
+          "Items": [
+            {
+              "Id": "fea514a7-99ce-4e41-bdd8-f6e65544db90",
+              "Text": "Each artifact entry shows a type label; generated interactive activities appear under a single activity type, and Custom Materials are listed as their own separate type.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "30285019-61d8-46c8-9baa-afbfaa06ac47",
+              "Text": "Artifact titles reflect the content or key terms used during generation, aiding quick identification.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "72ea0811-d1ee-4da3-ad7b-aa3ee3a1bf04",
+              "Text": "Visual icons or color coding may accompany labels to further differentiate artifact categories at a glance.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "415eb9e7-84d2-4953-bf1a-a0373f7dc2f9",
+          "TopicId": "7e4f50cf-55e7-4c99-b687-973d1d40d687",
+          "Title": "Opening and Reviewing Artifacts",
+          "BodyText": "Any artifact listed in the Module Index can be opened directly from the index for immediate review or use.",
+          "Notes": "Opening an artifact does not remove it from the index; it remains listed so you can return to it as many times as needed.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:35:30.2436854-04:00",
+          "ModifiedDate": "2026-07-08T19:35:30.2436854-04:00",
+          "Items": [
+            {
+              "Id": "2319c91b-c75c-4293-87c2-1a141212d16e",
+              "Text": "Click on any artifact title or thumbnail in the Module Index to open it in its native interactive or document view.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d42216ee-8bf2-486e-a37e-d82c3aaeb9c8",
+              "Text": "Reviewing artifacts from the index allows you to verify that generated content meets your instructional goals before sharing or deploying it.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "688b2145-4bd9-42aa-a7b5-bd44e5f91984",
+              "Text": "Multiple artifacts can be opened sequentially from the index without navigating away from the module.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8b272045-0490-413e-ae35-f31606f9eb2d",
+          "TopicId": "7e4f50cf-55e7-4c99-b687-973d1d40d687",
+          "Title": "Organizing and Managing Artifacts",
+          "BodyText": "The Module Index provides basic organizational tools to help learners and instructors keep generated content structured and accessible.",
+          "Notes": "Keeping artifacts well organized from the start saves time when compiling a final set of materials for a course or learner group.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:35:30.2436854-04:00",
+          "ModifiedDate": "2026-07-08T19:35:30.2436854-04:00",
+          "Items": [
+            {
+              "Id": "38243d25-a552-44df-ab33-e71c640346f5",
+              "Text": "Artifacts can typically be renamed within the index to reflect their specific instructional purpose or audience.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f1168dd9-ab7b-4b7e-a091-db21a2b825de",
+              "Text": "The Module Index lets you filter artifacts by type and open each one for review.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "92316958-a566-4e3a-b680-c398945bfabd",
+              "Text": "Deleting an artifact from the index permanently removes it, so confirm deletion only when the content is no longer needed.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "44acaad4-fcc1-45af-8e99-2b8fb06fd35f",
+          "TopicId": "7e4f50cf-55e7-4c99-b687-973d1d40d687",
+          "Title": "Verifying That All Artifacts Are Captured",
+          "BodyText": "After generating activities and materials, learners should confirm that every produced artifact appears correctly in the Module Index.",
+          "Notes": "If an artifact does not appear, regenerating it or refreshing the index view typically resolves the issue.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:35:30.2436854-04:00",
+          "ModifiedDate": "2026-07-08T19:35:30.2436854-04:00",
+          "Items": [
+            {
+              "Id": "818afdbc-d084-416c-b7cf-0e6a05313b65",
+              "Text": "Cross-reference the number of activities you generated with the number of entries listed in the Module Index.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "98b8b3eb-9760-4514-a784-fa00729e0e3e",
+              "Text": "Check that each artifact title and type match what you intended to create during the session.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5d868573-a684-466f-862c-48ac9a885945",
+              "Text": "Report or troubleshoot any missing artifacts promptly, as the index is the authoritative record of module output.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 28
+}

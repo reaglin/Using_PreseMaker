@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessing and Owning Your Work</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Accessing and Owning Your Work</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Accessing and Owning Your Work</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>One of the most important things to understand as you work with PreseMaker is that everything you create belongs entirely to you. From the moment content is generated on the platform, you hold full ownership of it — and the platform is designed to keep your files within your reach at all times. Whether you are building a single short course or an extensive multi-module curriculum, knowing how your content is stored, where it lives, and how to find it again is fundamental to a confident, productive workflow. This topic walks you through each of those dimensions in detail.</p>
+
+<p><strong>You Own Everything You Create</strong></p>
+
+<p>Ownership of your generated content is not something you have to apply for, negotiate, or unlock — it is yours automatically and immediately. The moment PreseMaker generates a piece of content based on your inputs, that output belongs to you as its creator. PreseMaker does not assert any claim over the materials you produce using the platform, and there are no licensing restrictions that would prevent you from using that content however you see fit.</p>
+
+<p>In practical terms, this means you are free to:</p>
+
+<ul>
+  <li><strong>Distribute your files</strong> — share them with colleagues, learners, clients, or the public without seeking permission from PreseMaker.</li>
+  <li><strong>Modify your content</strong> — edit, reformat, expand, or repurpose the generated files in any way that serves your needs.</li>
+  <li><strong>Incorporate your output into other projects</strong> — use slides, documents, or other generated assets inside larger training programs, publications, or products without restriction.</li>
+</ul>
+
+<p>This principle is worth internalizing early, because it shapes how freely you can work. You do not need to wonder whether updating a file or sharing it externally requires any additional step. Your content is simply yours, and you control its entire lifecycle from creation onward.</p>
+
+<p><strong>Where PreseMaker Stores Your Files</strong></p>
+
+<p>PreseMaker saves your generated files <em>locally on your device</em> rather than locking them inside a remote cloud system that you would need a live internet connection or a paid subscription to access. This is a deliberate design choice that keeps your work under your direct control.</p>
+
+<p>During installation — or when you launch PreseMaker for the first time — the platform assigns a <strong>default storage folder path</strong> on your device. This folder becomes the root location where all of your generated content is written. The exact path will depend on your operating system and any choices made at setup, but PreseMaker makes this path visible so you are never left guessing.</p>
+
+<p>Knowing this path matters for several practical reasons:</p>
+
+<ul>
+  <li>You can navigate directly to your files using your operating system's file explorer (such as Windows Explorer or macOS Finder) without needing to open PreseMaker at all.</li>
+  <li>You can back up your entire content library simply by copying that folder to an external drive or a cloud storage service of your choosing.</li>
+  <li>You can transfer your work to another machine by moving the folder and pointing PreseMaker to its new location.</li>
+</ul>
+
+<p>If you are ever unsure of the path, check PreseMaker's settings or preferences panel, where the current storage location is displayed and can be changed if needed.</p>
+
+<p><strong>Locating Your Files at Any Time</strong></p>
+
+<p>There are two complementary ways to find your saved files, and you can use either one depending on what is most convenient in the moment.</p>
+
+<p>The first is through <strong>PreseMaker's own interface</strong>. Inside the platform, your content is organized according to a <em>course → module → content</em> hierarchy that mirrors exactly how you structured your work when you built it. Navigating this hierarchy within the application lets you open, preview, and manage files without ever leaving PreseMaker. This is the quickest route when you are actively working inside the platform and want to return to something you created earlier.</p>
+
+<p>The second is by <strong>browsing directly to the storage folder</strong> through your operating system's file explorer. Because the files are stored locally, you can open your file manager, navigate to the designated path, and work with the files exactly as you would with any other document on your computer. This approach is useful when you want to attach a file to an email, import it into another application, or perform bulk operations like copying or archiving multiple outputs at once.</p>
+
+<p>Both methods give you access to the same files — the interface and the file system are simply two different windows onto the same local storage location.</p>
+
+<p><strong>Managing and Organizing Your Generated Content</strong></p>
+
+<p>PreseMaker structures the files it saves to reflect the <em>course → module → topic</em> hierarchy you built inside the platform. This means that when you browse to your storage folder, you will typically find a folder for each course, with subfolders for each module, and the individual content files organized within those subfolders. This mirrors your intended curriculum structure and makes it easy to find exactly what you are looking for without having to sort through a flat list of unrelated files.</p>
+
+<p>Because the files are standard local files, you can manage them using ordinary operating system tools:</p>
+
+<ul>
+  <li><strong>Renaming</strong> — give a file a more descriptive name if the auto-generated name is not clear enough for your workflow.</li>
+  <li><strong>Moving</strong> — relocate files to a different folder, such as an archive directory for completed courses, without any adverse effect on the PreseMaker platform itself.</li>
+  <li><strong>Archiving</strong> — compress older course folders into ZIP archives or move them to long-term storage to keep your active workspace tidy.</li>
+  <li><strong>Deleting</strong> — remove content you no longer need, freeing up space and reducing clutter.</li>
+</ul>
+
+<p>It is worth making a habit of <strong>periodically reviewing your storage folder</strong>. Over time, as you generate, update, and revise content, the folder can accumulate multiple versions of similar files. A regular review helps you stay aware of everything that has been produced, identify content that may be outdated and in need of regeneration, and keep your library organized enough to remain useful as it grows.</p>
+
+<p><strong>Accessing Your Work Across Sessions</strong></p>
+
+<p>Because your files are stored locally and persistently, they remain exactly where they were left the next time you open PreseMaker or browse to your storage folder. There is no session expiry, no automatic deletion, and no need to re-download or re-sync anything. Your work accumulates over time and stays available indefinitely.</p>
+
+<p>This has a few important implications for how you can work:</p>
+
+<ul>
+  <li><strong>You do not need to regenerate content</strong> each time you open a course. Previously generated files load from your local storage instantly. Regeneration is only necessary when you intentionally want to update, revise, or replace existing content.</li>
+  <li><strong>You can work offline.</strong> Because the files live on your device rather than in a remote system, you can open, review, and share your content even without an active internet connection. This is especially valuable in environments where connectivity is unreliable.</li>
+  <li><strong>Continuity is built in.</strong> You can close a session, return days or weeks later, and pick up exactly where you left off. The course structure you built, the content you generated, and the organization you established are all preserved automatically.</li>
+</ul>
+
+<p>Together, these characteristics mean that PreseMaker is designed to work the way a reliable local authoring tool should — your content is stable, accessible, and always within reach, regardless of network conditions or how much time has passed since your last session.</p>
+        <div class="notes"><strong>Notes</strong>Reinforces creator ownership rights and explains local file storage, default path assignment, dual access methods (interface vs. file explorer), folder organization mirroring the course-module-topic hierarchy, and offline/cross-session accessibility. No external permissions are required for distributing or modifying generated content.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

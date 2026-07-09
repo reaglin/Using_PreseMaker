@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Method 1: Generating a New Module with AI</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Method 1: Generating a New Module with AI</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Method 1: Generating a New Module with AI</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Creating a module from scratch can be one of the most time-consuming parts of instructional design. Before a single piece of content is written, someone has to decide on the overall scope, break that scope into logical topics, sequence those topics meaningfully, and give each one a working title and description. PreseMaker addresses this challenge directly by offering an AI-powered generation method that automates the entire initial structure. Rather than staring at a blank canvas, authors provide a handful of inputs and let the AI draft a complete, organized framework in moments. Understanding exactly how this method works — what it needs from you, what it produces, and how the result fits into the broader authoring workflow — will help you get the most out of it from your very first session.</p>
+
+<p>PreseMaker offers three distinct paths for bringing a module into existence. AI generation is one of those three methods, sitting alongside the option to add a module manually and the option to import an existing module from an external file or folder. Each method serves a different starting condition. The import path makes sense when you already have a finished or partially finished module saved somewhere. The manual add path suits authors who prefer to define every topic themselves from the beginning. <strong>AI generation is specifically designed for situations where no prior module exists</strong> — no folder on your hard drive, no importable file, no pre-built outline. You are starting from zero, and the AI does the heavy lifting of that initial construction.</p>
+
+<p>The design philosophy behind AI generation is straightforward: reduce manual setup by automating the structural and organizational decisions that consume disproportionate time early in the authoring process. This does not mean the AI writes your final content for you. Instead, it produces a reliable skeleton — a structured outline with clearly labeled topics and sections — that gives you an immediate, editable foundation to build on. Think of it as having a knowledgeable colleague draft the table of contents and chapter summaries before you begin writing the chapters themselves.</p>
+
+<p>The entire AI generation experience is launched and managed from the <strong>Module Manager</strong>, which is PreseMaker's central hub for organizing and controlling modules. When you open the Module Manager, you are presented with the choice of which method to use for creating your new module. Selecting the AI generation method does not take you away from the Module Manager interface. Instead, it opens a guided input process within that same environment, walking you through the information the AI needs to do its job. This keeps the workflow contained and consistent, so you are never bouncing between different screens or applications just to get started.</p>
+
+<p>The quality of what the AI produces depends directly on the quality of what you give it. The generation process requires three categories of input, and each one plays a specific role in shaping the output.</p>
+
+<ul>
+  <li><strong>Module title:</strong> This is the name of the module as it will appear to learners and within the Module Manager. A precise, descriptive title helps the AI immediately understand the subject domain and intended audience level. For example, a title like <em>Introduction to Network Security for IT Support Staff</em> conveys far more useful context than a title like <em>Security Basics</em>.</li>
+  <li><strong>Description:</strong> The description is a plain-language explanation of what the module should cover, who it is for, and what learners should be able to do after completing it. A well-written description might be two to five sentences. It tells the AI the scope boundaries — what is in and what is out — and gives it a sense of the desired depth. An author designing a compliance refresher for experienced employees would write a very different description than one designing a foundational course for new hires, and the AI will reflect those differences in its output.</li>
+  <li><strong>Source materials:</strong> This is often the most powerful input category. You can supply one or more source materials that the AI will draw from when building the module structure. Supported source types include uploaded documents (such as PDFs or Word files), web page URLs, PowerPoint presentations, blocks of pasted text, and YouTube transcripts. These materials give the AI concrete subject matter to work with rather than forcing it to rely solely on general knowledge. If you have a policy document, a training deck from a subject matter expert, or a recorded webinar transcript, feeding those into the generation process will produce a structure that genuinely reflects the content those sources contain.</li>
+</ul>
+
+<p>The principle worth emphasizing here is that <strong>more specific inputs yield more accurate and immediately usable outputs</strong>. An author who provides a thorough description and three relevant source documents will receive a module structure that requires far less revision than one generated from a vague two-word title alone. Investing two or three extra minutes in crafting your inputs can save considerably more time during the editing and content-population stages that follow.</p>
+
+<p>Once you submit your inputs, the AI processes them and returns a structured output. That output typically contains several components working together as a coherent whole.</p>
+
+<ul>
+  <li><strong>Module title and description:</strong> The AI confirms and may refine the title and description based on how it interpreted your inputs, giving you a clean, professional-sounding starting point.</li>
+  <li><strong>Organized topics or sections:</strong> The core of the output is a set of topics arranged in a logical sequence. Each topic represents a meaningful unit of learning — roughly equivalent to what you might think of as a chapter or lesson. The AI determines how many topics are appropriate based on the scope described in your inputs, and it labels each one clearly.</li>
+  <li><strong>Subtopics or section breakdowns:</strong> Within each main topic, the AI often generates subtopics that further organize the content at a more granular level. This nested structure gives authors a detailed map of what each topic should cover before any actual content is written.</li>
+</ul>
+
+<p>It is important to understand what this output <em>is</em> and what it <em>is not</em>. The AI-generated structure is a <strong>framework</strong>, not a finished module. It defines the shape and organization of the module without yet filling in the full explanatory text, examples, assessments, or multimedia that will ultimately make up the learner experience. This is intentional. The framework gives human authors a meaningful starting point that they can accept, adjust, expand, or reorganize according to their own expertise and knowledge of the audience. No AI output should be treated as final without review, and PreseMaker's workflow is designed with exactly that expectation.</p>
+
+<p>To appreciate what AI generation accomplishes, it helps to contrast the state of a module before and after the process runs. An empty module in PreseMaker is precisely that — empty. It has no topics, no sections, no descriptive text, and no content of any kind. It is a named placeholder waiting to be given shape. This empty state is the starting condition whenever you create a new module without using the AI generation feature, and it places the full organizational burden on the author.</p>
+
+<p>AI generation transforms that empty module into what PreseMaker designates as a <strong>content-ready state</strong>. A content-ready module has a defined structure: topics are named, sequenced, and in many cases broken into subtopics, and the overall scope of the module is reflected in its architecture. The module is not finished, but it is no longer empty. Detailed authoring — writing explanations, adding examples, building assessments, embedding media — can begin immediately without the author first having to do the organizational groundwork.</p>
+
+<p>The Module Manager tracks this progression and makes it visible. After generation completes, the module's status within the Manager updates to signal that it has moved from the empty state to the content-ready state. This status indicator is not merely cosmetic; it communicates to anyone working in the system exactly where the module stands in its development lifecycle and confirms that the next stage of work — populating the framework with detailed content — can begin.</p>
+
+<p>To make the overall flow concrete, consider a practical example. Suppose you are building a module on <em>Effective Onboarding Practices for Remote Teams</em>. You have a job title and a rough idea of the content, but no pre-existing materials. You open the Module Manager, select the AI generation method, and enter the title along with a description explaining that the module targets HR managers, should cover both the logistical and relational dimensions of onboarding, and should result in learners being able to design a 30-day onboarding plan. You paste in a transcript from a relevant webinar and upload a company onboarding checklist as source materials. The AI processes these inputs and returns a module structure with six organized topics — perhaps covering remote onboarding challenges, technology setup, communication norms, cultural integration, milestone check-ins, and measuring onboarding success — each broken into several subtopics. You review the output, move one topic to a different position in the sequence, rename another to better match your organization's terminology, and then begin writing the actual content for the first topic. In less than ten minutes, you have gone from a blank starting point to a structured, reviewable, fully sequenced module outline ready for deep authoring work.</p>
+
+<p>This combination of speed, structure, and flexibility is what makes the AI generation method the preferred starting point whenever you are building a module without any existing materials to import or reference.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input Type</th>
+      <th>Purpose</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Module Title</td>
+      <td>Defines the subject domain and scope label for the module</td>
+      <td><em>Introduction to Network Security for IT Support Staff</em></td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>Explains coverage, audience, and intended learning outcomes</td>
+      <td><em>A refresher course for Tier-1 support staff covering phishing, password hygiene, and incident reporting procedures</em></td>
+    </tr>
+    <tr>
+      <td>Document Upload</td>
+      <td>Provides concrete subject-matter content for the AI to draw from</td>
+      <td>PDF of an internal IT security policy</td>
+    </tr>
+    <tr>
+      <td>Web Page URL</td>
+      <td>Supplies current, web-sourced reference material</td>
+      <td>Link to a cybersecurity framework overview page</td>
+    </tr>
+    <tr>
+      <td>PowerPoint File</td>
+      <td>Converts an existing slide deck into source content</td>
+      <td>A subject-matter expert's training presentation</td>
+    </tr>
+    <tr>
+      <td>Pasted Text</td>
+      <td>Allows freeform input of any relevant text content</td>
+      <td>Copied excerpts from an internal knowledge base article</td>
+    </tr>
+    <tr>
+      <td>YouTube Transcript</td>
+      <td>Extracts content from recorded video instruction</td>
+      <td>Auto-generated transcript from a recorded webinar</td>
+    </tr>
+  </tbody>
+</table>
+        <div class="notes"><strong>Notes</strong>Covers how to use PreseMaker&#39;s AI-powered generation feature to create a brand-new module from scratch. Learners explore the inputs required and what the AI produces as output.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

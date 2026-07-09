@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Other Sharing Options: Archive Export and iFrame Embedding</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Other Sharing Options: Archive Export and iFrame Embedding</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Other Sharing Options: Archive Export and iFrame Embedding</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Beyond the primary methods of sharing course content through linked repositories or direct distribution of URLs, PreseMaker offers two additional sharing options that address distinct needs: <strong>archive export</strong> and <strong>iFrame embedding</strong>. These tools expand the flexibility of how a course can be packaged, transferred, preserved, and presented to learners. Understanding both options — what they produce, when each is appropriate, and how they compare to one another — equips instructors and course designers to make informed decisions about distributing their work in a variety of real-world contexts.</p>
+
+<p>Archive export treats a course as a self-contained bundle, packaging all of its materials into a single portable file that can travel independently of any network connection or online repository. iFrame embedding, by contrast, treats a published course as live content that can be surfaced inside another web page, allowing learners to engage with the material without ever leaving a familiar institutional portal or website. These two approaches are not mutually exclusive; an instructor might archive a course for backup and safekeeping while simultaneously embedding the published version inside a learning portal for daily learner access.</p>
+
+<p><strong>Exporting a Course as an Archive File</strong></p>
+
+<p>The archive export process is initiated from within the PreseMaker interface. When an instructor triggers an export, PreseMaker collects all of the course's materials — content pages, media references, structure, and settings — and packages them into a single archive file. This file is self-contained: it does not depend on a live connection to a repository or an active internet session to be created, stored, or later used. The export is a fully offline operation from start to finish.</p>
+
+<p>The resulting archive file is designed specifically for re-import into PreseMaker. When another instructor or the same instructor working in a different PreseMaker environment imports the archive, the course is restored in an editable state. This means the recipient does not receive a static or view-only copy; they receive a fully functional course that can be continued, adapted, localized, or otherwise modified to suit the new context. This distinguishes archive export from simply sharing a published web link, where the recipient can view the course but cannot edit or build on it.</p>
+
+<p>Because no network connection is required, archive export is particularly reliable in environments where internet access is limited, inconsistent, or restricted by institutional policy. An instructor can produce the archive file on any machine running PreseMaker, copy it to a USB drive or attach it to an email, and hand it off to a colleague in an entirely different organization — no shared repository, no cloud account, and no internet connection needed on either end at the time of transfer.</p>
+
+<p><strong>When to Use Archive Export</strong></p>
+
+<p>Archive export is the right choice in several practical scenarios. The most straightforward is a direct handoff: when one instructor or institution has developed a course and wants to transfer full ownership or a working copy to another instructor or institution for local use. The recipient imports the archive into their own PreseMaker environment and immediately has access to all the content in an editable form, ready to customize for their own learners.</p>
+
+<p>Archive files also function as <em>point-in-time snapshots</em> of a course. Unlike version control history, which captures incremental changes over time and requires a connected repository to access, an archive export captures the exact state of the course at the moment of export and stores it as a standalone file. This makes archive export a useful form of manual backup. An instructor who has just completed a major revision, for example, might export an archive before beginning the next round of changes, creating a reliable restore point that exists entirely outside of the version control system.</p>
+
+<p>When an archived course is imported, PreseMaker restores the content so that it is ready to be worked on again. The import does not merely display the course — it reconstitutes it as a live PreseMaker project. This means that even if the original source files were lost or the original repository became inaccessible, an archive file would be sufficient to recover the course and resume development.</p>
+
+<p><strong>Generating an iFrame Embed Code</strong></p>
+
+<p>iFrame embedding serves a fundamentally different purpose: rather than transferring a course from one editing environment to another, it displays a published course <em>inside</em> another web page. PreseMaker generates the embed code automatically, so instructors do not need to write any HTML themselves. The generated code is a short snippet containing an <code>&lt;iframe&gt;</code> element with a <code>src</code> attribute pointing to the published course's web address, along with any relevant dimension and display attributes.</p>
+
+<p>Once the code is copied from PreseMaker, it can be pasted into the HTML of any web page that supports iFrame embedding. Common targets include course portals, institutional learning management systems that allow custom HTML blocks, departmental websites, and any other web environment where an administrator has the ability to insert raw HTML. The iFrame acts as a window: from the learner's perspective, the course content appears to be part of the surrounding page, displayed within the same browser tab, inside the host site's layout and branding.</p>
+
+<p>A key characteristic of iFrame embedding is that the embedded content is <em>live</em>. The iFrame does not contain a copy of the course; it points to the published version at its web address and loads it dynamically each time a learner visits the host page. This means that whenever the published course is updated — for example, when an instructor pushes a new version to GitHub Pages and the published site refreshes — the embedded view automatically reflects those changes. No update to the embed code itself is required, and no action is needed on the part of whoever manages the host page.</p>
+
+<p><strong>When to Use iFrame Embedding</strong></p>
+
+<p>iFrame embedding is the appropriate choice when an institution or instructor wants learners to experience course content within a branded, controlled environment without being redirected to an external URL. Rather than sending learners away from the institutional portal to a separate site, the portal can contain the course directly, maintaining a consistent visual identity and user experience throughout the learner's session.</p>
+
+<p>Because iFrame embedding requires a live web address to load content from, the course must already be published to a publicly accessible location — for example, a GitHub Pages URL — before an embed code can be generated or used effectively. If the course is not yet published, or if its published address is not publicly reachable, the iFrame will have nothing to display. This is an important prerequisite: archive export can be performed at any stage of a course's development, but iFrame embedding is only meaningful once a published version exists online.</p>
+
+<p>The host page — the page into which the iFrame is embedded — controls the dimensions and placement of the embedded frame. Whoever manages the host page can set the width and height of the iFrame to match the surrounding design, position it within the page layout, and adjust it over time as the site's design evolves. The course content itself scales or scrolls within those dimensions, allowing the same published course to be embedded at different sizes across different pages or sites without any change to the course itself.</p>
+
+<p><strong>Comparing Archive Export and iFrame Embedding</strong></p>
+
+<p>Although both options extend the ways a course can be shared, they differ fundamentally in what they produce and what they require. The table below summarizes the key distinctions:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Characteristic</th>
+      <th>Archive Export</th>
+      <th>iFrame Embedding</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Output</td>
+      <td>A portable file that can be imported and edited in PreseMaker</td>
+      <td>An embed code that displays a live published course inside another web page</td>
+    </tr>
+    <tr>
+      <td>Requires published web address</td>
+      <td>No — works entirely offline</td>
+      <td>Yes — the course must be published to a publicly accessible URL</td>
+    </tr>
+    <tr>
+      <td>Recipient can edit the course</td>
+      <td>Yes — importing the archive restores a fully editable project</td>
+      <td>No — learners and host page visitors view only; they cannot edit</td>
+    </tr>
+    <tr>
+      <td>Reflects future updates automatically</td>
+      <td>No — the archive captures a fixed snapshot at the time of export</td>
+      <td>Yes — the embedded view loads the current published version each time</td>
+    </tr>
+    <tr>
+      <td>Primary use cases</td>
+      <td>Content handoff between instructors or institutions; manual backup and restore points</td>
+      <td>Integrated in-page presentation to learners within a branded portal or website</td>
+    </tr>
+    <tr>
+      <td>Network connection required</td>
+      <td>Not at time of export or import</td>
+      <td>Required for the embedded content to load in the host page</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In practice, the choice between archive export and iFrame embedding is rarely a matter of one being better than the other in an absolute sense. They solve different problems. Archive export is the right tool when the goal is to move a course as an editable artifact — to transfer it, back it up, or allow someone else to build on it. iFrame embedding is the right tool when the goal is to present a course to learners in an integrated, branded environment where the published content should appear seamlessly within an existing web page. Both options can be used alongside one another, and both complement the broader suite of sharing workflows that PreseMaker supports.</p>
+        <div class="notes"><strong>Notes</strong>Introduces additional ways to share course content, including exporting a course as a portable archive file for import elsewhere and generating an iFrame embed code to display course content within another web page.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

@@ -1,0 +1,873 @@
+{
+  "ModuleFolderName": "Generating_Text_Based",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:28:45.5773516-04:00",
+  "ModifiedDate": "2026-07-08T19:30:44.6489182-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "efc1d344-379e-4c8c-91ec-4d19f06b4f41",
+      "Title": "Introduction to Text-Based Lesson Generation in PreseMaker",
+      "Summary": "An overview of PreseMaker\u0027s capability to produce web-ready text content and why text-based lesson formats matter for instructional design. This topic establishes the foundation for understanding the full range of output options available.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:28:45.5773516-04:00",
+      "ModifiedDate": "2026-07-08T19:28:45.5773516-04:00",
+      "Elements": [
+        {
+          "Id": "f9eeb16d-f7b8-4fc7-9071-e6310ce8fcf9",
+          "TopicId": "efc1d344-379e-4c8c-91ec-4d19f06b4f41",
+          "Title": "What Is PreseMaker?",
+          "BodyText": "PreseMaker is a content generation tool designed to produce web-ready instructional materials from structured input. It streamlines the creation of text-based lessons by automating layout and formatting decisions.",
+          "Notes": "Think of PreseMaker as a bridge between raw instructional ideas and fully formatted, deployable lesson content \u2014 reducing the manual effort typically required in e-learning development.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:29:11.1162021-04:00",
+          "ModifiedDate": "2026-07-08T19:29:11.1162021-04:00",
+          "Items": [
+            {
+              "Id": "79016407-8cdc-4854-9682-c229dcd08fd2",
+              "Text": "PreseMaker accepts structured topic information and transforms it into polished, web-ready lesson formats.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ee041c1f-4020-4faf-bdfe-10150439d07e",
+              "Text": "The tool is built to serve instructional designers, educators, and content developers who need consistent, repeatable output.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "0d792b27-e17b-46e4-9912-6a4694ed3703",
+              "Text": "By automating formatting, PreseMaker allows creators to focus on content quality rather than layout mechanics.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "202b1ce7-700d-475b-9021-b60a6030fc9c",
+          "TopicId": "efc1d344-379e-4c8c-91ec-4d19f06b4f41",
+          "Title": "Why Text-Based Lessons Matter in Instructional Design",
+          "BodyText": "Text-based lessons remain a foundational content type in instructional design because they are accessible, scalable, and easy to deploy across multiple platforms. Understanding their role helps designers make intentional choices about when and how to use them.",
+          "Notes": "Text-based content is often the backbone of blended and online learning programs, serving as reference material, pre-reading, or standalone instruction.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:29:11.1162021-04:00",
+          "ModifiedDate": "2026-07-08T19:29:11.1162021-04:00",
+          "Items": [
+            {
+              "Id": "974e2527-4734-4079-8454-e5987e2c6946",
+              "Text": "Text-based formats are highly accessible and can be consumed across devices without requiring specialized software or media players.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7567b722-c2f0-4aca-80dc-c3326a207505",
+              "Text": "They are easier to update and maintain than video or audio content, making them cost-effective for rapidly changing subject matter.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "fc430d45-2a83-4d9a-82a3-0f848b48350c",
+              "Text": "Well-structured text lessons support learner self-pacing and can be repurposed across print, web, and learning management systems.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "21dd2cfa-eaa4-4d63-b639-d16f2e8623d8",
+          "TopicId": "efc1d344-379e-4c8c-91ec-4d19f06b4f41",
+          "Title": "Overview of Output Formats Available in PreseMaker",
+          "BodyText": "PreseMaker can generate lessons in several distinct formats, each suited to different delivery contexts and learner needs. Knowing the range of available outputs is the first step toward selecting the right format for any instructional goal.",
+          "Notes": "The format you choose affects not just appearance but also how learners interact with the content \u2014 for example, accordion layouts encourage exploration, while printable formats support offline study.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:29:11.1162021-04:00",
+          "ModifiedDate": "2026-07-08T19:29:11.1162021-04:00",
+          "Items": [
+            {
+              "Id": "fc2618d4-ce55-463c-badc-a1a4b472e17a",
+              "Text": "Available formats include accordion layouts, printable documents, WordPress-ready content, and Markdown files.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "01a9b949-2ffb-4ef3-8bf6-29ffda2eef81",
+              "Text": "Each format is optimized for a specific deployment environment, such as a website, a learning management system, or a print workflow.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "70f747d6-d507-44bf-aeb7-6bb4e5edc157",
+              "Text": "Selecting the appropriate format early in the design process prevents costly reformatting later.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4f3707ea-23b6-4ecd-99b7-3fb3fc78b3ec",
+          "TopicId": "efc1d344-379e-4c8c-91ec-4d19f06b4f41",
+          "Title": "Overview of Content Types Supported by PreseMaker",
+          "BodyText": "Beyond layout formats, PreseMaker supports a variety of instructional content types, including Topic Overviews, Topic Details, lesson plans, example problems, and suggested sources. Each content type serves a distinct pedagogical purpose.",
+          "Notes": "Content type and format are two separate decisions \u2014 a Topic Overview can be rendered as an accordion or as a printable document depending on the intended use.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:29:11.1162021-04:00",
+          "ModifiedDate": "2026-07-08T19:29:11.1162021-04:00",
+          "Items": [
+            {
+              "Id": "dae5c233-638c-4059-8e86-d8e922b998e4",
+              "Text": "Topic Overviews provide high-level summaries suitable for introducing a subject or orienting learners before deeper study.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9df2e9a6-4b9d-487e-bf61-26ee7ff61822",
+              "Text": "Topic Details offer in-depth coverage of a concept, supporting learners who need comprehensive explanations.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3c353f51-add7-4b27-9084-34d19564e051",
+              "Text": "Additional content types such as lesson plans, example problems, and suggested sources extend the instructional value of any generated lesson.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f1a46469-5374-4585-b62f-97823ded8b0d",
+          "TopicId": "efc1d344-379e-4c8c-91ec-4d19f06b4f41",
+          "Title": "The Role of Visual Themes in HTML Output",
+          "BodyText": "When generating HTML-based lessons, PreseMaker allows designers to select visual themes that control the appearance of the final output. Themes ensure that text content is presented in a visually consistent and engaging way.",
+          "Notes": "Visual themes do not change the instructional content itself \u2014 they only affect presentation, making it straightforward to rebrand or restyle content without rewriting it.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:29:11.1162021-04:00",
+          "ModifiedDate": "2026-07-08T19:29:11.1162021-04:00",
+          "Items": [
+            {
+              "Id": "bbc14163-1974-4e70-b0d5-75d3e2191b28",
+              "Text": "Visual themes control elements such as color schemes, typography, and layout spacing in the rendered HTML output.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ec1d9d3b-d80c-4d03-b22f-8c104b2d41cc",
+              "Text": "Choosing a theme that aligns with your organization\u0027s branding or the learner\u0027s context improves perceived professionalism and engagement.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9356627c-92cb-48db-8a68-16a8d2017c5c",
+              "Text": "Theme selection is a final-step decision in the PreseMaker workflow, applied after content type and format have been determined.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4cac6a60-06ee-4368-b14a-7e46f66f6bc9",
+          "TopicId": "efc1d344-379e-4c8c-91ec-4d19f06b4f41",
+          "Title": "How This Module Is Organized",
+          "BodyText": "This module guides learners through the full range of PreseMaker\u0027s text-generation capabilities in a logical sequence, from foundational concepts to practical application. Understanding the overall structure helps learners navigate the content purposefully.",
+          "Notes": "Each subsequent topic in this module builds on the foundation established here, moving from format and layout options to specific content types and theme selection.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:29:11.1162021-04:00",
+          "ModifiedDate": "2026-07-08T19:29:11.1162021-04:00",
+          "Items": [
+            {
+              "Id": "13e5d0b8-ce5e-4f1c-a31e-1d01383a3908",
+              "Text": "The module begins with this introduction, establishing why text-based lessons matter and what PreseMaker can produce.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "98f9f131-993b-4051-886f-8bac250eb476",
+              "Text": "Later topics cover specific formats such as accordion, printable, WordPress, and Markdown layouts in detail.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8d9cc057-f98c-40dd-89b0-09378fd96142",
+              "Text": "The module concludes with guidance on choosing between a Topic Overview and a Topic Detail, the two most commonly used content types.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "e5957b83-65cf-4fd3-bb28-e0537a8365f3",
+      "Title": "Output Layouts: Accordion, Printable, WordPress, and Markdown",
+      "Summary": "A detailed look at the four primary layout formats PreseMaker supports for text-based lessons. Learners explore the structural and functional differences between accordion, printable, WordPress, and Markdown outputs.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:28:45.5773516-04:00",
+      "ModifiedDate": "2026-07-08T19:28:45.5773516-04:00",
+      "Elements": [
+        {
+          "Id": "5c2f8ca1-8684-45ed-97a7-481b30c4586b",
+          "TopicId": "e5957b83-65cf-4fd3-bb28-e0537a8365f3",
+          "Title": "Accordion Layout",
+          "BodyText": "The accordion layout organizes lesson content into collapsible sections that learners can expand or collapse individually, making it ideal for interactive web-based delivery.",
+          "Notes": "This format works well when learners need to navigate a large amount of content without scrolling through everything at once, allowing them to focus on one section at a time.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:29:33.7919022-04:00",
+          "ModifiedDate": "2026-07-08T19:29:33.7919022-04:00",
+          "Items": [
+            {
+              "Id": "1d84670f-dddd-4c60-9684-e0621478902e",
+              "Text": "Each section or subtopic is housed in its own collapsible panel, keeping the page visually clean and uncluttered.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9c50fc0e-b799-4e0b-8397-174468914998",
+              "Text": "Learners control their own pacing by choosing which sections to open, supporting self-directed exploration.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b3c95445-6792-4b7b-a8e9-d921c606e778",
+              "Text": "The accordion format is rendered as HTML, making it directly embeddable in web pages or learning management systems.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "92f6dac4-5186-44a1-b911-b4059e5d9c3f",
+              "Text": "Visual themes can be selected to customize the appearance of accordion panels to match branding or instructional context.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "1611c977-e853-47f1-9031-1c90dc2b7d17",
+          "TopicId": "e5957b83-65cf-4fd3-bb28-e0537a8365f3",
+          "Title": "Printable Layout",
+          "BodyText": "The printable layout generates a clean, linear HTML document formatted for easy printing or saving as a physical or PDF reference.",
+          "Notes": "This format is especially useful for classroom handouts, study guides, or any scenario where learners need an offline copy of lesson content.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:29:33.7919022-04:00",
+          "ModifiedDate": "2026-07-08T19:29:33.7919022-04:00",
+          "Items": [
+            {
+              "Id": "116f530a-137c-45a7-9fd8-a02ae62bf485",
+              "Text": "Content is presented in a straightforward top-to-bottom flow without interactive elements, prioritizing readability on paper.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "eca68523-87c5-4f59-9351-92bf03be35de",
+              "Text": "Headers, body text, and lists are styled for print legibility, including appropriate font sizes and spacing.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "65ad0ab4-6762-49dc-816e-740b050554df",
+              "Text": "Unlike the accordion format, all content is visible at once, making it suitable for comprehensive review documents.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "e7756ac3-5f0a-4dcc-8d29-9b6ef9242d0e",
+              "Text": "Visual theme selection still applies, allowing consistent branding even in print-oriented output.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "d7c17638-efa3-4977-bbbd-b812aefeedbf",
+          "TopicId": "e5957b83-65cf-4fd3-bb28-e0537a8365f3",
+          "Title": "WordPress Layout",
+          "BodyText": "The WordPress layout produces content structured and formatted for direct use within the WordPress content management system, streamlining the publishing workflow.",
+          "Notes": "This output is particularly valuable for educators or organizations that maintain course content or blogs on WordPress-powered sites.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:29:33.7919022-04:00",
+          "ModifiedDate": "2026-07-08T19:29:33.7919022-04:00",
+          "Items": [
+            {
+              "Id": "72a31854-ad0f-49c3-a995-190d765010e4",
+              "Text": "Output is formatted to align with WordPress block or classic editor conventions, reducing the need for manual reformatting after pasting.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "116cd7aa-5b64-49c3-9493-531afe548f70",
+              "Text": "Headings, paragraphs, and lists are tagged in a way that WordPress interprets and renders correctly.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f6452798-90f0-4481-b12a-38e30eca72eb",
+              "Text": "This layout bridges PreseMaker\u0027s content generation with a widely used publishing platform, saving significant post-production time.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "aa2f4a2f-fffe-4bfd-a5e0-7fab6abd8d8e",
+              "Text": "Users can paste or import the generated content directly into a WordPress page or post with minimal editing required.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "a9545a12-5494-40fd-a504-88978795cdd3",
+          "TopicId": "e5957b83-65cf-4fd3-bb28-e0537a8365f3",
+          "Title": "Markdown Layout",
+          "BodyText": "The Markdown layout outputs lesson content using Markdown syntax, a lightweight plain-text formatting standard widely used in documentation, coding platforms, and static site generators.",
+          "Notes": "Markdown is especially popular among technical users and is natively supported by platforms such as GitHub, Notion, Obsidian, and many static site generators like Jekyll or Hugo.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:29:33.7919022-04:00",
+          "ModifiedDate": "2026-07-08T19:29:33.7919022-04:00",
+          "Items": [
+            {
+              "Id": "1b5079ea-fbd5-4d0b-898c-fe5ff4de9f88",
+              "Text": "Content is written using Markdown conventions such as pound signs for headings, hyphens for bullet lists, and asterisks for bold or italic text.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c9ebc021-b157-4dc0-a556-cf5099121e77",
+              "Text": "Because Markdown is plain text, the output is highly portable and can be used across a wide range of tools and platforms.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f2f5c37a-8ab8-40fc-8158-9674a6ccda67",
+              "Text": "This format is ideal for developers, technical writers, or instructors who work in environments that render Markdown natively.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "ba77fd19-b0bd-4b87-b0de-30fba583c100",
+              "Text": "Markdown output can also serve as an intermediate format, easily converted to HTML, PDF, or other formats using standard tools.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "9d0923fd-aeff-4ac8-96e9-d3c8d7b25688",
+          "TopicId": "e5957b83-65cf-4fd3-bb28-e0537a8365f3",
+          "Title": "Choosing the Right Layout for Your Context",
+          "BodyText": "Selecting the appropriate layout depends on where and how the lesson content will be delivered, consumed, and maintained.",
+          "Notes": "Mismatching the layout to the delivery context can create unnecessary extra work, such as reformatting printable content for a web CMS or stripping interactive elements from an accordion for a PDF.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:29:33.7919022-04:00",
+          "ModifiedDate": "2026-07-08T19:29:33.7919022-04:00",
+          "Items": [
+            {
+              "Id": "45d35607-8a26-41a2-ba58-88aedc98ae94",
+              "Text": "Use the accordion layout when delivering content on a web page where interactivity and space efficiency are priorities.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "65b54a8b-605e-4110-8f49-e16ae3740c34",
+              "Text": "Choose the printable layout when the end goal is a physical handout, a downloadable PDF, or a static reference document.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9bce583a-8862-4fdb-ac24-9cbc01df83d8",
+              "Text": "Select the WordPress layout when content will be published directly to a WordPress site to minimize reformatting steps.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "617e6709-10e5-480d-b218-5b0099a0c4f7",
+              "Text": "Opt for Markdown when working within technical ecosystems, documentation platforms, or tools that render or convert plain-text markup.",
+              "SortOrder": 3
+            },
+            {
+              "Id": "b306df7a-89d8-4ccb-980a-26f88c2b8b82",
+              "Text": "Consider the learner\u0027s access context \u2014 online vs. offline, interactive vs. static \u2014 as the primary decision driver when selecting a layout.",
+              "SortOrder": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "7fa8fa8f-5421-4e5a-93f5-18d06dcc4c6b",
+      "Title": "Selecting Visual Themes for HTML Output",
+      "Summary": "Guidance on how to choose and apply visual themes when generating HTML-based lesson content in PreseMaker. This topic covers how theme selection affects the appearance and usability of the final output.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:28:45.5773516-04:00",
+      "ModifiedDate": "2026-07-08T19:28:45.5773516-04:00",
+      "Elements": [
+        {
+          "Id": "ca9a180b-0ecf-438e-b35b-e02530b646e4",
+          "TopicId": "7fa8fa8f-5421-4e5a-93f5-18d06dcc4c6b",
+          "Title": "What Visual Themes Do in PreseMaker",
+          "BodyText": "Visual themes in PreseMaker control the overall appearance of HTML-based lesson output, including colors, typography, and layout styling.",
+          "Notes": "Themes are applied at the point of generation and affect how learners perceive and interact with the content, making theme selection a meaningful instructional decision, not just an aesthetic one.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:29:58.866529-04:00",
+          "ModifiedDate": "2026-07-08T19:29:58.866529-04:00",
+          "Items": [
+            {
+              "Id": "71d398cb-b61e-41dd-9349-236a247d020b",
+              "Text": "A theme determines the color palette, font choices, spacing, and visual hierarchy of the final HTML output.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "39adb0d2-00f7-4bb2-ba0e-6f07fdb41cf0",
+              "Text": "Different themes can make the same content feel formal or casual, minimal or rich, depending on the instructional context.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ff3da4e1-e8f8-4752-b366-0ab3f4e0c0d3",
+              "Text": "Theme selection occurs before or during the generation step and is applied consistently across all elements in the output.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "5aa9ee24-bdde-419b-82cf-78abf4d3234c",
+          "TopicId": "7fa8fa8f-5421-4e5a-93f5-18d06dcc4c6b",
+          "Title": "Accessing Theme Options in PreseMaker",
+          "BodyText": "PreseMaker provides a set of selectable visual themes within the HTML output settings, allowing users to preview and choose before generating content.",
+          "Notes": "The theme selection interface is typically presented as a dropdown or visual picker, giving users a quick sense of how each theme will render.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:29:58.866529-04:00",
+          "ModifiedDate": "2026-07-08T19:29:58.866529-04:00",
+          "Items": [
+            {
+              "Id": "7289cd09-4301-47bd-9334-34dfac30ce84",
+              "Text": "Theme options are available when choosing HTML as the output format, such as accordion or printable layouts.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "33e24af3-a781-4bb2-b193-a61a757730b1",
+              "Text": "Users can browse available themes and select the one that best fits their audience and delivery context.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "fa2f3792-b6c3-4432-bfc6-2f389a402c89",
+              "Text": "Some themes may be better suited to specific layout types, such as a clean minimal theme pairing well with printable formats.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "0e239fcf-e887-485d-9277-9de6cd2873f4",
+          "TopicId": "7fa8fa8f-5421-4e5a-93f5-18d06dcc4c6b",
+          "Title": "Matching Themes to Audience and Purpose",
+          "BodyText": "Choosing the right theme requires considering who will view the content and how it will be used, whether for self-paced study, classroom use, or professional reference.",
+          "Notes": "For example, a high-contrast theme may improve accessibility for learners with visual impairments, while a branded theme may be appropriate for corporate training environments.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:29:58.866529-04:00",
+          "ModifiedDate": "2026-07-08T19:29:58.866529-04:00",
+          "Items": [
+            {
+              "Id": "8fe323a8-3338-489f-b2a9-a8a0d7c0d849",
+              "Text": "Audience characteristics such as age, technical familiarity, and accessibility needs should inform theme selection.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "91c54a85-13f8-4102-ba0e-77b5d0778a0e",
+              "Text": "The instructional purpose\u2014overview, deep dive, or reference\u2014can guide whether a minimal or feature-rich theme is more appropriate.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "94159851-09ca-4906-aaa6-4e7da23f71d1",
+              "Text": "Themes intended for on-screen reading may differ from those optimized for print or projection.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "aae966ab-29a4-4670-9287-72f5ed3cc3e7",
+          "TopicId": "7fa8fa8f-5421-4e5a-93f5-18d06dcc4c6b",
+          "Title": "How Themes Affect Usability of the Final Output",
+          "BodyText": "Beyond aesthetics, theme choice directly influences how easy it is for learners to read, navigate, and retain information from the lesson.",
+          "Notes": "A poorly chosen theme can undermine even well-structured content by creating visual clutter, low contrast, or confusing hierarchy.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:29:58.866529-04:00",
+          "ModifiedDate": "2026-07-08T19:29:58.866529-04:00",
+          "Items": [
+            {
+              "Id": "56998b64-1354-451e-bc62-170d00079e52",
+              "Text": "Themes affect text legibility through font size, line spacing, and contrast ratios between text and background.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ef7477e4-d44e-4937-8103-96403e89afc7",
+              "Text": "Navigation elements such as accordion toggles or section headers are styled by the theme, impacting how intuitively learners move through content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "21c6d33a-aaac-4b5e-9895-ed860e5fa39f",
+              "Text": "Consistent visual styling across a lesson reduces cognitive load and helps learners focus on the material rather than the interface.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b7c1cd37-5a3a-44c0-a57c-5751eb56047a",
+          "TopicId": "7fa8fa8f-5421-4e5a-93f5-18d06dcc4c6b",
+          "Title": "Applying a Theme When Generating HTML Output",
+          "BodyText": "The process of applying a theme in PreseMaker is integrated into the content generation workflow, requiring selection before the final output is produced.",
+          "Notes": "Once a theme is applied and output is generated, changing the theme requires regenerating the content, so it is worth confirming the choice before proceeding.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:29:58.866529-04:00",
+          "ModifiedDate": "2026-07-08T19:29:58.866529-04:00",
+          "Items": [
+            {
+              "Id": "0b6567af-547e-4352-af13-11859cfd643d",
+              "Text": "Select your desired HTML layout format first, such as accordion or printable, then choose a compatible visual theme.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f3774888-6059-4fec-abb1-ec9b12097eb0",
+              "Text": "Confirm the theme selection in the generation settings panel before initiating content output.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3a00a6b9-b8fd-492c-b3c3-f924ce17f6e8",
+              "Text": "Review a preview or sample output when available to verify the theme renders as expected before finalizing.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "66943c1a-bf3d-4356-8cec-25a29f99d0c3",
+          "TopicId": "7fa8fa8f-5421-4e5a-93f5-18d06dcc4c6b",
+          "Title": "Consistency and Reuse of Themes Across Lessons",
+          "BodyText": "Using consistent visual themes across multiple lessons or modules helps establish a cohesive learning experience and reinforces brand or course identity.",
+          "Notes": "Instructional designers working on multi-module courses should document their theme choices to ensure consistency when generating future content in PreseMaker.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:29:58.866529-04:00",
+          "ModifiedDate": "2026-07-08T19:29:58.866529-04:00",
+          "Items": [
+            {
+              "Id": "a1ebb3b6-9fac-427f-844f-debba90db89a",
+              "Text": "Applying the same theme across related lessons creates visual continuity that helps learners recognize they are within the same course or curriculum.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "97ef454e-484f-4b75-92cd-a29b702ffacb",
+              "Text": "Reusing a theme reduces decision-making time during content generation and supports a standardized look and feel.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "42ccec66-11ed-4750-bab3-c7f438238a89",
+              "Text": "Teams or organizations can establish preferred themes as defaults to streamline production and maintain quality control.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "c55977bf-8a53-4c9a-b8a1-53dd639372f2",
+      "Title": "Content Types: Topic Overview versus Topic Detail",
+      "Summary": "An exploration of the distinction between Topic Overview and Topic Detail content types, including when and why to use each. Learners develop judgment for matching content depth to instructional goals.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:28:45.5773516-04:00",
+      "ModifiedDate": "2026-07-08T19:28:45.5773516-04:00",
+      "Elements": [
+        {
+          "Id": "a0e4d73a-0ab4-4c07-87a9-1b97233988dc",
+          "TopicId": "c55977bf-8a53-4c9a-b8a1-53dd639372f2",
+          "Title": "Defining Topic Overview",
+          "BodyText": "A Topic Overview provides a high-level introduction to a subject, orienting learners to the big picture before deeper study begins.",
+          "Notes": "Think of a Topic Overview as the entry point \u2014 it answers \u0027What is this about?\u0027 rather than \u0027How does this work in detail?\u0027",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:30:22.0454731-04:00",
+          "ModifiedDate": "2026-07-08T19:30:22.0454731-04:00",
+          "Items": [
+            {
+              "Id": "fdf04503-4ae9-4605-8339-69a7c83a6e87",
+              "Text": "Topic Overviews are concise and broad, covering the essential \u0027what\u0027 and \u0027why\u0027 of a subject without exhaustive explanation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "aa48f06d-704f-4db1-9811-77251645bd03",
+              "Text": "They are best suited for learners who are new to a topic or need a conceptual anchor before engaging with more complex material.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c09416f9-a3b6-4990-8f4a-a24beba531a1",
+              "Text": "A Topic Overview typically includes a definition, the relevance of the topic, and a brief preview of what will be explored further.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a1105d3f-e8a4-4199-b944-76532a8dc916",
+          "TopicId": "c55977bf-8a53-4c9a-b8a1-53dd639372f2",
+          "Title": "Defining Topic Detail",
+          "BodyText": "A Topic Detail dives deeply into a specific concept, process, or idea, providing the thorough explanation needed for genuine understanding or skill application.",
+          "Notes": "Topic Details answer \u0027How?\u0027 and \u0027Why in depth?\u0027 \u2014 they are appropriate when learners must master nuance, follow a process, or apply knowledge independently.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:30:22.0454731-04:00",
+          "ModifiedDate": "2026-07-08T19:30:22.0454731-04:00",
+          "Items": [
+            {
+              "Id": "cc87549d-b902-4dbe-9c12-9a19cafefb86",
+              "Text": "Topic Details are longer and more granular, often including step-by-step explanations, examples, edge cases, and supporting evidence.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3b1febbc-6287-4799-967c-be637fde6cb5",
+              "Text": "They assume the learner already has foundational context, making them most effective after an Overview has been established.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "761ae744-2ca1-4450-a3bb-81ca7ec5c1aa",
+              "Text": "A Topic Detail may include sub-sections, worked examples, or elaborated definitions that would be out of place in an Overview.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "34bb7ccf-449a-4467-a110-00b9c838bbe9",
+          "TopicId": "c55977bf-8a53-4c9a-b8a1-53dd639372f2",
+          "Title": "When to Use a Topic Overview",
+          "BodyText": "Choosing a Topic Overview is appropriate when the instructional goal is orientation, motivation, or setting up a broader learning sequence.",
+          "Notes": "Overviews work well as module openers, unit introductions, or standalone reference summaries for returning learners who need a quick refresher.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:30:22.0454731-04:00",
+          "ModifiedDate": "2026-07-08T19:30:22.0454731-04:00",
+          "Items": [
+            {
+              "Id": "2617087d-daf5-43fb-986c-f947857d89b3",
+              "Text": "Use a Topic Overview when learners lack prior exposure and need a conceptual foothold before tackling complex content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ddec7258-cb03-4c36-9240-66dce62a580e",
+              "Text": "An Overview is the right choice when time is limited and the goal is awareness rather than mastery.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "36a432fd-35dd-4734-ac30-d74c4d49e3cc",
+              "Text": "Overviews are also effective when the content will be revisited in later modules where Detail content will be provided progressively.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "cfae323e-8045-4fa1-880d-a773b20ee6e8",
+          "TopicId": "c55977bf-8a53-4c9a-b8a1-53dd639372f2",
+          "Title": "When to Use a Topic Detail",
+          "BodyText": "Topic Detail content is the right choice when learners must achieve mastery, apply a skill, or fully understand a process to meet the learning objective.",
+          "Notes": "If an assessment requires learners to explain, demonstrate, or evaluate a concept, the lesson content supporting that outcome should be a Topic Detail.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:30:22.0454731-04:00",
+          "ModifiedDate": "2026-07-08T19:30:22.0454731-04:00",
+          "Items": [
+            {
+              "Id": "83d9a22e-f3a1-412f-912f-88e73f700792",
+              "Text": "Choose Topic Detail when the learning objective uses action verbs such as \u0027apply,\u0027 \u0027analyze,\u0027 \u0027demonstrate,\u0027 or \u0027evaluate.\u0027",
+              "SortOrder": 0
+            },
+            {
+              "Id": "748aefaf-fac7-4b2c-b320-e7bc30fa6d11",
+              "Text": "Topic Details are essential when errors in understanding have real consequences \u2014 such as in technical, medical, or procedural training contexts.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "192ffb3e-1bd8-48af-9241-ce619943c4ba",
+              "Text": "Use Topic Detail content after an Overview has already established context, to avoid overwhelming learners with complexity too early.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "9ee8c362-0ab1-4eb3-be09-ddba0ee5bfa5",
+          "TopicId": "c55977bf-8a53-4c9a-b8a1-53dd639372f2",
+          "Title": "Matching Content Depth to Instructional Goals",
+          "BodyText": "Selecting between Overview and Detail is fundamentally a judgment call driven by the learning objective, the learner\u0027s prior knowledge, and the role of the content within the larger module.",
+          "Notes": "A common mistake is defaulting to Detail for all content \u2014 this leads to cognitive overload. Equally, over-relying on Overviews leaves learners unable to perform required tasks.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:30:22.0454731-04:00",
+          "ModifiedDate": "2026-07-08T19:30:22.0454731-04:00",
+          "Items": [
+            {
+              "Id": "ac0e952e-b3b7-460a-8e71-0d864615622b",
+              "Text": "Always start by identifying the intended learning outcome: orientation-level goals call for Overviews, performance-level goals call for Details.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "5742da62-3260-496d-b7a0-ffedee325bdf",
+              "Text": "Consider the learner\u0027s entry point \u2014 novice audiences benefit from Overview first, while experienced learners may go directly to Detail.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ad0277f8-8ee3-4883-a404-13a2341b7510",
+              "Text": "A single module may contain both types: an Overview at the start and Detail content for each sub-topic that requires deeper treatment.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d14a008b-b479-41a9-90f7-33f5bd6076d1",
+          "TopicId": "c55977bf-8a53-4c9a-b8a1-53dd639372f2",
+          "Title": "Structural Differences in Generated Output",
+          "BodyText": "When PreseMaker generates content, Topic Overviews and Topic Details differ not only in depth but also in their structural and formatting characteristics.",
+          "Notes": "Understanding these structural differences helps designers review and validate AI-generated content to ensure it matches the intended content type.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:30:22.0454731-04:00",
+          "ModifiedDate": "2026-07-08T19:30:22.0454731-04:00",
+          "Items": [
+            {
+              "Id": "5da11285-5ce1-4e6c-bfd1-4e99449e1a5b",
+              "Text": "A generated Topic Overview will typically be shorter, use introductory language, and avoid jargon or highly technical sub-sections.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "18e13ea6-0341-4d2d-8d04-4454b9b15608",
+              "Text": "A generated Topic Detail will include more sections, elaborated explanations, examples or scenarios, and potentially nested supporting points.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "bfb1fa40-1714-4e44-8090-9a92799fb019",
+              "Text": "Reviewing generated content against the expected structure of each type is a key quality-assurance step before publishing or deploying a lesson.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "202a5570-429c-447b-8dd2-4c02d44f1019",
+      "Title": "Specialized Content Types: Lesson Plans, Example Problems, and Suggested Sources",
+      "Summary": "A review of additional content types PreseMaker can generate, including structured lesson plans, worked example problems, and curated suggested sources. This topic helps learners understand how these types support diverse instructional needs.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:28:45.5773516-04:00",
+      "ModifiedDate": "2026-07-08T19:28:45.5773516-04:00",
+      "Elements": [
+        {
+          "Id": "9e20fedf-cb3b-447b-bddb-1d0013127602",
+          "TopicId": "202a5570-429c-447b-8dd2-4c02d44f1019",
+          "Title": "Structured Lesson Plans",
+          "BodyText": "PreseMaker can generate fully structured lesson plans that organize instructional content into clearly defined stages for educators and trainers.",
+          "Notes": "Lesson plans generated by PreseMaker typically include objectives, instructional steps, timing suggestions, and assessment checkpoints, making them ready to use with minimal editing.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:30:44.6488063-04:00",
+          "ModifiedDate": "2026-07-08T19:30:44.6488063-04:00",
+          "Items": [
+            {
+              "Id": "759c4b1d-6434-4bff-a858-9e18852dcc6f",
+              "Text": "Lesson plans provide a sequential framework that guides both the instructor and the learner through a topic from introduction to assessment.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b23cfd25-3b01-460d-92c7-6c8dae1ea940",
+              "Text": "This format is especially useful when content needs to be delivered live or in a facilitated classroom setting rather than self-paced online.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e99e43d4-4502-498d-9443-9ed900409ec5",
+              "Text": "PreseMaker structures lesson plans to align with defined learning outcomes, ensuring instructional coherence across the session.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a47b83ac-f4c1-4a99-80a1-08ee51d66d33",
+          "TopicId": "202a5570-429c-447b-8dd2-4c02d44f1019",
+          "Title": "Worked Example Problems",
+          "BodyText": "PreseMaker can produce worked example problems that walk learners through a question or scenario step by step, modeling expert thinking and problem-solving processes.",
+          "Notes": "Example problems are particularly effective in STEM, finance, logic, and any domain where procedural reasoning or calculation is central to mastery.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:30:44.6488063-04:00",
+          "ModifiedDate": "2026-07-08T19:30:44.6488063-04:00",
+          "Items": [
+            {
+              "Id": "b41a6d54-f1da-48ce-8c17-bde139ce09ef",
+              "Text": "Each worked example typically presents a problem statement followed by a clearly annotated, step-by-step solution that explains the reasoning at each stage.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f8b4679c-c8d9-4f41-9af4-075c2d973b06",
+              "Text": "This content type supports learners who benefit from seeing a concept applied before attempting it independently.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5286dc61-b0fe-4648-a376-73365306b7cd",
+              "Text": "Worked examples reduce cognitive load by breaking complex processes into manageable, observable steps.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "5bc33c7a-a008-4bc9-914e-6de16558f74a",
+          "TopicId": "202a5570-429c-447b-8dd2-4c02d44f1019",
+          "Title": "When to Use Example Problems",
+          "BodyText": "Choosing to generate example problems depends on the nature of the skill being taught and the level of scaffolding learners require.",
+          "Notes": "Example problems work best when paired with practice opportunities, allowing learners to transition from observation to independent application.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:30:44.6488063-04:00",
+          "ModifiedDate": "2026-07-08T19:30:44.6488063-04:00",
+          "Items": [
+            {
+              "Id": "c7400f0c-8c36-4f9a-a424-d180f2b6e17a",
+              "Text": "Use example problems when the topic involves multi-step procedures, calculations, or analytical reasoning that benefits from modeling.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0107493f-97b9-434f-b6cd-e1e5cc76b2e0",
+              "Text": "They are also effective as reference material learners can return to while completing assignments or assessments.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "81978a87-6532-43f0-b04e-68b67fe60883",
+              "Text": "Avoid overloading a module with too many examples; select representative problems that cover the most critical variations of a concept.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "59761e06-5a38-4d21-be4b-e98052a8ec4a",
+          "TopicId": "202a5570-429c-447b-8dd2-4c02d44f1019",
+          "Title": "Curated Suggested Sources",
+          "BodyText": "PreseMaker can generate a suggested sources section that points learners toward additional reading, references, or multimedia resources relevant to the topic.",
+          "Notes": "Suggested sources may include categories such as foundational texts, online tutorials, academic articles, or practitioner guides, depending on the subject matter and audience.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:30:44.6488063-04:00",
+          "ModifiedDate": "2026-07-08T19:30:44.6488063-04:00",
+          "Items": [
+            {
+              "Id": "8967fa51-3428-4679-9850-375efa403261",
+              "Text": "Suggested sources extend learning beyond the module itself, supporting deeper exploration for motivated or advanced learners.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "bed0d3ac-0c50-4569-bf63-36294d4d596d",
+              "Text": "This content type signals to learners that the topic exists within a broader knowledge ecosystem and encourages ongoing inquiry.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8b7cc3b8-6ab2-416b-a25d-453d71514b03",
+              "Text": "Sources should be curated for credibility and relevance, avoiding lists that feel generic or unrelated to the specific instructional context.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4f95c5a1-a180-4d48-8f58-1295a824d56d",
+          "TopicId": "202a5570-429c-447b-8dd2-4c02d44f1019",
+          "Title": "How Suggested Sources Support Diverse Instructional Needs",
+          "BodyText": "Including curated sources addresses different learner needs, from those seeking quick clarification to those pursuing mastery or professional development.",
+          "Notes": "In formal learning environments, suggested sources can also serve as a reading list or bibliography that adds academic rigor to the module.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:30:44.6488063-04:00",
+          "ModifiedDate": "2026-07-08T19:30:44.6488063-04:00",
+          "Items": [
+            {
+              "Id": "02c421f6-6fa6-4a37-8cbc-2f9f35447b77",
+              "Text": "Learners who struggled with a concept can use sources to find alternative explanations presented in a different format or voice.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "513281cf-0455-4b20-8db0-4fac127b19fd",
+              "Text": "Advanced learners can use sources to go beyond the module\u0027s scope and connect the topic to real-world applications or current research.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4254c5fb-d231-45cd-8ec1-6ea23e25609f",
+              "Text": "Suggested sources also increase the perceived value and credibility of the module by demonstrating thorough subject-matter grounding.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "e3e8af3c-e81b-4393-9484-0cfdb0e2235d",
+          "TopicId": "202a5570-429c-447b-8dd2-4c02d44f1019",
+          "Title": "Combining Specialized Content Types for Maximum Impact",
+          "BodyText": "Lesson plans, example problems, and suggested sources are most effective when used together or strategically combined with other PreseMaker content types to create a complete instructional experience.",
+          "Notes": "A well-designed module might use a Topic Overview to introduce a concept, example problems to model application, and suggested sources to encourage further study \u2014 all within the same lesson.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:30:44.6488063-04:00",
+          "ModifiedDate": "2026-07-08T19:30:44.6488063-04:00",
+          "Items": [
+            {
+              "Id": "c2af5b68-dde6-48a4-82c4-72f38a9d7439",
+              "Text": "Combining a structured lesson plan with worked examples gives instructors both a delivery roadmap and concrete teaching materials in one workflow.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0c71662d-05f2-4e9a-9c5f-bdc3673962d5",
+              "Text": "Pairing example problems with suggested sources helps learners verify their understanding and explore edge cases the module did not cover.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "080c7685-9ed9-49e3-a6d1-1e08dd5ca144",
+              "Text": "Selecting the right combination of specialized content types ensures the module meets diverse learner profiles, from beginners to practitioners.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 29
+}

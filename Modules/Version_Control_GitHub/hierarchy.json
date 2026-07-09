@@ -1,0 +1,843 @@
+{
+  "ModuleFolderName": "Version_Control_GitHub",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T21:08:43.3419944-04:00",
+  "ModifiedDate": "2026-07-08T21:10:57.4457669-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "e90f2266-c3b9-4fa0-b38a-d2f17c7bae10",
+      "Title": "Managing a Course as a Git Repository in PreseMaker",
+      "Summary": "Covers how PreseMaker enables version control for courses without command-line git, including initializing a repository, committing changes, pushing to a remote, and pulling updates through PreseMaker\u0027s built-in interface.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T21:08:43.3419944-04:00",
+      "ModifiedDate": "2026-07-08T21:08:43.3419944-04:00",
+      "Elements": [
+        {
+          "Id": "77c8f21c-35a1-45d0-8551-d194405c0e4a",
+          "TopicId": "e90f2266-c3b9-4fa0-b38a-d2f17c7bae10",
+          "Title": "Initializing a Git Repository for a Course",
+          "BodyText": "PreseMaker allows you to place any course under version control by initializing a git repository directly from within the application.",
+          "Notes": "This eliminates the need to open a terminal or run any command-line instructions. Once initialized, the course folder is tracked as a git repository managed entirely through PreseMaker.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:09:05.7335381-04:00",
+          "ModifiedDate": "2026-07-08T21:09:05.7335381-04:00",
+          "Items": [
+            {
+              "Id": "264b646f-4305-45ea-9ccd-92214681954e",
+              "Text": "The initialize action sets up git tracking for the course from inside PreseMaker\u0027s interface, requiring no command-line interaction.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b0f938ff-f930-4884-a75d-c1a9a586cc8b",
+              "Text": "Once a repository is initialized, PreseMaker stores the associated git settings, such as the remote URL and target branch, for that course.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b638c9c4-6d0c-43f8-9468-5feab767c82e",
+              "Text": "This is a one-time setup step performed before committing or pushing changes for the first time.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f2498870-6aa7-470d-8e00-40b64a10dea0",
+          "TopicId": "e90f2266-c3b9-4fa0-b38a-d2f17c7bae10",
+          "Title": "Committing Changes with a Message",
+          "BodyText": "After making edits to a course, you can record a snapshot of those changes by creating a commit through PreseMaker\u0027s built-in interface.",
+          "Notes": "Committing regularly with descriptive messages helps you track the history of changes and makes it easier to identify what was updated at each stage of course development.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:09:05.7335381-04:00",
+          "ModifiedDate": "2026-07-08T21:09:05.7335381-04:00",
+          "Items": [
+            {
+              "Id": "679b521f-3d41-4c8e-81cc-b3382cf1e993",
+              "Text": "A commit captures the current state of the course and requires you to provide a commit message describing what changed.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "33ccd656-481a-4551-9574-22788b81f842",
+              "Text": "PreseMaker performs the underlying git commit operation on your behalf, so no terminal commands are needed.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9c0b2966-5d8a-4c07-a833-31bbde146867",
+              "Text": "Committing does not automatically send changes to a remote; that is a separate push action.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "dbd521a9-ac74-41ce-91ec-dac4bada978d",
+          "TopicId": "e90f2266-c3b9-4fa0-b38a-d2f17c7bae10",
+          "Title": "Pushing Changes to a Remote Repository",
+          "BodyText": "Once changes are committed locally, PreseMaker enables you to push those commits to a configured remote repository such as one hosted on GitHub.",
+          "Notes": "PreseMaker remembers the last time a push was performed for each course, giving you a reference point for how up to date the remote copy is.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:09:05.7335381-04:00",
+          "ModifiedDate": "2026-07-08T21:09:05.7335381-04:00",
+          "Items": [
+            {
+              "Id": "5290bd77-caa1-43cc-8b56-aeb573e5a1c0",
+              "Text": "Pushing sends your local commits to the remote repository, making the latest version of the course available outside your local machine.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "350c4697-f801-43ea-8a63-f2f4f48c7fb6",
+              "Text": "The remote URL is stored in PreseMaker\u0027s course git settings and does not need to be re-entered each time you push.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "cbb768e6-d2d6-473a-927c-490c4f84f92c",
+              "Text": "PreseMaker records the timestamp of the last successful push so you can easily see whether your remote is current.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "64ef49aa-0fd7-489f-981d-024833d05b02",
+          "TopicId": "e90f2266-c3b9-4fa0-b38a-d2f17c7bae10",
+          "Title": "Pulling Updates from a Remote Repository",
+          "BodyText": "PreseMaker also supports pulling changes from a remote repository, allowing you to bring in updates that exist on the remote but not yet on your local copy.",
+          "Notes": "This is useful when collaborating or when you have made changes on another machine and need to sync your current working environment.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:09:05.7335381-04:00",
+          "ModifiedDate": "2026-07-08T21:09:05.7335381-04:00",
+          "Items": [
+            {
+              "Id": "8466c707-7435-4f84-b0c3-5012586853c6",
+              "Text": "The pull action retrieves and integrates changes from the configured remote repository into your local course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b911fd8b-0264-4673-a677-443982d2456a",
+              "Text": "PreseMaker performs this operation through its interface, removing the need to run git pull in a terminal.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a4595bcf-f8fd-4a40-b4c7-c08f297c7208",
+              "Text": "You can also check for incoming changes before pulling to be aware of what updates are available from the remote.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "08d113f1-09e7-4b55-bcc4-270a74e6c3e3",
+          "TopicId": "e90f2266-c3b9-4fa0-b38a-d2f17c7bae10",
+          "Title": "Checking for Incoming Changes and Conflicts",
+          "BodyText": "Before pulling, PreseMaker allows you to check whether there are incoming changes on the remote that differ from your local version.",
+          "Notes": "Being aware of incoming changes before pulling helps you make an informed decision about when to sync. Note that manual merge-conflict resolution and branch management are outside PreseMaker\u0027s built-in workflow.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:09:05.7335381-04:00",
+          "ModifiedDate": "2026-07-08T21:09:05.7335381-04:00",
+          "Items": [
+            {
+              "Id": "71d0f8a8-3e98-43de-b116-95524bbe8ce3",
+              "Text": "PreseMaker can compare your local state against the remote to surface whether any updates are waiting to be pulled.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "34bada0f-359c-400b-9481-92ed82370a6b",
+              "Text": "This check helps you avoid unexpected overwrites by making you aware of differences before you commit to pulling.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "eb6b0dc3-5cac-49e9-816f-ef2ce123e0ed",
+              "Text": "Advanced git operations such as branch management and pull requests are not part of PreseMaker\u0027s interface and fall outside this workflow.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "751f21dd-92bf-49e7-a9a1-94fc11d95cf4",
+          "TopicId": "e90f2266-c3b9-4fa0-b38a-d2f17c7bae10",
+          "Title": "Stored Git Settings per Course",
+          "BodyText": "PreseMaker maintains a set of git configuration details for each course, so you do not need to reconfigure version control every time you work on a project.",
+          "Notes": "Having settings stored per course means PreseMaker can handle repeated push and pull operations seamlessly without prompting you to re-enter configuration details each session.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T21:09:05.7335381-04:00",
+          "ModifiedDate": "2026-07-08T21:09:05.7335381-04:00",
+          "Items": [
+            {
+              "Id": "7680e8a2-107f-4f1f-aafe-b310f410dbae",
+              "Text": "Each course stores its own remote URL, branch, and last-pushed timestamp within PreseMaker.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "abed14eb-d13d-4ce4-8122-d5dbb06d6c2f",
+              "Text": "These stored settings allow PreseMaker to perform git operations consistently without requiring manual input on each action.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "41448ccf-2d3c-4559-b698-4e0acea4a148",
+              "Text": "Updating these settings can be done from within the PreseMaker interface if the remote location or other details change.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "8fdef8b4-83fb-4582-b6e5-f8cd7fa7970b",
+      "Title": "Publishing a Course Website with GitHub Pages",
+      "Summary": "Explains how PreseMaker connects a course to GitHub and publishes the exported website through GitHub Pages, giving the course a live public web address without manual configuration on GitHub.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T21:08:43.3419944-04:00",
+      "ModifiedDate": "2026-07-08T21:08:43.3419944-04:00",
+      "Elements": [
+        {
+          "Id": "f64a69ad-981f-43c8-ab34-3548c63eda72",
+          "TopicId": "8fdef8b4-83fb-4582-b6e5-f8cd7fa7970b",
+          "Title": "Exporting the Course Website Before Publishing",
+          "BodyText": "Before PreseMaker can publish a course online, you first export it as a website from within the application.",
+          "Notes": "The export step produces the static web files that GitHub Pages will serve. This is a prerequisite to the publishing step.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:09:25.4171385-04:00",
+          "ModifiedDate": "2026-07-08T21:09:25.4171385-04:00",
+          "Items": [
+            {
+              "Id": "fc784328-1356-4783-adfa-52d21ff84afd",
+              "Text": "PreseMaker includes a built-in export function that packages your course as a complete website ready for hosting.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7327564d-76b9-4701-8590-a05fe99d0e59",
+              "Text": "The exported files are what GitHub Pages will deliver to learners when they visit the course\u0027s public web address.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9c078c91-8597-4a90-8414-6065d3dbe947",
+              "Text": "You initiate this export from inside PreseMaker \u2014 no external tools or manual file management are required at this stage.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "967027d2-450f-42f1-926f-96ad3efcda83",
+          "TopicId": "8fdef8b4-83fb-4582-b6e5-f8cd7fa7970b",
+          "Title": "Connecting the Course to a GitHub Repository",
+          "BodyText": "PreseMaker handles the connection between your course and a GitHub repository directly through its own interface, without requiring you to configure anything manually on the GitHub website.",
+          "Notes": "PreseMaker stores each course\u0027s git settings, including the remote URL, so the connection only needs to be established once per course.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:09:25.4171385-04:00",
+          "ModifiedDate": "2026-07-08T21:09:25.4171385-04:00",
+          "Items": [
+            {
+              "Id": "ffab4800-c24f-462e-83d3-197bd3d0825f",
+              "Text": "You provide the remote repository URL inside PreseMaker, and it stores that setting for the course going forward.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b5ce2195-2318-4056-a051-b4ba0724e36b",
+              "Text": "PreseMaker remembers the repository association and last-push status, so you do not need to re-enter connection details each session.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ae978762-6c7e-43b2-8526-ab774f0e51d2",
+              "Text": "PreseMaker guides the GitHub connection and publishing so you do not have to configure git or GitHub Pages by hand; you do need a GitHub account and a repository to publish to.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "de499914-7f48-4a13-9328-54fc5c70c7e3",
+          "TopicId": "8fdef8b4-83fb-4582-b6e5-f8cd7fa7970b",
+          "Title": "Publishing Through PreseMaker Rather Than GitHub\u0027s Website",
+          "BodyText": "PreseMaker assists with the full GitHub Pages publishing process so that you never need to navigate GitHub\u0027s settings pages or run git commands manually.",
+          "Notes": "This design keeps the entire publishing workflow inside one application, lowering the technical barrier for course authors.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:09:25.4171385-04:00",
+          "ModifiedDate": "2026-07-08T21:09:25.4171385-04:00",
+          "Items": [
+            {
+              "Id": "5198cfa4-bde1-4344-b697-558bde42e7df",
+              "Text": "All publishing actions \u2014 including pushing the exported website files to the repository \u2014 are triggered from within PreseMaker\u0027s interface.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "053e27cc-b261-4598-abf6-a2df55edc4dd",
+              "Text": "PreseMaker performs the underlying git push operation on your behalf, so no command-line interaction is required.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "36dc0a65-1e9a-4ccc-9b5e-020847ddd03c",
+              "Text": "Because PreseMaker handles the GitHub Pages setup, authors can publish without prior experience configuring hosting settings on GitHub.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "29c59a64-7402-471a-bae3-8d800aa4fb17",
+          "TopicId": "8fdef8b4-83fb-4582-b6e5-f8cd7fa7970b",
+          "Title": "The Live Public Web Address",
+          "BodyText": "Once published, the course receives a live public web address through GitHub Pages, making it accessible to learners anywhere with a browser.",
+          "Notes": "GitHub Pages generates a URL automatically based on the repository; PreseMaker surfaces this address so you can share it with learners.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:09:25.4171385-04:00",
+          "ModifiedDate": "2026-07-08T21:09:25.4171385-04:00",
+          "Items": [
+            {
+              "Id": "12daaa6c-dbc0-46ad-9504-5e1e2438c883",
+              "Text": "GitHub Pages assigns a public URL to the repository, turning the exported course files into a fully hosted website.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "5e3f5067-6fc9-4ad1-a4ce-efa1c5ee30d5",
+              "Text": "Learners can visit the course at that web address without needing any special access or account.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c647a213-19dd-4b9d-ab9c-e7482fb9d684",
+              "Text": "The address remains stable as long as the repository and its Pages configuration remain active, giving you a reliable link to share.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4bcf45f3-6880-4ce8-959a-2993a3f5c7a5",
+          "TopicId": "8fdef8b4-83fb-4582-b6e5-f8cd7fa7970b",
+          "Title": "Pushing Updates to the Published Site",
+          "BodyText": "When you revise a course and re-export it, PreseMaker lets you push the updated files to the same repository, refreshing the live website.",
+          "Notes": "PreseMaker tracks when the course was last pushed, helping you identify whether the live site reflects your most recent edits.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:09:25.4171385-04:00",
+          "ModifiedDate": "2026-07-08T21:09:25.4171385-04:00",
+          "Items": [
+            {
+              "Id": "93c33412-4f5f-46ae-a4c3-ff4fe8cba6a3",
+              "Text": "After making changes and re-exporting, you use PreseMaker\u0027s push action to send the updated website files to the GitHub repository.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4fad7536-7d7a-4287-955b-a1260610d958",
+              "Text": "GitHub Pages automatically serves the latest pushed files, so the public URL reflects your updates shortly after the push completes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "92abb390-636b-49de-966f-45e74c29fd6c",
+              "Text": "PreseMaker\u0027s record of the last push time helps you confirm that the live site is in sync with your current course content.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "1200b88e-951f-4eb0-b5e6-95cb5af63862",
+      "Title": "Using the Course Repository Service",
+      "Summary": "Describes PreseMaker\u0027s integration with external course-repository services, covering how to import course materials from a shared repository and publish your own materials for others to access and reuse.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T21:08:43.3419944-04:00",
+      "ModifiedDate": "2026-07-08T21:08:43.3419944-04:00",
+      "Elements": [
+        {
+          "Id": "2fc5b118-1b0b-4b1b-8914-1f08457f9c10",
+          "TopicId": "1200b88e-951f-4eb0-b5e6-95cb5af63862",
+          "Title": "What the Course Repository Service Is",
+          "BodyText": "PreseMaker integrates with an external course-repository service \u2014 such as floridacourserepo.com \u2014 that functions as a content-sharing hub for educators.",
+          "Notes": "This service is entirely separate from git version control. It is focused on discovering and distributing ready-made course materials, not on tracking code changes or managing branches.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:09:45.2717611-04:00",
+          "ModifiedDate": "2026-07-08T21:09:45.2717611-04:00",
+          "Items": [
+            {
+              "Id": "7b91cf30-c3cd-44ac-bc0a-6ed62b58bbe3",
+              "Text": "The course repository service is a dedicated platform for sharing and reusing course content across institutions or instructors.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e20ab831-8280-4420-86df-43442204c06f",
+              "Text": "It is accessed from within PreseMaker, so you do not need to visit or configure the external site manually.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "35ebdf1b-2a39-475d-bcb1-99acebb42e70",
+              "Text": "The service is not a git workflow \u2014 no commands, personal access tokens, or branch management are involved.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "738c62f2-890b-4ca2-b11c-973e1dd3a22c",
+          "TopicId": "1200b88e-951f-4eb0-b5e6-95cb5af63862",
+          "Title": "Connecting to the Repository Service from PreseMaker",
+          "BodyText": "PreseMaker provides a built-in interface to connect to the course-repository service, keeping the process inside the application.",
+          "Notes": "Because the connection is handled by PreseMaker\u0027s interface, instructors are not required to set up accounts or API credentials outside of what PreseMaker guides them through.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:09:45.2717611-04:00",
+          "ModifiedDate": "2026-07-08T21:09:45.2717611-04:00",
+          "Items": [
+            {
+              "Id": "16460213-7058-4c7c-a28b-1c51c4fff874",
+              "Text": "The connection to the external repository service is initiated and managed from within PreseMaker\u0027s own interface.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "fd7b46bd-4554-4e04-ab98-786e70ed86fb",
+              "Text": "PreseMaker stores the relevant service settings so you do not need to re-enter connection details each session.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7c61d9e8-fc58-4437-8a06-3ca237099b50",
+              "Text": "PreseMaker handles the connection to the course-repository service from within the app once you provide the repository details it needs.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "2ee7bc72-ad87-4c52-b7f3-5dd7129db5c6",
+          "TopicId": "1200b88e-951f-4eb0-b5e6-95cb5af63862",
+          "Title": "Importing Course Materials from the Repository",
+          "BodyText": "Through the course-repository service, you can browse and import course materials that others have published, bringing them directly into PreseMaker for use or adaptation.",
+          "Notes": "Importing from the repository is a way to avoid building courses from scratch \u2014 you can start with an existing published course and customize it to fit your needs.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:09:45.2717611-04:00",
+          "ModifiedDate": "2026-07-08T21:09:45.2717611-04:00",
+          "Items": [
+            {
+              "Id": "6c8a0213-42b8-412b-9098-deca49161c06",
+              "Text": "PreseMaker allows you to search or browse the shared repository for course materials created by other educators.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2ef328b1-eb29-4ebb-a3d2-fe2bfe8b7f97",
+              "Text": "Selected materials are imported into PreseMaker, where you can use them as-is or modify them for your own course.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a2398b7f-1377-4a25-96a1-5ebc9187f977",
+              "Text": "The import process is handled through PreseMaker\u0027s interface rather than by manually downloading and re-uploading files.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "5250a638-bf33-4cbb-94e2-32e822528638",
+          "TopicId": "1200b88e-951f-4eb0-b5e6-95cb5af63862",
+          "Title": "Publishing Your Materials to the Repository",
+          "BodyText": "You can contribute your own course materials to the shared repository through PreseMaker, making them available for other educators to discover and reuse.",
+          "Notes": "Publishing to the course repository is a separate action from pushing to a git remote or deploying to GitHub Pages \u2014 it is specifically about sharing content with the broader educator community through the repository service.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:09:45.2717611-04:00",
+          "ModifiedDate": "2026-07-08T21:09:45.2717611-04:00",
+          "Items": [
+            {
+              "Id": "183e14e1-e279-419a-ac4c-d55a4e0676af",
+              "Text": "PreseMaker provides an option to publish a course to the external repository service directly from within the application.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "50a6249c-179e-44a3-84e7-4f05f09409d8",
+              "Text": "Once published, your materials become accessible to other users of the same repository service, such as floridacourserepo.com.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "17e6e4b7-4e7d-42b4-bf39-1244f206db62",
+              "Text": "Publishing is focused on content sharing and reuse, not on version tracking or web deployment.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "1c227a00-0219-401e-82dc-ece5c71cfb79",
+          "TopicId": "1200b88e-951f-4eb0-b5e6-95cb5af63862",
+          "Title": "How the Repository Service Differs from Other PreseMaker Features",
+          "BodyText": "The course-repository service fills a distinct role compared to PreseMaker\u0027s git integration and GitHub Pages publishing, and it is important to understand where each feature applies.",
+          "Notes": "Keeping these three features \u2014 git version control, GitHub Pages publishing, and the course repository service \u2014 clearly separated helps you choose the right tool for each goal.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:09:45.2717611-04:00",
+          "ModifiedDate": "2026-07-08T21:09:45.2717611-04:00",
+          "Items": [
+            {
+              "Id": "0ab88584-9136-4538-9e1e-a6200d1caa8e",
+              "Text": "Git version control in PreseMaker is for tracking changes to your course over time; the repository service is for sharing finished or in-progress content with others.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "459507d7-7908-4403-b876-249b70d2a1d2",
+              "Text": "GitHub Pages publishing gives your course a public web address; the repository service makes your course materials available for other instructors to import and reuse.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4a1dac88-bee5-4f29-873f-0d6d21b79e5c",
+              "Text": "The course repository service is a content-sharing network, not a deployment or version-history tool.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "750586b4-0d66-4ef0-851f-74e5d50e22d8",
+      "Title": "Other Sharing Options: Archive Export and iFrame Embedding",
+      "Summary": "Introduces additional ways to share course content, including exporting a course as a portable archive file for import elsewhere and generating an iFrame embed code to display course content within another web page.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T21:08:43.3419944-04:00",
+      "ModifiedDate": "2026-07-08T21:08:43.3419944-04:00",
+      "Elements": [
+        {
+          "Id": "e1460621-6181-443c-9c4f-e9d51bbf1d65",
+          "TopicId": "750586b4-0d66-4ef0-851f-74e5d50e22d8",
+          "Title": "Overview of Additional Sharing Options",
+          "BodyText": "Beyond version control and GitHub Pages, PreseMaker provides two supplementary methods for distributing course content to different audiences and platforms.",
+          "Notes": "These options are especially useful when learners or collaborators do not have direct access to a GitHub Pages URL or a course repository service.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:10:06.59755-04:00",
+          "ModifiedDate": "2026-07-08T21:10:06.59755-04:00",
+          "Items": [
+            {
+              "Id": "af6c65c0-e649-4aca-975c-243e22e00668",
+              "Text": "Archive export allows a course to be packaged into a single portable file that can be moved and imported elsewhere.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ec82784d-a357-49ec-925f-582f88f7f2e0",
+              "Text": "iFrame embedding allows course content to be displayed inside another web page without requiring the viewer to navigate away.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d2bf628c-23fe-4126-8b34-9bb1970a4429",
+              "Text": "Both options complement the primary sharing workflows and can be used independently or alongside them.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "36888d69-c0bf-4b6f-90a5-ee46670e349a",
+          "TopicId": "750586b4-0d66-4ef0-851f-74e5d50e22d8",
+          "Title": "Exporting a Course as an Archive File",
+          "BodyText": "PreseMaker can export an entire course as a self-contained archive file, making the course portable and importable into another environment.",
+          "Notes": "This is useful for sharing courses offline, transferring content between accounts, or creating a backup snapshot of a course at a specific point in time.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:10:06.59755-04:00",
+          "ModifiedDate": "2026-07-08T21:10:06.59755-04:00",
+          "Items": [
+            {
+              "Id": "84df0cd7-67fd-46a9-887d-1168c7c5c742",
+              "Text": "The export process packages all course materials into a single archive file from within the PreseMaker interface.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "61baafd5-9137-4f8f-9f94-10b9e64b9aa4",
+              "Text": "The resulting archive file can be imported into PreseMaker elsewhere, allowing the course to be reused or edited in a different context.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2389f35e-fa40-410f-adb7-5539b417ed77",
+              "Text": "Archive export does not require a network connection or a linked repository, making it a fully offline sharing method.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8c2b7e4c-f73a-49df-bc5b-f3c928e657d3",
+          "TopicId": "750586b4-0d66-4ef0-851f-74e5d50e22d8",
+          "Title": "When to Use Archive Export",
+          "BodyText": "Archive export is best suited for situations where a portable, standalone copy of the course is needed rather than a live published link.",
+          "Notes": "Consider archive export when distributing to collaborators who need to edit the course locally, when internet access is limited, or when migrating content between platforms.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:10:06.59755-04:00",
+          "ModifiedDate": "2026-07-08T21:10:06.59755-04:00",
+          "Items": [
+            {
+              "Id": "35c8e4ac-86e4-401b-88bd-4e838db4152e",
+              "Text": "Use archive export to hand off a complete course to another instructor or institution for local use.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9bb5e537-ed2d-4896-a16e-3fbe7f4cd2ae",
+              "Text": "Archive files serve as point-in-time snapshots, providing a form of manual backup separate from version control history.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "40b4306c-3578-47f5-8c57-b2cf6be71293",
+              "Text": "Importing an archive restores the course content so it can be continued or modified in PreseMaker.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d6997037-2369-4fa7-b2d4-0217cc783252",
+          "TopicId": "750586b4-0d66-4ef0-851f-74e5d50e22d8",
+          "Title": "Generating an iFrame Embed Code",
+          "BodyText": "PreseMaker can generate an iFrame embed code that allows course content to be displayed directly within another web page.",
+          "Notes": "An iFrame (inline frame) is a standard HTML element that loads an external web page inside a designated area of a host page, so viewers see the course content without leaving the host site.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:10:06.59755-04:00",
+          "ModifiedDate": "2026-07-08T21:10:06.59755-04:00",
+          "Items": [
+            {
+              "Id": "f4e34d42-32d2-4b92-b2ab-a7b355478507",
+              "Text": "PreseMaker produces the embed code automatically, so no manual HTML authoring is required.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c57a7d33-ce0a-4cb2-9fe0-80df9b89db3a",
+              "Text": "The generated code can be pasted into the HTML of any web page that supports iFrame embedding, such as a course portal or institutional website.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ab98ca5a-81e6-4bed-86e0-289c26353492",
+              "Text": "The embedded content reflects the published version of the course, meaning updates to the published course are reflected in the embedded view.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c4a5df25-f23c-4de2-860b-a1ea887b0462",
+          "TopicId": "750586b4-0d66-4ef0-851f-74e5d50e22d8",
+          "Title": "When to Use iFrame Embedding",
+          "BodyText": "iFrame embedding is the preferred option when course content needs to appear seamlessly within an existing website or learning management system page.",
+          "Notes": "This approach keeps learners on a familiar host page while still delivering the full PreseMaker course experience within that page\u0027s layout.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:10:06.59755-04:00",
+          "ModifiedDate": "2026-07-08T21:10:06.59755-04:00",
+          "Items": [
+            {
+              "Id": "5b5ee7d3-8ee7-4470-8d03-1dead1f6d077",
+              "Text": "Use iFrame embedding when an institution or instructor wants to present course content inside a branded portal without redirecting learners to an external URL.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9c385705-d08b-48bd-a7d5-508bd3601959",
+              "Text": "iFrame embedding requires that the course already be published to a publicly accessible web address, such as a GitHub Pages URL.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "0c10a210-ea27-4d79-bda3-ead37b1da445",
+              "Text": "The host page controls the dimensions and placement of the embedded frame, allowing the course to be sized and positioned to fit the surrounding design.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a4910f91-be21-4575-acf0-8276c29cc8d2",
+          "TopicId": "750586b4-0d66-4ef0-851f-74e5d50e22d8",
+          "Title": "Comparing Archive Export and iFrame Embedding",
+          "BodyText": "Although both options extend how course content is shared, they serve distinct purposes and suit different distribution scenarios.",
+          "Notes": "Choosing the right option depends on whether the goal is to transfer editable content (archive) or to display published content in another context (iFrame).",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T21:10:06.59755-04:00",
+          "ModifiedDate": "2026-07-08T21:10:06.59755-04:00",
+          "Items": [
+            {
+              "Id": "74292d03-24f4-4180-ba28-109c089e0fb7",
+              "Text": "Archive export produces an editable, importable file, while iFrame embedding displays a live published course inside another page.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3abd3d32-5bb9-4dcc-9bf4-5f07119150c9",
+              "Text": "Archive export works without a published web address; iFrame embedding requires one.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "397ed9e8-7943-4da1-8522-c546430d03d2",
+              "Text": "Use archive export for content transfer or backup, and use iFrame embedding for integrated, in-page presentation to learners.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "ae75ffb6-15aa-4bc9-a0a1-4c89d1e7a2a1",
+      "Title": "Choosing the Right Sharing Method",
+      "Summary": "Helps learners compare all available sharing and distribution options \u2014 version control, GitHub Pages, course repository, archive export, and iFrame \u2014 so they can identify which best fits a given use case.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T21:08:43.3419944-04:00",
+      "ModifiedDate": "2026-07-08T21:08:43.3419944-04:00",
+      "Elements": [
+        {
+          "Id": "3f5164fc-d739-415f-829f-6a078fa30c6d",
+          "TopicId": "ae75ffb6-15aa-4bc9-a0a1-4c89d1e7a2a1",
+          "Title": "Overview of Available Sharing Methods",
+          "BodyText": "PreseMaker offers several distinct ways to share and distribute course content, each serving a different purpose and audience.",
+          "Notes": "Understanding the full landscape of options before choosing one prevents mismatches between the method and the intended outcome.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:10:57.4451356-04:00",
+          "ModifiedDate": "2026-07-08T21:10:57.4451356-04:00",
+          "Items": [
+            {
+              "Id": "77b219d1-f1c3-4642-92aa-5e52fa4e679f",
+              "Text": "The five primary methods are: version control (git), GitHub Pages, the course repository service, archive export, and iFrame embedding.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ffce5983-ec58-483b-ab5e-9656c9a2e671",
+              "Text": "Each method differs in how content is stored, who can access it, and what technical steps are involved.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "eeb71f3d-46bd-4b93-8013-986def62e47c",
+              "Text": "Selecting the right method depends on factors such as collaboration needs, public visibility, reusability, and integration with other platforms.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6b03bc7b-5375-4f6d-8591-2e17ef4d5ce5",
+          "TopicId": "ae75ffb6-15aa-4bc9-a0a1-4c89d1e7a2a1",
+          "Title": "Version Control for Ongoing Course Development",
+          "BodyText": "Using PreseMaker\u0027s built-in git integration is best suited for tracking changes over time and maintaining a reliable history of a course.",
+          "Notes": "This method is ideal when a single author or small team needs to commit incremental updates, revert mistakes, or keep a remote backup \u2014 not for public content distribution on its own.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:10:57.4451356-04:00",
+          "ModifiedDate": "2026-07-08T21:10:57.4451356-04:00",
+          "Items": [
+            {
+              "Id": "f8d1fde4-0865-4dec-a0bc-b61e439a4d17",
+              "Text": "Choose version control when you need a change history, the ability to push and pull updates, or a remote backup of course files.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "adf27e82-0396-410d-b68f-d30e8661327b",
+              "Text": "This method is managed entirely inside PreseMaker \u2014 no command-line git knowledge is required.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "0bd1700a-4e3c-4042-9425-95805c36e23b",
+              "Text": "Version control alone does not make course content publicly accessible; it is a development and safety workflow, not a distribution channel.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "e81bdcec-1dd3-4706-b247-5bf81aa58aa9",
+          "TopicId": "ae75ffb6-15aa-4bc9-a0a1-4c89d1e7a2a1",
+          "Title": "GitHub Pages for Public Web Publishing",
+          "BodyText": "GitHub Pages takes an exported course website and gives it a live, public web address that anyone can visit in a browser.",
+          "Notes": "This is the right choice when the goal is to deliver a course as a standalone website to learners who simply need a URL \u2014 no login or special software required.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:10:57.4451356-04:00",
+          "ModifiedDate": "2026-07-08T21:10:57.4451356-04:00",
+          "Items": [
+            {
+              "Id": "99c4e9f3-c425-4a42-8d08-0474980ae780",
+              "Text": "Use GitHub Pages when you want to publish a course website publicly and share it via a direct link.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "db14adef-6701-4b41-81d7-936a1c89ea54",
+              "Text": "PreseMaker handles the connection to GitHub and the publishing process, so no manual configuration on the GitHub website is needed.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "23ac0e8c-4bb8-465f-82d1-676e076bbf4c",
+              "Text": "GitHub Pages works alongside version control \u2014 the repository stores the files, and GitHub Pages serves them as a website.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a84f05e1-2415-4b56-b445-07733565d5ff",
+          "TopicId": "ae75ffb6-15aa-4bc9-a0a1-4c89d1e7a2a1",
+          "Title": "The Course Repository Service for Content Sharing",
+          "BodyText": "The course repository service (such as floridacourserepo.com) is a dedicated platform for discovering, importing, and publishing reusable course materials within a community.",
+          "Notes": "This method is distinct from git \u2014 it is a content-sharing marketplace rather than a code-versioning tool, and it does not involve branches, pull requests, or personal access tokens.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:10:57.4451356-04:00",
+          "ModifiedDate": "2026-07-08T21:10:57.4451356-04:00",
+          "Items": [
+            {
+              "Id": "64cce0d2-bf3e-4aa6-914e-eba9ff1c121e",
+              "Text": "Choose the course repository service when you want to share materials with a broader educator community or adopt materials others have already created.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1bb328be-f747-496c-95ff-152aafb3ca35",
+              "Text": "You can both publish your own courses to the repository and import existing materials from it directly inside PreseMaker.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8ca55cce-9a36-4a45-876e-7edd5d6a9ae1",
+              "Text": "This option prioritizes reusability and community distribution, making it different from simply hosting a website or tracking file changes.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "bb31a0ae-4b4b-4e88-9db4-86045c4bb105",
+          "TopicId": "ae75ffb6-15aa-4bc9-a0a1-4c89d1e7a2a1",
+          "Title": "Archive Export for Portable, Offline Distribution",
+          "BodyText": "Exporting a course as an archive file packages all course content into a single transferable file that can be imported into another PreseMaker instance.",
+          "Notes": "Archive export is the simplest method when internet connectivity, repository accounts, or public hosting are not available or necessary.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:10:57.4451356-04:00",
+          "ModifiedDate": "2026-07-08T21:10:57.4451356-04:00",
+          "Items": [
+            {
+              "Id": "48e5bd1e-9f57-460a-90d5-babb5f3d2f63",
+              "Text": "Use archive export when you need to hand off course files directly to another person or move a course to a different machine without using cloud services.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ca331034-88fa-4ef5-8405-79edad48cd2f",
+              "Text": "This method requires no internet connection, GitHub account, or third-party service.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6a96c37d-f592-4057-a71c-8eeb50685b7d",
+              "Text": "The recipient must import the archive into PreseMaker, making it best suited for closed or controlled distribution rather than open public access.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4d7a4d65-02b2-4a74-8d29-ca39c21abf1d",
+          "TopicId": "ae75ffb6-15aa-4bc9-a0a1-4c89d1e7a2a1",
+          "Title": "iFrame Embedding for Integration with Other Platforms",
+          "BodyText": "An iFrame embed code lets you display course content inside an existing web page, learning management system, or other platform without redirecting learners to a separate site.",
+          "Notes": "This is the preferred choice when course content must appear seamlessly within a larger website or LMS rather than as a standalone destination.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T21:10:57.4451356-04:00",
+          "ModifiedDate": "2026-07-08T21:10:57.4451356-04:00",
+          "Items": [
+            {
+              "Id": "8ee09a49-2326-4729-bc4e-62cea34f2b54",
+              "Text": "Choose iFrame embedding when learners should experience the course content within a host platform they are already using.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9037b815-7ae1-48b5-92a5-c461a1a26a2f",
+              "Text": "The embed code generated by PreseMaker can be pasted into any platform that supports HTML iFrames.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2a72b0d0-5994-48c9-ad01-58ccc7ac0a79",
+              "Text": "iFrame embedding typically requires that the course is already hosted somewhere accessible \u2014 such as via GitHub Pages \u2014 so it often pairs with another sharing method.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "53dd9b7b-f4c2-4697-ad49-b03ae7aee573",
+          "TopicId": "ae75ffb6-15aa-4bc9-a0a1-4c89d1e7a2a1",
+          "Title": "Matching the Method to the Use Case",
+          "BodyText": "Each sharing method has a specific sweet spot, and the best choice depends on the combination of your collaboration needs, audience, and technical environment.",
+          "Notes": "In practice, methods can be combined \u2014 for example, using version control for development, GitHub Pages for hosting, and an iFrame to embed the result in an LMS.",
+          "SortOrder": 6,
+          "CreatedDate": "2026-07-08T21:10:57.4451356-04:00",
+          "ModifiedDate": "2026-07-08T21:10:57.4451356-04:00",
+          "Items": [
+            {
+              "Id": "7f542c33-685d-4257-9761-38676064d25a",
+              "Text": "If the priority is change tracking and safe development, use version control through PreseMaker\u0027s git integration.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "bda84c25-c6e7-4a94-8996-1be2f23e811e",
+              "Text": "If the priority is giving learners a public URL, publish via GitHub Pages; if it is community reuse among educators, use the course repository service.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "cb90b756-f1b9-4769-99f5-eb9235c1538e",
+              "Text": "If simplicity and portability matter most, export an archive; if seamless integration into an existing platform is needed, use an iFrame embed code.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 29
+}

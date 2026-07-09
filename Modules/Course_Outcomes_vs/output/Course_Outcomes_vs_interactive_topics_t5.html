@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linking Module Outcomes to Course Outcomes</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Linking Module Outcomes to Course Outcomes</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Linking Module Outcomes to Course Outcomes</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Effective course design depends on more than writing good learning outcomes in isolation — it requires that those outcomes work together as a coherent, intentional system. When module outcomes and course outcomes are properly linked, learners experience a curriculum that builds progressively toward meaningful, demonstrable competence. When the links are missing, weak, or contradictory, even well-written individual outcomes can fail to produce the learning the course promises. Understanding how to connect module outcomes to course outcomes — and how to document, verify, and defend those connections — is one of the most practical and consequential skills in instructional design.</p>
+
+<p><strong>Understanding the Two-Level Outcome Hierarchy</strong></p>
+
+<p>Course outcomes and module outcomes exist at different levels of scope and specificity, and recognizing that difference is the essential starting point for alignment work. <strong>Course outcomes</strong> represent the broadest, most comprehensive learning expectations for the entire course. They describe what a learner should be able to do, know, or value by the time the final assessment is complete. Because they span weeks or months of instruction, course outcomes tend to involve higher-order thinking — synthesis, evaluation, design, critique — and they reflect the course's ultimate contribution to a program or discipline.</p>
+
+<p><strong>Module outcomes</strong>, by contrast, are narrower in scope. They describe what a learner should be able to do after completing a single unit, week, or section of the course. They are more granular, more immediately testable, and necessarily more limited. A single module cannot accomplish everything a course promises, so module outcomes serve as steps along the path rather than the destination itself.</p>
+
+<p>The practical implication of this hierarchy is that <em>a single course outcome will typically be supported by multiple module outcomes spread across several modules</em>. Consider a course outcome such as <em>"Analyze complex business data to recommend evidence-based strategic decisions."</em> No single module can deliver that capability in full. Instead, early modules might introduce data literacy and descriptive statistics, middle modules might cover inferential reasoning and data visualization, and later modules might require learners to interpret real datasets and construct defensible recommendations. Each of those module-level tasks contributes a piece of what the course outcome ultimately demands.</p>
+
+<p>Recognizing this hierarchy prevents two common design mistakes. The first is writing module outcomes that are <em>identical</em> to course outcomes — simply copying the course-level language into each module. This creates an illusion of alignment without any actual scaffolding. The second mistake is writing module outcomes that are <em>completely disconnected</em> from any course outcome, filling modules with interesting or relevant content that does not actually build toward the course's stated goals. Both errors undermine the integrity of the curriculum and make it difficult to demonstrate that the course does what it claims.</p>
+
+<p><strong>The Alignment Map as a Linking Tool</strong></p>
+
+<p>An alignment map is the primary instrument for making the relationship between module outcomes and course outcomes visible and auditable. In its simplest form, it is a table in which module outcomes appear in rows (or columns) and course outcomes appear across the opposite axis. Each cell in the matrix can be marked, annotated, or left blank to indicate whether a connection exists.</p>
+
+<p>The value of the map lies in what it reveals. When <strong>each module outcome is entered into the map alongside the course outcome or outcomes it supports</strong>, design decisions that once lived only in the instructor's head become explicit and examinable. Patterns that are invisible in a list of outcomes become immediately apparent in a visual matrix: a course outcome with no supporting module outcomes, a module outcome that connects to everything (suggesting it is written too broadly), or a cluster of modules that all reinforce the same course outcome while another is neglected.</p>
+
+<p>The map makes it possible to <strong>spot missing or redundant connections</strong>. A redundant connection is not always a problem — some course outcomes appropriately receive reinforcement across many modules — but when redundancy comes at the expense of coverage, the map surfaces that trade-off so a deliberate decision can be made.</p>
+
+<p>Crucially, the alignment map should be used <strong>during the design phase, not after it</strong>. Instructors who build the map retrospectively — filling it in once the course is already written — are essentially asking whether their finished design happens to be aligned. Instructors who build the map prospectively use it as a blueprint, drafting module outcomes in direct response to what the course outcomes require. The latter approach embeds alignment into the course from the start rather than retrofitting it once mismatches are discovered.</p>
+
+<p>The alignment map also serves a documentation function that extends well beyond personal reference. <strong>Shared with reviewers, accreditors, or colleagues</strong>, a completed and annotated map is evidence of intentional design. It demonstrates that course components were chosen for a reason, that coverage decisions were deliberate, and that the curriculum as a whole is coherent rather than assembled by habit or convenience.</p>
+
+<p>The following is an example of a simple alignment map structure for a hypothetical data analysis course:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module Outcome</th>
+      <th>Module</th>
+      <th>CO 1: Analyze business data</th>
+      <th>CO 2: Communicate findings visually</th>
+      <th>CO 3: Recommend strategic decisions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Identify types of business data and their sources</td>
+      <td>1</td>
+      <td>✓</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Calculate descriptive statistics from a dataset</td>
+      <td>2</td>
+      <td>✓</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Select appropriate chart types for different data relationships</td>
+      <td>3</td>
+      <td></td>
+      <td>✓</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Construct a data visualization using real organizational data</td>
+      <td>4</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Evaluate data patterns to justify a business recommendation</td>
+      <td>6</td>
+      <td>✓</td>
+      <td></td>
+      <td>✓</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In this example, Course Outcome 3 is currently supported by only one module outcome in Module 6. A reviewer looking at the map would immediately ask whether a single late-course module outcome provides sufficient scaffolding for such a high-stakes competency, prompting the designer to consider whether earlier modules should also contribute to that outcome.</p>
+
+<p><strong>Strategies for Establishing Clear Connections</strong></p>
+
+<p>Knowing that module outcomes should link to course outcomes is one thing; knowing how to construct those links deliberately is another. Several concrete strategies make the connection-building process both more reliable and more defensible.</p>
+
+<p>The most productive starting point is to <strong>read each course outcome carefully and list the knowledge, skills, or competencies a learner would need to demonstrate it</strong>. This is a form of task analysis applied to outcome design. If a course outcome reads <em>"Design an original marketing campaign grounded in consumer behavior theory,"</em> the prerequisite competencies might include: understanding key consumer behavior models, identifying a target audience, applying a model to predict consumer response, selecting appropriate campaign channels, and integrating evidence into a written or visual proposal. Each of those prerequisite competencies becomes a candidate for a module outcome, distributed across the modules where each skill would logically be introduced, practiced, and applied.</p>
+
+<p>Once module outcomes are drafted or inherited from an existing course, <strong>revise them so that their verbs, content domains, and conditions logically contribute to at least one course outcome</strong>. The three components to check are:</p>
+
+<ul>
+  <li><strong>Verb:</strong> Does the action the learner is asked to perform in the module outcome build the kind of thinking required by the course outcome? A module outcome asking learners to <em>list</em> consumer behavior models contributes less to a course outcome asking them to <em>design</em> a campaign than a module outcome asking them to <em>apply</em> a model to a specific consumer scenario.</li>
+  <li><strong>Content domain:</strong> Is the subject matter of the module outcome genuinely related to what the course outcome addresses? A module outcome about social media metrics connects to a marketing campaign design outcome; a module outcome about corporate financial reporting may not, unless the course explicitly bridges those domains.</li>
+  <li><strong>Conditions:</strong> Does the context in which learners practice at the module level resemble, at least partially, the context they will face at the course outcome level? If the course outcome requires working with real organizational data, module outcomes that only use textbook examples may leave learners underprepared for the transfer required.</li>
+</ul>
+
+<p>A particularly effective diagnostic tool is the <strong>"so that" test</strong>. For each module outcome, complete the following sentence aloud: <em>"Learners will [module outcome verb and content] so that they can [course outcome verb and content]."</em> If the sentence sounds logical and causal, the connection is likely genuine. If it sounds forced or non-sequitur, the module outcome may need revision, or the assumed course outcome link may be incorrect.</p>
+
+<p>For example: <em>"Learners will apply the Theory of Planned Behavior to a case study scenario so that they can design an original marketing campaign grounded in consumer behavior theory."</em> This sentence flows — the module-level application directly enables the course-level design task. Compare that to: <em>"Learners will define the Theory of Planned Behavior so that they can design an original marketing campaign grounded in consumer behavior theory."</em> The connection here is far weaker. Definition is a necessary precursor, but it is not sufficient on its own to support a design-level outcome, which signals a gap in the module sequence.</p>
+
+<p>When a module outcome genuinely <strong>supports more than one course outcome</strong>, document each connection in the alignment map rather than choosing just one. Integrative module outcomes that simultaneously advance multiple course goals are a mark of efficient and sophisticated design. However, leaving those dual connections implicit invites confusion about what the module outcome is primarily accomplishing and can make gap analysis harder to conduct later.</p>
+
+<p><strong>Ensuring Cognitive Depth Matches Across Levels</strong></p>
+
+<p>Alignment is not only a matter of topical coverage — it is also a matter of cognitive level. A set of module outcomes that address the right subject matter but at the wrong depth of thinking will fail to prepare learners for what course outcomes actually demand. Bloom's Revised Taxonomy provides the most widely used framework for comparing cognitive levels, distinguishing among six levels: <em>Remember, Understand, Apply, Analyze, Evaluate,</em> and <em>Create</em>. Each level involves qualitatively different cognitive work, and the verbs associated with each level differ accordingly.</p>
+
+<p>The key principle is that <strong>the action verbs in module outcomes should reflect cognitive levels that build logically toward the action verb in the related course outcome</strong>. If a course outcome uses the verb <em>evaluate</em> — a high-order thinking task — then the module outcomes feeding into it should progressively move learners through the lower levels required to get there: first understanding the criteria relevant to evaluation, then applying those criteria to examples, then analyzing cases where criteria conflict, and finally constructing evaluative judgments of their own.</p>
+
+<p>It is both appropriate and expected that <strong>module outcomes earlier in a course may target lower Bloom's levels</strong>. A first-module outcome asking learners to <em>identify</em> the components of a concept is a reasonable foundation for a later-module outcome asking them to <em>compare</em> the concept to alternatives, which in turn supports a course-level outcome asking them to <em>critique</em> applications of the concept in professional practice. The progression across modules from lower to higher cognitive levels is not a flaw — it is deliberate scaffolding.</p>
+
+<p>The mismatch to guard against is the one where <strong>a course outcome demands high-order thinking but no module outcome ever reaches that cognitive depth</strong>. This is a common and consequential gap. If every module in the course asks learners only to recall definitions and summarize readings, but the course outcome asks them to synthesize multiple theoretical frameworks into a novel argument, learners have been denied the practice they need to perform at the expected level. The alignment map, annotated with Bloom's levels, makes this mismatch visible before it affects learners.</p>
+
+<p>The following table illustrates how cognitive progression might be mapped across a six-module course working toward a course outcome at the <em>Evaluate</em> level:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Module Outcome (Sample Verb)</th>
+      <th>Bloom's Level</th>
+      <th>Supported Course Outcome Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Define key ethical frameworks in professional practice</td>
+      <td>Remember / Understand</td>
+      <td rowspan="6">Evaluate — "Assess the ethical soundness of professional decisions using multiple frameworks"</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Explain how each framework applies to a given professional dilemma</td>
+      <td>Understand / Apply</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Apply an ethical framework to analyze a case study</td>
+      <td>Apply / Analyze</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Compare the conclusions reached by two competing frameworks on the same case</td>
+      <td>Analyze</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Critique the limitations of a single-framework approach to ethical decision-making</td>
+      <td>Evaluate</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Assess the ethical soundness of a real professional scenario using multiple frameworks</td>
+      <td>Evaluate</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This progression ensures that by the time learners reach the course-level evaluation task, they have practiced the component skills — definition, application, analysis, comparison, critique — at progressively demanding levels. <strong>Consistent use of Bloom's Revised Taxonomy</strong> across both levels of outcome writing is what makes this kind of comparison systematic rather than impressionistic.</p>
+
+<p><strong>Identifying and Resolving Gaps in the Map</strong></p>
+
+<p>Even carefully designed courses contain gaps when the alignment map is examined column by column and row by row. Recognizing the two primary types of gaps — coverage gaps and scope-creep gaps — and knowing how to resolve them keeps the curriculum focused and defensible.</p>
+
+<p>A <strong>coverage gap</strong> occurs when a course outcome has no corresponding module outcomes supporting it. This means the course is promising an outcome it has not actually scaffolded. Learners may encounter the course outcome on the syllabus or in a final assessment without having been given any module-level instruction, practice, or feedback that builds toward it. Coverage gaps are sometimes created inadvertently when course outcomes are added or revised without corresponding updates to module content, or when an instructor assumes that a course outcome will be addressed implicitly through the general experience of the course rather than through specific instructional design choices.</p>
+
+<p>Detecting coverage gaps requires a deliberate column-by-column review of the alignment map. For every course outcome column, at least one cell should be marked with a connection. <em>PreseMaker</em>, for instance, flags course outcomes that have no supporting module outcome, making the detection step automated and reliable. When a gap is found, the resolution typically involves one of three actions: adding a new module outcome that directly addresses the missing competency, revising an existing module outcome whose current language does not make the connection clear, or restructuring the course to ensure a particular skill is explicitly addressed within a designated module.</p>
+
+<p>The opposite problem — a <strong>scope-creep gap</strong> — occurs when a module outcome does not connect to any course outcome. This is a signal that the module is addressing content or skills that the course has not committed to delivering. Scope creep can happen when instructors include material they find interesting or that is related to the discipline without checking whether it serves the course's stated goals. It can also occur when an older course retains module outcomes that were relevant to previous course outcomes but were never updated when those course outcomes changed.</p>
+
+<p>A module outcome disconnected from all course outcomes is not automatically wrong — sometimes course redesign reveals that a course outcome should be added to formally recognize valuable content that was already present. But in many cases, an orphaned module outcome should be revised so its language makes its contribution to a course outcome explicit, or removed if it is genuinely peripheral to the course's stated purposes.</p>
+
+<p>When gaps of either type are found, the solution may be any of the following:</p>
+
+<ul>
+  <li><strong>Adding a new module outcome</strong> to cover a skill or knowledge area that a course outcome requires but no module currently addresses.</li>
+  <li><strong>Revising an existing module outcome</strong> whose intent is aligned but whose current wording does not make the connection clear or whose cognitive level does not build appropriately toward the course outcome.</li>
+  <li><strong>Restructuring which module addresses a particular skill</strong> — for example, moving a module outcome from Module 5 to Module 3 so that a foundational concept is in place before a more complex module builds on it.</li>
+  <li><strong>Removing a module outcome</strong> that, on honest examination, does not contribute to any course goal and cannot be justified as necessary scaffolding.</li>
+</ul>
+
+<p><strong>Documenting and Defending Mapping Decisions</strong></p>
+
+<p>An alignment map without explanation is a starting point; an alignment map with annotations is a finished professional document. <strong>Adding a brief rationale column or annotation</strong> to each connection transforms the map from a visual pattern into an argued position. The rationale does not need to be lengthy — a single sentence explaining why a particular module outcome was linked to a particular course outcome is usually sufficient. For example: <em>"Module 3 outcome linked to CO 2 because constructing a visualization requires learners to first master the chart selection logic introduced here."</em></p>
+
+<p>These documented decisions serve the course in at least three practical ways. First, they <strong>help future instructors or course revisers</strong> understand the original design intent without having to reconstruct it from the course materials alone. A new instructor inheriting a course can read the annotated map and immediately understand why the sequence is the way it is, what each module is contributing to the larger whole, and which decisions reflect strong pedagogical rationale versus historical accident.</p>
+
+<p>Second, documented decisions are a significant asset <strong>during accreditation or peer review</strong>. Accrediting bodies increasingly require evidence not just that a course has learning outcomes but that those outcomes are intentionally and demonstrably aligned across levels. A well-annotated alignment map is precisely the kind of artifact that demonstrates intentional, evidence-based course design rather than compliance-by-assertion. It shows that alignment was thought through, not assumed.</p>
+
+<p>Third, and perhaps most practically, documentation creates accountability for keeping the course current. <strong>Revisiting the documentation whenever course outcomes are updated</strong> ensures that module-level links do not silently become invalid. When a course outcome is revised — perhaps its cognitive level is raised from <em>explain</em> to <em>evaluate</em>, or its content domain shifts to reflect a new professional standard — the annotated map makes it immediately apparent which module outcomes will need to be revised to maintain coherent alignment. Without that documentation, those downstream adjustments are easy to overlook, and the course quietly drifts into misalignment while retaining the surface appearance of a structured curriculum.</p>
+
+<p>Together, the practices of mapping, gap analysis, cognitive-level alignment, and documented rationale constitute a rigorous and replicable approach to linking module outcomes to course outcomes. The result is a course whose components are not merely related to one another by topic but are genuinely and verifiably designed to work together — building the competencies learners need, in the sequence and at the depth the course outcomes demand.</p>
+        <div class="notes"><strong>Notes</strong>Guides learners through the complete process of mapping individual module outcomes to course-level outcomes. Covers the two-level hierarchy, the alignment map as a design and documentation tool, strategies for building and testing connections (including the &quot;so that&quot; test), cognitive progression using Bloom&#39;s Revised Taxonomy, gap identification and resolution, and professional documentation practices. Includes illustrative HTML tables for the alignment map and cognitive progression examples.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

@@ -1,0 +1,9 @@
+{
+  "Id": "c42c8f6c-aff9-48c5-a491-fbede82e4fe2",
+  "Name": "Common Actions: Running Multiple Tasks for a Single Module Together",
+  "Description": "This lesson covers the per-module Common Actions hub, where instructors can select and configure several generation tasks \u2014 such as a document per topic, a multiple-choice quiz, and a presentation \u2014 and run them together in one step. Learners will also discover how Common Actions remembers settings per course and why per-topic quiz generation improves reliability.",
+  "CreatedBy": "Ron Eaglin",
+  "CreatedDate": "2026-07-08T19:07:39.5185597-04:00",
+  "LastModifiedDate": "2026-07-08T19:07:39.519307-04:00",
+  "Actions": []
+}

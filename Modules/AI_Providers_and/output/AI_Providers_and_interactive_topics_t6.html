@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Key Encryption and Local Storage</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>API Key Encryption and Local Storage</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>API Key Encryption and Local Storage</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you add an API key to PreseMaker, you are entrusting the application with a sensitive credential that grants direct access to a paid AI service. Understanding exactly where that key lives, how it is protected, and what happens to it during normal use is essential for making an informed decision about your own security posture. PreseMaker is designed from the ground up around a local-first, encryption-backed approach to key storage — meaning the application deliberately avoids the most common pitfalls that have led to API key leaks in other software products.</p>
+
+<p><strong>What Is Local Storage for API Keys?</strong></p>
+
+<p>Local storage, in this context, means that your API key is saved exclusively on the device where PreseMaker is installed. There is no account system, no cloud sync, and no remote database involved in holding your key. When you type your key into the Settings screen and save it, that credential is written to an encrypted store that exists only within your device's file system — it never travels to a PreseMaker server, a cloud backup service managed by PreseMaker, or any other external destination as part of the saving process itself.</p>
+
+<p>This has one important practical consequence: because the key is tied to a specific installation on a specific device, it does not survive actions that destroy or reset that installation. If you uninstall PreseMaker, perform a factory reset, or wipe the application's data through your operating system, the stored key is gone with it. The application cannot recover it for you because it was never stored anywhere else. For this reason, you should always maintain your own personal record of each API key — for example, storing it in a dedicated password manager such as 1Password, Bitwarden, or the password manager built into your operating system. Think of PreseMaker's local storage as a convenience cache, not a backup vault.</p>
+
+<p><strong>How Encryption Protects Your API Keys</strong></p>
+
+<p>Storing data locally is only half of the protection story; the other half is encryption. PreseMaker does not write your API key to disk as plain readable text. Instead, the key is encrypted before it is written to storage, so the file that actually sits on your hard drive or SSD contains an unreadable ciphertext representation of your key rather than the key itself.</p>
+
+<p>To understand why this matters, consider what happens if someone with physical or remote access to your device opens the folder where PreseMaker keeps its application data and reads the storage file directly. Without encryption, they would see your key immediately. With encryption, they see something like a block of random-looking characters that is computationally infeasible to reverse without the correct decryption key. The attacker gains nothing actionable.</p>
+
+<p>Crucially, this entire process is automatic and invisible to you as the user. You do not need to create a master password, manage a certificate, or perform any extra steps. When you save a key, encryption happens in the background before the data touches the disk. When PreseMaker needs to use the key to call an AI provider, decryption happens in the background in memory, just in time for the network request. You never handle the raw key again after the initial entry.</p>
+
+<p>This protection applies uniformly across all AI providers that PreseMaker supports:</p>
+
+<ul>
+  <li><strong>Anthropic Claude</strong> — keys for accessing Claude models are encrypted and stored locally under the same scheme.</li>
+  <li><strong>Google Gemini</strong> — your Gemini API credentials receive identical treatment.</li>
+  <li><strong>OpenAI</strong> — OpenAI keys, which are among the most sensitive due to the wide range of services they can access, are fully encrypted at rest.</li>
+  <li><strong>Mistral</strong> — Mistral API keys are covered by the same local encryption approach.</li>
+</ul>
+
+<p>There is no tiered or partial protection — every supported provider's key is encrypted in exactly the same way.</p>
+
+<p><strong>Why PreseMaker Does Not Store Keys on a Server</strong></p>
+
+<p>Many applications that integrate with third-party APIs take a server-side approach: the user submits their key, the application stores it in a remote database, and the application's backend makes API calls on the user's behalf. This architecture has legitimate engineering advantages — it simplifies session management and enables features like cross-device sync — but it introduces a serious security risk. If that server is breached, every key stored in that database is potentially exposed simultaneously. High-profile breaches of SaaS companies have repeatedly demonstrated that this is not a theoretical concern.</p>
+
+<p>PreseMaker's architecture eliminates this entire class of risk by design. Because no PreseMaker server ever receives your API key, there is no PreseMaker server database of keys that could be stolen. A security incident affecting PreseMaker's infrastructure — its website, its update servers, its analytics pipeline — cannot expose your API key because that infrastructure simply does not have it.</p>
+
+<p>This design also closes a subtler risk: accidental third-party exposure. Server-side applications often integrate logging tools, error tracking services, performance monitoring platforms, and analytics providers. A misconfigured logger can inadvertently capture an API key that appears in a request header or body and ship it off to a third-party observability service. Because PreseMaker's server never sees your key, none of these downstream integrations can see it either. Your key's journey begins and ends on your own device and the AI provider's servers.</p>
+
+<p><strong>Addressing Common Privacy Concerns</strong></p>
+
+<p>A natural question when any application asks you to store a sensitive credential is: <em>could this application use my key without my knowledge?</em> With PreseMaker's local architecture, the answer is no — and here is why.</p>
+
+<p>Since the encrypted key lives only on your device, the only software that can decrypt and use it is PreseMaker running on that device, in an active session initiated by you. PreseMaker running on its own servers cannot access your key because, again, the key is not there. There is no pathway for PreseMaker as a company to silently make API calls on your behalf, bill usage to your account, or harvest your key for other purposes.</p>
+
+<p>The only moment your key leaves your device in any form is when you actively trigger content generation inside PreseMaker. At that point, the decrypted key is included in a standard API request sent directly to the relevant AI provider — for example, a request to <code>api.openai.com</code> for an OpenAI key, or to <code>api.anthropic.com</code> for a Claude key. That transmission is protected by the provider's own TLS/HTTPS connection, the same encryption technology that protects online banking and e-commerce. No PreseMaker-controlled intermediary sits between your device and the provider's API endpoint.</p>
+
+<p>You also retain complete control over the lifecycle of your stored key. At any point, you can navigate to the Settings screen, delete the stored key, or replace it with a different one. The following table summarizes where control sits for each aspect of the key's lifecycle:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Who Controls It</th>
+      <th>Where It Happens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Saving a new key</td>
+      <td>User</td>
+      <td>PreseMaker Settings screen, on your device</td>
+    </tr>
+    <tr>
+      <td>Encrypting the key at rest</td>
+      <td>PreseMaker (automatic)</td>
+      <td>Your device's local storage</td>
+    </tr>
+    <tr>
+      <td>Decrypting and using the key</td>
+      <td>PreseMaker (only when you generate content)</td>
+      <td>Your device's memory, during your active session</td>
+    </tr>
+    <tr>
+      <td>Transmitting the key to the AI provider</td>
+      <td>PreseMaker (triggered by your action)</td>
+      <td>Direct HTTPS connection to the provider's API</td>
+    </tr>
+    <tr>
+      <td>Deleting or replacing the key</td>
+      <td>User</td>
+      <td>PreseMaker Settings screen, on your device</td>
+    </tr>
+    <tr>
+      <td>Revoking the key entirely</td>
+      <td>User</td>
+      <td>AI provider's own dashboard (e.g., platform.openai.com)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>User Responsibilities for Key Security</strong></p>
+
+<p>Encryption and local storage are powerful safeguards, but they operate at the software and storage layer. There are real-world scenarios at the physical and social layer that no software design can fully prevent, and users share responsibility for guarding against them.</p>
+
+<p>The most direct risk is <strong>shared device access</strong>. Because PreseMaker can decrypt and use your stored key for anyone who opens the application on your device, anyone with physical or remote access to your device and the ability to launch PreseMaker can potentially trigger API calls that will be billed to your account. This does not require them to know or see your key — they simply need to be able to use the app. You should therefore avoid leaving PreseMaker installed and your key saved on devices that untrusted individuals can access. If you share a computer with others, consider deleting your stored key when you are finished with a session, or using operating-system-level access controls (separate user accounts, screen locks) to prevent unauthorized use.</p>
+
+<p>If you ever have reason to believe your key may have been exposed — whether through a lost device, a suspected malware infection, or any other circumstance — the correct response is to <strong>revoke the key immediately</strong> through the AI provider's own dashboard. Revocation at the provider level is the definitive action: it invalidates the key everywhere, regardless of where it might be stored or who might have a copy. After revoking, generate a fresh key and add the new one to PreseMaker. The steps for reaching the revocation dashboard vary by provider:</p>
+
+<ul>
+  <li><strong>OpenAI:</strong> Visit <code>platform.openai.com</code>, navigate to <em>API keys</em>, and delete the compromised key.</li>
+  <li><strong>Anthropic Claude:</strong> Visit <code>console.anthropic.com</code>, go to <em>API Keys</em>, and revoke the key.</li>
+  <li><strong>Google Gemini:</strong> Visit <code>aistudio.google.com</code> or the Google Cloud console, navigate to your API credentials, and disable or delete the key.</li>
+  <li><strong>Mistral:</strong> Visit <code>console.mistral.ai</code> and manage your keys from the API Keys section.</li>
+</ul>
+
+<p>Finally, make a habit of <strong>regularly reviewing your API provider's usage dashboard</strong>. Each provider offers a usage or billing page showing how many tokens or requests have been made against your key, often broken down by time period. Monitoring this dashboard is the most reliable way to detect unauthorized use early — before it results in a large unexpected bill. If you see usage that does not correspond to your own activity in PreseMaker or any other tool you use, treat it as a signal of compromise and revoke immediately. Many providers also allow you to set spending limits or usage alerts, which can serve as an automatic early-warning system.</p>
+        <div class="notes"><strong>Notes</strong>Covers all listed subtopics in depth: local storage definition and implications, encryption mechanism and automatic operation, server-free architecture and its security rationale, privacy assurances around key transmission and user control, and user-side responsibilities including shared device risks, revocation procedures, and usage monitoring. A summary table is included to clarify the key lifecycle clearly.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

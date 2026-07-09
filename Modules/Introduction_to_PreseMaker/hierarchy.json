@@ -1,0 +1,811 @@
+{
+  "ModuleFolderName": "Introduction_to_PreseMaker",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:08:11.5183654-04:00",
+  "ModifiedDate": "2026-07-08T19:09:52.4379023-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "ea934e2c-9165-4741-8495-a2960fb83404",
+      "Title": "What Is PreseMaker?",
+      "Summary": "Introduces PreseMaker as an AI-assisted course authoring tool for Windows, outlining its core purpose and the key problems it is designed to solve.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:08:11.5183654-04:00",
+      "ModifiedDate": "2026-07-08T19:08:11.5183654-04:00",
+      "Elements": [
+        {
+          "Id": "fd18f653-64fa-4b4e-8373-2328b06fdde0",
+          "TopicId": "ea934e2c-9165-4741-8495-a2960fb83404",
+          "Title": "Definition of PreseMaker",
+          "BodyText": "PreseMaker is an AI-assisted course authoring tool designed to run on Windows operating systems.",
+          "Notes": "It combines traditional course-building features with artificial intelligence capabilities to streamline the content creation process.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:08:29.1290692-04:00",
+          "ModifiedDate": "2026-07-08T19:08:29.1290692-04:00",
+          "Items": [
+            {
+              "Id": "1b9dcfef-5536-4c38-bf36-697efe4026d1",
+              "Text": "PreseMaker is purpose-built software that runs natively on Windows.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7477e6fe-27e9-4b76-bce1-adfa4c904c91",
+              "Text": "It integrates AI assistance directly into the authoring workflow, distinguishing it from conventional presentation or document tools.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "51c45af7-a110-4b2b-aa2d-ee47f67570e9",
+          "TopicId": "ea934e2c-9165-4741-8495-a2960fb83404",
+          "Title": "Who PreseMaker Is Designed For",
+          "BodyText": "PreseMaker targets educators, trainers, and instructional designers who need to create structured learning materials efficiently.",
+          "Notes": "Whether building corporate training, academic courses, or professional development content, PreseMaker serves anyone responsible for producing organized e-learning modules.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:08:29.1290692-04:00",
+          "ModifiedDate": "2026-07-08T19:08:29.1290692-04:00",
+          "Items": [
+            {
+              "Id": "075ee1d0-36ad-438d-94e7-8bd62eead21e",
+              "Text": "The tool is aimed at users who need to develop courses without requiring deep technical or programming expertise.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ebe0b420-2eaf-4d09-81b7-615db276f94d",
+              "Text": "It supports both novice authors who benefit from AI guidance and experienced designers who want to accelerate production.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "77f0944c-e3a5-48f7-86c5-fec45e9e323a",
+          "TopicId": "ea934e2c-9165-4741-8495-a2960fb83404",
+          "Title": "Core Purpose of PreseMaker",
+          "BodyText": "The primary purpose of PreseMaker is to take users from a blank starting point to fully populated course materials in a structured, guided way.",
+          "Notes": "Rather than starting with an empty document, authors are guided through a defined hierarchy that ensures content is organized and complete.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:08:29.1290692-04:00",
+          "ModifiedDate": "2026-07-08T19:08:29.1290692-04:00",
+          "Items": [
+            {
+              "Id": "a7eff0ad-8af7-4b0a-8b89-f3008024dc79",
+              "Text": "PreseMaker provides a clear end-to-end authoring path, reducing the ambiguity of where to start when building a course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "be85723f-a43e-4fad-b209-57c0962608bf",
+              "Text": "Its core purpose centers on producing ready-to-use learning materials, not just slide decks or raw notes.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "cdbd9912-5588-4719-ba15-d51d61019f9d",
+          "TopicId": "ea934e2c-9165-4741-8495-a2960fb83404",
+          "Title": "Key Problems PreseMaker Solves",
+          "BodyText": "PreseMaker addresses common pain points in course authoring, including inconsistent structure, slow content generation, and the difficulty of organizing large amounts of material.",
+          "Notes": "Many authors struggle with maintaining consistency across modules or spend excessive time writing content from scratch; PreseMaker\u0027s AI assistance and hierarchy system directly tackle these issues.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:08:29.1290692-04:00",
+          "ModifiedDate": "2026-07-08T19:08:29.1290692-04:00",
+          "Items": [
+            {
+              "Id": "b748937e-ae89-48bb-a1ea-4ff28823ee56",
+              "Text": "It eliminates the blank-page problem by providing AI-driven content suggestions and a predefined organizational framework.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "cc149fa3-60a9-4eb8-875b-2d40ff99fa23",
+              "Text": "It reduces structural inconsistency by enforcing a Course \u2192 Module \u2192 Content hierarchy across all projects.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "665e187e-8f03-4d73-8995-0360e85beffb",
+              "Text": "It accelerates production timelines by automating repetitive or time-consuming content generation tasks.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8379c447-70a4-461c-8264-c34341668718",
+          "TopicId": "ea934e2c-9165-4741-8495-a2960fb83404",
+          "Title": "AI Assistance as a Defining Feature",
+          "BodyText": "The AI component of PreseMaker is central to what sets it apart from conventional authoring tools.",
+          "Notes": "AI assistance in PreseMaker is embedded throughout the workflow rather than being an optional add-on, making intelligent suggestions a natural part of how content is built.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:08:29.1290692-04:00",
+          "ModifiedDate": "2026-07-08T19:08:29.1290692-04:00",
+          "Items": [
+            {
+              "Id": "7102796b-b170-4e15-9fca-ac34a4c38e38",
+              "Text": "AI assistance helps authors generate, refine, and populate content elements without requiring manual writing for every section.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "39298088-7f9a-4fce-923d-86cbe0498240",
+              "Text": "The tool leverages AI to maintain alignment between course goals and the content produced within each module.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "8437eb78-8f8f-487d-854a-f9f2e89fe7da",
+          "TopicId": "ea934e2c-9165-4741-8495-a2960fb83404",
+          "Title": "Windows Platform Context",
+          "BodyText": "PreseMaker is specifically built for the Windows environment, meaning its features and interface are optimized for that platform.",
+          "Notes": "Understanding the platform context helps users know what system requirements to expect and confirms that PreseMaker is a desktop application rather than a browser-based or cross-platform tool.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:08:29.1290692-04:00",
+          "ModifiedDate": "2026-07-08T19:08:29.1290692-04:00",
+          "Items": [
+            {
+              "Id": "34c08f5e-5c9b-43d6-9a7c-517bd07d8b40",
+              "Text": "As a Windows application, PreseMaker operates as installed desktop software rather than a web-based service.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9cc4aa1f-dd3d-4d45-82d0-d9ded2266472",
+              "Text": "Its Windows-native design allows it to integrate with local file systems and take advantage of desktop computing resources.",
+              "SortOrder": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "b21c9dde-19d4-477d-b218-b2b7f17cbca1",
+      "Title": "Who Is PreseMaker For?",
+      "Summary": "Identifies the target users of PreseMaker, including instructional designers, trainers, and educators, and explains how the tool addresses their specific authoring challenges.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:08:11.5183654-04:00",
+      "ModifiedDate": "2026-07-08T19:08:11.5183654-04:00",
+      "Elements": [
+        {
+          "Id": "647bc759-c59f-4f92-80e1-79f99eebe04d",
+          "TopicId": "b21c9dde-19d4-477d-b218-b2b7f17cbca1",
+          "Title": "Instructional Designers",
+          "BodyText": "Instructional designers are a primary audience for PreseMaker, as the tool is built to streamline the complex process of structuring and authoring course content.",
+          "Notes": "Instructional designers often manage multiple courses simultaneously and need tools that enforce consistent structure while reducing manual effort.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:08:48.0866725-04:00",
+          "ModifiedDate": "2026-07-08T19:08:48.0866725-04:00",
+          "Items": [
+            {
+              "Id": "29d4301f-0b69-4c14-a4ec-8d98f232d921",
+              "Text": "PreseMaker\u0027s Course \u2192 Module \u2192 Content hierarchy aligns with standard instructional design frameworks, making adoption straightforward.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d2965acd-180a-48ae-bcd1-a42d1c6ac57f",
+              "Text": "The AI-assisted authoring features help designers rapidly populate content outlines without starting from a blank page each time.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "20b4cf5a-49b6-408a-8e42-c26948a70fed",
+              "Text": "Designers benefit from a consistent workflow that takes a course from initial setup to fully developed materials in fewer steps.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "5409b979-7e27-4f14-b04a-9b6fa4df3a5a",
+          "TopicId": "b21c9dde-19d4-477d-b218-b2b7f17cbca1",
+          "Title": "Corporate Trainers",
+          "BodyText": "Corporate trainers who need to develop and deliver training programs quickly will find PreseMaker addresses their time and resource constraints.",
+          "Notes": "Trainers in corporate environments frequently face tight deadlines and may lack dedicated instructional design support, making an AI-assisted tool especially valuable.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:08:48.0866725-04:00",
+          "ModifiedDate": "2026-07-08T19:08:48.0866725-04:00",
+          "Items": [
+            {
+              "Id": "6fd09a25-2f57-4828-93ab-6082e45bfbb0",
+              "Text": "PreseMaker reduces the time spent on manual content creation by assisting with drafting and organizing training modules.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "225862d8-b43a-4742-93b6-907269abe49f",
+              "Text": "Trainers can move from a blank course to populated materials faster, allowing more focus on delivery and learner engagement.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "0bca9048-ca2f-42ca-b914-8ebf1d1a4bc3",
+              "Text": "The tool\u0027s structured hierarchy helps trainers maintain clarity and consistency across multiple training programs.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f489db3f-216d-4cdc-93b1-9a8e121aebe0",
+          "TopicId": "b21c9dde-19d4-477d-b218-b2b7f17cbca1",
+          "Title": "Educators and Academic Professionals",
+          "BodyText": "Educators at schools, colleges, and universities can use PreseMaker to author structured course content without requiring deep technical expertise.",
+          "Notes": "Educators often have strong subject-matter knowledge but limited experience with dedicated authoring tools, so PreseMaker\u0027s guided workflow lowers the barrier to entry.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:08:48.0866725-04:00",
+          "ModifiedDate": "2026-07-08T19:08:48.0866725-04:00",
+          "Items": [
+            {
+              "Id": "3a015212-d9a3-4ac6-9f0e-14d682c9e05f",
+              "Text": "The AI assistance helps educators translate their subject expertise into well-organized, learnable content modules.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1730efb9-194d-4915-a074-3792bdea6f59",
+              "Text": "PreseMaker\u0027s hierarchical structure mirrors the way academic courses are naturally organized into units and lessons.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "200ef415-398c-425b-8bf8-f45ba868342c",
+              "Text": "Educators can produce professional course materials on a Windows desktop without relying on external developers or designers.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "1eecd80f-42ab-404d-83f8-687795da7983",
+          "TopicId": "b21c9dde-19d4-477d-b218-b2b7f17cbca1",
+          "Title": "Common Authoring Challenges PreseMaker Addresses",
+          "BodyText": "Across all user types, PreseMaker is designed to solve recurring pain points that instructional designers, trainers, and educators face when creating course content.",
+          "Notes": "Understanding these shared challenges clarifies why PreseMaker\u0027s specific feature set is relevant to such a broad audience.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:08:48.0866725-04:00",
+          "ModifiedDate": "2026-07-08T19:08:48.0866725-04:00",
+          "Items": [
+            {
+              "Id": "88ba732e-80d7-430c-a90d-954bf7919354",
+              "Text": "Starting from a blank course is one of the most time-consuming challenges; PreseMaker\u0027s AI assistance helps users get past the blank-page problem quickly.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0d3828e5-9d88-42bd-a571-22077b5e7b0a",
+              "Text": "Maintaining a consistent structure across a course is difficult manually, but PreseMaker enforces this through its Course \u2192 Module \u2192 Content hierarchy.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8ba8f15f-8411-452a-9b09-5fc81907bc46",
+              "Text": "Users often lack specialized technical skills for content authoring, and PreseMaker\u0027s Windows-based interface reduces that technical barrier.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "1b108af7-4693-44a1-9f7c-9e2fae1b333b",
+              "Text": "The tool consolidates the authoring workflow so users can move from planning to fully populated materials within a single application.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "6f166bb7-40cf-48b4-9d03-11a01c18f95e",
+          "TopicId": "b21c9dde-19d4-477d-b218-b2b7f17cbca1",
+          "Title": "Why a Windows-Based Tool Matters for These Users",
+          "BodyText": "PreseMaker is specifically built for Windows, which reflects the environment in which many instructional designers, trainers, and educators already work.",
+          "Notes": "A desktop-native application can offer performance and integration advantages over browser-based tools, which is a practical consideration for users managing large course projects.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:08:48.0866725-04:00",
+          "ModifiedDate": "2026-07-08T19:08:48.0866725-04:00",
+          "Items": [
+            {
+              "Id": "2ddf8205-f391-426d-b9d1-53227cd3b66c",
+              "Text": "Many corporate and educational institutions standardize on Windows environments, making a Windows-native tool immediately accessible to these users.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6d623f81-64b1-4359-8b9d-7a4a99325ecc",
+              "Text": "A dedicated desktop application allows users to work on course content without depending on continuous internet connectivity.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5a8c1a59-5915-4fec-a07c-45691fd8270b",
+              "Text": "Being Windows-based means PreseMaker can integrate naturally into existing workflows and file management practices familiar to these professionals.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "f0a8f711-f96f-4c79-aa52-74fc9d7c41c8",
+      "Title": "The Course \u2192 Module \u2192 Content Hierarchy",
+      "Summary": "Explains the three-level organizational structure that PreseMaker uses to arrange learning materials, clarifying how courses, modules, and content items relate to one another.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:08:11.5183654-04:00",
+      "ModifiedDate": "2026-07-08T19:08:11.5183654-04:00",
+      "Elements": [
+        {
+          "Id": "6e8408e7-8445-4e2d-b417-4ea64744ba80",
+          "TopicId": "f0a8f711-f96f-4c79-aa52-74fc9d7c41c8",
+          "Title": "The Three-Level Structure Overview",
+          "BodyText": "PreseMaker organizes all learning materials into a strict three-level hierarchy: Course, Module, and Content. This structure provides a consistent framework for arranging instructional materials from the broadest category down to individual pieces of content.",
+          "Notes": "Think of the hierarchy as a nesting system \u2014 each level lives inside the one above it, keeping everything organized and easy to navigate.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:09:12.0437245-04:00",
+          "ModifiedDate": "2026-07-08T19:09:12.0437245-04:00",
+          "Items": [
+            {
+              "Id": "b9d0f35e-07bd-4e8c-8357-aa56c4ebb18d",
+              "Text": "The Course is the top-level container that represents the entire learning program or subject area.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "df6e0791-2e3b-46ad-97b5-f8049744da77",
+              "Text": "Modules sit inside a Course and group related topics or units together.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a31b5f9d-cc3e-4977-a234-f3799a1039d2",
+              "Text": "Content items are the lowest level and represent the actual learning materials, such as lessons, quizzes, or activities.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "aab35e27-17fb-4f1e-a307-3e5f877a1ff8",
+              "Text": "Every piece of learning material in PreseMaker must belong to a Module, which in turn must belong to a Course.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "2c958226-1a9b-4ae7-8561-d9c2b0674f67",
+          "TopicId": "f0a8f711-f96f-4c79-aa52-74fc9d7c41c8",
+          "Title": "The Course Level",
+          "BodyText": "A Course is the highest organizational unit in PreseMaker and serves as the overall container for an entire subject or training program. It defines the broad scope of what learners will study.",
+          "Notes": "For example, a Course might be titled \u0027Introduction to Project Management\u0027 and contain everything a learner needs to complete that program.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:09:12.0437245-04:00",
+          "ModifiedDate": "2026-07-08T19:09:12.0437245-04:00",
+          "Items": [
+            {
+              "Id": "8c4c3b7c-3227-40d9-9e3f-013c85b1112a",
+              "Text": "A Course holds all related Modules and their Content under one unified title and structure.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4f88a7c1-b6bd-4ec8-b8f8-adddd197d8b2",
+              "Text": "Courses are typically aligned to a single learning objective or professional topic area.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b95c2770-a4b3-40c1-bedd-82bbceac2b54",
+              "Text": "Settings and properties applied at the Course level can influence the Modules and Content nested within it.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3f8078cb-e0b5-41bb-92d7-368b1caf54e8",
+          "TopicId": "f0a8f711-f96f-4c79-aa52-74fc9d7c41c8",
+          "Title": "The Module Level",
+          "BodyText": "Modules are the mid-tier organizational units that break a Course into manageable, thematically related sections. Each Module groups Content items that share a common topic or learning goal.",
+          "Notes": "A Course on project management might have Modules such as \u0027Planning,\u0027 \u0027Execution,\u0027 and \u0027Closure,\u0027 each containing its own set of lessons and activities.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:09:12.0437245-04:00",
+          "ModifiedDate": "2026-07-08T19:09:12.0437245-04:00",
+          "Items": [
+            {
+              "Id": "8962e39e-c797-409c-8b39-68a52aff4e41",
+              "Text": "A single Course can contain multiple Modules, allowing complex subjects to be divided into logical units.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f8def6cc-129e-45bc-b3c4-77bdb7213158",
+              "Text": "Modules help learners navigate a Course by providing clear, labeled sections.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ac7b0f1e-2522-4b79-a8c5-ca214adfa624",
+              "Text": "Each Module is an independent grouping, meaning its Content can be authored and edited without affecting other Modules.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8b75ffa1-c0cb-4d9f-be5a-ff6dc20efd97",
+          "TopicId": "f0a8f711-f96f-4c79-aa52-74fc9d7c41c8",
+          "Title": "The Content Level",
+          "BodyText": "Content items are the individual learning assets that live inside Modules and represent the actual instructional material learners interact with. This is where the core teaching and assessment activities reside.",
+          "Notes": "Content items could include slides, written lessons, quizzes, or other media elements generated or managed within PreseMaker.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:09:12.0437245-04:00",
+          "ModifiedDate": "2026-07-08T19:09:12.0437245-04:00",
+          "Items": [
+            {
+              "Id": "381d9e05-01b4-4ec9-a302-278aadd6632f",
+              "Text": "Each Content item belongs to exactly one Module and cannot exist outside the hierarchy.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2b4c370a-2d9e-4ab3-a136-cdb1f22cdf3d",
+              "Text": "Content items are the most granular level of the structure and represent discrete learning moments or assessments.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "441210dd-3b2b-4acc-a034-e788cf443347",
+              "Text": "Multiple Content items can be added to a single Module to build out a comprehensive unit of learning.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "aab0c719-4214-4989-ad01-0abefc075ee1",
+              "Text": "PreseMaker\u0027s AI-assisted authoring tools operate primarily at the Content level to help populate materials efficiently.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "58e3be08-5c78-4f05-a05f-d087bea633ed",
+          "TopicId": "f0a8f711-f96f-4c79-aa52-74fc9d7c41c8",
+          "Title": "How the Levels Relate to One Another",
+          "BodyText": "The three levels are interdependent \u2014 a Content item cannot exist without a Module, and a Module cannot exist without a Course. This parent-child relationship ensures that all materials remain organized and contextually connected.",
+          "Notes": "This dependency means authors must create a Course first, then add Modules to it, and finally populate those Modules with Content items.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:09:12.0437245-04:00",
+          "ModifiedDate": "2026-07-08T19:09:12.0437245-04:00",
+          "Items": [
+            {
+              "Id": "669bd962-f0b3-4a61-a9d7-c717d141c83a",
+              "Text": "Deleting or restructuring a parent level, such as a Module, directly affects all Content items nested within it.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "43ed37c0-c766-484c-b1c5-ad25135ace75",
+              "Text": "The hierarchy enforces a logical authoring sequence, guiding course creators from broad structure to specific details.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7c17aaa6-80a9-4af1-a76c-bc084c08e29c",
+              "Text": "Navigating between levels is a core part of the PreseMaker workflow, from setting up a blank Course to fully populating it with materials.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6899883c-ca49-4fa3-8e6b-d3eef807ae5e",
+          "TopicId": "f0a8f711-f96f-4c79-aa52-74fc9d7c41c8",
+          "Title": "Why This Hierarchy Matters for Course Authoring",
+          "BodyText": "The Course \u2192 Module \u2192 Content hierarchy is not just an organizational choice \u2014 it is the foundation of how PreseMaker manages, generates, and displays learning materials. Understanding it is essential before beginning any authoring work.",
+          "Notes": "This structure mirrors best practices in instructional design, where learning is scaffolded from broad goals down to specific activities.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:09:12.0437245-04:00",
+          "ModifiedDate": "2026-07-08T19:09:12.0437245-04:00",
+          "Items": [
+            {
+              "Id": "8f473d97-f1c9-4c93-94cb-ee4340b23151",
+              "Text": "The hierarchy allows PreseMaker to apply AI assistance at the right level, generating content that fits contextually within its Module and Course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b03c4138-8bc0-4ad0-b3bf-55be3f10110c",
+              "Text": "A well-structured hierarchy makes it easier to update, reorder, or repurpose materials without disrupting the entire program.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b456452e-d0d8-4c30-9b16-086f18c7689f",
+              "Text": "Learners also benefit from the hierarchy because it provides clear navigation and a logical progression through the material.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "1c8cb5b4-c66c-49dc-9fb7-1315d13b26fa",
+      "Title": "The PreseMaker Workflow Overview",
+      "Summary": "Walks through the general process of building a course in PreseMaker, from creating a blank course to generating and populating it with fully developed learning materials.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:08:11.5183654-04:00",
+      "ModifiedDate": "2026-07-08T19:08:11.5183654-04:00",
+      "Elements": [
+        {
+          "Id": "fc651b4d-5ecb-4631-93e8-c56d598d4339",
+          "TopicId": "1c8cb5b4-c66c-49dc-9fb7-1315d13b26fa",
+          "Title": "Starting with a Blank Course",
+          "BodyText": "Every project in PreseMaker begins by creating a new, empty course \u2014 the top-level container that will eventually hold all of your learning materials.",
+          "Notes": "Think of the blank course as the foundation of a building: nothing else can be added until this structure exists.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:09:34.7595541-04:00",
+          "ModifiedDate": "2026-07-08T19:09:34.7595541-04:00",
+          "Items": [
+            {
+              "Id": "0b26bcde-6d41-47d6-95b3-650b4d7cd3b8",
+              "Text": "Opening PreseMaker presents the option to create a new course or open an existing one.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "53967d4d-33a4-456c-844a-594a6133166d",
+              "Text": "Giving the course a name and basic settings at this stage establishes the project identity before any content is built.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b4328804-08ae-495c-b495-a2f3e42dacd0",
+              "Text": "This first step anchors everything else in the workflow, ensuring all subsequent materials belong to a single, organized project.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3e734cad-4c65-40aa-8c2a-229e769510b4",
+          "TopicId": "1c8cb5b4-c66c-49dc-9fb7-1315d13b26fa",
+          "Title": "Defining the Course Structure",
+          "BodyText": "After the blank course exists, the next step is establishing its architecture by adding modules \u2014 the mid-level groupings that organize related content together.",
+          "Notes": "A course on customer service, for example, might contain separate modules for Communication Skills, Handling Complaints, and Policy Knowledge.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:09:34.7595541-04:00",
+          "ModifiedDate": "2026-07-08T19:09:34.7595541-04:00",
+          "Items": [
+            {
+              "Id": "f9b811b2-3ab6-4d59-9399-a9aa1ab9bd9e",
+              "Text": "Modules divide a course into logical sections, making navigation and learning progression clearer for end users.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c9b1373c-5573-4d53-a1f2-ca6c887711ad",
+              "Text": "Each module acts as a container that will later be filled with the actual content items learners interact with.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "18f37c17-6210-49b5-b151-a9d60a1b6c57",
+              "Text": "Planning module titles before generating content helps PreseMaker\u0027s AI produce more targeted and coherent materials.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a95c54f2-7261-4c8c-ba23-be8b99ee1c71",
+          "TopicId": "1c8cb5b4-c66c-49dc-9fb7-1315d13b26fa",
+          "Title": "Understanding the Course \u2192 Module \u2192 Content Hierarchy",
+          "BodyText": "PreseMaker organizes all learning materials within a strict three-level hierarchy: Course at the top, Modules in the middle, and Content items at the bottom.",
+          "Notes": "This hierarchy mirrors how most professional instructional design frameworks structure training programs, making PreseMaker intuitive for experienced designers and newcomers alike.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:09:34.7595541-04:00",
+          "ModifiedDate": "2026-07-08T19:09:34.7595541-04:00",
+          "Items": [
+            {
+              "Id": "b01d543a-6034-47f5-ad59-32e4a164e95d",
+              "Text": "The Course level holds global settings and metadata that apply to the entire learning experience.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "32cbdfc4-f75a-494c-8518-4319bc97ca6b",
+              "Text": "Modules group thematically related content, allowing learners to progress through the course in a structured sequence.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3148a35a-b866-43b2-b635-2d632198275c",
+              "Text": "Content items \u2014 such as lessons, quizzes, or activities \u2014 live inside modules and represent the actual learning interactions.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "ec979fc6-c0d6-4103-ab94-21756219f801",
+              "Text": "Every content item must belong to a module, and every module must belong to a course; nothing exists outside this hierarchy.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "6fbc10aa-e22d-4ed4-8bb3-740476e990a1",
+          "TopicId": "1c8cb5b4-c66c-49dc-9fb7-1315d13b26fa",
+          "Title": "Generating Content with AI Assistance",
+          "BodyText": "Once the structure is in place, PreseMaker\u0027s AI engine can generate fully developed learning materials to populate each module.",
+          "Notes": "The AI uses the course name, module titles, and any additional prompts or parameters the author provides to produce relevant, on-topic content drafts.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:09:34.7595541-04:00",
+          "ModifiedDate": "2026-07-08T19:09:34.7595541-04:00",
+          "Items": [
+            {
+              "Id": "3a31b46d-ae97-4889-b656-98cc553c92b4",
+              "Text": "Authors can trigger AI generation at the module level, producing multiple content items in a single step.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a6f17edd-5d9d-42b9-b140-ea201ee69919",
+              "Text": "Generated materials arrive as editable drafts, giving subject-matter experts a strong starting point rather than a blank page.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f600b0b5-7bc8-408a-b5fd-342dac7d2bad",
+              "Text": "The AI considers the context of the entire course structure when generating content, helping maintain consistency across modules.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "66cad992-8138-47e0-90e1-b4ada9731051",
+          "TopicId": "1c8cb5b4-c66c-49dc-9fb7-1315d13b26fa",
+          "Title": "Reviewing and Populating Generated Materials",
+          "BodyText": "After AI generation, the workflow shifts to a human review phase where authors examine, refine, and finalize the content that has been produced.",
+          "Notes": "This review stage is critical for accuracy and brand alignment \u2014 the AI provides efficiency, but the author provides expertise and judgment.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:09:34.7595541-04:00",
+          "ModifiedDate": "2026-07-08T19:09:34.7595541-04:00",
+          "Items": [
+            {
+              "Id": "b30729ca-5aff-4c9b-91d4-8052031f868f",
+              "Text": "Each generated content item can be edited directly within PreseMaker, allowing authors to adjust wording, add examples, or remove irrelevant sections.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0512a95c-c415-4fcf-81c0-e705c0cae155",
+              "Text": "Authors can accept generated content as-is, modify it, or replace it entirely with manually written material.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "849dfa3c-6941-401e-bedf-0402bc80020a",
+              "Text": "Populating all modules with reviewed content moves the course from a structural skeleton to a fully developed learning experience.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "57b35f53-2e30-4e42-ba13-fa49b069ce8e",
+          "TopicId": "1c8cb5b4-c66c-49dc-9fb7-1315d13b26fa",
+          "Title": "Completing the Workflow: From Blank to Fully Built",
+          "BodyText": "The PreseMaker workflow concludes when all modules contain reviewed, polished content \u2014 transforming the original blank course into a complete, ready-to-use training program.",
+          "Notes": "Because the workflow is modular, authors can complete one module at a time, making it easy to build large courses incrementally without losing progress.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:09:34.7595541-04:00",
+          "ModifiedDate": "2026-07-08T19:09:34.7595541-04:00",
+          "Items": [
+            {
+              "Id": "d7a89778-b7f0-42d5-9c28-e27ab3b0e285",
+              "Text": "A fully built course in PreseMaker contains at least one module, and each module contains at least one finalized content item.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "624b26e3-72e8-4044-af6f-b8c74f1dbc2f",
+              "Text": "The end-to-end process \u2014 create, structure, generate, review, finalize \u2014 can be repeated for any number of courses without changing the core workflow.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4995e0a9-1209-4db1-811c-85152bfb264a",
+              "Text": "Understanding this complete workflow before starting helps authors plan their projects efficiently and set realistic timelines for course delivery.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "58a1c604-7ab0-47c6-99ab-39f3148ddc9f",
+      "Title": "How AI Assistance Works in PreseMaker",
+      "Summary": "Describes the role of AI within PreseMaker, highlighting how it accelerates and supports content creation throughout the authoring process.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:08:11.5183654-04:00",
+      "ModifiedDate": "2026-07-08T19:08:11.5183654-04:00",
+      "Elements": [
+        {
+          "Id": "9b75bbc4-a820-4af1-85c8-b1ea59a55b36",
+          "TopicId": "58a1c604-7ab0-47c6-99ab-39f3148ddc9f",
+          "Title": "AI as a Content Acceleration Engine",
+          "BodyText": "PreseMaker uses AI assistance to significantly speed up the course authoring process, reducing the time authors spend generating content from scratch.",
+          "Notes": "Rather than replacing the author, the AI acts as a collaborative engine that handles time-consuming drafting tasks so authors can focus on quality and instructional strategy.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:09:52.4262245-04:00",
+          "ModifiedDate": "2026-07-08T19:09:52.4262245-04:00",
+          "Items": [
+            {
+              "Id": "5aa827ab-b2d7-47c7-b5d3-df62fe36bcbc",
+              "Text": "AI generates initial content drafts based on the author\u0027s inputs, minimizing blank-page paralysis.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f19c5482-1eb5-4ae0-b7ba-e2cef45e72f1",
+              "Text": "The acceleration benefit is most apparent when building out multiple modules or large content hierarchies quickly.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6e11056f-82b3-42a8-9cb6-b81e1d4b85bb",
+              "Text": "Authors retain full control to edit, refine, or replace any AI-generated content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6aaf9c19-4e91-4609-9707-c1e7fc88d8f2",
+          "TopicId": "58a1c604-7ab0-47c6-99ab-39f3148ddc9f",
+          "Title": "AI Support Throughout the Authoring Workflow",
+          "BodyText": "AI assistance is embedded across the entire authoring workflow in PreseMaker, not limited to a single step or phase.",
+          "Notes": "This pervasive integration means authors encounter AI suggestions and generation capabilities at the course, module, and content levels of the hierarchy.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:09:52.4262245-04:00",
+          "ModifiedDate": "2026-07-08T19:09:52.4262245-04:00",
+          "Items": [
+            {
+              "Id": "a5476538-0d66-48ad-9002-ef5426066969",
+              "Text": "AI can assist at each level of the Course \u2192 Module \u2192 Content hierarchy, providing relevant support wherever the author is working.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4b10a6b7-6a2d-4021-a6b8-fab9190a81d8",
+              "Text": "From populating module summaries to drafting detailed content elements, AI assistance adapts to the authoring stage.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ba684648-fa92-4bdf-a11e-7f3acd33bd9d",
+              "Text": "This continuous support reduces the cognitive load on authors as they move from planning to full content population.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "fc300b22-8e6b-4925-9d9f-b50750a6492c",
+          "TopicId": "58a1c604-7ab0-47c6-99ab-39f3148ddc9f",
+          "Title": "Problem-Solving Role of AI in PreseMaker",
+          "BodyText": "PreseMaker\u0027s AI assistance directly addresses common pain points experienced by course authors, particularly around content creation efficiency.",
+          "Notes": "The tool is designed for authors who may be subject-matter experts but not necessarily professional writers, making AI support especially valuable.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:09:52.4262245-04:00",
+          "ModifiedDate": "2026-07-08T19:09:52.4262245-04:00",
+          "Items": [
+            {
+              "Id": "540d2450-7bb3-43c7-93b0-c7abcf837d41",
+              "Text": "AI helps solve the problem of slow, labor-intensive content drafting that can bottleneck course development.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ed125c4c-7499-4398-8ccd-0e7ddb2f5c7e",
+              "Text": "Authors who lack writing confidence can rely on AI-generated text as a strong starting foundation.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d7592d00-03ef-42a7-a67c-bf7114ae5e6b",
+              "Text": "By automating repetitive drafting tasks, AI frees authors to invest more effort in instructional design decisions.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f150e90a-8cb3-4dc0-893e-ef89dfdc272a",
+          "TopicId": "58a1c604-7ab0-47c6-99ab-39f3148ddc9f",
+          "Title": "AI as a Supportive, Not Autonomous, Tool",
+          "BodyText": "The AI in PreseMaker is designed to support and augment human authoring rather than operate independently or make final decisions.",
+          "Notes": "This distinction is important for authors to understand so they approach AI-generated content critically and treat it as a draft rather than a finished product.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:09:52.4262245-04:00",
+          "ModifiedDate": "2026-07-08T19:09:52.4262245-04:00",
+          "Items": [
+            {
+              "Id": "ff251f24-02ae-45e5-8eaf-3b5a7b9728aa",
+              "Text": "AI suggestions serve as editable starting points, ensuring the author\u0027s voice and intent remain central to the course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "00afa4c3-8527-4033-8405-ac27476b8ddf",
+              "Text": "Authors guide the AI by providing context, topics, and structure, keeping the human in the driver\u0027s seat.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "fb71176b-d4cd-4ec8-9d18-7a7882f15cf2",
+              "Text": "The supportive model ensures quality control remains with the author, not the AI system.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "9db44bf9-97be-4e2f-8325-d069548981a7",
+          "TopicId": "58a1c604-7ab0-47c6-99ab-39f3148ddc9f",
+          "Title": "AI Assistance and the Course Hierarchy",
+          "BodyText": "PreseMaker\u0027s AI capabilities are tightly integrated with its core Course \u2192 Module \u2192 Content structure, providing contextually relevant assistance at each tier.",
+          "Notes": "Understanding this alignment helps authors know where and how to invoke AI support most effectively during their workflow.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:09:52.4262245-04:00",
+          "ModifiedDate": "2026-07-08T19:09:52.4262245-04:00",
+          "Items": [
+            {
+              "Id": "99b1e409-bb88-4b10-a6ee-2cee108fd6e3",
+              "Text": "At the Course level, AI can help frame overarching descriptions and learning objectives.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b0b4775f-39cc-4279-9350-705565905f99",
+              "Text": "At the Module level, AI assists in generating summaries and topic outlines that align with course goals.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "fac3b90a-6f56-4f12-96e5-847904b2071c",
+              "Text": "At the Content level, AI produces detailed instructional text, examples, or explanations within individual content items.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 28
+}

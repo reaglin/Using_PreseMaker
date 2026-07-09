@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing Per-Slide Speaker Notes</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Writing Per-Slide Speaker Notes</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Writing Per-Slide Speaker Notes</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Speaker notes are the backbone of any narrated presentation. In a text-to-speech–driven eLearning workflow, the notes field attached to each slide is not an afterthought or a presenter's private reminder — it is the <strong>actual script</strong> that the audio engine reads aloud to the learner. Understanding how to write, refine, and align these notes with the visual content on each slide is one of the most important skills an instructional author can develop. When done well, speaker notes transform a static deck of slides into a coherent, engaging, and pedagogically sound learning experience.</p>
+
+<p>Every dimension of the narrated presentation — the voice, the pacing, the depth of explanation, and the overall instructional tone — originates in the notes field. That means authoring speaker notes is not simply a writing task; it is a design decision that shapes how learners experience the entire module.</p>
+
+<p><strong>Purpose of Speaker Notes in Narrated Presentations</strong></p>
+
+<p>The most fundamental thing to understand about speaker notes in a narrated presentation is that <em>each slide's notes field contains the exact text the text-to-speech engine will read aloud</em>. Unlike a live presentation where a speaker can improvise, pause for emphasis, or respond to the room, a text-to-speech system renders precisely what is written — nothing more, nothing less. A missing word stays missing. An awkward phrase sounds awkward in audio. This makes careful writing essential from the outset.</p>
+
+<p>Beyond serving as a script, well-crafted speaker notes fulfill a second critical purpose: they <strong>complement the visual content rather than simply restating it</strong>. Effective narration adds a layer that the slide visuals alone cannot provide — context, explanation, examples, and the connective tissue between ideas. When notes merely repeat what a learner can already read on screen, the audio track becomes redundant and even distracting. When notes genuinely extend and reinforce the visuals, the two channels — audio and visual — work together to deepen comprehension.</p>
+
+<p>There is also a third, often overlooked purpose: <strong>notes control slide timing</strong>. In a narrated presentation where slides advance automatically after the audio finishes, the length of the speaker notes directly determines how long a slide is displayed. A three-sentence note produces a short slide; a twelve-sentence note produces a long one. Authors therefore wield real control over pacing simply through the length of what they write.</p>
+
+<p><strong>AI-Generated vs. Manually Authored Notes</strong></p>
+
+<p>Modern eLearning authoring tools frequently offer AI-assisted note generation. In this workflow, the AI drafts speaker notes by drawing from the topic content already structured in the Module Editor — the headings, body text, learning objectives, and key points that the author has already defined. This gives the AI a meaningful foundation to work from, and the resulting draft notes are typically coherent and topically relevant.</p>
+
+<p>AI generation offers a significant time advantage, especially when a module contains many slides. Rather than facing a blank notes field on every slide, the author starts with a draft that is already shaped around the slide's content. However, AI-generated notes should always be treated as a <em>first draft</em>, not a finished product. They may be overly formal, slightly redundant with the slide text, or miss the specific instructional emphasis the author intended.</p>
+
+<p>Authors have three practical options when working with AI-generated notes:</p>
+
+<ul>
+  <li><strong>Accept as-is:</strong> Suitable when the draft is accurate, appropriately paced, and matches the desired tone. This is most common for straightforward informational slides where the AI has sufficient source material.</li>
+  <li><strong>Refine:</strong> The most common approach. The author keeps the structure and core content of the AI draft but edits individual sentences for clarity, tone, pacing, or emphasis. Refinement is faster than writing from scratch while still giving the author control over quality.</li>
+  <li><strong>Replace entirely:</strong> Appropriate when the AI draft misses the instructional intent, uses an inappropriate tone, or when the slide requires a highly specific narrative approach — for example, a scenario-based slide, a case study, or a slide with a strong emotional or motivational dimension.</li>
+</ul>
+
+<p>Manual authoring, while more time-intensive, gives the author complete control over every aspect of the narration: the vocabulary chosen, the sentence rhythm, the examples included, and the degree of formality. For high-stakes modules or content requiring precise instructional sequencing, manual authoring of at least the key slides is often worth the additional effort.</p>
+
+<p><strong>Writing Notes in a Conversational, Spoken Style</strong></p>
+
+<p>One of the most common mistakes authors make when first writing speaker notes is defaulting to a <em>written</em> rather than a <em>spoken</em> style. Written language and spoken language are processed differently by listeners, and text-to-speech engines faithfully reproduce whatever style the author chooses — including its weaknesses.</p>
+
+<p>The core principle is to <strong>use complete sentences with natural transitions</strong>. Bullet-point fragments — the kind of abbreviated language that works well on a slide itself — sound halting and unnatural when read aloud. Compare these two versions of the same content:</p>
+
+<ul>
+  <li><em>Bullet style (avoid):</em> "Three benefits. Cost reduction. Faster onboarding. Higher retention."</li>
+  <li><em>Spoken style (preferred):</em> "This approach delivers three key benefits. First, it reduces operational costs by eliminating redundant steps. Second, it shortens the onboarding period for new team members. And third, organizations that adopt it consistently report higher employee retention over time."</li>
+</ul>
+
+<p>The second version flows naturally when read aloud because it is structured the way a speaker would actually deliver the information — with a lead-in, a connective sequence, and full sentences that provide context at each step.</p>
+
+<p>Authors must also be vigilant about <strong>terminology that text-to-speech engines may mispronounce or render awkwardly</strong>. This includes:</p>
+
+<ul>
+  <li><strong>Abbreviations and acronyms:</strong> "API" may be read as a word ("ap-ee") rather than spelled out ("A-P-I") depending on the engine. Write out the full term, or spell it with hyphens if the spelled-out pronunciation is what you want: "A-P-I."</li>
+  <li><strong>Symbols:</strong> Characters like %, &amp;, /, or # may be skipped, read as their symbol names, or cause unexpected behavior. Replace them with spoken equivalents: "percent," "and," "or," "number."</li>
+  <li><strong>Unusual proper nouns or technical terms:</strong> If a term has an unconventional pronunciation, consider phonetic spelling in parentheses in your review notes, and test the audio output carefully.</li>
+  <li><strong>Numbers and dates:</strong> Write out numbers the way you want them spoken. "2024" may be read as "two thousand twenty-four" or "twenty twenty-four" depending on context — if precision matters, test both and consider spelling out the words.</li>
+</ul>
+
+<p>Beyond avoiding these pitfalls, the best speaker notes actively embrace the qualities of good spoken language: <strong>contractions</strong> ("it's," "you'll," "we're") make narration feel less robotic; <strong>connective phrases</strong> like "first," "next," "as a result," "for example," and "to put this another way" guide the listener through the logic of the content; and <strong>direct address</strong> ("you'll notice," "consider a situation where") engages the learner personally rather than lecturing abstractly.</p>
+
+<p><strong>Aligning Notes with Slide Visual Content</strong></p>
+
+<p>Since the learner is simultaneously viewing the slide and hearing the narration, the two must work in harmony. The guiding principle here is: <strong>do not read the slide verbatim; instead, deepen it</strong>. If a slide displays the text "Three stages of the approval process," the narration should not simply repeat "There are three stages of the approval process." Instead, the notes should explain what those stages are, why they exist in that sequence, or how a learner would apply them — information that the slide's visual format cannot fully convey.</p>
+
+<p>When a slide contains a diagram, chart, image, or other visual element, the speaker notes should explicitly <strong>reference that visual to connect the audio and visual channels</strong>. Phrases like the following help learners know where to direct their attention:</p>
+
+<ul>
+  <li>"The flowchart on this slide illustrates how a request moves through each stage."</li>
+  <li>"Notice the two columns in this comparison table — the left column shows the old process, while the right column reflects the updated workflow."</li>
+  <li>"The graph here tracks three years of data, and you can see the inflection point that occurs midway through year two."</li>
+</ul>
+
+<p>This kind of explicit visual reference is especially important for learners who process audio and visual information at different speeds or who may be using screen readers or assistive technology. It ensures that the narration does not assume the learner has absorbed the visual before the audio reaches the relevant point.</p>
+
+<p>At the same time, every slide's notes must ensure that the <strong>key learning points for that slide are fully covered in the narration</strong>. Some learners will focus primarily on the audio; others will focus primarily on the visuals. The notes should be written so that a learner relying entirely on the audio track would still walk away with the essential understanding that slide was designed to deliver.</p>
+
+<p><strong>Controlling Length and Pacing Through Notes</strong></p>
+
+<p>Because slide duration in a narrated presentation is driven by the length of the audio — which in turn is driven by the length of the notes — authors are directly controlling pacing every time they decide how much to write. This is a powerful lever, but it requires discipline.</p>
+
+<p>A widely used guideline is to target notes that narrate in approximately <strong>20 to 45 seconds for a typical content slide</strong>. This range is flexible based on slide type:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Slide Type</th>
+      <th>Suggested Narration Length</th>
+      <th>Rationale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Title or section divider</td>
+      <td>5–15 seconds</td>
+      <td>Serves as a brief signpost; no deep content to absorb</td>
+    </tr>
+    <tr>
+      <td>Standard content slide</td>
+      <td>20–45 seconds</td>
+      <td>Enough time to explain the key point and give one example</td>
+    </tr>
+    <tr>
+      <td>Complex diagram or process slide</td>
+      <td>45–75 seconds</td>
+      <td>Learners need more time to read and interpret the visual while listening</td>
+    </tr>
+    <tr>
+      <td>Summary or recap slide</td>
+      <td>20–35 seconds</td>
+      <td>Reinforces without introducing new information; keep it brisk</td>
+    </tr>
+    <tr>
+      <td>Knowledge check or reflection prompt</td>
+      <td>10–20 seconds</td>
+      <td>Poses the question concisely and allows the learner time to think</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Notes that are too short leave learners waiting awkwardly for the next slide before they have had time to process the visual content. Notes that are too long push a slide to overstay its welcome, making the module feel slow and increasing the risk that learners disengage. When notes are <strong>consistently calibrated across similar slide types</strong>, the overall module develops a professional rhythm that feels intentional and well-produced.</p>
+
+<p>A practical technique for estimating narration length before generating audio is to read the notes aloud at a natural speaking pace and time yourself. Most text-to-speech engines render at roughly 130 to 160 words per minute, so 50 to 100 words of notes typically produces 20 to 45 seconds of audio — a useful rule of thumb for initial drafting.</p>
+
+<p><strong>Reviewing and Refining Notes Before Audio Conversion</strong></p>
+
+<p>Once notes are drafted across all slides, a dedicated review pass is essential before triggering audio generation. Revising notes after audio has already been produced requires regenerating the audio track, which adds time and can create versioning complications. Thorough upfront review is far more efficient.</p>
+
+<p>A comprehensive notes review should address three dimensions:</p>
+
+<ul>
+  <li><strong>Spelling and terminology accuracy:</strong> Text-to-speech engines read exactly what is written, with no ability to infer intent. A misspelled word is mispronounced. A term that varies in spelling across slides ("sign-off" on one slide, "signoff" on another) may be rendered differently each time. Authors should check for consistent spelling of all proper nouns, product names, technical terms, and any abbreviations they have chosen to include.</li>
+  <li><strong>Narrative flow across slides:</strong> Reading all notes in sequence — either aloud or mentally — reveals whether the narration forms a coherent arc. Does the transition from slide 4 to slide 5 feel abrupt? Does slide 8 introduce a term that was never defined in the preceding slides? Does the module build logically toward its conclusion, or does it feel like a collection of disconnected paragraphs? Revising for flow at this stage produces a much more cohesive learner experience.</li>
+  <li><strong>Alignment with learning objectives:</strong> Each slide exists to serve a specific instructional purpose — to introduce a concept, demonstrate a process, provide an example, or reinforce a key point. The notes review should confirm that every slide's narration is explicitly serving that purpose. If a slide is supposed to illustrate a common misconception but the notes spend most of their length on background context, the notes need to be refocused. Aligning each slide's notes with its intended learning outcome is what separates competent narration from truly purposeful instructional design.</li>
+</ul>
+
+<p>Authors may also find it useful during the review stage to read the notes aloud while viewing the corresponding slide, simulating the learner's experience of seeing and hearing the content simultaneously. This often surfaces issues that are invisible when reviewing notes as a text document alone — moments where the narration moves on before a complex visual has had time to register, or where the audio and visual are delivering contradictory emphasis.</p>
+
+<p>With thorough attention to purpose, style, alignment, pacing, and review, speaker notes become far more than supporting text. They become the instructional voice of the module — clear, purposeful, and designed to guide every learner through the content with the same care and precision that would characterize an expert instructor speaking directly to them.</p>
+        <div class="notes"><strong>Notes</strong>Covers the full speaker notes authoring workflow: purpose, AI vs. manual authoring, spoken style guidelines, visual alignment, pacing by slide type (rendered as a table), and pre-audio review checklist. All content rendered without headings per format requirements.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

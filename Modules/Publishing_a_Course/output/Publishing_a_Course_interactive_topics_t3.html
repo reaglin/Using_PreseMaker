@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Publishing Refreshes Module Content</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>How Publishing Refreshes Module Content</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>How Publishing Refreshes Module Content</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you work inside PreseMaker, every change you make to a module — adding a new lesson, editing an existing page, or removing outdated material — is saved to the authoring environment, but those changes do not automatically reach the version of the course that learners browse. The <strong>publish feature</strong> is the bridge between your working files and the live, browsable website. A central part of what publish does is refresh each module's <strong>HTML index</strong>, ensuring that the snapshot learners see is perfectly aligned with the content you have actually authored. Understanding this mechanism in depth helps you manage your course confidently and avoid the common pitfall of assuming that saved changes are the same as published changes.</p>
+
+<p>At the heart of every module in PreseMaker is a dedicated <strong>HTML index file</strong>. Think of this file as a curated table of contents that is specific to its module. It aggregates every content item belonging to that module — lessons, resources, assessments, media pages — and represents them as a coherent, navigable collection. When a learner arrives at your course website and clicks on a module, it is this HTML index that their browser loads first. The index is therefore the authoritative entry point for the module; everything a learner sees or can navigate to from that module's landing page flows through it. Because the index plays such a central role in the learner experience, keeping it current is not optional — an outdated index can expose broken links to deleted content, hide newly added lessons entirely, or present a module as incomplete when it is actually fully built out.</p>
+
+<p>The question then becomes: what causes PreseMaker to update this file? The answer is the <strong>publish action</strong>. Initiating a publish sends a signal to PreseMaker to begin a systematic scan of your course. During this scan, PreseMaker examines each module and compares its current content state to whatever was recorded the last time a publish was run. Any differences — a new topic added, a lesson title changed, a resource deleted — are captured during this <strong>content refresh step</strong>. If you have never published at all, the HTML index either does not yet exist in its final form or reflects only an initial scaffold. If you published last week and have made ten edits since, the live HTML index still reflects last week's state until you publish again. This is why instructors who are actively developing a course should treat publishing as a regular, deliberate step rather than a one-time action.</p>
+
+<p>Once PreseMaker has identified what has changed, it proceeds to <strong>regenerate the HTML index</strong> for any module that is out of date. The regeneration process reads the current, authoritative state of every content item within the module and writes a new index file from scratch based on that state. The newly generated file completely replaces the previous version — there is no merging or patching. This wholesale replacement is important because it eliminates edge cases like stale hyperlinks pointing to content that was deleted, or index entries that were reordered but not fully updated. The result is a clean, accurate HTML index that faithfully represents every content item currently in the module and nothing that has been removed.</p>
+
+<p>Consider a practical example. Suppose you built a module called <em>Introduction to Data Analysis</em> with three lessons last month and published the course. This week you added two new lessons on statistical methods and deleted one lesson that was a duplicate. If a learner visited the site right now, they would see three lessons — the state from last month. When you run publish, PreseMaker scans the module, detects the two additions and one deletion, and regenerates the HTML index with four lessons (the two original non-duplicate lessons plus the two new ones). The deleted lesson's link vanishes, and both new lessons appear correctly linked. The learner who visits after your publish sees exactly what you intended.</p>
+
+<p>PreseMaker also follows a carefully defined <strong>sequence during the publish operation</strong>: it refreshes and regenerates every module's HTML index <em>first</em>, and only after all indexes are current does it compile those indexes into the broader, browsable course website. This ordering is deliberate and critical. If PreseMaker compiled the website before refreshing the indexes, it might incorporate a mix of current indexes (for modules you had just edited) and stale indexes (for modules you had not recently touched but that were still pending a refresh). The resulting site would be inconsistent — some modules accurate, others not. By completing all index refreshes before beginning the website build, PreseMaker guarantees that the compilation step works exclusively with up-to-date inputs. Learners who arrive at the freshly published site can trust that every module landing page they navigate to is current.</p>
+
+<p>The table below summarizes the sequence of events during a publish operation and the role each step plays:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Step</th>
+      <th>What PreseMaker Does</th>
+      <th>Why It Matters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1 — Content Scan</td>
+      <td>Scans all modules and identifies content that has changed since the last publish</td>
+      <td>Ensures no additions, edits, or deletions are overlooked before updating begins</td>
+    </tr>
+    <tr>
+      <td>2 — Index Regeneration</td>
+      <td>Regenerates the HTML index for every module whose content is out of date</td>
+      <td>Replaces stale index files with accurate, current representations of module content</td>
+    </tr>
+    <tr>
+      <td>3 — Website Compilation</td>
+      <td>Compiles all refreshed module indexes into the complete browsable course website</td>
+      <td>Guarantees the live site is built entirely from current module data, with no mixed states</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The practical impact of this process on both instructors and learners is significant. From a <strong>learner's perspective</strong>, every visit to a module landing page after a publish presents a list of only valid, current content. There are no dead links to lessons that were removed, no missing entries for lessons that were added but not yet reflected. The module landing page functions as a reliable map of what the module actually contains at the moment of the last publish.</p>
+
+<p>From an <strong>instructor's perspective</strong>, the publish feature provides a controlled deployment mechanism. You can make a series of edits, reviews, and revisions in the authoring environment over days or weeks without those intermediate, potentially incomplete states being visible to learners. When you are satisfied with the state of the course, a single publish operation brings everything current simultaneously. This means you can confidently share a link to the published site or formally deploy it to a class, knowing that every module reflects your latest intentional changes rather than a half-finished intermediate state.</p>
+
+<p>One important boundary condition to keep firmly in mind: <strong>any changes made after the most recent publish will not appear on the live site until publish is run again</strong>. This is not a flaw — it is an intentional safeguard — but it is a common source of confusion. Instructors sometimes add a lesson, check the live site immediately, and wonder why the new lesson is not visible. The answer is always the same: the HTML index for that module has not yet been regenerated because publish has not been triggered since the addition was made. The fix is straightforward: run publish again. Developing a habit of publishing after any meaningful round of edits, and communicating expected publish schedules to learners if the course is live, will prevent nearly all confusion related to content visibility.</p>
+
+<ul>
+  <li><strong>The HTML index is the module's authoritative landing page</strong> — learners encounter it before any individual piece of content, making its accuracy foundational to the learner experience.</li>
+  <li><strong>Publishing is what triggers the refresh</strong> — saving content in the authoring environment alone does not update the live site; the publish action initiates the scan, regeneration, and compilation sequence.</li>
+  <li><strong>Regeneration is a full replacement</strong> — PreseMaker writes a brand-new HTML index rather than patching the old one, which eliminates stale links and missing entries cleanly.</li>
+  <li><strong>Refresh always precedes build</strong> — the defined sequence ensures the website compilation step never operates on a mix of current and outdated module indexes.</li>
+  <li><strong>Changes after the last publish are invisible until the next publish</strong> — instructors must re-publish to surface any new edits, deletions, or additions to learners on the live site.</li>
+</ul>
+        <div class="notes"><strong>Notes</strong>Describes the process by which publishing updates each module&#39;s HTML index to reflect the most current content before the website is built.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

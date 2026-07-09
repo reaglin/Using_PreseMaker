@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accepting the Proposed Module Structure</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Accepting the Proposed Module Structure</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Accepting the Proposed Module Structure</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When PreseMaker analyzes your source material and proposes a module breakdown, one of the most important decisions you face as a course author is whether that proposed structure is ready to be used as the foundation of your course. Accepting the structure is not simply clicking a button — it is a deliberate act of professional judgment that confirms the AI-generated outline accurately captures the content, organizes it logically for your learners, and is practical to develop within your course's scope. Understanding what to look for before you accept, how to perform the accept action, and what happens once you commit gives you full control over the authoring process from its very first decision point.</p>
+
+<p>Before you can accept a proposed structure with confidence, you need to review it carefully. PreseMaker presents each proposed module as a titled unit accompanied by a brief summary of what that module will cover. Your first task is to read through every module title and its summary and ask whether it honestly reflects the source material you provided. A module titled <em>Introduction to Network Security</em>, for example, should not have a summary that drifts into unrelated topics like software licensing. Mismatches between titles and summaries are early warning signs that the AI may have chunked the content incorrectly.</p>
+
+<p>Beyond individual modules, step back and look at the sequence as a whole. A well-ordered set of modules should tell a story — foundational concepts come first, more complex or applied topics follow, and synthesis or assessment content typically closes the course. Ask yourself whether a new learner moving through these modules in the presented order would build knowledge in a sensible, progressive way. If module four assumes knowledge that is not introduced until module seven, the flow is broken and acceptance would create problems downstream.</p>
+
+<p>You should also actively look for three common structural problems before deciding to accept:</p>
+
+<ul>
+  <li><strong>Gaps:</strong> Topics covered prominently in the source material that do not appear in any proposed module. If your source document dedicates a substantial section to disaster recovery procedures and no module addresses it, the structure is incomplete.</li>
+  <li><strong>Redundancies:</strong> Two or more modules that cover essentially the same ground. Overlap is sometimes appropriate for reinforcement, but if two modules appear to duplicate each other without a clear pedagogical reason, the structure is inefficient and may confuse learners.</li>
+  <li><strong>Misalignments:</strong> Content placed in a module where it does not logically belong. A subtopic about advanced firewall configuration sitting inside a beginner-level orientation module is a misalignment that would harm instructional coherence.</li>
+</ul>
+
+<p>Once you have completed your review, you apply a set of practical criteria to determine whether the structure meets the bar for acceptance. Three criteria are central to this judgment. First, the proposed modules, taken together, must account for all of the major topics present in your source material. This does not mean every minor detail needs its own module, but no significant subject area should be missing. Second, each module title and description should be clearly distinct — a learner reading the full list of titles should be able to understand what is unique about each module without the titles blurring into one another. Third, the total number of modules must be realistic for the course's intended length and audience. A one-hour orientation course broken into fourteen modules would fragment the learning experience unnecessarily, while a forty-hour professional certification reduced to three modules would overwhelm learners with undifferentiated content.</p>
+
+<p>Consider a concrete example. Suppose you upload a technical manual about cloud infrastructure management and PreseMaker returns six proposed modules:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module Number</th>
+      <th>Proposed Title</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Cloud Computing Fundamentals</td>
+      <td>Covers the basic concepts of cloud computing, deployment models, and service types.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Virtual Machines and Containers</td>
+      <td>Explores virtualization technologies, including VM configuration and container orchestration basics.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Cloud Storage Solutions</td>
+      <td>Describes object storage, block storage, and file storage options across major platforms.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Networking in the Cloud</td>
+      <td>Introduces virtual networks, subnets, load balancers, and cloud DNS management.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Security and Compliance</td>
+      <td>Addresses identity management, encryption, access controls, and regulatory compliance requirements.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Monitoring and Cost Management</td>
+      <td>Covers performance monitoring tools, alerting strategies, and cloud cost optimization techniques.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Reviewing this structure, you can see a logical progression from foundational concepts through infrastructure components and into operational concerns like security and cost. The titles are distinct, the summaries match the titles, and six modules is a sensible number for an intermediate-level technical course. If all major topics from the source manual appear in this breakdown with no significant gaps, this structure satisfies the acceptance criteria.</p>
+
+<p>When you are satisfied with your review, you perform the accept action in PreseMaker. The accept or confirm option is displayed alongside the AI-generated module breakdown, typically as a clearly labeled button or selectable action within the interface. Selecting it sends an explicit signal to PreseMaker that you have reviewed the proposed structure and approve it for use. This is a deliberate confirmation step — PreseMaker does not automatically proceed; it waits for your explicit acceptance to ensure you remain in control of the authoring process.</p>
+
+<p>The moment you confirm acceptance, PreseMaker begins initializing the project infrastructure. It establishes the accepted modules as the official working structure for your course and creates the corresponding course and module folders on disk. These folders become the organized storage locations for all content that will be developed — scripts, media assets, assessments, and other materials will be organized within this folder hierarchy throughout the rest of the authoring process. Because the folder structure is built from the accepted module list, changing the structure significantly after this point would require additional reorganization, which is one reason why a thorough review before accepting matters.</p>
+
+<p>After acceptance, the authoring workflow automatically advances to the next stage: individual module content development. PreseMaker signals that the structural phase is complete and that you are now ready to begin building the actual learning content within each module. The accepted structure serves as your roadmap — each module folder represents a defined unit of work you will populate with content over the course of the project.</p>
+
+<p>It is worth being clear about when acceptance is the right choice and when it is not. Acceptance is appropriate when your review confirms that the proposed structure genuinely aligns with your course requirements — when the modules are complete, logical, distinct, and appropriately scoped. If your review reveals that the structure needs meaningful changes — perhaps an entire topic is missing, two modules should be merged, or the sequencing is significantly off — then accepting prematurely would mean building your course on a flawed foundation. In those situations, PreseMaker provides adjust or replace options that allow you to modify the structure or request a new AI-generated breakdown before committing. Using the right option for the right situation is a core authoring skill.</p>
+
+<p>Practicing the accept workflow in realistic scenarios builds an important kind of professional judgment. Over time, you develop a sharper eye for what a well-formed AI-generated module structure looks like, how to distinguish a structure that is ready to accept from one that still needs work, and how to make that decision efficiently without second-guessing every detail. The goal is confident, informed acceptance — not hesitant over-analysis on one end, or hasty rubber-stamping on the other.</p>
+        <div class="notes"><strong>Notes</strong>Covers the workflow for reviewing and accepting the AI-generated module breakdown when it meets the course design requirements. Learners practice confirming a structure to move forward in the authoring process.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

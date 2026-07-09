@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overview of Module Creation in PreseMaker</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Overview of Module Creation in PreseMaker</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Overview of Module Creation in PreseMaker</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>PreseMaker organizes all authoring work around a fundamental unit called a <strong>module</strong>. Before you can generate content, configure outputs, or collaborate with a team, you must first understand what a module is, why the application offers several different ways to create one, and how all of those pathways converge inside the <strong>Module Manager</strong>. This overview sets the conceptual foundation that makes every subsequent step in PreseMaker feel purposeful rather than procedural.</p>
+
+<p>A <strong>module in PreseMaker</strong> is a self-contained project container. Think of it as a dedicated folder of intent: it bundles together the configuration that describes what you want to produce, the source materials that feed the generation process, and the output content that results from that process. Because everything belonging to a single learning or presentation unit lives inside one module, projects stay organized even as they grow in complexity. Equally important, modules are <em>portable</em> — you can move a module folder between machines, hand it off to a colleague, or archive it without losing any of the context needed to reproduce or extend the work. This self-contained nature is not accidental; it reflects a deliberate design choice to make PreseMaker projects as independent of any particular machine or environment as possible.</p>
+
+<p>Modules can come into existence in three fundamentally different ways, and understanding the distinction between them is the first real decision point every PreseMaker author faces:</p>
+
+<ul>
+  <li><strong>Created from scratch using AI generation.</strong> PreseMaker scaffolds the entire module structure automatically, generating configuration and initial content based on prompts or parameters you supply. No pre-existing files are required.</li>
+  <li><strong>Added from an existing folder on disk.</strong> If you have already organized content locally — perhaps a collection of slide decks, transcripts, or reference documents arranged in a folder hierarchy — PreseMaker can register that folder as a module without disturbing its structure.</li>
+  <li><strong>Imported from an external file or repository.</strong> A module that was built in another PreseMaker workspace, packaged for distribution, or stored in a version-controlled repository can be brought into your current workspace through an import process.</li>
+</ul>
+
+<p>The existence of three separate methods is not redundancy; each method addresses a genuinely different situation an author might face. An author who is <strong>starting from zero</strong> — no outline, no slides, no notes — benefits most from letting PreseMaker's AI generation method scaffold the structure automatically. The AI path removes the blank-page problem: it produces a working module skeleton that the author can then refine, rather than requiring the author to build that skeleton manually. This is the fastest on-ramp for net-new projects.</p>
+
+<p>An author who has <strong>already done significant local organization</strong> is in a different position. Suppose a subject-matter expert has spent weeks assembling reference PDFs, recording short video clips, and arranging everything into a logical folder hierarchy on their laptop. Rebuilding that structure inside a brand-new PreseMaker module would be wasted effort. The <em>add from disk</em> method solves this by registering the existing folder with PreseMaker, effectively telling the application "treat this folder as a module." The content and its organization are preserved exactly as the author left them.</p>
+
+<p>Teams working across multiple machines or drawing on shared repositories face a third challenge: <strong>consistency and reuse</strong>. When one team member finishes building a module and wants every other member to work from the same baseline, emailing files or manually copying folders is error-prone. The import method provides a controlled pathway. A module can be exported as a portable package or pushed to a repository, then pulled cleanly into any other workspace. This is also the mechanism that supports version control workflows, where modules live in a git repository and are checked out as needed.</p>
+
+<p>Regardless of which creation method you choose, all three pathways lead to the same destination: the <strong>Module Manager</strong>. The Module Manager is PreseMaker's central dashboard for module-level work. It provides a unified view of every module currently available in your workspace — you can see their names, statuses, and configurations side by side. More importantly, the Module Manager is where the application communicates the <em>state</em> of each module. A module that was just created or just registered from disk starts in a minimal state: it exists, but it may be missing configuration details or source materials that content generation requires. The Module Manager surfaces those gaps clearly, guiding you from that empty or partial state toward a fully configured module that is ready for generation.</p>
+
+<p>This progression — from <em>created</em> to <em>configured</em> to <em>ready</em> — is an important mental model. Creating a module, by any of the three methods, is only the first step. What the creation step accomplishes is establishing the module's identity and location within your workspace. What happens after creation depends on which method was used and how complete the initial state is:</p>
+
+<ul>
+  <li>An <strong>AI-generated module</strong> may arrive relatively complete, with scaffolded content already in place, but it will still typically need review and possible configuration adjustments before final generation runs.</li>
+  <li>A module <strong>added from a local folder</strong> will have its files present but may need PreseMaker-specific configuration added — for example, specifying which files are source materials and what output format is desired.</li>
+  <li>An <strong>imported module</strong> may be fully configured from its originating workspace, in which case it could be ready to generate immediately, or it may need local path adjustments if it references resources at specific locations.</li>
+</ul>
+
+<p>The Module Manager signals readiness visually, so you always know whether a module still needs attention or whether you can proceed to content generation. This signal-and-status design means you do not have to memorize a checklist; PreseMaker tracks the requirements and tells you when they have been met.</p>
+
+<p>To make the choice between creation methods concrete, consider three brief scenarios:</p>
+
+<ul>
+  <li><strong>Scenario A — The new author.</strong> A training developer is building a compliance course on a topic they have never covered before. They have no existing files, no outline, and no source documents. They open the Module Manager, choose the AI generation method, supply a topic description and a few parameters, and PreseMaker returns a fully scaffolded module with an initial content structure ready to review. Total time before first content exists: minutes.</li>
+  <li><strong>Scenario B — The organized expert.</strong> A senior engineer has a folder on their desktop containing forty pages of technical documentation, a dozen diagrams, and an annotated outline they wrote over several months. They want to turn that material into a PreseMaker module without reorganizing anything. They open the Module Manager, choose the add-from-disk method, point it at their folder, and PreseMaker registers the module. Their existing file structure is preserved; they simply add the PreseMaker configuration layer on top.</li>
+  <li><strong>Scenario C — The distributed team.</strong> A content team at a large organization maintains a shared repository of approved PreseMaker modules. A new team member needs to work on an existing module. They open the Module Manager, choose the import method, point it at the repository package, and the module appears in their local workspace fully configured and ready to edit. Any changes they make can later be exported and pushed back to the repository.</li>
+</ul>
+
+<p>These scenarios illustrate that the three methods are not alternatives competing for the same use case — they are <em>complementary tools</em> designed for genuinely different starting conditions. Recognizing which scenario matches your current situation is the practical skill this overview is meant to build. With that recognition in place, the detailed steps for each method become much easier to follow, because you already understand <em>why</em> you are taking them.</p>
+
+<p>In summary: a PreseMaker module is a portable, self-contained container for configuration, source materials, and output content. Three creation methods exist because authors begin work from three meaningfully different starting points — no prior assets, locally organized assets, and externally sourced assets. All three methods are accessible from the Module Manager, which also tracks each module's progress from its initial empty or minimal state to the fully configured state where content generation can begin. Understanding this structure and these options is the essential first step before working with any specific creation workflow in PreseMaker.</p>
+        <div class="notes"><strong>Notes</strong>This topic serves as the conceptual anchor for the entire module. Subsequent topics covering each creation method in detail will build directly on the vocabulary and mental models established here — particularly the idea of module state (empty → configured → ready) and the role of the Module Manager as the single point of access for all three methods.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

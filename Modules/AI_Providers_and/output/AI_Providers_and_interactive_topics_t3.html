@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding API Keys</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Understanding API Keys</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Understanding API Keys</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you use an AI-powered tool like PreseMaker to generate content, the software does not contain any artificial intelligence of its own. Instead, it communicates in real time with external AI services — such as those offered by Anthropic, OpenAI, Google, or Mistral — and those services do the actual work of understanding your request and producing a response. The mechanism that makes this communication authorized and accountable is the <strong>API key</strong>. Understanding what an API key is, why it exists, and how it functions inside PreseMaker is foundational knowledge for anyone who wants to connect the application to an AI provider.</p>
+
+<p>An <strong>API key</strong> is a long, machine-generated string of characters — typically a random mix of letters, numbers, and symbols — that serves as a secret identifier for your account with a particular AI provider. You obtain one by registering with the provider through their developer portal, after which the system generates a key that is uniquely tied to your account and to the specific service or model tier you are authorized to use. A typical key might look something like this:</p>
+
+<pre><code>sk-aBcDeFgHiJkLmNoPqRsTuVwXyZ1234567890abcdef</code></pre>
+
+<p>That string carries no meaning in plain language — it is not your name, your email address, or a password you chose. It is a cryptographic token generated so that every request your software sends can be matched back to you and only you. The provider stores a record of your key on their servers. When your request arrives carrying that key, the provider looks it up, confirms it is valid and active, and then fulfills the request. If the key is missing, expired, or incorrect, the request is rejected outright.</p>
+
+<p><strong>Why API keys are required</strong> comes down to three interconnected concerns: security, usage tracking, and billing. AI models — particularly large language models — are expensive to run. Providers invest enormous resources in hardware, infrastructure, and model development. Without a gating mechanism, anyone who discovered the address of an AI service could send unlimited requests for free, overwhelming the system and costing the provider money without any accountability. The API key is that gating mechanism. It ensures that only registered account holders can make requests, and it gives providers a reliable way to answer the question: <em>who sent this?</em></p>
+
+<p>Beyond simply blocking unauthorized access, the key allows providers to enforce <strong>rate limits</strong> — caps on how many requests you can send within a given time window. This protects the infrastructure from being overwhelmed by any single account, whether through heavy legitimate use or accidental runaway loops in code. Keys also enable <strong>billing</strong>: because every request is tagged with your key, the provider can count exactly how many tokens you consumed, which models you accessed, and what you owe at the end of the billing period. In this way, the API key is both a lock on the door and the meter measuring how much power you are using once inside.</p>
+
+<p>Inside PreseMaker, your API key functions as a <strong>credential</strong> — in much the same way that a username and password are credentials for logging into a website. When you enter your key in PreseMaker's settings, you are giving the application the authority it needs to act on your behalf. Every time PreseMaker sends a prompt to an AI provider, it attaches your key to that request, typically in an <strong>HTTP request header</strong> — a piece of metadata that travels alongside the main request data but is not part of the visible content. A simplified illustration of what that looks like at the network level is shown below:</p>
+
+<pre><code>POST /v1/messages HTTP/1.1
+Host: api.anthropic.com
+x-api-key: sk-aBcDeFgHiJkLmNoPqRsTuVwXyZ1234567890abcdef
+Content-Type: application/json
+
+{
+  "model": "claude-opus-4-5",
+  "max_tokens": 1024,
+  "messages": [{"role": "user", "content": "Summarize this slide."}]
+}</code></pre>
+
+<p>The provider's servers receive that request, extract the key from the header, validate it against their database, and — if everything checks out — process the prompt and return the AI-generated response. PreseMaker then takes that response and presents it to you inside the application. You never see the raw network exchange; the key handling happens automatically in the background every time you trigger an AI feature.</p>
+
+<p>A critically important principle is that <strong>API keys are provider-specific</strong>. Each AI company operates its own independent authentication system. A key generated in your OpenAI account is meaningless to Anthropic's servers, and a key from Google cannot authorize requests to Mistral. This is not merely a technicality — it reflects the fact that each provider has its own infrastructure, its own billing relationship with you, and its own security rules. Attempting to use the wrong key with a provider will always result in an authentication error.</p>
+
+<p>The table below summarizes the major AI providers that PreseMaker supports, where you obtain a key, and the format those keys typically follow:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Provider</th>
+      <th>Developer Portal</th>
+      <th>Typical Key Format</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OpenAI</td>
+      <td>platform.openai.com</td>
+      <td>Begins with <code>sk-</code></td>
+    </tr>
+    <tr>
+      <td>Anthropic</td>
+      <td>console.anthropic.com</td>
+      <td>Begins with <code>sk-ant-</code></td>
+    </tr>
+    <tr>
+      <td>Google (Gemini)</td>
+      <td>aistudio.google.com</td>
+      <td>Begins with <code>AIza</code></td>
+    </tr>
+    <tr>
+      <td>Mistral</td>
+      <td>console.mistral.ai</td>
+      <td>Random alphanumeric string</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Because PreseMaker is designed to support multiple providers, you may find yourself holding keys from more than one service at the same time — for example, an Anthropic key for high-quality long-form writing tasks and an OpenAI key for a different workflow. PreseMaker keeps these separate, and you select which provider (and therefore which key) to use when configuring a given AI feature. The key you enter for each provider slot stays dedicated to that provider; PreseMaker will never attempt to use your Anthropic key when making a request to OpenAI, or vice versa.</p>
+
+<p>It is worth appreciating exactly what it means for a key to represent your <strong>identity and permissions</strong> on a provider's platform. Your account may have a specific subscription tier that grants access to certain models and denies access to others. It may have spending limits configured by you or your organization. It may have geographic or compliance restrictions. All of those rules are attached to your account and, by extension, to your key. When PreseMaker uses your key, it inherits all of those permissions and constraints. If your account has not been granted access to a particular model, PreseMaker's requests for that model will be refused — not because PreseMaker is blocked, but because <em>your account</em> is not authorized, and your key communicates that account identity with every request.</p>
+
+<p>Finally, it is essential to understand the security implication: because the key effectively <em>is</em> your account access, it must be kept private. Anyone who obtains your API key can make requests that are billed to your account, consume your rate limit, and potentially access data associated with your account. This is why PreseMaker stores your key locally rather than transmitting it to any third-party server other than the AI provider it is intended for. Treating your API key with the same care you would give a password — never sharing it, never embedding it in publicly visible documents — is a direct consequence of understanding what it represents: the single credential that grants authority to act as you within an AI provider's ecosystem.</p>
+        <div class="notes"><strong>Notes</strong>Defines what an API key is, why it is required to authenticate requests to an AI provider, and how it acts as the credential linking PreseMaker to the chosen service.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

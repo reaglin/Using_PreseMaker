@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matching and Flashcard Activities</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Matching and Flashcard Activities</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Matching and Flashcard Activities</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Matching and flashcard activities represent two of the most straightforward yet pedagogically powerful tools available within PreseMaker's interactive activity library. Both are rooted in a simple idea: when learners actively engage with vocabulary and key concepts — rather than passively reading through definitions — they retain information more effectively and build a stronger foundation for applying that knowledge in more complex contexts. PreseMaker streamlines the creation of these activities by automating the most time-intensive part of the process: identifying and pairing terms with their definitions. The result is a set of ready-to-use learning artifacts that instructors can generate, review, and distribute with minimal manual effort.</p>
+
+<p>Within PreseMaker, matching and flashcard templates sit alongside other interactive formats — such as cloze passages and crossword puzzles — inside the interactive activity library. This centralized library gives instructors a single location from which to select any activity concept they want to generate, keeping the workflow consistent regardless of the format chosen. Because both matching and flashcard activities are designed for minimal setup, even instructors who are new to the platform can produce polished, content-accurate materials quickly. The AI handles content extraction and template population automatically once an activity type is selected.</p>
+
+<p><strong>How Matching Activities Are Built from Key Terms</strong></p>
+
+<p>When a matching activity is generated, PreseMaker scans the source content of the active module to identify its key terms. These terms become the foundation of the activity. The AI extracts or constructs a corresponding definition or description for each term, producing a set of term-definition pairs that accurately reflect the module's subject matter.</p>
+
+<p>In the activity itself, learners are presented with two distinct columns or sets of items — typically terms on one side and definitions or descriptions on the other — and are asked to draw connections between the pairs that belong together. This format demands active recall: rather than simply reading a glossary entry, learners must retrieve what they know about a term and make a deliberate judgment about which definition corresponds to it. That process of active retrieval is what makes matching activities more effective for memory consolidation than passive review.</p>
+
+<p>Consider a module on project management, for example. PreseMaker might identify terms such as <em>critical path</em>, <em>scope creep</em>, and <em>stakeholder register</em>, then generate precise definitions for each. The learner sees all six items — three terms and three definitions — shuffled and presented separately, and must correctly associate each term with its definition. The exercise reinforces not just recognition of the word itself but the learner's ability to distinguish between related concepts that might otherwise blur together.</p>
+
+<p><strong>How Flashcard Activities Are Structured</strong></p>
+
+<p>Flashcard activities follow a different but complementary structure. Each flashcard is generated from a single key term drawn from the module content. The term is displayed on the front face of the card, and the corresponding definition, explanation, or contextual description appears on the reverse. Learners work through the set by attempting to recall the answer before flipping the card to reveal it — a practice known as retrieval practice or the testing effect, which research in cognitive science consistently identifies as one of the most effective strategies for long-term retention.</p>
+
+<p>The self-assessment dimension of flashcards is particularly valuable. Because learners decide for themselves whether their recalled answer was correct before moving to the next card, they develop metacognitive awareness — an understanding of which terms they know confidently and which ones require more review. This self-monitoring behavior encourages learners to revisit weaker areas rather than moving linearly through content they already understand.</p>
+
+<p>A flashcard set generated by PreseMaker can cover the entirety of a module's vocabulary in a single artifact. For a module with fifteen key terms, learners receive fifteen cards in one cohesive set, giving them a comprehensive review tool without any additional curation effort from the instructor. This makes flashcard sets especially useful as pre-assessment preparation or as a standalone study resource that learners can return to repeatedly.</p>
+
+<p><strong>Vocabulary and Concept Recognition as Learning Goals</strong></p>
+
+<p>Both matching and flashcard activities are designed with specific learning goals in mind: vocabulary reinforcement and concept recognition. These goals are not trivial — they represent the foundational layer of learning upon which all higher-order skills are built. Before a learner can apply a term correctly, analyze a scenario using domain-specific language, or evaluate competing ideas within a field, they must first be able to recognize and recall what those terms mean.</p>
+
+<p>Vocabulary reinforcement through repeated association — seeing a term, recalling its meaning, and confirming or correcting that recall — helps learners internalize terminology at a level that goes beyond surface familiarity. When a learner encounters the term <em>amortization</em> in a finance module three times during a flashcard session, associating it each time with the concept of spreading loan payments over time, that repeated association builds a durable mental link between word and meaning.</p>
+
+<p>Concept recognition is similarly strengthened through multiple practice attempts. Each time a learner correctly matches a term to its definition or successfully recalls a flashcard answer, they reinforce the neural pathway associated with that knowledge. Over successive attempts, the retrieval becomes faster and more automatic, freeing up cognitive resources for more complex tasks.</p>
+
+<p>These activity types are particularly well-suited to the early stages of a module, when learners are encountering new terminology for the first time and building their foundational understanding of the content domain. Using matching and flashcard activities early ensures that vocabulary is solidified before learners are asked to engage with it in assessments, discussions, or applied projects where fluency with the terminology is assumed.</p>
+
+<p><strong>Generating a Matching or Flashcard Activity in PreseMaker</strong></p>
+
+<p>The process of generating either activity type follows a consistent, streamlined workflow within PreseMaker. The steps below outline what that process looks like in practice:</p>
+
+<ul>
+  <li><strong>Open the interactive activity library.</strong> From within your active module in PreseMaker, navigate to the interactive activity library. This library lists all available activity templates, including matching, flashcard, cloze passage, crossword puzzle, and other formats.</li>
+  <li><strong>Select the desired activity type.</strong> Choose either the matching or flashcard template depending on the learning goal you want to address. Both options are clearly labeled within the library.</li>
+  <li><strong>Initiate generation.</strong> Once the activity concept is selected, PreseMaker's AI automatically scans the active module's source content, identifies key terms, and populates the template with appropriate term-definition pairs. No manual entry of terms or definitions is required.</li>
+  <li><strong>Review the generated activity.</strong> After generation is complete, the activity is available for preview. Instructors can review the term-definition pairs to confirm accuracy and relevance before distributing the activity to learners.</li>
+  <li><strong>Save and distribute.</strong> The completed activity is saved as a module artifact and becomes accessible from the Module Index, where it can be shared with learners or revisited by the instructor at any time.</li>
+</ul>
+
+<p>Because PreseMaker draws its content directly from the active module, the generated activities are inherently aligned with what learners are studying. There is no risk of generic or off-topic content appearing in the activity — every term and definition reflects the specific subject matter of the module in question.</p>
+
+<p><strong>Locating Generated Activity Artifacts in the Module Index</strong></p>
+
+<p>Once a matching or flashcard activity has been generated, it is stored as a distinct artifact in the Module Index. The Module Index functions as a centralized record of everything produced during a module session — written content, assessments, interactive activities, and any other artifacts created through PreseMaker's tools.</p>
+
+<p>Each generated activity appears in the Module Index as a separate entry, clearly labeled by activity type (for example, "Matching Activity" or "Flashcard Set") and associated with the module content from which it was built. This labeling makes it easy for instructors to identify and locate specific artifacts without having to search through a general file repository.</p>
+
+<p>The Module Index serves several practical purposes in the context of matching and flashcard activities:</p>
+
+<ul>
+  <li><strong>Confirmation of successful generation.</strong> Instructors can verify that an activity was created successfully by checking for its entry in the Module Index immediately after generation.</li>
+  <li><strong>Access for review.</strong> Clicking on an artifact's entry in the Module Index opens the activity, allowing the instructor to preview it, check the content, or make any notes before distribution.</li>
+  <li><strong>Distribution to learners.</strong> From the Module Index, instructors can share or distribute generated activities directly, streamlining the step between creation and delivery.</li>
+  <li><strong>Record-keeping across a module.</strong> Because all artifacts are logged together in the Module Index, instructors have a clear picture of which activity types have already been created for a given module, helping avoid duplication and supporting intentional sequencing of learning materials.</li>
+</ul>
+
+<p>The following table summarizes the key characteristics of matching and flashcard activities as they are implemented within PreseMaker, providing a side-by-side comparison to help instructors choose the right format for a given instructional need:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Matching Activity</th>
+      <th>Flashcard Activity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Content source</td>
+      <td>Key terms and definitions extracted from module content</td>
+      <td>Key terms and definitions extracted from module content</td>
+    </tr>
+    <tr>
+      <td>Learner interaction</td>
+      <td>Draw connections between two columns of items</td>
+      <td>Recall answer before revealing the reverse side of the card</td>
+    </tr>
+    <tr>
+      <td>Primary learning goal</td>
+      <td>Vocabulary recognition and discrimination between related terms</td>
+      <td>Active retrieval practice and self-assessment</td>
+    </tr>
+    <tr>
+      <td>Scope per artifact</td>
+      <td>A selected set of term-definition pairs per activity</td>
+      <td>Can cover an entire module's vocabulary in one set</td>
+    </tr>
+    <tr>
+      <td>Setup required</td>
+      <td>Minimal — AI populates template automatically</td>
+      <td>Minimal — AI populates template automatically</td>
+    </tr>
+    <tr>
+      <td>Best used</td>
+      <td>Early in a module to distinguish between similar terms</td>
+      <td>Early to mid-module for comprehensive vocabulary review</td>
+    </tr>
+    <tr>
+      <td>Located in PreseMaker at</td>
+      <td>Interactive activity library → Module Index</td>
+      <td>Interactive activity library → Module Index</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Together, matching and flashcard activities give instructors a reliable, low-effort way to build learners' vocabulary and concept recognition — the essential groundwork that makes all subsequent engagement with module content more productive and meaningful.</p>
+        <div class="notes"><strong>Notes</strong>A focused look at how to use matching and flashcard templates built from key terms within PreseMaker. Learners explore how these activity types reinforce vocabulary and concept recognition.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

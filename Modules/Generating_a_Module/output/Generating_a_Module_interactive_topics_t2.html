@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding the AI-Suggested Module Breakdown</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Understanding the AI-Suggested Module Breakdown</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Understanding the AI-Suggested Module Breakdown</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you upload or provide source material to PreseMaker, the platform does not simply hand you a blank canvas and ask you to start from scratch. Instead, its AI engine immediately goes to work analyzing what you have provided and returns a <strong>proposed module breakdown</strong> — a structured, editable outline that suggests how your course content might be organized into discrete learning units. Understanding what this breakdown is, how it was produced, and what you should look for when reviewing it is one of the most important early skills in working efficiently with PreseMaker.</p>
+
+<p>The module breakdown is essentially the AI's first draft of your course architecture. Think of it the way you might think of a rough outline produced by a knowledgeable colleague who has just read through all your source documents: it captures the big picture, identifies natural groupings of related ideas, and proposes a sequence. Your job at this stage is not to accept it blindly, but to evaluate it critically and refine it into something that truly serves your learners.</p>
+
+<p><strong>What the AI-Generated Breakdown Looks Like</strong></p>
+
+<p>The first thing you will notice when PreseMaker finishes its initial analysis is a <strong>list of proposed modules</strong> displayed in a structured, scannable format. Each entry in the list represents one proposed module — that is, one distinct chunk of the course content that the AI believes belongs together as a coherent unit of learning.</p>
+
+<p>The layout is deliberately clean and easy to scan. Rather than presenting you with a wall of text or a complex diagram, PreseMaker arranges the modules in sequence, typically numbered or visually ordered from top to bottom. This ordering reflects the AI's suggestion about the <em>sequence</em> in which the content should be taught, not just what topics exist. This is an important distinction: the breakdown is making both a grouping argument and a sequencing argument at the same time.</p>
+
+<p>Each module entry in the list contains two primary pieces of information: a <strong>title</strong> and a <strong>description</strong>. Together these two elements give you a quick but meaningful snapshot of what the AI believes that module should contain and why it has been separated from the modules around it. Because the list is fully visible all at once, you can scan the entire proposed course structure in a matter of seconds, which gives you a high-level sense of the overall scope and flow before you dive into any single module in detail.</p>
+
+<p><strong>How PreseMaker Analyzes Source Material</strong></p>
+
+<p>To appreciate why the breakdown looks the way it does, it helps to understand what the AI is actually doing when it processes your source material. PreseMaker's engine does not simply search for headings or copy the table of contents from a document. It performs a deeper analysis that works on several levels simultaneously.</p>
+
+<p>First, the AI scans the source material for <strong>major topics and themes</strong>. It identifies the dominant subjects that appear throughout the content and begins to build an internal map of what ideas are present. For example, if you upload a manual about project management, the AI will detect clusters of content around topics like planning, risk management, team communication, and reporting — even if the original document is not organized under those exact headings.</p>
+
+<p>Second, it looks for <strong>natural content boundaries</strong> — places in the material where one major idea ends and another begins. These boundaries might be signaled by explicit section breaks in the source document, but they can also emerge from shifts in subject matter, changes in vocabulary, or transitions between conceptual and procedural content. The AI uses these signals to decide where one module should end and the next should begin.</p>
+
+<p>Third, it <strong>groups related ideas together</strong>. Content that shares a common theme, builds on the same foundational concept, or serves a related instructional purpose is pulled into the same proposed module rather than scattered across several. This grouping process is what allows the AI to produce a coherent structure rather than simply mirroring whatever arbitrary divisions existed in the source material.</p>
+
+<p>It is worth noting that the quality of the AI's breakdown is directly influenced by the quality of your source material. Well-organized source documents with clear structure, consistent terminology, and logical flow will typically produce a breakdown that is very close to what a human instructional designer would propose. Conversely, if your source material is fragmented, repetitive, or internally inconsistent, the AI may produce a breakdown that requires more significant editing. This is not a flaw in the tool — it is a reflection of the reality that good output depends on good input.</p>
+
+<p><strong>Information Contained in Each Suggested Module</strong></p>
+
+<p>Each module in the breakdown carries specific information that is designed to give you everything you need to make an editorial judgment about whether that module should exist, what it should contain, and whether it belongs where the AI has placed it.</p>
+
+<p>The <strong>module title</strong> is a concise label — typically a short phrase — that summarizes the central theme or primary skill addressed in that section. A good AI-generated title functions like a chapter heading in a well-written book: it tells you immediately what the learner will be engaging with and implicitly signals the scope. For example, a title like <em>"Managing Stakeholder Expectations"</em> tells you both the subject (stakeholders) and the nature of the content (it is about managing a process or relationship, not just defining a term). When a title feels vague or too broad, that is often a clue that the AI has grouped together content that might be better separated.</p>
+
+<p>The <strong>module description</strong> expands on the title by providing a brief but substantive explanation of the content scope and the intended learning focus for that module. While the title tells you the topic, the description tells you what specifically about that topic will be taught and, in many cases, why it matters in the context of the broader course. For example, a description might read: <em>"This module covers the key techniques for identifying stakeholder interests early in a project, managing competing priorities, and maintaining alignment throughout the project lifecycle."</em> That description tells you not just the subject, but the approach, the depth, and the practical orientation of the module.</p>
+
+<p>Taken together, the title and description give you enough context to make two critical judgments: whether the <em>content boundaries</em> make sense (does this module cover the right material?), and whether the <em>learning unit</em> makes sense (is this a coherent, teachable chunk that a learner can meaningfully engage with as a single experience?). If either of those judgments comes up negative when you review a particular module, that is your signal to intervene and adjust.</p>
+
+<p><strong>Purpose of the Initial Breakdown</strong></p>
+
+<p>The most immediately practical benefit of the AI-generated breakdown is the time it saves. Building a course outline manually — reviewing source material, identifying major themes, deciding on groupings, drafting module titles, and writing scope descriptions — is a time-intensive process that can take hours or even days depending on the volume of material. PreseMaker compresses that entire process into seconds, handing you a working draft the moment your source material has been processed.</p>
+
+<p>But the value is not just about speed. The breakdown also <strong>changes the cognitive task</strong> you face as a course author. Without it, you would be performing a generative task: creating structure from nothing. With it, you are performing an evaluative task: reviewing and refining an existing structure. Evaluative work is generally faster and more reliable than generative work because you have something concrete to react to. It is much easier to read a proposed module title and think <em>"that scope is too broad — it should be two modules"</em> than it is to stare at a blank page and figure out what the right modules should be.</p>
+
+<p>Importantly, the initial breakdown is <strong>fully editable at this stage</strong>. Nothing about the AI's proposal is fixed, locked, or treated as a commitment. Every module title can be changed, every description can be rewritten, modules can be merged or split, and the sequence can be rearranged. The breakdown is a starting point, not a contract. This is a deliberate design principle: PreseMaker positions itself as a collaborator that does the heavy lifting of the first draft while leaving all meaningful editorial decisions in the hands of the course author.</p>
+
+<p><strong>Evaluating the Suggested Structure</strong></p>
+
+<p>Once you understand what the breakdown contains and how it was produced, the next step is to evaluate it systematically before proceeding. A thoughtful review at this stage prevents structural problems from compounding later, when they become much more difficult to correct.</p>
+
+<p>Begin by assessing the <strong>number of modules</strong> in relation to the scope of your source material. There is no universal rule for how many modules a course should have, but there are useful heuristics. A very small number of modules for a large, complex body of content may signal that the AI has over-grouped, combining things that should be kept separate. A very large number of modules for a modest amount of content may signal over-splitting, where the AI has divided content so granularly that individual modules will feel thin or incomplete. Ask yourself whether the number feels proportionate — whether each proposed module seems to represent a substantial enough unit of learning to justify standing on its own.</p>
+
+<p>Next, read each <strong>module title and description carefully</strong> and ask whether it accurately reflects a meaningful and teachable chunk of content. A module is meaningful if it addresses a coherent topic or skill that has value on its own, not just as a fragment of something larger. It is teachable if a learner could plausibly engage with it as a self-contained experience and come away with something useful, even if they never completed the rest of the course. If a module fails either test, it likely needs to be restructured.</p>
+
+<p>Finally, look actively for three types of structural problems that the AI may introduce:</p>
+
+<ul>
+  <li><strong>Gaps</strong> — important topics present in the source material that do not appear to be covered in any proposed module. A gap means content has been missed or buried inside a module where it will not receive adequate attention.</li>
+  <li><strong>Overlaps</strong> — cases where two or more modules appear to cover substantially the same ground. Overlap can lead to redundancy in the final course and may confuse learners about where to find a particular piece of information.</li>
+  <li><strong>Misaligned groupings</strong> — cases where content has been placed in a module where it does not logically belong, or where two topics that should be together have been placed in separate modules. Misalignment often shows up as a module description that seems to cover two unrelated ideas, or a title that does not match the content described beneath it.</li>
+</ul>
+
+<p>Catching these issues now, at the breakdown stage, is far more efficient than discovering them after you have already invested time developing individual modules. The breakdown review is your first and most important quality gate in the course creation process.</p>
+
+<p>To illustrate the full picture, consider a practical example. Suppose you are building a course on data privacy for business professionals and you upload a comprehensive policy document as your source material. PreseMaker might return a breakdown that looks something like this:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module Number</th>
+      <th>Proposed Title</th>
+      <th>Proposed Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Why Data Privacy Matters</td>
+      <td>Introduces the business and legal rationale for protecting personal data, including regulatory context and organizational risk.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Types of Personal Data</td>
+      <td>Covers definitions and categories of personal data under relevant frameworks, including sensitive data classifications.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Data Collection and Consent</td>
+      <td>Explains lawful bases for collecting personal data, consent requirements, and how to document collection practices.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Data Storage and Security</td>
+      <td>Addresses requirements for storing data securely, including retention limits, access controls, and encryption standards.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Handling Data Breaches</td>
+      <td>Describes the steps required when a data breach occurs, including notification obligations and internal response procedures.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Individual Rights and Requests</td>
+      <td>Explains the rights individuals hold over their personal data and how staff should respond to access, deletion, and correction requests.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Scanning this breakdown, you can quickly assess whether it makes sense. The number of modules seems proportionate for a business compliance course. The titles are specific and informative. The descriptions clarify scope and learning focus. A careful reviewer might notice, however, that <em>"Data Storage and Security"</em> and <em>"Handling Data Breaches"</em> are closely related — a breach is often a consequence of a storage or security failure — and might consider whether they should be combined or whether the sequence between them requires a clearer logical bridge. That kind of observation is exactly what the evaluation stage is designed to surface.</p>
+        <div class="notes"><strong>Notes</strong>Introduces the initial module structure that PreseMaker proposes after analyzing source material. Learners examine what a generated breakdown looks like and what information it contains.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

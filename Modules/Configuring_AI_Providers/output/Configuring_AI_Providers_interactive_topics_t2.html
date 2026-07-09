@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assigning AI Providers to Task Types</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Assigning AI Providers to Task Types</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Assigning AI Providers to Task Types</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>PreseMaker allows you to take precise control over which AI provider handles each specific kind of generation task it performs. Rather than routing all AI work through a single provider, the platform lets you map individual task types to whichever provider best fits your goals — whether that means minimizing cost, maximizing speed, or ensuring the highest-quality output. This configuration lives in Settings and takes effect immediately the next time PreseMaker executes a task of the relevant type. Understanding how this system works, what task types are available, and how the default provider fits into the picture gives you the foundation to build a well-optimized authoring workflow.</p>
+
+<p><strong>Accessing Provider Assignment in Settings</strong></p>
+
+<p>All provider assignment configuration is managed from within PreseMaker's Settings area. When you navigate to Settings, you will find each available task type listed, and alongside each one you can view and edit which provider is currently mapped to it. The providers available for assignment are those you have already configured in PreseMaker — you must first add and authenticate a provider before it can be selected for any task type.</p>
+
+<p>The mapping interface is intentionally straightforward: each task type has exactly one assigned provider at any given time, and you simply select from your available providers to change it. Once you save your changes, PreseMaker begins using the newly assigned provider the very next time it runs a task of that type. There is no restart required and no caching of old assignments — the routing logic reads the current configuration at the moment each task is triggered.</p>
+
+<p><strong>Understanding Task Types</strong></p>
+
+<p>PreseMaker supports a defined set of task types, each representing a distinct kind of content generation the platform performs during course authoring. Every one of these task types is text-based — PreseMaker does not include image generation or vision (image-reading) capabilities, so every assignable task works purely with text input and output. The full set of task types you can independently assign includes:</p>
+
+<ul>
+  <li><strong>Module topics</strong> — generating the topic structure and subtopic breakdown for a module</li>
+  <li><strong>Learning outcomes</strong> — producing measurable objectives that describe what learners will be able to do</li>
+  <li><strong>Presentation slide content</strong> — drafting the text that appears on individual slides within a presentation</li>
+  <li><strong>Text lessons</strong> — writing longer-form instructional body text for lesson pages</li>
+  <li><strong>Quiz questions</strong> — creating assessment questions, including stems, correct answers, and distractors</li>
+  <li><strong>Assignments</strong> — generating assignment prompts and descriptions</li>
+  <li><strong>Interactive-activity content</strong> — producing content for interactive learning activities</li>
+  <li><strong>Speaker narration</strong> — writing the spoken-word script that accompanies slides or lessons</li>
+  <li><strong>Standards</strong> — generating or aligning content to educational or industry standards</li>
+</ul>
+
+<p>Because each of these task types serves a different authoring purpose and has different characteristics — some are high-volume, some are high-visibility, some demand stylistic precision — the ability to assign them to different providers is directly useful in practice.</p>
+
+<p><strong>The Default Provider for Unassigned Tasks</strong></p>
+
+<p>Not every task type needs to have a specific provider explicitly assigned to it. If a task type has no provider selected, PreseMaker automatically routes it to a designated <em>default provider</em>, which you also configure in Settings alongside your task-specific assignments. The default provider is a safety net for configuration gaps — it ensures that PreseMaker can always attempt to execute any task type even if you have not made a deliberate choice for it.</p>
+
+<p>It is important to understand what the default provider is <em>not</em>: it is not an automatic retry mechanism. If a task type has a specific provider assigned and that provider is unavailable or returns an error, PreseMaker does not silently fall back to the default. The default provider only comes into play when <em>no specific provider has been assigned</em> to a task type, not as a secondary option when the primary assignment fails. This distinction keeps routing behavior transparent and predictable — you always know which provider was attempted for any given task.</p>
+
+<p><strong>Assigning Different Providers to Different Tasks</strong></p>
+
+<p>The practical power of the assignment system is the freedom to mix providers across task types according to your own priorities. Consider a straightforward example: you might assign a capable, cost-effective provider to quiz question generation because you produce a large number of questions across many modules, and the cost of a premium provider at that volume would be significant. At the same time, you might assign a higher-capability premium provider to slide content generation because those slides are highly visible to learners and the quality of language directly affects the learner experience.</p>
+
+<p>There are no artificial constraints on how you configure the mapping. Multiple task types can share the same provider — for instance, you might use the same provider for both learning outcomes and standards because they are closely related and you want stylistic consistency between them. Alternatively, every task type could be assigned to a different provider if your evaluation of each one led to that conclusion. The system imposes no minimum or maximum on provider diversity across the task map.</p>
+
+<p><strong>How PreseMaker Routes a Task to a Provider</strong></p>
+
+<p>The routing logic PreseMaker uses is a simple, direct lookup. When a generation request is triggered — for example, when an author asks PreseMaker to generate quiz questions — the platform checks the task-type-to-provider mapping for that task type. If a provider is specifically assigned, that provider receives the request. If no specific assignment exists, the default provider receives the request. There is no ranked list, no priority queue, and no secondary fallback provider.</p>
+
+<p>This design means routing is consistent and predictable. Every generation request for a given task type goes to the same provider every time, as long as the Settings configuration has not changed. Authors do not need to wonder which provider handled a particular output or whether a fallback silently changed the source of a generation. The one-to-one mapping at any given moment makes the system easy to reason about and easy to troubleshoot if output quality or cost patterns are not meeting expectations.</p>
+
+<p><strong>Choosing a Provider Based on Cost, Speed, or Quality</strong></p>
+
+<p>The decision of which provider to assign to each task type naturally involves weighing three practical dimensions: cost, speed, and output quality. These considerations often pull in different directions, and the assignment system gives you the flexibility to make different trade-offs for different tasks rather than accepting a single compromise across the board.</p>
+
+<p><strong>Cost</strong> becomes a significant factor for high-volume tasks. Quiz distractor generation, for example, might be executed dozens or hundreds of times across a course build. Assigning a less expensive provider to that task type — even if its output is slightly less polished — can produce meaningful savings without affecting the parts of the course that learners notice most. Lower-stakes background tasks, where the output feeds into a process rather than appearing directly in front of learners, are natural candidates for cost-optimized providers.</p>
+
+<p><strong>Speed</strong> matters most for tasks that are run frequently within a single authoring session, or for tasks where an author is actively waiting for output before proceeding. If a particular provider returns results significantly faster than others for a given task type, assigning that provider can meaningfully reduce idle time during content development. This is especially relevant for iterative tasks where an author might regenerate output multiple times to find a version they want to keep.</p>
+
+<p><strong>Quality</strong> justifies premium provider assignment for high-visibility or high-stakes outputs. Slide content, learning outcomes, and text lessons are seen directly by learners and reflect on the overall quality of the course. Speaker narration must read naturally when converted to audio. For these task types, the incremental cost of a more capable provider is often well justified by the improvement in output that reaches the learner. The following table summarizes how these three dimensions might guide typical assignment decisions:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task Type</th>
+      <th>Primary Consideration</th>
+      <th>Rationale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Presentation slide content</td>
+      <td>Quality</td>
+      <td>Directly visible to learners; language quality has high impact on course perception</td>
+    </tr>
+    <tr>
+      <td>Learning outcomes</td>
+      <td>Quality</td>
+      <td>Sets expectations for the entire module; precision and alignment matter significantly</td>
+    </tr>
+    <tr>
+      <td>Speaker narration</td>
+      <td>Quality / Speed</td>
+      <td>Must read naturally; iterative regeneration during authoring makes speed valuable too</td>
+    </tr>
+    <tr>
+      <td>Text lessons</td>
+      <td>Quality</td>
+      <td>Extended instructional content where coherence and clarity directly affect learning</td>
+    </tr>
+    <tr>
+      <td>Quiz questions</td>
+      <td>Quality / Cost</td>
+      <td>Assessment integrity matters, but volume can be high across a full course build</td>
+    </tr>
+    <tr>
+      <td>Assignments</td>
+      <td>Quality</td>
+      <td>Prompts need to be clear and well-scoped; typically lower volume than quiz questions</td>
+    </tr>
+    <tr>
+      <td>Interactive-activity content</td>
+      <td>Quality / Speed</td>
+      <td>Learner-facing; iterative refinement during authoring is common</td>
+    </tr>
+    <tr>
+      <td>Module topics</td>
+      <td>Speed / Cost</td>
+      <td>Structural scaffolding task; often run early and quickly revised by the author</td>
+    </tr>
+    <tr>
+      <td>Standards</td>
+      <td>Quality</td>
+      <td>Alignment accuracy is important for compliance and credentialing contexts</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These are guiding patterns rather than fixed rules. Your specific provider options, the volume of content you produce, and the standards your organization applies to learner-facing material will all influence where you land on each task type. The value of the assignment system is precisely that it lets you apply your own judgment task by task rather than accepting a uniform approach across all of PreseMaker's generation work.</p>
+        <div class="notes"><strong>Notes</strong>Covers provider assignment configuration in Settings, all assignable text-only task types, the role and scope of the default provider (fallback for unassigned tasks only, not a retry mechanism), the flexibility of mixing providers across tasks, the deterministic one-to-one routing model, and practical guidance on cost/speed/quality trade-offs with a summary table.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Providers and API Keys: Setting Up Your Connection — Using PreseMaker</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-bg: #f4f6f9;
+      --color-surface: #ffffff;
+      --color-primary: #2c5f8a;
+      --color-primary-dark: #1e4266;
+      --color-accent: #3d8bcd;
+      --color-accent-light: #e8f2fb;
+      --color-text: #1e2d3d;
+      --color-text-muted: #5a6a7a;
+      --color-border: #dce3ec;
+      --color-badge-bg: #eef3f9;
+      --color-badge-text: #2c5f8a;
+      --color-filetype-bg: #f0f7ee;
+      --color-filetype-text: #3a7d44;
+      --color-source-link: #6b4fa0;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(44, 95, 138, 0.10);
+      --shadow-hover: 0 6px 20px rgba(44, 95, 138, 0.16);
+      --transition: 0.2s ease;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 60%, var(--color-accent) 100%);
+      color: #ffffff;
+      padding: 3rem 2rem 2.5rem;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .course-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.30);
+      border-radius: 20px;
+      padding: 0.25rem 0.85rem;
+      margin-bottom: 1rem;
+      color: #e0edf8;
+    }
+
+    header h1 {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    header p {
+      font-size: 1rem;
+      max-width: 680px;
+      color: #c8dff0;
+      line-height: 1.7;
+    }
+
+    /* ── Main content ── */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    /* ── Card grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.1rem;
+    }
+
+    @media (min-width: 640px) {
+      .card-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .card-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.35rem 1.4rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    /* ── Card meta row ── */
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.70rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.18rem 0.65rem;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .badge-type {
+      background: var(--color-badge-bg);
+      color: var(--color-badge-text);
+      border: 1px solid #c7d9ee;
+    }
+
+    .badge-filetype {
+      background: var(--color-filetype-bg);
+      color: var(--color-filetype-text);
+      border: 1px solid #c2ddc5;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    /* ── Card title row ── */
+    .card-title-row {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .card-name {
+      font-size: 0.975rem;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.3;
+    }
+
+    .card-name a {
+      color: var(--color-primary);
+      text-decoration: none;
+      border-bottom: 1.5px solid transparent;
+      transition: color var(--transition), border-color var(--transition);
+    }
+
+    .card-name a:hover,
+    .card-name a:focus {
+      color: var(--color-accent);
+      border-bottom-color: var(--color-accent);
+      outline: none;
+    }
+
+    .card-name a:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    .source-link {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--color-source-link);
+      text-decoration: none;
+      padding: 0.15rem 0.5rem;
+      border: 1px solid #d0bef0;
+      border-radius: 12px;
+      background: #f7f3fd;
+      white-space: nowrap;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .source-link:hover,
+    .source-link:focus {
+      background: #ede5fb;
+      color: #4a2d80;
+      outline: none;
+    }
+
+    .source-link:focus-visible {
+      outline: 2px solid var(--color-source-link);
+      outline-offset: 2px;
+    }
+
+    /* ── Card description ── */
+    .card-description {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
+      font-size: 0.78rem;
+      color: #9aaab8;
+      border-top: 1px solid var(--color-border);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <span class="course-label">Using PreseMaker</span>
+      <h1>AI Providers and API Keys: Setting Up Your Connection</h1>
+      <p>
+        This module covers everything you need to connect PreseMaker to an external AI provider.
+        You will learn how PreseMaker communicates with AI services, what API keys are and how to
+        obtain them, how to enter and save your key in PreseMaker's settings, and how your credentials
+        are stored securely on your device.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <p class="section-label">Module Artifacts</p>
+
+    <div class="card-grid" role="list">
+
+      <!-- Artifact 1: Module Topics -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge badge-type">Module Topics</span>
+          <span class="badge badge-filetype">.json</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="module_topics.html">Module Topics</a>
+          </span>
+          <a class="source-link" href="../hierarchy.json" aria-label="Source file for Module Topics">source file</a>
+        </div>
+        <p class="card-description">
+          A structured outline of the module listing all topics and subtopics covered, used by
+          learners and instructors to preview the scope of the module on how PreseMaker connects to
+          AI providers, what API keys are, and how to obtain, enter, and secure them.
+        </p>
+      </article>
+
+      <!-- Artifact 2 -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="AI_Providers_and_interactive_topics_t1.html">How PreseMaker Connects to AI Providers</a>
+          </span>
+        </div>
+        <p class="card-description">
+          An explanatory reading that describes how PreseMaker relies on external AI providers to
+          deliver features like content generation and smart suggestions, and why a direct API
+          connection to those providers is necessary; learners read it to understand the architectural
+          relationship between PreseMaker and AI services.
+        </p>
+      </article>
+
+      <!-- Artifact 3 -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="AI_Providers_and_interactive_topics_t2.html">Overview of Supported AI Providers</a>
+          </span>
+        </div>
+        <p class="card-description">
+          An explanatory reading that introduces the concept of AI providers, profiles the supported
+          options (including Anthropic Claude and Google Gemini), and explains how the choice of
+          provider affects content quality, style, and cost; learners use it to compare providers
+          before selecting one.
+        </p>
+      </article>
+
+      <!-- Artifact 4 -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="AI_Providers_and_interactive_topics_t3.html">Understanding API Keys</a>
+          </span>
+        </div>
+        <p class="card-description">
+          An explanatory reading that defines what an API key is, why PreseMaker requires one to
+          communicate with external AI services, and how it functions as a credential authenticating
+          requests; learners read it to understand the purpose and importance of API keys before
+          obtaining their own.
+        </p>
+      </article>
+
+      <!-- Artifact 5 -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="AI_Providers_and_interactive_topics_t4.html">Obtaining Your API Key</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A step-by-step guide that walks learners through selecting an AI provider, creating an
+          account on that provider's platform, and generating an API key so they are ready to connect
+          PreseMaker to their chosen AI service.
+        </p>
+      </article>
+
+      <!-- Artifact 6 -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="AI_Providers_and_interactive_topics_t5.html">Entering Your API Key in PreseMaker Settings</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A procedural guide that shows learners exactly how to open PreseMaker's Settings screen,
+          paste their API key into the correct field, and save the configuration so the application
+          can begin making authenticated requests to the AI provider.
+        </p>
+      </article>
+
+      <!-- Artifact 7 -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="AI_Providers_and_interactive_topics_t6.html">API Key Encryption and Local Storage</a>
+          </span>
+        </div>
+        <p class="card-description">
+          An informational reading that explains how PreseMaker encrypts and stores API keys locally
+          on the user's device, where the key resides, and what happens to it during normal use,
+          helping learners assess the security implications of adding their key to the application.
+        </p>
+      </article>
+
+      <!-- Artifact 8 -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge badge-type">Text Content</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="AI_Providers_and_interactive.html">API Key Encryption and Local Storage</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A duplicate of the Topic Detail above — an informational reading that explains how
+          PreseMaker encrypts and stores API keys locally on the user's device, where the key
+          resides, and what happens to it during normal use, helping learners assess the security
+          implications of adding their key to the application.
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Using PreseMaker &mdash; AI Providers and API Keys: Setting Up Your Connection</p>
+  </footer>
+
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body>
+</html>

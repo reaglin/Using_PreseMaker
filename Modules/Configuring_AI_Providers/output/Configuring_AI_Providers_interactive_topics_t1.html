@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to AI Tasks in PreseMaker</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Introduction to AI Tasks in PreseMaker</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Introduction to AI Tasks in PreseMaker</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>PreseMaker's AI layer is built around a concept called <strong>AI tasks</strong> — a structured system that defines exactly what kinds of content the platform can generate using artificial intelligence, how those generation requests are categorized, and how they are routed to the AI providers you configure. Before you can make good decisions about which AI service to connect to PreseMaker, or how to configure the platform for your instructional design workflow, you need a clear picture of what an AI task actually is, what tasks are supported, and — just as importantly — what falls outside the scope of PreseMaker's AI capabilities entirely.</p>
+
+<p>Think of AI tasks as the vocabulary PreseMaker uses to describe its own content generation needs. Rather than treating "generate something with AI" as a single undifferentiated action, PreseMaker breaks the process down into named, well-defined units, each representing a specific type of content generation request. This granularity is intentional: it gives you control, predictability, and flexibility in how AI is applied across your projects.</p>
+
+<p><strong>What Are AI Tasks in PreseMaker?</strong></p>
+
+<p>An AI task in PreseMaker is a <em>discrete unit of content generation work</em> — a clearly defined request for a specific type of output that the platform can hand off to a configured AI provider. The word "discrete" is important here. Each task is self-contained and independently named, meaning PreseMaker treats "generate quiz questions" as a fundamentally different request from "generate slide content," even though both involve natural language generation under the hood.</p>
+
+<p>This design has a direct practical consequence: because tasks are individual units, PreseMaker can route different tasks to <em>different AI providers</em> depending on how you have configured the system. For example, you might find that one provider excels at generating structured quiz questions while another produces richer narrative text for lessons. The task-based architecture lets you assign each type of work to whichever provider is best suited for it, rather than locking the entire platform into a single AI service for everything.</p>
+
+<p>Understanding tasks as individual, named units is therefore foundational to working effectively with PreseMaker's Settings. When you navigate to the AI configuration area of the platform, you are essentially building a map: for each task type, which provider should handle it? Without a clear mental model of what the tasks are and how they differ, that configuration process becomes guesswork.</p>
+
+<p><strong>The Scope of AI Capabilities: Text-Only Generation</strong></p>
+
+<p>Before surveying the supported tasks, it is essential to establish a firm boundary around what PreseMaker's AI layer is designed to do. <em>PreseMaker does not include any image generation capability.</em> There is no AI task for producing visual assets, no "vision" feature, and no integration pathway for image-based AI models within the platform. The AI layer in PreseMaker is designed exclusively around <strong>natural language generation</strong> — the production of written text.</p>
+
+<p>This is not a limitation that is likely to be resolved by connecting a more powerful AI provider. It is a deliberate architectural boundary. No matter which text-based AI provider you configure, PreseMaker will only ever use it for text output. Any provider capabilities related to image generation, image analysis, or multimodal processing simply have no corresponding task in PreseMaker to invoke them.</p>
+
+<p>Why does this matter practically? It prevents two common problems. First, it prevents <em>misconfiguration</em> — there is no point in selecting a provider specifically because it offers image generation, since PreseMaker will never call that capability. Second, it prevents <em>incorrect expectations</em> — course authors and administrators who understand this boundary will not be surprised or confused when AI-generated content appears as text only. Visual assets in PreseMaker come from other sources; the AI layer is not one of them.</p>
+
+<p><strong>Supported Text Generation Tasks</strong></p>
+
+<p>Within the scope of natural language generation, PreseMaker supports a well-defined set of AI tasks that map closely to the stages and components of instructional content development. The following table summarizes the supported task types and what each one produces:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>AI Task</th>
+      <th>What It Generates</th>
+      <th>Where It Fits in Course Development</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Module Topics</td>
+      <td>Suggested topics and subtopics for a module</td>
+      <td>Early planning and course structure</td>
+    </tr>
+    <tr>
+      <td>Learning Outcomes</td>
+      <td>Measurable outcome statements for a module or lesson</td>
+      <td>Instructional design and alignment</td>
+    </tr>
+    <tr>
+      <td>Standards Alignment</td>
+      <td>Mapped standards or competencies relevant to content</td>
+      <td>Curriculum compliance and documentation</td>
+    </tr>
+    <tr>
+      <td>Presentation Slide Content</td>
+      <td>Text for individual slides in a presentation</td>
+      <td>Building slide-based learning materials</td>
+    </tr>
+    <tr>
+      <td>Text Lessons</td>
+      <td>Narrative explanatory text for reading-based lessons</td>
+      <td>Long-form instructional content</td>
+    </tr>
+    <tr>
+      <td>Quiz Questions</td>
+      <td>Assessment questions with answer options and feedback</td>
+      <td>Formative and summative assessment</td>
+    </tr>
+    <tr>
+      <td>Assignments</td>
+      <td>Assignment prompts, instructions, and criteria</td>
+      <td>Performance-based assessment design</td>
+    </tr>
+    <tr>
+      <td>Interactive Activity Content</td>
+      <td>Text-based content for interactive learning activities</td>
+      <td>Engagement and applied practice</td>
+    </tr>
+    <tr>
+      <td>Speaker Narration</td>
+      <td>Script text for voiceover or on-screen narration</td>
+      <td>Audio-accompanied or narrated presentations</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Each of these tasks reflects a genuine, recurring need in the course authoring process. Consider a few examples in depth. When generating <strong>module topics</strong>, PreseMaker is asking an AI provider to analyze a subject area and propose a logical breakdown of content into teachable chunks — the kind of work that might otherwise require a subject matter expert to outline by hand. When generating <strong>quiz questions</strong>, the platform is requesting structured assessment content: not just question stems, but answer choices, correct answers, and often explanatory feedback — all as text. When generating <strong>speaker narration</strong>, the task is producing a readable script that can accompany slides or be fed into a text-to-speech workflow, bridging the gap between visual content and audio delivery.</p>
+
+<p>The breadth of these tasks means that AI can be involved at virtually every stage of content creation within PreseMaker, from the earliest structural planning all the way through to the final narration of a completed presentation. However, because each stage is a <em>separate named task</em>, you retain the ability to engage AI selectively — using it for the tasks where it adds the most value in your workflow and leaving others to human authors.</p>
+
+<p><strong>AI Tasks as the Bridge Between PreseMaker and AI Providers</strong></p>
+
+<p>The task-based architecture serves a second, equally important function beyond simply categorizing content: it acts as the <em>connection layer</em> between PreseMaker and external AI providers. Each task type is a named channel. When PreseMaker needs to generate quiz questions, it does not simply send a request to "some AI" — it sends a request specifically tagged as the quiz question task, and the platform's configuration determines which provider receives that request.</p>
+
+<p>This is what makes <strong>per-task provider assignment</strong> possible. In PreseMaker's Settings, administrators can specify a different AI provider for each task if desired. The task names act as the keys in that configuration: they are the identifiers that bind a content need to a chosen service. Because the tasks are well-defined and stable — their names and behaviors do not change arbitrarily — you can make considered, informed decisions about provider assignment. You can ask questions like: Which provider generates the most pedagogically sound learning outcomes? Which one handles long-form narrative text better? Which one produces the most accurate standards alignment? The task boundaries give you a meaningful framework for evaluating and comparing providers against specific, concrete use cases rather than in the abstract.</p>
+
+<p>In summary, AI tasks in PreseMaker represent a thoughtfully designed system that makes AI-assisted content generation both <em>flexible</em> and <em>transparent</em>. They define what can be generated (text-only, across a specific set of content types), establish clear boundaries around what cannot (no image generation), and create the infrastructure for granular control over which AI providers handle which kinds of work. Grasping this model is the essential first step before exploring provider configuration, task-level settings, or any other aspect of PreseMaker's AI capabilities.</p>
+        <div class="notes"><strong>Notes</strong>Explains what AI tasks are in PreseMaker and the range of text-based generation tasks supported. Clarifies the scope of AI capabilities, including what PreseMaker does and does not generate.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

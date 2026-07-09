@@ -1,0 +1,762 @@
+{
+  "ModuleFolderName": "Generating_a_Module",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:17:44.8909099-04:00",
+  "ModifiedDate": "2026-07-08T19:19:14.6970241-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "99f47bab-fbc1-4c7d-aa23-66820ef2fc72",
+      "Title": "How PreseMaker Analyzes Source Material",
+      "Summary": "Explores the process by which PreseMaker reads and interprets uploaded source material to identify key themes and content areas. Learners understand what drives the AI\u0027s initial structural proposals.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:17:44.8909099-04:00",
+      "ModifiedDate": "2026-07-08T19:17:44.8909099-04:00",
+      "Elements": [
+        {
+          "Id": "dcf3de08-ae28-47d2-aafb-58981c96bf1f",
+          "TopicId": "99f47bab-fbc1-4c7d-aa23-66820ef2fc72",
+          "Title": "Uploading Source Material to PreseMaker",
+          "BodyText": "The process begins when a user uploads source material into PreseMaker, providing the raw input the AI will use to build a course structure.",
+          "Notes": "Source material may include documents, outlines, transcripts, or other text-based content relevant to the course subject.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:18:00.6576985-04:00",
+          "ModifiedDate": "2026-07-08T19:18:00.6576985-04:00",
+          "Items": [
+            {
+              "Id": "a0b0cb38-75e9-4b91-a6e0-86ed26a88164",
+              "Text": "PreseMaker accepts uploaded source material as the foundation for all subsequent analysis and structural proposals.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "348b1fb7-a557-449f-9704-e9d60a27ce13",
+              "Text": "The quality and completeness of the uploaded material directly influences the accuracy of the AI\u0027s output.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8c1e35a6-2cb2-4a4d-98f4-c80d5615eac3",
+              "Text": "Users should ensure source material is well-organized and representative of the full course scope before uploading.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b8e9636d-2962-421e-9689-69319364369a",
+          "TopicId": "99f47bab-fbc1-4c7d-aa23-66820ef2fc72",
+          "Title": "Reading and Parsing the Content",
+          "BodyText": "Once material is uploaded, PreseMaker reads through the full text to parse its language, structure, and subject matter.",
+          "Notes": "This parsing step is automatic and occurs before any structural suggestions are presented to the user.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:18:00.6576985-04:00",
+          "ModifiedDate": "2026-07-08T19:18:00.6576985-04:00",
+          "Items": [
+            {
+              "Id": "e0622e8c-438e-4da2-8bd0-3083c414ca06",
+              "Text": "PreseMaker scans the uploaded text to identify vocabulary, headings, and recurring concepts.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7701b8e3-44fe-4d80-ac9c-1576dc895a9f",
+              "Text": "The AI breaks the content into analyzable segments to detect how ideas are grouped and sequenced.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6bac7d48-6907-4eac-9cdb-925f1d3bab7d",
+              "Text": "Structural cues in the source material, such as numbered sections or headers, may guide the parsing process.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c2ab20dc-f27b-4ee2-a143-118fd55fe15a",
+          "TopicId": "99f47bab-fbc1-4c7d-aa23-66820ef2fc72",
+          "Title": "Identifying Key Themes and Content Areas",
+          "BodyText": "PreseMaker uses its analysis to surface the dominant themes and distinct content areas present in the source material.",
+          "Notes": "A theme might be a broad subject domain, while a content area represents a more specific cluster of related information within that domain.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:18:00.6576985-04:00",
+          "ModifiedDate": "2026-07-08T19:18:00.6576985-04:00",
+          "Items": [
+            {
+              "Id": "984ab2d1-6779-45ec-8e7f-8fc099536169",
+              "Text": "The AI groups related ideas and topics together to form coherent content clusters.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7cba4356-997f-4f8e-a6b6-d7a53d056fa2",
+              "Text": "Frequently appearing concepts or heavily detailed sections are weighted as primary themes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "170e067c-bada-48ab-863c-358c2f723698",
+              "Text": "This thematic mapping forms the conceptual backbone of the proposed module structure.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "0a9b95eb-f022-4b6f-b1c7-107459ae2a26",
+          "TopicId": "99f47bab-fbc1-4c7d-aa23-66820ef2fc72",
+          "Title": "Generating an Initial Structural Proposal",
+          "BodyText": "Based on its thematic analysis, PreseMaker produces an initial module breakdown that reflects the key content areas it has identified.",
+          "Notes": "This proposal is a starting point, not a final structure \u2014 learners are expected to review, adjust, or replace it as needed.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:18:00.6576985-04:00",
+          "ModifiedDate": "2026-07-08T19:18:00.6576985-04:00",
+          "Items": [
+            {
+              "Id": "b43ea010-f7ed-4788-95dd-18f0c18830eb",
+              "Text": "The structural proposal organizes identified themes into a logical sequence of modules.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "cb53a04f-7efa-4c23-aac2-06a9cf83ccb7",
+              "Text": "Each proposed module corresponds to a distinct content area surfaced during analysis.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9298f6dc-9975-44b2-a7a9-23aa55aa70f8",
+              "Text": "The AI\u0027s proposal is presented to the user for review before any course structure is finalized.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c3104292-73ee-4f21-bac7-32aa9a0638ed",
+          "TopicId": "99f47bab-fbc1-4c7d-aa23-66820ef2fc72",
+          "Title": "What Drives the AI\u0027s Decisions",
+          "BodyText": "Understanding the factors that influence PreseMaker\u0027s structural suggestions helps learners evaluate and refine the AI\u0027s proposals more effectively.",
+          "Notes": "Awareness of these drivers empowers users to provide better source material and make more informed adjustments to the breakdown.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:18:00.6576985-04:00",
+          "ModifiedDate": "2026-07-08T19:18:00.6576985-04:00",
+          "Items": [
+            {
+              "Id": "834a8b35-7ae0-4073-8357-5feff4334dbb",
+              "Text": "The density and depth of coverage on a topic in the source material signals its importance to the AI.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "876ce8fb-10b6-424f-a72f-afaab39970f9",
+              "Text": "Explicit organizational markers in the source, such as chapter titles or section breaks, strongly influence module boundaries.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7feec0a0-8f34-4bdd-82ea-b23a3585f6ec",
+              "Text": "The AI balances breadth of topics against depth of detail to propose a structure that is both comprehensive and teachable.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "db4ac298-72b3-408d-bdf2-f59f7bac3110",
+      "Title": "Understanding the AI-Suggested Module Breakdown",
+      "Summary": "Introduces the initial module structure that PreseMaker proposes after analyzing source material. Learners examine what a generated breakdown looks like and what information it contains.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:17:44.8909099-04:00",
+      "ModifiedDate": "2026-07-08T19:17:44.8909099-04:00",
+      "Elements": [
+        {
+          "Id": "41dc4cd4-b2e3-465a-8f5e-af5064bc9655",
+          "TopicId": "db4ac298-72b3-408d-bdf2-f59f7bac3110",
+          "Title": "What the AI-Generated Breakdown Looks Like",
+          "BodyText": "After PreseMaker analyzes your source material, it proposes an initial module structure presented as a breakdown of the course content.",
+          "Notes": "This breakdown serves as a starting point that learners can review before making any decisions about the final structure.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:18:18.1461721-04:00",
+          "ModifiedDate": "2026-07-08T19:18:18.1461721-04:00",
+          "Items": [
+            {
+              "Id": "be3fd6fe-acb2-462a-a7e3-376d49b26ecb",
+              "Text": "The breakdown displays a list of proposed modules, each representing a distinct chunk of the course content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "5cf76bd3-694d-4407-900b-3b9eceae028d",
+              "Text": "Each module entry typically includes a title and a brief description of what that module will cover.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3cf4329d-7b16-479a-aea8-c85f896719a5",
+              "Text": "The visual layout allows learners to quickly scan the overall scope and sequence of the proposed course.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "50bc4408-c86f-41a4-8a0a-056b58743a6a",
+          "TopicId": "db4ac298-72b3-408d-bdf2-f59f7bac3110",
+          "Title": "How PreseMaker Analyzes Source Material",
+          "BodyText": "PreseMaker processes the source material you provide and uses AI to identify logical divisions and themes within the content.",
+          "Notes": "Understanding this process helps learners trust and critically evaluate the suggestions the tool produces.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:18:18.1461721-04:00",
+          "ModifiedDate": "2026-07-08T19:18:18.1461721-04:00",
+          "Items": [
+            {
+              "Id": "51e583e3-22ad-4e8a-9cc1-c8778237088a",
+              "Text": "The AI scans the source material for major topics, themes, and natural content boundaries.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "968a68bf-f0c6-4478-b536-fffefba6da6e",
+              "Text": "It groups related ideas together to form coherent module proposals that reflect the structure of the original material.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "52ad920f-fced-4a8e-b5ba-6ad39a034784",
+              "Text": "The depth and quality of the breakdown depends on how well-organized and complete the source material is.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c80bb489-9433-44ea-99d3-5207890822db",
+          "TopicId": "db4ac298-72b3-408d-bdf2-f59f7bac3110",
+          "Title": "Information Contained in Each Suggested Module",
+          "BodyText": "Each module in the AI-suggested breakdown contains specific information to help you evaluate whether it is appropriate for your course.",
+          "Notes": "Reviewing this information carefully is an important step before accepting or modifying the breakdown.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:18:18.1461721-04:00",
+          "ModifiedDate": "2026-07-08T19:18:18.1461721-04:00",
+          "Items": [
+            {
+              "Id": "d3106576-f49e-4e67-b986-17bb3cb78966",
+              "Text": "A module title summarizes the central theme or skill addressed in that section of the course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c9d1a8f1-c437-443d-8026-0ac13254d4de",
+              "Text": "A module description provides a brief explanation of the content scope and learning focus for that module.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a119bcf7-3993-4498-aede-849368c4554c",
+              "Text": "Together, the title and description give enough context to judge whether the module boundaries make sense.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d3fb9255-6f59-421d-956f-33674ea61248",
+          "TopicId": "db4ac298-72b3-408d-bdf2-f59f7bac3110",
+          "Title": "Purpose of the Initial Breakdown",
+          "BodyText": "The AI-suggested breakdown is intended as a draft structure, not a final decision, giving learners a foundation to work from.",
+          "Notes": "Treating the breakdown as a starting point reduces the effort required to structure a course from scratch.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:18:18.1461721-04:00",
+          "ModifiedDate": "2026-07-08T19:18:18.1461721-04:00",
+          "Items": [
+            {
+              "Id": "436ee79b-0587-48e5-b9b6-6e00c561ebaa",
+              "Text": "The initial breakdown saves time by eliminating the need to manually outline the entire course before reviewing content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "bffba258-3990-4f8d-bb7d-dcee828e04d7",
+              "Text": "It allows learners to focus their attention on evaluating and refining structure rather than creating it from nothing.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1502401a-7b10-4468-a869-8d347e9d289e",
+              "Text": "The proposal is fully editable, meaning no part of the suggested breakdown is locked or permanent at this stage.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a12a3657-a39c-4019-a47a-3ef01d317405",
+          "TopicId": "db4ac298-72b3-408d-bdf2-f59f7bac3110",
+          "Title": "Evaluating the Suggested Structure",
+          "BodyText": "Once the breakdown is displayed, learners are expected to review it critically to determine whether the proposed modules are accurate and useful.",
+          "Notes": "This evaluation step is key to ensuring the final course structure aligns with the intended learning outcomes.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:18:18.1461721-04:00",
+          "ModifiedDate": "2026-07-08T19:18:18.1461721-04:00",
+          "Items": [
+            {
+              "Id": "831760bc-6039-4dfc-9d8b-0156c0dcb6e8",
+              "Text": "Check whether the number of modules feels appropriate for the scope of the source material.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "804a6ed4-6e14-4fb8-a083-a55b1107fb12",
+              "Text": "Assess whether each module title and description accurately reflects a meaningful and teachable chunk of content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1660eea9-c831-4807-b75b-6f4f1ec51cb9",
+              "Text": "Look for gaps, overlaps, or misaligned groupings that may need to be corrected before moving forward.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "3ddf31bc-6471-4867-942d-3a5dfe4a60a7",
+      "Title": "Accepting the Proposed Module Structure",
+      "Summary": "Covers the workflow for reviewing and accepting the AI-generated module breakdown when it meets the course design requirements. Learners practice confirming a structure to move forward in the authoring process.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:17:44.8909099-04:00",
+      "ModifiedDate": "2026-07-08T19:17:44.8909099-04:00",
+      "Elements": [
+        {
+          "Id": "c9ef4d0e-5021-473a-8227-0a2fb72c2df7",
+          "TopicId": "3ddf31bc-6471-4867-942d-3a5dfe4a60a7",
+          "Title": "Reviewing the AI-Generated Module Breakdown",
+          "BodyText": "Before accepting a proposed structure, learners must carefully evaluate the AI-generated module breakdown against their course design goals.",
+          "Notes": "Consider whether the number of modules is appropriate, whether the topic sequencing is logical, and whether the scope of each module aligns with learning objectives.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:18:35.468089-04:00",
+          "ModifiedDate": "2026-07-08T19:18:35.468089-04:00",
+          "Items": [
+            {
+              "Id": "5416647a-d86f-4ea9-af07-2d9fe04091a5",
+              "Text": "Scan each proposed module title and summary to confirm it reflects the source material accurately.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a3ee2428-8224-4d74-b972-c25cc416b161",
+              "Text": "Check that the overall flow of modules supports a logical learning progression for the target audience.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "374c4867-e074-46e6-91b0-01e814b2b2cc",
+              "Text": "Identify any gaps, redundancies, or misalignments before deciding to accept the structure.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "cc2ba790-7cf7-4ae0-85aa-0c1a36407882",
+          "TopicId": "3ddf31bc-6471-4867-942d-3a5dfe4a60a7",
+          "Title": "Criteria for Accepting the Structure",
+          "BodyText": "A proposed module breakdown is ready to accept when it sufficiently meets the course design requirements without needing significant changes.",
+          "Notes": "Not every breakdown will be perfect, but if the structure covers the key content areas and the sequencing is sound, it is generally appropriate to accept and refine later.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:18:35.468089-04:00",
+          "ModifiedDate": "2026-07-08T19:18:35.468089-04:00",
+          "Items": [
+            {
+              "Id": "d1e4cf3c-f00a-45d2-aa95-95c53bc97122",
+              "Text": "The proposed modules collectively cover all major topics present in the source material.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e95fde27-3c92-4791-a9f6-2dba30272f6a",
+              "Text": "Module titles and descriptions are clear, distinct, and free from excessive overlap.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b572985b-5e12-40a7-ae9b-1ac2acba8f82",
+              "Text": "The number of modules is practical for the intended course length and learner audience.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "066b064d-db04-48d3-9072-8f0658a91329",
+          "TopicId": "3ddf31bc-6471-4867-942d-3a5dfe4a60a7",
+          "Title": "Performing the Accept Action in PreseMaker",
+          "BodyText": "Accepting the proposed structure is a deliberate action within the PreseMaker interface that confirms the breakdown and moves the authoring process forward.",
+          "Notes": "Locating and using the correct confirmation control is an important hands-on skill practiced in this topic.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:18:35.468089-04:00",
+          "ModifiedDate": "2026-07-08T19:18:35.468089-04:00",
+          "Items": [
+            {
+              "Id": "23f09288-36d8-48c9-898c-b07e22e49c18",
+              "Text": "Locate the accept or confirm option presented alongside the AI-generated module breakdown.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9f8243c1-de11-4520-8663-37015aee1db1",
+              "Text": "Select the accept action to signal that the proposed structure is approved for use.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d600c7b0-c709-465e-83a8-349789f2a155",
+              "Text": "Once confirmed, PreseMaker proceeds to initialize the course and module storage based on the accepted structure.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "0c6df911-1759-4c67-8086-d6976628c79e",
+          "TopicId": "3ddf31bc-6471-4867-942d-3a5dfe4a60a7",
+          "Title": "What Happens After Acceptance",
+          "BodyText": "When a learner accepts the module breakdown, PreseMaker uses that structure as the foundation for all subsequent authoring steps.",
+          "Notes": "Understanding the downstream effects of acceptance helps learners appreciate why the review step is important before confirming.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:18:35.468089-04:00",
+          "ModifiedDate": "2026-07-08T19:18:35.468089-04:00",
+          "Items": [
+            {
+              "Id": "b05ca3c3-41b7-4af3-a4d4-0b3ca1aaf3e5",
+              "Text": "The accepted modules are established as the working structure for the course project.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ffcdca11-884b-477e-8a0c-1589505e019d",
+              "Text": "PreseMaker creates the corresponding course and module folders on disk to store all related content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "71569614-6324-4abb-86fc-dda791ecfa4d",
+              "Text": "The authoring workflow advances to the next stage, where individual module content can be developed.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "81a0ad5e-72e4-4f05-8efa-26f1f6d16fa7",
+          "TopicId": "3ddf31bc-6471-4867-942d-3a5dfe4a60a7",
+          "Title": "Committing to the Structure vs. Exploring Alternatives",
+          "BodyText": "Accepting the structure is a commitment to move forward, making it important to distinguish this action from options to adjust or replace the breakdown.",
+          "Notes": "Learners should understand that accepting is one of several possible responses to a proposed breakdown; other options such as adjusting or replacing are covered separately in this module.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:18:35.468089-04:00",
+          "ModifiedDate": "2026-07-08T19:18:35.468089-04:00",
+          "Items": [
+            {
+              "Id": "7dde7ba4-8ec9-4eeb-ae49-8912c9360ec4",
+              "Text": "Accepting is the appropriate choice when the proposed structure aligns well with course requirements.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e1d24835-12cc-48d0-bc1a-e7fca04cc425",
+              "Text": "If significant changes are needed, learners should use the adjust or replace options rather than accepting prematurely.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9f1a0310-cdf1-44d1-b549-d7a2a96b8932",
+              "Text": "Practicing the accept workflow builds confidence in recognizing a satisfactory AI-generated structure.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "b03d52a8-4ba8-4100-b5e2-dccb498c8bb0",
+      "Title": "Adjusting and Replacing the Module Breakdown",
+      "Summary": "Focuses on how to modify individual modules or replace the entire AI-suggested structure with an alternative. Learners practice editing titles, reordering modules, and regenerating proposals.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:17:44.8909099-04:00",
+      "ModifiedDate": "2026-07-08T19:17:44.8909099-04:00",
+      "Elements": [
+        {
+          "Id": "1eba466d-bd4c-4917-a7e2-52efad6ca5bb",
+          "TopicId": "b03d52a8-4ba8-4100-b5e2-dccb498c8bb0",
+          "Title": "Editing Individual Module Titles",
+          "BodyText": "After the AI proposes a module breakdown, learners can directly edit the title of any individual module to better reflect their course goals.",
+          "Notes": "For example, an AI-suggested title like \u0027Introduction to Concepts\u0027 might be renamed to \u0027Core Principles Overview\u0027 to match the intended audience or tone.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:18:56.5033943-04:00",
+          "ModifiedDate": "2026-07-08T19:18:56.5033943-04:00",
+          "Items": [
+            {
+              "Id": "9076813f-ff2d-48b3-9972-b6c7f755aac5",
+              "Text": "Click on the module title field to activate inline editing and type the desired replacement name.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "19317ea7-c1bd-46f6-a3fa-6182f119df74",
+              "Text": "Edited titles are saved immediately as the module's display name; the underlying folder name stays stable so existing file paths keep working.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "59a3cd11-780b-4569-b1d7-e90bc846a863",
+              "Text": "Custom titles help ensure the breakdown aligns with the specific learning objectives of the course.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "59a52626-df5d-4ef9-9d13-ee91f230fe2c",
+          "TopicId": "b03d52a8-4ba8-4100-b5e2-dccb498c8bb0",
+          "Title": "Reordering Modules in the Breakdown",
+          "BodyText": "The sequence of modules in the AI-generated structure can be rearranged to create a more logical instructional flow.",
+          "Notes": "Dragging Module 3 before Module 2, for instance, may better scaffold learner knowledge if prerequisite concepts appear earlier.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:18:56.5033943-04:00",
+          "ModifiedDate": "2026-07-08T19:18:56.5033943-04:00",
+          "Items": [
+            {
+              "Id": "b10379e0-0967-4891-9ddb-2c2672fdee22",
+              "Text": "Use drag-and-drop or up/down controls to move a module to a new position in the list.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d614e851-3c07-46d9-b423-1a4bcb25c6ee",
+              "Text": "Reordering updates each module's stored order value; folder names are unchanged.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "337dd0de-9eb6-4047-9907-ff706b689288",
+              "Text": "Reviewing the flow after reordering helps confirm that dependencies between modules are preserved.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "099956f7-a4d8-4277-9aa8-048638e646da",
+          "TopicId": "b03d52a8-4ba8-4100-b5e2-dccb498c8bb0",
+          "Title": "Modifying Individual Module Descriptions or Scope",
+          "BodyText": "Beyond renaming, learners can adjust the scope or description of a single module without altering the rest of the breakdown.",
+          "Notes": "This is useful when one AI-proposed module is too broad or too narrow compared to the others in the set.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:18:56.5033943-04:00",
+          "ModifiedDate": "2026-07-08T19:18:56.5033943-04:00",
+          "Items": [
+            {
+              "Id": "68311f19-8534-48c9-b558-15cd3b6d248a",
+              "Text": "Select the module to expand its detail panel, then edit the description or adjust the listed subtopics.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "62f29b5c-c4d6-467a-a5d9-40b4fa35f805",
+              "Text": "Narrowing or broadening a single module\u0027s scope keeps the overall structure intact while improving that section.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9c3a78f3-1ed3-4f68-aa78-e3416392289d",
+              "Text": "Changes to individual modules do not trigger a full regeneration of the entire breakdown.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "11b31d3a-6049-4c97-8819-f529b39cf1dd",
+          "TopicId": "b03d52a8-4ba8-4100-b5e2-dccb498c8bb0",
+          "Title": "Replacing the Entire AI-Suggested Structure",
+          "BodyText": "If the AI-proposed module breakdown does not meet course requirements, learners can discard it entirely and request a new proposal.",
+          "Notes": "Replacing the full structure is appropriate when the source material was interpreted too narrowly, too broadly, or in the wrong domain focus.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:18:56.5033943-04:00",
+          "ModifiedDate": "2026-07-08T19:18:56.5033943-04:00",
+          "Items": [
+            {
+              "Id": "db37e734-276a-4ef9-ac89-1c33f9248144",
+              "Text": "Use the \u0027Regenerate\u0027 or \u0027Replace Breakdown\u0027 option to prompt PreseMaker to produce a completely new module structure.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e3d4fdf9-15f6-4d5f-80ad-1991f852eadc",
+              "Text": "Any manual edits made to the previous breakdown will be lost, so learners should save or note desired elements first.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1782b1c0-5a92-48f9-8270-5ebdbf72997c",
+              "Text": "Multiple regeneration attempts can be made until a satisfactory starting structure is produced.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "53ac5b42-7fe6-4a8a-9adb-7659cacab1e0",
+          "TopicId": "b03d52a8-4ba8-4100-b5e2-dccb498c8bb0",
+          "Title": "Regenerating a Proposal with Revised Inputs",
+          "BodyText": "Learners can guide the regeneration by revising the module description or the source materials before requesting a new breakdown.",
+          "Notes": "For example, adding more detail to your description or providing a clearer source steers the AI toward a more targeted structure.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:18:56.5033943-04:00",
+          "ModifiedDate": "2026-07-08T19:18:56.5033943-04:00",
+          "Items": [
+            {
+              "Id": "6810db62-77c8-4398-bd56-96abb579353d",
+              "Text": "Revise your description or source materials before triggering regeneration.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "46f1a7b9-5b0b-4d33-bdb2-e59f3df61d73",
+              "Text": "Adjusted parameters are passed back to the AI along with the original source material to refine the output.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "64ebedfd-d054-45f4-a40d-9c15bd0a8b76",
+              "Text": "Comparing the new proposal against the previous one helps learners identify which structure better serves their course design.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4ebe3f2b-f74f-43e4-af3e-69015dbf585a",
+          "TopicId": "b03d52a8-4ba8-4100-b5e2-dccb498c8bb0",
+          "Title": "Confirming and Locking the Final Breakdown",
+          "BodyText": "Once the module structure has been adjusted or replaced to satisfaction, learners confirm the breakdown to lock it in as the basis for further course development.",
+          "Notes": "Locking the breakdown creates the corresponding folder hierarchy on disk, making each module a distinct folder ready to receive content.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:18:56.5033943-04:00",
+          "ModifiedDate": "2026-07-08T19:18:56.5033943-04:00",
+          "Items": [
+            {
+              "Id": "fac37198-b32f-493f-a545-aca024f9c53c",
+              "Text": "Review all module titles and their order one final time before confirming.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0ee45280-b31e-4aa9-b583-5ea265417a85",
+              "Text": "Confirming the breakdown commits the structure to the course\u0027s on-disk folder system.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "18848943-eae1-4237-a5ad-4ab7ffa02eec",
+              "Text": "After locking, individual modules can still be edited, but wholesale replacement requires starting the breakdown process again.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "f582cc46-5cfe-4af8-b8dc-0b7e20d6b692",
+      "Title": "Course and Module Storage as Folders on Disk",
+      "Summary": "Explains how PreseMaker organizes courses and modules as a folder hierarchy on the local file system. Learners understand the relationship between the on-screen structure and the underlying file storage.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:17:44.8909099-04:00",
+      "ModifiedDate": "2026-07-08T19:17:44.8909099-04:00",
+      "Elements": [
+        {
+          "Id": "350254b8-ae17-4f81-afd2-3c7a61c60248",
+          "TopicId": "f582cc46-5cfe-4af8-b8dc-0b7e20d6b692",
+          "Title": "Courses as Top-Level Folders",
+          "BodyText": "In PreseMaker, each course you create is stored as a dedicated top-level folder on your local file system.",
+          "Notes": "This means you can locate, back up, or move an entire course simply by working with its root folder in your operating system\u0027s file explorer.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:19:14.6920667-04:00",
+          "ModifiedDate": "2026-07-08T19:19:14.6920667-04:00",
+          "Items": [
+            {
+              "Id": "19de6cd0-5160-446c-96e5-19717cb6f243",
+              "Text": "The course folder is created automatically when you start a new course in PreseMaker.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9173f8a6-8044-4428-9cf7-7c762831a64b",
+              "Text": "The folder name typically corresponds to the course title you assign within the application.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4f96b3cd-2f91-49c0-afc3-105ddb0d258b",
+              "Text": "All assets, settings, and content related to that course reside inside this single top-level folder.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "be583c41-a731-43bf-b685-26e026ee2a7c",
+          "TopicId": "f582cc46-5cfe-4af8-b8dc-0b7e20d6b692",
+          "Title": "Modules as Subfolders Within the Course Folder",
+          "BodyText": "Each module within a course is represented as a subfolder nested inside the parent course folder.",
+          "Notes": "For example, a course folder named Intro_to_Safety contains one subfolder per module, each named after that module.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:19:14.6920667-04:00",
+          "ModifiedDate": "2026-07-08T19:19:14.6920667-04:00",
+          "Items": [
+            {
+              "Id": "8eba2605-d846-4b2a-a0a0-3bf404102590",
+              "Text": "A module's folder is created when the module is created; renaming a module changes its display name, while the underlying folder name stays stable so existing file paths keep working.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "19519953-aa14-44d2-bb2e-83ad993b496e",
+              "Text": "Module order is tracked in the module's metadata, not in the folder name; each module folder is named after the module.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "497c7009-468d-4f95-923e-b2ec26f39587",
+              "Text": "Removing a module takes it out of the course.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "5b4e27bc-6f80-4cdb-bf89-8e89463a51a9",
+          "TopicId": "f582cc46-5cfe-4af8-b8dc-0b7e20d6b692",
+          "Title": "Relationship Between On-Screen Structure and File Hierarchy",
+          "BodyText": "The visual course and module tree displayed in PreseMaker directly mirrors the folder hierarchy stored on the local file system.",
+          "Notes": "This one-to-one correspondence makes it straightforward to understand where content lives without needing to use PreseMaker itself to browse it.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:19:14.6920667-04:00",
+          "ModifiedDate": "2026-07-08T19:19:14.6920667-04:00",
+          "Items": [
+            {
+              "Id": "60419057-6cf4-452d-9e73-d5a9a7e6f86b",
+              "Text": "Adding or removing a module changes the folders on disk; reordering and renaming update the module's metadata (order and display name) rather than folder names.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b62ab7ea-c00d-47a8-8fd3-26aad37089c9",
+              "Text": "Conversely, manually altering folders outside PreseMaker without using the application may cause the on-screen structure to become out of sync.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1aefaac4-c0f3-4781-8c6f-1093f19c4ae4",
+              "Text": "Understanding this relationship helps learners troubleshoot missing content or unexpected structural issues.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "19369377-e073-4916-a8f1-000a5ab5e282",
+          "TopicId": "f582cc46-5cfe-4af8-b8dc-0b7e20d6b692",
+          "Title": "Contents Stored Inside a Module Subfolder",
+          "BodyText": "Each module subfolder contains all the files needed to define and deliver that specific module\u0027s content.",
+          "Notes": "This self-contained approach means a single module subfolder can be inspected, archived, or transferred independently of the rest of the course.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:19:14.6920667-04:00",
+          "ModifiedDate": "2026-07-08T19:19:14.6920667-04:00",
+          "Items": [
+            {
+              "Id": "1ac798fe-df62-4192-aa18-9f49ba413b25",
+              "Text": "Source material files, generated topic content, and module configuration data are all stored within the module\u0027s subfolder.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "13dd073d-f838-448d-acd3-c4cd7e53d44a",
+              "Text": "Media assets such as images or documents referenced by a module are typically stored in dedicated asset directories within the same subfolder.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "14209b52-8f97-4d86-9ebf-4f065eeaa6ac",
+              "Text": "PreseMaker reads these files each time the module is opened, ensuring the interface reflects the current state of the folder contents.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3fa0bbf6-5748-471d-8e90-f72adfdc3a86",
+          "TopicId": "f582cc46-5cfe-4af8-b8dc-0b7e20d6b692",
+          "Title": "Practical Benefits of the Folder-Based Storage Model",
+          "BodyText": "Organizing courses and modules as folders on disk provides learners and authors with transparent, portable, and easily manageable content storage.",
+          "Notes": "Authors familiar with file system navigation will find it easy to integrate PreseMaker projects into existing version control or backup workflows.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:19:14.6920667-04:00",
+          "ModifiedDate": "2026-07-08T19:19:14.6920667-04:00",
+          "Items": [
+            {
+              "Id": "64dc86f9-2517-42f5-b148-c6bfebde7436",
+              "Text": "Courses can be shared with collaborators by simply copying or compressing the top-level course folder.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "831d6841-f34f-48a3-9385-49280fcae344",
+              "Text": "Standard file system tools \u2014 such as search, version control systems, or backup utilities \u2014 work naturally with the folder hierarchy.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a3ec53e4-a95a-4aab-9c4d-3465df11f4ce",
+              "Text": "The flat, human-readable folder structure reduces dependency on proprietary databases and makes content recovery straightforward.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 26
+}

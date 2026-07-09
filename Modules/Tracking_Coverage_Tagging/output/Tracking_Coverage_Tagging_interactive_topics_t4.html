@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identifying Gaps in Coverage</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Identifying Gaps in Coverage</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Identifying Gaps in Coverage</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>A coverage report is one of the most powerful diagnostic tools available to a curriculum designer or instructor. At its core, it maps every learning outcome in a course or program to the instructional materials, assessments, and activities that have been explicitly tagged to that outcome. When read carefully, the report reveals not just what has been covered, but how thoroughly it has been covered, in how many different formats, and — critically — what has been left out entirely. Identifying gaps in coverage is not a one-time audit task; it is an ongoing quality-assurance discipline that ensures every outcome a learner is expected to achieve is actually taught, practiced, and assessed before that expectation is tested.</p>
+
+<p>The stakes of missing coverage are significant. An outcome that appears on a final exam but was never addressed in any quiz, assignment, or learning activity leaves learners unprepared and undermines the validity of the assessment itself. Patterns of under-coverage can also signal deeper planning problems — a topic area that was rushed during course design, an authoring team that misunderstood the scope of certain standards, or a tagging workflow that was inconsistently applied. Understanding how to read coverage data, recognize patterns, and act on what you find is therefore a foundational skill in learning design quality assurance.</p>
+
+<p><strong>Reading the Coverage Report</strong></p>
+
+<p>The first step is knowing what you are looking at. A coverage report typically presents each outcome as a row, with columns representing different content types — quiz questions, assignments, discussions, interactive activities, readings, and so on. The cells in each column contain a count: how many items of that type have been tagged to that outcome. Some reports also distinguish between items that are merely linked to an outcome and items where the outcome has actually been assessed, meaning a score or completion record is generated.</p>
+
+<p>When you open a coverage report, your first sweep should be to locate every outcome and note its associated item counts. Look at the total count for each outcome, but also look at the distribution across content types. An outcome with a total count of eight sounds healthy until you realize all eight items are quiz questions with no corresponding instructional content or practice activity. The count tells you quantity; the distribution tells you quality of coverage.</p>
+
+<p>A particularly important distinction to internalize is the difference between an outcome that has items <em>tagged</em> to it and an outcome that has been <em>assessed</em> in a variety of formats. Tagging is a metadata act — someone has associated a piece of content with an outcome in the system. Assessment in variety means learners have actually encountered that outcome across multiple modalities: perhaps introduced in an instructional reading, practiced in an interactive activity, and formally evaluated in a quiz or assignment. Both dimensions matter, and a good coverage analysis considers both.</p>
+
+<p>Consider this simplified example of what coverage report data might look like:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Outcome</th>
+      <th>Quiz Questions</th>
+      <th>Assignments</th>
+      <th>Interactive Activities</th>
+      <th>Instructional Content Items</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Explain the water cycle</td>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Describe the role of evaporation</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Compare condensation and precipitation</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Identify human impacts on the water cycle</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In this example, "Compare condensation and precipitation" shows a total of zero — a complete gap. "Describe the role of evaporation" has only two items and no assignments or activities — a potential under-coverage situation. "Explain the water cycle" looks well-covered across all types. This is exactly the kind of reading a coverage analysis requires you to perform systematically across every outcome in the report.</p>
+
+<p><strong>Recognizing Completely Unaddressed Outcomes</strong></p>
+
+<p>Outcomes with a zero count across all content types represent the most urgent category of gap. These outcomes exist in the learning design — they are listed in the syllabus, the standards framework, or the course objectives — but nothing in the course has been tagged to address them. Learners are implicitly expected to meet them, yet the course provides no vehicle for doing so.</p>
+
+<p>When scanning a report for these completely unaddressed outcomes, it helps to sort or filter the data so that zero-total outcomes appear at the top. This prevents them from being overlooked in a long list. Once identified, they should be pulled into a separate tracking document immediately. The reason for isolating them is urgency: a zero-count outcome needs entirely new content created, tagged, or both, which is a more time-intensive remediation than simply adding a question or activity to an already-covered outcome.</p>
+
+<p>Prioritizing unaddressed outcomes first in any remediation plan is sound practice because they represent the largest instructional deficit. If the course is currently running or about to run, these gaps create real risk for learners. If the course is in development, catching them now prevents a harder fix after launch. Documenting them separately — in a gap log or tracking spreadsheet — ensures they remain visible until a team member has both created appropriate materials and confirmed those materials are tagged and appear in the updated coverage report. An unaddressed outcome that gets content created but not properly tagged will still show a zero count, which is why confirmation through the report itself is essential.</p>
+
+<p><strong>Spotting Under-Coverage Patterns</strong></p>
+
+<p>Beyond the clear signal of a zero count, more nuanced gaps appear as patterns of low coverage across related outcomes. A single outcome with only two quiz questions might be an intentional design choice — perhaps it is a minor supporting concept. But when you notice that five consecutive outcomes in the same topic area each have counts of one or two, and none of them appear in assignments or activities, you are looking at a systemic pattern rather than a one-off omission.</p>
+
+<p>Pattern recognition in coverage analysis requires you to group outcomes by topic area or strand and compare item counts horizontally across the group. Establish a baseline by asking: what does sufficient coverage look like in this course? If the well-covered outcomes average eight to ten items each across three to four content types, then outcomes with two or fewer items in a single content type fall meaningfully below that baseline.</p>
+
+<p>A pattern of under-coverage across an entire topic area is a particularly important signal because it suggests the problem is not random. It may mean:</p>
+
+<ul>
+  <li>The authoring team assigned to that topic area applied the tagging workflow inconsistently or not at all.</li>
+  <li>The topic was treated as background knowledge rather than a primary learning target, and fewer items were created for it from the start.</li>
+  <li>The outcomes in that area were added late in the design process, after most content had already been authored and tagged, leaving them without adequate associated materials.</li>
+  <li>Content for that topic area exists but has not been tagged correctly, creating an artificial gap in the report that does not reflect actual learner experience.</li>
+</ul>
+
+<p>Each of these causes requires a different response. Inconsistent tagging is fixed by a retroactive tagging review. Genuine content absence requires new authoring. Late-added outcomes may need the entire topic area to be revisited in the instructional design plan. Treating each gap in isolation — without looking for patterns — risks applying point fixes when a broader structural intervention is actually needed.</p>
+
+<p><strong>Analyzing Gaps by Assessment Type</strong></p>
+
+<p>Once you have identified which outcomes have gaps, a second layer of analysis examines the nature of those gaps by content type. Review the coverage report specifically by item type — quiz questions in one pass, assignments in another, interactive activities in another — and ask of each outcome: is it present in this type? This column-by-column reading reveals single-format coverage, which is a subtler but important problem.</p>
+
+<p>An outcome covered only by quiz questions, for example, is being assessed but may not be adequately taught. Learners encounter the outcome only in a high-stakes evaluative context without instructional scaffolding or low-stakes practice. Conversely, an outcome that appears only in instructional readings and never in any assessment item means the course teaches it but never formally checks whether learners have achieved it — breaking the teaching-to-assessment loop that is fundamental to sound instructional design.</p>
+
+<p>The teaching-to-assessment loop is a concept worth unpacking. When an outcome is introduced in instructional content, practiced in an activity, and then assessed in a quiz or assignment, three things happen: learners receive information, they apply it in a low-stakes context that builds fluency, and they demonstrate mastery in a context that generates a record. Breaking any link in that chain weakens the overall learning experience. Coverage analysis by item type lets you see exactly where each outcome's chain is broken.</p>
+
+<p>A practical standard to aim for is that every outcome should appear in at least one instructional content item <em>and</em> at least one assessment item. This minimum standard closes the teaching-to-assessment loop even if the overall count is still modest. Outcomes that appear in three or more content types — instruction, practice, and formal assessment — are more robustly covered and provide learners with multiple opportunities to engage with the material through different cognitive modes.</p>
+
+<p><strong>Prioritizing Which Gaps to Address First</strong></p>
+
+<p>Not all gaps are equally urgent. Once you have a full picture of where gaps exist and what type they are, you need a principled way to decide which ones to address first, especially when resources — time, authoring capacity, subject-matter expert availability — are constrained.</p>
+
+<p>The most useful prioritization framework uses three factors:</p>
+
+<ul>
+  <li><strong>Outcome weight or importance:</strong> Some outcomes are foundational — they underpin multiple other outcomes in the course. A gap in a foundational outcome compounds across the entire learning sequence. Others are peripheral or enrichment-level. Gaps in peripheral outcomes are less harmful.</li>
+  <li><strong>Proximity to assessment:</strong> If learners will be evaluated on an outcome in an upcoming module exam or high-stakes summative assessment, a gap in coverage of that outcome is urgent regardless of its overall weight. Time pressure alone can elevate a gap's priority.</li>
+  <li><strong>Gap severity:</strong> A zero-count outcome is more severe than an under-covered one. Single-format coverage is more severe than multi-format coverage that simply needs one more item.</li>
+</ul>
+
+<p>Combining these factors allows you to assign a simple priority label to each gap: <strong>critical</strong>, <strong>moderate</strong>, or <strong>low</strong>. Critical gaps need to be resolved before the course runs or before the next assessment milestone. Moderate gaps should be addressed in the current revision cycle. Low gaps can be queued for the next scheduled course review. This three-tier labeling system keeps the remediation workflow organized and ensures the team is not paralyzed by trying to fix everything simultaneously.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Priority Level</th>
+      <th>Criteria</th>
+      <th>Recommended Timeline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Critical</td>
+      <td>Zero count, foundational outcome, or near-term assessment deadline</td>
+      <td>Before course launch or next assessment</td>
+    </tr>
+    <tr>
+      <td>Moderate</td>
+      <td>Low count, single-format coverage, or mid-weight outcome</td>
+      <td>Within current revision cycle</td>
+    </tr>
+    <tr>
+      <td>Low</td>
+      <td>Slightly below baseline, peripheral outcome, no immediate assessment</td>
+      <td>Next scheduled course review</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Documenting and Communicating Coverage Gaps</strong></p>
+
+<p>Identifying gaps has no value unless the information is captured, communicated, and acted upon. A gap log is the primary tool for this. It is a structured record — often a spreadsheet or a project management board — that documents each identified gap with enough detail for a team member to take action without needing to re-run the analysis themselves.</p>
+
+<p>A well-designed gap log includes the following fields for each entry:</p>
+
+<ul>
+  <li><strong>Outcome identifier and description:</strong> Exactly which outcome is affected, referenced by its ID in the course framework so there is no ambiguity.</li>
+  <li><strong>Gap type:</strong> Whether the gap is a complete absence, under-coverage, single-format coverage, or a tagging error.</li>
+  <li><strong>Priority level:</strong> Critical, moderate, or low, as determined by the prioritization analysis.</li>
+  <li><strong>Action required:</strong> Specifically what needs to happen — create a new quiz question, author an assignment, add an activity, or retroactively tag existing content.</li>
+  <li><strong>Owner:</strong> The specific person responsible for completing the action. Gaps without a named owner are the ones most likely to remain unresolved.</li>
+  <li><strong>Status and resolution date:</strong> A field to record when the action was completed and how it was verified — typically by noting the updated item count in the coverage report after the new content was tagged.</li>
+</ul>
+
+<p>Communication of the gap log is equally important. Sharing the log with the full course team — instructional designers, content authors, subject-matter experts, and project managers — creates shared accountability. It prevents duplication of effort and ensures everyone understands the current state of coverage quality. Regular review intervals, such as weekly during active development or monthly during a live course cycle, keep the log from going stale.</p>
+
+<p>The final and often overlooked step is <em>confirmation</em>. After new content is created and tagged, the coverage report should be re-run to verify that the gap count has actually changed. It is entirely possible for content to be created but not correctly tagged, or tagged to the wrong outcome, leaving the gap unchanged in the system even though effort was expended. Closing a gap log entry should always require evidence from the updated report, not just confirmation that content was authored. This discipline closes the loop on the gap-remediation process and ensures the coverage report remains a reliable source of truth for the course's alignment quality.</p>
+        <div class="notes"><strong>Notes</strong>Focuses on analyzing the coverage report to spot outcomes that lack sufficient or any associated materials. Introduces strategies for recognizing patterns of under-coverage across topics and assessment types.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

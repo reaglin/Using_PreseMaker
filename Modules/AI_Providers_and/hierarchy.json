@@ -1,0 +1,956 @@
+{
+  "ModuleFolderName": "AI_Providers_and",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:11:57.2164638-04:00",
+  "ModifiedDate": "2026-07-08T19:13:59.0597312-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "c4f253f5-4fec-4918-84d4-f5fa21bc31e0",
+      "Title": "How PreseMaker Connects to AI Providers",
+      "Summary": "Explains the relationship between PreseMaker and external AI services, and why an external connection is necessary to power AI-driven features.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:11:57.2164638-04:00",
+      "ModifiedDate": "2026-07-08T19:11:57.2164638-04:00",
+      "Elements": [
+        {
+          "Id": "116309c1-ad58-4468-a7da-81dfddbd3591",
+          "TopicId": "c4f253f5-4fec-4918-84d4-f5fa21bc31e0",
+          "Title": "PreseMaker as an AI-Powered Application",
+          "BodyText": "PreseMaker is an AI-assisted course authoring application that uses artificial intelligence to generate course content — presentations, text lessons, quizzes, assignments, and interactive activities.",
+          "Notes": "Rather than building its own AI models, PreseMaker is designed to tap into established, powerful AI services that specialize in language and content generation.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:12:16.6496439-04:00",
+          "ModifiedDate": "2026-07-08T19:12:16.6496439-04:00",
+          "Items": [
+            {
+              "Id": "2045649b-c156-41cb-9215-6ad5c86146cd",
+              "Text": "PreseMaker\u0027s AI-driven features \u2014 such as content generation and suggestions \u2014 require access to large language models that are not built into the application itself.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "60390a43-c0b9-43f7-83e2-76dff4bdfa28",
+              "Text": "To deliver these capabilities, PreseMaker is architected to communicate with external AI providers over the internet.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "26c8cf08-cf71-448c-84bd-340412acf862",
+              "Text": "This approach allows PreseMaker to offer cutting-edge AI functionality without bundling massive models locally on your device.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "038bd141-5aee-4413-8bc7-af1dfa4fe81e",
+          "TopicId": "c4f253f5-4fec-4918-84d4-f5fa21bc31e0",
+          "Title": "What External AI Providers Are",
+          "BodyText": "External AI providers are third-party companies that host and operate large language models accessible via the internet.",
+          "Notes": "Each provider has its own strengths, pricing models, and terms of service, which is why PreseMaker supports multiple options rather than a single provider.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:12:16.6496439-04:00",
+          "ModifiedDate": "2026-07-08T19:12:16.6496439-04:00",
+          "Items": [
+            {
+              "Id": "91752fbe-8614-42a8-8fb7-36c8078d9c33",
+              "Text": "PreseMaker supports four AI providers: Anthropic Claude, Google Gemini, OpenAI, and Mistral.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "26374a8d-4077-49f4-959d-6111364717c6",
+              "Text": "These providers maintain powerful AI infrastructure that processes requests and returns intelligent responses to applications like PreseMaker.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a079350b-ca88-4e5a-aad7-4d10a752c0fa",
+              "Text": "Because these services are external, an active internet connection is required whenever you use AI-powered features in PreseMaker.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "16b4cf16-c5a5-4ad2-8a20-76885ab0b7b2",
+          "TopicId": "c4f253f5-4fec-4918-84d4-f5fa21bc31e0",
+          "Title": "Why a Direct Connection to AI Providers Is Necessary",
+          "BodyText": "PreseMaker must establish a direct connection to an AI provider in order to send your content requests and receive AI-generated responses in real time.",
+          "Notes": "This is a common architecture pattern for modern AI-enabled software, where the heavy computational work is offloaded to specialized cloud services.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:12:16.6496439-04:00",
+          "ModifiedDate": "2026-07-08T19:12:16.6496439-04:00",
+          "Items": [
+            {
+              "Id": "a8f61c44-b76e-43b3-a206-4b1bc1020ee7",
+              "Text": "AI language models require enormous computing resources that are impractical to run locally on a standard user device.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "314ac723-c3fc-474b-83ed-c5cc413afc0c",
+              "Text": "By connecting to external providers, PreseMaker ensures users always have access to the most capable and up-to-date AI models available.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2064ca4f-92ba-49aa-b18b-2855587d8af4",
+              "Text": "The external connection means AI processing happens on the provider\u0027s servers, keeping PreseMaker itself lightweight and fast.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "084ea20a-f853-486f-8893-f79428d72b0f",
+          "TopicId": "c4f253f5-4fec-4918-84d4-f5fa21bc31e0",
+          "Title": "The Role of API Keys in the Connection",
+          "BodyText": "An API key is a unique credential that authenticates PreseMaker\u0027s requests to an external AI provider on your behalf.",
+          "Notes": "Think of an API key like a personalized access pass \u2014 it tells the AI provider who is making the request and grants permission to use the service.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:12:16.6496439-04:00",
+          "ModifiedDate": "2026-07-08T19:12:16.6496439-04:00",
+          "Items": [
+            {
+              "Id": "3c0fc4be-c0b5-42fb-b7dd-12deebd09dcc",
+              "Text": "Without a valid API key, PreseMaker cannot authenticate with an AI provider and AI-driven features will not function.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "011809c9-318b-49a2-b32f-aaa06d2bd268",
+              "Text": "Each user obtains their own API key directly from the chosen AI provider, meaning usage and billing are tied to the individual\u0027s account.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "47681562-c856-4822-8a2f-c5733aaf59d2",
+              "Text": "PreseMaker requires you to supply your own API key rather than using a shared one, ensuring privacy and personal control over AI service usage.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b7dba68c-547a-4740-ad96-07f9a3f19568",
+          "TopicId": "c4f253f5-4fec-4918-84d4-f5fa21bc31e0",
+          "Title": "Choosing Your AI Provider",
+          "BodyText": "Because PreseMaker supports multiple AI providers, users have the flexibility to connect to the service that best suits their needs and preferences.",
+          "Notes": "Users may wish to consider factors such as the quality of outputs for their use case, cost of API usage, and any existing accounts they already hold with a provider.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:12:16.6496439-04:00",
+          "ModifiedDate": "2026-07-08T19:12:16.6496439-04:00",
+          "Items": [
+            {
+              "Id": "2926cacc-007a-41c5-a134-92b6b4d79ea8",
+              "Text": "The four supported providers \u2014 Anthropic Claude, Google Gemini, OpenAI, and Mistral \u2014 each offer distinct AI models with varying characteristics.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6f44df4e-b119-4ab7-aa64-cb9587d350f5",
+              "Text": "You only need to set up a connection with one provider to begin using PreseMaker\u0027s AI features, though you may configure more than one if desired.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "df834680-2cf0-4ad5-8744-447cb70d618d",
+              "Text": "Your choice of provider determines which AI model powers your PreseMaker experience, so it is worth reviewing what each provider offers before deciding.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "63b9c733-dd08-4664-9191-5cfcdad28b76",
+      "Title": "Overview of Supported AI Providers",
+      "Summary": "Introduces the four supported AI providers \u2014 Anthropic Claude, Google Gemini, OpenAI, and Mistral \u2014 and highlights key differences learners should know when choosing one.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:11:57.2164638-04:00",
+      "ModifiedDate": "2026-07-08T19:11:57.2164638-04:00",
+      "Elements": [
+        {
+          "Id": "84c86720-005f-447f-bba4-2c6f9531e226",
+          "TopicId": "63b9c733-dd08-4664-9191-5cfcdad28b76",
+          "Title": "What Is an AI Provider?",
+          "BodyText": "An AI provider is an external company that hosts and operates large language models accessible through the internet via an API connection.",
+          "Notes": "PreseMaker does not run AI models locally; it relies on these third-party providers to generate content, which means an active internet connection and a valid API key are required.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:12:39.4196573-04:00",
+          "ModifiedDate": "2026-07-08T19:12:39.4196573-04:00",
+          "Items": [
+            {
+              "Id": "b3bf7d52-d5e4-42fd-b3e3-a40febe8147b",
+              "Text": "AI providers supply the underlying intelligence that powers PreseMaker\u0027s content generation features.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "afc490f5-6b74-459c-b882-c6ac3d25f42a",
+              "Text": "Each provider operates independently, meaning pricing, capabilities, and availability may differ.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1e5ad907-1a24-4d80-aa7d-f6b58c4c06f6",
+              "Text": "PreseMaker currently supports four providers: Anthropic Claude, Google Gemini, OpenAI, and Mistral.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "9713fdae-b4ca-48d0-956a-54f144cd05b5",
+          "TopicId": "63b9c733-dd08-4664-9191-5cfcdad28b76",
+          "Title": "Anthropic Claude",
+          "BodyText": "Anthropic Claude is an AI provider known for producing detailed, nuanced, and safety-focused responses.",
+          "Notes": "Claude is often favored for tasks requiring longer-form writing, careful reasoning, or content that benefits from a more cautious and thorough tone.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:12:39.4196573-04:00",
+          "ModifiedDate": "2026-07-08T19:12:39.4196573-04:00",
+          "Items": [
+            {
+              "Id": "e6b03675-bf41-41e6-ad88-961bf4d87994",
+              "Text": "Claude tends to excel at producing structured, well-explained text suitable for professional presentations.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "8d8a10e7-18dd-46fb-a5ce-f9b57efab803",
+              "Text": "Anthropic places a strong emphasis on AI safety, which influences how the model handles sensitive or ambiguous requests.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "dc4262e2-a824-468d-846f-2667ebd93db4",
+              "Text": "Multiple versions of Claude may be available, with newer versions generally offering improved performance.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "1395fcde-1fe2-4c24-aaec-e8072aebb05a",
+          "TopicId": "63b9c733-dd08-4664-9191-5cfcdad28b76",
+          "Title": "Google Gemini",
+          "BodyText": "Google Gemini is Google\u0027s flagship AI model family, integrated with Google\u0027s broader ecosystem and research capabilities.",
+          "Notes": "Because Gemini is backed by Google\u0027s infrastructure, it may offer strong performance on factual, research-oriented, or data-rich content generation tasks.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:12:39.4196573-04:00",
+          "ModifiedDate": "2026-07-08T19:12:39.4196573-04:00",
+          "Items": [
+            {
+              "Id": "5a3f2672-618c-4ef1-a709-d3dac8aaa122",
+              "Text": "Gemini is designed to handle multimodal tasks, though PreseMaker primarily uses its text generation capabilities.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a9bb7b05-b2ac-45ec-9cec-067a738c694d",
+              "Text": "Access to Gemini is managed through Google\u0027s AI platform, requiring a Google account and API credentials.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9161ce61-f7cb-4403-8422-c6b5fb391271",
+              "Text": "Gemini\u0027s models are regularly updated, so performance characteristics may evolve over time.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "ce423f88-c005-49b2-bc7d-f55b40f59dfe",
+          "TopicId": "63b9c733-dd08-4664-9191-5cfcdad28b76",
+          "Title": "OpenAI",
+          "BodyText": "OpenAI is one of the most widely recognized AI providers, offering the GPT series of models used by millions of developers and applications worldwide.",
+          "Notes": "OpenAI\u0027s broad adoption means extensive documentation and community support are available, which can be helpful if learners encounter issues during setup.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:12:39.4196573-04:00",
+          "ModifiedDate": "2026-07-08T19:12:39.4196573-04:00",
+          "Items": [
+            {
+              "Id": "d6eb4f8e-3d03-4017-bf3f-ce78d1d4747b",
+              "Text": "OpenAI\u0027s GPT models are versatile and well-suited to a wide range of writing and summarization tasks.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0728bc2b-7e5c-47df-836f-17c02d64ef8f",
+              "Text": "OpenAI uses a token-based pricing model, so costs are tied directly to the volume of content generated.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "cb65d677-47f0-415f-8ea7-62e091406e0e",
+              "Text": "Learners familiar with ChatGPT will be using the same underlying model family when connecting via OpenAI\u0027s API.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "7f2b75da-fd45-427f-b42e-1bc73e5934e1",
+          "TopicId": "63b9c733-dd08-4664-9191-5cfcdad28b76",
+          "Title": "Mistral",
+          "BodyText": "Mistral is a European AI provider offering efficient, open-weight models that are competitive in performance while often being more cost-effective.",
+          "Notes": "Mistral may appeal to learners who prioritize lower API costs or who prefer a provider with a European data residency focus for compliance reasons.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:12:39.4196573-04:00",
+          "ModifiedDate": "2026-07-08T19:12:39.4196573-04:00",
+          "Items": [
+            {
+              "Id": "c9a5b86d-c851-4be1-b7be-a4777f8f2bf9",
+              "Text": "Mistral\u0027s models are known for strong performance relative to their size, making them a resource-efficient choice.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d6159039-fa46-4db8-b46c-9a9904c1d77c",
+              "Text": "As a newer provider, Mistral\u0027s API ecosystem is growing, and available model options may expand over time.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6864a1b8-6291-4f6b-a5e2-72bb44fe585d",
+              "Text": "Mistral is headquartered in Europe, which may be relevant for users with data privacy or regulatory considerations.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b9628e3e-98d3-4b30-a466-4acf55741591",
+          "TopicId": "63b9c733-dd08-4664-9191-5cfcdad28b76",
+          "Title": "Key Differences to Consider When Choosing a Provider",
+          "BodyText": "While all four providers can power PreseMaker\u0027s features, learners should evaluate them across a few important dimensions before selecting one.",
+          "Notes": "There is no single \u0027best\u0027 provider \u2014 the right choice depends on the learner\u0027s priorities around cost, output style, data considerations, and familiarity.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:12:39.4196573-04:00",
+          "ModifiedDate": "2026-07-08T19:12:39.4196573-04:00",
+          "Items": [
+            {
+              "Id": "9331fa82-c664-4c00-94a4-b801dbeb0310",
+              "Text": "Pricing models vary: some providers charge per token, others may offer subscription tiers or free usage limits.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "716f0d3f-603a-48f5-8b01-58db07bbe7dc",
+              "Text": "Output style and tone differ across providers, so the same prompt may yield noticeably different results depending on which model is used.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "349bc7d8-00d4-4c41-a748-0ede41481023",
+              "Text": "Geographic or regulatory preferences, such as data residency, may make certain providers more appropriate for specific users or organizations.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "f4cc7491-a6ca-4756-ae57-090e6d01a238",
+              "Text": "Account setup complexity differs slightly between providers, which may influence which one a learner chooses to start with.",
+              "SortOrder": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "b6fc07e0-e714-4e16-8033-b0341904abda",
+      "Title": "Understanding API Keys",
+      "Summary": "Defines what an API key is, why it is required to authenticate requests to an AI provider, and how it acts as the credential linking PreseMaker to the chosen service.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:11:57.2164638-04:00",
+      "ModifiedDate": "2026-07-08T19:11:57.2164638-04:00",
+      "Elements": [
+        {
+          "Id": "553a0bde-fd28-4250-bcc1-4fc47fcb3d6c",
+          "TopicId": "b6fc07e0-e714-4e16-8033-b0341904abda",
+          "Title": "What Is an API Key?",
+          "BodyText": "An API key is a unique alphanumeric string issued by an AI provider that identifies and authorizes your application to use their service.",
+          "Notes": "Think of it like a password specifically created for software-to-software communication rather than human login.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:12:55.6280116-04:00",
+          "ModifiedDate": "2026-07-08T19:12:55.6280116-04:00",
+          "Items": [
+            {
+              "Id": "f93b6402-6704-40b7-97b7-9136cba6f240",
+              "Text": "API keys are generated by the AI provider (such as Anthropic, Google, OpenAI, or Mistral) through their developer portals.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0bd18545-b531-4b20-9912-9b9b00bed342",
+              "Text": "Each key is unique to your account and the specific service you are accessing.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ee6c1c45-2625-43a6-8827-28ec8bd2366d",
+              "Text": "The key is passed along with every request so the provider can verify the source.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f8857f9f-4db4-4b94-a4a7-4c58d3d4bd40",
+          "TopicId": "b6fc07e0-e714-4e16-8033-b0341904abda",
+          "Title": "Why API Keys Are Required",
+          "BodyText": "AI providers require API keys to control and authenticate access to their models, ensuring only authorized users can send requests.",
+          "Notes": "Without a valid API key, PreseMaker cannot communicate with the chosen AI service, and no AI-powered features will function.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:12:55.6280116-04:00",
+          "ModifiedDate": "2026-07-08T19:12:55.6280116-04:00",
+          "Items": [
+            {
+              "Id": "3fe8f2b4-6fd0-4788-9c11-b3766471cb0d",
+              "Text": "Authentication via API key prevents unauthorized use of a provider\u0027s AI models.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7157443e-5407-4218-83b7-5487a1a4e270",
+              "Text": "Providers use keys to track usage, enforce rate limits, and calculate billing for your account.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "55d28566-4e85-412f-9947-5f7a6c7a0efe",
+              "Text": "Requiring a key ensures accountability \u2014 every request is traceable back to a specific account holder.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "7db23fba-6aec-4dce-9199-408ea425f335",
+          "TopicId": "b6fc07e0-e714-4e16-8033-b0341904abda",
+          "Title": "The API Key as a Credential",
+          "BodyText": "The API key acts as the primary credential that links PreseMaker to your chosen AI provider account.",
+          "Notes": "Just as login credentials grant a user access to a website, the API key grants PreseMaker access to the AI provider\u0027s services on your behalf.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:12:55.6280116-04:00",
+          "ModifiedDate": "2026-07-08T19:12:55.6280116-04:00",
+          "Items": [
+            {
+              "Id": "f7f795d2-b46d-4eee-be1e-265ce059c2cc",
+              "Text": "When you enter your API key in PreseMaker, it becomes the credential used for all outbound AI requests.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "27a5fbfe-9962-4580-abf4-9df6a7e2bd3f",
+              "Text": "The key represents your identity and permissions as defined by your provider account.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a21be4c7-741a-4805-a506-8ce40d65c2f8",
+              "Text": "Without this credential, PreseMaker has no authority to interact with external AI services.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "19bb4c6d-204d-488d-aa37-c7aa1d572f91",
+          "TopicId": "b6fc07e0-e714-4e16-8033-b0341904abda",
+          "Title": "API Keys Are Provider-Specific",
+          "BodyText": "Each supported AI provider \u2014 Anthropic Claude, Google Gemini, OpenAI, and Mistral \u2014 issues its own separate API key.",
+          "Notes": "If you switch providers or use multiple providers, you will need a distinct key from each one.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:12:55.6280116-04:00",
+          "ModifiedDate": "2026-07-08T19:12:55.6280116-04:00",
+          "Items": [
+            {
+              "Id": "52fddca8-1bc0-40d2-a75b-f25d053716e4",
+              "Text": "A key from OpenAI cannot be used to authenticate requests to Anthropic or Google, and vice versa.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "109e730b-c078-4c63-a9ba-ab479dca86b5",
+              "Text": "PreseMaker supports multiple providers, meaning you may hold and manage keys from more than one service.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "cf76a51f-8887-4a28-a75d-0be5944b842f",
+              "Text": "You must obtain the correct key from whichever provider you intend to connect to in PreseMaker.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "985b3931-a006-470b-aaae-cecdf32146a6",
+          "TopicId": "b6fc07e0-e714-4e16-8033-b0341904abda",
+          "Title": "How the Key Connects PreseMaker to the Service",
+          "BodyText": "When PreseMaker makes an AI request, it attaches your API key to that request so the provider can authenticate and process it.",
+          "Notes": "This handshake between PreseMaker and the provider happens automatically in the background each time an AI feature is used.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:12:55.6280116-04:00",
+          "ModifiedDate": "2026-07-08T19:12:55.6280116-04:00",
+          "Items": [
+            {
+              "Id": "f538b7a6-3c8c-400d-9227-69a278a5767b",
+              "Text": "PreseMaker sends your API key as part of the request header or authentication parameter required by the provider.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "bbd93645-9ef2-4877-85b8-163efb5a9f0f",
+              "Text": "The provider validates the key before returning any AI-generated response.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1a485e7f-9736-4ae1-a444-a832b2fe5dab",
+              "Text": "This connection model means your AI usage is always tied directly to your personal provider account and subscription.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "540bad00-de04-4c09-bd4e-4e1eb9bf1ff5",
+      "Title": "Obtaining Your API Key",
+      "Summary": "Walks learners through the process of creating an account with an AI provider and generating an API key ready for use in PreseMaker.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:11:57.2164638-04:00",
+      "ModifiedDate": "2026-07-08T19:11:57.2164638-04:00",
+      "Elements": [
+        {
+          "Id": "8bf4ed50-3266-486e-bb9e-e07d0b947d3a",
+          "TopicId": "540bad00-de04-4c09-bd4e-4e1eb9bf1ff5",
+          "Title": "Choosing an AI Provider",
+          "BodyText": "Before generating an API key, you must decide which AI provider you want to connect to PreseMaker.",
+          "Notes": "PreseMaker supports Anthropic Claude, Google Gemini, OpenAI, and Mistral. Each provider has its own pricing, capabilities, and registration process, so consider your preferences before signing up.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:13:17.9929033-04:00",
+          "ModifiedDate": "2026-07-08T19:13:17.9929033-04:00",
+          "Items": [
+            {
+              "Id": "63491d4e-86be-462c-8394-5bb5f0af1866",
+              "Text": "PreseMaker is compatible with four providers: Anthropic Claude, Google Gemini, OpenAI, and Mistral.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2c35cea2-edcc-4cc9-b99a-30d8e0cce8f6",
+              "Text": "Each provider requires a separate account and generates its own unique API key.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ef35ff98-e0ba-437b-ad21-9cb2dde9d38c",
+              "Text": "You can switch providers later, but you will need to obtain and enter a new key for each one you use.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "1bec7d01-52f3-4a4b-845c-45bdb924b73b",
+          "TopicId": "540bad00-de04-4c09-bd4e-4e1eb9bf1ff5",
+          "Title": "Creating an Account with Your Chosen Provider",
+          "BodyText": "To obtain an API key, you first need to register for an account on your chosen provider\u0027s official website.",
+          "Notes": "For example, OpenAI accounts are created at platform.openai.com, Anthropic at console.anthropic.com, Google Gemini through Google AI Studio, and Mistral at console.mistral.ai. Always use the official provider website to avoid phishing risks.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:13:17.9929033-04:00",
+          "ModifiedDate": "2026-07-08T19:13:17.9929033-04:00",
+          "Items": [
+            {
+              "Id": "fa514204-1740-4d02-a93c-e9196d02c544",
+              "Text": "Navigate to the official developer portal or console for your chosen AI provider.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "617ae787-c613-429c-b22b-9a7d23bd124f",
+              "Text": "Complete the registration process by providing your email address and verifying your account.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6e0b301a-60e4-4dc7-af07-49e10ff2ff74",
+              "Text": "Some providers may require billing information or phone verification before granting API access.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8bcf5cec-60c6-4330-a4ad-2ee60ee9b8c9",
+          "TopicId": "540bad00-de04-4c09-bd4e-4e1eb9bf1ff5",
+          "Title": "Navigating to the API Key Section",
+          "BodyText": "Once logged in to your provider account, you need to locate the area where API keys are created and managed.",
+          "Notes": "This section is commonly labeled \u0027API Keys\u0027, \u0027Developer Settings\u0027, or \u0027Credentials\u0027 depending on the provider. Familiarizing yourself with the provider\u0027s dashboard layout will make this step straightforward.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:13:17.9929033-04:00",
+          "ModifiedDate": "2026-07-08T19:13:17.9929033-04:00",
+          "Items": [
+            {
+              "Id": "a08624ae-1b8b-4919-a5f9-993d5f235f84",
+              "Text": "Log in to your provider account and access the developer console or dashboard.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "5d9d8083-e2b5-4678-8980-96c9aa524a03",
+              "Text": "Look for a menu item or section titled \u0027API Keys\u0027, \u0027Access Tokens\u0027, or \u0027Credentials\u0027.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6da9655c-d8e4-4087-8756-3516f93b5058",
+              "Text": "Some providers place API key management under account settings or a dedicated developer section.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8211ad5c-376b-4a58-a387-656f41d9bbcf",
+          "TopicId": "540bad00-de04-4c09-bd4e-4e1eb9bf1ff5",
+          "Title": "Generating a New API Key",
+          "BodyText": "With the API Keys section open, you can create a new key that PreseMaker will use to authenticate requests to the AI provider.",
+          "Notes": "Many providers allow you to name or label your API key, which helps you identify its purpose later (for example, naming it \u0027PreseMaker\u0027). Assigning a meaningful label is a good organizational habit.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:13:17.9929033-04:00",
+          "ModifiedDate": "2026-07-08T19:13:17.9929033-04:00",
+          "Items": [
+            {
+              "Id": "34244e6a-174f-40d2-8013-de5bab5a8775",
+              "Text": "Click the button to create or generate a new API key, typically labeled \u0027Create Key\u0027, \u0027Generate\u0027, or \u0027\u002B New Key\u0027.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b012075b-3621-42f4-be6a-91a85b2a3dd7",
+              "Text": "Optionally, assign a descriptive name to the key so you can identify it as the one used for PreseMaker.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b76d714e-84b2-4242-aebe-19c359b18dfd",
+              "Text": "The provider will display the full key string once upon creation \u2014 this is the only time it may be shown in full.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "94ef4b0c-4904-45cf-b453-8c7cc74ab2c4",
+          "TopicId": "540bad00-de04-4c09-bd4e-4e1eb9bf1ff5",
+          "Title": "Copying and Securing Your API Key",
+          "BodyText": "Immediately after generation, you must copy your API key and store it securely, as most providers will not display it again.",
+          "Notes": "If you lose your key before saving it, you will typically need to revoke it and generate a new one. Treat your API key like a password \u2014 never share it publicly or commit it to source code repositories.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:13:17.9929033-04:00",
+          "ModifiedDate": "2026-07-08T19:13:17.9929033-04:00",
+          "Items": [
+            {
+              "Id": "18b71dee-13b8-48b2-89f4-b7de9a524c95",
+              "Text": "Use the copy button or manually select and copy the full API key string as soon as it is displayed.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ba8a1316-7bd6-4e66-8a91-30324bf8d887",
+              "Text": "Store the key temporarily in a secure location, such as a password manager, until you have entered it into PreseMaker.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "111559f7-ace5-4378-8084-2ce4a7786bc7",
+              "Text": "Never share your API key in public forums, emails, or code repositories, as it grants access to your provider account and may incur charges.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3cbb7813-71ab-4a4d-ba0c-91345c61dc17",
+          "TopicId": "540bad00-de04-4c09-bd4e-4e1eb9bf1ff5",
+          "Title": "Confirming Your Key Is Ready for Use in PreseMaker",
+          "BodyText": "Before entering the key in PreseMaker, take a moment to verify that the key has been successfully created and is in an active state.",
+          "Notes": "Some providers require additional steps such as enabling billing or confirming email verification before a newly generated key becomes active. Checking the key status in your provider dashboard prevents errors when connecting in PreseMaker.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:13:17.9929033-04:00",
+          "ModifiedDate": "2026-07-08T19:13:17.9929033-04:00",
+          "Items": [
+            {
+              "Id": "5338d6a4-4219-4121-98c5-b52cb08bc484",
+              "Text": "Return to your provider\u0027s API Keys list and confirm the new key appears with an active or enabled status.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "71cbb52d-7e92-4302-ad08-ddc696c527fe",
+              "Text": "Ensure any required billing or verification steps have been completed, as inactive accounts may produce authentication errors.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f5b409a0-7a6e-4951-a8dc-4aabfd876ade",
+              "Text": "With the key copied and confirmed as active, you are ready to enter it into PreseMaker\u0027s Settings screen.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "f836c292-726f-4fb2-b8db-7b8b9efd6427",
+      "Title": "Entering Your API Key in PreseMaker Settings",
+      "Summary": "Guides learners step by step through locating the Settings screen in PreseMaker and correctly entering their API key to activate the AI connection.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:11:57.2164638-04:00",
+      "ModifiedDate": "2026-07-08T19:11:57.2164638-04:00",
+      "Elements": [
+        {
+          "Id": "17cd67da-1ea8-4ee6-99cd-a883822b7bbc",
+          "TopicId": "f836c292-726f-4fb2-b8db-7b8b9efd6427",
+          "Title": "Navigating to the PreseMaker Settings Screen",
+          "BodyText": "Before entering your API key, you need to locate the Settings screen within PreseMaker where AI provider configuration options are found.",
+          "Notes": "The Settings screen is the central hub for managing your AI provider connections. Look for a gear icon or a \u0027Settings\u0027 menu item in the main navigation.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:13:40.0430639-04:00",
+          "ModifiedDate": "2026-07-08T19:13:40.0430639-04:00",
+          "Items": [
+            {
+              "Id": "3901a7c5-ed0d-495c-85c9-b0309d271c1e",
+              "Text": "Open PreseMaker and look for the Settings option, typically accessible from the main menu, toolbar, or a gear icon in the interface.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "24ba0474-3247-423e-bfe4-949d4154ca10",
+              "Text": "Once inside Settings, navigate to the AI Providers or API Keys section, which is where all provider connection options are listed.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2a4557ae-c813-4028-94d2-700975e43545",
+              "Text": "PreseMaker is a single-user desktop application — there is no account or sign-in; open Settings directly from the main window.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "21c2071d-1051-41bd-9b06-f4226dcb6971",
+          "TopicId": "f836c292-726f-4fb2-b8db-7b8b9efd6427",
+          "Title": "Selecting Your AI Provider",
+          "BodyText": "PreseMaker supports multiple AI providers, and the AI Provider Keys settings show a field for each one together — you do not select or activate a provider first; you simply paste each key into its own field.",
+          "Notes": "Supported providers include Anthropic Claude, Google Gemini, OpenAI, and Mistral. Each provider has its own dedicated key field within the Settings screen.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:13:40.0430639-04:00",
+          "ModifiedDate": "2026-07-08T19:13:40.0430639-04:00",
+          "Items": [
+            {
+              "Id": "d72eef87-ab5c-40e0-9d14-0e63641a54a3",
+              "Text": "In the AI Providers section, you will see a list of supported providers: Anthropic Claude, Google Gemini, OpenAI, and Mistral.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b1609a42-bf7f-430e-a2c1-7d97364f16a1",
+              "Text": "Find the field for the provider whose API key you obtained and paste the key there; every provider has its own field, all shown together.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "05c6f929-cefe-4d67-9048-a690003fc09f",
+              "Text": "You may configure keys for multiple providers, but each key must be entered in its matching provider field to function correctly.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4b06d6d5-b611-4050-88a9-71518039d201",
+          "TopicId": "f836c292-726f-4fb2-b8db-7b8b9efd6427",
+          "Title": "Entering the API Key Correctly",
+          "BodyText": "Accurate entry of your API key is critical \u2014 even a single incorrect character will prevent PreseMaker from establishing a successful AI connection.",
+          "Notes": "Most API keys are long alphanumeric strings. Using copy-and-paste directly from the provider\u0027s dashboard is strongly recommended to avoid transcription errors.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:13:40.0430639-04:00",
+          "ModifiedDate": "2026-07-08T19:13:40.0430639-04:00",
+          "Items": [
+            {
+              "Id": "6d4afa05-ad3e-4d95-bb6c-06fdcf096d84",
+              "Text": "Copy your API key directly from your AI provider\u0027s dashboard or account page to avoid manual typing errors.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f635785a-b533-44aa-aa2f-5a05323e1814",
+              "Text": "Paste the key into the designated API key input field for the selected provider within PreseMaker\u0027s Settings screen.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "46a778d5-8d7f-485f-821a-df4af44f8a8e",
+              "Text": "Double-check that no extra spaces, line breaks, or missing characters were introduced during the copy-and-paste process before saving.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "760b5955-f054-4427-9934-f86049414dca",
+          "TopicId": "f836c292-726f-4fb2-b8db-7b8b9efd6427",
+          "Title": "Saving and Confirming the API Key Entry",
+          "BodyText": "After entering your API key, you must save the settings so PreseMaker can store and activate the connection to your chosen AI provider.",
+          "Notes": "PreseMaker validates the key the first time you generate content; if a key is missing or invalid, a failure message appears offering to open Settings, add a new key, or view the log.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:13:40.0430639-04:00",
+          "ModifiedDate": "2026-07-08T19:13:40.0430639-04:00",
+          "Items": [
+            {
+              "Id": "625c50e7-3803-4d4b-81ac-5d4ad9b3d787",
+              "Text": "Click the \u0027Save,\u0027 \u0027Apply,\u0027 or equivalent confirmation button to store your entered API key within PreseMaker\u0027s settings.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "52b3b582-c4e1-4d8a-bd0e-ab28997f726d",
+              "Text": "The key is stored when you confirm; there is no separate verification indicator to wait for.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1939f100-f6fa-47fb-96a8-5d80e6ead0dd",
+              "Text": "There is no separate test-connection step; the key is exercised the first time you generate content, and any problem surfaces then with options to open Settings, add a new key, or view the log.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "e6194f05-88ce-4c4c-aabd-cafdd4607b40",
+          "TopicId": "f836c292-726f-4fb2-b8db-7b8b9efd6427",
+          "Title": "Understanding Local Encryption of Your API Key",
+          "BodyText": "PreseMaker encrypts and stores your API key locally on your device, ensuring that your credentials are protected and not transmitted to external servers beyond the intended AI provider.",
+          "Notes": "This local encryption approach means your API key remains private to your device. You may need to re-enter the key if you reinstall PreseMaker or switch devices.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:13:40.0430639-04:00",
+          "ModifiedDate": "2026-07-08T19:13:40.0430639-04:00",
+          "Items": [
+            {
+              "Id": "7877e78a-ec87-4ada-89a7-2b2dfa454847",
+              "Text": "Once saved, your API key is encrypted and stored locally on your device rather than on PreseMaker\u0027s servers, protecting your credentials.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d1cc0d25-8318-4be3-b212-6802e26d0628",
+              "Text": "The encrypted key is only used to authenticate requests directly with your chosen AI provider when you use PreseMaker\u0027s AI features.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7b901a1f-642b-4b06-8ddd-f2c4ffd5c9c4",
+              "Text": "Because storage is local, reinstalling PreseMaker or moving to a new device will require you to re-enter your API key in Settings.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "134aca97-6a6e-4ddc-9a45-016ba391c4aa",
+          "TopicId": "f836c292-726f-4fb2-b8db-7b8b9efd6427",
+          "Title": "Troubleshooting Common Key Entry Issues",
+          "BodyText": "If PreseMaker does not recognize your API key after entry, a few common issues are typically responsible and can be resolved quickly.",
+          "Notes": "The most frequent cause of failed key entry is selecting the wrong provider field or having an inactive/invalid key from the provider\u0027s side.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:13:40.0430639-04:00",
+          "ModifiedDate": "2026-07-08T19:13:40.0430639-04:00",
+          "Items": [
+            {
+              "Id": "05d43377-e18b-4507-8fcd-feb2fe9b3703",
+              "Text": "Verify that you pasted the key into the field corresponding to the correct AI provider \u2014 keys are provider-specific and are not interchangeable.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a8d404b2-2873-4493-b7b7-35910e3a1fc3",
+              "Text": "Check that your API key is still active and has not expired or been revoked in your AI provider\u0027s account dashboard.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "037ffdf6-aeb6-4e90-be1e-67dd984c5363",
+              "Text": "Ensure there are no trailing spaces or hidden characters in the key field by clearing the field completely and re-pasting the key before saving again.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "2caf2795-d9bd-4583-bdda-3a3480248bb0",
+      "Title": "API Key Encryption and Local Storage",
+      "Summary": "Explains how PreseMaker protects user API keys through encryption and stores them locally, addressing common privacy and security concerns.",
+      "SortOrder": 5,
+      "CreatedDate": "2026-07-08T19:11:57.2164638-04:00",
+      "ModifiedDate": "2026-07-08T19:11:57.2164638-04:00",
+      "Elements": [
+        {
+          "Id": "77061340-07bc-4abd-a8e1-0ef78069af94",
+          "TopicId": "2caf2795-d9bd-4583-bdda-3a3480248bb0",
+          "Title": "What Is Local Storage for API Keys?",
+          "BodyText": "PreseMaker stores your API keys directly on your own device rather than transmitting them to any remote server or cloud database.",
+          "Notes": "This approach is sometimes called \u0027local-first\u0027 storage and is a deliberate design choice to keep sensitive credentials under the user\u0027s control.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:13:59.0594434-04:00",
+          "ModifiedDate": "2026-07-08T19:13:59.0594434-04:00",
+          "Items": [
+            {
+              "Id": "12b2f958-ee31-43cb-a29c-8bf4ee59fc64",
+              "Text": "Your API key never leaves your device as plaintext; it remains within the application\u0027s local storage environment.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f20064e1-5d99-4d55-81aa-2786e54cb43c",
+              "Text": "Because storage is local, uninstalling or resetting the application will remove the saved keys, so users should keep a personal record of their keys.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "0ccc2e28-fc19-44c9-8291-daa486e89487",
+          "TopicId": "2caf2795-d9bd-4583-bdda-3a3480248bb0",
+          "Title": "How Encryption Protects Your API Keys",
+          "BodyText": "Before saving an API key to local storage, PreseMaker encrypts it so that the raw key value is never written in a readable format.",
+          "Notes": "Encryption converts the key into an unreadable ciphertext using an algorithm; only the application itself can decrypt and use it when making API calls.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:13:59.0594434-04:00",
+          "ModifiedDate": "2026-07-08T19:13:59.0594434-04:00",
+          "Items": [
+            {
+              "Id": "d8d52044-9e75-4694-8b1b-5e9d26870cbb",
+              "Text": "Encryption ensures that even if someone gains access to your device\u0027s storage files, they cannot read your API key directly.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "634aaeee-38f3-4026-8b13-fe27cc829fe2",
+              "Text": "The encryption and decryption process happens automatically in the background \u2014 users do not need to manage passwords or certificates themselves.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7cc669fb-e8d9-4b41-a2ec-b35fce162cdf",
+              "Text": "This protection applies to all supported providers: Anthropic Claude, Google Gemini, OpenAI, and Mistral.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f9bbb526-db55-47bf-bde3-6d25daba96c6",
+          "TopicId": "2caf2795-d9bd-4583-bdda-3a3480248bb0",
+          "Title": "Why PreseMaker Does Not Store Keys on a Server",
+          "BodyText": "Keeping API keys off external servers eliminates an entire category of risk \u2014 large-scale data breaches that expose many users\u0027 credentials at once.",
+          "Notes": "Many SaaS products store user credentials centrally, which creates a high-value target for attackers. PreseMaker\u0027s local model avoids this.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:13:59.0594434-04:00",
+          "ModifiedDate": "2026-07-08T19:13:59.0594434-04:00",
+          "Items": [
+            {
+              "Id": "42a1ee72-e26a-4bf3-8d93-58bfa6e7204f",
+              "Text": "No PreseMaker server ever receives, logs, or processes your API key, so a breach of PreseMaker\u0027s infrastructure cannot expose your key.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6851aa99-2017-47bb-9e3d-814ab3e6ac71",
+              "Text": "This design also means PreseMaker cannot accidentally share your key with third parties through server-side integrations or analytics tools.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "a7c6b4f6-29f7-40fd-8af6-05217aaedf48",
+          "TopicId": "2caf2795-d9bd-4583-bdda-3a3480248bb0",
+          "Title": "Addressing Common Privacy Concerns",
+          "BodyText": "Users often wonder whether entering an API key into a third-party application is safe; PreseMaker\u0027s architecture is specifically designed to answer those concerns.",
+          "Notes": "It is reasonable to be cautious \u2014 API keys are tied to billing accounts and can incur charges if misused. Understanding the storage model helps users make informed decisions.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:13:59.0594434-04:00",
+          "ModifiedDate": "2026-07-08T19:13:59.0594434-04:00",
+          "Items": [
+            {
+              "Id": "1be87bac-dd50-42d9-a923-4b259d7e33ba",
+              "Text": "Because keys are encrypted and stored locally, PreseMaker has no ability to use your key on your behalf outside of your own session.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6dc6cbad-f612-4ae4-8c17-26d39c12786a",
+              "Text": "Your key is only transmitted directly to the relevant AI provider (e.g., OpenAI) when you actively generate content, and that transmission uses the provider\u0027s own secure HTTPS connection.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2936122f-5d7e-4df6-a1b7-f2cc05e7f755",
+              "Text": "Users retain full control and can delete or replace a stored key at any time through the Settings screen.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "73c19d3b-a16e-4da9-b2a2-009118cd3e6b",
+          "TopicId": "2caf2795-d9bd-4583-bdda-3a3480248bb0",
+          "Title": "User Responsibilities for Key Security",
+          "BodyText": "While PreseMaker encrypts and stores keys securely, users still play an important role in maintaining the overall security of their API credentials.",
+          "Notes": "Best practices for API key hygiene apply regardless of which application you use to store them.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:13:59.0594434-04:00",
+          "ModifiedDate": "2026-07-08T19:13:59.0594434-04:00",
+          "Items": [
+            {
+              "Id": "38cd147d-6b0d-43c9-a1a5-02a9abd982da",
+              "Text": "Avoid sharing your device with untrusted users, since anyone who can open PreseMaker on your device can potentially trigger API calls using your stored key.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6f4e0653-f3bd-4cd4-b20c-455c8bb35a24",
+              "Text": "If you suspect your key has been compromised, revoke it immediately through the relevant AI provider\u0027s dashboard and generate a new one.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "18266eb6-629c-4d2c-b5ee-bdc71b673808",
+              "Text": "Regularly review your API provider\u0027s usage dashboard to detect any unexpected or unauthorized activity.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 33
+}

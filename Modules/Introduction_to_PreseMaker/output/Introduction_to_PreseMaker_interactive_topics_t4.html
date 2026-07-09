@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The PreseMaker Workflow Overview</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>The PreseMaker Workflow Overview</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>The PreseMaker Workflow Overview</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>PreseMaker is built around a clear, repeatable process that takes a course from a completely empty project to a fully developed learning experience. Whether you are building a short onboarding module or a multi-part curriculum, every project in PreseMaker follows the same end-to-end workflow: create a course, define its structure, generate content with AI assistance, review and refine that content, and finalize the deliverable. Understanding this workflow before you open the application for the first time gives you a mental map of every decision you will need to make and helps you plan your project with confidence.</p>
+
+<p><strong>Starting with a Blank Course</strong></p>
+
+<p>Every PreseMaker project begins at the same starting point: a blank course. When you open PreseMaker, the application presents you with a choice — create a new course or open one you have already started. Choosing to create a new course launches a brief setup process where you give the course a name and configure its basic settings. These settings might include the course's target audience, the language in which content will be generated, or other project-level preferences depending on your version of PreseMaker.</p>
+
+<p>This initial naming and configuration step is more significant than it might appear. The course name and settings you enter here establish the <em>project identity</em> — they tell PreseMaker (and its AI engine) what this learning experience is about before a single piece of content exists. Everything you build afterward — every module, every lesson, every quiz — will belong to this named project. Taking a moment to choose a clear, descriptive course name and to set accurate parameters at this stage pays dividends later, because the AI uses this context when generating materials.</p>
+
+<p>Think of this step as laying the foundation of a building. The foundation does not look like much on its own, but every wall, floor, and room that comes later rests on it. Skipping or rushing this step — giving the course a vague name or leaving settings at unhelpful defaults — is the equivalent of pouring an uneven foundation. The structure that follows will be harder to work with.</p>
+
+<p><strong>Defining the Course Structure</strong></p>
+
+<p>Once a course exists, the next step is to define its structure by creating modules. A module is a named section of the course that groups related content together. If you were building a course called <em>Introduction to Project Management</em>, your modules might be titled something like <em>Core Concepts</em>, <em>Planning a Project</em>, <em>Managing a Team</em>, and <em>Closing and Review</em>. Each module represents a logical chapter or unit in the learner's journey through the material.</p>
+
+<p>Modules serve two equally important purposes. For <em>learners</em>, they create navigational clarity — instead of facing an undifferentiated wall of content, learners can see at a glance how the course is organized and where they are in their progress. For <em>authors</em>, modules act as containers that impose discipline on the content-creation process, ensuring that every piece of material you produce has a clear home and a clear purpose within the broader course.</p>
+
+<p>Critically, defining module titles <em>before</em> you trigger AI generation is one of the highest-leverage things you can do in the entire workflow. PreseMaker's AI considers the module titles — and the overall course context — when it produces content. A module titled <em>Managing a Team</em> inside a project management course will produce very different AI-generated material than a module with a vague title like <em>Section 3</em>. Specific, descriptive module titles guide the AI toward content that is focused, relevant, and consistent with the rest of the course.</p>
+
+<p><strong>Understanding the Course → Module → Content Hierarchy</strong></p>
+
+<p>PreseMaker organizes everything inside a strict three-level hierarchy. Understanding this hierarchy is not just an administrative detail — it is the structural logic that makes the entire system work.</p>
+
+<ul>
+  <li><strong>Course level:</strong> The course is the top of the hierarchy. It holds global settings and metadata that apply to the entire learning experience — the course name, audience parameters, language settings, and any other project-wide configurations. Think of the course as the container for everything else.</li>
+  <li><strong>Module level:</strong> Modules sit one level below the course. Each module groups thematically related content and defines a segment of the learning progression. A course can contain multiple modules, and learners typically move through them in sequence, though the exact navigation behavior depends on your PreseMaker configuration.</li>
+  <li><strong>Content item level:</strong> Content items are the actual learning interactions that learners experience — individual lessons, knowledge checks, quizzes, activities, or other interactive elements. Content items live inside modules. A module can contain multiple content items, and the order of those items within the module determines the learning sequence for that section.</li>
+</ul>
+
+<p>The hierarchy enforces one important rule: <em>nothing exists outside its proper level</em>. A content item must belong to a module, and a module must belong to a course. You cannot create a floating lesson that is not attached to a module, and you cannot have a module that is not attached to a course. This constraint keeps projects organized and prevents the kind of orphaned, hard-to-find content that plagues unstructured authoring tools.</p>
+
+<p>The table below summarizes what each level of the hierarchy contains and what it controls:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hierarchy Level</th>
+      <th>What It Contains</th>
+      <th>What It Controls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Course</td>
+      <td>All modules belonging to the project</td>
+      <td>Global settings, metadata, project identity</td>
+    </tr>
+    <tr>
+      <td>Module</td>
+      <td>All content items within a thematic section</td>
+      <td>Section title, learning sequence for that section</td>
+    </tr>
+    <tr>
+      <td>Content Item</td>
+      <td>The actual lesson, quiz, or activity content</td>
+      <td>Individual learning interaction and its materials</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Generating Content with AI Assistance</strong></p>
+
+<p>With the course named and modules defined, PreseMaker's AI generation capabilities come into play. Authors can trigger AI generation at the module level, which instructs PreseMaker to produce multiple content items for that module in a single step. Rather than writing every lesson from scratch, you give the AI a context — the course name, the module title, and any additional parameters you have set — and it produces a set of draft content items populated with relevant material.</p>
+
+<p>This AI-assisted generation is one of PreseMaker's most significant time-saving features. Instead of facing a blank page, subject-matter experts and instructional designers receive a strong starting point — structured drafts with explanations, examples, and in some cases interactive elements already sketched out. The cognitive load of content creation shifts from <em>what do I write?</em> to <em>is this accurate and appropriate?</em>, which is a much more efficient use of a subject-matter expert's time.</p>
+
+<p>An important nuance here is that the AI does not generate each module's content in isolation. It considers the context of the entire course structure when producing material, which helps maintain consistency in tone, terminology, and depth across modules. A term introduced in Module 1 will be used consistently in Module 3, and the level of complexity in later modules will typically build on what was established earlier. This context-awareness is why investing care in naming your course and modules at the outset produces noticeably better AI output.</p>
+
+<p><strong>Reviewing and Populating Generated Materials</strong></p>
+
+<p>AI-generated content in PreseMaker arrives as editable drafts, not finished products. The review stage is where human judgment shapes those drafts into authoritative, accurate learning materials. Each generated content item can be opened and edited directly within the PreseMaker interface, giving authors full control over the wording, structure, examples, and scope of every item.</p>
+
+<p>Authors have three broad options for any given generated draft:</p>
+
+<ul>
+  <li><strong>Accept as-is:</strong> If the generated content is accurate, appropriately scoped, and well-written for the intended audience, it can be accepted without changes. This is most common for foundational or well-documented topics where the AI's training data is reliable.</li>
+  <li><strong>Modify:</strong> Authors can adjust wording to match organizational terminology, add proprietary examples, remove sections that are irrelevant to their specific context, or deepen explanations in areas that need more nuance. This is the most common outcome — using the draft as a scaffold and building on it.</li>
+  <li><strong>Replace entirely:</strong> In cases where the generated content misses the mark or the topic requires highly specialized knowledge that the AI cannot reliably produce, authors can discard the draft and write the content item from scratch within the same interface.</li>
+</ul>
+
+<p>Working through all modules and reviewing every generated content item is what moves the course from a structural skeleton — a hierarchy of named containers — to a fully developed learning experience with real, reviewed, authoritative content. Skipping or rushing this stage is the most common source of quality issues in AI-assisted course development. The AI provides efficiency; the human review provides accuracy and trust.</p>
+
+<p><strong>Completing the Workflow: From Blank to Fully Built</strong></p>
+
+<p>A course is considered fully built in PreseMaker when every module contains at least one finalized content item — reviewed, edited to the author's satisfaction, and ready for learners. The complete workflow can be summarized as five phases that repeat consistently across every project, regardless of size:</p>
+
+<ul>
+  <li><strong>Create:</strong> Open PreseMaker, start a new course, and give it a name and basic settings.</li>
+  <li><strong>Structure:</strong> Define the modules that will organize the course's content into logical sections.</li>
+  <li><strong>Generate:</strong> Use PreseMaker's AI to produce draft content items for each module.</li>
+  <li><strong>Review:</strong> Evaluate each generated draft, editing for accuracy, relevance, tone, and completeness.</li>
+  <li><strong>Finalize:</strong> Confirm that all content items across all modules are complete and the course is ready for delivery.</li>
+</ul>
+
+<p>One of the practical strengths of this workflow is that it is entirely repeatable. Whether you are building your first course or your fiftieth, the five-phase process does not change. The subjects change, the module titles change, and the specific edits you make during review change — but the workflow itself remains constant. This consistency means that as you gain experience with PreseMaker, each subsequent course takes less time to plan and execute because the path is already familiar.</p>
+
+<p>Understanding the complete workflow before you begin your first project also helps you set realistic timelines. The AI generation phase is fast — it can produce multiple content items in seconds. But the review phase takes time proportional to the size and complexity of the course, and that time should be planned for explicitly. Authors who understand the full workflow from the start are better equipped to communicate realistic delivery estimates to stakeholders and to allocate their own time effectively across the project.</p>
+        <div class="notes"><strong>Notes</strong>Walks through the general process of building a course in PreseMaker, from creating a blank course to generating and populating it with fully developed learning materials.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

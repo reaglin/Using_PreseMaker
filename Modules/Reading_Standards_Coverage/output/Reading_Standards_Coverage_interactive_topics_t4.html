@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cognitive-Depth Check</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>The Cognitive-Depth Check</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>The Cognitive-Depth Check</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When a curriculum map shows that a standard has been addressed by assignments, quiz items, or activities, it is tempting to treat that coverage as sufficient. But coverage alone does not tell the whole story. A standard might be touched by a dozen aligned materials and still leave students operating at a cognitive level far below what the standard actually demands. The Cognitive-Depth Check is the mechanism within the coverage view that catches exactly this problem. It examines not just whether aligned materials exist for a standard, but whether those materials engage students at the right level of thinking — and it raises a visible flag whenever there is a mismatch between the depth required by the standard and the depth delivered by what has been aligned to it.</p>
+
+<p>Understanding the Cognitive-Depth Check requires a clear picture of what a cognitive-depth gap actually is. The coverage view works by comparing two Bloom's taxonomy levels: the level assigned to the standard itself in the Standards Library, and the highest Bloom's level represented by the materials that have been aligned to that standard. Bloom's Revised Taxonomy arranges cognitive demand from lower-order thinking — <strong>Remember</strong> and <strong>Understand</strong> — up through <strong>Apply</strong> and <strong>Analyze</strong>, and on to the higher-order levels of <strong>Evaluate</strong> and <strong>Create</strong>. When the materials aligned to a standard cluster at a lower level than the standard requires, the system identifies this as a <strong>depth gap</strong>.</p>
+
+<p>A concrete example makes this clearer. Suppose a standard is written and tagged at the <strong>Analyze</strong> level — students are expected to break down complex information, identify patterns, and distinguish relationships between concepts. If the only materials aligned to that standard are recall-based quiz questions and a vocabulary matching activity, those materials sit at the <strong>Remember</strong> level. The standard has coverage — there are aligned items — but the cognitive demand of those items falls well short of what the standard requires. That shortfall is the depth gap. Quantity of alignment does not compensate for the gap; even ten low-level items aligned to an Analyze-level standard still produce a depth gap, because no amount of remembering adds up to analyzing.</p>
+
+<p>The required depth for each standard is not something instructors or course administrators set locally. Each standard in the Standards Library carries a designated Bloom's taxonomy level as an intrinsic part of its definition. That level was established when the standard was authored or imported into the library, and it serves as the fixed benchmark the coverage view uses when running the depth check. Because the required level is built into the standard itself, there is no program-level setting, course-level preference, or instructor override that changes the benchmark. If a standard requires <strong>Evaluate</strong>, the depth check will always measure aligned materials against the <strong>Evaluate</strong> level, regardless of the context in which the standard is being used.</p>
+
+<p>This design reflects an important principle: the intellectual demand of a standard is a property of the standard, not of the course that uses it. A standard asking students to evaluate competing arguments expects that level of thinking whether it appears in an introductory survey course or an advanced seminar. The course shapes how students get there, but not what level of thinking they ultimately need to demonstrate.</p>
+
+<p>When the coverage view detects a depth gap for a given standard, it surfaces that information in two places simultaneously. At the individual standard level, a <strong>warning marker</strong> appears directly on that standard's row within the coverage view. Hovering over the marker displays a tooltip that identifies the specific nature of the problem — that the aligned materials do not reach the cognitive level the standard requires. This makes it possible to pinpoint exactly which standards have depth gaps without searching through the entire map.</p>
+
+<p>At the same time, the <strong>coverage view headline</strong> — the summary section at the top of the view — reports how many standards across the entire course carry a cognitive-depth gap. This gives instructors and curriculum designers an at-a-glance picture of the scope of the problem: whether it affects one isolated standard or is a pattern spread across many. Both the row-level flag and the headline summary appear automatically as part of the coverage view. There is no separate action required to generate or refresh the depth check; it runs continuously alongside the rest of the coverage analysis whenever the view is open.</p>
+
+<p>It is equally important to understand what the Cognitive-Depth Check is <em>not</em>, because the boundaries of the feature define how it should and should not be used. There is no separate button or workflow to initiate the depth check — it is not an on-demand report that an instructor runs at the end of a term. It is an always-on analytical layer woven into the coverage view itself. There is also no standalone depth report that can be opened separately from the coverage view, and the system does not produce a numeric depth score, a percentage bar, or any quantified depth metric for individual standards. The check is binary in nature: either the materials aligned to a standard reach the required Bloom's level, or they do not. Finally, there is no built-in option to export the depth-gap findings as a spreadsheet or PDF; the information is presented within the interface and is not packaged for external distribution.</p>
+
+<p>One of the most conceptually important aspects of the Cognitive-Depth Check is understanding how it relates to — and differs from — the tiered status that the coverage view already assigns to each standard. The tiered status describes <em>whether and how</em> a standard has been covered. The table below summarizes the four status tiers and what each communicates:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status Tier</th>
+      <th>What It Indicates</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Not Aligned</strong></td>
+      <td>No materials have been aligned to the standard at all.</td>
+    </tr>
+    <tr>
+      <td><strong>Not Addressed</strong></td>
+      <td>Materials are aligned but do not meaningfully engage with the standard's content.</td>
+    </tr>
+    <tr>
+      <td><strong>Practiced Only</strong></td>
+      <td>The standard is covered by practice activities but has not been assessed.</td>
+    </tr>
+    <tr>
+      <td><strong>Assessed</strong></td>
+      <td>The standard is covered by at least one formal assessment item.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Notice that none of these tiers say anything about <em>how deeply</em> the standard is engaged. A standard can reach the <strong>Assessed</strong> tier — the highest status — while still carrying a depth gap flag, if the assessment items address the standard at a lower Bloom's level than required. The depth gap flag therefore adds a <strong>second, independent dimension</strong> of evaluation layered on top of the status tier. A standard can be fully assessed and still cognitively shallow. A standard that is only practiced may or may not have a depth gap, depending on whether the practice activities reach the required level.</p>
+
+<p>This distinction has direct consequences for how instructors should respond when they see problems in the coverage view. Improving a status tier — for example, moving a standard from <strong>Practiced Only</strong> to <strong>Assessed</strong> — generally requires adding more aligned materials of the right type, such as adding a quiz item where only an activity existed before. The cognitive level of those additions matters less than their category. Resolving a depth gap, by contrast, requires a more targeted intervention: the Bloom's level of aligned materials must be raised. Adding more low-level items will not close a depth gap; the instructor must redesign existing materials or create new ones that ask students to perform the specific higher-order cognitive work the standard demands.</p>
+
+<p>In practice, this means that a thoughtful curriculum review uses both dimensions together. A standard that is assessed at depth is in the strongest position. A standard that is assessed but shallow needs richer, more cognitively demanding materials. A standard that is practiced at depth but not assessed may need a formal assessment item added. And a standard that is neither addressed nor at the right cognitive level requires the most substantial redesign. The Cognitive-Depth Check makes that full picture visible, ensuring that the coverage view reflects not just the presence of alignment but the quality of cognitive engagement it represents.</p>
+        <div class="notes"><strong>Notes</strong>The tiered status labels (Not Aligned, Not Addressed, Practiced Only, Assessed) should match exactly the terminology used elsewhere in the platform documentation to avoid confusion. The explanation of Bloom&#39;s Revised Taxonomy levels is kept accurate and consistent with standard educational literature; no proprietary or non-standard taxonomy variants are introduced.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

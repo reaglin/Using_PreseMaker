@@ -1,0 +1,120 @@
+{
+  "Id": "65fcd274-8261-4d0c-855b-8be79b9f293f",
+  "Name": "Using PreseMaker",
+  "Description": "This is a course on how to use the PreseMaker Application.",
+  "CreatedBy": "",
+  "CreatedDate": "2026-07-08T19:07:39.3136455-04:00",
+  "LastModifiedDate": "2026-07-08T19:07:39.5504308-04:00",
+  "Modules": [
+    {
+      "ModuleName": "Introduction to PreseMaker: What It Is and How It Works",
+      "FolderName": "Introduction_to_PreseMaker",
+      "Order": 1
+    },
+    {
+      "ModuleName": "Understanding the Course-Module-Content Structure",
+      "FolderName": "Understanding_the_Course",
+      "Order": 2
+    },
+    {
+      "ModuleName": "AI Providers and API Keys: Setting Up Your Connection",
+      "FolderName": "AI_Providers_and",
+      "Order": 3
+    },
+    {
+      "ModuleName": "Configuring AI Providers per Task and Using the Prompt Button",
+      "FolderName": "Configuring_AI_Providers",
+      "Order": 4
+    },
+    {
+      "ModuleName": "Creating a Course: The Course Manager and Source Materials",
+      "FolderName": "Creating_a_Course",
+      "Order": 5
+    },
+    {
+      "ModuleName": "Generating a Module Breakdown from Source Material",
+      "FolderName": "Generating_a_Module",
+      "Order": 6
+    },
+    {
+      "ModuleName": "Creating a Module: Three Methods and the Module Manager",
+      "FolderName": "Creating_a_Module",
+      "Order": 7
+    },
+    {
+      "ModuleName": "Generating Module Topics and Subtopics",
+      "FolderName": "Generating_Module_Topics",
+      "Order": 8
+    },
+    {
+      "ModuleName": "Generating Module Learning Outcomes with Bloom\u0027s Taxonomy",
+      "FolderName": "Generating_Module_Learning",
+      "Order": 9
+    },
+    {
+      "ModuleName": "Generating Presentations and Narrated Presentations",
+      "FolderName": "Generating_Presentations_and",
+      "Order": 10
+    },
+    {
+      "ModuleName": "Generating Text-Based Lessons: Formats, Layouts, and Content Types",
+      "FolderName": "Generating_Text_Based",
+      "Order": 11
+    },
+    {
+      "ModuleName": "Generating Quizzes and Assignments",
+      "FolderName": "Generating_Quizzes_and",
+      "Order": 12
+    },
+    {
+      "ModuleName": "Generating Interactive Activities and Custom Materials",
+      "FolderName": "Generating_Interactive_Activ",
+      "Order": 13
+    },
+    {
+      "ModuleName": "The Module Index: Cataloguing and Viewing Generated Content",
+      "FolderName": "The_Module_Index",
+      "Order": 14
+    },
+    {
+      "ModuleName": "Course Outcomes vs. Module Outcomes and the Alignment Map",
+      "FolderName": "Course_Outcomes_vs",
+      "Order": 15
+    },
+    {
+      "ModuleName": "Tracking Coverage: Tagging Content to Outcomes and Spotting Gaps",
+      "FolderName": "Tracking_Coverage_Tagging",
+      "Order": 16
+    },
+    {
+      "ModuleName": "Batch Actions: Generating Content Across Multiple Modules at Once",
+      "FolderName": "Batch_Actions_Generating",
+      "Order": 17
+    },
+    {
+      "ModuleName": "Common Actions: Running Multiple Tasks for a Single Module Together",
+      "FolderName": "Common_Actions_Running",
+      "Order": 18
+    },
+    {
+      "ModuleName": "Publishing a Course Website and Keeping It Current",
+      "FolderName": "Publishing_a_Course",
+      "Order": 19
+    },
+    {
+      "ModuleName": "Version Control, GitHub Pages, and Course Repository Integration",
+      "FolderName": "Version_Control_GitHub",
+      "Order": 20
+    },
+    {
+      "ModuleName": "Building a Standards Library and Mapping Topics to Standards",
+      "FolderName": "Building_a_Standards",
+      "Order": 21
+    },
+    {
+      "ModuleName": "Reading Standards Coverage and Checking Cognitive Depth",
+      "FolderName": "Reading_Standards_Coverage",
+      "Order": 22
+    }
+  ]
+}

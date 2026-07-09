@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Alignment Map: Structure and Purpose</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>The Alignment Map: Structure and Purpose</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>The Alignment Map: Structure and Purpose</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Designing a course involves making dozens of decisions about what learners should know, what they should be able to do, and in what order those capabilities should develop. Most of those decisions happen incrementally — a learning objective here, a module topic there — and the reasoning behind each choice often lives only in the designer's head. The alignment map is the tool that draws all of those decisions out into the open, arranges them in a single visual structure, and makes the logical relationships between them explicit and reviewable. Understanding what an alignment map is, why it exists, and what it can reveal is foundational to building courses that are coherent by design rather than by accident.</p>
+
+<p>An alignment map is a structured representation — most commonly a grid or matrix — that displays the connections between module-level learning outcomes and course-level learning outcomes side by side. At its simplest, module outcomes are listed along one axis and course outcomes along the other, and each cell where a relationship exists is marked. The result is a picture of the course's instructional architecture. <strong>It makes invisible relationships visible</strong>, showing at a glance which module outcomes support which course outcomes and, equally important, which ones do not. Before a map exists, those relationships may be real and intentional, but they are dispersed across syllabi, module guides, and assessment documents. The map collapses all of that into one auditable view.</p>
+
+<p>The map serves two distinct but complementary roles in the life of a course. During initial course creation it functions as a <strong>design tool</strong>: a working surface where a designer can draft outcome relationships, test whether the structure is logically sound, and revise before any content is built. During course review — whether a peer review, a quality assurance audit, or a scheduled redesign — it functions as an <strong>audit tool</strong>: an existing record that reviewers can interrogate to ask whether the design still holds. Unlike a simple list of outcomes, the map preserves relational information. A list tells you what outcomes exist; the map tells you how they connect and depend on one another. That relational information would otherwise be scattered across separate documents, if it were recorded at all.</p>
+
+<p>The central purpose of the alignment map is to make the logical structure of a course <strong>explicit and defensible</strong>. A course is an argument: it claims that by engaging with a particular sequence of content and activities, a learner will arrive at a defined set of capabilities. The alignment map is where that argument is written down in a form that can be examined, challenged, and improved. It helps designers confirm that <strong>no course outcome is left unsupported</strong> by at least one module outcome. If a course outcome appears on the syllabus but no module in the course actually addresses it in any measurable way, that outcome is a promise the course cannot keep. The map makes that failure visible immediately rather than letting it surface only when learners underperform on a summative assessment.</p>
+
+<p>The map also reveals the opposite problem: a <strong>module outcome that exists in isolation</strong>, with no clear contribution to any broader course goal. Module outcomes that do not trace upward to any course outcome are instructional orphans. They consume learner time and cognitive effort but do not advance the course's stated purpose. Identifying them is only possible when both levels of outcomes are laid out together in a shared structure.</p>
+
+<p>Every connection marked on the map is, in effect, a claim: <em>"mastering this module outcome contributes to achieving this course outcome."</em> That claim is not always self-evident, and making it explicit forces the designer to articulate the instructional logic that might otherwise remain tacit. The nature of these relationships varies, and the map can represent all of them simultaneously. A single module outcome might support only one course outcome — a <strong>one-to-one</strong> relationship — in cases where a course outcome is narrow and addressed in a single dedicated module. More commonly, a single course outcome is broad enough that multiple module outcomes across several modules all contribute to it — a <strong>many-to-one</strong> relationship — and the map shows this convergence clearly. Conversely, a single module outcome may contribute to more than one course outcome — a <strong>one-to-many</strong> relationship — which is common when a module addresses an integrative skill such as written communication or data interpretation that cuts across several broader goals. The map makes all of these patterns visible simultaneously, something no list or narrative description can do as efficiently.</p>
+
+<p>Consider a simplified example. Suppose a course in introductory data analysis has the following course-level outcomes:</p>
+
+<ul>
+  <li><strong>CO1:</strong> Organize and clean raw datasets for analysis.</li>
+  <li><strong>CO2:</strong> Apply descriptive statistical methods to summarize data.</li>
+  <li><strong>CO3:</strong> Communicate analytical findings clearly to a non-technical audience.</li>
+</ul>
+
+<p>And suppose three modules each produce the following module outcomes:</p>
+
+<ul>
+  <li><strong>MO1 (Module 1):</strong> Identify and resolve common data entry errors in a spreadsheet.</li>
+  <li><strong>MO2 (Module 2):</strong> Calculate mean, median, mode, and standard deviation for a dataset.</li>
+  <li><strong>MO3 (Module 2):</strong> Select the appropriate measure of central tendency for different data distributions.</li>
+  <li><strong>MO4 (Module 3):</strong> Write a one-page summary of statistical findings for a general audience.</li>
+  <li><strong>MO5 (Module 3):</strong> Create a clearly labeled chart that illustrates a key finding.</li>
+</ul>
+
+<p>A basic alignment map for this course might look like the following:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module Outcome</th>
+      <th>CO1: Organize &amp; Clean Data</th>
+      <th>CO2: Apply Descriptive Statistics</th>
+      <th>CO3: Communicate Findings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MO1 – Identify and resolve data errors</td>
+      <td>✓</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>MO2 – Calculate descriptive statistics</td>
+      <td></td>
+      <td>✓</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>MO3 – Select appropriate measure</td>
+      <td></td>
+      <td>✓</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>MO4 – Write summary for general audience</td>
+      <td></td>
+      <td></td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>MO5 – Create labeled chart</td>
+      <td></td>
+      <td></td>
+      <td>✓</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In this example every course outcome is supported and every module outcome traces to a course goal. But suppose a sixth module outcome had been drafted — say, <em>"Define the difference between a population and a sample"</em> — and it did not connect to any of the three course outcomes. The map would immediately surface that gap. The designer must then decide: either revise the course outcomes to include statistical vocabulary as a stated goal, or remove the module outcome because it does not serve the course's purpose. Neither decision is right or wrong in the abstract; what matters is that the map forces the decision to be made consciously.</p>
+
+<p>One of the most practically valuable things the map does is serve as a <strong>structural integrity check</strong>. Two failure modes become immediately diagnosable. The first is a <strong>gap</strong>: a course outcome that has no module outcome pointing to it. This signals missing instructional coverage — the course promises an outcome it never actually teaches. The second is <strong>unintentional redundancy</strong>: multiple modules targeting the same outcome at exactly the same cognitive depth, with no scaffolding between them. Revisiting the same content at the same level wastes instructional time and can frustrate learners. The map allows designers to distinguish between intentional spiraling — where a skill is revisited at increasing depth across modules — and accidental repetition, where the same ground is covered twice without added value. These structural problems are difficult to catch through a narrative review of individual module documents because each document looks fine in isolation. The map reveals the pattern.</p>
+
+<p>A more sophisticated application of the alignment map incorporates <strong>cognitive depth</strong> as a second dimension of analysis. It is not sufficient to know that a module outcome and a course outcome are topically related; the map should also reflect whether the level of thinking demanded by the module outcome is appropriate to support the level of thinking demanded by the course outcome. The most widely used framework for categorizing cognitive depth is <strong>Bloom's Taxonomy</strong>, which arranges thinking skills into six levels: <em>Remember</em>, <em>Understand</em>, <em>Apply</em>, <em>Analyze</em>, <em>Evaluate</em>, and <em>Create</em>. Each level represents a qualitatively different kind of intellectual work, and higher levels generally depend on the lower ones.</p>
+
+<p>When cognitive depth is incorporated into the map — for example, by annotating each marked cell with the Bloom's level of the corresponding outcome — <strong>depth mismatches</strong> become visible. Consider a course outcome written at the <em>Evaluate</em> level: <em>"Assess the appropriateness of different statistical methods for a given research question."</em> If every module outcome that maps to it is written at the <em>Remember</em> or <em>Understand</em> level — <em>"Define inferential statistics," "List parametric and non-parametric tests"</em> — the course has a depth gap. Learners are being asked to evaluate at the course level but are only being taught to recall and recognize at the module level. No amount of good content delivery will bridge that gap if the instructional activities and assessments never demand the higher-order thinking. An alignment map with cognitive depth annotations makes that mismatch immediately apparent, whereas it would be nearly invisible in a document-by-document review.</p>
+
+<p>Expanding the earlier example to include cognitive depth annotations illustrates how this works in practice:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module Outcome</th>
+      <th>Bloom's Level (MO)</th>
+      <th>CO1 (Apply)</th>
+      <th>CO2 (Analyze)</th>
+      <th>CO3 (Create)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MO1 – Identify and resolve data errors</td>
+      <td>Apply</td>
+      <td>✓ Match</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>MO2 – Calculate descriptive statistics</td>
+      <td>Apply</td>
+      <td></td>
+      <td>↓ Gap</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>MO3 – Select appropriate measure</td>
+      <td>Analyze</td>
+      <td></td>
+      <td>✓ Match</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>MO4 – Write summary for general audience</td>
+      <td>Create</td>
+      <td></td>
+      <td></td>
+      <td>✓ Match</td>
+    </tr>
+    <tr>
+      <td>MO5 – Create labeled chart</td>
+      <td>Apply</td>
+      <td></td>
+      <td></td>
+      <td>↓ Gap</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Here, MO2 maps to CO2 (Analyze) but operates only at the Apply level — a depth gap. MO5 maps to CO3 (Create) but operates only at the Apply level — another depth gap. The map now tells the designer that additional module outcomes at the Analyze and Create levels are needed, or that the existing outcomes must be revised upward in cognitive demand. Without the depth dimension in the map, both mismatches would be invisible.</p>
+
+<p>All of these functions converge on a single overarching purpose: <strong>course coherence</strong>. A coherent course is one in which every component — modules, outcomes, activities, assessments — is working toward the same set of goals in a logically consistent way, and where learners can sense that consistency in how the course is experienced. Coherence of this kind is not automatic. It does not emerge simply from choosing good content or writing thoughtful learning objectives in isolation. It must be <strong>designed in</strong>, and the alignment map is the primary mechanism for doing so deliberately.</p>
+
+<p>When every module outcome traces to at least one course outcome — and when the cognitive depth of that tracing is appropriate — the course sends a consistent message about what matters and why. Learners implicitly receive that message through the structure of their experience: the things they are asked to learn in each module feel connected to the larger goals they were shown at the start, and the assessments they complete feel like reasonable demonstrations of those goals rather than arbitrary exercises. That coherence builds trust and motivation, and it also makes learning more efficient because each part of the course reinforces the others rather than competing with them for attention.</p>
+
+<p>Perhaps most importantly, the alignment map <strong>transforms course design from an intuitive process into a documented, reviewable, and improvable structure</strong>. Intuitive design is not worthless — experienced designers carry genuine expertise — but it is opaque to others and difficult to improve systematically. When the reasoning behind a course's structure is visible in a map, a peer reviewer can engage with it substantively. A program director can verify that accreditation requirements are being met at the module level. An instructor inheriting the course can understand its architecture without having to reverse-engineer it. And when the course is revised, the map becomes the baseline: changes to outcomes or modules can be evaluated against the existing structure rather than starting from scratch. The alignment map is, in this sense, not just a design tool or an audit tool — it is the course's structural memory.</p>
+        <div class="notes"><strong>Notes</strong>Consider pairing this topic with a hands-on activity in which learners take a short, real course outline and attempt to build a basic alignment map from its stated outcomes, then compare their maps with a worked example. The contrast between an unsupported course outcome and a well-mapped one tends to make the abstract purpose of the tool immediately concrete. The Bloom&#39;s Taxonomy depth-mismatch examples are especially useful discussion anchors for instructional design practitioners who have written objectives but never systematically compared their levels across course and module tiers.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

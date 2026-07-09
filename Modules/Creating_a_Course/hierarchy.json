@@ -1,0 +1,757 @@
+{
+  "ModuleFolderName": "Creating_a_Course",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:16:05.6223012-04:00",
+  "ModifiedDate": "2026-07-08T19:17:30.6393698-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "ac896dd7-c5c5-4c1e-8ed9-5928ae63d24d",
+      "Title": "Introduction to the Course Manager",
+      "Summary": "The Course Manager serves as the home screen of PreseMaker and is the central hub for managing all courses. Learners will get oriented with its interface and understand its role in the course creation workflow.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:16:05.6223012-04:00",
+      "ModifiedDate": "2026-07-08T19:16:05.6223012-04:00",
+      "Elements": [
+        {
+          "Id": "84ea35b4-39d9-4f67-aea7-16bdbd9ca7e8",
+          "TopicId": "ac896dd7-c5c5-4c1e-8ed9-5928ae63d24d",
+          "Title": "What Is the Course Manager?",
+          "BodyText": "The Course Manager is the home screen of PreseMaker and serves as the central hub for all course-related activities.",
+          "Notes": "Think of the Course Manager as your command center \u2014 every action related to building and organizing courses begins here.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:16:17.8138038-04:00",
+          "ModifiedDate": "2026-07-08T19:16:17.8138038-04:00",
+          "Items": [
+            {
+              "Id": "0159bfe3-6c62-4f67-bc0d-a5248b627eaa",
+              "Text": "The Course Manager is the first screen users encounter when launching PreseMaker.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "28c181f1-f1df-4f0c-b172-e07e61d084d6",
+              "Text": "It provides a single location from which all courses can be accessed, created, and managed.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a7ab4090-bbf1-4f45-93b5-c1122b4c216e",
+              "Text": "Its role as a central hub means learners and authors return to it throughout the course creation workflow.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "26bb9cb4-0580-4a96-8f4b-308432184ad9",
+          "TopicId": "ac896dd7-c5c5-4c1e-8ed9-5928ae63d24d",
+          "Title": "The Course Manager as the Starting Point for Course Creation",
+          "BodyText": "Every new course in PreseMaker originates from the Course Manager, making it the essential first step in the creation workflow.",
+          "Notes": "Whether building a course from scratch or using AI assistance, the process always begins within the Course Manager interface.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:16:17.8138038-04:00",
+          "ModifiedDate": "2026-07-08T19:16:17.8138038-04:00",
+          "Items": [
+            {
+              "Id": "333025ad-e7e4-4af7-bb85-543000aaa4ec",
+              "Text": "Authors initiate the course creation process directly from the Course Manager screen.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9b4a1220-5837-454e-b281-3281c44666cf",
+              "Text": "The Course Manager supports multiple creation paths, including starting with an empty course or generating one with AI.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "fd49ab17-e6db-49d0-a271-e66753a7f322",
+              "Text": "Returning to the Course Manager at any stage allows authors to switch between courses or begin new ones.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "74031704-a1fe-408e-8d7a-b191890b3129",
+          "TopicId": "ac896dd7-c5c5-4c1e-8ed9-5928ae63d24d",
+          "Title": "Navigating the Course Manager Interface",
+          "BodyText": "The Course Manager interface is designed to give users a clear overview of all existing courses and quick access to key actions.",
+          "Notes": "Familiarity with the layout helps users work more efficiently and reduces time spent searching for courses or features.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:16:17.8138038-04:00",
+          "ModifiedDate": "2026-07-08T19:16:17.8138038-04:00",
+          "Items": [
+            {
+              "Id": "16fc0fb1-e752-4c66-b74b-32ad94dae251",
+              "Text": "The interface displays a listing of all courses currently available within the system.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2a2123d0-a399-4d71-9d61-51fa034bce16",
+              "Text": "Key actions such as creating a new course are accessible directly from the Course Manager screen.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4dd03f52-3604-4c49-9ef3-68f6afb5eff4",
+              "Text": "The layout is intended to orient users quickly so they can move into course creation or editing without unnecessary steps.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4c54144e-0ad2-443e-9a4a-ee5c308a968b",
+          "TopicId": "ac896dd7-c5c5-4c1e-8ed9-5928ae63d24d",
+          "Title": "The Course Manager\u0027s Role in the Overall Workflow",
+          "BodyText": "The Course Manager connects all phases of course development, acting as the consistent reference point throughout the PreseMaker workflow.",
+          "Notes": "Understanding the Course Manager\u0027s role helps learners see how individual tasks \u2014 like adding source materials or generating content \u2014 fit into the larger process.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:16:17.8138038-04:00",
+          "ModifiedDate": "2026-07-08T19:16:17.8138038-04:00",
+          "Items": [
+            {
+              "Id": "040f8d0d-be19-48cd-8a34-27c05ddeeae5",
+              "Text": "The Course Manager links course setup, source material management, and content generation into a unified workflow.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f0f3f222-605b-4e12-8903-0c3ec0952366",
+              "Text": "Authors can track and manage multiple courses simultaneously from this single interface.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7592796d-70d3-4637-80da-53d3c2467b4d",
+              "Text": "Returning to the Course Manager between tasks helps maintain an organized and efficient development process.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "c2ef0972-d95c-476b-a019-d5822e4aac5f",
+      "Title": "Creating a New Course",
+      "Summary": "Learners will walk through the process of creating a new course in PreseMaker, including the choice between starting with an empty course or using AI to generate one. This topic covers the initial setup steps and available creation options.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:16:05.6223012-04:00",
+      "ModifiedDate": "2026-07-08T19:16:05.6223012-04:00",
+      "Elements": [
+        {
+          "Id": "a303d8b7-9038-46c2-988e-f88fb7d7316a",
+          "TopicId": "c2ef0972-d95c-476b-a019-d5822e4aac5f",
+          "Title": "The Course Manager as Your Starting Point",
+          "BodyText": "The Course Manager is the home screen of PreseMaker and the place where all course creation begins.",
+          "Notes": "Every time you open PreseMaker, the Course Manager is the first screen you encounter, giving you a centralized view of your courses and creation options.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:16:36.3815173-04:00",
+          "ModifiedDate": "2026-07-08T19:16:36.3815173-04:00",
+          "Items": [
+            {
+              "Id": "2ff6e0b4-1a95-44f3-b163-bda96c41656d",
+              "Text": "The Course Manager displays all existing courses and provides access to tools for creating new ones.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "72d22df3-6eac-42a9-b9d6-44dd97435b28",
+              "Text": "From this screen, learners can manage, organize, and initiate any course-building activity within PreseMaker.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "01f91e00-3296-4fae-9b9c-60d2121b9259",
+          "TopicId": "c2ef0972-d95c-476b-a019-d5822e4aac5f",
+          "Title": "Initiating the Course Creation Process",
+          "BodyText": "Creating a new course in PreseMaker begins by selecting the option to create a new course from within the Course Manager.",
+          "Notes": "This initial action opens the course setup workflow, where you will make foundational decisions about how your course will be built.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:16:36.3815173-04:00",
+          "ModifiedDate": "2026-07-08T19:16:36.3815173-04:00",
+          "Items": [
+            {
+              "Id": "3f9d4a8e-47e1-43f7-9bd8-b86cd2c730a3",
+              "Text": "Locate and click the \u0027Create New Course\u0027 button or equivalent control within the Course Manager interface.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f2b20add-9ae1-4366-90b4-e7b2df79dcfa",
+              "Text": "This action launches the setup flow that guides you through the initial configuration of your course.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "59adb3c6-5778-472d-935c-5de3a0e6b0b0",
+              "Text": "No content is committed at this stage \u2014 it is simply the entry point into the creation workflow.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "932714c6-88a9-4f03-aa17-42212465155c",
+          "TopicId": "c2ef0972-d95c-476b-a019-d5822e4aac5f",
+          "Title": "Choosing Between an Empty Course and AI Generation",
+          "BodyText": "PreseMaker offers two primary paths for creating a new course: starting with an empty course or using AI to generate one.",
+          "Notes": "The choice between these two options affects how much initial structure and content is provided to you before you begin editing.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:16:36.3815173-04:00",
+          "ModifiedDate": "2026-07-08T19:16:36.3815173-04:00",
+          "Items": [
+            {
+              "Id": "94222c59-b542-45df-b8b1-e65770a7cadb",
+              "Text": "An empty course gives you a blank slate, allowing you to build the structure and content entirely from scratch.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "bfba7513-e36c-4f5a-b52e-aea3d4ebc6cf",
+              "Text": "The AI-generated option uses artificial intelligence to produce an initial course draft based on inputs you provide.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "27eb1236-b1a9-4c79-89e0-6a81bf29e235",
+              "Text": "Selecting the AI path can significantly accelerate the early stages of course development by automating content generation.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "9a75875e-cc11-4cb1-9f6f-039aeb3867d0",
+          "TopicId": "c2ef0972-d95c-476b-a019-d5822e4aac5f",
+          "Title": "Starting with an Empty Course",
+          "BodyText": "Choosing the empty course option creates a course with no pre-filled content, giving authors full manual control over structure and material.",
+          "Notes": "This option is well-suited for authors who have a clear vision of their course structure or who prefer to build content without AI assistance.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:16:36.3815173-04:00",
+          "ModifiedDate": "2026-07-08T19:16:36.3815173-04:00",
+          "Items": [
+            {
+              "Id": "0defc96f-0c62-4c56-90c5-4a69d0b1d806",
+              "Text": "An empty course contains no slides, topics, or AI-generated text \u2014 everything must be added manually.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "bfa4291e-1c0d-4d9c-9479-502296b1210d",
+              "Text": "This approach offers maximum flexibility for experienced course designers who want full creative control.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "01747e0e-a52a-4fbf-9c87-011b5a6fbe58",
+              "Text": "After creation, you can still add source materials and use other PreseMaker tools to develop the course.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d7479177-bb98-4b21-95cb-190a6d65e700",
+          "TopicId": "c2ef0972-d95c-476b-a019-d5822e4aac5f",
+          "Title": "Using AI to Generate a New Course",
+          "BodyText": "The AI-generation option allows PreseMaker to automatically produce an initial course structure and content based on information you supply.",
+          "Notes": "This path is particularly useful when working from existing materials such as documents, descriptions, or other source content that the AI can interpret and transform.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:16:36.3815173-04:00",
+          "ModifiedDate": "2026-07-08T19:16:36.3815173-04:00",
+          "Items": [
+            {
+              "Id": "a5276534-5ec2-4e1f-a29c-1e44fa70b60a",
+              "Text": "When selecting AI generation, you will be prompted to provide source materials or a description to guide the AI.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "209f8ae1-9c41-47ef-a9b7-31a4da5c1fd8",
+              "Text": "The AI uses your inputs to draft a suggested breakdown of the course into modules; topics and subtopics are generated later, inside each module.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d9948446-7174-4934-acf2-87db4d98f7dd",
+              "Text": "The AI-generated result is a starting point \u2014 all generated content can be reviewed and edited after creation.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "097196c7-8759-4533-8417-c0fe6a547381",
+          "TopicId": "c2ef0972-d95c-476b-a019-d5822e4aac5f",
+          "Title": "Completing the Initial Course Setup",
+          "BodyText": "Regardless of which creation path is chosen, there are essential setup steps required before the course is fully initialized in PreseMaker.",
+          "Notes": "These steps ensure the course is properly named and configured so it can be managed effectively within the Course Manager.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:16:36.3815173-04:00",
+          "ModifiedDate": "2026-07-08T19:16:36.3815173-04:00",
+          "Items": [
+            {
+              "Id": "85660f92-e068-416a-b297-249c78f307d5",
+              "Text": "You will typically be asked to provide a course name or title as part of the initial setup.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b2911bd2-0e31-4491-98cc-127d4c13739e",
+              "Text": "Additional configuration options may be presented depending on whether you chose empty or AI-generated creation.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7aadde6d-ede0-4387-a7f6-b9446317747e",
+              "Text": "Once setup is complete, the new course appears in the Course Manager and is ready for further development.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "c295640f-686f-4e92-8573-0ee6f77d1014",
+      "Title": "AI-Generated Course Creation",
+      "Summary": "This topic explores how PreseMaker\u0027s AI can automatically generate a course structure based on provided inputs. Learners will understand when and why to choose AI generation over manual course building.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:16:05.6223012-04:00",
+      "ModifiedDate": "2026-07-08T19:16:05.6223012-04:00",
+      "Elements": [
+        {
+          "Id": "494d6b66-f2ec-4a23-89aa-80bbbd25d33e",
+          "TopicId": "c295640f-686f-4e92-8573-0ee6f77d1014",
+          "Title": "What Is AI-Generated Course Creation?",
+          "BodyText": "PreseMaker\u0027s AI-generated course creation automatically builds a course structure based on inputs you provide, rather than requiring you to manually assemble every component.",
+          "Notes": "This feature is designed to accelerate the course-building process by interpreting your source materials and organizing them into a coherent learning structure.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:16:53.1530449-04:00",
+          "ModifiedDate": "2026-07-08T19:16:53.1530449-04:00",
+          "Items": [
+            {
+              "Id": "9a2a4100-efc1-459e-ad18-7951779890f7",
+              "Text": "The AI analyzes your provided inputs and generates a proposed set of modules for the course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "fd8c617f-7547-4399-95d3-c9b7497cbc65",
+              "Text": "This approach reduces the time and effort required to go from raw content to a structured course.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "960bed62-d70d-411a-99ac-91456c049a0c",
+              "Text": "The generated structure can serve as a starting point that you can refine and customize.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "22eb34d2-32c0-4168-a0a6-2a06acfa4e54",
+          "TopicId": "c295640f-686f-4e92-8573-0ee6f77d1014",
+          "Title": "When to Choose AI Generation Over Manual Building",
+          "BodyText": "Choosing between AI-generated and manual course creation depends on your timeline, the complexity of your content, and how much structure already exists in your source materials.",
+          "Notes": "AI generation is especially valuable when you have rich source material but lack the time or expertise to manually organize it into a course format.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:16:53.1530449-04:00",
+          "ModifiedDate": "2026-07-08T19:16:53.1530449-04:00",
+          "Items": [
+            {
+              "Id": "9c3a02d3-efad-420d-b33f-9d11bad464ed",
+              "Text": "AI generation is best when you have substantial source content and want a rapid first draft of your course structure.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9701b76d-e062-4be9-bf60-e63e7d5ca3d1",
+              "Text": "Manual building is preferable when you have a very specific instructional design in mind that requires precise control over every element.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1dd83ce2-a61a-4472-bc69-6a6f12f4b74c",
+              "Text": "If your source materials are varied or unstructured, the AI can help identify logical groupings and sequences.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a0c40c77-08a0-4fb9-a57f-e9a9c1b43f28",
+          "TopicId": "c295640f-686f-4e92-8573-0ee6f77d1014",
+          "Title": "Inputs That Drive AI Course Generation",
+          "BodyText": "The quality and type of inputs you provide directly influence how well the AI constructs your course structure.",
+          "Notes": "PreseMaker accepts multiple source material types, and using a combination of them can help the AI produce a more complete and accurate course outline.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:16:53.1530449-04:00",
+          "ModifiedDate": "2026-07-08T19:16:53.1530449-04:00",
+          "Items": [
+            {
+              "Id": "b6ac7a3a-d5d4-4d06-a6ea-59dc2e2e8e46",
+              "Text": "Accepted input types include PowerPoint files, written descriptions, documents, web pages, pasted text, and YouTube transcripts.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "28af14b9-4ecd-42b2-b2a3-ef49c1c08492",
+              "Text": "Providing clear and comprehensive source materials gives the AI more context to generate relevant topics and content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a3da632d-5fb9-4832-9575-9000546ae00a",
+              "Text": "Primary sources carry more weight in shaping the course structure, while secondary sources supplement and enrich the content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "85b95c50-5cd9-4a32-a79b-eda34574b233",
+          "TopicId": "c295640f-686f-4e92-8573-0ee6f77d1014",
+          "Title": "The Role of Primary vs. Secondary Sources in AI Generation",
+          "BodyText": "PreseMaker distinguishes between primary and secondary source materials, and this distinction affects how the AI prioritizes and uses your inputs during course generation.",
+          "Notes": "Understanding this distinction helps you strategically assign source types to get the most accurate AI-generated output.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:16:53.1530449-04:00",
+          "ModifiedDate": "2026-07-08T19:16:53.1530449-04:00",
+          "Items": [
+            {
+              "Id": "2d15ca6b-ad38-44a8-aeff-9f2c926c87a3",
+              "Text": "Primary sources are the main content the AI draws upon to define the core structure and learning objectives of the course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c81154e2-84e0-4b93-8e85-56e20318e368",
+              "Text": "Secondary sources provide supplementary detail, examples, or context that enriches the primary content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d5f911f8-4461-4c3d-8b19-8c7fd6a7cdac",
+              "Text": "Designating your most authoritative or comprehensive material as the primary source leads to a more accurate course outline.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "1822d5ba-9ab3-4346-8e46-331084807cc6",
+          "TopicId": "c295640f-686f-4e92-8573-0ee6f77d1014",
+          "Title": "Initiating AI Course Generation in PreseMaker",
+          "BodyText": "Starting an AI-generated course in PreseMaker involves selecting the AI generation option when creating a new course from the Course Manager.",
+          "Notes": "The Course Manager serves as the home screen of PreseMaker, making it the central starting point for all course creation workflows.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:16:53.1530449-04:00",
+          "ModifiedDate": "2026-07-08T19:16:53.1530449-04:00",
+          "Items": [
+            {
+              "Id": "80581452-202a-4bc7-ba94-5c55282f8879",
+              "Text": "From the Course Manager, you choose to create a new course and then select the AI-generated option rather than the empty course option.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4c5100ce-77cb-47bd-854b-1498d5753735",
+              "Text": "You are then prompted to provide or upload your source materials before the AI begins generating the course structure.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f708d0a8-4197-4fea-82bc-fb6522d369d5",
+              "Text": "Once generation is complete, the resulting course structure is available for review, editing, and further development.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "cd93c948-07ba-4210-a085-41b4ef1be6e2",
+      "Title": "Accepted Source Material Types",
+      "Summary": "PreseMaker supports a variety of source material formats including PowerPoint files, written descriptions, documents, web pages, pasted text, and YouTube transcripts. Learners will explore each type and understand how they are used to populate course content.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:16:05.6223012-04:00",
+      "ModifiedDate": "2026-07-08T19:16:05.6223012-04:00",
+      "Elements": [
+        {
+          "Id": "8f565c24-ad8d-44f9-bbd8-ff831818b1a4",
+          "TopicId": "cd93c948-07ba-4210-a085-41b4ef1be6e2",
+          "Title": "PowerPoint Files",
+          "BodyText": "PreseMaker accepts PowerPoint files (.pptx) as a source material type, allowing existing slide decks to be used as the foundation for course content.",
+          "Notes": "This is particularly useful for instructors or subject matter experts who already have presentation materials they want to convert into a structured e-learning course.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:17:12.4138885-04:00",
+          "ModifiedDate": "2026-07-08T19:17:12.4138885-04:00",
+          "Items": [
+            {
+              "Id": "567960e4-0561-4dc8-986d-9888bb7166f5",
+              "Text": "Upload an existing PowerPoint file directly into PreseMaker to populate course topics and content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f8b41184-d59c-4b35-b361-430c9928e9eb",
+              "Text": "Slide titles, body text, and notes from the PowerPoint are extracted and used to build course elements.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f4dbd969-4efe-40c9-9f50-91cdab9fe23c",
+              "Text": "This format saves time by repurposing materials that have already been created and refined.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3e42e770-9870-4b63-8113-7f61d0388ae3",
+          "TopicId": "cd93c948-07ba-4210-a085-41b4ef1be6e2",
+          "Title": "Written Descriptions",
+          "BodyText": "A written description is a plain-text summary or overview that tells PreseMaker what the course should be about, enabling AI-generated content creation from scratch.",
+          "Notes": "This option is ideal when no existing materials are available and the course creator wants the AI to generate content based on a high-level brief or outline.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:17:12.4138885-04:00",
+          "ModifiedDate": "2026-07-08T19:17:12.4138885-04:00",
+          "Items": [
+            {
+              "Id": "a4a5eac3-8e60-4645-9bbf-17f91b802f33",
+              "Text": "Type a description of the course topic, goals, or audience directly into PreseMaker.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4ce02967-b26a-41bc-b84a-1a95be723d84",
+              "Text": "The AI uses the description to suggest topics, subtopics, and content elements.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "fb45f6bc-1213-4370-89e9-a5c37c77c86b",
+              "Text": "Descriptions can be as brief or as detailed as needed to guide content generation.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3eaa2be0-533f-4e4e-b6bc-0d878932dd19",
+          "TopicId": "cd93c948-07ba-4210-a085-41b4ef1be6e2",
+          "Title": "Documents",
+          "BodyText": "PreseMaker supports uploaded documents such as Word files or PDFs as source materials, extracting their text content to inform course structure and content.",
+          "Notes": "Documents such as training manuals, policy guides, or research papers can be repurposed efficiently using this source type.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:17:12.4138885-04:00",
+          "ModifiedDate": "2026-07-08T19:17:12.4138885-04:00",
+          "Items": [
+            {
+              "Id": "285c7992-e583-4a7c-8f9b-9c1ba1a30604",
+              "Text": "Upload document files to provide PreseMaker with detailed written content to draw from.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e5dd79b9-05bc-490a-80d9-6479505ab727",
+              "Text": "Text is parsed from the document and mapped to relevant course topics and elements.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3d0b88e8-d71b-4c31-ba25-9d2b98b4ae9b",
+              "Text": "This format is well-suited for converting reference or instructional materials into interactive course content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "fb72638f-edea-46ba-936a-6ac9077eebb7",
+          "TopicId": "cd93c948-07ba-4210-a085-41b4ef1be6e2",
+          "Title": "Web Pages",
+          "BodyText": "PreseMaker can accept URLs to web pages as source material, pulling content directly from online resources to help build course content.",
+          "Notes": "This is useful when authoritative or up-to-date information exists online and the course creator wants to incorporate it without manually copying the content.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:17:12.4138885-04:00",
+          "ModifiedDate": "2026-07-08T19:17:12.4138885-04:00",
+          "Items": [
+            {
+              "Id": "0c1cd3ec-2625-4d49-bef7-cb7d836d6cde",
+              "Text": "Paste a URL into PreseMaker to reference a web page as a source of course content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9bce14d7-2418-4e39-9c2f-794b21b31408",
+              "Text": "PreseMaker retrieves and processes the text from the web page to populate relevant course elements.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "428172e6-96f3-4264-a9f8-2e4f5532e08b",
+              "Text": "Using web pages keeps content current and reduces the need to manually transcribe online information.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "487932e5-b047-4dab-930c-334e4943bd30",
+          "TopicId": "cd93c948-07ba-4210-a085-41b4ef1be6e2",
+          "Title": "Pasted Text",
+          "BodyText": "Pasted text allows users to copy and paste any written content directly into PreseMaker, providing maximum flexibility in sourcing material from various origins.",
+          "Notes": "This option works well for content that doesn\u0027t exist as a standalone file or URL, such as excerpts, notes, or compiled research.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:17:12.4138885-04:00",
+          "ModifiedDate": "2026-07-08T19:17:12.4138885-04:00",
+          "Items": [
+            {
+              "Id": "2953af2d-60f3-4c4f-aa10-74c3f132b5bd",
+              "Text": "Copy text from any source and paste it directly into the PreseMaker source material field.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7113aa78-74b0-422e-80dc-917331abda53",
+              "Text": "PreseMaker processes the pasted text the same way it handles uploaded documents or descriptions.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3ea8bdab-fb1d-44e3-b6c4-5b1a1e4672f8",
+              "Text": "This format is highly flexible and can accommodate content from emails, reports, notes, or other text-based sources.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "fcf0a67e-2acd-4510-bfcd-55a8271e0583",
+          "TopicId": "cd93c948-07ba-4210-a085-41b4ef1be6e2",
+          "Title": "YouTube Transcripts",
+          "BodyText": "PreseMaker supports YouTube video URLs as a source material type by extracting the video\u0027s transcript to generate course content.",
+          "Notes": "This is especially helpful for converting educational video content, webinars, or recorded lectures into a structured written course format.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:17:12.4138885-04:00",
+          "ModifiedDate": "2026-07-08T19:17:12.4138885-04:00",
+          "Items": [
+            {
+              "Id": "3a75c77f-119f-43f5-927b-1dff2b7722a7",
+              "Text": "Paste a YouTube video URL into PreseMaker to use its auto-generated or caption-based transcript as source content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "077f8d39-562a-43a8-858f-243484420f2c",
+              "Text": "The transcript text is analyzed and used to identify key concepts, topics, and content elements.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d7ac37b6-bcfa-4df2-b4b4-ffb3421ba73b",
+              "Text": "This source type bridges the gap between video-based learning and structured e-learning course formats.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "79843d3b-6bec-4d86-99a8-ab92126497a3",
+      "Title": "Primary vs. Secondary Sources",
+      "Summary": "Learners will understand the distinction between primary and secondary source materials within PreseMaker and how each type influences the course structure and AI generation process.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:16:05.6223012-04:00",
+      "ModifiedDate": "2026-07-08T19:16:05.6223012-04:00",
+      "Elements": [
+        {
+          "Id": "a761d356-6ef9-4a12-b14c-d6253a320c70",
+          "TopicId": "79843d3b-6bec-4d86-99a8-ab92126497a3",
+          "Title": "Defining Primary Sources in PreseMaker",
+          "BodyText": "A primary source is the main input material that drives the AI generation process when building a course in PreseMaker.",
+          "Notes": "Think of the primary source as the foundation \u2014 the AI uses it as the authoritative basis for structuring course content, modules, and learning objectives.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:17:30.6392882-04:00",
+          "ModifiedDate": "2026-07-08T19:17:30.6392882-04:00",
+          "Items": [
+            {
+              "Id": "ddd8477c-7b8f-42e2-850d-d11c531265bd",
+              "Text": "Only one source can be designated as the primary source per course creation session.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e64417d3-71af-4cd6-919a-52a207a0db3b",
+              "Text": "The primary source has the greatest influence on the overall structure, tone, and content of the AI-generated course.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f91e864f-69c8-446b-bf37-b1e825cd3ffe",
+              "Text": "Accepted primary source types include PowerPoint files, written descriptions, documents, web pages, pasted text, and YouTube transcripts.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4d122ace-b2fd-42ca-9a55-a18b27c0d54d",
+          "TopicId": "79843d3b-6bec-4d86-99a8-ab92126497a3",
+          "Title": "Defining Secondary Sources in PreseMaker",
+          "BodyText": "Secondary sources are supplemental materials provided alongside the primary source to enrich or add context to the generated course content.",
+          "Notes": "Secondary sources do not override the structural direction set by the primary source; instead, they fill in detail, provide examples, or expand on specific subtopics.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:17:30.6392882-04:00",
+          "ModifiedDate": "2026-07-08T19:17:30.6392882-04:00",
+          "Items": [
+            {
+              "Id": "5fa624be-390f-4e81-babd-2d1b4fe9c08a",
+              "Text": "Multiple secondary sources can be added to a single course, unlike the single primary source.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ed9bedf8-5515-4f7d-b2f3-176b3181e46a",
+              "Text": "Secondary sources influence the depth and breadth of content but defer to the primary source for overall course organization.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e4d85548-94b9-4499-9a57-ca22d2c89c1e",
+              "Text": "The same material types accepted as primary sources \u2014 documents, web pages, pasted text, etc. \u2014 can also serve as secondary sources.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "35a83d7a-a22e-466e-9bc5-c2de6ee2b3d4",
+          "TopicId": "79843d3b-6bec-4d86-99a8-ab92126497a3",
+          "Title": "How Source Designation Affects AI Generation",
+          "BodyText": "The way PreseMaker\u0027s AI generates course content is directly shaped by which material is marked as primary versus secondary.",
+          "Notes": "Choosing the wrong material as the primary source can result in a course structure that does not align with your instructional goals, making this distinction a critical early decision.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:17:30.6392882-04:00",
+          "ModifiedDate": "2026-07-08T19:17:30.6392882-04:00",
+          "Items": [
+            {
+              "Id": "77a99b66-3553-4c05-9310-d0e37a22c303",
+              "Text": "The AI uses the primary source to determine the course outline, module sequence, and key learning points.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a7182cac-3a29-454f-81d4-4378a26e9fab",
+              "Text": "Secondary sources are referenced by the AI to add supporting detail, examples, and supplementary explanations within the structure established by the primary source.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d2a7a3c2-6bf0-4dca-8d28-3e3ea124768f",
+              "Text": "Misidentifying a secondary source as primary may cause the AI to generate an unintended course structure or focus.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d582b143-18c3-459f-9efd-707538a3fc5a",
+          "TopicId": "79843d3b-6bec-4d86-99a8-ab92126497a3",
+          "Title": "Accepted Source Material Types",
+          "BodyText": "PreseMaker supports a variety of file and content formats that can be used as either primary or secondary sources when creating a course.",
+          "Notes": "Understanding the range of accepted formats gives course creators flexibility in how they supply content to the AI generation process.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:17:30.6392882-04:00",
+          "ModifiedDate": "2026-07-08T19:17:30.6392882-04:00",
+          "Items": [
+            {
+              "Id": "25794701-deba-4270-b2d1-81f256e06e0d",
+              "Text": "PowerPoint files can be uploaded directly and are particularly effective as primary sources when an existing presentation structure should guide the course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "5179619b-70b7-4f16-ae8d-2abb5396f217",
+              "Text": "Written descriptions and pasted text allow creators to provide raw content or brief outlines without needing a formal document.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "157af27a-28ca-401b-af6c-c2d81c7da4ac",
+              "Text": "Web pages and YouTube transcripts enable creators to pull from online content, expanding the range of available source material.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "af374731-99cf-420b-94ca-f0105306e41b",
+          "TopicId": "79843d3b-6bec-4d86-99a8-ab92126497a3",
+          "Title": "Choosing the Right Primary Source",
+          "BodyText": "Selecting an appropriate primary source is a strategic decision that determines the direction and coherence of the entire AI-generated course.",
+          "Notes": "A well-chosen primary source is typically the most comprehensive, authoritative, or structurally complete piece of content available for the course topic.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:17:30.6392882-04:00",
+          "ModifiedDate": "2026-07-08T19:17:30.6392882-04:00",
+          "Items": [
+            {
+              "Id": "f969aadc-ead0-4e38-8af7-599193ad3b4d",
+              "Text": "The primary source should represent the core subject matter and provide enough structure for the AI to build a logical course outline.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "68c42401-9e16-428c-b11e-4df013089672",
+              "Text": "If multiple strong materials exist, the one with the broadest and most relevant coverage of the topic is generally the best primary source candidate.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "964fbf97-173d-4263-942f-ea80b11d47e6",
+              "Text": "Secondary sources should be chosen to complement gaps or add depth to what the primary source alone cannot fully address.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 26
+}

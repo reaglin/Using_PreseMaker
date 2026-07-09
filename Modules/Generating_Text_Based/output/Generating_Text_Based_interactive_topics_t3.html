@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selecting Visual Themes for HTML Output</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Selecting Visual Themes for HTML Output</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Selecting Visual Themes for HTML Output</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you generate HTML output in PreseMaker, the finished file is more than structured text — it is a designed artifact that learners will read, navigate, and interact with. Visual themes are the mechanism that controls how that artifact looks and feels. A theme bundles together all of the presentational decisions — colors, typography, spacing, borders, contrast, and interactive element styling — into a single, consistently applied package. Understanding how themes work, how to choose one wisely, and how to apply it correctly will determine whether your final HTML output feels polished and purposeful or arbitrary and distracting.</p>
+
+<p><strong>What Visual Themes Do in PreseMaker</strong></p>
+
+<p>At the most fundamental level, a visual theme in PreseMaker is a coordinated set of design rules that govern the appearance of every element in your HTML output. Rather than styling each heading, paragraph, or toggle button individually, a theme applies those decisions globally and consistently the moment you generate content.</p>
+
+<p>A theme determines several interconnected aspects of the output:</p>
+
+<ul>
+  <li><strong>Color palette:</strong> The theme defines background colors, primary text colors, accent colors used for links and highlights, and the colors of interactive elements like accordion headers or section dividers. A palette can feel warm or cool, bold or neutral, professional or playful — all of which communicate something to the learner before they read a single word.</li>
+  <li><strong>Font choices:</strong> Typeface selection, font weight, heading styles, and body text size are all baked into the theme. A serif font at a generous size suggests formality and careful reading; a clean sans-serif at a tighter size suggests technical documentation or quick reference.</li>
+  <li><strong>Spacing and layout rhythm:</strong> Margins, padding, line height, and the vertical distance between sections are controlled by the theme. Good spacing reduces visual fatigue and helps learners parse where one idea ends and another begins.</li>
+  <li><strong>Visual hierarchy:</strong> The relative prominence of headings versus body text, the visual weight of callouts or notes, and the distinction between primary content and supplementary material are all expressed through the theme's hierarchy rules.</li>
+</ul>
+
+<p>Critically, the same underlying content can feel entirely different depending on which theme is applied. A lesson on network security delivered in a high-contrast dark theme with monospace code fonts reads as technical and authoritative. The same lesson wrapped in a soft pastel theme with rounded corners reads as approachable and introductory. Neither is inherently better — but one may serve your learners far more effectively than the other, which is why deliberate theme selection matters.</p>
+
+<p>Theme selection in PreseMaker occurs before or during the generation step, not after. Once the HTML is generated, the theme is embedded in or linked from the output. This means the time to choose your theme is while you are configuring your output settings, not while reviewing the final file.</p>
+
+<p><strong>Accessing Theme Options in PreseMaker</strong></p>
+
+<p>Theme options become available when you choose HTML as your output format. PreseMaker supports multiple HTML layout types — for example, accordion-style layouts where sections collapse and expand interactively, and printable layouts designed for clean rendering on paper or PDF. Theme selection is tied to this format choice.</p>
+
+<ul>
+  <li>Once you select an HTML output format, the generation settings panel exposes a theme picker or theme selector. This may appear as a dropdown menu, a visual gallery of labeled swatches, or a list of named options depending on the version of PreseMaker you are using.</li>
+  <li>You can browse the available themes to compare names, descriptions, or preview thumbnails before committing. Take the time to do this rather than accepting the default — the default theme is a reasonable general-purpose starting point, but it may not be the best fit for your specific content and audience.</li>
+  <li>Some themes are better suited to specific layout types. For example, a clean minimal theme pairs particularly well with printable formats because it avoids heavy background colors and decorative elements that waste ink and obscure printed text. An interactive accordion layout, on the other hand, can benefit from a theme that uses strong visual cues to distinguish collapsed from expanded states, making the interface feel more intuitive.</li>
+</ul>
+
+<p>If you are unsure which theme to start with, consider the delivery environment first: Is this content going to be read on a screen inside a learning management system? Printed and handed out in a classroom? Projected on a screen during a facilitated session? The delivery context narrows your options quickly.</p>
+
+<p><strong>Matching Themes to Audience and Purpose</strong></p>
+
+<p>Choosing a theme is ultimately an act of audience analysis. The best theme for a given lesson is the one that reduces friction between your learners and your content. Several dimensions of your audience and instructional purpose should guide the decision:</p>
+
+<ul>
+  <li><strong>Age and visual familiarity:</strong> Younger audiences or learners accustomed to consumer apps may respond well to modern, high-contrast themes with clear interactive affordances. Older learners or those less comfortable with digital interfaces may benefit from simpler layouts with larger default font sizes and minimal visual complexity.</li>
+  <li><strong>Technical familiarity with the subject:</strong> Novice learners benefit from themes that use generous whitespace and clear visual hierarchy to help them identify what is most important. Expert learners working through reference material may prefer a denser, more utilitarian theme that maximizes information density.</li>
+  <li><strong>Accessibility needs:</strong> Learners with visual impairments, low vision, or color vision deficiencies have specific needs that some themes address better than others. High-contrast themes with WCAG-compliant color ratios, scalable fonts, and no information conveyed by color alone are essential for accessible content. When in doubt, choose the most accessible theme available and verify its contrast ratios.</li>
+  <li><strong>Instructional purpose:</strong> A broad overview lesson — meant to orient learners to a new topic — benefits from a welcoming, visually open theme that feels inviting rather than overwhelming. A deep dive into technical details may suit a more structured, document-like theme. A quick-reference guide used on the job calls for maximum legibility, clear section demarcation, and minimal decoration.</li>
+  <li><strong>On-screen vs. print vs. projection:</strong> Themes designed for on-screen reading typically use colored backgrounds, interactive hover states, and screen-optimized font rendering. Themes optimized for print strip away background fills, ensure high contrast on white paper, and remove elements that only make sense in an interactive digital environment. Projection themes often use larger type, bold contrast, and simplified layouts that remain readable from a distance.</li>
+</ul>
+
+<p>A useful practical exercise is to write down two or three adjectives that describe how you want your learners to feel when they open the content — confident, focused, curious, efficient — and then evaluate candidate themes against those adjectives. Visual design communicates tone before content does.</p>
+
+<p><strong>How Themes Affect Usability of the Final Output</strong></p>
+
+<p>Beyond aesthetics, theme selection has direct consequences for how usable and learnable the final HTML output actually is. These are not soft or subjective concerns — they affect whether learners can successfully read, navigate, and retain the material.</p>
+
+<ul>
+  <li><strong>Text legibility:</strong> A theme governs font size, line height (the vertical spacing between lines of text), and the contrast ratio between text color and background color. WCAG 2.1 accessibility guidelines recommend a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text. Themes that fail this threshold make content harder to read for everyone, not just learners with visual impairments. Similarly, body text set below 14–16px on screen, or line heights below 1.4, increases reading fatigue over longer sessions.</li>
+  <li><strong>Navigation clarity:</strong> In accordion-style HTML outputs, the theme controls how toggle buttons look in their open and closed states, how section headers are differentiated from body content, and how visual feedback (such as a hover state or an open-state indicator) signals interactivity. A poorly styled accordion can leave learners unsure whether they have opened all sections or missed content. A well-styled one makes the structure immediately obvious.</li>
+  <li><strong>Cognitive load:</strong> Every unnecessary visual element — a busy background texture, too many competing accent colors, inconsistent font sizes — adds to the cognitive load a learner carries while working through content. Themes that maintain visual consistency reduce this load. When a learner encounters the same visual pattern — a bold heading, followed by a paragraph, followed by a bulleted list — repeatedly and predictably, they can allocate more mental effort to the content itself rather than to interpreting the interface.</li>
+  <li><strong>Perceived credibility:</strong> Visual polish signals quality. A clean, well-proportioned theme increases learner trust in the material. Mismatched fonts, clashing colors, or poor spacing can — unfairly but reliably — cause learners to doubt the quality of the content itself.</li>
+</ul>
+
+<p><strong>Applying a Theme When Generating HTML Output</strong></p>
+
+<p>The process of applying a theme in PreseMaker follows a consistent sequence that ensures the theme is properly matched to the layout type and embedded correctly in the output.</p>
+
+<ul>
+  <li><strong>Step 1 — Select your layout format first:</strong> Before choosing a theme, confirm which HTML layout type you are generating — for example, accordion or printable. This matters because some themes are only compatible with certain layouts, and choosing the layout first filters the available themes to those that will render correctly.</li>
+  <li><strong>Step 2 — Choose your theme:</strong> In the generation settings panel, select your desired visual theme from the available options. If a preview is available, use it. A small thumbnail or sample rendering can reveal problems — like a low-contrast color combination or a font that feels wrong for your audience — before you invest time in generating the full output.</li>
+  <li><strong>Step 3 — Confirm settings before generating:</strong> Review both the layout format and the theme selection in the settings panel before initiating generation. It is easy to forget to change a theme if you are iterating quickly, and regenerating content takes time. A two-second confirmation check is worthwhile.</li>
+  <li><strong>Step 4 — Review the output:</strong> After generation, open the HTML file and review it at full size in a browser. Check that the theme renders as expected: read a paragraph to assess legibility, interact with any accordion sections to confirm their styling, and scroll through the full document to verify visual consistency. If something looks wrong, return to the settings, adjust the theme, and regenerate.</li>
+</ul>
+
+<p>One common mistake is selecting a theme during an early test generation and never revisiting it as the content evolves. A theme that seemed acceptable with placeholder content may not serve the finished lesson as well once the full text, tables, and interactive elements are in place. Always do a final theme review on the completed content.</p>
+
+<p><strong>Consistency and Reuse of Themes Across Lessons</strong></p>
+
+<p>Individual lessons rarely exist in isolation. They are typically part of a course, a module series, or a broader curriculum. When learners move from one lesson to the next, visual consistency signals continuity and belonging — the styling tells them, implicitly, that they are still in the same learning environment.</p>
+
+<ul>
+  <li><strong>Visual continuity across a course:</strong> Applying the same theme to every lesson in a series means that learners do not need to re-orient to a new visual system each time they start a new file. The color of the headings, the behavior of the accordion toggles, the font of the body text — all of these become familiar, and familiarity reduces cognitive overhead.</li>
+  <li><strong>Reduced decision fatigue during production:</strong> One underappreciated benefit of theme reuse is that it removes a decision from the content generation workflow. When a theme has already been established for a course, the author does not need to evaluate options each time — they simply apply the known standard and move forward. This is particularly valuable when producing large volumes of content under time pressure.</li>
+  <li><strong>Organizational standards and defaults:</strong> Teams and organizations that produce instructional content at scale benefit from establishing preferred themes as production defaults. This might take the form of a documented style guide that specifies which theme to use for which type of content (e.g., "use Theme A for all technical deep dives, Theme B for onboarding overviews"), or it might mean configuring PreseMaker defaults so that the correct theme is pre-selected. Either approach promotes quality control and reduces the chance of inconsistent output entering a course.</li>
+  <li><strong>When to intentionally break consistency:</strong> There are cases where using a different theme is appropriate — for example, a special supplementary reference document within a course that is meant to stand out and be kept for future use might benefit from a distinct "reference document" theme even if the rest of the course uses a different style. The key is that any departure from the standard theme should be a deliberate, reasoned decision, not an accidental one.</li>
+</ul>
+
+<p>Theme selection is, in the end, a design decision with real instructional consequences. Taking it seriously — understanding what themes do, who your audience is, what the content demands, and how to apply the choice correctly — is the difference between HTML output that supports learning and output that merely contains it.</p>
+        <div class="notes"><strong>Notes</strong>Covers all six subtopic clusters in full depth: what themes do, how to access them, matching to audience/purpose, usability effects, application workflow, and cross-lesson consistency. Includes practical guidance and WCAG contrast ratio references for accuracy and actionability.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

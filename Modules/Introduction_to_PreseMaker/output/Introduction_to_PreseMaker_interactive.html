@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How AI Assistance Works in PreseMaker</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>How AI Assistance Works in PreseMaker</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>How AI Assistance Works in PreseMaker</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>PreseMaker integrates artificial intelligence directly into the course authoring workflow, not as a replacement for human expertise, but as a powerful accelerant that helps authors move from a blank canvas to structured, substantive learning content far more quickly than traditional methods allow. Understanding how this AI assistance works — where it applies, what problems it solves, and how it relates to the overall course hierarchy — is essential for getting the most out of the platform.</p>
+
+<p>At its core, PreseMaker's AI functions as a <strong>content acceleration engine</strong>. The moment an author begins describing what a course or module is about, the AI can generate draft text that gives the project immediate shape and substance. This directly addresses one of the most common obstacles in instructional design: <em>blank-page paralysis</em> — the difficulty of producing a first draft when faced with an empty editor and an enormous amount of ground to cover. Even a rough AI-generated draft gives authors something concrete to react to, edit, and improve, which is cognitively far easier than creating content from nothing.</p>
+
+<p>The acceleration benefit becomes especially significant at scale. When an author is building a course with many modules, each containing multiple topics and content items, manually drafting every piece of text would consume enormous time and effort. AI allows those layers to be populated rapidly, so that the author's limited time can be directed toward refining the instructional strategy, improving the flow of ideas, and ensuring alignment between learning objectives and actual content — the high-value decisions that truly require human judgment.</p>
+
+<p>Critically, <strong>authors retain full control</strong> over everything the AI produces. No AI-generated text is locked or published without the author's review. Every word, sentence, and paragraph can be edited, rewritten, or discarded entirely. The AI draft is always a starting point, never a final product.</p>
+
+<p>PreseMaker's AI assistance is not confined to a single step in the process. It is designed to provide relevant support <strong>throughout the entire authoring workflow</strong>, adapting to wherever the author is working within the platform at any given moment. Whether an author is at the top-level course description or deep inside a specific content item, AI assistance is available and contextually appropriate to that level of the work.</p>
+
+<p>This continuous availability has a meaningful impact on <strong>cognitive load</strong> — the mental effort required to keep track of what needs to be written, at what level of detail, and in what tone or structure. By offering drafts and suggestions at each stage, the AI reduces the burden of having to hold the entire content plan in mind while simultaneously writing. Authors can focus on one layer at a time, knowing that AI support is present whether they are framing high-level course goals or composing the detailed explanation within a single content block.</p>
+
+<p>The <strong>problem-solving role</strong> of AI in PreseMaker is best understood by examining the specific bottlenecks it removes. Content drafting — the act of turning a topic or idea into coherent, instructionally appropriate prose — is inherently slow and labor-intensive. For subject-matter experts who may be highly knowledgeable but less experienced as writers, this drafting stage can become a significant blockage that delays course completion. For experienced instructional designers managing large projects, the sheer volume of text required across multiple courses can be overwhelming.</p>
+
+<p>AI assistance addresses both of these situations. For authors who lack writing confidence, the AI generates a solid foundation of text that they can treat as a first draft — something they can refine using their domain knowledge rather than having to produce polished prose from scratch. For experienced authors managing volume, AI automates the repetitive parts of the drafting process so that cognitive energy is available for the instructional design decisions that genuinely require expertise: sequencing content logically, choosing the right examples, calibrating the depth of explanation to the target audience, and ensuring that each piece of content actually teaches rather than merely informs.</p>
+
+<p>It is important to be clear about what kind of tool PreseMaker's AI is: it is <strong>supportive, not autonomous</strong>. The AI does not decide what a course should cover, how it should be structured, or what learning outcomes matter. All of those decisions belong to the author. The AI responds to the context, topics, and structure that the author provides. Think of it as a highly capable writing assistant that takes direction well — it can produce a draft of what you describe, but it requires you to do the describing.</p>
+
+<p>This model is deliberate and important. Because the author is always in the driver's seat — providing the inputs, reviewing the outputs, and making all editorial decisions — the author's voice, intent, and instructional judgment remain central to the course. AI suggestions are editable starting points, not authoritative statements. <strong>Quality control stays with the author</strong>, which means the final course reflects human expertise and intent, supported and accelerated by AI rather than delegated to it.</p>
+
+<p>PreseMaker organizes content in a three-level hierarchy — <strong>Course → Module → Content</strong> — and AI assistance is available and purposefully adapted at each of these levels:</p>
+
+<ul>
+  <li><strong>At the Course level:</strong> AI can help authors frame overarching course descriptions that clearly communicate the course's purpose, audience, and scope. It can also assist in articulating high-level learning objectives — the broad outcomes that the course as a whole is designed to achieve. These course-level elements set the tone and direction for everything below them, so having a well-drafted starting point here helps ensure coherence throughout the entire course structure.</li>
+  <li><strong>At the Module level:</strong> AI assists in generating module summaries and topic outlines that align with the goals established at the course level. A module summary introduces learners to what they will study within that module and why it matters, while a topic outline maps the internal structure of the module's content. AI can produce both quickly, giving the author a structural scaffold to work from rather than having to build the module architecture entirely by hand.</li>
+  <li><strong>At the Content level:</strong> This is where the most detailed AI assistance occurs. Within individual content items — the granular building blocks of a module — AI produces instructional text, explanations, examples, definitions, and other learning material. This is typically the most time-consuming type of content to write, because it requires not just describing a topic but explaining it in a way that is clear, accurate, and pedagogically effective. AI-generated content drafts at this level give authors a substantive foundation to refine rather than a blank page to fill.</li>
+</ul>
+
+<p>The following table summarizes how AI assistance maps to each level of the PreseMaker content hierarchy:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hierarchy Level</th>
+      <th>AI Assistance Provided</th>
+      <th>Primary Benefit to Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Course</strong></td>
+      <td>Course descriptions, overarching learning objectives</td>
+      <td>Establishes a clear, coherent course identity quickly</td>
+    </tr>
+    <tr>
+      <td><strong>Module</strong></td>
+      <td>Module summaries, topic outlines aligned with course goals</td>
+      <td>Provides a structural scaffold for each module without manual planning from scratch</td>
+    </tr>
+    <tr>
+      <td><strong>Content</strong></td>
+      <td>Detailed instructional text, explanations, examples within content items</td>
+      <td>Eliminates blank-page drafting at the most time-intensive level of content creation</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Taken together, these capabilities mean that PreseMaker's AI assistance is not a single feature used at one point in the authoring process — it is a thread woven throughout the entire workflow, from initial course framing through to the detailed content within individual learning items. Authors who understand this architecture can use the AI strategically at every level, letting it handle the mechanical work of first-draft generation while they focus on the instructional craft that makes a course genuinely effective for learners.</p>
+        <div class="notes"><strong>Notes</strong>This topic provides the conceptual foundation for understanding AI&#39;s role in PreseMaker. Subsequent topics covering specific AI interactions (e.g., generating module summaries, populating content items) should reference this framing to maintain consistency in how the tool&#39;s supportive, non-autonomous role is communicated to authors.</div>
+      </div>
+    </details>
+  </main>
+</body></html>

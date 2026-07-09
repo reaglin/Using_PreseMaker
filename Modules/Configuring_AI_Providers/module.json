@@ -1,0 +1,9 @@
+{
+  "Id": "eb220c02-b5fa-429e-946f-a3b557b13857",
+  "Name": "Configuring AI Providers per Task and Using the Prompt Button",
+  "Description": "This lesson covers how to assign different AI providers to different task types within PreseMaker, and how the router selects the right provider automatically. Learners will also practice using the Prompt button to inspect the exact text sent to an AI provider, and learn how to interpret and respond to generation failure messages.",
+  "CreatedBy": "Ron Eaglin",
+  "CreatedDate": "2026-07-08T19:07:39.3783166-04:00",
+  "LastModifiedDate": "2026-07-08T19:07:39.3789267-04:00",
+  "Actions": []
+}

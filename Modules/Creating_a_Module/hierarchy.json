@@ -1,0 +1,929 @@
+{
+  "ModuleFolderName": "Creating_a_Module",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:19:27.6237496-04:00",
+  "ModifiedDate": "2026-07-08T19:21:16.6358815-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "cbecb1e5-5001-43e3-b600-f3a6e13f9607",
+      "Title": "Overview of Module Creation in PreseMaker",
+      "Summary": "Introduces the concept of modules in PreseMaker and explains why there are multiple ways to create them. Sets the stage for understanding when and why each method is used.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:19:27.6237496-04:00",
+      "ModifiedDate": "2026-07-08T19:19:27.6237496-04:00",
+      "Elements": [
+        {
+          "Id": "21477280-f508-40c9-8969-77426540466c",
+          "TopicId": "cbecb1e5-5001-43e3-b600-f3a6e13f9607",
+          "Title": "What Is a Module in PreseMaker?",
+          "BodyText": "A module is the fundamental unit of content in PreseMaker, representing a self-contained learning or presentation package that can be built, managed, and deployed independently.",
+          "Notes": "Think of a module as a project folder that holds all the assets, settings, and generated content for a single topic or course unit.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:19:46.7159668-04:00",
+          "ModifiedDate": "2026-07-08T19:19:46.7159668-04:00",
+          "Items": [
+            {
+              "Id": "af3b6886-6bc0-4412-a8d0-3ed3c8210dcd",
+              "Text": "Each module contains its own configuration, source materials, and output content, keeping projects organized and portable.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "28525ded-4afb-4386-a033-9cd25e625955",
+              "Text": "Modules can be created from scratch, sourced from existing work on disk, or brought in from an external file or repository.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "71530d3b-d287-4520-ab70-a8298ccd78b3",
+              "Text": "Understanding what a module is provides the foundation for choosing the right creation method for any given situation.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a02f2c90-c634-46eb-9beb-567185aa1585",
+          "TopicId": "cbecb1e5-5001-43e3-b600-f3a6e13f9607",
+          "Title": "Why Multiple Creation Methods Exist",
+          "BodyText": "PreseMaker offers three distinct methods for creating a module because different workflows and starting points call for different approaches.",
+          "Notes": "Having multiple methods prevents a one-size-fits-all bottleneck and accommodates teams working in varied environments \u2014 from solo authors starting fresh to teams sharing pre-built modules.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:19:46.7159668-04:00",
+          "ModifiedDate": "2026-07-08T19:19:46.7159668-04:00",
+          "Items": [
+            {
+              "Id": "ea863b46-e911-4741-8eed-abfdb0597d04",
+              "Text": "A new AI-generated module suits authors who are starting from scratch and want PreseMaker to scaffold the structure automatically.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "211f31ac-9236-4177-9200-0c82b3d287d0",
+              "Text": "Adding an existing folder from disk is ideal when content has already been organized locally and simply needs to be registered with PreseMaker.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8588b4ab-5071-499d-a754-41a508cdbf35",
+              "Text": "Importing from a file or repository supports collaboration and reuse, allowing modules built elsewhere to be brought into the current workspace.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d1c55ab0-ecd7-4078-b215-25213d219c8c",
+          "TopicId": "cbecb1e5-5001-43e3-b600-f3a6e13f9607",
+          "Title": "The Role of the Module Manager",
+          "BodyText": "The Module Manager is the central hub in PreseMaker through which all module creation and management actions are initiated and tracked.",
+          "Notes": "Learners will interact with the Module Manager at the start of every module workflow, making familiarity with its interface essential before exploring individual creation methods.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:19:46.7159668-04:00",
+          "ModifiedDate": "2026-07-08T19:19:46.7159668-04:00",
+          "Items": [
+            {
+              "Id": "2d801ee6-a87a-4335-b61e-1116455875c9",
+              "Text": "The Module Manager provides a unified view of all modules currently available in the workspace.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1e26aa66-9f29-41e3-9492-2a6861f3b1c4",
+              "Text": "It guides users from an empty or newly registered module through to a state where content generation can begin.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1597471e-aa54-42a3-aee2-8b3d27317231",
+              "Text": "All three creation methods are accessible directly from within the Module Manager, keeping the workflow consistent regardless of the approach chosen.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "664fb063-ab01-4f0e-9d8d-ea4378d5fdbe",
+          "TopicId": "cbecb1e5-5001-43e3-b600-f3a6e13f9607",
+          "Title": "Setting the Stage: From Empty to Ready",
+          "BodyText": "Regardless of which creation method is used, the end goal is the same \u2014 bringing a module to a \u0027ready\u0027 state where PreseMaker can generate or display content.",
+          "Notes": "The concept of a module moving through states (empty \u2192 configured \u2192 ready) is a key mental model that applies across all three methods covered in this lesson.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:19:46.7159668-04:00",
+          "ModifiedDate": "2026-07-08T19:19:46.7159668-04:00",
+          "Items": [
+            {
+              "Id": "0e6df941-8120-46f4-aaa5-35dcf5229dfa",
+              "Text": "A newly created module starts in an empty or minimal state and must be configured before content generation is possible.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "73074b24-b84e-4ede-babc-be67c1f115cc",
+              "Text": "The Module Manager signals when a module has met the requirements needed to proceed to content generation.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5835d76f-df32-46fa-a4eb-654f5e56133e",
+              "Text": "Understanding this progression helps learners recognize what each creation method accomplishes and what steps remain after the module is created.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "9d1a3259-12a6-483e-961d-00d0370994b0",
+          "TopicId": "cbecb1e5-5001-43e3-b600-f3a6e13f9607",
+          "Title": "Choosing the Right Method: A Preview",
+          "BodyText": "Selecting the appropriate creation method depends on where your starting materials are, how the module was originally produced, and how your team collaborates.",
+          "Notes": "This topic sets the stage for deeper dives into each method; learners should leave with a clear sense that method choice is deliberate and context-driven, not arbitrary.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:19:46.7159668-04:00",
+          "ModifiedDate": "2026-07-08T19:19:46.7159668-04:00",
+          "Items": [
+            {
+              "Id": "cda055d4-f1cf-4d13-b295-98849a45b99b",
+              "Text": "Authors beginning a brand-new project with no prior assets will typically reach for the AI generation method.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "708c497d-85fd-4173-9123-5321af7abe1f",
+              "Text": "Those who have previously organized content in a local folder structure can add that folder directly, preserving their existing organization.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "87a03f3b-fc68-49d3-be8f-61e0c139946a",
+              "Text": "Teams sharing modules across systems or pulling from a version-controlled repository will rely on the import method to bring external modules into their local environment.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "a7635cdc-7a3d-443f-b01e-79b747f395b7",
+      "Title": "Method 1: Generating a New Module with AI",
+      "Summary": "Covers how to use PreseMaker\u0027s AI-powered generation feature to create a brand-new module from scratch. Learners explore the inputs required and what the AI produces as output.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:19:27.6237496-04:00",
+      "ModifiedDate": "2026-07-08T19:19:27.6237496-04:00",
+      "Elements": [
+        {
+          "Id": "9739a8d5-c01f-4ede-b66d-24c6badef18f",
+          "TopicId": "a7635cdc-7a3d-443f-b01e-79b747f395b7",
+          "Title": "Overview of AI-Powered Module Generation",
+          "BodyText": "PreseMaker\u0027s AI generation feature allows learners to create a brand-new module from scratch without any pre-existing files or content.",
+          "Notes": "This method is ideal for users starting a project with no prior materials, relying entirely on AI to scaffold the module structure.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:20:03.3177091-04:00",
+          "ModifiedDate": "2026-07-08T19:20:03.3177091-04:00",
+          "Items": [
+            {
+              "Id": "868b7e0c-7661-4be5-8a5c-a6e71e10d9f8",
+              "Text": "AI generation is one of three available methods for creating a module in PreseMaker.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a057bd87-ad13-494c-b08b-a20ca98de97b",
+              "Text": "The feature is designed to reduce manual setup by automating the initial structure and content outline of the module.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8864d08c-45dd-4fb6-8bf4-5973e4bf6f8d",
+              "Text": "This approach is best suited when no existing module folder or importable file is available.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b5f99cd9-0c33-41fa-8db9-f5a48a7589e5",
+          "TopicId": "a7635cdc-7a3d-443f-b01e-79b747f395b7",
+          "Title": "Accessing the AI Generation Option",
+          "BodyText": "Learners initiate AI-powered module creation through the Module Manager, which serves as the central hub for all module creation methods.",
+          "Notes": "The Module Manager presents all three creation methods, and selecting the AI generation option leads the user into the input collection workflow.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:20:03.3177091-04:00",
+          "ModifiedDate": "2026-07-08T19:20:03.3177091-04:00",
+          "Items": [
+            {
+              "Id": "61003955-d5a5-4ae6-b0e4-f188eed159fc",
+              "Text": "The Module Manager is the starting point where users choose between generating, adding, or importing a module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d4637a63-e726-43ae-a8f7-a062f30cbb5c",
+              "Text": "Selecting the AI generation method launches a guided input process within the Module Manager interface.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "105ca7f3-d041-4718-b86f-b1f8e9e9667d",
+          "TopicId": "a7635cdc-7a3d-443f-b01e-79b747f395b7",
+          "Title": "Required Inputs for AI Generation",
+          "BodyText": "Before the AI can generate a module, users must supply specific inputs that guide the content and structure of the output.",
+          "Notes": "The quality and specificity of the inputs directly influence the relevance and accuracy of the AI-generated module.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:20:03.3177091-04:00",
+          "ModifiedDate": "2026-07-08T19:20:03.3177091-04:00",
+          "Items": [
+            {
+              "Id": "a799b0fc-5e53-4c2b-8449-1926e3fbe839",
+              "Text": "Users provide a module title, a description, and one or more source materials (for example a document, web page, PowerPoint, pasted text, or YouTube transcript).",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1ddfd022-e233-4661-967f-90c9eaed2c53",
+              "Text": "These inputs act as parameters that shape the AI\u0027s understanding of the desired module scope and depth.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "97a8b2ff-a0f1-4a17-9c12-059f93651a2a",
+              "Text": "Providing clear and detailed inputs helps the AI produce a more accurate and usable module structure.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "2f4825da-e737-47bf-b199-43dec3e27a90",
+          "TopicId": "a7635cdc-7a3d-443f-b01e-79b747f395b7",
+          "Title": "What the AI Produces as Output",
+          "BodyText": "Once the required inputs are submitted, PreseMaker\u0027s AI generates a structured module ready to be reviewed and built upon.",
+          "Notes": "The generated output is not final content but rather a scaffold that the user can refine further within the Module Manager.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:20:03.3177091-04:00",
+          "ModifiedDate": "2026-07-08T19:20:03.3177091-04:00",
+          "Items": [
+            {
+              "Id": "8a24ec64-ca6a-44d8-8da0-e76093646bde",
+              "Text": "The AI output typically includes a module title, description, and an organized set of topics or sections.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "8804b3a5-184b-4543-8cb7-77ebfb7e9363",
+              "Text": "The generated structure serves as a starting framework, which learners can then populate with detailed content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a2a8a8ac-0289-425c-9564-df7f533a7670",
+              "Text": "The output positions the module as \u0027ready for content generation,\u0027 representing a defined but editable foundation.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f16a07e5-227c-43dc-855a-c938b0c798f0",
+          "TopicId": "a7635cdc-7a3d-443f-b01e-79b747f395b7",
+          "Title": "From Empty Module to Content-Ready State",
+          "BodyText": "The AI generation method guides users through a progression from an empty module to one that is structured and ready for further content development.",
+          "Notes": "This progression is a key outcome emphasized in the Module Manager workflow for the AI generation path.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:20:03.3177091-04:00",
+          "ModifiedDate": "2026-07-08T19:20:03.3177091-04:00",
+          "Items": [
+            {
+              "Id": "05bca477-7e54-4f7d-a282-35a0f35a9ae2",
+              "Text": "An empty module has no structure, topics, or content; the AI generation process fills this gap automatically.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "26abbb7d-9495-4320-a1b5-b98088b17ebc",
+              "Text": "Once generation is complete, the module transitions to a content-ready state where detailed authoring can begin.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "47fbd5f2-c7d2-465e-8708-ba7245226c43",
+              "Text": "The Module Manager tracks and reflects this progression, signaling when the module is prepared for the next stage.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "5c330a26-a31b-4bfc-b8b5-d35457727393",
+      "Title": "Method 2: Adding an Existing Module Folder from Disk",
+      "Summary": "Explains how to bring a pre-existing module folder stored locally on disk into PreseMaker. Covers the steps and requirements for the folder to be recognized correctly.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:19:27.6237496-04:00",
+      "ModifiedDate": "2026-07-08T19:19:27.6237496-04:00",
+      "Elements": [
+        {
+          "Id": "66f39f7f-6173-4e81-8974-1748d066a742",
+          "TopicId": "5c330a26-a31b-4bfc-b8b5-d35457727393",
+          "Title": "Overview of Method 2: Adding from Disk",
+          "BodyText": "This method allows you to bring a pre-existing module folder that is already stored locally on your computer into PreseMaker without creating anything new from scratch.",
+          "Notes": "This is useful when you have previously worked on a module outside of PreseMaker or received a module folder from a colleague.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:20:21.8472192-04:00",
+          "ModifiedDate": "2026-07-08T19:20:21.8472192-04:00",
+          "Items": [
+            {
+              "Id": "cf87c6ba-b4e7-4cf9-be3d-9b14555d8a38",
+              "Text": "The module folder must already exist on your local disk before you begin this process.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "06267a0b-afc1-4aef-8b2b-9c6df83072c5",
+              "Text": "PreseMaker will reference the folder\u0027s location rather than duplicating its contents.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b0380539-2da4-42e0-962f-e15b0808fb6e",
+              "Text": "This method is ideal for resuming work on a module that was started in a previous session or on another machine.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "9cfe889d-9825-4708-9760-d19ae363facc",
+          "TopicId": "5c330a26-a31b-4bfc-b8b5-d35457727393",
+          "Title": "Locating the Existing Module Folder",
+          "BodyText": "Before adding the folder, you must know the exact location of the module folder on your disk.",
+          "Notes": "Use your operating system\u0027s file explorer to verify the folder path and confirm the folder contains the expected contents before proceeding.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:20:21.8472192-04:00",
+          "ModifiedDate": "2026-07-08T19:20:21.8472192-04:00",
+          "Items": [
+            {
+              "Id": "00d443eb-e71d-42f7-bf6b-64530e4c5626",
+              "Text": "Navigate to the directory on your disk where the module folder is stored.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4ee2988c-23fd-40f1-811d-c461eab59b48",
+              "Text": "Confirm the folder is accessible and not locked, hidden, or stored on a disconnected drive.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4e69bb87-baf2-47c8-9373-c99c86f692b3",
+              "Text": "Note the full folder path, as you will need to provide it to PreseMaker during the import step.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "604ea2ee-554a-4f37-bdd3-7bd6c07591da",
+          "TopicId": "5c330a26-a31b-4bfc-b8b5-d35457727393",
+          "Title": "Folder Structure Requirements",
+          "BodyText": "For PreseMaker to correctly recognize an existing folder as a valid module, the folder must meet certain structural requirements.",
+          "Notes": "A folder that does not meet these requirements may not be recognized by PreseMaker, or it may be recognized but lack the data needed for content generation.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:20:21.8472192-04:00",
+          "ModifiedDate": "2026-07-08T19:20:21.8472192-04:00",
+          "Items": [
+            {
+              "Id": "cdc82280-2df1-4546-a967-73c68255285f",
+              "Text": "The folder must contain the expected PreseMaker module files or configuration markers that identify it as a module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "309eaffb-953f-493b-86b2-a88a23aa111d",
+              "Text": "Subfolders and key files must follow the naming conventions PreseMaker uses internally.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2c75528d-50cb-4036-9432-7cd6dd069aa1",
+              "Text": "Incomplete or corrupted folders may cause errors during the recognition process.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6d88682b-b9ad-402a-8c27-d681c0a0d085",
+          "TopicId": "5c330a26-a31b-4bfc-b8b5-d35457727393",
+          "Title": "Adding the Folder Through the Module Manager",
+          "BodyText": "The Module Manager is the central interface used to add an existing folder from disk into PreseMaker.",
+          "Notes": "The Module Manager guides you step by step, ensuring the folder is validated before it is fully loaded into the application.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:20:21.8472192-04:00",
+          "ModifiedDate": "2026-07-08T19:20:21.8472192-04:00",
+          "Items": [
+            {
+              "Id": "3f8d4195-0d57-4df2-92b6-53c0fdf91721",
+              "Text": "Open the Module Manager within PreseMaker to access the option for adding an existing module from disk.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "77abd5a0-667d-4a4f-992d-c5de7e7a5fd5",
+              "Text": "Use the provided browse or path-entry control to select or type the location of your module folder.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9a3eb9ad-025d-49b9-948c-2787a5354850",
+              "Text": "Once the folder path is submitted, PreseMaker will scan and validate the folder before making it available.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6b8fb892-c9da-4527-b4e6-66cb1e0bc3d4",
+          "TopicId": "5c330a26-a31b-4bfc-b8b5-d35457727393",
+          "Title": "Validation and Recognition by PreseMaker",
+          "BodyText": "After pointing PreseMaker to the folder, the application performs a validation check to confirm the folder qualifies as a recognizable module.",
+          "Notes": "If validation fails, PreseMaker will typically display an error or warning message indicating what is missing or incorrect.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:20:21.8472192-04:00",
+          "ModifiedDate": "2026-07-08T19:20:21.8472192-04:00",
+          "Items": [
+            {
+              "Id": "c18c84e9-8f5d-460a-9952-dfd7d9cadc85",
+              "Text": "PreseMaker checks for required files and structural elements during validation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "46f2525c-7257-4990-9b7c-27fcbabd9a76",
+              "Text": "A successfully recognized folder will appear as a module entry within the Module Manager.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "916bfba1-6528-4d93-ab07-1772127febed",
+              "Text": "If the folder passes validation, you can proceed to work with the module as if it had been created natively in PreseMaker.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "08e5430a-1d2e-4fa8-9a36-865ee3e11918",
+          "TopicId": "5c330a26-a31b-4bfc-b8b5-d35457727393",
+          "Title": "Next Steps After Adding the Folder",
+          "BodyText": "Once the existing folder is successfully added and recognized, it becomes available in PreseMaker for further editing and content generation.",
+          "Notes": "At this stage, the module transitions from simply being a folder on disk to an active module within the PreseMaker environment.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:20:21.8472192-04:00",
+          "ModifiedDate": "2026-07-08T19:20:21.8472192-04:00",
+          "Items": [
+            {
+              "Id": "87554eae-f9db-4693-b1bf-ad137ceabfaf",
+              "Text": "The module will appear in the Module Manager list alongside any other modules you have created or imported.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "13aa9013-bbd3-444b-bf56-a4fe611ffc07",
+              "Text": "You can open the module and review its existing content before making any changes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f480750f-d67b-4ab8-bd42-9bbe70d6d142",
+              "Text": "From this point, the module is ready to be used with PreseMaker\u0027s content generation tools.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "7e3c092a-1dab-4e17-a167-18a33bd3aa47",
+      "Title": "Method 3: Importing from a File or Repository",
+      "Summary": "Describes how to import a module using a file or a remote repository source. Highlights the scenarios where this method is most appropriate and the steps involved.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:19:27.6237496-04:00",
+      "ModifiedDate": "2026-07-08T19:19:27.6237496-04:00",
+      "Elements": [
+        {
+          "Id": "94fe5980-7e04-484a-8317-5177e996fb08",
+          "TopicId": "7e3c092a-1dab-4e17-a167-18a33bd3aa47",
+          "Title": "What Is the Import Method?",
+          "BodyText": "Importing from a file or repository is the third method for creating a module in PreseMaker, allowing users to bring in a module that already exists outside the current workspace.",
+          "Notes": "This method is distinct from adding an existing folder from disk \u2014 it is designed for packaged files or remotely hosted sources.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:20:38.486968-04:00",
+          "ModifiedDate": "2026-07-08T19:20:38.486968-04:00",
+          "Items": [
+            {
+              "Id": "03062bd6-4d3f-4c87-aeff-7f75cc8c6640",
+              "Text": "This approach is ideal when a module has been shared as a packaged file or hosted in a remote repository.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a7cbd9b0-bade-4352-8815-bdc21522388e",
+              "Text": "It allows teams to reuse and distribute modules across different installations or environments.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "fe77e41d-2ec3-4fba-9f96-4a8b934e379f",
+              "Text": "No manual folder navigation is required; PreseMaker handles the intake process through the import workflow.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f29cd553-33f3-457f-9193-f6662f956ced",
+          "TopicId": "7e3c092a-1dab-4e17-a167-18a33bd3aa47",
+          "Title": "When to Use This Method",
+          "BodyText": "The import method is most appropriate in specific scenarios where the module source is not a local folder already on disk.",
+          "Notes": "Choosing the right method depends on where the module originates and how it was packaged or shared.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:20:38.486968-04:00",
+          "ModifiedDate": "2026-07-08T19:20:38.486968-04:00",
+          "Items": [
+            {
+              "Id": "e2cbe8ce-fff7-48c9-8aeb-9776c08558c3",
+              "Text": "Use this method when a colleague has sent you a packaged module file for reuse or review.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "16635d9f-db07-437c-8224-ed15ba487053",
+              "Text": "It is also the correct choice when pulling a module from a remote repository, such as a shared team or organizational source.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6fd18fe5-56f8-4360-a735-44a190b4b61c",
+              "Text": "This method is preferred over the folder method when the module has not yet been extracted or placed in a local directory.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "94c20853-a8c6-498f-b43e-c52cca967bdc",
+          "TopicId": "7e3c092a-1dab-4e17-a167-18a33bd3aa47",
+          "Title": "Supported Source Types",
+          "BodyText": "PreseMaker supports two distinct source types for this import method: a local packaged file and a remote repository URL.",
+          "Notes": "Understanding which source type applies to your situation will determine how you proceed through the import steps.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:20:38.486968-04:00",
+          "ModifiedDate": "2026-07-08T19:20:38.486968-04:00",
+          "Items": [
+            {
+              "Id": "db5daca7-febd-4ecf-b7b8-de984d9d8715",
+              "Text": "A file-based import uses a packaged module archive stored on your computer or network drive.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d43ee74b-a7a4-41c8-ae59-9f71a3a81e0f",
+              "Text": "A repository-based import points PreseMaker to a remote location, such as a hosted repository, from which the module is retrieved.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d9bee5ef-3001-4926-a397-c4d1a65cee35",
+              "Text": "Both source types ultimately result in the module being registered and available within the Module Manager.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a4c5c368-8069-4029-bd41-4f891ac1e12e",
+          "TopicId": "7e3c092a-1dab-4e17-a167-18a33bd3aa47",
+          "Title": "Steps to Import a Module",
+          "BodyText": "The import process follows a guided sequence within PreseMaker to ensure the module is correctly ingested and ready for use.",
+          "Notes": "Following the steps in order prevents import errors and ensures the module is fully configured after intake.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:20:38.486968-04:00",
+          "ModifiedDate": "2026-07-08T19:20:38.486968-04:00",
+          "Items": [
+            {
+              "Id": "212b6314-34bd-4ed8-9427-b770ef53010f",
+              "Text": "Open the Module Manager and select the option to import a module from a file or repository.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2c4dc235-9295-47b5-8eca-9b5da94f9599",
+              "Text": "Choose your source type \u2014 file or repository \u2014 and provide the required path or URL.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3e007cd3-6a59-447d-94d1-959891a26b04",
+              "Text": "PreseMaker validates and processes the source, then registers the module so it appears in the Module Manager.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "40d5f308-c7ea-4de1-b690-3fad64307fed",
+              "Text": "Once imported, the module is available for content generation or further editing just like any other module.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "ca41f41a-bd1e-4004-9c39-f5def6cc9074",
+          "TopicId": "7e3c092a-1dab-4e17-a167-18a33bd3aa47",
+          "Title": "Role of the Module Manager in This Method",
+          "BodyText": "The Module Manager serves as the central hub for initiating and completing the import process, providing the interface and feedback needed throughout.",
+          "Notes": "The Module Manager\u0027s consistent role across all three methods makes it the single point of reference for module creation and management.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:20:38.486968-04:00",
+          "ModifiedDate": "2026-07-08T19:20:38.486968-04:00",
+          "Items": [
+            {
+              "Id": "82385354-a829-4bc7-90b0-bb186ad3ba9b",
+              "Text": "All import actions are initiated from within the Module Manager, keeping the workflow centralized.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b7e7b8f7-4c64-489e-af65-2fa1257e2a8c",
+              "Text": "The Module Manager displays status and confirmation once the import is successfully completed.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2c165245-abe0-4dd0-8771-85647fb721b2",
+              "Text": "After import, the module transitions from an empty or external state to one that is ready for content generation within PreseMaker.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "4ef4813f-28f7-4a1e-b30d-31909b4be7eb",
+      "Title": "The Module Manager: Central Hub for Module Setup",
+      "Summary": "Introduces the Module Manager interface as the central workspace that organizes and guides users through module creation. Explains how it tracks module status from empty to content-ready.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:19:27.6237496-04:00",
+      "ModifiedDate": "2026-07-08T19:19:27.6237496-04:00",
+      "Elements": [
+        {
+          "Id": "6bf4fe7e-246b-4ea4-b500-02658df3bbf7",
+          "TopicId": "4ef4813f-28f7-4a1e-b30d-31909b4be7eb",
+          "Title": "What Is the Module Manager?",
+          "BodyText": "The Module Manager is the central workspace in PreseMaker where all module creation and setup activities are organized and managed.",
+          "Notes": "Think of it as a dashboard that keeps every module you work on visible and accessible in one place.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:20:56.3770597-04:00",
+          "ModifiedDate": "2026-07-08T19:20:56.3770597-04:00",
+          "Items": [
+            {
+              "Id": "d940b9f3-98c1-43bc-9961-ebb3d19cc3a3",
+              "Text": "The Module Manager serves as the primary interface users interact with when starting, tracking, or configuring any module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "530ca991-596c-4da2-bd44-0db9714f8994",
+              "Text": "It consolidates all module-related actions so users do not need to navigate away to separate screens during setup.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "069b6fcc-366c-495f-87c8-dc0a9cad1496",
+              "Text": "Accessing the Module Manager is typically the first step after launching PreseMaker and deciding to work with a module.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4ac2e46b-e0f5-4a50-b427-78065acaa0b0",
+          "TopicId": "4ef4813f-28f7-4a1e-b30d-31909b4be7eb",
+          "Title": "Organizing Modules Within the Manager",
+          "BodyText": "The Module Manager displays all current modules in a structured layout, giving users a clear overview of what exists and what still needs attention.",
+          "Notes": "This organizational view is especially useful when working on multiple modules simultaneously or returning to a project after a break.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:20:56.3770597-04:00",
+          "ModifiedDate": "2026-07-08T19:20:56.3770597-04:00",
+          "Items": [
+            {
+              "Id": "b872d86b-eeb2-471f-bc60-2768e53e0cde",
+              "Text": "Each module appears as a distinct entry, allowing users to quickly locate and select the one they want to work on.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0ef4633d-8975-490d-9a29-a4817c674b0a",
+              "Text": "The layout helps users distinguish between modules at different stages of completion at a glance.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "afee2e5d-dcb9-4e06-8933-58c4cbf0e015",
+              "Text": "Users can manage several modules from the same interface without losing context.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d3b1c6f7-98ed-481e-bc29-a75399dfbefb",
+          "TopicId": "4ef4813f-28f7-4a1e-b30d-31909b4be7eb",
+          "Title": "Tracking Module Status: Empty to Content-Ready",
+          "BodyText": "One of the Module Manager\u0027s key functions is tracking the lifecycle status of each module, from its initial empty state to being fully ready for content generation.",
+          "Notes": "Status indicators guide users on what actions are still needed before a module can proceed to content generation.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:20:56.3770597-04:00",
+          "ModifiedDate": "2026-07-08T19:20:56.3770597-04:00",
+          "Items": [
+            {
+              "Id": "5eacb3eb-0466-4bc7-b8c3-e9c3dd4fdf22",
+              "Text": "A newly created module begins in an \u0027empty\u0027 status, signaling that no content or configuration has been added yet.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "15b68b6f-ed0a-4c51-a429-844d1f1defd2",
+              "Text": "As users complete setup steps, the Module Manager updates the module\u0027s status to reflect its progress.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c03985f3-bf27-4b6d-a055-1e0cb5ae261a",
+              "Text": "The final status state indicates the module is content-ready, meaning it is prepared for AI generation or further authoring.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "97e989c1-aeca-43c7-818d-0abfc43e6a1c",
+          "TopicId": "4ef4813f-28f7-4a1e-b30d-31909b4be7eb",
+          "Title": "Guiding Users Through the Setup Process",
+          "BodyText": "The Module Manager acts as a guide, helping users understand what steps are required to move a module from creation to readiness.",
+          "Notes": "This guided approach reduces confusion for new users who may be unfamiliar with the full setup workflow.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:20:56.3770597-04:00",
+          "ModifiedDate": "2026-07-08T19:20:56.3770597-04:00",
+          "Items": [
+            {
+              "Id": "d40e2b71-2c57-4b65-a1aa-afaf4c1f9e8b",
+              "Text": "The interface surfaces the necessary actions at each stage so users always know what to do next.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f9b181b3-dcdf-4ed9-9079-f55702312850",
+              "Text": "Setup milestones are made visible within the manager, reducing the chance of skipping a required configuration step.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8ae8a87f-c36f-4eaa-858a-88fdd7ecf329",
+              "Text": "Whether starting from AI generation, an existing folder, or an import, the Module Manager provides a consistent workflow path.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f428f5fb-0aad-4ea3-85b4-a9a26ec7faf1",
+          "TopicId": "4ef4813f-28f7-4a1e-b30d-31909b4be7eb",
+          "Title": "Supporting All Three Creation Methods",
+          "BodyText": "The Module Manager serves as the unified hub regardless of which of the three creation methods a user chooses to start a module.",
+          "Notes": "This consistency means users only need to learn one interface to manage modules created through any available method.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:20:56.3770597-04:00",
+          "ModifiedDate": "2026-07-08T19:20:56.3770597-04:00",
+          "Items": [
+            {
+              "Id": "f1a96fea-65c0-4106-b4b3-6a0dc608eba5",
+              "Text": "Modules generated with AI, added from disk, or imported from a file or repository all appear and are managed within the same Module Manager interface.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "83965f25-06da-4cd1-acd6-6b427750b1ff",
+              "Text": "The manager normalizes the experience so that post-creation steps are handled identically no matter how the module originated.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e5564c47-afb5-4640-80f8-618f0cffc057",
+              "Text": "Users can mix modules from different creation methods and manage them side by side without any difference in workflow.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "6c47b153-d1a7-4a28-8c77-6a77733a9958",
+      "Title": "From Empty Module to Content-Ready: The Module Lifecycle",
+      "Summary": "Walks learners through the progression a module follows after creation, ending at the point where it is ready for content generation. Reinforces how the Module Manager supports each stage of this lifecycle.",
+      "SortOrder": 5,
+      "CreatedDate": "2026-07-08T19:19:27.6237496-04:00",
+      "ModifiedDate": "2026-07-08T19:19:27.6237496-04:00",
+      "Elements": [
+        {
+          "Id": "84b4c994-1318-4656-8339-fe68d69ca16a",
+          "TopicId": "6c47b153-d1a7-4a28-8c77-6a77733a9958",
+          "Title": "The Starting Point: An Empty Module",
+          "BodyText": "A newly AI-generated module starts empty and needs its topics generated first; modules added from an existing folder or imported may already contain topics and content.",
+          "Notes": "The starting point depends on the method: an AI-generated module must have its topics generated before it is ready, while an added or imported module may already include them.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:21:16.6353323-04:00",
+          "ModifiedDate": "2026-07-08T19:21:16.6353323-04:00",
+          "Items": [
+            {
+              "Id": "8dcde694-d29c-4cc7-8286-516b853cae13",
+              "Text": "An empty module contains the necessary structure but holds no generated content yet.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e5cc70de-da92-42d5-bb98-7f63bf41d24f",
+              "Text": "An AI-generated module begins with no topics and must have them generated; an added or imported module may already include topics and content.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "12333a2c-716c-4db5-978f-b5b52da44242",
+          "TopicId": "6c47b153-d1a7-4a28-8c77-6a77733a9958",
+          "Title": "Introducing the Module Manager as Lifecycle Hub",
+          "BodyText": "The Module Manager serves as the central interface that tracks and supports a module through every stage of its lifecycle after creation.",
+          "Notes": "Think of the Module Manager as a dashboard that always reflects the current state of the module and surfaces the actions available at that stage.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:21:16.6353323-04:00",
+          "ModifiedDate": "2026-07-08T19:21:16.6353323-04:00",
+          "Items": [
+            {
+              "Id": "2868cd32-b1a4-4906-bfec-be03a34d10b3",
+              "Text": "Rather than navigating multiple separate tools, learners work within the Module Manager to move a module forward.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3e9a860d-1ff5-495d-abe1-91ec0afa3536",
+              "Text": "The Module Manager provides visibility into where a module currently sits in its lifecycle and what steps remain.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "0a33a760-b10a-4c8f-b545-67f7d94825de",
+              "Text": "All three creation methods ultimately deposit the new module into the Module Manager for continued management.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "1a7a6eaa-685b-45d3-b3c3-f54aba296673",
+          "TopicId": "6c47b153-d1a7-4a28-8c77-6a77733a9958",
+          "Title": "Progressing Through Lifecycle Stages",
+          "BodyText": "After creation, a module passes through a defined sequence of stages before it is ready for content generation.",
+          "Notes": "In practice the key requirement is simply that a module has a generated Topics list before most content can be generated from it.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:21:16.6353323-04:00",
+          "ModifiedDate": "2026-07-08T19:21:16.6353323-04:00",
+          "Items": [
+            {
+              "Id": "be63b31c-f088-4994-b4f3-7fc181ede561",
+              "Text": "Each stage represents a distinct readiness level, signaling what has been completed and what still needs to happen.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b11556ad-148b-47a8-81d9-272d740b71f0",
+              "Text": "The Module Manager visually reflects the current stage so learners always know where the module stands.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "fb909ffb-bbdb-4835-8fea-82ddcbc28a5d",
+              "Text": "Most content generation becomes available once the module has a generated Topics list.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "01233028-0444-4abe-8f2e-8603c0b73058",
+          "TopicId": "6c47b153-d1a7-4a28-8c77-6a77733a9958",
+          "Title": "The Role of Configuration in the Lifecycle",
+          "BodyText": "Between creation and content readiness, a module typically requires configuration steps that establish the parameters needed for content generation.",
+          "Notes": "Configuration might include setting the module title, defining scope, or confirming source material \u2014 depending on which creation method was used.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:21:16.6353323-04:00",
+          "ModifiedDate": "2026-07-08T19:21:16.6353323-04:00",
+          "Items": [
+            {
+              "Id": "54f67539-6722-4125-a426-38f354144e03",
+              "Text": "Configuration steps ensure the module has sufficient context for PreseMaker to generate meaningful content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9dfc12b4-50f0-4851-9728-3aca661a24ad",
+              "Text": "The Module Manager guides learners through required configuration by surfacing relevant options at the appropriate lifecycle stage.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "36422a91-632a-4404-93fe-3cc77d3ebd03",
+              "Text": "Skipping or incomplete configuration keeps a module from advancing to the content-ready state.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c293664b-61b5-4696-9dce-f2362497f5d3",
+          "TopicId": "6c47b153-d1a7-4a28-8c77-6a77733a9958",
+          "Title": "Reaching the Content-Ready State",
+          "BodyText": "The content-ready state is the final stage of the module lifecycle covered in this topic, representing the point at which content generation can begin.",
+          "Notes": "Reaching content-ready is a milestone \u2014 it confirms that the module is properly structured and configured, and that PreseMaker has everything it needs to proceed.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:21:16.6353323-04:00",
+          "ModifiedDate": "2026-07-08T19:21:16.6353323-04:00",
+          "Items": [
+            {
+              "Id": "e5e6d97a-9b1c-47d5-86f0-62e42459ea83",
+              "Text": "A module in the content-ready state has passed through all prerequisite lifecycle stages successfully.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6fbe146c-8ae1-4eb3-a462-88b0536cd0fa",
+              "Text": "The Module Manager clearly indicates when a module has reached content-ready status, distinguishing it from modules still in earlier stages.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3598702e-5d86-4ae5-9fe8-21ca70f8b75b",
+              "Text": "Once content-ready, the module is handed off to the content generation process \u2014 which is covered in subsequent lessons.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4cfd3b6f-d300-4aa4-93cc-dada747ebf22",
+          "TopicId": "6c47b153-d1a7-4a28-8c77-6a77733a9958",
+          "Title": "How the Module Manager Reinforces Each Stage",
+          "BodyText": "The Module Manager does not simply display lifecycle status passively \u2014 it actively supports learners by surfacing the right actions and information at each stage.",
+          "Notes": "This design reduces errors and confusion by preventing out-of-sequence actions and making the next required step obvious at all times.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:21:16.6353323-04:00",
+          "ModifiedDate": "2026-07-08T19:21:16.6353323-04:00",
+          "Items": [
+            {
+              "Id": "795c8f9f-e676-47b5-8a9c-c515bf4e30f5",
+              "Text": "At each stage, the Module Manager highlights available actions while suppressing options that are not yet applicable.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "030e2681-8c3c-439b-aca6-4c78e33b7474",
+              "Text": "Status indicators and progress cues within the Module Manager help learners build an accurate mental model of the lifecycle.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "046da3fb-faff-4357-a91d-ae69fd8bed16",
+              "Text": "Consistent use of the Module Manager across all three creation methods reinforces a unified workflow regardless of how a module was originally created.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 32
+}

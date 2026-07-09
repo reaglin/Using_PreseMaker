@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choosing the Right Sharing Method</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+  <header>
+    <h1>Choosing the Right Sharing Method</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Choosing the Right Sharing Method</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you finish building a course in PreseMaker, one of the most important decisions you face is how to get that content to the people who need it. PreseMaker offers five distinct sharing and distribution methods, and each one is designed with a different workflow, audience, and technical context in mind. Choosing the wrong method for your situation can mean extra friction for learners, unnecessary complexity for you, or content that simply does not reach its intended audience. Understanding what each method does — and what it <em>does not</em> do — is the foundation for making that choice confidently.</p>
+
+<p>The five primary methods are <strong>version control (git)</strong>, <strong>GitHub Pages</strong>, <strong>the course repository service</strong>, <strong>archive export</strong>, and <strong>iFrame embedding</strong>. They differ across several key dimensions: where course files are physically stored, who can access the content and under what conditions, what technical steps are involved, and how well the method supports ongoing collaboration or future reuse. A helpful way to think about these dimensions before diving into each method is to see them side by side.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Primary Purpose</th>
+      <th>Requires Internet?</th>
+      <th>Makes Content Publicly Accessible?</th>
+      <th>Best For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Version Control (git)</td>
+      <td>Change tracking and backup</td>
+      <td>Yes (for remote sync)</td>
+      <td>No</td>
+      <td>Ongoing development safety</td>
+    </tr>
+    <tr>
+      <td>GitHub Pages</td>
+      <td>Public web publishing</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Shareable public URL for learners</td>
+    </tr>
+    <tr>
+      <td>Course Repository Service</td>
+      <td>Community sharing and reuse</td>
+      <td>Yes</td>
+      <td>Yes (within educator community)</td>
+      <td>Sharing with or borrowing from other educators</td>
+    </tr>
+    <tr>
+      <td>Archive Export</td>
+      <td>Portable offline distribution</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Direct handoff without cloud services</td>
+    </tr>
+    <tr>
+      <td>iFrame Embedding</td>
+      <td>Platform integration</td>
+      <td>Yes (course must be hosted)</td>
+      <td>Depends on host platform</td>
+      <td>Embedding into an existing learning platform</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Version control through PreseMaker's git integration</strong> is the method to reach for when your primary concern is the safety and history of your course files during development. Every time you commit your work, PreseMaker records a snapshot of the course at that point in time. This means you can review what the course looked like at any earlier stage, roll back changes that introduced problems, and maintain a remote backup so that a lost or broken local machine does not mean lost work. You can also push updates to a remote repository and pull the latest version onto a different machine, which makes version control well suited for collaborative course development where more than one person is contributing changes.</p>
+
+<p>A critical point that surprises many new users is that <em>version control alone does not make your course accessible to learners</em>. A git repository stores files; it does not serve them as a website. Think of it like saving a Word document to a cloud drive — the file is backed up and can be shared with collaborators who have access, but a learner cannot simply navigate to a URL and read it. Version control is a development and safety workflow, not a distribution channel. Importantly, PreseMaker manages all of this internally — you do not need to open a terminal or know any git commands to take advantage of it.</p>
+
+<p><strong>GitHub Pages</strong> is the natural companion to version control when you want learners to access course content through a browser. Once you connect PreseMaker to your GitHub account and enable GitHub Pages for your course repository, PreseMaker handles the publishing process automatically. The repository continues to store your files the way it always did, but GitHub Pages additionally serves those files as a live website at a public URL that you can share with anyone. No manual configuration on the GitHub website is required — PreseMaker abstracts away those setup steps.</p>
+
+<p>Because GitHub Pages builds on top of the git repository, both methods work together seamlessly: you develop and track changes using version control, and when you are ready to publish an update, GitHub Pages reflects those changes publicly. This pairing is one of the most common workflows in PreseMaker for courses intended for a general online audience. The result is a permanent, linkable URL that learners can bookmark and revisit, and that you can embed in email communications, syllabi, or social media.</p>
+
+<p><strong>The course repository service</strong> serves a different purpose than hosting a website for learners. Its audience is primarily <em>other educators</em>. When you publish a course to the repository service, you are making it available for colleagues or fellow educators to discover and import directly into their own PreseMaker installations — not just to view it in a browser. Equally, if you are looking for materials to build on rather than creating everything from scratch, the repository service lets you browse and import courses that others have shared.</p>
+
+<p>This focus on reusability and community distribution sets the course repository service apart from GitHub Pages. GitHub Pages is about giving learners a URL; the repository service is about enabling educators to adapt, remix, and build upon shared materials. If you are part of a professional learning community, a faculty group, or an open education initiative, the course repository service is the most direct path to that kind of collaborative content ecosystem.</p>
+
+<p><strong>Archive export</strong> steps away from all cloud and internet-based workflows entirely. When you export a course as an archive, PreseMaker packages the course files into a single portable file that you can transfer directly — by email attachment, USB drive, shared network folder, or any other file-transfer method you prefer. The recipient then imports that archive into their own copy of PreseMaker to access the course. No GitHub account is needed, no internet connection is required for the transfer itself, and no third-party service is involved.</p>
+
+<p>This makes archive export ideal for controlled or closed distribution scenarios: sharing a course with a specific colleague who is not connected to your GitHub organization, moving your course from an old machine to a new one, distributing materials in an environment with restricted or unreliable internet access, or providing a snapshot of course materials at a particular point in time without ongoing live updates. The trade-off is that the archive is a static package — changes you make later are not reflected in the exported file unless you export again and redistribute.</p>
+
+<p><strong>iFrame embedding</strong> is the right choice when learners should experience your course within a platform they are already using rather than navigating to a separate URL. Many learning management systems, website builders, wikis, and internal intranets support HTML iFrames, which allow content from another URL to appear as an embedded panel inside the host page. PreseMaker generates an embed code snippet that you copy and paste into any platform that accepts raw HTML.</p>
+
+<p>An important prerequisite is that iFrame embedding requires the course to already be hosted somewhere accessible on the web — the iFrame simply displays content from another URL, so that URL must exist and be reachable. In practice this means iFrame embedding almost always pairs with GitHub Pages: you publish the course publicly via GitHub Pages to get a URL, and then use that URL in the iFrame embed code to display the course inside your LMS or website. On its own, iFrame embedding is not a hosting solution; it is an integration layer that sits on top of one.</p>
+
+<p>Pulling all five methods together, the decision process becomes much cleaner when you start from your use case rather than from the tools themselves. Ask yourself a few guiding questions:</p>
+
+<ul>
+  <li><strong>Is my main concern tracking changes and protecting my work during development?</strong> If yes, start with version control. You can always layer additional sharing methods on top later.</li>
+  <li><strong>Do I want learners to access the course through a browser via a public URL?</strong> GitHub Pages is the right choice, and it pairs naturally with version control you may already be using.</li>
+  <li><strong>Am I trying to share materials with other educators, or looking to build on someone else's work?</strong> The course repository service is built precisely for that kind of community reuse.</li>
+  <li><strong>Does the recipient have no cloud account, limited internet access, or do I need a clean one-time handoff?</strong> Archive export handles this without any dependencies on external services.</li>
+  <li><strong>Do my learners live inside a specific platform — an LMS, a company intranet, a course portal — and should the content appear there rather than in a separate tab?</strong> Use iFrame embedding, and make sure the course is hosted (typically via GitHub Pages) before generating the embed code.</li>
+</ul>
+
+<p>It is also worth noting that these methods are not mutually exclusive. A well-developed course might use version control throughout its creation, publish via GitHub Pages for the primary learner audience, and be shared as an archive with a partner institution that does not use GitHub. Understanding each method as a distinct tool with a specific strength — rather than treating them as alternatives where only one can be used — gives you the flexibility to serve multiple audiences and contexts with the same underlying course.</p>
+        <div class="notes"><strong>Notes</strong>The comparison table near the top is intended to act as a quick reference that learners can return to after reading the full explanations. The five guiding questions near the end reinforce the decision-making framework without repeating the same content verbatim.</div>
+      </div>
+    </details>
+  </main>
+</body></html>
