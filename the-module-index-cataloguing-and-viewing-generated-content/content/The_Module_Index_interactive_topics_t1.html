@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is the Module Index?</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ The Module Index: Cataloguing and Viewing Generated Content</a></div>
+  <header>
+    <h1>What Is the Module Index?</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>What Is the Module Index?</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Every module produces a variety of artifacts over its lifetime — exercises, assessments, topic explanations, worked examples, rubrics, and more. Without a reliable way to track what has been created, it becomes easy to lose sight of individual items, duplicate work, or simply forget that a particular resource exists. The <strong>Module Index</strong> is the answer to this problem. It is a centralised catalogue that automatically records every artifact generated within a module, presenting them in a consistent, structured format that both learners and instructors can rely on at any point during or after the module's development.</p>
+
+<p>Understanding the Module Index means understanding two distinct but complementary roles it performs simultaneously: it acts as a <strong>record-keeping tool</strong> that logs what has been produced, and it acts as a <strong>content viewer</strong> that lets you open and engage with those artifacts directly. These two roles, combined within a single interface, make the Module Index far more than a simple list — it is the operational hub through which all generated module content is managed and accessed.</p>
+
+<p>The <strong>defining characteristic</strong> of the Module Index is that it is populated automatically. As each new artifact is generated — whether that is a topic explanation, a quiz, a case study, or any other resource — an entry for that artifact is added to the index without any manual cataloguing effort being required. This automatic population means the index is always current, always accurate, and always reflects the true state of what the module contains. Learners and instructors consulting the index can trust that it represents a complete picture of everything that has been produced up to that moment.</p>
+
+<p>Each entry in the index is not just a label. It carries enough structured detail to immediately convey the artifact's <strong>type</strong> (for example, a formative quiz or a worked example), its <strong>purpose</strong> within the module (such as reinforcing a particular concept or assessing a learning outcome), and its <strong>position</strong> within the overall module structure (which topic or section it belongs to). This level of detail transforms the index from a bare inventory into a meaningful map of the module's content landscape.</p>
+
+<p>Critically, every entry is <strong>linked directly to its source material</strong>. Rather than noting that an artifact exists somewhere and leaving the user to locate it separately, the index connects each record to the actual artifact. This direct linkage is what enables the index's second major role: serving as a content viewer.</p>
+
+<p>The <strong>record-keeping role</strong> of the Module Index is best understood as a function of accountability and transparency. Because every artifact is catalogued with consistent metadata — type, purpose, placement — the full history of generated content is visible in one place. This visibility matters in several practical ways. An instructor reviewing a module's completeness can scan the index and immediately see whether certain artifact types are missing or underrepresented. A learner who remembers encountering a particular exercise can return to the index to locate it without retracing their steps through the module's individual topics. Anyone auditing the module's content can confirm at a glance what exists, when it was generated, and what role it serves. The index essentially makes the authoring history of the module legible and navigable.</p>
+
+<p>The <strong>content viewer role</strong> addresses a different but equally important need: the ability to actually open and read artifacts without navigating away from the index to some separate storage location. In practice, this means the Module Index is an <em>active</em> tool rather than a <em>passive</em> one. A user does not consult the index merely to learn that an artifact exists and then go elsewhere to find it — they can engage with the artifact directly from within the same interface. This distinction between a passive list and an active viewer is significant because it eliminates the friction that typically accumulates when content is spread across multiple systems or folders. The index brings both functions — knowing what exists and being able to use it — into a single, unified experience.</p>
+
+<p>To make the Module Index as widely accessible as possible, it is also produced in an <strong>HTML format</strong> that functions as a self-contained, browsable version of the entire catalogue. This HTML index packages all catalogued artifacts into a navigable web format that any standard browser can open. No specialist software, no proprietary platform access, and no active internet connection are required to use it once it has been generated. Consider what this means in practical terms:</p>
+
+<ul>
+  <li><strong>Archiving:</strong> A completed module can be archived as a single HTML index file, preserving a full record of its content in a durable, widely readable format that will remain accessible long after any particular platform may have changed.</li>
+  <li><strong>Sharing:</strong> The HTML index can be distributed to reviewers, collaborators, or external stakeholders who may not have access to the authoring platform, giving them a complete view of the module's content in a familiar browser-based environment.</li>
+  <li><strong>Offline review:</strong> Instructors or learners working without reliable internet access can download the HTML index and browse the full scope of generated module content locally, without any loss of navigability or completeness.</li>
+</ul>
+
+<p>The self-contained nature of the HTML index is a deliberate design choice that prioritises accessibility and resilience. Because all catalogued artifacts are packaged together within it, the HTML index is not dependent on links to external locations that might become unavailable. Everything that has been indexed is browsable within the file itself.</p>
+
+<p>Perhaps the most important reason the Module Index exists at all is the practical benefit of <strong>centralisation</strong>. In workflows where content is generated across multiple sessions, by multiple contributors, or across a period of weeks or months, artifacts can easily become scattered. They may end up in different folders, stored under different names, or simply forgotten because they were generated early in the process and overshadowed by later work. A centralised catalogue eliminates this problem entirely. Because every artifact — regardless of its type, its creation time, or the circumstances of its generation — is logged in the same place, none of them can become invisible.</p>
+
+<p>Centralisation also enforces a kind of equality across artifacts. A rubric generated quietly in the early stages of module development is just as visible in the index as a major assessment produced later. A supplementary reading list is catalogued alongside the primary topic explanations. No artifact is privileged or buried by the structure of the index; all are equally present and equally accessible.</p>
+
+<p>Finally, because all users — learners, instructors, reviewers — reference the same index, there is no risk of different parties working from different versions of the content catalogue. The index is the <strong>single authoritative list</strong> of what the module contains, and that authority makes it a reliable foundation for every decision about the module's content, from initial development through to final delivery and archiving.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Role</th>
+      <th>What It Does</th>
+      <th>Key Benefit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Record-Keeping</td>
+      <td>Automatically catalogues every artifact with its type, purpose, and module placement</td>
+      <td>Full, visible history of generated content; supports accountability and completeness checks</td>
+    </tr>
+    <tr>
+      <td>Content Viewer</td>
+      <td>Allows artifacts to be opened and engaged with directly from within the index interface</td>
+      <td>Eliminates navigation friction; makes the index an active working tool, not a passive list</td>
+    </tr>
+    <tr>
+      <td>HTML Index</td>
+      <td>Packages all catalogued artifacts into a self-contained, browser-readable format</td>
+      <td>Enables archiving, sharing, and offline review without specialist software or platform access</td>
+    </tr>
+    <tr>
+      <td>Centralised Catalogue</td>
+      <td>Provides a single location where all artifacts, regardless of type or creation time, are recorded</td>
+      <td>Prevents content from being lost or overlooked; gives all users a consistent, authoritative reference</td>
+    </tr>
+  </tbody>
+</table>
+        <div class="notes"><strong>Notes</strong>The Module Index topic is foundational and orientation-focused — learners encountering it are being introduced to an infrastructure concept rather than a content concept. Emphasis on the dual role (record-keeping + viewer) and the self-contained HTML format helps set accurate expectations for how learners will interact with module artifacts throughout the course.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

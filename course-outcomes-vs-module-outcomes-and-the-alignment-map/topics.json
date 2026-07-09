@@ -1,0 +1,1294 @@
+{
+  "ModuleFolderName": "Course_Outcomes_vs",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:37:17.0529884-04:00",
+  "ModifiedDate": "2026-07-08T19:40:26.511479-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "444a2a99-35fc-48d6-9467-3cfd50fbb8d2",
+      "Title": "Understanding Course-Level Outcomes",
+      "Summary": "Defines course-level outcomes and explains their role as the overarching goals that guide the entire course design. Explores the characteristics that distinguish them from more granular learning targets.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:37:17.0529884-04:00",
+      "ModifiedDate": "2026-07-08T19:37:17.0529884-04:00",
+      "Elements": [
+        {
+          "Id": "de228c6a-ef8d-431c-a4c1-90085c557baf",
+          "TopicId": "444a2a99-35fc-48d6-9467-3cfd50fbb8d2",
+          "Title": "Definition of Course-Level Outcomes",
+          "BodyText": "Course-level outcomes are the overarching statements that describe what a learner should know, be able to do, or value by the time they complete the entire course.",
+          "Notes": "Think of course-level outcomes as the destination on a map \u2014 everything else in the course is designed to get learners there.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:37:37.8032843-04:00",
+          "ModifiedDate": "2026-07-08T19:37:37.8032843-04:00",
+          "Items": [
+            {
+              "Id": "d4e7ec37-830d-4f40-9868-4866cc15d800",
+              "Text": "They represent the broadest layer of intended learning and apply to the course as a whole, not to any single lesson or unit.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "56732fe1-e8b2-4de4-9ff0-79c6a3e78642",
+              "Text": "They are typically written from the learner\u0027s perspective using action verbs, and they describe demonstrable, assessable results.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "41fbaee5-4b56-4832-aeda-a9a8b69ffe34",
+              "Text": "A well-written course-level outcome answers the question: \u0027What will learners be able to do after completing this course that they could not reliably do before?\u0027",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "60dd2127-07dd-43e4-9de3-cbf89d7c64e5",
+          "TopicId": "444a2a99-35fc-48d6-9467-3cfd50fbb8d2",
+          "Title": "Role of Course-Level Outcomes in Course Design",
+          "BodyText": "Course-level outcomes serve as the primary design driver, shaping every major decision about content, instruction, and assessment throughout the course.",
+          "Notes": "When instructors begin with course-level outcomes, they avoid the common pitfall of designing activities and assessments first and then searching for outcomes to match them afterward.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:37:37.8032843-04:00",
+          "ModifiedDate": "2026-07-08T19:37:37.8032843-04:00",
+          "Items": [
+            {
+              "Id": "37a1a81c-82a9-45d4-b77a-92aafed2c6f0",
+              "Text": "They establish the non-negotiable end goals that all other course components \u2014 modules, activities, and assessments \u2014 must work together to achieve.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e9ec3d86-1ec6-4f7f-af3e-3952b82aa1ab",
+              "Text": "Course designers use them as a filter to evaluate whether proposed content and assessments are truly necessary or merely tangential.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "79f1ee02-6f40-4ee8-9a0b-8926fbbf3e28",
+              "Text": "They provide a transparent contract with learners, communicating exactly what the course promises to help them accomplish.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "5ae5565c-8b71-4fb3-93c4-9d952e7d9acf",
+          "TopicId": "444a2a99-35fc-48d6-9467-3cfd50fbb8d2",
+          "Title": "Characteristics That Define Course-Level Outcomes",
+          "BodyText": "Course-level outcomes share a set of distinguishing characteristics that set them apart from more granular learning targets found at the module or lesson level.",
+          "Notes": "A useful test: if an outcome can be fully addressed in a single lesson or module, it is likely too narrow to function as a course-level outcome.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:37:37.8032843-04:00",
+          "ModifiedDate": "2026-07-08T19:37:37.8032843-04:00",
+          "Items": [
+            {
+              "Id": "4dac7b01-8de0-478c-a88d-251c7b3a6d43",
+              "Text": "They are broad in scope, typically requiring multiple modules, experiences, or assessments before a learner can demonstrate mastery.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2cd23525-8d28-47b4-af46-5f0d25dd3b41",
+              "Text": "They reflect higher-order or integrative thinking \u2014 such as analyzing, evaluating, designing, or synthesizing \u2014 rather than isolated recall of facts.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "71975e29-ba81-4c17-993c-b4bfdba92577",
+              "Text": "They are few in number; most well-designed courses have between three and seven course-level outcomes to maintain focus and feasibility.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "04cadd9d-1b52-4018-b7bb-e5bfd925baf9",
+              "Text": "They are durable, remaining stable across different cohorts and instructors because they reflect the fundamental purpose of the course.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "fc8d73dc-2f78-47b9-97e9-91f5a5469a4f",
+          "TopicId": "444a2a99-35fc-48d6-9467-3cfd50fbb8d2",
+          "Title": "Cognitive Depth Expected at the Course Level",
+          "BodyText": "Course-level outcomes are intentionally positioned at higher levels of cognitive complexity to reflect the cumulative learning that occurs across an entire course.",
+          "Notes": "Using Bloom\u0027s Taxonomy as a reference, course-level outcomes most commonly inhabit the Analyze, Evaluate, or Create tiers, signaling that surface-level recall is insufficient as a final destination.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:37:37.8032843-04:00",
+          "ModifiedDate": "2026-07-08T19:37:37.8032843-04:00",
+          "Items": [
+            {
+              "Id": "213613c4-57e7-4c73-b794-ab8c6b85abfe",
+              "Text": "The cognitive level of a course-level outcome signals the intellectual ambition of the course and sets the bar that module outcomes must collectively reach.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7c9dacbd-fe28-448f-89d2-34845f0eb7cc",
+              "Text": "When course-level outcomes are written at a low cognitive level, the course risks producing learners who can recall information but cannot apply or transfer it.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "877f062b-7ba2-434c-8ad4-e4c1e39ba473",
+              "Text": "Matching cognitive depth to the course\u0027s stated ambitions is a key quality check during the alignment-mapping process.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3a6bc0eb-e089-4ebb-84f9-fb7e8d477537",
+          "TopicId": "444a2a99-35fc-48d6-9467-3cfd50fbb8d2",
+          "Title": "How Course-Level Outcomes Differ from Module Outcomes",
+          "BodyText": "While course-level outcomes describe the final destination of learning, module outcomes describe the incremental steps learners take on the way there.",
+          "Notes": "A helpful analogy: course-level outcomes are the summit of a mountain; module outcomes are the waypoints along the trail that confirm learners are on the right path.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:37:37.8032843-04:00",
+          "ModifiedDate": "2026-07-08T19:37:37.8032843-04:00",
+          "Items": [
+            {
+              "Id": "2ff4fc27-9a24-4d8c-9d5d-2fa38445fad8",
+              "Text": "Module outcomes are narrower in scope and can typically be demonstrated within a short instructional period, whereas course-level outcomes require sustained engagement across the course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2c5e1892-6105-493e-b2b0-4a6bf7d4cc6c",
+              "Text": "Course-level outcomes often remain implicit in day-to-day instruction, while module outcomes are the targets learners actively work toward in each unit.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "92b7ee03-8c7a-40bd-b3bf-c037642e1e6c",
+              "Text": "The relationship is hierarchical: multiple module outcomes contribute to, and should collectively fulfill, each course-level outcome.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "4a356b40-f537-4619-a8a4-ba0f2537f5a3",
+      "Title": "Understanding Module-Level Student Learning Outcomes",
+      "Summary": "Defines module-level outcomes and explains how they describe what learners should know or do by the end of a single module. Highlights the specificity and scope appropriate for module-level writing.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:37:17.0529884-04:00",
+      "ModifiedDate": "2026-07-08T19:37:17.0529884-04:00",
+      "Elements": [
+        {
+          "Id": "5320c8e7-e59c-4a97-9fcd-a249c13caf2c",
+          "TopicId": "4a356b40-f537-4619-a8a4-ba0f2537f5a3",
+          "Title": "What Are Module-Level Student Learning Outcomes?",
+          "BodyText": "Module-level student learning outcomes (SLOs) define what a learner should know, understand, or be able to do by the end of a single module or unit of instruction.",
+          "Notes": "Think of a module outcome as a focused, answerable promise to the learner: \u0027After completing this module, you will be able to\u2026\u0027",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:38:02.9340255-04:00",
+          "ModifiedDate": "2026-07-08T19:38:02.9340255-04:00",
+          "Items": [
+            {
+              "Id": "ae8b05ab-beb3-41af-800b-ea549d80808c",
+              "Text": "Module outcomes operate at a smaller grain size than course outcomes, targeting the learning achievable within one discrete segment of instruction.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "85ec2464-e5c2-4b21-aaa5-d251991db9f8",
+              "Text": "They describe observable or demonstrable results, not activities or topics covered.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "92257627-8929-4583-a7bc-51ff96e7c726",
+              "Text": "Each module outcome should be completable and assessable within the time and scope of that single module.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "1762f683-1da4-47da-ab98-b8e647be8761",
+          "TopicId": "4a356b40-f537-4619-a8a4-ba0f2537f5a3",
+          "Title": "Specificity: The Defining Feature of Module-Level Writing",
+          "BodyText": "The language used to write module-level outcomes must be more precise and narrowly scoped than the broader language appropriate for course-level outcomes.",
+          "Notes": "For example, a course outcome might read \u0027Apply principles of instructional design,\u0027 while a module outcome derived from it might read \u0027Write a measurable learning outcome using Bloom\u0027s Taxonomy action verbs.\u0027",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:38:02.9340255-04:00",
+          "ModifiedDate": "2026-07-08T19:38:02.9340255-04:00",
+          "Items": [
+            {
+              "Id": "7a89e543-2514-474c-b909-140af6e1b92e",
+              "Text": "Module outcomes name a single, clearly bounded skill or knowledge component rather than a broad competency.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "923c3802-5dd6-4652-95a2-81f2aa402100",
+              "Text": "Vague verbs such as \u0027understand\u0027 or \u0027appreciate\u0027 are especially problematic at the module level, where assessment must be direct and immediate.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "208ec924-b3b3-4e8c-9727-455154da1b44",
+              "Text": "Specific action verbs from cognitive frameworks like Bloom\u0027s Taxonomy help anchor the outcome to a concrete, testable behavior.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "64920e87-3968-4437-b4d2-5703cdc278f2",
+          "TopicId": "4a356b40-f537-4619-a8a4-ba0f2537f5a3",
+          "Title": "Appropriate Scope for a Single Module",
+          "BodyText": "Scope refers to how much ground a single outcome covers; module outcomes should be narrow enough to be fully addressed within the module\u0027s content and time allocation.",
+          "Notes": "A common design error is writing module outcomes that are too broad to be achieved in one module, effectively duplicating course-level outcomes rather than supporting them.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:38:02.9340255-04:00",
+          "ModifiedDate": "2026-07-08T19:38:02.9340255-04:00",
+          "Items": [
+            {
+              "Id": "0e6657e1-8aac-40d6-9bbb-6a5575610f03",
+              "Text": "A well-scoped module outcome targets one concept, process, or skill set that can be taught, practiced, and assessed within that module alone.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "80abc3eb-534f-4b47-b548-29b75ef2409e",
+              "Text": "If an outcome requires content from multiple modules to achieve, it likely belongs at the course level, not the module level.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d04c38ac-2bf8-4970-817b-90fa2586126f",
+              "Text": "Keeping scope tight ensures learners experience a sense of completion and measurable progress at each stage of the course.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a116c116-04c3-4c9b-8bf1-657464a95332",
+          "TopicId": "4a356b40-f537-4619-a8a4-ba0f2537f5a3",
+          "Title": "Cognitive Depth in Module Outcomes",
+          "BodyText": "Module outcomes should reflect a cognitive level appropriate to where learners are in the course sequence and what the module\u0027s content can reasonably develop.",
+          "Notes": "Early modules in a course may justifiably target lower-order cognition such as recall or comprehension, while later modules should escalate toward application, analysis, or evaluation as complexity builds.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:38:02.9340255-04:00",
+          "ModifiedDate": "2026-07-08T19:38:02.9340255-04:00",
+          "Items": [
+            {
+              "Id": "2c20dcbc-9086-4026-bc2f-2d16ad76c0e7",
+              "Text": "Cognitive depth is signaled by the action verb chosen: \u0027identify\u0027 indicates recall, while \u0027critique\u0027 indicates evaluation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "66ce3860-8a77-45c5-929b-77491e5932f9",
+              "Text": "Each module\u0027s cognitive level should be intentional and should collectively build toward the higher cognitive demands expressed in course-level outcomes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "aeb83f67-7831-4111-968c-47562be7cbfe",
+              "Text": "Mismatched cognitive depth\u2014such as module outcomes that never exceed recall when course outcomes demand synthesis\u2014signals a design gap.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "177b124a-69bd-4aee-9c51-ae89c25b9f92",
+          "TopicId": "4a356b40-f537-4619-a8a4-ba0f2537f5a3",
+          "Title": "Module Outcomes as Building Blocks",
+          "BodyText": "Individual module outcomes are not isolated; they function as incremental building blocks that collectively lead learners to achieve the broader course-level outcomes.",
+          "Notes": "Viewing module outcomes as building blocks helps designers sequence learning logically and ensures no critical prerequisite knowledge or skill is skipped.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:38:02.9340255-04:00",
+          "ModifiedDate": "2026-07-08T19:38:02.9340255-04:00",
+          "Items": [
+            {
+              "Id": "cc02a507-b980-4552-854d-27fe261c4487",
+              "Text": "Each module outcome should contribute a distinct piece of the larger competency described by at least one course outcome.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f2218c1b-fe9a-49b0-a9ff-921e7f046a3d",
+              "Text": "When mapped together, the set of module outcomes across all modules should account for the full range of knowledge and skills promised by the course.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7d03f776-ea36-4d1a-9fbe-29020400307c",
+              "Text": "Gaps in the building-block chain\u2014modules that do not connect to any course outcome\u2014indicate misalignment that should be corrected.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6940c54f-c92b-458a-a034-5547cf5e54eb",
+          "TopicId": "4a356b40-f537-4619-a8a4-ba0f2537f5a3",
+          "Title": "Distinguishing Module Outcomes from Learning Activities",
+          "BodyText": "A common writing error is confusing what learners will do during a module (activities) with what they will have learned as a result (outcomes).",
+          "Notes": "Example of an activity statement: \u0027Learners will read Chapter 3 and watch the lecture video.\u0027 The corresponding outcome would be: \u0027Learners will be able to explain the three stages of the design process.\u0027",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:38:02.9340255-04:00",
+          "ModifiedDate": "2026-07-08T19:38:02.9340255-04:00",
+          "Items": [
+            {
+              "Id": "e0b795f5-3c8c-4556-a554-c89e67921f5e",
+              "Text": "Activities describe instructional events; outcomes describe the durable knowledge or capability that results from those events.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "fb84965f-9879-4047-8979-62339c1bf38b",
+              "Text": "Writing outcomes rather than activities keeps the focus on learner achievement rather than content delivery.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "dc130734-c484-447c-9cf5-96037effade0",
+              "Text": "Clearly separating activities from outcomes also makes it easier to align assessments directly to what learners are expected to demonstrate.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "28bda676-7b66-42fc-bd47-f50b5925f9bd",
+      "Title": "Distinguishing Course Outcomes from Module Outcomes",
+      "Summary": "Contrasts the two levels of outcomes in terms of scope, specificity, and function within a course. Clarifies common points of confusion and criteria for determining which level an outcome belongs to.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:37:17.0529884-04:00",
+      "ModifiedDate": "2026-07-08T19:37:17.0529884-04:00",
+      "Elements": [
+        {
+          "Id": "08103615-f84e-4e2f-a7a0-4e79f891217c",
+          "TopicId": "28bda676-7b66-42fc-bd47-f50b5925f9bd",
+          "Title": "Scope: Breadth vs. Specificity",
+          "BodyText": "Course outcomes describe broad, overarching competencies a learner should possess by the end of the entire course, while module outcomes address the narrower, specific skills or knowledge gained from a single unit.",
+          "Notes": "Think of course outcomes as the destination and module outcomes as the individual steps on the path. A course outcome might be \u0027Analyze complex ethical dilemmas in healthcare,\u0027 whereas a module outcome would be \u0027Identify the four principles of bioethics.\u0027",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:38:32.940275-04:00",
+          "ModifiedDate": "2026-07-08T19:38:32.940275-04:00",
+          "Items": [
+            {
+              "Id": "efa468f4-9116-4dbe-80be-41eb884cc953",
+              "Text": "Course outcomes span the full duration of the course and integrate learning across multiple modules.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "20335a20-d570-43d7-a491-2836e3e74aa3",
+              "Text": "Module outcomes are contained within a single instructional unit and target discrete, teachable concepts.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "69355884-8dee-46b6-963c-6ac5afc1b221",
+              "Text": "The narrower scope of a module outcome makes it more immediately measurable through a single assessment activity.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "82886685-152e-4a22-80da-fb8bdffd9df9",
+              "Text": "Multiple module outcomes typically combine to build toward one course outcome.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "a473354f-7093-4d25-a539-6a97dbe7625f",
+          "TopicId": "28bda676-7b66-42fc-bd47-f50b5925f9bd",
+          "Title": "Function Within Course Design",
+          "BodyText": "Each level of outcome serves a distinct instructional purpose: course outcomes communicate the overall value of the course, while module outcomes guide day-to-day instructional decisions.",
+          "Notes": "Course outcomes are often shared with accreditors, program reviewers, or prospective students. Module outcomes are the operational targets that instructors use to select content, activities, and assessments for each lesson.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:38:32.940275-04:00",
+          "ModifiedDate": "2026-07-08T19:38:32.940275-04:00",
+          "Items": [
+            {
+              "Id": "744df364-8eac-4a48-a4f8-e660faee0515",
+              "Text": "Course outcomes signal to stakeholders\u2014students, institutions, employers\u2014what the course will produce.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7ea7c073-de21-41f7-81ee-4ac9b909da3f",
+              "Text": "Module outcomes direct the instructor in choosing specific readings, activities, and formative assessments for a given unit.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5d0720b5-716b-4342-8e2b-fabd79fcc920",
+              "Text": "Without module outcomes, course outcomes remain aspirational but lack a concrete instructional pathway.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "00192976-0c4c-4b62-ac97-81a174a81657",
+              "Text": "Module outcomes function as the building blocks that, when scaffolded properly, ensure course outcomes are achievable.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "6c31354e-6e3c-412a-a349-61b010d06481",
+          "TopicId": "28bda676-7b66-42fc-bd47-f50b5925f9bd",
+          "Title": "Cognitive Depth and Bloom\u0027s Taxonomy Level",
+          "BodyText": "Course outcomes typically target higher-order cognitive levels such as analysis, evaluation, or creation, whereas module outcomes often address foundational levels like remembering, understanding, or applying.",
+          "Notes": "A common design error is writing module outcomes at the same high cognitive level as course outcomes, which leaves no room for progressive skill-building. Conversely, module outcomes set too low never scaffold learners toward the course-level depth required.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:38:32.940275-04:00",
+          "ModifiedDate": "2026-07-08T19:38:32.940275-04:00",
+          "Items": [
+            {
+              "Id": "ae6fea4b-8cc1-4468-bca0-4cab7107cd37",
+              "Text": "Course outcomes reflect the cumulative cognitive demand expected after sustained learning across the whole course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a322f77d-1ff3-45ff-8b93-1ab5608176b4",
+              "Text": "Module outcomes should be set at a cognitive level that is developmentally appropriate for where learners are in the course sequence.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e06b9fee-53ba-46a4-af3e-eb0a17799185",
+              "Text": "Early-module outcomes may sit at lower Bloom\u0027s levels; later-module outcomes should rise in complexity as the course progresses.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "6b64964e-cc67-44f1-8528-41b321ac8112",
+              "Text": "Checking that module outcomes collectively build toward the cognitive depth of each course outcome is a key alignment quality check.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "0ee48b22-17b7-4402-9d73-9232823679ff",
+          "TopicId": "28bda676-7b66-42fc-bd47-f50b5925f9bd",
+          "Title": "Common Points of Confusion Between the Two Levels",
+          "BodyText": "Instructors frequently misplace outcomes at the wrong level, either writing overly broad statements for modules or overly narrow statements for the course.",
+          "Notes": "A reliable test: if achieving the outcome requires the entire course, it belongs at the course level. If it can be fully addressed within one or two lessons, it belongs at the module level.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:38:32.940275-04:00",
+          "ModifiedDate": "2026-07-08T19:38:32.940275-04:00",
+          "Items": [
+            {
+              "Id": "8953cf3c-14e2-417c-902e-ecea0172b204",
+              "Text": "Overly broad module outcomes are difficult to assess within a single unit and may signal a course-level outcome mistakenly placed at the module level.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "331ec94d-6a98-417a-ae0b-71cb7a1585f2",
+              "Text": "Overly narrow course outcomes fail to capture integrated, transferable learning and may actually describe a single module\u0027s content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8c92b5d0-99f4-48ef-9a2a-9ead66a49778",
+              "Text": "Redundancy between levels\u2014where a module outcome simply restates a course outcome word-for-word\u2014indicates a lack of hierarchical thinking.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "463c631e-26c2-476d-8de6-bdf2c5e236b7",
+              "Text": "Outcomes that reference the \u0027entire course\u0027 or \u0027all units\u0027 in their language are strong candidates for the course level, not the module level.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "373837b9-f3d0-4cf8-bc40-cfffc2b34b4d",
+          "TopicId": "28bda676-7b66-42fc-bd47-f50b5925f9bd",
+          "Title": "Criteria for Assigning an Outcome to the Correct Level",
+          "BodyText": "Applying a consistent set of criteria helps course designers confidently decide whether a given outcome belongs at the course level or the module level.",
+          "Notes": "Using a simple decision framework during the drafting phase prevents misclassification and reduces the need for later revision. Teams that share these criteria also reach consensus faster during collaborative course design.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:38:32.940275-04:00",
+          "ModifiedDate": "2026-07-08T19:38:32.940275-04:00",
+          "Items": [
+            {
+              "Id": "97e4b08e-a353-4deb-93ba-9b72d11e0784",
+              "Text": "Ask whether the outcome requires integration of knowledge or skills from multiple modules; if yes, it is likely a course outcome.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3de86970-ae6b-4088-91c9-dc44b45308de",
+              "Text": "Consider whether the outcome can be fully taught and assessed within a single instructional unit; if yes, it belongs at the module level.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7aad231e-8e8e-4fd4-a425-fddd5b1c6d5c",
+              "Text": "Evaluate the verb: high-integration verbs such as \u0027synthesize\u0027 or \u0027evaluate across contexts\u0027 suggest a course-level outcome, while task-specific verbs such as \u0027list,\u0027 \u0027calculate,\u0027 or \u0027label\u0027 suggest a module-level outcome.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "7f14e234-9b99-472d-8962-699a6f43eb17",
+              "Text": "Check whether removing the outcome from one module would leave a gap in the course outcome\u0027s coverage; if the gap is significant, it is a key module outcome feeding a course outcome.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "9731d3a6-d8e0-4871-a0af-2000bad1ca04",
+          "TopicId": "28bda676-7b66-42fc-bd47-f50b5925f9bd",
+          "Title": "Hierarchical Relationship and Outcome Dependency",
+          "BodyText": "Module outcomes are subordinate to course outcomes, meaning each module outcome should explicitly contribute to at least one course outcome, creating a dependency hierarchy.",
+          "Notes": "An outcome that cannot be linked to any course outcome is an \u0027orphan outcome\u0027 and should be revised or removed, as it consumes instructional time without advancing the course\u0027s stated goals.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:38:32.940275-04:00",
+          "ModifiedDate": "2026-07-08T19:38:32.940275-04:00",
+          "Items": [
+            {
+              "Id": "e6d5964b-9743-47c0-aab5-aa7ed988cdf0",
+              "Text": "Every module outcome should be traceable upward to at least one course outcome in the alignment map.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0a0b313d-89f3-4b5b-ad38-b12e57117b57",
+              "Text": "A single course outcome may be supported by multiple module outcomes spread across different units.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "0667b6ab-b2af-4a68-bb7f-e71f2bec034f",
+              "Text": "Module outcomes that serve no course outcome indicate either a course outcome gap or unnecessary course content.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "6a14f8b2-7e28-4f61-98d6-f706eb267ae3",
+              "Text": "Recognizing this hierarchy helps designers avoid over-crowding modules with outcomes that belong to a different level of the course architecture.",
+              "SortOrder": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "3fc0c6ca-4c1e-4742-ad60-8f6d3f5d0a63",
+      "Title": "The Alignment Map: Structure and Purpose",
+      "Summary": "Introduces the alignment map as a visual and analytical tool for connecting module outcomes to course outcomes. Explains how the map represents the relationships that hold a course design together.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:37:17.0529884-04:00",
+      "ModifiedDate": "2026-07-08T19:37:17.0529884-04:00",
+      "Elements": [
+        {
+          "Id": "e2e8b2f6-acc6-4c65-9d09-036bda7816b3",
+          "TopicId": "3fc0c6ca-4c1e-4742-ad60-8f6d3f5d0a63",
+          "Title": "What the Alignment Map Is",
+          "BodyText": "The alignment map is a visual and analytical tool that displays the explicit connections between module-level outcomes and course-level outcomes in a single, readable structure.",
+          "Notes": "Think of it as a relationship diagram or matrix: rows might represent module outcomes, columns represent course outcomes, and cells indicate where a connection exists.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:38:55.8091762-04:00",
+          "ModifiedDate": "2026-07-08T19:38:55.8091762-04:00",
+          "Items": [
+            {
+              "Id": "c7ea51c8-ed6d-46aa-ae10-85c3844bd295",
+              "Text": "It makes invisible relationships visible, showing at a glance which module outcomes support which course outcomes.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "5a3bf1af-bfd9-4e0d-be1b-6e5d22c4a6a3",
+              "Text": "It functions both as a design tool during course creation and as an audit tool during course review.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a40a1478-6090-4313-aa1d-64989d9ead47",
+              "Text": "Unlike a simple list of outcomes, the map preserves relational information that would otherwise be scattered across separate documents.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "23a12824-0259-498f-bc9f-08687e89bb48",
+          "TopicId": "3fc0c6ca-4c1e-4742-ad60-8f6d3f5d0a63",
+          "Title": "Why the Alignment Map Exists: Its Core Purpose",
+          "BodyText": "The alignment map exists to hold a course design together by ensuring every instructional component traces back to an intended learning destination.",
+          "Notes": "Without a map, designers may inadvertently build modules that are engaging but disconnected from the course\u0027s stated goals.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:38:55.8091762-04:00",
+          "ModifiedDate": "2026-07-08T19:38:55.8091762-04:00",
+          "Items": [
+            {
+              "Id": "3125b264-a56a-4f6c-97eb-4f7dc0071d85",
+              "Text": "Its primary purpose is to make the logical structure of a course explicit and defensible.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4573a02f-c29d-4f14-8810-f1b18a6b621a",
+              "Text": "It helps designers confirm that no course outcome is left unsupported by at least one module outcome.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b5980b34-13f2-4f6f-afa6-584fe7491b5b",
+              "Text": "It also reveals whether any module outcome exists in isolation, with no clear contribution to the broader course goals.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "351cf06d-a464-471d-9f86-64887f6de40d",
+          "TopicId": "3fc0c6ca-4c1e-4742-ad60-8f6d3f5d0a63",
+          "Title": "The Relationships the Map Represents",
+          "BodyText": "The map encodes directional relationships, showing how smaller, scoped module outcomes feed upward into the larger, cumulative course outcomes.",
+          "Notes": "A single course outcome may be supported by multiple module outcomes across several weeks; the map captures this distributed support structure.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:38:55.8091762-04:00",
+          "ModifiedDate": "2026-07-08T19:38:55.8091762-04:00",
+          "Items": [
+            {
+              "Id": "84f8a280-7ddb-4898-9601-6b7200788987",
+              "Text": "Each connection in the map represents a claim: \u0027mastering this module outcome contributes to achieving this course outcome.\u0027",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3293df5f-46bc-42e1-83b9-874e02d4dfa1",
+              "Text": "Relationships can be one-to-one, one-to-many, or many-to-one, and the map makes all of these patterns visible simultaneously.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "dd80dc4c-dbc9-4d72-94cb-f520ce91ba82",
+              "Text": "Representing these relationships explicitly forces designers to articulate the instructional logic that might otherwise remain tacit.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3293cbd7-0ac9-4613-8b8b-fc2a323c57fc",
+          "TopicId": "3fc0c6ca-4c1e-4742-ad60-8f6d3f5d0a63",
+          "Title": "The Map as a Structural Integrity Check",
+          "BodyText": "Beyond visualization, the alignment map serves as an analytical instrument for evaluating whether the course design is structurally sound.",
+          "Notes": "A course can look complete when browsed module by module yet still have critical structural gaps that only a map-level view can expose.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:38:55.8091762-04:00",
+          "ModifiedDate": "2026-07-08T19:38:55.8091762-04:00",
+          "Items": [
+            {
+              "Id": "03ca8049-7403-45c5-89bf-018b4e72fbdb",
+              "Text": "Gaps appear when a course outcome has no corresponding module outcome pointing to it, signaling missing instructional coverage.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4b6b000c-3fb9-4f2f-8dc6-f79674525fd7",
+              "Text": "Redundancies appear when multiple modules target the same outcome at the same depth without intentional scaffolding.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "0f989c43-5236-4b57-80bc-40b76e9af697",
+              "Text": "The map allows designers to diagnose these issues systematically rather than through subjective review alone.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a636aa7c-cf80-4324-a196-64be15ba7b1e",
+          "TopicId": "3fc0c6ca-4c1e-4742-ad60-8f6d3f5d0a63",
+          "Title": "Cognitive Depth as a Dimension of the Map",
+          "BodyText": "An effective alignment map does not merely record which outcomes connect; it also reflects whether the cognitive depth of module outcomes matches the ambitions expressed in course outcomes.",
+          "Notes": "For example, a course outcome requiring learners to \u0027evaluate\u0027 a concept is not well served by module outcomes that only ask learners to \u0027identify\u0027 or \u0027recall\u0027 related facts.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:38:55.8091762-04:00",
+          "ModifiedDate": "2026-07-08T19:38:55.8091762-04:00",
+          "Items": [
+            {
+              "Id": "141d80e5-2406-4c15-8b55-e2e442450b0d",
+              "Text": "Cognitive depth is typically assessed using a framework such as Bloom\u0027s Taxonomy, which ranks thinking skills from recall to creation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2da55815-891a-4e6d-a41b-cdd66144a784",
+              "Text": "The map surfaces depth mismatches that would otherwise be hidden inside individual module documents.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "0b02897e-1521-4b54-b656-3d863305fefb",
+              "Text": "Aligning cognitive depth across levels ensures the course can actually deliver on its highest-order learning promises.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "1b61f5e4-da5c-4abe-8202-97618742c146",
+          "TopicId": "3fc0c6ca-4c1e-4742-ad60-8f6d3f5d0a63",
+          "Title": "How the Map Connects to Course Coherence",
+          "BodyText": "The alignment map is ultimately a representation of course coherence \u2014 the quality that makes a course feel intentional, progressive, and unified rather than a collection of loosely related modules.",
+          "Notes": "Learners experience coherence as clarity of purpose; instructors experience it as confidence that each design decision is justified.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:38:55.8091762-04:00",
+          "ModifiedDate": "2026-07-08T19:38:55.8091762-04:00",
+          "Items": [
+            {
+              "Id": "e58909b1-543d-4cca-aeb9-1a178e60032b",
+              "Text": "Coherence is not automatic; it must be designed in, and the map is the primary mechanism for doing so deliberately.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "81692234-e825-4d19-9b9f-98864e837b48",
+              "Text": "When every module outcome traces to at least one course outcome, the course sends a consistent message about what matters and why.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "cb3514a8-de5b-4bb4-8bd8-4aa00c64d4ee",
+              "Text": "The map transforms course design from an intuitive process into a documented, reviewable, and improvable structure.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "8c942f9e-f7f6-45b8-8505-ba6e725c460b",
+      "Title": "Linking Module Outcomes to Course Outcomes",
+      "Summary": "Guides learners through the process of mapping individual module outcomes to their corresponding course-level outcomes. Covers strategies for establishing clear, defensible connections between the two levels.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:37:17.0529884-04:00",
+      "ModifiedDate": "2026-07-08T19:37:17.0529884-04:00",
+      "Elements": [
+        {
+          "Id": "7992b5b9-9fc8-4240-b19a-c2a5c227c414",
+          "TopicId": "8c942f9e-f7f6-45b8-8505-ba6e725c460b",
+          "Title": "Understanding the Two-Level Outcome Hierarchy",
+          "BodyText": "Before mapping can begin, learners must recognize that course outcomes and module outcomes exist at different scopes and serve different purposes within a course design.",
+          "Notes": "Course outcomes describe what learners can do by the end of the entire course; module outcomes describe smaller, incremental achievements that collectively build toward those broader goals.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:39:24.8434329-04:00",
+          "ModifiedDate": "2026-07-08T19:39:24.8434329-04:00",
+          "Items": [
+            {
+              "Id": "eba24106-2195-475a-aa0f-53bd7ad90975",
+              "Text": "Course outcomes represent the broadest, most comprehensive learning expectations for the full course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f2064ce8-4c0d-4624-a7b0-6e2525644c34",
+              "Text": "Module outcomes are narrower in scope and describe what a learner should be able to do after completing a single unit or section.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "83676217-2e7e-409a-8c83-1bd6b1ef6e66",
+              "Text": "A single course outcome will typically be supported by multiple module outcomes spread across several modules.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "d5e218af-3285-4888-9ae0-ad527d95380a",
+              "Text": "Recognizing this hierarchy prevents the common mistake of writing module outcomes that are identical to or completely disconnected from course outcomes.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "62704a27-abe1-4e53-b5d9-36cbe0d8c9cf",
+          "TopicId": "8c942f9e-f7f6-45b8-8505-ba6e725c460b",
+          "Title": "The Alignment Map as a Linking Tool",
+          "BodyText": "An alignment map is a structured visual or tabular tool used to make the relationships between module outcomes and course outcomes explicit and reviewable.",
+          "Notes": "A simple alignment map might be a grid with course outcomes as column headers and module outcomes listed in rows, with checkmarks or annotations showing which module outcomes feed into which course outcomes.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:39:24.8434329-04:00",
+          "ModifiedDate": "2026-07-08T19:39:24.8434329-04:00",
+          "Items": [
+            {
+              "Id": "862f917e-271e-4e28-b2d1-cba00e6dada4",
+              "Text": "Each module outcome should be entered into the map alongside the course outcome or outcomes it supports.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "98344243-867f-4e98-8390-af2a3a5e4ea5",
+              "Text": "The map makes implicit design decisions visible, allowing instructors to spot missing or redundant connections.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "42c564aa-796c-499a-9a9b-29b415208f5e",
+              "Text": "Using the map during the design phase\u2014rather than after\u2014helps ensure alignment is built in, not retrofitted.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "a3439d05-16b6-427e-973b-ff8aea3573e0",
+              "Text": "The alignment map also serves as documentation that can be shared with reviewers, accreditors, or colleagues.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "6399c3c3-90b4-4e6f-b81b-0937f9c1cfe1",
+          "TopicId": "8c942f9e-f7f6-45b8-8505-ba6e725c460b",
+          "Title": "Strategies for Establishing Clear Connections",
+          "BodyText": "Not every module outcome will map neatly to a course outcome, so learners need concrete strategies for identifying and articulating defensible links.",
+          "Notes": "A defensible connection is one where a reasonable reviewer can see how mastery of the module outcome genuinely contributes to achieving the course outcome, even if the connection is indirect.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:39:24.8434329-04:00",
+          "ModifiedDate": "2026-07-08T19:39:24.8434329-04:00",
+          "Items": [
+            {
+              "Id": "0aa68c69-86cc-4574-85b7-b349bc659f92",
+              "Text": "Start by reading each course outcome carefully and listing the knowledge, skills, or competencies a learner would need to demonstrate it.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2b5c7f89-2ce4-4572-b0dd-ae69562e9338",
+              "Text": "Write or revise module outcomes so that their verbs, content domains, and conditions logically contribute to at least one course outcome.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f6df7a60-c42b-4331-b2a0-4cf82dd4393d",
+              "Text": "Use the \u0027so that\u0027 test: ask whether completing the module outcome helps the learner achieve the course outcome and complete the sentence aloud.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "22a742b5-8222-43df-ad0d-27e566b0bd0f",
+              "Text": "When a module outcome supports more than one course outcome, document each connection in the map to avoid ambiguity.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "919d250b-283b-4f2a-b162-e903c0a335d4",
+          "TopicId": "8c942f9e-f7f6-45b8-8505-ba6e725c460b",
+          "Title": "Ensuring Cognitive Depth Matches Across Levels",
+          "BodyText": "A defensible link is not just thematic; the cognitive level of a module outcome must be appropriate relative to the course outcome it supports.",
+          "Notes": "For example, if a course outcome requires learners to \u0027evaluate competing theories,\u0027 module outcomes should progress from lower-order tasks like \u0027identify\u0027 and \u0027explain\u0027 in early modules toward higher-order tasks like \u0027compare\u0027 and \u0027critique\u0027 in later modules.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:39:24.8434329-04:00",
+          "ModifiedDate": "2026-07-08T19:39:24.8434329-04:00",
+          "Items": [
+            {
+              "Id": "0b2728da-d3f2-4916-864a-1be793669597",
+              "Text": "Check that the action verbs in module outcomes reflect cognitive levels that build logically toward the action verb in the related course outcome.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "932418a4-681e-4e1e-84ff-1458d420e783",
+              "Text": "Module outcomes earlier in a course may appropriately target lower Bloom\u0027s levels, as long as later modules escalate toward the course outcome\u0027s level.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3b0ee925-2f49-4861-b738-ebbf11977dc3",
+              "Text": "Avoid mismatches where a course outcome demands high-order thinking but no module outcome ever reaches that cognitive depth.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "ce4509cd-e58d-4198-9b77-684453ba5fa6",
+              "Text": "Consistent use of a taxonomy such as Bloom\u0027s Revised Taxonomy makes it easier to compare cognitive levels across both outcome types.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "f37e71c7-5c30-4c41-9be9-9bcd8fcb2952",
+          "TopicId": "8c942f9e-f7f6-45b8-8505-ba6e725c460b",
+          "Title": "Identifying and Resolving Gaps in the Map",
+          "BodyText": "After populating the alignment map, learners must audit it to find course outcomes that lack adequate module-level support or module outcomes that connect to nothing.",
+          "Notes": "A gap analysis at this stage is far less costly than discovering misalignment after the course has launched, when revisions affect already-produced instructional materials.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:39:24.8434329-04:00",
+          "ModifiedDate": "2026-07-08T19:39:24.8434329-04:00",
+          "Items": [
+            {
+              "Id": "08e1c0bd-80be-43ac-92e0-630df1c8596c",
+              "Text": "A course outcome with no corresponding module outcomes is a coverage gap that leaves learners without the scaffolding needed to achieve it.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2ac32d74-c23e-4418-a36e-25257633de1b",
+              "Text": "A module outcome that does not connect to any course outcome may indicate scope creep or a misaligned learning activity that should be revised or removed.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "403b73af-7034-4bba-8c38-a2e1598a07ee",
+              "Text": "Review the map column by column to confirm every course outcome is supported by at least one module outcome; PreseMaker flags only course outcomes that have no supporting module outcome.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "cf578225-ce6a-450b-8862-fd065b1e2d3a",
+              "Text": "When gaps are found, the solution may be adding a new module outcome, revising an existing one, or restructuring which module addresses a particular skill.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "eadb88d9-1e9b-4f3c-b2d4-ed50144cf104",
+          "TopicId": "8c942f9e-f7f6-45b8-8505-ba6e725c460b",
+          "Title": "Documenting and Defending Mapping Decisions",
+          "BodyText": "Clear documentation of why each module outcome links to a specific course outcome makes the course design transparent and easier to revise or defend during review processes.",
+          "Notes": "Brief rationale notes within the alignment map\u2014such as \u0027Module 3 outcome builds the analytical skill required by Course Outcome 2\u0027\u2014are often sufficient for internal and external review purposes.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:39:24.8434329-04:00",
+          "ModifiedDate": "2026-07-08T19:39:24.8434329-04:00",
+          "Items": [
+            {
+              "Id": "56a776c6-f1be-4acc-8a9a-1e4ce7d231e6",
+              "Text": "Add a brief rationale column or annotation to the alignment map explaining the logic behind each connection.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "cc5845a8-beda-4dca-9af3-7e1b5b5b2464",
+              "Text": "Documented decisions help future instructors or course revisers understand the original design intent without guessing.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "52a23a8a-2bb1-4c8e-9d6e-36ffd862e1c3",
+              "Text": "During accreditation or peer review, a well-annotated alignment map demonstrates intentional, evidence-based course design.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "916c1da6-6faf-480d-8d2a-efd47c047a54",
+              "Text": "Revisit the documentation whenever course outcomes are updated to ensure module-level links remain valid and current.",
+              "SortOrder": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "5791d1f0-eddd-4613-abdb-dbea5a848422",
+      "Title": "Identifying Gaps in Alignment",
+      "Summary": "Explains how to use the alignment map to detect missing or weak connections between module and course outcomes. Addresses what gaps signal about course coherence and how to resolve them.",
+      "SortOrder": 5,
+      "CreatedDate": "2026-07-08T19:37:17.0529884-04:00",
+      "ModifiedDate": "2026-07-08T19:37:17.0529884-04:00",
+      "Elements": [
+        {
+          "Id": "de29c8e9-4413-443b-8635-8a013053ffb5",
+          "TopicId": "5791d1f0-eddd-4613-abdb-dbea5a848422",
+          "Title": "What an Alignment Map Reveals",
+          "BodyText": "An alignment map is a visual or tabular tool that shows the explicit connections between module outcomes and course outcomes. When reviewed systematically, it makes gaps in coverage immediately visible.",
+          "Notes": "Think of the alignment map as an X-ray of your course structure \u2014 healthy connections appear clearly, while missing links show up as blank cells or orphaned outcomes.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:39:52.8764365-04:00",
+          "ModifiedDate": "2026-07-08T19:39:52.8764365-04:00",
+          "Items": [
+            {
+              "Id": "0d3fbdc9-c272-4f60-829f-339c86366c6f",
+              "Text": "Each module outcome should map to at least one course outcome; cells left blank signal a potential gap.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "393861e7-6950-45ae-a0b1-ad3e8e9f698f",
+              "Text": "Course outcomes with no contributing module outcomes indicate that the course promises something it never actually teaches.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "72539049-f10d-45e9-b5ae-804955007dc6",
+              "Text": "Reviewing the completed map as a whole reveals patterns of under-coverage or over-concentration across the course.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a15cf898-361a-47f7-963c-85ad20a9ab0b",
+          "TopicId": "5791d1f0-eddd-4613-abdb-dbea5a848422",
+          "Title": "Types of Gaps to Look For",
+          "BodyText": "Gaps in an alignment map fall into several distinct categories, each signaling a different design problem. Recognizing the type of gap guides the appropriate fix.",
+          "Notes": "A single course may contain more than one type of gap simultaneously, so it is important to audit the map for all categories rather than stopping after finding the first issue.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:39:52.8764365-04:00",
+          "ModifiedDate": "2026-07-08T19:39:52.8764365-04:00",
+          "Items": [
+            {
+              "Id": "57c18f06-9c5b-4b19-9a10-0c36ef127561",
+              "Text": "A missing connection gap occurs when a module outcome exists but links to no course outcome, meaning student effort in that module does not advance course-level goals.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2c230c31-b2df-476b-8e11-1181784218fb",
+              "Text": "An uncovered course outcome gap occurs when a course outcome is never addressed by any module, leaving a promised learning destination unreachable.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7c2b82e5-f866-427c-836a-aff51d0fed69",
+              "Text": "A weak connection gap occurs when a module outcome relates to a course outcome only loosely or tangentially, providing insufficient scaffolding for learners.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "7f4ac50a-3ddc-4a27-9770-7a2d074fef5e",
+              "Text": "A cognitive depth gap occurs when module outcomes cluster at lower Bloom\u0027s levels while the associated course outcome demands higher-order thinking.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "2eb74c84-7b1a-4a96-ae1f-828221cd5c4f",
+          "TopicId": "5791d1f0-eddd-4613-abdb-dbea5a848422",
+          "Title": "What Gaps Signal About Course Coherence",
+          "BodyText": "Gaps in the alignment map are symptoms of deeper coherence problems in the course design. They indicate that the course may not function as an integrated learning experience.",
+          "Notes": "Coherence is the quality that allows learners to sense a logical thread running through the course; gaps break that thread and can leave learners confused about what the course is actually trying to accomplish.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:39:52.8764365-04:00",
+          "ModifiedDate": "2026-07-08T19:39:52.8764365-04:00",
+          "Items": [
+            {
+              "Id": "0ff065ea-8cd0-45aa-b58b-52c5247f9e83",
+              "Text": "An uncovered course outcome signals that the course makes a promise to learners and stakeholders that the instruction does not keep.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f938a1c1-4893-4ebb-a633-6d0bcfe6a3ff",
+              "Text": "Orphaned module outcomes signal wasted instructional time \u2014 learners work toward goals that do not contribute to the course\u0027s stated purpose.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6b188829-5758-47c9-afaf-82ef112883fd",
+              "Text": "Multiple gaps concentrated in one part of the course often indicate that an entire learning strand or theme is missing from the module sequence.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "463f705c-18b0-48c4-adb4-35d4178c8268",
+          "TopicId": "5791d1f0-eddd-4613-abdb-dbea5a848422",
+          "Title": "Diagnosing the Root Cause of a Gap",
+          "BodyText": "Before resolving a gap, designers should determine whether it results from a missing module, a poorly written outcome, or a misalignment between intended and documented goals. Accurate diagnosis prevents ineffective fixes.",
+          "Notes": "",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:39:52.8764365-04:00",
+          "ModifiedDate": "2026-07-08T19:39:52.8764365-04:00",
+          "Items": [
+            {
+              "Id": "2661858c-0683-45a4-a4c6-6ea395fbf2bb",
+              "Text": "Ask whether the content addressing the course outcome actually exists in the course but was never captured in a formal module outcome \u2014 if so, the fix is rewriting the outcome, not rebuilding the module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a8faad99-4c5b-432d-849b-f53a84d1d018",
+              "Text": "Ask whether the course outcome itself is realistic given the course\u0027s scope and duration; sometimes a gap reveals an over-ambitious course outcome that should be revised.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d2477973-d62c-41f9-9340-70cde94ee39b",
+              "Text": "Check whether a module outcome is too narrowly worded to visibly connect to a broader course outcome, which is a writing problem rather than a content problem.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "930f9124-53b7-45de-a83d-5cc5a9b42acb",
+          "TopicId": "5791d1f0-eddd-4613-abdb-dbea5a848422",
+          "Title": "Strategies for Resolving Alignment Gaps",
+          "BodyText": "Once a gap is diagnosed, designers have several resolution strategies available depending on the type and root cause of the gap. The goal is to restore a clear, traceable line between module-level learning and course-level goals.",
+          "Notes": "Minor gaps are often resolved through outcome rewriting alone, while structural gaps \u2014 such as a missing learning strand \u2014 may require adding a new module or redistributing content across existing modules.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:39:52.8764365-04:00",
+          "ModifiedDate": "2026-07-08T19:39:52.8764365-04:00",
+          "Items": [
+            {
+              "Id": "6984cb77-1c74-4622-b4f3-d9f469a5baae",
+              "Text": "Rewrite an orphaned module outcome to explicitly connect its content to the relevant course outcome, using aligned action verbs and shared terminology.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1f6b51c1-5a88-40ad-9e62-e4a1107673bd",
+              "Text": "Add a new module or lesson segment to address a course outcome that currently has no contributing module outcomes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7fe151a5-cf52-4b74-b868-d3f8a977a940",
+              "Text": "Redistribute content from over-covered areas to under-covered course outcomes to balance the instructional weight across the course.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "24c4f289-6015-42ec-b81f-01c9615b8d11",
+              "Text": "Revise a course outcome that is genuinely unreachable within the course\u0027s scope, ensuring that stated goals honestly reflect what the course delivers.",
+              "SortOrder": 3
+            },
+            {
+              "Id": "409a4bb1-e941-45c4-8170-3a45324cdab4",
+              "Text": "Strengthen a weak connection by adding an assessment or activity in the relevant module that directly targets the higher-level course outcome.",
+              "SortOrder": 4
+            }
+          ]
+        },
+        {
+          "Id": "f8ce7e01-9829-4d2d-a169-ba2aed1f65fc",
+          "TopicId": "5791d1f0-eddd-4613-abdb-dbea5a848422",
+          "Title": "Verifying That Gaps Have Been Closed",
+          "BodyText": "After making revisions, designers should re-audit the alignment map to confirm that every gap has been resolved and no new gaps have been introduced. This verification step closes the design loop.",
+          "Notes": "It is common for a fix in one part of the map to inadvertently create a new imbalance elsewhere, so a full re-review rather than a spot-check is recommended.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:39:52.8764365-04:00",
+          "ModifiedDate": "2026-07-08T19:39:52.8764365-04:00",
+          "Items": [
+            {
+              "Id": "3a680e37-5dd3-46a5-855e-b02b82737fb6",
+              "Text": "Rebuild or update the alignment map to reflect all revised outcomes and confirm that every course outcome now has at least one module outcome linked to it.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7f326783-52c5-4815-945f-56c5f2da221b",
+              "Text": "Check that no module outcome has been left unlinked as a side effect of revisions made elsewhere in the course.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "62857329-cc1e-45da-820c-3e866d7e2170",
+              "Text": "Confirm that cognitive depth across linked outcomes has improved so that module outcomes now scaffold learners toward the level of thinking each course outcome requires.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "f96b2649-b67a-4960-8130-ff26f420088c",
+      "Title": "Matching Cognitive Depth Across Outcome Levels",
+      "Summary": "Examines whether the cognitive demand of module outcomes collectively meets the ambitions expressed in course-level outcomes. Introduces frameworks such as Bloom\u0027s Taxonomy as tools for auditing cognitive alignment.",
+      "SortOrder": 6,
+      "CreatedDate": "2026-07-08T19:37:17.0529884-04:00",
+      "ModifiedDate": "2026-07-08T19:37:17.0529884-04:00",
+      "Elements": [
+        {
+          "Id": "05d40fa9-6af6-4bee-ae0f-ddbaf302ddac",
+          "TopicId": "f96b2649-b67a-4960-8130-ff26f420088c",
+          "Title": "Why Cognitive Depth Must Match Across Outcome Levels",
+          "BodyText": "Course-level outcomes often express ambitious intellectual goals, such as evaluating evidence or synthesizing competing theories. If module outcomes only require students to recall or identify basic facts, a cognitive gap exists that undermines the course\u0027s stated ambitions.",
+          "Notes": "Think of cognitive depth as the \u0027ceiling\u0027 set by the course outcome and the \u0027floor\u0027 built by module outcomes. If the floor is too low, students cannot reach the ceiling by the end of the course.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:40:26.5047453-04:00",
+          "ModifiedDate": "2026-07-08T19:40:26.5047453-04:00",
+          "Items": [
+            {
+              "Id": "7fb820a0-a3c0-4545-83d3-4c3f1cac7a3a",
+              "Text": "Mismatched cognitive depth means students may complete all modules yet still lack the higher-order skills the course promises to develop.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3da3141d-fc0b-478a-9ac6-d7135a18a0dc",
+              "Text": "Auditing cognitive depth ensures instructional design integrity and protects the credibility of the credential or certificate associated with the course.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d4d2b10c-f6bd-4978-b993-42d1120d4e94",
+              "Text": "Cognitive alignment is not just about topic coverage \u2014 it is about the level of thinking required at each stage of learning.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "7fa5fb35-c7a0-4870-850c-9b4eb72e1d17",
+          "TopicId": "f96b2649-b67a-4960-8130-ff26f420088c",
+          "Title": "Introduction to Bloom\u0027s Taxonomy as an Audit Tool",
+          "BodyText": "Bloom\u0027s Taxonomy organizes cognitive skills into a hierarchical framework \u2014 from lower-order thinking (Remember, Understand) to higher-order thinking (Analyze, Evaluate, Create). It provides a shared vocabulary for comparing the cognitive demands of outcomes at different levels.",
+          "Notes": "The revised Bloom\u0027s Taxonomy (Anderson \u0026 Krathwohl, 2001) uses verb-based categories, making it especially practical for writing and auditing outcome language. Example verbs: Remember \u2014 list, recall; Understand \u2014 explain, summarize; Apply \u2014 use, demonstrate; Analyze \u2014 differentiate, examine; Evaluate \u2014 judge, defend; Create \u2014 design, construct.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:40:26.5047453-04:00",
+          "ModifiedDate": "2026-07-08T19:40:26.5047453-04:00",
+          "Items": [
+            {
+              "Id": "6334fe42-2809-4fd4-ab63-bb7a237223a3",
+              "Text": "Each level of Bloom\u0027s Taxonomy corresponds to progressively more complex cognitive demands, allowing designers to place any outcome on a common scale.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ed0fa7ca-1e56-42fa-aeed-930eadecfe77",
+              "Text": "By tagging each outcome with its Bloom\u0027s level, course designers can quickly see whether module outcomes collectively build toward the taxonomy level expressed in course outcomes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e3cf1ea6-e191-404b-9ed1-c919d1e5b1fc",
+              "Text": "Bloom\u0027s Taxonomy is widely recognized across disciplines, making it a practical and defensible framework for institutional alignment reviews.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "469fcd32-1be2-40fa-9abb-5a007a9cd95a",
+          "TopicId": "f96b2649-b67a-4960-8130-ff26f420088c",
+          "Title": "Identifying the Bloom\u0027s Level of Course-Level Outcomes",
+          "BodyText": "The first step in auditing cognitive alignment is determining the highest cognitive level demanded by each course-level outcome. This establishes the benchmark that module outcomes must collectively reach.",
+          "Notes": "For example, a course outcome stating \u0027Students will evaluate the effectiveness of public health interventions\u0027 sits at the Evaluate level. All module outcomes feeding into it should build progressively toward that level.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:40:26.5047453-04:00",
+          "ModifiedDate": "2026-07-08T19:40:26.5047453-04:00",
+          "Items": [
+            {
+              "Id": "622e1487-7b1a-471b-86e0-fbb73d49b0c7",
+              "Text": "Examine the action verbs in each course outcome and map them to the corresponding Bloom\u0027s category.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b39f9ea7-70c0-491e-85de-781ea2a7cf73",
+              "Text": "If a course outcome contains multiple verbs spanning different levels, use the highest-level verb as the benchmark.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b902ebb1-82fb-472e-a6c0-2dad64bf08fe",
+              "Text": "Document the identified Bloom\u0027s level for each course outcome before moving on to analyze module outcomes.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "749b237f-c211-4c7b-99f0-c9ac3b54526e",
+          "TopicId": "f96b2649-b67a-4960-8130-ff26f420088c",
+          "Title": "Mapping Module Outcomes to Bloom\u0027s Levels",
+          "BodyText": "Once course-level benchmarks are established, each module outcome is similarly tagged with its Bloom\u0027s level. This produces a cognitive map of the entire course that makes depth gaps immediately visible.",
+          "Notes": "A simple table or spreadsheet works well: rows represent module outcomes, columns represent the course outcomes they support, and cells note the Bloom\u0027s level assigned to each module outcome. Color-coding by taxonomy level (e.g., green for higher-order, yellow for mid-level, red for lower-order) can make patterns visible at a glance.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:40:26.5047453-04:00",
+          "ModifiedDate": "2026-07-08T19:40:26.5047453-04:00",
+          "Items": [
+            {
+              "Id": "66e32928-8dc7-450c-be99-80fd5f33bafd",
+              "Text": "Tag each module outcome with the primary Bloom\u0027s verb category it reflects, using the same taxonomy used for course outcomes.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d7245600-7cfb-4b7c-9cd8-3a7632c97f55",
+              "Text": "Group module outcomes by the course outcome they support to see whether the set of module outcomes spans an appropriate range of cognitive levels.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "0d7b5758-7a95-495d-8134-a1cbdfa2d0ea",
+              "Text": "Patterns of exclusively lower-order module outcomes signal that students are not being progressively prepared for higher-order course-level performance.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "9314091b-dedb-43a5-a490-cc08f15c0bee",
+          "TopicId": "f96b2649-b67a-4960-8130-ff26f420088c",
+          "Title": "Recognizing and Diagnosing Cognitive Gaps",
+          "BodyText": "A cognitive gap occurs when the highest Bloom\u0027s level represented across a module\u0027s outcomes falls significantly below the level required by the corresponding course outcome. Diagnosing these gaps is essential before revising content or assessments.",
+          "Notes": "Common gap patterns include: (1) all module outcomes sit at Remember/Understand while the course outcome demands Analyze; (2) a single isolated module jumps to Create without prior Apply or Analyze modules building that skill; (3) higher-order course outcomes have no supporting module outcomes at all.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:40:26.5047453-04:00",
+          "ModifiedDate": "2026-07-08T19:40:26.5047453-04:00",
+          "Items": [
+            {
+              "Id": "16d12e4b-fb36-4ad3-ad50-7ce366afeec8",
+              "Text": "Compare the highest Bloom\u0027s level of the module outcome cluster against the benchmark Bloom\u0027s level of the course outcome it feeds.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "37e3d9b2-440a-4aca-9a59-f3eb94d7e5b8",
+              "Text": "Distinguish between intentional scaffolding \u2014 where early modules are lower-order as a deliberate foundation \u2014 and unintentional gaps where higher-order levels are never reached.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "39f7898a-0128-4278-b9be-0b21266d9886",
+              "Text": "Note whether any course outcome is entirely unsupported by module outcomes, as this represents both a cognitive and coverage gap.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "aeec9345-5e0b-4eab-91dc-31e57fa348c5",
+          "TopicId": "f96b2649-b67a-4960-8130-ff26f420088c",
+          "Title": "Strategies for Closing Cognitive Depth Gaps",
+          "BodyText": "Once gaps are identified, designers can address them by revising existing module outcomes to require deeper thinking, adding new module outcomes at higher cognitive levels, or restructuring how modules sequence across the course.",
+          "Notes": "Closing a gap does not always mean making every module outcome high-order. Scaffolding is valid: early modules may legitimately operate at lower Bloom\u0027s levels if subsequent modules progressively raise the demand and culminate at the course outcome\u0027s level.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:40:26.5047453-04:00",
+          "ModifiedDate": "2026-07-08T19:40:26.5047453-04:00",
+          "Items": [
+            {
+              "Id": "db7b0550-b1d0-4999-b190-1700b46e7c07",
+              "Text": "Revise weak action verbs in module outcomes to reflect the desired cognitive level \u2014 for example, replacing \u0027identify\u0027 with \u0027differentiate\u0027 or \u0027evaluate\u0027 to raise cognitive demand.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "12e64c26-f316-4fdb-a4e9-3a186ee797e8",
+              "Text": "Add a capstone or integration module outcome explicitly designed to practice the highest-order thinking required by the course outcome.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c526751f-db52-4f34-a055-c12d2a7670ee",
+              "Text": "Ensure the sequence of module outcomes creates a logical cognitive progression so students build the skills needed for higher-order tasks before they are assessed on them.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c3220236-d8ff-4e45-97d4-7af529eb31d3",
+          "TopicId": "f96b2649-b67a-4960-8130-ff26f420088c",
+          "Title": "Using the Alignment Map to Document Cognitive Alignment",
+          "BodyText": "The alignment map serves as the living record of cognitive depth decisions across the course. Including Bloom\u0027s levels in the map transforms it from a simple linking tool into a cognitive audit document.",
+          "Notes": "Alignment maps with Bloom\u0027s annotations are particularly useful during curriculum review, accreditation processes, or when handing off a course to a new instructor, as they make the design rationale explicit and transparent.",
+          "SortOrder": 6,
+          "CreatedDate": "2026-07-08T19:40:26.5047453-04:00",
+          "ModifiedDate": "2026-07-08T19:40:26.5047453-04:00",
+          "Items": [
+            {
+              "Id": "ac0202f8-b561-46ea-9f13-d5787704a60f",
+              "Text": "Add a Bloom\u0027s level column to the alignment map for both course outcomes and module outcomes so cognitive relationships are visible alongside content relationships.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4a56aa18-6acc-4d8d-b344-111c9a035990",
+              "Text": "Use the annotated map to confirm that the aggregate cognitive demand of module outcomes rises to meet each course outcome\u0027s level by the end of the course.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6b74d271-bea7-4a17-aedb-8824f689a24b",
+              "Text": "Revisit and update the cognitive annotations in the alignment map whenever outcomes or assessments are revised to keep the audit current.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 42
+}

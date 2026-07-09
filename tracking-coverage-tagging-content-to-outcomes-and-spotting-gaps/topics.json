@@ -1,0 +1,932 @@
+{
+  "ModuleFolderName": "Tracking_Coverage_Tagging",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:40:39.9697135-04:00",
+  "ModifiedDate": "2026-07-08T19:42:46.6976405-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "5f4c122b-a186-476d-aa3a-f492605620c2",
+      "Title": "Introduction to Content Tagging",
+      "Summary": "Explains the concept of tagging generated items such as quiz questions, assignments, and activities with relevant topics and outcomes. Establishes why systematic tagging is essential for tracking instructional coverage.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:40:39.9697135-04:00",
+      "ModifiedDate": "2026-07-08T19:40:39.9697135-04:00",
+      "Elements": [
+        {
+          "Id": "30d34847-f255-41d5-bba5-7bd0581218d6",
+          "TopicId": "5f4c122b-a186-476d-aa3a-f492605620c2",
+          "Title": "What Is Content Tagging?",
+          "BodyText": "Content tagging is the practice of attaching descriptive labels to instructional items \u2014 such as quiz questions, assignments, and activities \u2014 that identify which topics or learning outcomes each item addresses.",
+          "Notes": "Think of tags as metadata: invisible labels that travel with each item and make it searchable, sortable, and reportable within a curriculum system.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:41:03.1222729-04:00",
+          "ModifiedDate": "2026-07-08T19:41:03.1222729-04:00",
+          "Items": [
+            {
+              "Id": "355118cc-5841-4e03-a8b5-913e9e966d2d",
+              "Text": "A tag connects a piece of content to one or more specific learning outcomes or subject-matter topics.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f65314dc-d5c9-4a9e-8815-926e320bff98",
+              "Text": "Tags can be applied to any generated item, including multiple-choice questions, short-answer questions, assignments, or interactive activities.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c87827f3-0d02-4dec-aab9-eab244e405fb",
+              "Text": "Tagging is distinct from simply organizing content into folders; it creates explicit, queryable relationships between content and outcomes.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "f5f40092-89ca-4ed8-b159-f70e74cde59b",
+              "Text": "A single item can carry multiple tags if it addresses more than one outcome simultaneously.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "4f6f5f6b-74d7-4fc2-8091-021d1416adae",
+          "TopicId": "5f4c122b-a186-476d-aa3a-f492605620c2",
+          "Title": "The Purpose of Systematic Tagging",
+          "BodyText": "Systematic tagging transforms a collection of individual instructional items into a structured, analyzable map of instructional coverage, making it possible to see exactly which outcomes are addressed and how often.",
+          "Notes": "Without systematic tagging, identifying gaps requires manually reviewing every item \u2014 a time-consuming and error-prone process that becomes impractical as course content grows.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:41:03.1222729-04:00",
+          "ModifiedDate": "2026-07-08T19:41:03.1222729-04:00",
+          "Items": [
+            {
+              "Id": "7fecdcc9-a450-4aa7-a4ed-c0faed5ab4dd",
+              "Text": "Systematic tagging means applying tags consistently and completely across all generated items, not just selectively.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4ace93e0-7aaa-4f74-96a6-fbe1df6b5c5a",
+              "Text": "Consistent tagging enables automated reporting that shows coverage distribution at a glance.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "29286f87-0d3c-428d-be6c-f920100d6f6d",
+              "Text": "It supports accountability by creating an auditable record of which outcomes have been taught and assessed.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "12fd197a-b9a5-4174-b85a-33b273e11d15",
+              "Text": "Systematic tagging also facilitates reuse: tagged items can be retrieved later to fill specific outcome gaps.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "f0eebaf9-9113-41a2-a2d0-e23641d8184b",
+          "TopicId": "5f4c122b-a186-476d-aa3a-f492605620c2",
+          "Title": "Types of Items That Receive Tags",
+          "BodyText": "Tagging applies to the generated item types PreseMaker can produce (quiz questions, assignments, and interactive activities), so each is accounted for in the coverage picture.",
+          "Notes": "Covering multiple item types matters because some outcomes are best assessed through quiz questions, others through assignments, and others through interactive activities.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:41:03.1222729-04:00",
+          "ModifiedDate": "2026-07-08T19:41:03.1222729-04:00",
+          "Items": [
+            {
+              "Id": "6e4af404-916c-448f-9c3e-d51d1a267f76",
+              "Text": "Quiz questions \u2014 including multiple-choice, short-answer, and true/false \u2014 are tagged to reflect the specific outcome each question assesses.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4fe246cb-1da1-4b30-968e-e61b5aecffb6",
+              "Text": "Assignments are tagged to show which broader outcomes or competencies they develop.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "782c10a9-e38d-45d4-8c3a-01acb3be3a00",
+              "Text": "Interactive activities receive tags to capture the outcomes they support, even when no formal grade is assigned.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "024f26ed-8e67-41de-b056-3c257a1ef61e",
+              "Text": "Tagging quiz questions, assignments, and activities ensures each contributes to the overall coverage picture.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "7afc95b5-83b1-460e-a03f-89d2fb9d3730",
+          "TopicId": "5f4c122b-a186-476d-aa3a-f492605620c2",
+          "Title": "Outcomes and Topics as Tag Targets",
+          "BodyText": "Tags are anchored to defined reference points \u2014 typically the stated learning outcomes or topic headings established during course planning \u2014 ensuring that tagging is meaningful and consistent.",
+          "Notes": "Using the official course outcomes or a standardized topic list as the tag vocabulary prevents inconsistent labeling and makes cross-course comparisons possible.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:41:03.1222729-04:00",
+          "ModifiedDate": "2026-07-08T19:41:03.1222729-04:00",
+          "Items": [
+            {
+              "Id": "88097cf6-cbc7-474e-9384-744adba31002",
+              "Text": "Learning outcomes are precise statements of what learners should know or be able to do; tagging to outcomes links content directly to those expectations.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "51db81e5-0f41-4036-80a8-2b4694cba6f0",
+              "Text": "Topics provide a broader organizational layer and are useful when multiple outcomes fall under the same subject-matter area.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "30248590-0fd2-4e1c-9877-fe46c0f965a4",
+              "Text": "Tags should reference the same outcome language used in the syllabus or curriculum framework to maintain alignment.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "0a2a72c2-acd2-4097-aad1-ac9ea6cefba0",
+              "Text": "Hierarchical tagging \u2014 topic first, then specific outcome \u2014 allows reporting at both the broad and granular levels.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "ad997394-361a-45b3-b335-03318819a7cd",
+          "TopicId": "5f4c122b-a186-476d-aa3a-f492605620c2",
+          "Title": "Tagging as the Foundation for Coverage Tracking",
+          "BodyText": "Content tagging is the essential first step that makes coverage tracking possible; without tags, there is no structured data from which to generate a coverage view or identify gaps.",
+          "Notes": "The coverage report, gap analysis, and alignment verification processes explored later in this module all depend entirely on the quality and completeness of the tagging performed at this stage.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:41:03.1222729-04:00",
+          "ModifiedDate": "2026-07-08T19:41:03.1222729-04:00",
+          "Items": [
+            {
+              "Id": "cd3374da-a2c1-432f-b9bf-e0edcb13f56f",
+              "Text": "A coverage view is generated by aggregating all tags across all items to show which outcomes appear, and how frequently.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "93827714-f0fc-449b-a628-b1db3b94cac4",
+              "Text": "Outcomes that appear on no tags are immediately visible as gaps requiring additional content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "41ed1332-5e71-4cb9-8e87-0bb51a30df7a",
+              "Text": "The reliability of any gap analysis is directly proportional to how thoroughly and accurately items have been tagged.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "1a310374-ab5f-48e3-ba1a-6265dcbec6aa",
+              "Text": "Establishing a tagging habit during content creation \u2014 rather than retroactively \u2014 keeps the coverage picture accurate in real time.",
+              "SortOrder": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "681772a7-fd2c-476a-a7a0-6a3bcc1c9af4",
+      "Title": "How Generated Items Are Tagged to Outcomes",
+      "Summary": "Explores the process by which AI-generated or instructor-created content items are mapped to specific learning outcomes. Covers the mechanics of assigning tags and maintaining consistency across different content types.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:40:39.9697135-04:00",
+      "ModifiedDate": "2026-07-08T19:40:39.9697135-04:00",
+      "Elements": [
+        {
+          "Id": "77952243-5d0b-4e24-b701-1eed34dc33d4",
+          "TopicId": "681772a7-fd2c-476a-a7a0-6a3bcc1c9af4",
+          "Title": "What Tagging Means in the Context of Learning Outcomes",
+          "BodyText": "Tagging is the process of attaching one or more learning outcome labels to a content item so the system knows what that item is intended to measure or support.",
+          "Notes": "Think of a tag as a metadata label \u2014 for example, a quiz question about photosynthesis might be tagged to the outcome \u0027Explain the light-dependent reactions of photosynthesis.\u0027",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:41:31.300427-04:00",
+          "ModifiedDate": "2026-07-08T19:41:31.300427-04:00",
+          "Items": [
+            {
+              "Id": "24e9d7e8-d497-4e5b-8e14-0279a1201364",
+              "Text": "Each content item \u2014 quiz question, assignment, or activity \u2014 can carry one or more outcome tags.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ef9a17d7-d5a0-452d-9681-b734097a9952",
+              "Text": "Tags create a traceable link between instructional materials and the course objectives they serve.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "326ffd4e-427c-4eb7-8795-e718184572a6",
+              "Text": "Without tagging, it is impossible to determine programmatically which outcomes have been addressed and which have not.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "5aa7c984-dcac-44d2-9364-33d6480d3644",
+          "TopicId": "681772a7-fd2c-476a-a7a0-6a3bcc1c9af4",
+          "Title": "How AI-Generated Items Receive Outcome Tags",
+          "BodyText": "When an AI tool generates a quiz question or activity, it typically assigns outcome tags automatically based on the prompt context or the outcome the instructor selected before generation.",
+          "Notes": "For example, if you select an outcome in the Content Source Selector before generating, the resulting item is pre-tagged to that outcome without manual input.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:41:31.300427-04:00",
+          "ModifiedDate": "2026-07-08T19:41:31.300427-04:00",
+          "Items": [
+            {
+              "Id": "bb6274bb-b2bf-4bb2-aee1-62cf9285ed12",
+              "Text": "AI generation is usually initiated within the scope of a specific outcome, so the tag is inherited from that selection.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f75afd89-9fc9-4c32-af8f-dba3b4df74d0",
+              "Text": "Selecting more than one outcome before generating tags the item to each of those outcomes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d04cf699-b8d6-4e5f-b4b7-d240ccb3da01",
+              "Text": "Auto-assigned tags should be reviewed by the instructor to confirm accuracy before the item is published.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "185d98ba-411a-42ea-8a16-84b3eea9a78e",
+          "TopicId": "681772a7-fd2c-476a-a7a0-6a3bcc1c9af4",
+          "Title": "How Instructor-Created Items Are Tagged",
+          "BodyText": "Items created manually by instructors must be tagged through a deliberate assignment step, typically by selecting relevant outcomes from a predefined list in the authoring interface.",
+          "Notes": "In PreseMaker you set an item\u0027s outcomes from the Content Source Selector when you generate it, and you can review or change those tags afterward from the Module Index.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:41:31.300427-04:00",
+          "ModifiedDate": "2026-07-08T19:41:31.300427-04:00",
+          "Items": [
+            {
+              "Id": "57ed776a-c07a-4d3b-a15e-2ff8e59ddd58",
+              "Text": "Instructors select one or more outcomes from the course outcome list when creating or uploading a content item.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "991b488f-f76f-44ac-8f89-a843b44a27b0",
+              "Text": "You can review or change an item\u0027s outcome tags afterward from the Module Index.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "99a4c21d-c7c0-4d2a-abde-36eb711390bd",
+              "Text": "Clear naming conventions for outcomes make it easier for instructors to choose the correct tag during manual creation.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "e55477c3-662a-4a2d-a464-e5e58056ac4c",
+          "TopicId": "681772a7-fd2c-476a-a7a0-6a3bcc1c9af4",
+          "Title": "Maintaining Tag Consistency Across Content Types",
+          "BodyText": "A course may include quizzes, assignments, discussions, and multimedia activities, and tags must follow a consistent schema across all of these types to produce a reliable coverage picture.",
+          "Notes": "Inconsistent tagging \u2014 such as using \u0027Outcome 2\u0027 for one item type and \u0027LO2\u0027 for another \u2014 can cause the coverage report to treat them as different outcomes and misrepresent actual coverage.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:41:31.300427-04:00",
+          "ModifiedDate": "2026-07-08T19:41:31.300427-04:00",
+          "Items": [
+            {
+              "Id": "aa9201fb-b5ed-4c52-8ca8-4c7f033d55b7",
+              "Text": "All content types should draw from the same master list of outcome identifiers rather than using free-form labels.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b976a64c-d686-444a-9fc6-46e597d843b6",
+              "Text": "Standardizing tag names and codes at the start of course design prevents reconciliation problems later.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "cc5ebe78-48fe-4200-8ddc-d1ff0390d8e2",
+              "Text": "Periodic audits of the tag library help catch duplicates, synonyms, or outdated outcome references.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "26cf4603-3116-4f97-8def-f429f66e799c",
+          "TopicId": "681772a7-fd2c-476a-a7a0-6a3bcc1c9af4",
+          "Title": "One-to-Many and Many-to-One Tag Relationships",
+          "BodyText": "A single content item can be tagged to multiple outcomes, and a single outcome can be addressed by many different items, creating a flexible many-to-many mapping.",
+          "Notes": "A case-study assignment might legitimately address three separate outcomes simultaneously, while a foundational outcome like \u0027Define key terminology\u0027 might be reinforced by dozens of quiz questions.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:41:31.300427-04:00",
+          "ModifiedDate": "2026-07-08T19:41:31.300427-04:00",
+          "Items": [
+            {
+              "Id": "65bdb33b-6458-4c86-97b0-40aa9b917e9b",
+              "Text": "One-to-many tagging (one item, multiple outcomes) is appropriate when an item genuinely integrates several skills.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6c5dcafb-1058-479a-8b03-51ce2e955911",
+              "Text": "Many-to-one tagging (many items, one outcome) helps build redundancy and depth of assessment for critical objectives.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4e334b99-7bcc-469c-b137-279f663fb37e",
+              "Text": "Overusing one-to-many tags can dilute coverage data; each tag should reflect a real and meaningful alignment.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f49f4b18-3d3f-4f4f-a36f-ad7cead722dd",
+          "TopicId": "681772a7-fd2c-476a-a7a0-6a3bcc1c9af4",
+          "Title": "Reviewing and Editing Tags After Generation",
+          "BodyText": "After items are generated or created, instructors should review assigned tags to verify accuracy and make corrections before the items are included in coverage calculations.",
+          "Notes": "A quick review step \u2014 even a simple confirm-or-edit dialog \u2014 significantly improves the reliability of downstream coverage reports.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:41:31.300427-04:00",
+          "ModifiedDate": "2026-07-08T19:41:31.300427-04:00",
+          "Items": [
+            {
+              "Id": "2af27d06-aaa4-4fb8-9c31-60b61e2a7256",
+              "Text": "Tag review should be a standard step in the content approval workflow, not an optional afterthought.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "670d35c6-f6f3-43d2-8ab3-765dcedc8445",
+              "Text": "Instructors can remove incorrect tags, add missing ones, or reassign an item to a more precise outcome.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7ea5c813-84a2-4a35-8276-5a08628f4a8c",
+              "Text": "Keeping a change log of tag edits helps teams understand how the coverage map evolved over time.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "1b1e8f28-7219-4016-8d00-eb1200660e57",
+          "TopicId": "681772a7-fd2c-476a-a7a0-6a3bcc1c9af4",
+          "Title": "How Tags Feed Into the Coverage View",
+          "BodyText": "Once items are tagged, the system aggregates all tags across the course to produce a coverage map showing which outcomes have associated items and how many.",
+          "Notes": "The coverage view is only as accurate as the tags themselves \u2014 well-maintained tags produce trustworthy gap analysis, while sloppy tagging produces misleading reports.",
+          "SortOrder": 6,
+          "CreatedDate": "2026-07-08T19:41:31.300427-04:00",
+          "ModifiedDate": "2026-07-08T19:41:31.300427-04:00",
+          "Items": [
+            {
+              "Id": "a7b4de5d-dc7c-43b1-b720-b099d8f066f0",
+              "Text": "The coverage report counts, groups, and displays items by their outcome tags, revealing distribution at a glance.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "373469b2-1885-4a72-b29a-f0939a07eb42",
+              "Text": "Outcomes with zero tagged items appear as uncovered gaps requiring new or repurposed content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "efb0e7ba-c2de-4652-aaa9-39ea30908300",
+              "Text": "Instructors can drill down from the coverage view into individual tagged items to inspect quality, not just quantity.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "05808a27-cbd5-4562-8fac-1c26012c9b52",
+      "Title": "Building and Reading a Coverage View",
+      "Summary": "Describes how tagged content aggregates into a coverage view that shows which outcomes are addressed. Learners practice interpreting this view to understand the overall state of their course coverage.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:40:39.9697135-04:00",
+      "ModifiedDate": "2026-07-08T19:40:39.9697135-04:00",
+      "Elements": [
+        {
+          "Id": "72ceb13a-a789-42f6-b9e6-001283105656",
+          "TopicId": "05808a27-cbd5-4562-8fac-1c26012c9b52",
+          "Title": "What a Coverage View Is",
+          "BodyText": "A coverage view lists your learning outcomes and shows, for each one, whether an associated quiz question, assignment, or activity exists.",
+          "Notes": "Think of it as a checklist of your outcomes annotated with what covers each one: a snapshot of which materials exist, not a record of how learners performed.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:41:59.3101375-04:00",
+          "ModifiedDate": "2026-07-08T19:41:59.3101375-04:00",
+          "Items": [
+            {
+              "Id": "41c03447-3f10-442d-b50b-f721b69de17d",
+              "Text": "For each outcome, the view shows whether it is addressed by a quiz question, an assignment, or an activity.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "cc20f759-b744-4e73-864f-9ef47cbbe76a",
+              "Text": "The view is generated automatically once content items carry outcome tags, making it a live reflection of the current state of the course.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5a284e51-b4de-4498-b9ef-ce705212325b",
+              "Text": "The view reflects the current state of the module and updates as you generate or tag more items.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "df1e7c31-0e1d-44ab-a9a0-e4e9281382f0",
+          "TopicId": "05808a27-cbd5-4562-8fac-1c26012c9b52",
+          "Title": "How Tagged Content Aggregates into the Report",
+          "BodyText": "As individual content items are tagged to outcomes, those tags are collected and summarized to populate the coverage view.",
+          "Notes": "For example, tagging three quiz questions to Outcome B makes Outcome B show a count of three associated quiz questions.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:41:59.3101375-04:00",
+          "ModifiedDate": "2026-07-08T19:41:59.3101375-04:00",
+          "Items": [
+            {
+              "Id": "0d8d7440-5e11-4489-865d-88d2ddb84009",
+              "Text": "Each tag on a content item associates it with an outcome, so that outcome shows the item as covering it.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "220eb815-96d9-4419-b5e0-54fa6a3a04e4",
+              "Text": "A single item tagged to more than one outcome contributes to each of those outcomes simultaneously.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "cb4d94a8-4939-4cde-bdc4-c737a594fc84",
+              "Text": "The aggregation process means that adding or removing a tag immediately changes what the coverage view displays.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "ec7cf1a0-9686-4f54-bd2a-33d356ba9028",
+          "TopicId": "05808a27-cbd5-4562-8fac-1c26012c9b52",
+          "Title": "Reading the Coverage View",
+          "BodyText": "Interpreting the coverage view means checking, for each outcome, whether it has an associated quiz question, assignment, or activity.",
+          "Notes": "An outcome with several associated items is well supported; an outcome with none is a gap to fill.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:41:59.3101375-04:00",
+          "ModifiedDate": "2026-07-08T19:41:59.3101375-04:00",
+          "Items": [
+            {
+              "Id": "ee4f8567-dcfc-4e93-b080-746a85673f90",
+              "Text": "The view is organized by learning outcome, showing the associated quiz questions, assignments, and activities for each.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f9ee772d-68b4-4c84-89fc-64f8fd31503f",
+              "Text": "A count next to an outcome confirms that at least one item (a quiz question, assignment, or activity) addresses it.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "afeb8ef5-ab17-421d-8e2f-844c598a6c4c",
+              "Text": "Looking at one outcome reveals how much material addresses it across quizzes, assignments, and activities.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "7493a51e-0480-4142-a855-4f0b662f6e4d",
+              "Text": "Scanning the list reveals which outcomes still have no associated items.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "5a2ad56c-2600-4eea-ac49-14c0f2f3d2ea",
+          "TopicId": "05808a27-cbd5-4562-8fac-1c26012c9b52",
+          "Title": "Interpreting Coverage Density and Depth",
+          "BodyText": "Beyond presence or absence, the coverage view communicates how much coverage each outcome receives, allowing learners to judge whether coverage is shallow or robust.",
+          "Notes": "An outcome tagged by only one low-stakes item may technically appear covered but lacks the depth needed for learners to truly master it.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:41:59.3101375-04:00",
+          "ModifiedDate": "2026-07-08T19:41:59.3101375-04:00",
+          "Items": [
+            {
+              "Id": "f001cce0-883e-4135-9197-80b4661e7e06",
+              "Text": "Coverage density refers to the number of items tagged to an outcome; higher counts generally indicate more reinforcement opportunities.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "46f67786-a1f3-4ee0-8a47-08a138943865",
+              "Text": "Coverage depth considers the variety and cognitive level of tagged items, not just their quantity.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d95a11e1-63b3-4ea4-93f1-36c1fbb5ecbb",
+              "Text": "Distinguishing between a single mention in one activity versus repeated assessment across multiple item types helps prioritize where to add content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "0356a739-b954-4e30-a4bf-4acf2c9cb590",
+          "TopicId": "05808a27-cbd5-4562-8fac-1c26012c9b52",
+          "Title": "Spotting Well-Covered Outcomes",
+          "BodyText": "Recognizing outcomes that are sufficiently covered is as important as finding gaps, because it confirms which parts of the course are already aligned.",
+          "Notes": "Well-covered outcomes often have several associated items across quiz questions, assignments, and activities, indicating the material is addressed and assessed in multiple ways.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:41:59.3101375-04:00",
+          "ModifiedDate": "2026-07-08T19:41:59.3101375-04:00",
+          "Items": [
+            {
+              "Id": "47ef55ca-3090-4bd6-a74b-d154ad86d585",
+              "Text": "An outcome is generally well-covered when it appears in multiple content categories and at varying points in the course sequence.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "63314bcf-8aa4-4ccc-9c41-11b64e7f1a5d",
+              "Text": "Seeing consistent tagging across early, middle, and late course items suggests appropriate scaffolding toward the outcome.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "742a9078-1d19-4d9f-9d09-5741e149b44d",
+              "Text": "Confirming well-covered outcomes allows designers to focus revision effort where it is truly needed rather than over-building already strong areas.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "01f5e8e9-a439-4d9d-b56c-676956e9916d",
+          "TopicId": "05808a27-cbd5-4562-8fac-1c26012c9b52",
+          "Title": "Identifying Under-Covered or Uncovered Outcomes",
+          "BodyText": "The primary diagnostic use of a coverage view is locating outcomes that appear infrequently or not at all across the tagged content.",
+          "Notes": "An outcome with no associated items is the clearest signal of a gap: it was planned but no content item has been tagged to support or assess it.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:41:59.3101375-04:00",
+          "ModifiedDate": "2026-07-08T19:41:59.3101375-04:00",
+          "Items": [
+            {
+              "Id": "513e1a1d-781c-47c7-8d5a-ac3f43300ede",
+              "Text": "Outcomes with no associated items of any type have no tagged content and represent complete gaps that must be addressed.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "87b74011-0e5a-4586-b846-ff49c64d3a0f",
+              "Text": "Outcomes that appear in only one content category may be partially covered but lack assessment or practice reinforcement.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "18e295d9-5969-4d06-b533-6c115538be06",
+              "Text": "An outcome that has activities or assignments but no quiz questions can indicate it is taught or practiced but not formally assessed.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "0263098e-24c9-4992-893c-d07c16d7fa0b",
+          "TopicId": "05808a27-cbd5-4562-8fac-1c26012c9b52",
+          "Title": "Using the Coverage View as an Ongoing Planning Tool",
+          "BodyText": "The coverage view is not a one-time report but a dynamic reference that should be revisited as content is added, revised, or removed throughout course development.",
+          "Notes": "Revisiting the coverage view after each major content-creation session helps teams catch gaps early rather than discovering them during final review.",
+          "SortOrder": 6,
+          "CreatedDate": "2026-07-08T19:41:59.3101375-04:00",
+          "ModifiedDate": "2026-07-08T19:41:59.3101375-04:00",
+          "Items": [
+            {
+              "Id": "2d2e77e1-24c1-46dc-886e-a4c75902450f",
+              "Text": "Checking the coverage view after adding new items confirms that tags were applied correctly and the view updated as expected.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "69ba023e-c7e4-43aa-aa29-b6708aa94a6e",
+              "Text": "Teams can use the coverage view during planning meetings to assign authoring tasks based on which outcomes still need content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f2e1a1ff-ff78-4d1f-8d76-89a895a74b68",
+              "Text": "Comparing coverage views across course revisions over time can show whether alignment is improving or new gaps are being introduced.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "20072d01-ea78-440c-90f0-3bcd29f1ec55",
+      "Title": "Identifying Gaps in Coverage",
+      "Summary": "Focuses on analyzing the coverage report to spot outcomes that lack sufficient or any associated materials. Introduces strategies for recognizing patterns of under-coverage across topics and assessment types.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:40:39.9697135-04:00",
+      "ModifiedDate": "2026-07-08T19:40:39.9697135-04:00",
+      "Elements": [
+        {
+          "Id": "4f6a0020-c417-4f86-bde3-fb81db354fae",
+          "TopicId": "20072d01-ea78-440c-90f0-3bcd29f1ec55",
+          "Title": "Reading the Coverage Report",
+          "BodyText": "A coverage report maps each learning outcome to the content items tagged against it, giving a visual summary of what is and is not yet addressed.",
+          "Notes": "A coverage report lists each outcome with a count of its associated items \u2014 an outcome with zero associated quiz questions, assignments, or activities is a gap, while an outcome with several is well covered.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:42:23.8490055-04:00",
+          "ModifiedDate": "2026-07-08T19:42:23.8490055-04:00",
+          "Items": [
+            {
+              "Id": "2b59f4ca-efea-4d28-9854-0ef316b54557",
+              "Text": "Locate each outcome in the report and check the count of associated items such as quiz questions, assignments, and activities.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d8bf46d1-6c94-48e7-9681-62e1b6006620",
+              "Text": "An outcome showing zero or very low counts signals an immediate gap requiring attention.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e84cb63e-a54f-4280-b533-21fa2b785c61",
+              "Text": "Distinguish between outcomes that have items tagged to them versus outcomes that have been assessed in a variety of formats.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f99bfb52-f3e0-402d-8267-d0dc034f65c1",
+          "TopicId": "20072d01-ea78-440c-90f0-3bcd29f1ec55",
+          "Title": "Recognizing Completely Unaddressed Outcomes",
+          "BodyText": "Some outcomes may have no content items tagged to them at all, representing the most critical type of gap in coverage.",
+          "Notes": "An unaddressed outcome is different from an under-addressed one \u2014 it means learners have had no opportunity to engage with or be assessed on that outcome at any point in the module.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:42:23.8490055-04:00",
+          "ModifiedDate": "2026-07-08T19:42:23.8490055-04:00",
+          "Items": [
+            {
+              "Id": "71304f04-4140-4083-b074-b83110531276",
+              "Text": "Scan the report specifically for outcomes with a zero count across all content types.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1a7679f6-8368-4627-a0b1-ff7ae3a2a435",
+              "Text": "Prioritize these outcomes first when planning new or remedial content creation.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f2542a23-2086-4463-830d-ff1aa73ba4ad",
+              "Text": "Document unaddressed outcomes separately so they can be tracked until materials are created and tagged.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "326ec911-b927-4dac-8a3f-08d5796320a5",
+          "TopicId": "20072d01-ea78-440c-90f0-3bcd29f1ec55",
+          "Title": "Spotting Under-Coverage Patterns",
+          "BodyText": "Under-coverage occurs when an outcome has some associated items but not enough to adequately support learning or assessment, often revealing systemic patterns across related topics.",
+          "Notes": "For example, a cluster of outcomes tied to a single module section may all show low counts, suggesting that section was not fully developed during content creation.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:42:23.8490055-04:00",
+          "ModifiedDate": "2026-07-08T19:42:23.8490055-04:00",
+          "Items": [
+            {
+              "Id": "92c83aa3-35e0-47f2-8a3f-cb05d15d7984",
+              "Text": "Look for groups of related outcomes that consistently show low item counts rather than treating each gap in isolation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "94b6ff68-ff68-4b00-8a2a-2e29e1dad3af",
+              "Text": "Compare item counts across similar outcomes to establish a baseline for what \u0027sufficient\u0027 coverage looks like in your context.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1200222c-35ff-4e9c-9a31-f5539a0c3914",
+              "Text": "A pattern of under-coverage across an entire topic area may indicate a planning or authoring oversight rather than a one-off omission.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6d072a35-b975-48dd-b4e4-ebaf78d6663a",
+          "TopicId": "20072d01-ea78-440c-90f0-3bcd29f1ec55",
+          "Title": "Analyzing Gaps by Assessment Type",
+          "BodyText": "Gaps in coverage can occur not just by outcome but also by content type \u2014 an outcome may be addressed in reading materials but never in a quiz or graded assignment.",
+          "Notes": "Reviewing coverage by assessment type ensures that learners not only encounter an outcome but are also formally evaluated on it, which is critical for alignment between instruction and assessment.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:42:23.8490055-04:00",
+          "ModifiedDate": "2026-07-08T19:42:23.8490055-04:00",
+          "Items": [
+            {
+              "Id": "b7d03f1e-3732-4f98-8e50-b6231f5e3835",
+              "Text": "Review the coverage report by item type \u2014 quiz questions, assignments, and interactive activities \u2014 to check each outcome across all of them.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "49db39a7-b7e9-4794-bf0d-e1b437e1a730",
+              "Text": "Identify outcomes that appear only in one content type, as single-format coverage may not provide enough reinforcement or assessment depth.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "cd9cb718-0afa-4a43-8496-f9d820129cef",
+              "Text": "Aim for outcomes to appear in at least both instructional content and at least one assessment item to close the teaching-to-assessment loop.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "09b9b2e3-dfee-43d6-85b8-76ea910eba05",
+          "TopicId": "20072d01-ea78-440c-90f0-3bcd29f1ec55",
+          "Title": "Prioritizing Which Gaps to Address First",
+          "BodyText": "Not all gaps carry equal instructional risk; prioritizing them by importance and how central each outcome is helps focus remediation efforts efficiently.",
+          "Notes": "High-stakes outcomes \u2014 those tied to final exams or certification criteria \u2014 should be addressed before lower-stakes gaps, even if the lower-stakes gaps are more numerous.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:42:23.8490055-04:00",
+          "ModifiedDate": "2026-07-08T19:42:23.8490055-04:00",
+          "Items": [
+            {
+              "Id": "10e96a92-d3c0-48fe-b87d-353c37f78e0c",
+              "Text": "Rank gaps by the weight or importance of the outcome within the overall learning design.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b8ecb947-e44c-4243-adc5-c4f10e9306f8",
+              "Text": "Consider how soon learners will be assessed on the outcome when deciding urgency \u2014 gaps near upcoming assessments require faster resolution.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "53267813-fc44-4a31-9139-14e2667b2cc7",
+              "Text": "Use a simple priority ranking that labels gaps as critical, moderate, or low to organize the remediation workflow.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "62086b85-ab1e-49ca-a5b7-79eedda88aae",
+          "TopicId": "20072d01-ea78-440c-90f0-3bcd29f1ec55",
+          "Title": "Documenting and Communicating Coverage Gaps",
+          "BodyText": "Recording identified gaps in a structured format allows teams to track remediation progress and ensures nothing is overlooked as content is updated.",
+          "Notes": "A shared gap log or tracker \u2014 even a simple spreadsheet listing the outcome, gap type, priority level, and assigned owner \u2014 can prevent gaps from being rediscovered repeatedly.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:42:23.8490055-04:00",
+          "ModifiedDate": "2026-07-08T19:42:23.8490055-04:00",
+          "Items": [
+            {
+              "Id": "2cf96cee-6eac-4178-a33f-78b111723577",
+              "Text": "Create a gap log that records each identified outcome, the type of gap, its priority, and the action needed to resolve it.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ba413771-3fcf-42bb-974d-726348167bca",
+              "Text": "Assign ownership for each gap so that a specific person is responsible for creating or tagging the missing content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9af817c0-301c-4a50-b686-4e566709d1de",
+              "Text": "Review the gap log at regular intervals and update the coverage report after new items are tagged to confirm the gap has been closed.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "3bba8308-4aef-4547-9c5e-0e3995720588",
+      "Title": "Closing the Loop Between Planning, Teaching, and Assessment",
+      "Summary": "Demonstrates how coverage tracking connects curriculum planning, instructional delivery, and assessment design into a continuous improvement cycle. Learners explore how identified gaps inform decisions about creating or revising content.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:40:39.9697135-04:00",
+      "ModifiedDate": "2026-07-08T19:40:39.9697135-04:00",
+      "Elements": [
+        {
+          "Id": "7ce3c4fe-d0c6-4320-a627-d08499a04eea",
+          "TopicId": "3bba8308-4aef-4547-9c5e-0e3995720588",
+          "Title": "The Three-Part Curriculum Loop",
+          "BodyText": "Effective curriculum design connects planning, teaching, and assessment as a continuous, interdependent cycle rather than three separate phases.",
+          "Notes": "When one phase is updated\u2014such as revising a learning outcome\u2014the other phases must be reviewed and realigned to maintain coherence.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:42:46.6975878-04:00",
+          "ModifiedDate": "2026-07-08T19:42:46.6975878-04:00",
+          "Items": [
+            {
+              "Id": "7c7d03d2-38c7-4081-9ee4-a3e29572ebd2",
+              "Text": "Planning establishes intended outcomes and maps the scope of content to be covered.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4ffaf459-7bbe-4dd0-9496-bce9b93ada1a",
+              "Text": "Teaching delivers that content through instructional materials, activities, and explanations.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a2f9b96e-85f4-4fbe-a005-eb83a3ce7a5d",
+              "Text": "Assessment measures whether learners have achieved the intended outcomes, generating data that feeds back into planning.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "b12a2403-04cd-4a91-9154-63ce9249567b",
+              "Text": "Coverage tracking is the mechanism that makes relationships among these three phases visible and actionable.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "4aeef8b4-65d3-4f28-bcbb-cda657db5ad7",
+          "TopicId": "3bba8308-4aef-4547-9c5e-0e3995720588",
+          "Title": "How Coverage Reports Reveal the Current State of Alignment",
+          "BodyText": "A coverage report provides a snapshot of which outcomes are supported by existing content and assessments, and which are not yet addressed.",
+          "Notes": "For example, a report might show that five quiz questions address a recall-level outcome while a higher-order application outcome has no associated items at all.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:42:46.6975878-04:00",
+          "ModifiedDate": "2026-07-08T19:42:46.6975878-04:00",
+          "Items": [
+            {
+              "Id": "5352badc-7b99-4533-9e29-30368a15570e",
+              "Text": "Coverage reports map tagged content items to their corresponding outcomes, making alignment explicit rather than assumed.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6ad8fa0b-09b7-42b2-8647-ecd483f8251a",
+              "Text": "Outcomes with no tagged items are immediate signals that instructional or assessment materials still need to be created.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "34c9cc28-465f-4f8c-9fc8-f3a76e5f5558",
+              "Text": "Outcomes addressed only by low-complexity items may indicate a gap in depth even when coverage appears complete on the surface.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c3953d10-974d-4f6a-945f-4bec76df667f",
+          "TopicId": "3bba8308-4aef-4547-9c5e-0e3995720588",
+          "Title": "Interpreting Gaps as Decision Points",
+          "BodyText": "Identified gaps in coverage are not simply problems to note\u2014they are decision points that prompt specific instructional design actions.",
+          "Notes": "A gap in assessment coverage may require creating a new quiz question, while a gap in instructional content may require writing a new lesson segment or activity.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:42:46.6975878-04:00",
+          "ModifiedDate": "2026-07-08T19:42:46.6975878-04:00",
+          "Items": [
+            {
+              "Id": "d4794697-564f-4327-a88b-ff3eef852e57",
+              "Text": "A gap in instructional content signals that learners lack the material needed to achieve the outcome and that new content must be created.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a6779066-4057-4c90-9fd4-1dc88bea3963",
+              "Text": "A gap in assessment coverage signals that there is no way to measure learner achievement of that outcome and that new items must be designed.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "23b225b3-ae28-4655-9288-bd6e673e3b24",
+              "Text": "Gaps can also reveal misalignment, where content exists but was tagged to the wrong outcome and simply needs to be retagged.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "2c46d9c2-7dec-4d35-b69f-613926f507a0",
+          "TopicId": "3bba8308-4aef-4547-9c5e-0e3995720588",
+          "Title": "Creating and Revising Content to Address Gaps",
+          "BodyText": "Once gaps are identified through coverage tracking, designers make targeted decisions about whether to create new materials or revise existing ones.",
+          "Notes": "Revision is often more efficient than creation\u2014an existing activity may need only a modified prompt or a new tagging assignment to fill a coverage gap.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:42:46.6975878-04:00",
+          "ModifiedDate": "2026-07-08T19:42:46.6975878-04:00",
+          "Items": [
+            {
+              "Id": "840e79cf-0ab7-4285-979b-202ac236a11f",
+              "Text": "New content creation is warranted when an outcome has no supporting instructional materials or assessment items whatsoever.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "88ed4fd4-bd0a-4678-aee7-898cba2eca84",
+              "Text": "Revision of existing content is appropriate when materials partially address an outcome but fall short in scope, depth, or alignment.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "20e73946-45d3-4339-8331-e3dba9123753",
+              "Text": "Each new or revised item should be tagged immediately upon creation so the coverage report reflects the update in real time.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "59f300d5-0eff-4979-b557-d8161bce25c0",
+          "TopicId": "3bba8308-4aef-4547-9c5e-0e3995720588",
+          "Title": "Feeding Coverage Findings Back into Planning",
+          "BodyText": "The coverage view (which outcomes have an associated quiz question, assignment, or activity and which do not) is the evidence that informs revisions to the plan.",
+          "Notes": "PreseMaker works at authoring time and has no learner-response data, so the signal it gives you is coverage: an outcome with no assessment item is a gap to fill with a quiz question, an assignment, or an activity.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:42:46.6975878-04:00",
+          "ModifiedDate": "2026-07-08T19:42:46.6975878-04:00",
+          "Items": [
+            {
+              "Id": "7b674de8-f409-4a00-b740-8db1a40030e3",
+              "Text": "The coverage view shows which outcomes have an associated quiz question, assignment, or activity, and which have none.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3f769dd4-4cf6-4ed0-b8b9-63cb215e1ab7",
+              "Text": "An outcome that is addressed in your materials but has no assessment item is a coverage gap; add a quiz question, assignment, or activity that targets it.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "24b94fc9-26da-49ea-88a6-b191028aee64",
+              "Text": "Feeding these coverage findings back into planning completes the loop and initiates the next round of content creation.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "82554886-bf09-4c4f-9f26-5c688709af6f",
+          "TopicId": "3bba8308-4aef-4547-9c5e-0e3995720588",
+          "Title": "Maintaining the Loop as a Continuous Practice",
+          "BodyText": "Closing the loop is not a one-time event but an ongoing practice embedded into regular curriculum review and update workflows.",
+          "Notes": "Teams that review coverage reports at regular intervals\u2014such as after each unit or assessment cycle\u2014are better positioned to catch and address gaps before they affect learner outcomes.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:42:46.6975878-04:00",
+          "ModifiedDate": "2026-07-08T19:42:46.6975878-04:00",
+          "Items": [
+            {
+              "Id": "35d15397-1e27-4bae-971c-5ad79e03b3e3",
+              "Text": "Establishing a regular cadence for reviewing coverage reports prevents gaps from accumulating unnoticed over time.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d76ea393-ee9d-4555-8f11-081de62d6eb5",
+              "Text": "Tagging new content immediately and consistently is essential so that reports remain accurate and actionable.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "81cbc4d1-7fe8-4d14-b861-7a38a25943bc",
+              "Text": "Continuous loop maintenance transforms coverage tracking from a reporting tool into a genuine driver of curriculum quality improvement.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 31
+}

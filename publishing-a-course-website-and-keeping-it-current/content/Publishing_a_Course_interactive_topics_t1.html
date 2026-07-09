@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to PreseMaker&#39;s Publish Feature</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Publishing a Course Website and Keeping It Current</a></div>
+  <header>
+    <h1>Introduction to PreseMaker&#39;s Publish Feature</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Introduction to PreseMaker&#39;s Publish Feature</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When a course is built in PreseMaker, the work of authoring individual modules and the work of making those modules available to learners are treated as two distinct phases. The publish feature bridges those phases. It is the mechanism that takes every module an author has built, draws them together, and outputs a fully navigable website that learners can browse without any additional setup or manual configuration. Understanding what the publish feature does, how it relies on each module's HTML index, and why it performs a content refresh before assembly will help authors use it confidently and avoid the most common publishing pitfalls.</p>
+
+<p>At its core, the <strong>publish feature</strong> is an automated assembly tool. When an author works on a course in PreseMaker, the modules that make up that course exist as individual units — each with its own content files, media assets, and structural data. Left in that state, the modules are not yet woven together into anything a learner could navigate. The publish feature solves this by scanning all of the modules belonging to a course, collecting their component files, and organizing everything into a structured website format. The output is a coherent site where a learner can move from one module to the next through a consistent navigation layer, without ever needing to open a file manager or type a file path.</p>
+
+<p>This automation matters because manually linking multiple modules is both tedious and error-prone. Consider a course with a dozen modules: an author who tried to build the navigation by hand would need to create and maintain links between every module's starting page, ensure that every link pointed to the correct relative path, and update all of those links whenever a module was added, removed, or renamed. A single broken path can leave a learner stranded on a page with no way forward. The publish feature removes that entire category of risk by handling the linking and arrangement programmatically, applying the same logic every time regardless of how many modules are involved.</p>
+
+<p>The published result is not simply a flat list of files dropped into a folder. The feature organizes modules into a <strong>structured website format</strong>, meaning the output respects a predictable hierarchy that browsers can render and learners can navigate. This structure is what makes the site <em>browsable</em> — learners move between modules through interface elements rather than through improvised file access, and the experience feels like a single cohesive course rather than a loose collection of documents.</p>
+
+<p>Central to how the publish feature constructs this navigable structure is the concept of each module's <strong>HTML index file</strong>. Every module in PreseMaker contributes exactly one HTML index file to the published site. This file acts as the dedicated starting page for that module — the page a learner lands on when they enter the module for the first time, and the page that the site's navigation system points to when it links to that module from elsewhere in the course.</p>
+
+<p>The publish feature treats these index files as <strong>anchor points</strong>. When it builds the site's navigation structure — the menus, breadcrumbs, or sequential controls that let learners move between modules — it uses each module's index file as the target for that module's entry. This design keeps the navigation logic simple and reliable: instead of trying to determine which of a module's many internal pages should be the entry point, the system always defers to the index. As a result, if a module's index file is missing, malformed, or saved under an unexpected name, the publish feature cannot correctly anchor that module into the navigation, and learners may find it unreachable or broken in the published site.</p>
+
+<p>This is why ensuring that <strong>each module has a properly formed HTML index</strong> is treated as a prerequisite rather than an optional detail. A properly formed index means the file exists, carries valid HTML structure, and is located where the publish feature expects to find it. Authors who rename index files, move them into subdirectories, or accidentally delete them during editing will encounter navigation gaps in the published output. Checking for a well-formed index in every module before initiating a publish is a straightforward habit that prevents a disproportionate number of post-publish problems.</p>
+
+<p>Before the publish feature assembles the site, it performs a <strong>content refresh</strong> on every module. This step is triggered automatically when publishing begins — authors do not need to run it separately. The purpose of the refresh is to ensure that the version of each module captured in the published site reflects the most recent edits, not an earlier cached or saved state.</p>
+
+<p>To understand why this matters, consider the workflow of a typical course update. An author might open a module, revise several pages, add a new activity, and save the changes. Without a refresh step, the publish process might assemble the site using a previously processed version of that module's content — one that predates the recent edits. The learner would then see the old material even though the author's working files contain the updated version. The content refresh eliminates this risk by processing each module's current state immediately before the assembly begins, so the files that go into the site are guaranteed to match what the author last saved.</p>
+
+<p>The refresh step also enforces <strong>consistency across the entire course</strong>. Because it runs against all modules at the same time — not just the ones an author remembers editing — it catches cases where a module was modified indirectly, such as when shared assets or template changes cascade across multiple modules. Authors who rely on their own memory of which modules changed may inadvertently publish a mix of old and new content; the automated refresh makes that scenario impossible by treating the entire course as a single unit to be synchronized before output.</p>
+
+<p>Taken together, the reasons for using the publish feature come down to three practical benefits. First, it <strong>consolidates multiple modules into one browsable experience</strong>. A learner who completes one module and wants to proceed to the next does not need to locate a new file or navigate to a separate URL — the site's structure handles the transition seamlessly. This reduces cognitive overhead for learners and removes the need for authors to communicate file-access instructions alongside course content.</p>
+
+<p>Second, the publish feature <strong>bundles assembly and content refresh into a single action</strong>, which compresses what would otherwise be a multi-step manual process into one operation. Authors do not need to remember to refresh before assembling, or to assemble before uploading. A single publish command handles the sequence in the correct order every time, which reduces both the time required to release a course update and the likelihood that a step will be skipped under deadline pressure.</p>
+
+<p>Third, the feature delivers a <strong>consistent output format</strong> regardless of how the course evolves over time. Whether a course grows from three modules to fifteen, or whether an author restructures the module order mid-project, the published site always conforms to the same structural template. This predictability makes the course easy to maintain: authors know what to expect from the output, and learners encounter the same navigational conventions each time they access the site. Consistent output also simplifies any downstream processes — such as hosting, accessibility review, or LMS integration — because those processes can rely on the published site always being organized the same way.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aspect of the Publish Feature</th>
+      <th>What It Does</th>
+      <th>Why It Matters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Automated assembly</td>
+      <td>Collects all module files and organizes them into a structured website</td>
+      <td>Eliminates manual linking and reduces the risk of broken navigation paths</td>
+    </tr>
+    <tr>
+      <td>HTML index anchoring</td>
+      <td>Uses each module's index file as the entry point in the site's navigation</td>
+      <td>Ensures every module is reachable and navigation targets are predictable</td>
+    </tr>
+    <tr>
+      <td>Content refresh</td>
+      <td>Processes each module's current state before assembly begins</td>
+      <td>Prevents outdated content from appearing in the published site</td>
+    </tr>
+    <tr>
+      <td>Consistent output format</td>
+      <td>Produces the same structural template regardless of course size or changes</td>
+      <td>Makes the site predictable to maintain and compatible with downstream processes</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In practice, authors who understand these four aspects of the publish feature — what it assembles, how it uses index files, when and why it refreshes content, and what benefits it provides — are equipped to publish confidently, diagnose problems when they arise, and make deliberate choices about when and how often to run a publish during a course development cycle.</p>
+        <div class="notes"><strong>Notes</strong>An overview of what the publish feature does in PreseMaker and why it is used to assemble course modules into a browsable website.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

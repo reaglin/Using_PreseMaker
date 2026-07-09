@@ -1,0 +1,52 @@
+﻿[
+  {
+    "title": "Creating a Module: Three Methods and the Module Manager \u2014 Topics \u0026 Learning Outcomes",
+    "href": "topics-outcomes.html",
+    "type": "Page"
+  },
+  {
+    "title": "Creating a Module: Three Methods and the Module Manager \u2014 Module Topics",
+    "href": "topics.html",
+    "type": "Page"
+  },
+  {
+    "title": "From Empty Module to Content-Ready: The Module Lifecycle",
+    "href": "content/Creating_a_Module_interactive.html",
+    "type": "Content"
+  },
+  {
+    "title": "Overview of Module Creation in PreseMaker",
+    "href": "content/Creating_a_Module_interactive_topics_t1.html",
+    "type": "Content"
+  },
+  {
+    "title": "Method 1: Generating a New Module with AI",
+    "href": "content/Creating_a_Module_interactive_topics_t2.html",
+    "type": "Content"
+  },
+  {
+    "title": "Method 2: Adding an Existing Module Folder from Disk",
+    "href": "content/Creating_a_Module_interactive_topics_t3.html",
+    "type": "Content"
+  },
+  {
+    "title": "Method 3: Importing from a File or Repository",
+    "href": "content/Creating_a_Module_interactive_topics_t4.html",
+    "type": "Content"
+  },
+  {
+    "title": "The Module Manager: Central Hub for Module Setup",
+    "href": "content/Creating_a_Module_interactive_topics_t5.html",
+    "type": "Content"
+  },
+  {
+    "title": "From Empty Module to Content-Ready: The Module Lifecycle",
+    "href": "content/Creating_a_Module_interactive_topics_t6.html",
+    "type": "Content"
+  },
+  {
+    "title": "Creating a Module: Three Methods and the Module Manager \u2014 Module Topics",
+    "href": "content/module_topics.html",
+    "type": "Content"
+  }
+]

@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overview of Supported AI Providers</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ AI Providers and API Keys: Setting Up Your Connection</a></div>
+  <header>
+    <h1>Overview of Supported AI Providers</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Overview of Supported AI Providers</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>PreseMaker's content generation features are powered by large language models supplied by external AI providers. Rather than building its own AI engine, PreseMaker connects to these providers through their published APIs, which means the quality, style, and cost of the content you generate depend directly on which provider you choose and how you configure the connection. Understanding what each provider offers — and how they differ from one another — is essential before you start generating presentations, because the choice you make affects everything from the tone of your output to the size of your monthly bill.</p>
+
+<p><strong>What Is an AI Provider?</strong></p>
+
+<p>An AI provider is a company that trains, hosts, and exposes a large language model through a programmable interface. When PreseMaker generates slide text, speaker notes, or outlines on your behalf, it is not performing that reasoning internally. Instead, it packages your request, sends it to the provider's servers, receives a response, and presents it to you inside the application. The provider handles all of the underlying computation.</p>
+
+<p>Because each provider operates its own independent infrastructure, several practical consequences follow:</p>
+
+<ul>
+  <li><strong>Pricing is set by the provider, not by PreseMaker.</strong> The provider bills you directly for the requests PreseMaker sends, so costs can vary significantly depending on which model you select and how much content you generate.</li>
+  <li><strong>Capabilities differ.</strong> Providers train their models on different data, with different architectures and objectives, which means the same prompt can produce meaningfully different output depending on which provider handles it.</li>
+  <li><strong>Availability is outside PreseMaker's control.</strong> If a provider experiences an outage or deprecates a model version, PreseMaker cannot generate content through that provider until service is restored or a new model is selected.</li>
+</ul>
+
+<p>PreseMaker currently supports four providers: <strong>Anthropic Claude</strong>, <strong>Google Gemini</strong>, <strong>OpenAI</strong>, and <strong>Mistral</strong>. Each is described in detail below.</p>
+
+<p><strong>Anthropic Claude</strong></p>
+
+<p>Anthropic is an AI safety company founded in 2021, and Claude is its flagship family of language models. Claude has developed a strong reputation for producing text that is structured, clearly reasoned, and professionally toned — qualities that translate well into presentation content, where clarity and logical flow matter as much as raw fluency.</p>
+
+<p>Anthropic's safety-focused development philosophy shapes how Claude behaves when it encounters ambiguous or sensitive prompts. Rather than producing speculative or potentially harmful content, Claude tends to acknowledge uncertainty, ask for clarification, or decline gracefully. For most presentation use cases this is an advantage: the output is reliable and unlikely to require heavy editing to remove inappropriate material.</p>
+
+<ul>
+  <li><strong>Structured output:</strong> Claude tends to produce well-organized responses with clear hierarchies, making it particularly effective when generating outlines, bullet points, and slide summaries.</li>
+  <li><strong>Multiple versions:</strong> Anthropic releases updated Claude models periodically. Newer versions generally offer improved instruction-following, longer context windows, and better factual accuracy. PreseMaker surfaces whichever versions Anthropic currently makes available through the API, so you may see options such as Claude 3 Opus, Claude 3 Sonnet, or Claude 3 Haiku, each representing a different balance of performance and cost.</li>
+  <li><strong>Safety emphasis:</strong> If a prompt is ambiguous, Claude may ask for clarification rather than guessing, which can be helpful during content planning but may feel slower for users who prefer a more assertive default style.</li>
+</ul>
+
+<p><strong>Google Gemini</strong></p>
+
+<p>Gemini is Google's family of large language models, introduced as the successor to the earlier PaLM series. Gemini was designed from the ground up to handle multiple types of input — text, images, audio, and code — in a single model architecture. Within PreseMaker, only the text generation capabilities are used, but the multimodal foundation means the model has a broad conceptual understanding of how different kinds of information relate to one another.</p>
+
+<p>Accessing Gemini requires a Google account and credentials issued through Google's AI platform (Google AI Studio or Google Cloud Vertex AI, depending on your setup). This means the account setup process involves Google's own identity and billing infrastructure, which will feel familiar to anyone already using Google Cloud services but may add a step for users who are new to that ecosystem.</p>
+
+<ul>
+  <li><strong>Multimodal foundation:</strong> Even when used purely for text, Gemini's training on diverse data types can produce responses that are contextually rich and well-suited to tasks that blend concepts from different domains.</li>
+  <li><strong>Regular model updates:</strong> Google updates the Gemini model family frequently, which means performance characteristics — response quality, speed, and pricing — can evolve between your sessions. It is worth revisiting the available model options periodically.</li>
+  <li><strong>Google ecosystem integration:</strong> For organizations already invested in Google Workspace or Google Cloud, Gemini can fit naturally into existing identity and billing workflows.</li>
+</ul>
+
+<p><strong>OpenAI</strong></p>
+
+<p>OpenAI is the company behind the GPT (Generative Pre-trained Transformer) model family and the widely used ChatGPT application. When you connect PreseMaker to OpenAI's API, you are accessing the same underlying models that power ChatGPT, which means learners who have already experimented with that product have a working intuition for the style and capabilities they can expect.</p>
+
+<p>GPT models are highly versatile. They handle a wide range of writing tasks — summarization, rewriting, tone adjustment, structured outlining — with consistent quality, and they have been fine-tuned extensively on instruction-following data, so they respond well to specific, detailed prompts.</p>
+
+<ul>
+  <li><strong>Token-based pricing:</strong> OpenAI charges for both the tokens in your input (the prompt PreseMaker sends) and the tokens in the output (the generated text). A token is roughly three-quarters of an English word. This means generating a long presentation with detailed speaker notes costs more than generating a brief outline, and it is worth monitoring usage if you are on a budget.</li>
+  <li><strong>Familiarity:</strong> Because GPT models underpin ChatGPT, many users already have an intuitive sense of how to phrase prompts effectively when using OpenAI through PreseMaker.</li>
+  <li><strong>Versatility:</strong> OpenAI offers multiple model tiers — for example, GPT-4o and GPT-3.5-turbo — that trade off capability and cost, giving you flexibility to match the model to the complexity of the task.</li>
+</ul>
+
+<p><strong>Mistral</strong></p>
+
+<p>Mistral AI is a French AI company founded in 2023, making it the newest of the four supported providers. Despite its relatively recent founding, Mistral has attracted significant attention for releasing models that deliver strong performance relative to their size — a property sometimes described as <em>parameter efficiency</em>. In practical terms, this means Mistral's models can produce high-quality output while consuming fewer computational resources than comparably capable models from other providers, which can translate to lower costs per request.</p>
+
+<ul>
+  <li><strong>Efficiency-focused models:</strong> Mistral's flagship open models, such as Mistral 7B and Mixtral 8x7B, have benchmarked competitively against much larger models, making them an attractive option when cost-effectiveness is a priority.</li>
+  <li><strong>Growing API ecosystem:</strong> Because Mistral is newer, its API platform and available model options are still expanding. Features and model variants that are not available today may become accessible over time as the platform matures.</li>
+  <li><strong>European headquarters and data considerations:</strong> Mistral is based in Paris and subject to European data protection law, including GDPR. For users or organizations with requirements around data residency — for example, a need to ensure that data does not leave the European Economic Area — Mistral may be the most straightforward choice from a compliance standpoint.</li>
+</ul>
+
+<p><strong>Key Differences to Consider When Choosing a Provider</strong></p>
+
+<p>Choosing a provider is not a permanent decision — you can switch at any time within PreseMaker — but it is worth thinking through the key variables before you begin generating content so that your first sessions reflect your actual priorities.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Consideration</th>
+      <th>Anthropic Claude</th>
+      <th>Google Gemini</th>
+      <th>OpenAI</th>
+      <th>Mistral</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Pricing model</strong></td>
+      <td>Per token (input + output)</td>
+      <td>Per token; free tier available for lower-volume use</td>
+      <td>Per token (input + output)</td>
+      <td>Per token; generally lower cost per token than larger providers</td>
+    </tr>
+    <tr>
+      <td><strong>Output style</strong></td>
+      <td>Structured, professionally toned, safety-conscious</td>
+      <td>Contextually rich, broad knowledge base</td>
+      <td>Versatile, instruction-responsive, familiar to ChatGPT users</td>
+      <td>Concise and efficient; style varies by model variant</td>
+    </tr>
+    <tr>
+      <td><strong>Account setup complexity</strong></td>
+      <td>Moderate — requires Anthropic Console account</td>
+      <td>Moderate to higher — requires Google account and AI Studio or Cloud project</td>
+      <td>Low to moderate — straightforward API key from platform.openai.com</td>
+      <td>Low — simple API key from console.mistral.ai</td>
+    </tr>
+    <tr>
+      <td><strong>Data / regulatory considerations</strong></td>
+      <td>US-based; standard data processing terms</td>
+      <td>US-based; Google Cloud data residency options available at enterprise tier</td>
+      <td>US-based; standard data processing terms</td>
+      <td>EU-based; GDPR-native; may suit European compliance requirements</td>
+    </tr>
+    <tr>
+      <td><strong>Model update cadence</strong></td>
+      <td>Periodic major releases</td>
+      <td>Frequent; performance may shift between sessions</td>
+      <td>Periodic; older models remain available alongside newer ones</td>
+      <td>Active development; new variants being added regularly</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Beyond the factors in the table above, it is worth running a short test with each provider you are considering before committing to one for a large project. Because the same prompt can yield noticeably different results across providers — in terms of vocabulary choices, sentence length, use of bullet points, and overall depth — a brief comparison on a representative slide topic will quickly reveal which provider's natural output style aligns best with your preferences and your audience's expectations. Most providers offer enough free or low-cost initial usage to make this kind of side-by-side testing practical before any meaningful expense is incurred.</p>
+        <div class="notes"><strong>Notes</strong>Introduces the four supported AI providers — Anthropic Claude, Google Gemini, OpenAI, and Mistral — and highlights key differences learners should know when choosing one.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

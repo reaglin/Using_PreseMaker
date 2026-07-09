@@ -1,0 +1,47 @@
+﻿[
+  {
+    "title": "Batch Actions: Generating Content Across Multiple Modules at Once \u2014 Topics \u0026 Learning Outcomes",
+    "href": "topics-outcomes.html",
+    "type": "Page"
+  },
+  {
+    "title": "Batch Actions: Generating Content Across Multiple Modules at Once \u2014 Module Topics",
+    "href": "topics.html",
+    "type": "Page"
+  },
+  {
+    "title": "Stopping a Batch Run Safely",
+    "href": "content/Batch_Actions_Generating_interactive.html",
+    "type": "Content"
+  },
+  {
+    "title": "Introduction to Batch Actions in Course Manager",
+    "href": "content/Batch_Actions_Generating_interactive_topics_t1.html",
+    "type": "Content"
+  },
+  {
+    "title": "Selecting Content Types for Batch Generation",
+    "href": "content/Batch_Actions_Generating_interactive_topics_t2.html",
+    "type": "Content"
+  },
+  {
+    "title": "Choosing and Configuring Modules for a Batch Run",
+    "href": "content/Batch_Actions_Generating_interactive_topics_t3.html",
+    "type": "Content"
+  },
+  {
+    "title": "Monitoring Live Batch Progress",
+    "href": "content/Batch_Actions_Generating_interactive_topics_t4.html",
+    "type": "Content"
+  },
+  {
+    "title": "Stopping a Batch Run Safely",
+    "href": "content/Batch_Actions_Generating_interactive_topics_t5.html",
+    "type": "Content"
+  },
+  {
+    "title": "Batch Actions: Generating Content Across Multiple Modules at Once \u2014 Module Topics",
+    "href": "content/module_topics.html",
+    "type": "Content"
+  }
+]

@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Course → Module → Content Hierarchy</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Introduction to PreseMaker: What It Is and How It Works</a></div>
+  <header>
+    <h1>The Course → Module → Content Hierarchy</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>The Course → Module → Content Hierarchy</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Every learning program built in PreseMaker is organized according to a strict, three-level hierarchy: the <strong>Course</strong> at the top, <strong>Modules</strong> in the middle, and <strong>Content items</strong> at the bottom. This structure is not merely a filing convention — it is the architectural backbone that governs how materials are created, navigated, maintained, and delivered to learners. Understanding how these three levels relate to one another is essential before authoring a single lesson or quiz, because every action taken inside PreseMaker — from naming a program to deploying AI-assisted content generation — operates within this framework.</p>
+
+<p>Think of the hierarchy the way you might think of a physical textbook. The book itself is the Course: it has a title, a subject area, and a unifying purpose. Its chapters are the Modules: self-contained units that carve the subject into digestible segments. And each individual page, exercise, or diagram within a chapter is a Content item: the granular, discrete material that learners actually engage with. In PreseMaker, these three levels are formally enforced, meaning no Content item can float outside a Module, and no Module can exist outside a Course.</p>
+
+<p>The table below summarizes the three levels at a glance before each is explored in depth:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>Role in the Hierarchy</th>
+      <th>Contains</th>
+      <th>Typical Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Course</td>
+      <td>Top-level container for the entire learning program</td>
+      <td>One or more Modules</td>
+      <td>Workplace Safety Certification, Introduction to Python, Leadership Essentials</td>
+    </tr>
+    <tr>
+      <td>Module</td>
+      <td>Mid-level grouping of related topics or units within a Course</td>
+      <td>One or more Content items</td>
+      <td>Fire Safety Procedures, Data Types and Variables, Communicating Under Pressure</td>
+    </tr>
+    <tr>
+      <td>Content</td>
+      <td>Lowest-level, discrete learning material or assessment</td>
+      <td>Nothing further — this is the leaf node</td>
+      <td>Video lesson, knowledge-check quiz, interactive scenario, reading passage</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>The Course Level</strong> is the outermost container and represents the entire learning program or subject area as a single, unified entity. When a course creator sets up a new Course in PreseMaker, they are establishing the top of the hierarchy — defining the program's title, its overarching learning objectives, and the global settings that will cascade downward through every Module and Content item nested within it. For example, a Course titled <em>Cybersecurity Fundamentals for Remote Teams</em> would hold everything related to that subject: modules on password hygiene, phishing awareness, secure file sharing, and incident reporting, along with all the lessons and assessments those modules contain.</p>
+
+<p>Courses are deliberately scoped to a <em>single learning objective or professional topic area</em>. This intentional focus ensures that the materials inside remain coherent and that learners experience a purposeful journey from start to finish rather than a loosely connected collection of topics. Settings configured at the Course level — such as branding, access permissions, or progression rules — propagate downward, saving authors from having to repeat the same configuration at every nested level.</p>
+
+<p><strong>The Module Level</strong> sits directly inside the Course and acts as a logical partition of the subject matter. A single Course can contain as many Modules as the complexity of the subject demands. Modules allow course creators to divide a large, multifaceted topic into clearly labeled, manageable units that learners can follow in sequence or navigate to directly. For instance, the <em>Cybersecurity Fundamentals for Remote Teams</em> Course described above might include a Module called <em>Recognizing Phishing Attempts</em> and another called <em>Using a VPN Safely</em>. Each Module signals to the learner that they are entering a distinct segment of the program.</p>
+
+<p>A critical characteristic of Modules is their <em>independence</em>. The Content items inside one Module can be authored, edited, reordered, or even deleted without touching the Content in any other Module. This isolation is especially valuable for large authoring teams where different subject-matter experts might be responsible for different sections of the same Course. One author can build out the phishing Module while another simultaneously develops the VPN Module, and neither workflow interferes with the other.</p>
+
+<p>Modules also serve a navigational function for learners. Rather than presenting a single, undifferentiated list of dozens of lessons, PreseMaker surfaces the Module labels as clear section markers, helping learners understand where they are in the program and how much remains. This scaffolding reduces cognitive load and supports learner confidence.</p>
+
+<p><strong>The Content Level</strong> is the most granular tier of the hierarchy. Content items are the actual learning materials — the lessons, quizzes, interactive scenarios, reading passages, video activities, and any other discrete learning moments that make up a Module. Each Content item belongs to <em>exactly one Module</em> and cannot exist anywhere in PreseMaker outside of the hierarchy. This strict parentage rule ensures that every piece of material is always contextualized within a broader unit of learning.</p>
+
+<p>Multiple Content items are typically stacked within a single Module to build out a comprehensive learning unit. For example, the <em>Recognizing Phishing Attempts</em> Module might contain: a short introductory video lesson, a reading passage with annotated examples of real phishing emails, an interactive drag-and-drop activity where learners sort messages as safe or suspicious, and a five-question knowledge check quiz. Each of these is a separate Content item, but together they form the complete instructional experience for that Module.</p>
+
+<p>The Content level is also where PreseMaker's <strong>AI-assisted authoring tools</strong> are most active. When an author invokes AI assistance to generate lesson text, quiz questions, or scenario branches, those tools operate at the Content item level — drawing context from the parent Module's label and the parent Course's topic to produce material that fits naturally within the established structure. The hierarchy, in other words, gives the AI the context it needs to generate relevant output rather than generic content.</p>
+
+<p><strong>How the levels relate to one another in practice</strong> becomes especially clear when changes are made. The hierarchy is a live, interdependent structure: actions taken at a higher level flow downward. If an author deletes a Module, every Content item inside that Module is also removed from the Course — there is no orphaned content left behind, because Content items cannot exist outside the hierarchy. Similarly, if an author restructures a Course by reordering its Modules, the Content items within each Module travel with their parent, maintaining their internal sequence.</p>
+
+<p>This parent-child dependency also enforces a <em>logical authoring sequence</em>. PreseMaker guides course creators from the broad to the specific: first establish the Course and its overarching purpose, then define the Modules that partition the subject, then populate each Module with Content items. This top-down workflow prevents a common authoring pitfall where creators jump straight to writing individual lessons without a clear structural plan, only to find later that the materials don't fit together coherently.</p>
+
+<p>Navigating between the three levels is a core, recurring action in the PreseMaker workflow. Authors move up and down the hierarchy constantly — opening the Course dashboard to review overall structure, drilling into a Module to reorder its Content items, and then opening a specific Content item to edit its body text or update a quiz question. Fluency with this navigation is what separates an efficient PreseMaker author from one who struggles to locate or manage their materials.</p>
+
+<p><strong>Why this hierarchy matters for course authoring</strong> extends beyond simple organization. The structure provides three distinct categories of benefit — for the authoring process, for ongoing maintenance, and for the learner experience:</p>
+
+<ul>
+  <li><strong>Contextual AI assistance:</strong> Because every Content item is nested inside a labeled Module inside a titled Course, PreseMaker's AI tools always know the instructional context when generating or suggesting content. A quiz question generated inside the <em>Recognizing Phishing Attempts</em> Module of a cybersecurity Course will be meaningfully different from one generated in a general-purpose environment — the hierarchy supplies that meaning automatically.</li>
+  <li><strong>Ease of maintenance and repurposing:</strong> A well-structured hierarchy makes it straightforward to update a single Module without disturbing the rest of the Course, to reorder Modules when the instructional sequence needs revision, or to extract a Module's Content items and repurpose them in a new Course. Without the hierarchy, these operations would require manually sorting through undifferentiated lists of materials.</li>
+  <li><strong>Clear learner navigation and progression:</strong> Learners benefit from the hierarchy because it surfaces a transparent map of the program. They can see at a glance which Modules exist, which they have completed, and which Content items remain within their current Module. This clarity supports self-directed learning and reduces the frustration of feeling lost inside a large program.</li>
+</ul>
+
+<p>In summary, the Course → Module → Content hierarchy is the organizing principle that makes PreseMaker function as a coherent authoring and delivery system. Every feature — AI assistance, navigation, permissions, progress tracking — is designed around this three-level structure. Mastering the hierarchy early means that every subsequent task in PreseMaker, from creating a blank Course shell to deploying a fully populated program, will follow a predictable, logical pattern.</p>
+        <div class="notes"><strong>Notes</strong>Explains the three-level organizational structure that PreseMaker uses to arrange learning materials, clarifying how courses, modules, and content items relate to one another.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

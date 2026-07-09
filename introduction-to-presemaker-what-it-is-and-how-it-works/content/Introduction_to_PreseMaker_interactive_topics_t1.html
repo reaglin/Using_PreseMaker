@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is PreseMaker?</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Introduction to PreseMaker: What It Is and How It Works</a></div>
+  <header>
+    <h1>What Is PreseMaker?</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>What Is PreseMaker?</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>PreseMaker is a dedicated course authoring application built to run natively on the Windows operating system. Unlike browser-based tools or general-purpose office software repurposed for training content, PreseMaker was designed from the ground up with one goal in mind: helping people build structured, ready-to-deliver learning materials as efficiently as possible. What sets it apart most clearly from conventional presentation or document tools is its deep integration of artificial intelligence directly into the authoring workflow. Rather than treating AI as a bolt-on feature or an external service you consult separately, PreseMaker weaves AI assistance into every stage of the content creation process — from initial planning through final output. This means the software actively participates in the work of building a course, not merely providing a canvas on which an author labors alone.</p>
+
+<p>Understanding who PreseMaker is designed for helps clarify why it was built the way it was. The primary audience is anyone who needs to develop training or instructional content but does not have a background in software development, instructional design systems, or complex multimedia production. A subject matter expert who knows their field deeply but has never built a formal course, a team leader tasked with onboarding documentation, a trainer moving from classroom delivery to self-paced digital content — these are exactly the kinds of users PreseMaker was created to serve. The tool lowers the barrier to entry significantly by replacing the need for technical knowledge with AI-guided prompts and a well-defined structural framework.</p>
+
+<p>At the same time, PreseMaker is not limited to beginners. Experienced instructional designers and content developers benefit from it in a different but equally important way: <strong>acceleration</strong>. Even a seasoned author faces repetitive tasks when producing courses at scale — writing learning objectives for every module, drafting quiz items, populating consistent section descriptions. PreseMaker automates or substantially assists with these tasks, freeing experienced designers to focus on higher-level decisions about pedagogy, sequencing, and learner experience rather than spending hours on mechanical content generation.</p>
+
+<p>The core purpose of PreseMaker can be stated simply: it provides a clear, end-to-end path for turning a topic into a finished, ready-to-use learning product. This might sound straightforward, but it addresses a genuine pain point in content development. Most authors, regardless of experience level, face a moment of paralysis when starting a new course — the blank page problem. Where do you begin? What structure should the course follow? How much content does each section need? PreseMaker resolves this ambiguity by providing both a predefined organizational framework and AI-driven content suggestions that give authors something concrete to react to, refine, and build upon from the very first session.</p>
+
+<p>It is also worth emphasizing what PreseMaker is <em>not</em> trying to produce. It is not a slide deck builder, a note-taking app, or a general document editor. Its output is learning material — content structured and formatted with the intent of being used in a course delivery context. This distinction matters because it shapes every design decision in the tool, from how content is organized to how the AI frames its suggestions.</p>
+
+<p>PreseMaker addresses several specific, recurring problems that plague course authors. Consider each in turn:</p>
+
+<ul>
+  <li><strong>The blank-page problem.</strong> Starting a new course from nothing is cognitively expensive. PreseMaker eliminates this friction by generating AI-driven content suggestions and an initial organizational outline, giving authors a populated starting point they can shape rather than an empty document they must fill entirely on their own.</li>
+  <li><strong>Structural inconsistency.</strong> When courses are built informally — using mixed tools, personal conventions, or no formal standard — the result is often uneven: some modules are thorough, others thin; some sections have objectives, others skip them; terminology shifts without explanation. PreseMaker prevents this by enforcing a consistent <strong>Course → Module → Content</strong> hierarchy across every project. All content lives within this structure, so the finished product holds together as a coherent whole regardless of how many sessions it took to build.</li>
+  <li><strong>Slow production timelines.</strong> Manually writing every piece of a course — introductions, objectives, explanations, examples, assessments — is time-intensive. PreseMaker uses AI to automate or accelerate these repetitive generation tasks, compressing the time between "I have a topic to teach" and "I have a deployable course."</li>
+</ul>
+
+<p>Central to everything PreseMaker does is its AI assistance capability, which deserves particular attention as a defining feature rather than a secondary convenience. The AI in PreseMaker can generate initial drafts of content elements, suggest refinements to text already written, and help populate sections — such as module summaries, knowledge checks, or learning objectives — without requiring the author to write every word from scratch. Critically, the AI is designed to maintain <em>alignment</em>: content produced for a module stays connected to the stated goals of the broader course, rather than drifting into tangential material. This coherence is difficult to maintain manually when building large courses over multiple sessions, and it is one of the clearest illustrations of why AI integration at the workflow level — rather than as an afterthought — makes a meaningful difference.</p>
+
+<p>Finally, PreseMaker's identity as a <strong>Windows-native desktop application</strong> has practical consequences worth understanding. Because it is installed software rather than a web service, it operates directly on the local machine. Files are stored on the local file system, which means authors retain full control over their content without dependence on cloud connectivity or third-party server availability. The application can also take full advantage of the computing resources available on the desktop — processor, memory, local storage — which supports more responsive performance compared to browser-based tools that must work within the constraints of a web environment. For organizations with data sensitivity requirements or environments where internet access is restricted, this Windows-native architecture is not just a convenience but a meaningful practical advantage.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aspect</th>
+      <th>PreseMaker Approach</th>
+      <th>Typical Alternative</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AI Integration</td>
+      <td>Built directly into the authoring workflow</td>
+      <td>External tool consulted separately, if at all</td>
+    </tr>
+    <tr>
+      <td>Content Structure</td>
+      <td>Enforced Course → Module → Content hierarchy</td>
+      <td>Informal or author-defined, varies by project</td>
+    </tr>
+    <tr>
+      <td>Target Output</td>
+      <td>Ready-to-use learning materials</td>
+      <td>Slide decks, documents, or raw notes</td>
+    </tr>
+    <tr>
+      <td>Platform</td>
+      <td>Windows desktop application (local install)</td>
+      <td>Web-based SaaS or cross-platform app</td>
+    </tr>
+    <tr>
+      <td>Blank-Page Problem</td>
+      <td>AI generates initial content and structure</td>
+      <td>Author starts from empty template or blank file</td>
+    </tr>
+    <tr>
+      <td>Audience</td>
+      <td>Novice authors and experienced designers alike</td>
+      <td>Often optimized for one skill level only</td>
+    </tr>
+  </tbody>
+</table>
+        <div class="notes"><strong>Notes</strong>Introduces PreseMaker as an AI-assisted course authoring tool for Windows, outlining its core purpose and the key problems it is designed to solve.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

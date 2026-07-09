@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locating Artifacts in the Module Index</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Generating Interactive Activities and Custom Materials</a></div>
+  <header>
+    <h1>Locating Artifacts in the Module Index</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Locating Artifacts in the Module Index</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you are working inside a module and generating interactive activities, quizzes, simulations, or custom materials, every piece of output that gets created needs to be somewhere you can reliably find it again. That central location is the <strong>Module Index</strong>. Understanding how to use it effectively is one of the most practical skills an author can develop, because no matter how well-designed an individual artifact may be, it only delivers value if you can locate it, review it, and deploy it with confidence. This guide walks through everything you need to know — from what the Module Index actually is, to how you navigate it, identify what is inside it, open individual artifacts, manage them over time, and verify that nothing has slipped through the cracks.</p>
+
+<p>The <strong>Module Index</strong> is a dedicated registry that records every interactive activity and custom material produced within the scope of a single module. Think of it less like a file folder on a desktop and more like a live catalog: as soon as an artifact is generated, it is automatically entered into the index with its type label, title, and a link to open it. This automatic capture is important because during a busy authoring session you might generate a dozen different activities in rapid succession, and relying on memory alone to track what exists is impractical and error-prone.</p>
+
+<p>A few characteristics of the Module Index are worth internalizing from the outset. First, it is <strong>accessible at any point during or after content generation</strong> — you do not have to finish or close a session before consulting it. If you want to check what you have created halfway through an authoring session, the index is already up to date. Second, the index is <strong>organized by artifact type rather than chronologically</strong>. This is a deliberate design choice: grouping all interactive activities together and all custom materials together means you can survey a whole category at once, rather than scrolling through a time-ordered log trying to remember whether the quiz you need came before or after the scenario you built. Third, and critically, the Module Index is an <strong>author tool</strong>. It is not a learner-facing view of the module; learners access content through their own delivery interface. The index exists specifically to help the person building the module manage what has been generated.</p>
+
+<p>To begin using the Module Index, you first need to know how to get there. The entry point is typically a <strong>link or icon in the primary navigation bar or sidebar</strong> of your active module. Depending on the platform, this may be labeled "Module Index," "Artifacts," or represented by an icon such as a grid or list symbol. The exact placement varies, but it is consistently available from within the module — you do not need to return to a home screen or dashboard to find it. Clicking the Module Index entry loads the full list of all artifacts associated with that module session in a single view.</p>
+
+<p>One reassurance worth noting: <strong>returning to the Module Index at any time does not disrupt your progress</strong> on any open activity. If you have a partially completed custom material open in another tab or panel, navigating to the index and back will not cause you to lose that work. This makes it practical to use the index as a quick reference point whenever you need to orient yourself during a complex authoring session.</p>
+
+<p>Once you are inside the Module Index, you will encounter a list of entries. Each entry surfaces several pieces of information that help you identify what you are looking at. The most important is the <strong>type label</strong>, which tells you the category of the artifact. Generated interactive activities — such as quizzes, branching scenarios, drag-and-drop exercises, and similar formats — appear grouped under their activity type. Custom Materials, such as job aids, reference sheets, or instructor guides that you have authored in a non-interactive format, are listed as their own separate category. This separation ensures you are never trying to distinguish an interactive quiz from a static document by title alone.</p>
+
+<p>Beyond the type label, <strong>artifact titles</strong> play a key role in identification. Titles are generated to reflect the content or key terms used during the creation process. For example, if you generated a matching activity about project management terminology, the title might read something like "Project Management Terms — Matching Activity." This contextual naming means you can typically identify the right artifact at a glance without needing to open every entry. Many platforms supplement type labels and titles with <strong>visual icons or color coding</strong>: interactive activities might carry a blue puzzle-piece icon, while custom materials appear with an orange document icon. These visual signals are especially useful when you have a long list of artifacts and want to scan by category rather than reading each label.</p>
+
+<p>To actually work with an artifact you have found in the index, you open it by clicking on its <strong>title or thumbnail</strong>. The artifact opens in its native view — an interactive activity launches in its interactive player so you can experience it exactly as a learner would, while a custom material opens in its document or editing view. This native rendering is important because it lets you do a genuine quality review rather than looking at raw settings or metadata. You can read through question stems, test interaction logic, check that feedback messages are correct, and confirm that the overall flow matches your instructional intent — all before the content ever reaches a learner.</p>
+
+<p>A practical benefit of opening artifacts from the index is that you can <strong>move sequentially through multiple artifacts</strong> without losing your place in the module. After reviewing one artifact, you return to the index, click the next one, review it, and so on. This sequential review workflow is particularly useful at the end of an authoring session when you want to do a final pass across everything you have created.</p>
+
+<p>The Module Index also provides tools for <strong>managing your artifacts over time</strong>, not just viewing them. One of the most useful management features is the ability to <strong>rename artifacts</strong>. The auto-generated title based on content terms is a good starting point, but once you understand exactly how an artifact will be used — perhaps it is specifically for a remediation path, or it is tailored for a particular audience segment — renaming it to something like "Remediation Quiz — Module 3 Learners" makes your index much more useful as a working document. Renaming does not affect the artifact's content or behavior; it only changes the label you see in the index.</p>
+
+<p>You can also <strong>filter artifacts by type</strong> within the index. If you have twenty artifacts and you need to find all of your custom materials quickly, applying a type filter collapses the list to show only that category. This filtering capability becomes increasingly valuable as a module grows more complex and the total number of artifacts increases.</p>
+
+<p>One management action that requires care is <strong>deletion</strong>. When you delete an artifact from the Module Index, that action is permanent — the content is removed and cannot be recovered from the index. Before deleting anything, confirm that the artifact is genuinely no longer needed, that you have saved any content from it that you want to repurpose, and that it has not already been deployed to learners in a live environment. The index will typically present a confirmation prompt before finalizing a deletion, but you should treat that prompt as a genuine checkpoint rather than something to click through quickly.</p>
+
+<p>Perhaps the single most important habit to build around the Module Index is the practice of <strong>verifying that all artifacts are captured</strong> after a generation session. The process is straightforward: mentally or on paper, count how many activities and custom materials you intended to create during the session, then compare that number against the entries shown in the Module Index. If you generated five interactive activities and the index shows five activity entries, you can be confident nothing was lost. If it shows four, you know immediately that something needs attention.</p>
+
+<p>Beyond counting, it is worth doing a <strong>title and type check</strong> — confirming that each entry in the index actually corresponds to what you meant to create. Occasionally a generation process may have produced an artifact under an unexpected title, or a technical issue may have caused a duplicate to appear. Catching these discrepancies early, while the session is fresh, is much easier than troubleshooting them later.</p>
+
+<p>If you find that an artifact appears to be missing from the index — meaning you are confident it was generated but you cannot locate it — the right response is to <strong>report or troubleshoot promptly</strong>. The Module Index is the authoritative record of module output. If something is not in the index, it is not accessible through the standard workflow, and waiting to investigate only makes resolution harder. Most platforms provide a support or reporting pathway directly from within the module environment. Use it as soon as you identify a discrepancy rather than assuming the artifact will appear on its own.</p>
+
+<p>The following table summarizes the key artifact types you are likely to encounter in the Module Index, along with their typical labels, visual indicators, and management considerations:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Artifact Type</th>
+      <th>Typical Label in Index</th>
+      <th>Common Visual Indicator</th>
+      <th>Key Management Consideration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Interactive Activity</td>
+      <td>Activity (with format sub-label, e.g., Quiz, Scenario)</td>
+      <td>Colored icon denoting interactivity (e.g., puzzle piece, play button)</td>
+      <td>Open in native player to test interaction logic before deployment</td>
+    </tr>
+    <tr>
+      <td>Custom Material</td>
+      <td>Custom Material (with sub-label, e.g., Job Aid, Reference Sheet)</td>
+      <td>Document icon, often a distinct color from activity icons</td>
+      <td>Rename to reflect specific audience or instructional purpose</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To bring all of these points together with a concrete example: imagine you are building a module on workplace safety compliance. During a single authoring session you generate a scenario-based branching activity, two multiple-choice quizzes, and a one-page job aid summarizing key regulations. At the end of the session you open the Module Index. You expect to see four entries: one scenario activity, two quiz activities, and one custom material. The index shows four entries, the titles reference workplace safety content, the type labels correctly distinguish the three activities from the custom material, and each one opens correctly in its native view. You rename the first quiz "Pre-Training Knowledge Check" and the second "Post-Training Assessment" to make their sequence clear. Your module's artifact record is now complete, organized, and ready for the next stage of review or deployment.</p>
+
+<p>The Module Index is ultimately a reliability tool. It exists so that the effort you put into generating high-quality content is never undermined by simply not being able to find that content when you need it. Developing the habit of consulting the index regularly, verifying your artifact count, using type labels and titles to orient yourself quickly, and addressing any discrepancies immediately will make your authoring process significantly more efficient and your module outputs far more manageable.</p>
+        <div class="notes"><strong>Notes</strong>Consider pairing this topic with a hands-on walkthrough exercise where learners open a sample module, navigate to its Module Index, and complete a verification checklist matching expected artifacts to index entries.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

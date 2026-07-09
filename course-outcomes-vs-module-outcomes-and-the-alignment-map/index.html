@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Outcomes vs. Module Outcomes and the Alignment Map — Using PreseMaker</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-bg:          #f4f6f9;
+      --color-surface:     #ffffff;
+      --color-border:      #dde2ea;
+      --color-primary:     #2c5f8a;
+      --color-primary-dk:  #1e4266;
+      --color-accent:      #3a7fc1;
+      --color-accent-lt:   #e8f1fa;
+      --color-text:        #1e2633;
+      --color-muted:       #5a6478;
+      --color-tag-bg:      #eef2f7;
+      --color-tag-text:    #3a4a63;
+      --color-src-bg:      #f0f7ef;
+      --color-src-text:    #2a6e3f;
+      --color-src-border:  #b6d9be;
+      --radius:            8px;
+      --shadow:            0 2px 8px rgba(0,0,0,0.08);
+      --shadow-hover:      0 6px 18px rgba(0,0,0,0.13);
+      --font:              'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: var(--font);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+
+    /* ── Header / Hero ── */
+    .site-header {
+      background: linear-gradient(135deg, var(--color-primary-dk) 0%, var(--color-primary) 60%, var(--color-accent) 100%);
+      color: #fff;
+      padding: 3rem 1.5rem 2.5rem;
+    }
+
+    .site-header__inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.78;
+      margin-bottom: 0.85rem;
+    }
+
+    .breadcrumb span + span::before {
+      content: " › ";
+      opacity: 0.7;
+    }
+
+    .site-header h1 {
+      font-size: clamp(1.45rem, 3.5vw, 2.1rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .site-header .intro {
+      font-size: 1rem;
+      opacity: 0.9;
+      max-width: 680px;
+      line-height: 1.7;
+    }
+
+    /* ── Main content ── */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    /* ── Card grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.1rem;
+    }
+
+    @media (min-width: 640px) {
+      .card-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 860px) {
+      /* Let longer cards span full width naturally — keep 2-col */
+      .card-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.35rem 1.4rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: box-shadow 0.18s ease, transform 0.18s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Card — top row: tags */
+    .card__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.18em 0.55em;
+      border-radius: 4px;
+      background: var(--color-tag-bg);
+      color: var(--color-tag-text);
+      border: 1px solid var(--color-border);
+      text-transform: uppercase;
+    }
+
+    .tag--filetype {
+      background: var(--color-accent-lt);
+      color: var(--color-primary);
+      border-color: #c5d9ef;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.02em;
+      text-transform: lowercase;
+    }
+
+    /* Card — title row */
+    .card__title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.55rem;
+    }
+
+    .card__title {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--color-text);
+    }
+
+    .card__title a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .card__title a:hover,
+    .card__title a:focus {
+      color: var(--color-primary-dk);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .card__title a:focus {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* Source file link */
+    .link-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2em 0.6em;
+      border-radius: 4px;
+      background: var(--color-src-bg);
+      color: var(--color-src-text);
+      border: 1px solid var(--color-src-border);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.14s;
+    }
+
+    .link-source:hover,
+    .link-source:focus {
+      background: #d6eedd;
+      text-decoration: none;
+      outline: 2px solid var(--color-src-text);
+      outline-offset: 2px;
+    }
+
+    .link-source::before {
+      content: "⬇";
+      font-size: 0.65rem;
+    }
+
+    /* Card — description */
+    .card__description {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--color-muted);
+      padding: 1.5rem 1rem 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* ── Utility ── */
+    @media (prefers-reduced-motion: reduce) {
+      .card { transition: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Using PreseMaker</a></div>
+<div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
+
+  <!-- ══ Header ══ -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <p class="breadcrumb">
+        <span>Using PreseMaker</span>
+        <span>Module Index</span>
+      </p>
+      <h1>Course Outcomes vs. Module Outcomes and the Alignment Map</h1>
+      <p class="intro">
+        This module explores the distinction between course-level and module-level student learning outcomes and shows how an alignment map makes those relationships visible. Work through the topics below to learn how to write, classify, link, and audit outcomes — and ensure cognitive depth is consistent across every level of your course design.
+      </p>
+    </div>
+  </header>
+
+  <!-- ══ Main ══ -->
+  <main>
+    <p class="section-label">Module Artifacts &mdash; 9 items</p>
+
+    <ol class="card-grid" role="list" aria-label="Module artifacts">
+
+      <!-- 1 · Module Topics -->
+      <li class="card">
+        <div class="card__meta">
+          <span class="tag">Module Topics</span>
+          <span class="tag tag--filetype">.json</span>
+        </div>
+        <div class="card__title-row">
+          <span class="card__title">
+            <a href="content/module_topics.html">Module Topics</a>
+          </span>
+          <a class="link-source" href="source/hierarchy.json" aria-label="Source file for Module Topics">source file</a>
+        </div>
+        <p class="card__description">An outline of the module's topics covering course-level outcomes, module-level outcomes, how to distinguish between the two, the structure and purpose of an alignment map, linking outcomes across levels, identifying alignment gaps, and matching cognitive depth — serving as a navigation reference for learners and instructors.</p>
+      </li>
+
+      <!-- 2 · Understanding Course-Level Outcomes -->
+      <li class="card">
+        <div class="card__meta">
+          <span class="tag">Topic Detail</span>
+          <span class="tag tag--filetype">.html</span>
+        </div>
+        <div class="card__title-row">
+          <span class="card__title">
+            <a href="content/Course_Outcomes_vs_interactive_topics_t1.html">Understanding Course-Level Outcomes</a>
+          </span>
+        </div>
+        <p class="card__description">A reading that defines course-level outcomes, explains their role as overarching goals at the top of a course's instructional architecture, and describes their key characteristics, helping learners understand how to write and use broad course-end competency statements.</p>
+      </li>
+
+      <!-- 3 · Understanding Module-Level Student Learning Outcomes -->
+      <li class="card">
+        <div class="card__meta">
+          <span class="tag">Topic Detail</span>
+          <span class="tag tag--filetype">.html</span>
+        </div>
+        <div class="card__title-row">
+          <span class="card__title">
+            <a href="content/Course_Outcomes_vs_interactive_topics_t2.html">Understanding Module-Level Student Learning Outcomes</a>
+          </span>
+        </div>
+        <p class="card__description">A reading that explains what module-level student learning outcomes are, emphasizes their specificity and appropriately narrow scope compared to course-level outcomes, and helps learners understand how to craft outcomes that describe what students can do within a single module.</p>
+      </li>
+
+      <!-- 4 · Distinguishing Course Outcomes from Module Outcomes -->
+      <li class="card">
+        <div class="card__meta">
+          <span class="tag">Topic Detail</span>
+          <span class="tag tag--filetype">.html</span>
+        </div>
+        <div class="card__title-row">
+          <span class="card__title">
+            <a href="content/Course_Outcomes_vs_interactive_topics_t3.html">Distinguishing Course Outcomes from Module Outcomes</a>
+          </span>
+        </div>
+        <p class="card__description">A reading that contrasts course outcomes and module outcomes by examining how they differ in scope, audience, and function within a course's architecture, helping learners accurately classify and write each type of learning statement.</p>
+      </li>
+
+      <!-- 5 · The Alignment Map: Structure and Purpose -->
+      <li class="card">
+        <div class="card__meta">
+          <span class="tag">Topic Detail</span>
+          <span class="tag tag--filetype">.html</span>
+        </div>
+        <div class="card__title-row">
+          <span class="card__title">
+            <a href="content/Course_Outcomes_vs_interactive_topics_t4.html">The Alignment Map: Structure and Purpose</a>
+          </span>
+        </div>
+        <p class="card__description">A reading that introduces the alignment map as a design and communication tool, explaining its grid structure and its purpose in making the relationships between course-level and module-level outcomes visible and intentional.</p>
+      </li>
+
+      <!-- 6 · Linking Module Outcomes to Course Outcomes -->
+      <li class="card">
+        <div class="card__meta">
+          <span class="tag">Topic Detail</span>
+          <span class="tag tag--filetype">.html</span>
+        </div>
+        <div class="card__title-row">
+          <span class="card__title">
+            <a href="content/Course_Outcomes_vs_interactive_topics_t5.html">Linking Module Outcomes to Course Outcomes</a>
+          </span>
+        </div>
+        <p class="card__description">A reading that explains how and why module outcomes should be explicitly connected to course outcomes, describing the principles and process of building a coherent, progressive outcome system across a course.</p>
+      </li>
+
+      <!-- 7 · Identifying Gaps in Alignment -->
+      <li class="card">
+        <div class="card__meta">
+          <span class="tag">Topic Detail</span>
+          <span class="tag tag--filetype">.html</span>
+        </div>
+        <div class="card__title-row">
+          <span class="card__title">
+            <a href="content/Course_Outcomes_vs_interactive_topics_t6.html">Identifying Gaps in Alignment</a>
+          </span>
+        </div>
+        <p class="card__description">A reading that teaches learners to use an alignment map diagnostically by interpreting blank cells, overcrowded columns, and uneven rows to identify where course design has coverage gaps or imbalances in outcome alignment.</p>
+      </li>
+
+      <!-- 8 · Matching Cognitive Depth (Topic Detail) -->
+      <li class="card">
+        <div class="card__meta">
+          <span class="tag">Topic Detail</span>
+          <span class="tag tag--filetype">.html</span>
+        </div>
+        <div class="card__title-row">
+          <span class="card__title">
+            <a href="content/Course_Outcomes_vs_interactive_topics_t7.html">Matching Cognitive Depth Across Outcome Levels</a>
+          </span>
+        </div>
+        <p class="card__description">A reading that addresses cognitive depth alignment, explaining how to verify that the Bloom's-level demands of module outcomes actually match or scaffold toward the higher-order thinking promised by course-level outcomes.</p>
+      </li>
+
+      <!-- 9 · Matching Cognitive Depth (Text Content) -->
+      <li class="card">
+        <div class="card__meta">
+          <span class="tag">Text Content</span>
+          <span class="tag tag--filetype">.html</span>
+        </div>
+        <div class="card__title-row">
+          <span class="card__title">
+            <a href="content/Course_Outcomes_vs_interactive.html">Matching Cognitive Depth Across Outcome Levels</a>
+          </span>
+        </div>
+        <p class="card__description">A duplicate of the preceding reading on matching cognitive depth across outcome levels, covering the same content about ensuring module-level cognitive demands rise to meet course-level outcome expectations.</p>
+      </li>
+
+    </ol>
+  </main>
+
+  <!-- ══ Footer ══ -->
+  <footer class="site-footer" role="contentinfo">
+    <p>Using PreseMaker &mdash; Course Outcomes vs. Module Outcomes and the Alignment Map</p>
+  </footer>
+
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+<section class="presemaker-extras" style="max-width:1000px;margin:2rem auto;padding:0 1rem;"><h2>Topics &amp; Learning Outcomes</h2><p><a href="topics-outcomes.html">View Topics &amp; Learning Outcomes</a></p></section><script src="embed-inject.js" defer></script></body>
+</html>

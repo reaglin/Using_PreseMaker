@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browsing and Reviewing Generated Topics</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Generating Module Topics and Subtopics</a></div>
+  <header>
+    <h1>Browsing and Reviewing Generated Topics</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Browsing and Reviewing Generated Topics</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Once PreseMaker has finished analyzing your source materials, it produces a <strong>Module Topics list</strong> — a structured inventory of every concept it identified as relevant to the module you are building. This list is the foundation on which all downstream content, assessments, and activities will be built. Because every subsequent step depends on the quality of this list, taking time to browse and critically evaluate it before making any changes is one of the most high-value activities in the entire authoring workflow. A careful review pass at this stage prevents compounding errors later, when topics have already been used to generate detailed learning content.</p>
+
+<p>The review process covers six interconnected concerns: locating and confirming the list is ready, reading titles to understand the overall shape of the module, verifying alignment with learning goals, assessing whether the sequence makes instructional sense, judging whether individual topics are sized and scoped appropriately, and recording a prioritized set of edits before you begin making changes. Each of these is explored in depth below.</p>
+
+<p><strong>Locating the Module Topics List</strong></p>
+
+<p>The Module Topics list populates automatically once PreseMaker completes its analysis of the source materials you provided. The system reads through documents, slides, transcripts, or other inputs and identifies discrete concepts worth teaching; it then renders each concept as a separate entry in the list. You do not need to trigger this process manually — when analysis finishes, the list appears in the Module Topics panel.</p>
+
+<p>Before you begin any evaluation, confirm that the list is <em>fully loaded</em>. Depending on the volume and complexity of your source materials, population can take a moment to complete. Signs that loading is still in progress include a spinner or progress indicator in the panel, a partial list that visibly grows as you watch, or a count of topics that does not stabilize. Starting your review on an incomplete list risks missing topics that appear seconds later, which can lead to incorrect gap assessments.</p>
+
+<p>Each entry in the list represents a discrete topic that PreseMaker identified as relevant. Think of each entry as a teaching unit: a bounded idea that, once developed, should be comprehensible on its own while also contributing to the larger learning arc of the module. At this stage, entries are titles only — no body content has been generated yet — so your evaluation is entirely based on names, order, and the relationships you infer among them.</p>
+
+<p><strong>Reading and Interpreting Topic Titles</strong></p>
+
+<p>Your first pass through the list should be a high-level scan from top to bottom, read straight through without stopping to evaluate individual entries in detail. The goal of this pass is to form a gestalt impression: Does the list tell a coherent story? Does it feel like the natural arc of a module on this subject, or does it feel like a random collection of terms pulled from a document?</p>
+
+<p>After the initial scan, go through the list again more carefully and ask of each title whether it accurately reflects a <em>meaningful, standalone concept</em>. A well-written topic title names the concept precisely enough that a subject-matter expert reading it would immediately understand what the topic covers and where it fits. Compare these two example titles for a module on data security:</p>
+
+<ul>
+  <li><strong>Weak title:</strong> "Security Stuff" — vague, could mean anything from password policies to physical access controls to regulatory compliance.</li>
+  <li><strong>Strong title:</strong> "Encrypting Data at Rest Using AES-256" — precise, bounded, and immediately communicates both the action and the technology involved.</li>
+</ul>
+
+<p>Titles that are overly broad — "Introduction," "Overview," "Key Concepts," or domain-generic labels like "Important Information" — are candidates for renaming or rethinking. They often indicate that PreseMaker grouped together content that doesn't share a tight conceptual relationship, or that the source material itself used vague section headings that the analyzer carried forward.</p>
+
+<p>Pay particular attention to <strong>duplicate or overlapping titles</strong>. If you see two entries whose names are nearly identical, or whose scopes seem to describe the same territory from slightly different angles, the generator may have split a single idea across two topics when one would serve better, or it may have drawn on two different sections of source material that both addressed the same concept. For example, "Setting Up User Permissions" and "Configuring Access Rights for Users" might both appear in a list when the source contained a chapter and a separate appendix on the same subject. These are strong candidates for merging.</p>
+
+<p><strong>Evaluating Coverage Against Learning Goals</strong></p>
+
+<p>The Module Topics list must serve the module's stated learning goals — not just reflect what appeared in the source materials. Source documents often contain far more information than a module needs, and they sometimes lack detail in areas that the learning goals require. This means the list PreseMaker generates is a starting point based on content analysis, not a guaranteed match to instructional intent.</p>
+
+<p>Retrieve the module description and its stated learning goals. Then, for each goal, ask: <em>Is there at least one topic in this list that directly addresses this goal?</em> Work through every goal systematically. It helps to annotate the list — either mentally or in a separate document — by marking which topics correspond to which goals. The following table illustrates how this mapping exercise might look for a short module on writing effective email:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Learning Goal</th>
+      <th>Mapped Topic(s) in List</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Learner can write a clear subject line</td>
+      <td>Crafting Descriptive Subject Lines</td>
+      <td>Covered</td>
+    </tr>
+    <tr>
+      <td>Learner can structure the body for skim-reading</td>
+      <td>Organizing Email Body Content</td>
+      <td>Covered</td>
+    </tr>
+    <tr>
+      <td>Learner can choose the appropriate tone for audience</td>
+      <td><em>No matching topic found</em></td>
+      <td>Gap — topic needs to be added</td>
+    </tr>
+    <tr>
+      <td>Learner can write an actionable closing</td>
+      <td>Writing Effective Closings; Call-to-Action Phrases</td>
+      <td>Covered — may also need to evaluate for overlap</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Any learning goal with no corresponding topic represents a <strong>gap</strong> — the module, as currently structured, cannot achieve that goal because the content simply isn't there. Gaps almost always require adding a new topic to the list. Note them clearly so you can address them during the editing phase.</p>
+
+<p>Equally important is looking for topics that fall <em>outside</em> the intended scope. If your module is about writing professional emails and the list contains a topic titled "History of Electronic Mail," that topic likely crept in because the source material included a contextual introduction that PreseMaker faithfully analyzed. Including it would expand the module beyond its scope and dilute instructional focus. Mark these out-of-scope topics for removal.</p>
+
+<p><strong>Assessing Topic Sequence and Logic</strong></p>
+
+<p>The order in which topics appear in the list is significant because it will influence the order in which content is generated and, ultimately, the order in which learners encounter ideas. A sequence that is instructionally sound moves from foundational concepts to more complex ones, introduces prerequisites before the ideas that depend on them, and groups related ideas together in a way that aids comprehension.</p>
+
+<p>As you review the sequence, apply a simple test to each topic: <em>Does the learner have everything they need to understand this topic given what has come before it?</em> If a topic relies on a concept that appears later in the list, the sequence has a dependency problem. For example, in a module on relational databases, a topic titled "Writing JOIN Queries" should not appear before a topic that establishes what tables and primary keys are. A learner encountering JOIN syntax before they understand table structure will lack the conceptual foundation to make sense of it.</p>
+
+<p>Watch for these common sequencing problems:</p>
+
+<ul>
+  <li><strong>Prerequisite inversion:</strong> A complex or applied topic appears before the foundational topic it depends on. The fix is to reorder so foundations come first.</li>
+  <li><strong>Isolated topic placement:</strong> A topic that logically belongs with a cluster of related topics appears far away from them, either because PreseMaker drew on scattered sections of source material or because the source itself was organized non-linearly.</li>
+  <li><strong>Abrupt context switches:</strong> The list jumps between very different subject areas without transitional topics, which can disorient learners. Sometimes the fix is reordering; other times it reveals a topic that doesn't belong in the module at all.</li>
+</ul>
+
+<p>Consider the target audience as you assess sequence. A list designed for complete beginners should start earlier and move more gradually than one designed for practitioners with domain experience. A sequence that is perfectly logical for an expert audience — diving straight into advanced configuration before explaining core concepts — would be frustrating and ineffective for a novice audience.</p>
+
+<p><strong>Checking Topic Granularity</strong></p>
+
+<p>Granularity refers to how much content a single topic is expected to cover. Topics that are too large become unwieldy learning units that try to teach too many things at once, making them harder to develop, harder to sequence, and harder for learners to absorb. Topics that are too small become fragments that lack enough substance to justify being standalone units and that force learners to constantly shift context for minimal new information.</p>
+
+<p>A well-scoped topic covers <strong>one coherent idea</strong> — a concept, a process, a principle, or a skill — that can be fully addressed in a focused block of instruction without requiring the author to pull in major tangents. If you find yourself thinking "this topic would need to cover X, then Y, then a completely different thing Z," that is a signal the topic should be split. For example, a topic titled "Configuring the Application and Managing User Accounts and Setting Up Notifications" is clearly three topics masquerading as one.</p>
+
+<p>On the other end of the spectrum, if you see two consecutive topics — say, "What Is a Variable" and "Naming a Variable" — that together cover only a few basic facts, and their subject matter is so closely related that separating them would force artificial redundancy, they are candidates for merging into a single topic like "Understanding and Naming Variables."</p>
+
+<p>Use these practical signals to identify granularity problems:</p>
+
+<ul>
+  <li><strong>The word "and" appears repeatedly in a title:</strong> Almost always indicates a topic trying to cover multiple distinct ideas.</li>
+  <li><strong>A title is a broad category rather than a specific concept:</strong> "Project Management Concepts" could contain dozens of ideas; "Defining Project Scope" is one idea.</li>
+  <li><strong>Two adjacent topics read like sub-bullets of the same parent idea:</strong> They may be better unified under one topic that addresses both naturally.</li>
+  <li><strong>A topic is more specific than the source material supports:</strong> If the source only mentions something in passing, there may not be enough content to fill a standalone topic; consider merging it with a neighbor.</li>
+</ul>
+
+<p><strong>Making Notes for Edits Before Proceeding</strong></p>
+
+<p>Once you have worked through the entire list with the considerations above in mind, you should have a clear picture of what changes are needed. Before making any edits, it is worth consolidating your observations into a structured set of notes. This review-then-edit discipline prevents a reactive approach where you start changing things partway through your review, only to discover later that a change you made conflicts with a different problem you hadn't noticed yet.</p>
+
+<p>Organize your notes around the type of change required:</p>
+
+<ul>
+  <li><strong>Rename:</strong> Topics whose titles are vague, misleading, or technically imprecise.</li>
+  <li><strong>Reorder:</strong> Topics that appear in a position that creates dependency problems or breaks logical flow.</li>
+  <li><strong>Split:</strong> Topics whose scope is too broad and should be divided into two or more focused entries.</li>
+  <li><strong>Merge:</strong> Topics that are too thin or too closely related to neighboring topics to justify being separate.</li>
+  <li><strong>Add:</strong> Topics that are missing entirely but needed to cover a learning goal.</li>
+  <li><strong>Remove:</strong> Topics that fall outside the module's intended scope.</li>
+</ul>
+
+<p>When prioritizing these edits, address <strong>scope and learning goal alignment first</strong>. Adding missing topics and removing out-of-scope ones defines the boundary of the module and has the largest downstream impact — if you generate content for topics that should be removed, that effort is wasted; if you skip generating content for topics that should be added, the module cannot meet its learning goals. Renaming and reordering, while important, can be done later without causing cascading problems in the same way.</p>
+
+<p>A complete, documented review pass is the single most effective investment you can make at this stage. It ensures that when you begin editing, you are executing a considered plan rather than reacting topic by topic. The result is a Module Topics list that accurately and completely represents the intended module — a solid foundation on which all subsequent content generation can reliably build.</p>
+        <div class="notes"><strong>Notes</strong>Covers the full lifecycle of reviewing a generated topics list: locating it, reading it, mapping to goals, checking sequence, evaluating granularity, and planning edits. The table illustrating learning goal mapping is a practical tool learners can replicate in their own workflows.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

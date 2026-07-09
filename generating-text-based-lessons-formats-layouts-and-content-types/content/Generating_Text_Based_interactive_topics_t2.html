@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Output Layouts: Accordion, Printable, WordPress, and Markdown</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Generating Text-Based Lessons: Formats, Layouts, and Content Types</a></div>
+  <header>
+    <h1>Output Layouts: Accordion, Printable, WordPress, and Markdown</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Output Layouts: Accordion, Printable, WordPress, and Markdown</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When generating lesson content, the way that content is structured and delivered to its final destination matters just as much as the content itself. A beautifully written explanation can lose its impact if it is presented in a format that is difficult to read, incompatible with the target platform, or poorly suited to how learners will actually engage with it. PreseMaker addresses this challenge by offering four distinct output layout formats — <strong>Accordion</strong>, <strong>Printable</strong>, <strong>WordPress</strong>, and <strong>Markdown</strong> — each designed for a specific publishing context and learner experience. Understanding the structural logic, practical strengths, and ideal use cases for each layout empowers you to make deliberate, informed choices that serve both your content and your audience.</p>
+
+<p>Each layout format is not simply a cosmetic variation. Each one reflects a different set of assumptions about where content will live, how it will be consumed, and what technical environment will render it. Let us examine each format in depth before exploring the principles that guide layout selection.</p>
+
+<p><strong>Accordion Layout</strong></p>
+
+<p>The accordion layout organizes content into a series of <em>collapsible panels</em>, where each major section or subtopic is housed in its own expandable block. By default, these panels appear collapsed, showing only a header or label. A learner clicks or taps a panel header to reveal the content inside, and can collapse it again when done. This mechanism gives the interface its name — like the bellows of a physical accordion, sections expand and contract on demand.</p>
+
+<p>The primary advantage of this format is <strong>visual cleanliness</strong>. When a learner first lands on a page using the accordion layout, they are not confronted with a wall of text. Instead, they see a concise list of topics or section titles. This initial view is far less intimidating than seeing everything at once and helps learners orient themselves before diving in. It is particularly effective for long-form content, detailed reference material, or multi-section lessons where presenting everything simultaneously would overwhelm the screen.</p>
+
+<p>Beyond aesthetics, the accordion layout actively supports <strong>self-directed learning</strong>. Because learners choose which panels to open and in what order, they exercise agency over their own experience. A learner who is already familiar with the first three sections of a module can skip directly to the fourth. A learner who wants to review a specific concept after completing a lesson can navigate back and open only the relevant panel. This kind of non-linear access is a hallmark of effective e-learning design, and the accordion format enables it without any additional configuration.</p>
+
+<p>From a technical standpoint, accordion output is rendered as <strong>HTML</strong>. This means the generated output is a block of valid HTML code — typically composed of <code>&lt;div&gt;</code> elements, toggle buttons or anchor tags, and associated CSS classes — that can be dropped directly into a web page, a course shell in a learning management system (LMS) such as Moodle, Canvas, or Blackboard, or any web-based publishing environment that accepts HTML. No additional conversion step is needed between generation and deployment.</p>
+
+<p>The accordion layout also supports <strong>visual theme selection</strong>. Themes control the color scheme, typography, border styling, and hover effects applied to the panels. This means that if your organization uses a specific brand palette, or if your LMS requires a particular visual style to match its interface, you can select a theme that aligns with those requirements. The structural logic of the accordion remains the same regardless of theme, but the look and feel can be tailored to the instructional or organizational context.</p>
+
+<p>Consider a practical example: a module on data privacy law contains six sections covering definitions, regulatory frameworks, compliance obligations, breach notification procedures, enforcement mechanisms, and learner assessments. In printable form, this would be a lengthy document. In the accordion layout, the learner sees six labeled panels on screen. They can open the section on breach notification while keeping the others collapsed, focus entirely on that content, then close it and move to enforcement mechanisms. The experience feels manageable and purposeful rather than exhausting.</p>
+
+<p><strong>Printable Layout</strong></p>
+
+<p>The printable layout takes a fundamentally different approach. Rather than organizing content into interactive panels, it presents everything in a <em>continuous, top-to-bottom flow</em> that mirrors how a traditional document is read. All sections are fully visible at once, with no expand-collapse behavior. The format is designed with physical or static digital consumption in mind — specifically, printing on paper, exporting to PDF, or distributing as a downloadable reference file.</p>
+
+<p>In the printable layout, <strong>typography and spacing</strong> are calibrated for legibility outside a screen environment. Font sizes are appropriate for printed text. Line spacing is generous enough to prevent visual crowding. Headings are clearly differentiated from body text using size and weight, creating a visual hierarchy that guides the reader's eye down the page. Bullet lists, numbered lists, and tables are formatted to maintain their structure when printed, avoiding the broken layouts that can occur when interactive or screen-optimized HTML is sent directly to a printer.</p>
+
+<p>Because all content is visible simultaneously, the printable layout is especially well suited to <strong>comprehensive review documents</strong>. A learner who wants to read through an entire module before a workshop, a manager who wants to review what employees are learning, or an instructor who wants to annotate lesson content can all benefit from having everything on the page at once. There is no need to open panels or navigate between sections — the entire body of knowledge is present and scannable from start to finish.</p>
+
+<p>It is worth noting that <strong>visual theme selection still applies</strong> in the printable layout. While themes are perhaps most visually impactful in interactive formats like the accordion, they also affect the heading colors, font choices, and overall styling of printable output. This means an organization can maintain consistent visual branding across both digital interactive content and printed handouts generated from the same source material. A training packet handed out in a classroom can share the same visual identity as the online module it accompanies.</p>
+
+<p>A useful illustration: imagine a two-day employee onboarding program. Day one involves computer-based training modules delivered through an LMS using the accordion layout. Day two includes a facilitator-led workshop. For the workshop, the facilitator wants to give each participant a printed reference guide covering the same material. By switching the output layout from accordion to printable, the same content — same headings, same explanations, same examples — is reformatted into a clean, printer-ready document without requiring any manual restructuring of the text itself.</p>
+
+<p><strong>WordPress Layout</strong></p>
+
+<p>WordPress is the world's most widely used content management system, powering a substantial portion of websites, corporate intranets, educational portals, and blogs. When course or lesson content needs to be published directly to a WordPress site, the WordPress layout format ensures that the generated output <em>aligns with how WordPress interprets and renders HTML</em>, dramatically reducing the amount of manual reformatting required after pasting content into the editor.</p>
+
+<p>WordPress operates with two primary editing environments: the <strong>classic editor</strong>, which treats content as raw HTML or formatted rich text, and the <strong>block editor</strong> (also known as Gutenberg), which organizes content into discrete, manageable content blocks. The WordPress layout in PreseMaker produces markup that is compatible with both environments. Headings are wrapped in the appropriate heading tags (<code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, and so on), paragraphs are properly tagged with <code>&lt;p&gt;</code>, and lists use standard <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> elements. When this markup is pasted into WordPress, the platform recognizes the structure immediately and renders it correctly — headings appear as headings, bullets appear as bullets, and emphasis is preserved.</p>
+
+<p>The practical value here is significant. Without a WordPress-specific layout, a content creator might paste generated content into WordPress and find that the formatting has collapsed — paragraphs merge together, heading hierarchy is lost, and special characters appear as escape sequences. Cleaning up that output manually can be time-consuming and error-prone, especially for long documents. The WordPress layout eliminates this friction by generating output that WordPress is natively prepared to handle.</p>
+
+<p>This layout effectively <strong>bridges PreseMaker's content generation capabilities with a widely used publishing platform</strong>, treating the two tools as part of a connected workflow rather than isolated steps. A content creator can generate a full lesson in PreseMaker, switch to the WordPress layout, copy the output, and paste it into a new WordPress page or post. With minimal or no editing, the content is ready to publish. This compression of the production pipeline is particularly valuable for organizations that maintain active content calendars or publish training materials on an ongoing basis.</p>
+
+<p>For example, a corporate learning and development team maintains a WordPress-based knowledge base where employees access policy documents, how-to guides, and compliance training materials. Using the WordPress layout, the team can generate new articles or update existing ones through PreseMaker and push them to the knowledge base quickly, keeping content current without dedicating significant time to reformatting or HTML cleanup.</p>
+
+<p><strong>Markdown Layout</strong></p>
+
+<p>Markdown is a lightweight plain-text formatting syntax created by John Gruber in 2004. It uses simple, human-readable characters to indicate formatting: a pound sign (<code>#</code>) before a line creates a heading, two pound signs (<code>##</code>) create a subheading, a hyphen or asterisk at the start of a line creates a bullet point, and wrapping text in double asterisks (<code>**like this**</code>) renders it as bold. The beauty of Markdown lies in its dual readability — the raw text is easy to read as plain text even before it is rendered, and it converts cleanly into richly formatted output when processed by a Markdown-compatible tool.</p>
+
+<p>The Markdown layout in PreseMaker writes content using these conventions throughout. The output is a plain-text file or string, with no embedded HTML tags or proprietary formatting codes. This makes it <strong>highly portable</strong>. Markdown files can be opened in any text editor, committed to a version control repository like Git, shared over email, dropped into a documentation platform, or processed by any of dozens of converters and static site generators. The same source file can produce a web page via a tool like Jekyll, a PDF via Pandoc, a presentation via Reveal.js, or a formatted document via a Markdown-aware word processor.</p>
+
+<p>This format is particularly well matched to <strong>developers, technical writers, and instructors</strong> who already work in environments that understand Markdown natively. GitHub and GitLab render Markdown files automatically in their web interfaces, making it easy to include documentation alongside code. Documentation platforms like Read the Docs, Confluence (in certain configurations), and Notion all support Markdown input. Static site generators such as Hugo, Jekyll, and MkDocs are built around Markdown as their primary content format. For anyone operating in these ecosystems, receiving content in Markdown means it can be used immediately without conversion or cleanup.</p>
+
+<p>Markdown also serves as a powerful <strong>intermediate format</strong>. When output will ultimately need to exist in multiple formats — for instance, both a website and a PDF — starting from Markdown is often more efficient than starting from HTML or a word processor format. A single Markdown source can be fed into Pandoc, a widely used universal document converter, and output as HTML, PDF, EPUB, DOCX, LaTeX, and many other formats with a single command. This makes Markdown output from PreseMaker a strategic choice when content reuse across multiple channels is a priority.</p>
+
+<p>As a concrete example, consider a software company that maintains technical documentation for its developer community. The documentation lives in a GitHub repository and is rendered on a documentation website using MkDocs. When the technical writing team generates new content in PreseMaker, selecting the Markdown layout produces output they can paste directly into a <code>.md</code> file, commit to the repository, and have live on the documentation site within minutes. No conversion, no reformatting, no intermediary tools required.</p>
+
+<p>Below is a brief comparison of how the same content element — a section heading and a short paragraph — would appear across the four layout formats:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Layout</th>
+      <th>Heading Representation</th>
+      <th>Paragraph Representation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Accordion</td>
+      <td><code>&lt;button class="accordion-header"&gt;Section Title&lt;/button&gt;</code></td>
+      <td><code>&lt;div class="accordion-body"&gt;&lt;p&gt;Content here.&lt;/p&gt;&lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td>Printable</td>
+      <td><code>&lt;h2&gt;Section Title&lt;/h2&gt;</code></td>
+      <td><code>&lt;p&gt;Content here.&lt;/p&gt;</code></td>
+    </tr>
+    <tr>
+      <td>WordPress</td>
+      <td><code>&lt;h2&gt;Section Title&lt;/h2&gt;</code></td>
+      <td><code>&lt;p&gt;Content here.&lt;/p&gt;</code></td>
+    </tr>
+    <tr>
+      <td>Markdown</td>
+      <td><code>## Section Title</code></td>
+      <td><code>Content here.</code> (plain paragraph)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Choosing the Right Layout for Your Context</strong></p>
+
+<p>With four well-defined layout options available, the selection decision becomes a matter of aligning format with context. No single layout is universally superior — each excels in the circumstances it was designed for. A few guiding principles can help navigate that decision reliably.</p>
+
+<p>The <strong>accordion layout</strong> is the right choice when the end destination is a web page or an LMS course shell where <em>interactivity and screen real estate efficiency</em> are important. If learners will be accessing content on a screen, if the material covers multiple sections that would create scroll fatigue when presented all at once, or if you want to give learners explicit navigational control over their pacing, the accordion format delivers all of these benefits. Its HTML output also means it can be embedded directly without additional conversion steps.</p>
+
+<p>The <strong>printable layout</strong> is best when the content needs to exist as a <em>physical artifact or a static reference document</em>. Printed handouts for instructor-led training sessions, downloadable PDF study guides, supplementary reading packets, and leave-behind reference sheets all benefit from the continuous, fully-visible structure of the printable layout. The styling is optimized for paper, and the absence of interactive elements means there is nothing to break when the document is printed or converted to PDF.</p>
+
+<p>The <strong>WordPress layout</strong> is the appropriate choice any time content will be <em>published directly to a WordPress-powered site</em>. Whether that site is a public-facing training portal, a corporate intranet, a blog, or a knowledge base, using the WordPress layout means the content will paste cleanly and render correctly without a manual cleanup pass. This is especially valuable in high-volume publishing workflows where time spent on post-production formatting represents a meaningful operational cost.</p>
+
+<p>The <strong>Markdown layout</strong> suits contexts where content will enter a <em>technical ecosystem that is Markdown-native</em>, or where the same content will be converted into multiple output formats downstream. If the destination is a GitHub repository, a documentation platform, a static site generator, or the input queue of a document conversion pipeline, Markdown is the natural choice. It is also the format that offers the greatest long-term flexibility — Markdown files remain usable and convertible far into the future regardless of how specific platforms or tools evolve.</p>
+
+<p>Underlying all of these individual guidelines is a single overarching principle: <strong>the learner's access context should be the primary decision driver</strong>. Before asking which format is easiest to produce, ask where and how learners will actually encounter this content. Will they be online or offline? Will they be reading on a screen or on paper? Will they be interacting with content in a structured course environment or browsing documentation on their own? Will they need to reference material repeatedly in the field, or consume it once in a classroom? The answers to these questions point directly to the layout that will best serve the learner, and serving the learner is the purpose of every formatting decision.</p>
+        <div class="notes"><strong>Notes</strong>A detailed look at the four primary layout formats PreseMaker supports for text-based lessons. Learners explore the structural and functional differences between accordion, printable, WordPress, and Markdown outputs.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

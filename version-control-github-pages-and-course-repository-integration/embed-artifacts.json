@@ -1,0 +1,52 @@
+﻿[
+  {
+    "title": "Version Control, GitHub Pages, and Course Repository Integration \u2014 Topics \u0026 Learning Outcomes",
+    "href": "topics-outcomes.html",
+    "type": "Page"
+  },
+  {
+    "title": "Version Control, GitHub Pages, and Course Repository Integration \u2014 Module Topics",
+    "href": "topics.html",
+    "type": "Page"
+  },
+  {
+    "title": "Version Control, GitHub Pages, and Course Repository Integration \u2014 Module Topics",
+    "href": "content/module_topics.html",
+    "type": "Content"
+  },
+  {
+    "title": "Choosing the Right Sharing Method",
+    "href": "content/Version_Control_GitHub_interactive.html",
+    "type": "Content"
+  },
+  {
+    "title": "Managing a Course as a Git Repository in PreseMaker",
+    "href": "content/Version_Control_GitHub_interactive_topics_t1.html",
+    "type": "Content"
+  },
+  {
+    "title": "Publishing a Course Website with GitHub Pages",
+    "href": "content/Version_Control_GitHub_interactive_topics_t2.html",
+    "type": "Content"
+  },
+  {
+    "title": "Using the Course Repository Service",
+    "href": "content/Version_Control_GitHub_interactive_topics_t3.html",
+    "type": "Content"
+  },
+  {
+    "title": "Other Sharing Options: Archive Export and iFrame Embedding",
+    "href": "content/Version_Control_GitHub_interactive_topics_t4.html",
+    "type": "Content"
+  },
+  {
+    "title": "Choosing the Right Sharing Method",
+    "href": "content/Version_Control_GitHub_interactive_topics_t5.html",
+    "type": "Content"
+  },
+  {
+    "title": "Version Control, GitHub Pages, and Course Repository Integration \u2014 Topic Prompt (Source)",
+    "href": "source-materials/source-1.html",
+    "type": "Source-materials"
+  }
+]

@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Using the Prompt Button</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Configuring AI Providers per Task and Using the Prompt Button</a></div>
+  <header>
+    <h1>Using the Prompt Button</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Using the Prompt Button</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Every time PreseMaker prepares to send a request to an AI provider — whether it is generating quiz questions, producing speaker narration, summarizing content, or handling any other text-based task — a <strong>Prompt button</strong> appears on that screen. This button gives you direct, unfiltered access to the exact text that will be, or has just been, transmitted to the AI. Nothing is paraphrased, abbreviated, or hidden behind a summary view. What you see when you click the Prompt button is precisely what the AI receives, word for word. Understanding how and when to use this feature is one of the most practical skills you can develop when working with AI-assisted course authoring, because the quality of any AI output is inseparable from the quality of the prompt that produced it.</p>
+
+<p><strong>What the Prompt Button Is</strong></p>
+
+<p>The Prompt button is a transparency tool built into every generation screen in PreseMaker that communicates with an AI provider. Its sole purpose is to surface the complete prompt text so that you, the author, are never left guessing about what instructions and context the AI actually received. This matters more than it might initially seem. AI systems do not interpret intent — they respond to text. If that text contains an ambiguity, an omission, or an unintended instruction, the AI will follow it faithfully and produce output that reflects the flaw. Because PreseMaker constructs prompts dynamically based on your settings, your content, and the task type, the assembled prompt can sometimes look different from what you imagined it would be. The Prompt button removes that uncertainty entirely.</p>
+
+<p>The button is consistently present across <em>all</em> text-based AI tasks the platform supports. Whether you are on the quiz generation screen, the narration screen, the content summarization screen, or any other generation interface, the same button and the same inspection experience are available. This universality is intentional — it means you only need to learn one method of prompt inspection, and that method applies everywhere.</p>
+
+<p><strong>Inspecting the Prompt Before Generation</strong></p>
+
+<p>One of the most valuable habits you can build is clicking the Prompt button <em>before</em> you trigger generation. This pre-generation inspection step lets you read through the full prompt and confirm that it accurately represents both your intended task and the content you expect the AI to work with. Consider it a preflight check — similar to reviewing a document before sending it to a client, or verifying data inputs before running a report.</p>
+
+<p>There are several things worth looking for during a pre-generation review:</p>
+
+<ul>
+  <li><strong>Completeness:</strong> Is all the relevant content present? If the prompt is supposed to include slide text, topic descriptions, or other source material, confirm that material has been included and has not been truncated or omitted.</li>
+  <li><strong>Accuracy of instructions:</strong> Do the instructions in the prompt match the settings you selected? For example, if you configured the AI to generate five multiple-choice questions at a medium difficulty level, verify that those parameters are reflected in the prompt text.</li>
+  <li><strong>Absence of unexpected content:</strong> Sometimes placeholder text, residual content from a previous session, or formatting artifacts can find their way into a prompt. Reading it in full lets you catch these before they influence output.</li>
+  <li><strong>Tone and framing:</strong> If the prompt instructs the AI to adopt a particular persona or writing style, confirm the framing matches what you want for this specific piece of content.</li>
+</ul>
+
+<p>Catching a problem at this stage is far preferable to discovering it after generation. AI generation consumes API credits or usage quota with your provider. A flawed prompt that produces unusable output means you spend those resources and still need to regenerate. Pre-generation inspection is therefore both a quality-control step and a practical cost-saving measure when you are working at scale across a large course build.</p>
+
+<p><strong>Inspecting the Prompt After Generation</strong></p>
+
+<p>The Prompt button is equally useful <em>after</em> generation has completed. When the AI returns output that surprises you — whether the results are better than expected, worse than expected, or simply different from what you intended — the post-generation prompt view gives you a concrete starting point for understanding why. Rather than guessing at the cause of an unsatisfactory result, you can read the prompt the AI actually received and trace the output back to its source.</p>
+
+<p>This retrospective use of the Prompt button supports a structured, iterative improvement process. Consider a scenario where you generate narration for a slide and the tone comes out more formal than you wanted. Without prompt visibility, you might adjust a setting and regenerate, uncertain whether your change actually addressed the root cause. With prompt visibility, you can inspect the narration prompt, identify that the persona instruction used language like <em>"deliver in a professional and authoritative tone"</em>, and then trace that instruction back to a setting you can modify before your next attempt. The feedback loop becomes much tighter and more deliberate.</p>
+
+<p>Post-generation inspection is also useful when output is surprisingly good. Understanding what a high-quality prompt looks like — what level of specificity, what structural choices, what context it included — helps you replicate that success intentionally rather than by accident.</p>
+
+<p><strong>Why Prompt Transparency Matters</strong></p>
+
+<p>Full prompt visibility is not simply a convenience feature — it serves several deeper purposes that become increasingly important as you rely more heavily on AI assistance in your course production workflow.</p>
+
+<ul>
+  <li><strong>Accountability:</strong> When AI-generated content will be published to learners, you carry responsibility for its accuracy and appropriateness. Prompt transparency lets you verify that the AI was given correct instructions and sound source material. If a subject-matter expert or a reviewer questions a piece of AI-generated content, you can produce the prompt that generated it and demonstrate what context the AI was working with.</li>
+  <li><strong>Troubleshooting:</strong> Poor AI output can stem from many sources — an underpowered model, an insufficiently specific instruction, missing context, or even a provider outage affecting response quality. Prompt visibility lets you isolate the prompt as a variable. If the prompt looks correct and complete but the output is still weak, attention shifts to the provider or model selection. If the prompt itself contains a flaw, you have identified the fix without needing to guess.</li>
+  <li><strong>Provider comparison:</strong> PreseMaker supports multiple AI providers, and different providers can respond quite differently to identical prompts. When you are deciding which provider to assign to a particular task type — for example, choosing between providers for quiz generation versus narration — being able to hold the prompt constant and vary only the provider gives you a controlled basis for comparison. The Prompt button makes that possible by ensuring you know exactly what each provider received.</li>
+</ul>
+
+<p><strong>The Prompt Button Across All Task Types</strong></p>
+
+<p>Because the Prompt button appears on every generation screen without exception, you do not need to learn a different inspection method depending on what kind of content you are producing. The experience of clicking the button, reading the prompt, and acting on what you find is the same whether you are generating quiz questions, slide narration, learning objectives, content summaries, or any other AI-assisted output PreseMaker supports.</p>
+
+<p>This consistency has a meaningful practical benefit: prompt inspection can become a standard, repeatable step in your quality-assurance process rather than an ad hoc troubleshooting measure. The table below illustrates how the same Prompt button workflow applies uniformly across several common task types:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task Type</th>
+      <th>What the Prompt Typically Contains</th>
+      <th>Key Things to Check</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Quiz question generation</td>
+      <td>Source content, question count, difficulty level, question format instructions</td>
+      <td>Correct number of questions requested, appropriate difficulty framing, full source text present</td>
+    </tr>
+    <tr>
+      <td>Speaker narration</td>
+      <td>Slide text, persona or tone instructions, length or pacing guidance</td>
+      <td>Tone matches intended audience, slide content is complete, no extraneous content included</td>
+    </tr>
+    <tr>
+      <td>Content summarization</td>
+      <td>Full source material, summarization target length or format</td>
+      <td>All source sections included, target format clearly specified</td>
+    </tr>
+    <tr>
+      <td>Learning objective generation</td>
+      <td>Topic description, Bloom's taxonomy level or action verb guidance, module context</td>
+      <td>Correct taxonomy level reflected, topic scope is accurate</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Incorporating the Prompt button into your standard workflow — reviewing the prompt before generation for high-stakes or complex tasks, and reviewing it after generation whenever output needs analysis — transforms prompt inspection from an occasional troubleshooting step into a routine part of responsible AI-assisted authoring. Over time, this practice builds familiarity with how PreseMaker constructs prompts, which in turn makes you better at configuring your settings and content inputs to produce stronger results from the start.</p>
+        <div class="notes"><strong>Notes</strong>Explains how to use the Prompt button available on every generation screen to inspect the exact text sent to an AI provider. Covers when and why learners would use this feature before or after generation.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

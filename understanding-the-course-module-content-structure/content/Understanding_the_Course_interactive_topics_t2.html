@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Courses and Modules</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Understanding the Course-Module-Content Structure</a></div>
+  <header>
+    <h1>Understanding Courses and Modules</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Understanding Courses and Modules</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you begin working in PreseMaker, the very first structural concept you need to understand is how <strong>courses</strong> and <strong>modules</strong> relate to one another. These two elements form the backbone of everything you create — every piece of content, every generated material, and every learning experience you build ultimately traces back to this foundational hierarchy. Before you can produce a single topic or resource, you need to understand what a course is, what a module is, how they connect, and why that structure matters for effective instruction.</p>
+
+<p>Think of a course and its modules the way you might think of a textbook and its chapters. The textbook gives the subject its identity and scope; the chapters break that subject into digestible, purposeful sections. PreseMaker works on exactly this principle — and mastering it from the start will make every subsequent step faster, clearer, and more intentional.</p>
+
+<p>A <strong>course</strong> in PreseMaker defines the overall subject area or learning goal that a learner is working toward. It is the broadest container in the system — the single parent under which all other content lives. A course might be something like <em>Introduction to Digital Marketing</em>, <em>Python for Data Science</em>, or <em>Workplace Safety Fundamentals</em>. Whatever the subject, the course gives that body of knowledge a name, a purpose, and a boundary. Every module, every topic, and every piece of generated material produced in PreseMaker ultimately belongs to one specific parent course.</p>
+
+<p>Critically, <strong>creating a course is the first step</strong> before any content can be organized or produced. You cannot add modules without a course to place them in, just as you cannot write chapters without first establishing which book they belong to. This is not merely a technical requirement — it is an invitation to think clearly about your instructional goal before diving into content creation. What is the learner trying to achieve by the end? What subject area are you covering? Answering those questions defines your course.</p>
+
+<p>Once a course exists, you populate it with <strong>modules</strong>. A module breaks the course into manageable, thematically grouped sections of content. If your course is <em>Introduction to Digital Marketing</em>, your modules might be <em>Search Engine Optimization</em>, <em>Social Media Strategy</em>, <em>Email Campaigns</em>, and <em>Analytics and Reporting</em>. Each module carves out one coherent slice of the broader subject. Modules sit precisely one level below the course and one level above individual topics or content items — they are the middle tier of the PreseMaker content hierarchy.</p>
+
+<p>A single course can — and typically does — contain <strong>multiple modules</strong>. This is what allows complex subjects to be organized into logical, navigable chunks rather than presented as one overwhelming mass of information. The ability to group related content under a shared module label is one of the most powerful organizational features PreseMaker offers.</p>
+
+<p>The structural connection between a course and its modules is called a <strong>parent-child relationship</strong>. The course is the parent; each module is a child of that course. This relationship has one important rule: a course can contain one or many modules, but each module belongs to exactly one course. A module cannot simultaneously belong to two different courses. This constraint keeps content neatly bounded and prevents the kind of organizational confusion that arises when material is shared loosely across unrelated contexts.</p>
+
+<p>To make this concrete, consider the following illustration of how a course and its modules might be structured:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Course</th>
+      <th>Module</th>
+      <th>Module Focus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Introduction to Digital Marketing</td>
+      <td>Module 1</td>
+      <td>Search Engine Optimization</td>
+    </tr>
+    <tr>
+      <td>Introduction to Digital Marketing</td>
+      <td>Module 2</td>
+      <td>Social Media Strategy</td>
+    </tr>
+    <tr>
+      <td>Introduction to Digital Marketing</td>
+      <td>Module 3</td>
+      <td>Email Campaigns</td>
+    </tr>
+    <tr>
+      <td>Introduction to Digital Marketing</td>
+      <td>Module 4</td>
+      <td>Analytics and Reporting</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Every row in that table represents a child module belonging to the same parent course. A learner working through this course will encounter each module in turn, and everything they read, watch, or practice will be housed within one of those four modules — never floating loosely outside of them.</p>
+
+<p>Understanding this hierarchy is not just an academic exercise — it is <strong>essential for knowing where to add, edit, or find content</strong> within PreseMaker. When you want to create a new topic, you need to know which module it belongs to. When you want to edit a piece of generated material, you navigate through the course to the correct module to find it. When a collaborator asks where a particular lesson lives, the answer is always expressed in terms of this hierarchy: <em>it is in Module 3 of the Digital Marketing course</em>. The parent-child structure is the navigational map of your entire content space.</p>
+
+<p>Modules are rightly described as the <strong>primary building blocks</strong> of a course — and this is worth unpacking carefully. A course provides identity and scope, but it does not itself contain instructional content directly. All finer-grained content elements — such as individual topics, lessons, quizzes, and generated materials — are housed <em>within</em> modules, not within the course itself. The course is a container for modules; modules are containers for content. This means that the quality of your course's structure depends almost entirely on how well you design your modules.</p>
+
+<p>Modules also provide the <strong>pedagogical framework</strong> that keeps a course sound from a learning design perspective. A poorly planned set of modules might jump randomly from advanced topics to introductory ones, leave critical concepts unaddressed, or group unrelated material together in ways that confuse learners. A well-planned set of modules, by contrast, creates a clear, coherent path through the subject. For this reason, many experienced instructional designers treat module planning as the most important phase of course development — more important, in some ways, than writing the content itself. Get the modules right, and the content almost writes itself. Get them wrong, and no amount of polished writing will save the learner experience.</p>
+
+<p>This connects directly to the concept of <strong>scaffolded learning</strong> — a well-established pedagogical principle in which earlier material provides the foundation necessary to understand later material. Modules in PreseMaker can be structured to build on one another deliberately. For example:</p>
+
+<ul>
+  <li><strong>Module 1</strong> might introduce foundational vocabulary and core concepts that the learner will need throughout the course.</li>
+  <li><strong>Module 2</strong> might apply those concepts to a simple, controlled scenario.</li>
+  <li><strong>Module 3</strong> might introduce complexity and nuance, assuming the learner has the foundation from Modules 1 and 2.</li>
+  <li><strong>Module 4</strong> might ask the learner to synthesize everything into a real-world application or project.</li>
+</ul>
+
+<p>This kind of progressive structure is only possible when modules are designed with intentionality — when the instructor thinks not just about <em>what</em> to teach, but <em>when</em> and <em>in what order</em> to teach it. PreseMaker's module system is built to support exactly this kind of deliberate sequencing.</p>
+
+<p>The <strong>order of modules within a course</strong> reflects the intended learning progression for the subject. Modules are not an unordered collection of equal fragments — they form a sequence. That sequence is meaningful. Learners typically move through modules from first to last, accumulating knowledge and skill as they go. Instructors who treat module order casually — placing content wherever it happens to fit rather than where it best serves the learner — risk creating a course that feels disjointed or arbitrary.</p>
+
+<p>A well-organized set of modules ensures that learners experience content <strong>coherently</strong> rather than in isolated fragments. Coherence means that each module feels like a natural continuation of the one before it, that key ideas are introduced before they are assumed, and that the learner arrives at the end of the course feeling like they have traveled a purposeful journey through the subject — not stumbled through a collection of loosely related materials.</p>
+
+<p>In practice, planning your modules before you begin creating content in PreseMaker means asking questions like: How many major themes or phases does this subject have? What does a learner need to understand first before they can understand anything else? Which topics are closely enough related that they belong together under one roof? Are there natural break points in the subject where a learner might pause, reflect, and consolidate what they have learned before moving on? Answering these questions thoughtfully — before you click <em>Create Module</em> — is what separates a well-constructed course from a disorganized one.</p>
+
+<p>To summarize the key structural facts in one place:</p>
+
+<ul>
+  <li>A <strong>course</strong> is the top-level container that defines the subject area and learning goal; it must be created first.</li>
+  <li>A <strong>module</strong> is a thematically grouped section of content that sits directly beneath the course and directly above individual topics and materials.</li>
+  <li>The relationship is <strong>one-to-many from course to modules</strong>: one course, many modules; each module belongs to exactly one course.</li>
+  <li>Modules are the <strong>primary building blocks</strong> because all content is housed within them, not within the course directly.</li>
+  <li>The <strong>order of modules</strong> carries instructional meaning and should reflect the intended learning progression.</li>
+  <li>Well-designed modules support <strong>scaffolded, coherent learning</strong> by building on one another in a logical sequence.</li>
+</ul>
+        <div class="notes"><strong>Notes</strong>Explores the relationship between courses and modules, clarifying how modules serve as the primary building blocks organized within a course.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

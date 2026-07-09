@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editing and Refining Topics and Subtopics</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Generating Module Topics and Subtopics</a></div>
+  <header>
+    <h1>Editing and Refining Topics and Subtopics</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Editing and Refining Topics and Subtopics</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Once PreseMaker has generated an initial list of module topics and subtopics from your source materials, that list is rarely perfect on the first pass. Automated extraction is a powerful starting point, but it cannot fully replicate the judgment of a subject-matter expert or instructional designer who understands the intended audience, the learning objectives, and the precise boundaries of each content area. The editing and refining stage is therefore not a minor housekeeping step — it is a critical phase that determines how well the rest of the module build will go. A well-structured topic list acts as a blueprint: every subsequent piece of content, every assessment item, and every learner interaction flows from it. Investing focused effort here prevents costly rework downstream.</p>
+
+<p>The sections below walk through each category of editing action you can take on the Module Topics list, explain why each action matters, and provide practical guidance for executing it well.</p>
+
+<p><strong>Reviewing the Generated Topics List</strong></p>
+
+<p>Before making any individual edits, take a full pass through the entire Module Topics list as a reader would experience it from beginning to end. This top-down review gives you a sense of the overall architecture — how many topics exist, how subtopics nest beneath them, and whether the progression tells a coherent story about the subject matter.</p>
+
+<p>During this review, ask three questions about every item in the list:</p>
+
+<ul>
+  <li><strong>Does it accurately reflect a meaningful segment of the source material?</strong> A topic that is vague, overly broad, or only tangentially related to the source content will produce unfocused learning material later. If a topic title does not immediately map to a recognizable chunk of your source document, flag it for renaming or removal.</li>
+  <li><strong>Is it duplicated elsewhere in the list?</strong> Automated generation occasionally produces two topics that cover nearly identical ground under slightly different names. For example, <em>"Data Validation Rules"</em> and <em>"Validating Input Data"</em> might both appear when only one is warranted. Duplicates dilute the learner experience and inflate the apparent scope of the module.</li>
+  <li><strong>Are there obvious gaps?</strong> Compare the list against the table of contents, chapter headings, or key sections of your source materials. If a significant concept from the source is absent from the topic list, note it for addition before you begin making targeted edits.</li>
+</ul>
+
+<p>Completing this review before touching individual items ensures your subsequent edits are purposeful rather than reactive. You will have a mental map of what needs to change and why, rather than discovering problems piecemeal as you work through the list.</p>
+
+<p><strong>Renaming Topics and Subtopics</strong></p>
+
+<p>To rename an item, select it in the Module Topics list and use the edit option to open the title field, then type the new name and save. The mechanics are straightforward; the skill lies in choosing the right name.</p>
+
+<p>Effective topic and subtopic titles share several characteristics:</p>
+
+<ul>
+  <li><strong>Conciseness:</strong> A title should be short enough to scan quickly in a list or navigation menu. Aim for three to seven words in most cases. Titles that run to a full sentence create visual clutter and are harder for learners to use as orientation markers.</li>
+  <li><strong>Descriptiveness:</strong> Within that brevity, the title must convey the actual scope of the content. <em>"Introduction"</em> tells a learner almost nothing; <em>"Introduction to Network Security Principles"</em> tells them exactly what to expect.</li>
+  <li><strong>Consistency:</strong> When topic titles follow a predictable grammatical pattern — all noun phrases, all gerund phrases, or all imperative phrases — learners develop an intuition for how the module is organized. Mixing <em>"Understanding Firewalls"</em> with <em>"Encryption"</em> and <em>"How to Configure VPNs"</em> creates a jarring inconsistency. Pick a convention and apply it uniformly.</li>
+</ul>
+
+<p>Consider the following comparison of weak versus strong topic titles:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Original (Weak) Title</th>
+      <th>Revised (Strong) Title</th>
+      <th>Reason for Change</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Overview</td>
+      <td>Overview of the Project Lifecycle</td>
+      <td>Adds specific subject matter so learners know what is being overviewed</td>
+    </tr>
+    <tr>
+      <td>Things to Consider</td>
+      <td>Key Risk Factors in Budget Planning</td>
+      <td>Replaces vague phrasing with concrete, searchable content</td>
+    </tr>
+    <tr>
+      <td>More on This Topic</td>
+      <td>Advanced Configuration Options</td>
+      <td>Eliminates a placeholder title and signals the depth level clearly</td>
+    </tr>
+    <tr>
+      <td>Data</td>
+      <td>Collecting and Cleaning Raw Data</td>
+      <td>Single-word titles are too broad; the revision scopes the content precisely</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Renaming is also an opportunity to align titles with the vocabulary your target audience actually uses. If learners are practitioners who use industry-specific terminology, the topic titles should reflect that language rather than the more generic phrasing an automated system might generate.</p>
+
+<p><strong>Reordering Topics and Subtopics</strong></p>
+
+<p>The sequence of topics is as important as the topics themselves. Learning is cumulative: concepts introduced early become the scaffolding on which later concepts are built. A topic list that presents advanced material before foundational concepts forces learners to engage with ideas they lack the context to understand, increasing cognitive load and reducing retention.</p>
+
+<p>To reorder items, use the <strong>Move Up</strong> and <strong>Move Down</strong> controls associated with each topic or subtopic. Move the selected item one position at a time, or use repeated presses to reposition it further in the list.</p>
+
+<p>When deciding on sequence, apply these principles:</p>
+
+<ul>
+  <li><strong>Prerequisites first:</strong> If Topic B assumes knowledge introduced in Topic A, Topic A must appear earlier in the list. For example, a topic on <em>"Writing SQL JOIN Queries"</em> should follow, not precede, a topic on <em>"Understanding Relational Database Structure."</em></li>
+  <li><strong>Simple before complex:</strong> Even when two topics are not strictly dependent on each other, presenting the simpler or more familiar concept first reduces the mental effort required to engage with the more complex one.</li>
+  <li><strong>Conceptual grouping:</strong> Topics that are thematically related should be clustered together. Jumping between unrelated themes and returning to an earlier theme later fragments the learner's mental model.</li>
+  <li><strong>Review the whole after reordering:</strong> Moving one topic can inadvertently break the logic connecting the topics around it. After any reordering, read the full sequence again from top to bottom to verify that the narrative flow is intact and that no new sequencing problems have been introduced.</li>
+</ul>
+
+<p><strong>Adding New Topics or Subtopics</strong></p>
+
+<p>When your initial review reveals a gap — a concept present in the source material but absent from the generated list — use the <strong>Add Topic</strong> or <strong>Add Subtopic</strong> control to insert a new item at the correct position in the list.</p>
+
+<p>Positioning matters when adding. Insert the new item where it fits logically within the existing sequence rather than appending it to the end as a default. If you are adding a subtopic, ensure it is nested under the correct parent topic so the hierarchy remains meaningful.</p>
+
+<p>When creating a new item, provide:</p>
+
+<ul>
+  <li><strong>A clear, consistent title</strong> that follows the naming conventions established for the rest of the list.</li>
+  <li><strong>A brief description, if prompted</strong>, that tells PreseMaker what the new topic covers. This description helps the system identify relevant passages in the source materials during content generation. A description like <em>"Covers the process of submitting expense reports through the employee portal, including required fields and approval workflow"</em> gives the system precise guidance; a description like <em>"Expense stuff"</em> does not.</li>
+</ul>
+
+<p>One important constraint to keep in mind: <strong>do not add topics that fall outside the scope of the module's source materials.</strong> PreseMaker generates content by drawing on those materials. A topic with no corresponding source content will either produce thin, low-quality output or cause errors during generation. If you identify a genuinely important concept that the current source materials do not cover, the right solution is to update the source materials before adding the topic — not to add the topic and hope the system will fill the gap.</p>
+
+<p><strong>Removing Unnecessary Topics or Subtopics</strong></p>
+
+<p>Not every topic the system generates will belong in the final module. Removing the ones that do not belong keeps the module focused and prevents learners from spending time on content that does not serve the learning objectives.</p>
+
+<p>To remove an item, select it and confirm the deletion using the remove or delete control. Most systems ask for confirmation before permanently deleting an item; use that moment to double-check your decision.</p>
+
+<p>Before confirming a removal, consider two downstream effects:</p>
+
+<ul>
+  <li><strong>Does removing this topic break the logical flow?</strong> If subsequent topics reference or depend on the one you are removing, those topics may no longer make sense in context. Either revise those dependent topics or reconsider whether the item should be removed at all.</li>
+  <li><strong>Are there orphaned subtopics?</strong> If you delete a parent topic without first relocating or removing its subtopics, those subtopics may lose their organizational context. Resolve the subtopics before deleting the parent.</li>
+</ul>
+
+<p>The most common candidates for removal include:</p>
+
+<ul>
+  <li><strong>Duplicates</strong> — two topics covering the same content under different names. Keep the better-named one and remove the other.</li>
+  <li><strong>Out-of-scope topics</strong> — items the system generated from peripheral references in the source material that do not belong in this particular module.</li>
+  <li><strong>Overly granular subtopics</strong> — sometimes the system breaks a concept into more subtopics than the content warrants. If two subtopics are so closely related that they would naturally be covered in the same breath, collapsing them into one leaner item produces a cleaner structure.</li>
+</ul>
+
+<p><strong>Best Practices for Finalizing the Structure</strong></p>
+
+<p>Once you have reviewed, renamed, reordered, added, and removed as needed, the topic list should be treated as finalized before you move to later stages of the module build. Changing the topic structure after content has been generated creates rework that compounds quickly. The following practices help ensure the structure is genuinely ready:</p>
+
+<ul>
+  <li><strong>Treat the topic list as a blueprint, not a draft.</strong> Every minute spent carefully refining the structure now saves multiples of that time in revision later. Resist the temptation to move forward with a topic list that feels "good enough." If something about the structure is bothering you, address it now.</li>
+  <li><strong>Cross-reference against the source materials.</strong> Place the finalized topic list side by side with the original source document, course outline, or learning objectives. Confirm that every key concept from the source appears somewhere in the topic list and that no topic in the list lacks a corresponding basis in the source.</li>
+  <li><strong>Verify the hierarchy reflects intended depth of coverage.</strong> A topic with six subtopics signals deep coverage; a topic with no subtopics signals a lighter treatment. Make sure that signal matches your intentions. If a topic is central to the module's learning objectives, it probably warrants subtopics. If a topic is merely contextual background, a single flat entry may be appropriate.</li>
+  <li><strong>Have a second pair of eyes review the structure.</strong> A colleague, subject-matter expert, or instructional design peer will notice problems that familiarity has made invisible to you. Common issues a reviewer catches include: assumed knowledge that the target audience does not have, important concepts buried too late in the sequence, and titles that make sense to the author but will confuse a learner encountering them for the first time.</li>
+  <li><strong>Document any deliberate omissions.</strong> If you chose not to include a topic that appears in the source material — because it is out of scope for this module, covered elsewhere in the curriculum, or appropriate only for a more advanced audience — note that decision. This protects you in future reviews when someone asks why the topic is missing.</li>
+</ul>
+
+<p>A finalized topic list that has been reviewed, validated against source materials, and confirmed by a second reviewer is the strongest possible foundation for the rest of the module development process. The care taken at this stage pays dividends in every subsequent step.</p>
+        <div class="notes"><strong>Notes</strong>Covers the tools and techniques available for modifying, reordering, adding, or removing topics and subtopics. Emphasizes best practices for ensuring the structure is accurate before proceeding to later steps.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

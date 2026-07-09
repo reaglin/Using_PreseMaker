@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Using the Content Source Selector</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Generating Quizzes and Assignments</a></div>
+  <header>
+    <h1>Using the Content Source Selector</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Using the Content Source Selector</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When generating quizzes and assignments automatically, the quality and relevance of the output depends entirely on what the generation engine is told to focus on. Without a clear scope, a generator might produce questions that are too broad, drawn from the wrong areas of a module, or misaligned with what learners are actually expected to know. The <strong>Content Source Selector</strong> solves this problem by acting as the critical bridge between your module plan and the assessment generation process. It is not simply a filter — it is the mechanism that gives the generator its instructions, defining which knowledge, skills, and outcomes the resulting questions must address.</p>
+
+<p>Understanding how to use the selector effectively means understanding why it exists. Assessment design is most meaningful when every question maps back to something deliberate: a topic you taught, a skill you want to measure, an outcome you committed to in your module plan. The selector enforces that discipline by making those choices explicit before a single question is generated.</p>
+
+<p><strong>What Is the Content Source Selector?</strong></p>
+
+<p>The Content Source Selector is a tool within the quiz and assignment generation workflow that allows you to specify exactly which parts of your module plan should inform the generated assessment. Rather than generating questions from a vague prompt or an entire body of content at once, the selector lets you point the engine at particular topics, clusters of related outcomes, or the full module — depending on what the assessment is meant to accomplish.</p>
+
+<p>At its core, the selector works by reading from your saved module plan and presenting its structure — topics, subtopics, and associated intended learning outcomes — as a navigable, checkable list. You make choices within that list, and those choices become the scope parameter passed to the generation engine. This means the engine is not guessing what is relevant; it is working precisely within the boundaries you have defined.</p>
+
+<p>There are three levels at which you can scope a selection:</p>
+<ul>
+  <li><strong>Individual topics:</strong> Useful when creating a short quiz on a single concept or skill. The generator stays tightly focused on just that area of the module.</li>
+  <li><strong>Clusters of related topics:</strong> Appropriate for mid-module assessments or topic tests that span several connected areas. You select multiple topics to produce a broader but still purposeful assessment.</li>
+  <li><strong>The full module:</strong> Suited to end-of-module exams or comprehensive assignments where coverage across all taught content is the goal.</li>
+</ul>
+
+<p>One important point: using the selector is not optional. It is a <em>prerequisite step</em> in the generation workflow. You cannot proceed to choosing question types, setting question counts, or triggering generation until a valid source selection has been made. This is by design — it prevents assessments from being created without a clear instructional rationale.</p>
+
+<p><strong>Locating and Opening the Selector</strong></p>
+
+<p>The selector is accessed from within the <em>Generating Quizzes and Assignments</em> module. When you enter the generation workflow, the very first step — before you are asked about question types, difficulty levels, or how many questions to generate — is the content source step. Look for a section labelled <strong>Content Source</strong> or <strong>Source Selector</strong> at Step 1 of the workflow interface.</p>
+
+<p>Before you open the selector, there is one important prerequisite of its own: your module plan must already be saved and accessible within the system. The selector reads directly from that plan to populate its topic list. If the plan has not been saved, or if it contains unsaved changes, the selector may display an incomplete or outdated list of topics and outcomes. Always confirm your module plan is finalised and saved before entering the generation workflow.</p>
+
+<p>Once you open the selector, you will see your module's structure laid out as a list of topics, each of which can be expanded to reveal its associated subtopics and learning outcomes. The interface is designed to be navigable even for large modules with many topics, so you are not forced to scroll through everything at once — you expand only what you need to inspect or select.</p>
+
+<p><strong>Targeting Specific Topics</strong></p>
+
+<p>With the selector open and your module plan loaded, you will see the full topic list as it was defined in your plan. Each topic appears as a selectable item. To target a specific topic, simply check its checkbox. This tells the generation engine that questions should be drawn from the concepts, terminology, skills, and knowledge covered within that topic.</p>
+
+<p>For example, imagine a module on Digital Marketing. If you are generating a short quiz specifically on <em>Search Engine Optimisation</em>, you would check only that topic. The generator will then produce questions using the vocabulary, principles, and techniques associated with SEO — not with social media strategy, email marketing, or any other topic from the same module.</p>
+
+<p>Selecting a topic does more than just label a content area. It scopes the generator's entire frame of reference for language and context. If the topic uses specific technical terminology, the generated questions will use that terminology accurately. If the topic addresses a particular workflow or methodology, the questions will reflect that framing. This is why selecting the right topics is so much more powerful than simply describing a subject in a text prompt.</p>
+
+<p>When an assessment is meant to cover several related areas — for instance, a mid-module test covering both <em>Content Marketing</em> and <em>Social Media Strategy</em> — you simply check both topics. The generator will draw from both, proportioning its output across the selected areas. You are not limited to a single topic per assessment; the selector is designed to support multi-topic selections for broader assessments.</p>
+
+<p><strong>Aligning with Intended Learning Outcomes</strong></p>
+
+<p>Selecting a topic gives you access to a deeper level of control: the <strong>intended learning outcomes (ILOs)</strong> associated with that topic. When you expand a selected topic within the selector, you will see a list of its outcomes — statements describing what learners should know, understand, or be able to do as a result of engaging with that topic.</p>
+
+<p>Each outcome can be individually checked or unchecked. This granularity is valuable because not every assessment needs to cover every outcome within a topic. Consider a practical example:</p>
+
+<ul>
+  <li>A topic called <em>Data Visualisation</em> might have four learning outcomes:
+    <ul>
+      <li>Explain the principles of effective chart design</li>
+      <li>Select appropriate chart types for different data sets</li>
+      <li>Create visualisations using a specified tool</li>
+      <li>Critically evaluate visualisations for accessibility</li>
+    </ul>
+  </li>
+</ul>
+
+<p>If you are generating a short knowledge-check quiz rather than a comprehensive assessment, you might select only the first two outcomes — those relating to understanding and selection — and leave the practical creation and evaluation outcomes unselected. The generator will then produce questions that test conceptual knowledge and decision-making, without generating questions that would require hands-on tool use or extended critical analysis that a short quiz cannot meaningfully assess.</p>
+
+<p>This outcome-level mapping ensures that every question generated has a direct instructional purpose. It prevents the common problem of assessments that are technically related to a topic but do not actually measure what learners are supposed to demonstrate. <strong>Unselected outcomes are excluded from generation entirely</strong>, so the assessment remains focused and purposeful rather than sprawling across everything loosely associated with the topic.</p>
+
+<p>Mapping questions to outcomes also makes moderation, feedback, and results analysis more meaningful. When you know each question corresponds to a specific outcome, you can identify exactly which outcomes learners are struggling with, rather than only knowing they struggled with a topic in general.</p>
+
+<p><strong>Confirming Your Selection Before Generating</strong></p>
+
+<p>Once you have made your topic and outcome selections, the selector presents a <strong>summary view</strong> — a consolidated list of everything you have chosen. This is a critical checkpoint. Before you proceed to generation, take time to review this summary carefully and verify the following:</p>
+
+<ul>
+  <li><strong>All intended topics are checked.</strong> It is easy to miss a topic if you were browsing a long list. The summary makes omissions visible at a glance.</li>
+  <li><strong>All intended outcomes within each topic are selected.</strong> If you expanded topics and made individual outcome choices, confirm those selections are reflected accurately in the summary.</li>
+  <li><strong>No unintended topics or outcomes are included.</strong> An accidental check on an unrelated topic will cause the generator to produce off-topic questions, diluting the assessment's focus.</li>
+</ul>
+
+<p>If you spot an error in the summary, return to the selector and adjust your choices. The system allows you to move back and forth between the selector and the summary until you are satisfied. There is no penalty for revising your choices at this stage — it is far better to correct the scope before generation than to discard a batch of incorrectly scoped questions after the fact.</p>
+
+<p>Once you confirm the selection, the system <strong>locks the source scope</strong>. This confirmed selection is then passed as a structured parameter to the quiz or assignment generation engine. The engine does not interpret your intentions loosely — it works from the exact specification you have confirmed. This is why the confirmation step matters: what you approve at this stage is what the engine acts on.</p>
+
+<p><strong>How Selector Choices Influence Generated Output</strong></p>
+
+<p>The relationship between your selector choices and the generated assessment output is direct and proportional. Understanding this relationship helps you make better selection decisions from the outset.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Selector Scope</th>
+      <th>Typical Use Case</th>
+      <th>Nature of Generated Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Single topic, one or two outcomes</td>
+      <td>Short knowledge-check or formative quiz</td>
+      <td>Tightly focused questions on a narrow concept or skill; consistent terminology throughout</td>
+    </tr>
+    <tr>
+      <td>Single topic, all outcomes</td>
+      <td>End-of-topic test</td>
+      <td>Comprehensive coverage of everything within the topic; questions at varying levels of complexity</td>
+    </tr>
+    <tr>
+      <td>Multiple related topics, selected outcomes</td>
+      <td>Mid-module assessment or thematic assignment</td>
+      <td>Broader coverage spanning connected concepts; questions reflect relationships between topics</td>
+    </tr>
+    <tr>
+      <td>Full module, all outcomes</td>
+      <td>End-of-module exam or summative assignment</td>
+      <td>Wide-ranging assessment covering all module content; suitable for high-stakes or final evaluations</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The language and framing of generated questions will consistently mirror the terminology used in your selected topics and outcomes. If your module plan uses the phrase <em>iterative design process</em> when describing a methodology, the generated questions will use that same phrase — not a generic equivalent. This terminology alignment is particularly important when assessments are exported to an LMS, because learners who have studied the module materials will encounter language they recognise, rather than questions that feel foreign or mismatched to what they were taught.</p>
+
+<p>Broad selections do not simply produce more questions — they produce qualitatively different assessments. A full-module selection will generate questions that may ask learners to connect ideas across topics, apply knowledge from one area to a scenario from another, or evaluate concepts at a higher level of abstraction. Narrow selections produce focused recall and application questions. Both are valuable, but they serve different assessment purposes, and the selector is the tool that lets you choose deliberately between them.</p>
+
+<p>Finally, the alignment between your selector choices and the module plan ensures that the final assessment is <strong>coherent and export-ready</strong>. When questions are grounded in the exact structure and language of a well-constructed module plan, the result is an assessment that requires minimal revision before it can be published in an LMS. The alternative — generating questions without a scoped source and then editing them into alignment with learning outcomes — is significantly more time-consuming and prone to inconsistency. Using the selector correctly from the start eliminates that rework.</p>
+        <div class="notes"><strong>Notes</strong>Guides learners through targeting specific topics and learning outcomes using the content source selector tool. Ensures that generated assessments are aligned with the module plan and intended learning goals.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

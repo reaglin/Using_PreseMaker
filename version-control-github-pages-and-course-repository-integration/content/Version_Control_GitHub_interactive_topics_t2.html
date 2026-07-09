@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publishing a Course Website with GitHub Pages</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Version Control, GitHub Pages, and Course Repository Integration</a></div>
+  <header>
+    <h1>Publishing a Course Website with GitHub Pages</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Publishing a Course Website with GitHub Pages</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Once you have built your course in PreseMaker, the next step is making it accessible to learners anywhere in the world. GitHub Pages is a free hosting service provided by GitHub that turns the files stored in a repository into a publicly reachable website. PreseMaker integrates this entire workflow — from packaging your course content into a deployable website to pushing it live — directly into its own interface. You do not need to open a terminal, write git commands, or navigate GitHub's hosting settings manually. What you do need is a GitHub account and an empty (or dedicated) repository ready to receive your course. With those two prerequisites in place, PreseMaker takes care of everything else.</p>
+
+<p>Understanding the end-to-end process before you begin saves time and prevents confusion. At a high level, the journey looks like this:</p>
+
+<ul>
+  <li>You export the course from PreseMaker, which packages it into a complete set of website files.</li>
+  <li>You connect that course to a GitHub repository by supplying its URL inside PreseMaker.</li>
+  <li>You trigger a publish action inside PreseMaker, which pushes the exported files to the repository.</li>
+  <li>GitHub Pages detects the new files and serves them at a stable public web address.</li>
+  <li>Whenever you update the course, you re-export and push again; the live site updates automatically.</li>
+</ul>
+
+<p>Each of these stages is explained in full detail below.</p>
+
+<p><strong>Exporting the Course Website Before Publishing</strong></p>
+
+<p>Before any file can be placed on the internet, PreseMaker must first transform your course project into the kind of content a web browser can read and display. This is what the export function does. When you initiate an export from inside PreseMaker, the application bundles everything — slides, media, navigation logic, styling, and any interactive elements — into a self-contained folder of standard web assets: HTML files, CSS stylesheets, JavaScript, and any images or other media your course uses.</p>
+
+<p>This exported package is significant for two reasons. First, it is entirely self-contained: a learner's browser does not need PreseMaker installed or running in order to view the course. Second, it is exactly what GitHub Pages will serve. GitHub Pages is not a content-management system that processes or re-renders your files; it is a static file host. Whatever files you push to the repository are the files learners receive, byte for byte. That means the quality and completeness of the export directly determine what the learner experiences.</p>
+
+<p>You initiate the export from within PreseMaker's menus — no external tools, no manual file copying, and no knowledge of web development are required at this stage. PreseMaker handles the assembly of all assets. The result is a folder on your local machine that represents the full course website and is ready to be handed off to GitHub.</p>
+
+<p><strong>Connecting the Course to a GitHub Repository</strong></p>
+
+<p>With exported files ready, the next step is telling PreseMaker where on GitHub those files should live. You do this by providing the remote repository URL — the address GitHub assigns to your repository, typically in the form <code>https://github.com/your-username/your-repository-name.git</code> — inside PreseMaker's publishing or settings panel.</p>
+
+<p>Once you supply that URL, PreseMaker stores it as part of the course's configuration. This is an important convenience: you only have to enter the repository address once per course. On every subsequent session, PreseMaker already knows which repository belongs to which course, so you can move straight to pushing updates without re-entering connection details. PreseMaker also records the timestamp of the most recent successful push, giving you a clear at-a-glance indicator of whether your live site is current.</p>
+
+<p>It is worth understanding what a GitHub repository is, if you are new to the concept. Think of it as a project folder stored on GitHub's servers, with built-in version history. Every time you push new files, GitHub records what changed and when. For the purposes of GitHub Pages, the repository is simply the storage location from which GitHub reads and serves your website files. You create the repository on GitHub's website (github.com) before connecting it in PreseMaker — this is the one action that takes place outside PreseMaker.</p>
+
+<p>A few practical notes about the repository you create:</p>
+
+<ul>
+  <li>It should be set to <strong>public</strong> visibility if you want learners to access the course without logging in to GitHub. GitHub Pages on free accounts requires a public repository to serve a site publicly.</li>
+  <li>You can name the repository anything meaningful — for example, <em>intro-to-python-course</em> or <em>safety-training-2025</em>. The name becomes part of the public URL, so a descriptive, lowercase, hyphenated name is a good habit.</li>
+  <li>If you create the repository with a README file, make sure PreseMaker's export files will not conflict with it; starting with a completely empty repository is often the simplest approach.</li>
+</ul>
+
+<p><strong>Publishing Through PreseMaker Rather Than GitHub's Website</strong></p>
+
+<p>Once the repository is connected, publishing is triggered entirely from within PreseMaker. You do not visit GitHub's website, navigate its Settings panel, enable GitHub Pages, or choose a branch — PreseMaker handles all of that on your behalf when you use its publish action.</p>
+
+<p>Under the hood, what PreseMaker performs is a <em>git push</em>: it takes the exported website files and sends them to the remote GitHub repository, placing them on the branch that GitHub Pages is configured to watch. Git is the version-control system that powers GitHub, and a push is the operation that transfers your local file changes to the remote server. Normally, using git requires opening a terminal (the command-line interface on your computer), typing commands such as <code>git add .</code>, <code>git commit -m "message"</code>, and <code>git push origin main</code>, and having git software installed. PreseMaker abstracts all of this away. You click a button; PreseMaker executes the equivalent commands internally.</p>
+
+<p>This design decision has a meaningful impact on who can publish a course. An instructional designer, subject-matter expert, or educator can share their work with the world without learning version-control workflows or command-line tools. The technical barrier is reduced to: have a GitHub account, create a repository, paste the URL into PreseMaker, and click publish.</p>
+
+<p><strong>The Live Public Web Address</strong></p>
+
+<p>After the first successful push, GitHub Pages activates and assigns a public URL to the repository. The format of that URL depends on how the repository is named and who owns it:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Repository type</th>
+      <th>URL pattern</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Standard project repository</td>
+      <td><code>https://username.github.io/repository-name/</code></td>
+      <td><code>https://jsmith.github.io/intro-to-python-course/</code></td>
+    </tr>
+    <tr>
+      <td>Special user/organization site (repo named <em>username.github.io</em>)</td>
+      <td><code>https://username.github.io/</code></td>
+      <td><code>https://jsmith.github.io/</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For most course authors, the first pattern applies. The URL is constructed automatically by GitHub based on your account name and repository name — you do not choose it manually, but you can predict it before pushing. Once active, this address is fully public: anyone with the link can visit the course in their browser without signing in to GitHub, without installing software, and without any special credentials. This makes the link ideal for sharing in an email, a learning management system, a syllabus, or a social media post.</p>
+
+<p>The URL is also <strong>stable</strong>. As long as the repository exists and GitHub Pages remains enabled, the address does not change, even after you push many rounds of updates. You can confidently share the link with learners at the start of a term and know it will remain valid throughout. The only scenarios that would break the URL are deleting the repository, renaming it (which changes the URL), or explicitly disabling GitHub Pages in the repository's settings.</p>
+
+<p><strong>Pushing Updates to the Published Site</strong></p>
+
+<p>A published course is rarely static. You may correct errors discovered after launch, add new content, revise existing slides, or update media. PreseMaker's publishing model is designed to make this iterative process straightforward.</p>
+
+<p>The update workflow mirrors the initial publish:</p>
+
+<ul>
+  <li>Make your changes inside PreseMaker's course editor.</li>
+  <li>Export the course again, which regenerates the complete website file package reflecting your latest changes.</li>
+  <li>Use PreseMaker's push action to send the updated files to the GitHub repository.</li>
+</ul>
+
+<p>When GitHub Pages detects that new files have been pushed to the watched branch, it begins serving those updated files. There is typically a short delay — usually under a minute, sometimes a few minutes — between when the push completes and when the public URL reflects the changes. This is GitHub's infrastructure rebuilding the served site. After that brief period, any learner who visits the URL receives the current version of the course. No cache-clearing or special steps are required on the learner's end for new visitors; returning visitors may occasionally need to refresh their browser if the browser has cached the older version.</p>
+
+<p>PreseMaker's record of the last push timestamp is a small but useful feature in this context. If you are uncertain whether a particular round of edits has been published, you can check that timestamp against your memory of when you last exported and pushed. If they match, the live site is current. If the timestamp predates your most recent edits, you know another export-and-push cycle is needed.</p>
+
+<p>Together, these capabilities — guided export, remembered repository connections, one-click publishing, a stable public URL, and simple update pushes — form a complete self-service publishing pipeline. Authors who focus on content rather than infrastructure can still deliver polished, professionally hosted course websites to learners anywhere in the world.</p>
+        <div class="notes"><strong>Notes</strong>Covers all five subtopic clusters: export function, repository connection and persistence, publishing through PreseMaker (abstracting git), the live public URL format and stability, and the update/re-push workflow including the last-push timestamp feature. A comparison table of URL patterns is included for clarity. No external tools or manual GitHub configuration steps beyond account and repository creation are implied as required.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publishing a Course Website and Keeping It Current — Using PreseMaker</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #2c3e50;
+      line-height: 1.6;
+      padding: 0 0 3rem 0;
+    }
+
+    /* ── Header banner ── */
+    header {
+      background: linear-gradient(135deg, #1a3a5c 0%, #2d6a9f 100%);
+      color: #ffffff;
+      padding: 2.5rem 2rem 2rem;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .course-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #a8cce8;
+      margin-bottom: 0.5rem;
+    }
+
+    header h1 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .intro {
+      font-size: 1rem;
+      color: #d0e7f7;
+      max-width: 720px;
+      line-height: 1.7;
+    }
+
+    /* ── Main content ── */
+    main {
+      max-width: 960px;
+      margin: 2.5rem auto 0;
+      padding: 0 1.25rem;
+    }
+
+    .section-heading {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6b7f93;
+      margin-bottom: 1.25rem;
+      border-bottom: 2px solid #dce3eb;
+      padding-bottom: 0.5rem;
+    }
+
+    /* ── Card grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #dce3eb;
+      border-radius: 8px;
+      padding: 1.25rem 1.35rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.09);
+      transform: translateY(-2px);
+    }
+
+    /* ── Card meta badges ── */
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.55rem;
+      border-radius: 20px;
+      line-height: 1.4;
+    }
+
+    .badge-type {
+      background-color: #e8f0fb;
+      color: #2258a5;
+    }
+
+    .badge-filetype {
+      background-color: #edf7f1;
+      color: #1e7e4a;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    /* ── Card title row ── */
+    .card-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 0.75rem;
+    }
+
+    .card-name {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #1a3a5c;
+    }
+
+    .card-name a {
+      color: #1a3a5c;
+      text-decoration: none;
+      border-bottom: 2px solid #2d6a9f;
+    }
+
+    .card-name a:hover,
+    .card-name a:focus {
+      color: #2d6a9f;
+      border-bottom-color: #2d6a9f;
+      outline: none;
+    }
+
+    .source-link {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #5a7fa8;
+      text-decoration: none;
+      border: 1px solid #b0c8df;
+      border-radius: 4px;
+      padding: 0.15rem 0.45rem;
+      white-space: nowrap;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .source-link:hover,
+    .source-link:focus {
+      background-color: #2d6a9f;
+      color: #ffffff;
+      border-color: #2d6a9f;
+      outline: none;
+    }
+
+    /* ── Card description ── */
+    .card-description {
+      font-size: 0.875rem;
+      color: #4a5c6e;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    /* ── Footer ── */
+    footer {
+      max-width: 960px;
+      margin: 3rem auto 0;
+      padding: 0 1.25rem;
+      font-size: 0.78rem;
+      color: #8fa3b5;
+      text-align: center;
+      border-top: 1px solid #dce3eb;
+      padding-top: 1.25rem;
+    }
+
+    /* ── Responsive tweaks ── */
+    @media (max-width: 480px) {
+      header {
+        padding: 1.75rem 1.25rem 1.5rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Using PreseMaker</a></div>
+<div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
+
+  <header>
+    <div class="header-inner">
+      <p class="course-label">Using PreseMaker</p>
+      <h1>Publishing a Course Website and Keeping It Current</h1>
+      <p class="intro">
+        This module guides you through PreseMaker's publish feature — from understanding how authoring and delivery are separated, to assembling individual modules into a complete course website, to maintaining that site as content evolves over time. Browse the artifacts below to explore each topic and supporting resource.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="section-heading">Module Artifacts</h2>
+
+    <div class="card-grid">
+
+      <!-- Artifact 1: Module Topics -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Module Topics</span>
+          <span class="badge badge-filetype">.json</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/module_topics.html">Module Topics</a>
+          </span>
+          <a class="source-link" href="source/hierarchy.json">source file</a>
+        </div>
+        <p class="card-description">
+          A structured outline listing the topics and subtopics covered in this module, used by instructors or learners to preview the scope of content on PreseMaker's publish feature, module index pages, content refreshing, site assembly, and ongoing maintenance.
+        </p>
+      </div>
+
+      <!-- Artifact 2: Introduction to PreseMaker's Publish Feature -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Publishing_a_Course_interactive_topics_t1.html">Introduction to PreseMaker's Publish Feature</a>
+          </span>
+        </div>
+        <p class="card-description">
+          An introductory reading that explains what PreseMaker's publish feature is, how it separates the authoring and delivery phases of course building, and how learners use it to access a fully assembled, navigable course website.
+        </p>
+      </div>
+
+      <!-- Artifact 3: Understanding Module HTML Index Pages -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Publishing_a_Course_interactive_topics_t2.html">Understanding Module HTML Index Pages</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that explains what a module HTML index page is in PreseMaker, how it serves as the dedicated web presence and landing page for each module, and why understanding it matters for authors managing a published course site.
+        </p>
+      </div>
+
+      <!-- Artifact 4: How Publishing Refreshes Module Content -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Publishing_a_Course_interactive_topics_t3.html">How Publishing Refreshes Module Content</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that explains how PreseMaker's publish feature acts as a bridge between the authoring environment and the live learner-facing site, describing what triggers a content refresh and how edits made in the tool reach the published course.
+        </p>
+      </div>
+
+      <!-- Artifact 5: Assembling Modules into a Course Website -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Publishing_a_Course_interactive_topics_t4.html">Assembling Modules into a Course Website</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that describes how PreseMaker assembles individual modules into a unified course website, explaining the workflow step that brings discrete module units together into a complete, navigable published site.
+        </p>
+      </div>
+
+      <!-- Artifact 6: Keeping the Course Website Current (Topic Detail) -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Publishing_a_Course_interactive_topics_t5.html">Keeping the Course Website Current</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that explains the ongoing maintenance responsibilities after a course is first published in PreseMaker, covering why the site does not update automatically and how authors must re-publish to keep course content accurate and current.
+        </p>
+      </div>
+
+      <!-- Artifact 7: Keeping the Course Website Current (Text Content) -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Text Content</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Publishing_a_Course_interactive.html">Keeping the Course Website Current</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A duplicate of the 'Keeping the Course Website Current' reading that explains post-publication maintenance in PreseMaker, describing the need for repeated publishing to reflect revisions, additions, or corrections made after the initial course launch.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Using PreseMaker &mdash; Publishing a Course Website and Keeping It Current</p>
+  </footer>
+
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+<section class="presemaker-extras" style="max-width:1000px;margin:2rem auto;padding:0 1rem;"><h2>Topics &amp; Learning Outcomes</h2><p><a href="topics-outcomes.html">View Topics &amp; Learning Outcomes</a></p></section><script src="embed-inject.js" defer></script></body>
+</html>

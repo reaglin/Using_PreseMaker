@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keeping the Course Website Current</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Publishing a Course Website and Keeping It Current</a></div>
+  <header>
+    <h1>Keeping the Course Website Current</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Keeping the Course Website Current</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Once a course is built in PreseMaker, the work of keeping it accurate and accessible does not end at the first publish. Every course website is a living document — modules are revised, media is updated, topics are added or removed, and small corrections accumulate over time. The published website, however, does not update itself automatically. It reflects only what was generated the last time the publish process was run. Understanding this relationship between the source content and the live site is the foundation of effective course maintenance, and it shapes every decision about when, how, and how often to re-publish.</p>
+
+<p><strong>Understanding Why Re-Publishing Is Necessary</strong></p>
+
+<p>PreseMaker's publish feature works by reading the current state of the course's source content and generating HTML output from it. The central artifact produced for each module is its <em>HTML index</em> — the landing page that organizes and presents that module's material to learners. When you edit a module's text, swap out an image, reorganize topics, or adjust metadata, those changes exist only in the source. The HTML index that learners actually browse has not changed at all until the publish process is run again.</p>
+
+<p>This distinction — between the source content and the generated output — is critical. Think of PreseMaker's publish function as a compiler or a static site generator: the source files are your editable inputs, and the HTML output is the compiled result. Just as recompiling source code is required to produce an updated executable, re-publishing in PreseMaker is required to produce an updated website. Skipping re-publication after edits means the live website will display stale or incorrect information, potentially confusing learners who encounter content that contradicts what an instructor has just corrected or updated.</p>
+
+<p>Re-publishing also ensures synchronization across the entire site. A course website is not just a collection of independent pages — the module indexes, navigation elements, and the top-level site structure are all interrelated. When one module's content changes, re-publishing regenerates that module's HTML index so that it accurately reflects the new material, keeping the browsable site and each module's landing page fully synchronized with the source.</p>
+
+<p><strong>Identifying When to Re-Publish</strong></p>
+
+<p>Knowing <em>when</em> to re-publish is just as important as knowing how. Not every save or minor draft edit demands an immediate re-publish, but certain categories of change make re-publishing both necessary and urgent.</p>
+
+<ul>
+  <li><strong>Text, media, or structural changes within a module:</strong> Any time you modify the wording of a learning objective, replace an outdated diagram, reorder subtopics, or correct a factual error inside a module, re-publishing is required so those corrections appear on the live landing page.</li>
+  <li><strong>Adding or removing entire modules:</strong> These are the most consequential changes. Adding a new module means the top-level course navigation must include it; removing one means dead links or references to nonexistent content could appear. A full site re-publish is mandatory in both cases so that the navigation and index accurately reflect the new course structure.</li>
+  <li><strong>Metadata and cosmetic updates:</strong> Changes that might seem trivial — updating a module's display title, adjusting a description field, correcting a date — can still affect the generated HTML index if PreseMaker pulls that metadata into the rendered output. These changes also require re-publishing to appear correctly on the site.</li>
+</ul>
+
+<p>A useful rule of thumb is to treat the published website as a deliverable, not a draft. Any change that you would want a learner to see is a change that requires re-publishing before it reaches them.</p>
+
+<p><strong>The Re-Publishing Workflow in PreseMaker</strong></p>
+
+<p>The mechanical process of re-publishing in PreseMaker is straightforward, but understanding each step helps you avoid common missteps and ensures the resulting site is complete and correct.</p>
+
+<ul>
+  <li><strong>Step 1 — Open the course:</strong> Launch PreseMaker and open the course project you have been editing. Confirm that you are working on the correct course file, especially in environments where multiple course projects exist side by side.</li>
+  <li><strong>Step 2 — Navigate to the publish feature:</strong> Locate and open PreseMaker's publish panel or publish dialog. This is the interface through which you initiate the regeneration process.</li>
+  <li><strong>Step 3 — Initiate the publish run:</strong> Start the publish process. During this run, PreseMaker reads each module's current source content and regenerates its HTML index, capturing all text edits, media changes, structural reorganizations, and metadata updates that have occurred since the last publish.</li>
+  <li><strong>Step 4 — Allow full completion:</strong> Let the process run to completion without interrupting it. Stopping a publish run partway through can leave some module indexes regenerated while others remain on their previous version, creating an inconsistent site where different modules reflect different states of the content.</li>
+  <li><strong>Step 5 — Retrieve and distribute the output:</strong> Once PreseMaker confirms the publish is complete, the full browsable website has been rebuilt and is ready for distribution to learners or deployment to a hosting environment.</li>
+</ul>
+
+<p><strong>Managing Multiple Modules During Updates</strong></p>
+
+<p>In a course with many modules, keeping track of which modules have been touched since the last publish is an important discipline. Without that awareness, it is easy to re-publish under the assumption that only one module has changed, only to discover later that edits to two other modules were also pending and were either included accidentally or overlooked entirely.</p>
+
+<p>The safest and most reliable approach when several modules have been updated simultaneously is to re-publish the entire course at once. This guarantees that every HTML index is regenerated from its current source, eliminating any risk of partial or inconsistent updates. The slight additional time cost of a full re-publish is almost always worth the certainty it provides.</p>
+
+<p>If your workflow requires tracking which modules need attention, a simple log can help. The table below illustrates a lightweight tracking format that a course developer might maintain alongside their editing work:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Type of Change</th>
+      <th>Date Modified</th>
+      <th>Re-Published?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Module 1: Introduction</td>
+      <td>Updated learning objectives text</td>
+      <td>2025-06-01</td>
+      <td>Yes — 2025-06-01</td>
+    </tr>
+    <tr>
+      <td>Module 3: Core Concepts</td>
+      <td>Replaced diagram image</td>
+      <td>2025-06-03</td>
+      <td>No — pending</td>
+    </tr>
+    <tr>
+      <td>Module 5: Assessment</td>
+      <td>Added new subtopic section</td>
+      <td>2025-06-03</td>
+      <td>No — pending</td>
+    </tr>
+    <tr>
+      <td>Module 7: Wrap-Up</td>
+      <td>Corrected broken link in text</td>
+      <td>2025-06-04</td>
+      <td>No — pending</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>After re-publishing, go back through each module's HTML index to verify that the latest content is correctly reflected. This post-publish check is a brief but important habit — it confirms that the publish process captured all intended changes and that nothing was inadvertently left in its prior state.</p>
+
+<p><strong>Verifying the Updated Course Website</strong></p>
+
+<p>Re-publishing regenerates the site, but verification confirms that the regeneration was successful and complete. Skipping this step is one of the most common sources of course maintenance errors, because it allows problems introduced during the re-publish to go unnoticed until learners encounter them.</p>
+
+<p>A thorough verification pass covers several areas:</p>
+
+<ul>
+  <li><strong>Content accuracy:</strong> Browse to each module that was modified and read through its HTML index. Confirm that the edits you made in the source are now visible in the rendered output exactly as intended. Pay particular attention to text corrections, reordered sections, and newly added content.</li>
+  <li><strong>Media integrity:</strong> Check that images, videos, audio files, and downloadable assets load correctly on every affected page. A re-publish can sometimes expose path issues or missing files that were not apparent in the source editor.</li>
+  <li><strong>Navigation and links:</strong> Click through the course's navigation elements to confirm that all module links resolve correctly. If modules were added or removed, verify that the navigation reflects the new structure and that no links point to pages that no longer exist.</li>
+  <li><strong>Layout and formatting:</strong> Scan each updated page for visual anomalies — broken layouts, misaligned elements, or formatting that did not render as expected. These issues can arise if source content contains formatting that the HTML generator interprets differently than intended.</li>
+</ul>
+
+<p>If any issues are found during verification, correct them in the source and re-publish the affected modules before making the site available to learners.</p>
+
+<p><strong>Establishing a Maintenance Cadence</strong></p>
+
+<p>Ad hoc re-publishing — doing it whenever someone remembers — leads to inconsistency. Some updates reach learners quickly; others sit in the source for weeks before being published. Defining a deliberate publishing cadence removes this unpredictability and builds reliable habits into the development workflow.</p>
+
+<p>Common cadence models include:</p>
+
+<ul>
+  <li><strong>After every editing session:</strong> The most conservative approach. Every time a developer finishes a working session, they re-publish before closing the project. This keeps the live site perpetually current but may involve many small publish runs.</li>
+  <li><strong>At the end of each development sprint:</strong> In team environments that use sprint-based workflows, re-publishing at sprint completion aligns the live site update with the natural rhythm of work. Stakeholders know that the site will reflect the sprint's output once the sprint closes.</li>
+  <li><strong>On a fixed schedule:</strong> Some teams re-publish on a set day each week or at the end of each month. This is straightforward to communicate and easy to plan around, though it means updates made early in the cycle may not reach learners until the next scheduled publish.</li>
+</ul>
+
+<p>Whichever cadence you choose, communicate it clearly to stakeholders — instructional designers, subject matter experts, reviewers, and learners where appropriate — so everyone understands when to expect the live site to reflect recent changes. Misaligned expectations about the publish cycle are a frequent source of confusion and unnecessary escalation.</p>
+
+<p>Beyond responding to edits, consider scheduling <em>periodic full re-publishes</em> even during quiet periods when no significant changes have been made. Over time, subtle drift can develop between the source content and the published output due to tooling updates, environment changes, or minor inconsistencies that accumulated across many small publish runs. A periodic full re-publish from scratch resets that baseline, ensuring that what learners see is a clean, accurate rendering of the current source content.</p>
+        <div class="notes"><strong>Notes</strong>Covers best practices and workflows for re-publishing and maintaining an up-to-date course website as module content evolves over time.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

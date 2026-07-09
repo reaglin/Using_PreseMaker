@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creating a New Course</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Creating a Course: The Course Manager and Source Materials</a></div>
+  <header>
+    <h1>Creating a New Course</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Creating a New Course</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Every course-building journey in PreseMaker begins in the same place: the <strong>Course Manager</strong>. Understanding how to navigate from that starting point through to a fully initialized course is the foundational skill for everything else you will do in the platform. This topic walks you through each stage of that process in detail — from opening the Course Manager for the first time, through choosing how your course will be created, all the way to the moment your new course appears and is ready for development.</p>
+
+<p>The Course Manager is the central hub of PreseMaker. When you first open it, you will see a list or grid of every course that currently exists in your workspace. Each entry typically displays the course title, its current status, and quick-access controls for editing or managing it. Think of the Course Manager as your course library — it gives you an at-a-glance overview of everything that has been built and provides the tools you need to organize, manage, and initiate new course-building activity. Whether you are a solo designer working on a single project or part of a team maintaining dozens of courses, this screen is your operational home base. You return here to open existing courses, track what exists, and — crucially — to start something new.</p>
+
+<p>To begin building a new course, you need to trigger the creation workflow. Look for the <strong>'Create New Course'</strong> button within the Course Manager interface. It is usually positioned prominently — often in a toolbar, header bar, or as a clear call-to-action button within the main content area. Clicking this control does not immediately create anything permanent. Instead, it launches a <strong>setup flow</strong>: a guided sequence of screens or dialog steps that collect the information PreseMaker needs before it can initialize your course. At this stage nothing is committed to your workspace — you are simply entering the doorway. You can think of it as filling out a form before a project officially kicks off. If you close the setup flow without completing it, no course is created and the Course Manager remains unchanged.</p>
+
+<p>The most consequential decision you will make during the setup flow is choosing <strong>how your course will be created</strong>. PreseMaker offers two distinct paths:</p>
+
+<ul>
+  <li><strong>Empty Course</strong> — a completely blank slate with no slides, no topics, no pre-written text, and no structural scaffolding of any kind.</li>
+  <li><strong>AI-Generated Course</strong> — an option that puts artificial intelligence to work drafting an initial course structure based on materials or descriptions that you supply.</li>
+</ul>
+
+<p>These two paths are not just stylistically different — they represent fundamentally different starting philosophies, each suited to different situations and designer preferences. Understanding the implications of each choice helps you pick the right tool for the job.</p>
+
+<p><strong>Starting with an Empty Course</strong> is the right choice when you already have a clear vision of your course architecture, when your content is highly specialized and unlikely to benefit from AI suggestions, or when organizational standards require you to build from a specific custom template rather than a generated structure. An empty course contains absolutely nothing pre-populated: no slides, no module outlines, no topic lists, and no AI-written text. Every element — every slide, every piece of instructional content, every quiz question — must be added by you, manually, after the course is created. This might sound like more work, but for experienced instructional designers it is often the preferred starting point because it provides <strong>maximum creative control</strong>. You are not editing around someone else's (or something else's) decisions; you are building entirely according to your own design. Importantly, choosing an empty course does not lock you out of PreseMaker's other tools. Once the course exists, you can import source materials, use content-assistance features, and leverage any other PreseMaker capability to develop it — you simply do not get the automated first draft that the AI path provides.</p>
+
+<p><strong>Using AI to Generate a New Course</strong> takes a very different approach. When you select this option during the setup flow, PreseMaker prompts you to provide inputs that will guide the AI. These inputs typically include one or more of the following:</p>
+
+<ul>
+  <li><strong>Source materials</strong> — documents, PDFs, outlines, or other reference files that contain the subject matter you want the course to cover.</li>
+  <li><strong>A written description</strong> — a plain-language explanation of the course topic, audience, goals, or scope that the AI can interpret to inform its output.</li>
+</ul>
+
+<p>The AI processes these inputs and produces a <strong>suggested module breakdown</strong> for your course. This gives you a high-level structural skeleton — an organized set of modules that the AI believes logically covers the subject matter based on what you provided. It is important to understand exactly what is generated at this stage and what is not. The AI-generated output during initial course creation focuses on the <strong>module level</strong> of the course hierarchy. The more granular content — topics, subtopics, and the detailed instructional text within them — is generated later, inside each individual module, as a separate step. This means the initial AI output is best understood as a proposed table of contents at the module level, not a fully written course. You should not expect finished slides or polished prose at this point; you should expect a reasoned structural suggestion that you can accept, modify, or reject as you see fit.</p>
+
+<p>A critical principle to keep in mind when using the AI path is that <strong>everything the AI generates is a starting point, not a finished product</strong>. The AI accelerates the early stages of development by eliminating the blank-page problem — it gives you something concrete to react to rather than requiring you to architect the entire structure from nothing. But every module name, every structural decision the AI makes, can be reviewed and edited after creation. No AI output in PreseMaker is locked or permanent. Experienced designers often find that the AI produces a structure that is roughly 70–80% aligned with their intentions and requires moderate editing to fully reflect the learning goals — which is still a significant time saving compared to building from scratch.</p>
+
+<p><strong>Completing the initial course setup</strong> involves a few additional configuration steps that apply regardless of which creation path you chose. At minimum, you will be asked to provide a <strong>course name or title</strong>. This is the identifier that will appear in the Course Manager and throughout the platform, so it is worth giving it a meaningful, descriptive name even at this early stage — you can always rename it later, but starting with a clear title keeps your workspace organized from the beginning. Depending on which creation method you selected, you may also encounter additional configuration options. For example, if you chose the AI path, you may be asked to confirm your source materials or adjust the scope description before the AI runs. If you chose the empty path, the configuration is typically minimal since there is nothing to generate.</p>
+
+<p>Once you complete all the required steps and confirm the setup, PreseMaker initializes the new course. The process takes only a moment — slightly longer if the AI is generating a module structure — and then your <strong>new course appears in the Course Manager</strong>, listed alongside any existing courses. From that point forward, the course is a live project in your workspace. You can open it, begin adding or editing content, configure its settings, and use the full suite of PreseMaker's authoring tools to develop it into a complete learning experience. The creation workflow has done its job: it has given the course a name, a structure (if AI was used), and a home in the platform. Everything that follows is the actual work of building the course itself.</p>
+
+<p>The table below summarizes the key differences between the two creation paths to help you decide which is right for a given project:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aspect</th>
+      <th>Empty Course</th>
+      <th>AI-Generated Course</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Initial content</strong></td>
+      <td>None — completely blank</td>
+      <td>AI-suggested module breakdown based on your inputs</td>
+    </tr>
+    <tr>
+      <td><strong>Input required from you</strong></td>
+      <td>Course name only (minimal)</td>
+      <td>Course name plus source materials and/or a description</td>
+    </tr>
+    <tr>
+      <td><strong>Creative control</strong></td>
+      <td>Maximum — every decision is yours from the start</td>
+      <td>High — AI suggestions can all be edited or discarded</td>
+    </tr>
+    <tr>
+      <td><strong>Speed of initial setup</strong></td>
+      <td>Very fast — nothing to generate</td>
+      <td>Faster overall course start — AI eliminates the blank-page stage</td>
+    </tr>
+    <tr>
+      <td><strong>Best suited for</strong></td>
+      <td>Experienced designers with a clear pre-existing structure</td>
+      <td>Any designer who wants a structural head start, especially on new or broad topics</td>
+    </tr>
+    <tr>
+      <td><strong>What is generated at this stage</strong></td>
+      <td>Nothing</td>
+      <td>Module-level structure only; topics and subtopics are generated later inside each module</td>
+    </tr>
+    <tr>
+      <td><strong>Can you edit the output?</strong></td>
+      <td>N/A — you build everything yourself</td>
+      <td>Yes — all AI-generated content is fully editable after creation</td>
+    </tr>
+  </tbody>
+</table>
+        <div class="notes"><strong>Notes</strong>Learners should be encouraged to experiment with both paths on practice or sandbox courses before committing to an approach for a real project. Emphasize that the AI path does not replace design judgment — it accelerates the structural scaffolding phase only. Reinforce that module-level structure is all that is generated during course creation; topic and subtopic generation happens separately within each module.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

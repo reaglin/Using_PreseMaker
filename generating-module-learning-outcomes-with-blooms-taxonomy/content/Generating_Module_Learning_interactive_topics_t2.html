@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overview of Bloom&#39;s Taxonomy Cognitive Levels</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Generating Module Learning Outcomes with Bloom&#39;s Taxonomy</a></div>
+  <header>
+    <h1>Overview of Bloom&#39;s Taxonomy Cognitive Levels</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Overview of Bloom&#39;s Taxonomy Cognitive Levels</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Bloom's Taxonomy is one of the most widely used frameworks in instructional design and education. Originally developed by Benjamin Bloom and colleagues in 1956, and significantly revised by Anderson and Krathwohl in 2001, the taxonomy organizes cognitive learning into six hierarchical levels — from the most basic act of recalling facts all the way to the sophisticated act of creating something entirely new. Understanding these levels is essential for anyone designing learning experiences, because the cognitive level of a learning outcome determines everything that follows: what content to teach, how to teach it, and how to assess whether learning has actually occurred.</p>
+
+<p>Each level builds upon the one beneath it. A learner who cannot remember a concept is unlikely to be able to explain it; a learner who cannot explain a concept will struggle to apply it in a new situation. This scaffolded structure gives instructional designers a powerful diagnostic tool — if learners are failing at the Apply level, the root cause may lie in gaps at the Remember or Understand levels. The six levels, in ascending order of cognitive complexity, are: <strong>Remember</strong>, <strong>Understand</strong>, <strong>Apply</strong>, <strong>Analyze</strong>, <strong>Evaluate</strong>, and <strong>Create</strong>. The sections below explore each level in depth.</p>
+
+<p><strong>The Remember Level: Recalling Foundational Knowledge</strong></p>
+
+<p>The Remember level is the entry point of the taxonomy. At this level, learners are asked to retrieve previously encountered information from memory without necessarily understanding its meaning or knowing how to use it. Think of it as building the vocabulary of a subject — before a medical student can diagnose a patient, they must first know the names and definitions of symptoms, conditions, and treatments. That basic memorization happens at the Remember level.</p>
+
+<p>Learning outcomes written at this level are characterized by specific action verbs that signal pure retrieval. These include:</p>
+
+<ul>
+  <li><strong>Define</strong> — state the precise meaning of a term</li>
+  <li><strong>List</strong> — enumerate items in a category or sequence</li>
+  <li><strong>Recall</strong> — retrieve specific facts from memory</li>
+  <li><strong>Identify</strong> — recognize or name something when presented with it</li>
+  <li><strong>Name</strong> — supply the correct label for a concept, object, or process</li>
+</ul>
+
+<p>An example of a Remember-level outcome might be: <em>"List the five stages of the project management lifecycle."</em> The learner only needs to reproduce those five names — they are not yet being asked to explain what each stage involves or to manage a real project. This is entirely appropriate as a first step, because it establishes the conceptual anchors learners need before progressing to more demanding cognitive work.</p>
+
+<p>Assessments designed for the Remember level tend to be straightforward and closed-ended. Common formats include matching exercises (pairing terms with definitions), multiple-choice questions that test factual recall, fill-in-the-blank activities, and simple labeling tasks. The goal is to verify that the foundational knowledge is present in memory before instruction advances. Without this baseline, higher-order learning is built on sand.</p>
+
+<p><strong>The Understand Level: Making Sense of Information</strong></p>
+
+<p>Once learners can recall information, the next step is to make meaning of it. The Understand level represents the shift from raw memorization to genuine comprehension. A learner who has memorized the definition of "photosynthesis" is operating at the Remember level; a learner who can explain in their own words how sunlight, water, and carbon dioxide combine to produce glucose is operating at the Understand level.</p>
+
+<p>Key action verbs at this level include:</p>
+
+<ul>
+  <li><strong>Explain</strong> — describe the meaning or workings of something in detail</li>
+  <li><strong>Summarize</strong> — condense a larger body of information into its key points</li>
+  <li><strong>Paraphrase</strong> — restate content using different words while preserving the original meaning</li>
+  <li><strong>Describe</strong> — give an account of the characteristics or features of something</li>
+  <li><strong>Classify</strong> — group items into categories based on shared attributes</li>
+</ul>
+
+<p>An Understand-level outcome might read: <em>"Explain the difference between a virus and a bacterium in terms of structure and replication."</em> This requires learners to do more than recall two definitions side by side — they must interpret and articulate a relationship between two concepts. Similarly, asking learners to <em>summarize</em> the main argument of an article, or to <em>classify</em> a set of project risks as internal or external, calls on comprehension rather than mere recognition.</p>
+
+<p>What makes this level critically different from Remember is the requirement for meaningful interpretation. Learners demonstrate understanding when they can translate information into new forms — restating it, giving their own examples, distinguishing between similar but different ideas, or explaining why something is true rather than just that it is true. Assessments at this level often include short-answer questions asking learners to explain concepts in their own words, or tasks that ask them to give examples of an abstract idea applied to a concrete scenario.</p>
+
+<p><strong>The Apply Level: Using Knowledge in Context</strong></p>
+
+<p>The Apply level marks a pivotal transition in the taxonomy: the move from knowing about something to actually doing something with that knowledge. Learners at this level take a concept or procedure they have understood and use it to complete a task or solve a problem — often in a situation they have not encountered verbatim before.</p>
+
+<p>Common action verbs at this level include:</p>
+
+<ul>
+  <li><strong>Use</strong> — employ a concept or tool in a relevant situation</li>
+  <li><strong>Execute</strong> — carry out a procedure with accuracy</li>
+  <li><strong>Implement</strong> — put a plan, process, or method into effect</li>
+  <li><strong>Demonstrate</strong> — show that a skill or process can be performed correctly</li>
+  <li><strong>Perform</strong> — carry out a task or action</li>
+</ul>
+
+<p>An Apply-level outcome might be: <em>"Use a spreadsheet formula to calculate the net present value of a proposed investment."</em> The learner is not merely defining net present value or explaining the formula — they are executing the calculation in a functional tool. Similarly, a nursing student asked to <em>demonstrate</em> the correct procedure for inserting an IV catheter on a training mannequin is working at the Apply level.</p>
+
+<p>Apply-level outcomes are especially valuable in professional and vocational training because they ensure that learning transfers into real-world performance. A learner who understands how to write a persuasive email but never actually writes one has not yet reached the Apply level. The key distinguishing feature is active doing with meaningful content — not just recognition or explanation.</p>
+
+<p>Assessments at this level are correspondingly hands-on. They frequently include simulations (particularly in healthcare, aviation, and technology training), case studies that require learners to apply a framework to a realistic scenario, step-by-step practical demonstrations, role-playing exercises, and performance-based tasks. The criterion for success is not only that the learner attempts the task, but that they execute it correctly and consistently.</p>
+
+<p><strong>The Analyze Level: Breaking Down Complex Ideas</strong></p>
+
+<p>At the Analyze level, learners move beyond using knowledge as a whole and begin to dissect it — examining its internal structure, separating it into components, identifying relationships between parts, and uncovering assumptions or underlying logic. Analysis requires learners to think critically about content rather than simply producing it.</p>
+
+<p>Representative action verbs at this level include:</p>
+
+<ul>
+  <li><strong>Differentiate</strong> — distinguish between elements based on specific criteria</li>
+  <li><strong>Compare</strong> — identify similarities and differences between two or more things</li>
+  <li><strong>Contrast</strong> — highlight the distinctions between two or more things</li>
+  <li><strong>Examine</strong> — inspect carefully to identify key features or patterns</li>
+  <li><strong>Deconstruct</strong> — break a complex whole into its constituent parts</li>
+</ul>
+
+<p>An example of an Analyze-level outcome is: <em>"Compare and contrast agile and waterfall project management methodologies, identifying the structural assumptions underlying each approach."</em> This task cannot be completed by simply recalling or describing the two methodologies — the learner must hold both in mind simultaneously, identify points of similarity and divergence, and probe the reasoning behind their design choices.</p>
+
+<p>Analyze-level outcomes are particularly appropriate when learners need to work with complex or ambiguous data — for instance, interpreting a financial report to identify cost drivers, examining a persuasive argument to identify logical fallacies, or reviewing research data to determine whether the conclusions are supported by the evidence. The emphasis is always on breaking down a complex whole to understand its parts and their relationships.</p>
+
+<p>Assessments at this level might ask learners to create a comparative table, write a structured critique of a document or process, map causal relationships in a case study, or identify the structural components of a system and explain how they interact. The quality of the analysis is judged not just by accuracy but by the depth and rigor of the reasoning shown.</p>
+
+<p><strong>The Evaluate Level: Making Informed Judgments</strong></p>
+
+<p>The Evaluate level requires learners to make judgments — to determine the worth, quality, or appropriateness of something based on defined criteria or standards. Crucially, evaluation is not opinion; a learner operating at this level must ground their judgment in evidence, logic, and explicit criteria rather than simply stating a preference.</p>
+
+<p>Action verbs associated with this level include:</p>
+
+<ul>
+  <li><strong>Assess</strong> — determine the value or quality of something against stated criteria</li>
+  <li><strong>Critique</strong> — identify strengths and weaknesses with reasoned justification</li>
+  <li><strong>Justify</strong> — provide evidence-based reasons to support a conclusion or decision</li>
+  <li><strong>Defend</strong> — argue in favor of a position using logical and evidential support</li>
+  <li><strong>Argue</strong> — construct a reasoned case for or against a proposition</li>
+  <li><strong>Prioritize</strong> — rank options in order of importance or value based on a rationale</li>
+</ul>
+
+<p>An Evaluate-level outcome might read: <em>"Assess the effectiveness of two proposed onboarding programs against the criteria of cost-efficiency, learner engagement, and time-to-competency, and justify a recommendation."</em> The learner must apply external standards, weigh competing factors, and produce a defensible conclusion — not simply describe both programs and leave the decision open.</p>
+
+<p>This level is particularly valuable in contexts where professionals must make high-stakes decisions: a doctor prioritizing treatment options, a designer choosing between interface solutions, or a manager evaluating competing vendors. It is also the level underpinning academic critical thinking — the ability to read a study, assess its methodology, and determine how much confidence to place in its findings.</p>
+
+<p>Assessments at the Evaluate level often take the form of reflective writing, structured peer-review tasks (where learners critique one another's work against a rubric), formal debate or argumentation exercises, or written recommendation reports. The critical indicator is whether the learner has made a judgment and substantiated it — a conclusion without reasoning does not demonstrate Evaluate-level cognition.</p>
+
+<p><strong>The Create Level: Producing Something New</strong></p>
+
+<p>The Create level sits at the apex of Bloom's Taxonomy and represents the most complex cognitive work. Here, learners do not just recall, explain, apply, analyze, or evaluate existing knowledge — they reorganize and synthesize it into something that did not previously exist. Creation in this context is not necessarily artistic; it means generating a novel product, solution, plan, or artifact by combining prior knowledge in a new configuration.</p>
+
+<p>Key action verbs at this level include:</p>
+
+<ul>
+  <li><strong>Design</strong> — plan and specify the structure or components of a new product or system</li>
+  <li><strong>Develop</strong> — build or create something from a plan or specification</li>
+  <li><strong>Construct</strong> — put components together to form a new whole</li>
+  <li><strong>Formulate</strong> — develop a theory, hypothesis, or structured plan</li>
+  <li><strong>Compose</strong> — produce an original written, musical, or visual work</li>
+  <li><strong>Produce</strong> — generate a finished output that meets defined requirements</li>
+</ul>
+
+<p>A Create-level outcome might be: <em>"Design a complete onboarding curriculum for new sales representatives, including learning objectives, instructional strategies, and assessment methods aligned to Bloom's Taxonomy."</em> This task requires drawing on knowledge of instructional design principles, adult learning theory, assessment design, and content structure — and combining them into a coherent, original product that did not exist before the learner built it.</p>
+
+<p>Other examples include asking a software development learner to <em>construct</em> a functioning web application based on a brief, or asking a business learner to <em>formulate</em> a strategic marketing plan for a hypothetical product launch. In each case, the defining characteristic is that the learner must generate something original — not retrieve, reproduce, or evaluate something that already exists.</p>
+
+<p>Assessments at the Create level typically involve capstone projects, original written compositions, prototype development, strategic plans, portfolio submissions, or design challenges. Evaluation rubrics at this level assess not only the technical correctness of the output, but also its originality, coherence, and the sophistication with which existing knowledge has been synthesized into the new creation.</p>
+
+<p><strong>Selecting the Right Cognitive Level for Learning Outcomes</strong></p>
+
+<p>A common misconception when working with Bloom's Taxonomy is that higher levels are always better. This is not true. A new employee completing safety training needs to <em>remember</em> evacuation routes and <em>apply</em> the correct procedure during a drill — asking them to <em>evaluate</em> competing emergency management frameworks would be inappropriate and counterproductive at that stage. The correct cognitive level for any learning outcome is determined by the instructional goal, the learner's current knowledge and experience, and the real-world performance the training is designed to produce.</p>
+
+<p>Outcomes calibrated too high relative to the learner's readiness create frustration and failure. If learners are expected to analyze data before they have solidly understood the underlying concepts, the analysis will be superficial or inaccurate. Conversely, outcomes set too low fail to develop the meaningful competency that more complex professional tasks require. A manager who can only <em>list</em> conflict resolution strategies but cannot <em>apply</em> or <em>evaluate</em> them will be poorly equipped for real leadership challenges.</p>
+
+<p>The following table summarizes each level with its defining cognitive action, key verbs, and typical assessment formats to support outcome alignment decisions:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>Cognitive Action</th>
+      <th>Key Verbs</th>
+      <th>Typical Assessments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Remember</strong></td>
+      <td>Retrieve information from memory</td>
+      <td>Define, list, recall, identify, name</td>
+      <td>Matching exercises, multiple-choice recall, fill-in-the-blank</td>
+    </tr>
+    <tr>
+      <td><strong>Understand</strong></td>
+      <td>Interpret and make meaning of information</td>
+      <td>Explain, summarize, paraphrase, describe, classify</td>
+      <td>Short-answer explanations, classification tasks, paraphrasing activities</td>
+    </tr>
+    <tr>
+      <td><strong>Apply</strong></td>
+      <td>Use knowledge to complete a task</td>
+      <td>Use, execute, implement, demonstrate, perform</td>
+      <td>Simulations, case studies, hands-on demonstrations, role plays</td>
+    </tr>
+    <tr>
+      <td><strong>Analyze</strong></td>
+      <td>Break down and examine structure or relationships</td>
+      <td>Differentiate, compare, contrast, examine, deconstruct</td>
+      <td>Comparative tables, structured critiques, causal mapping</td>
+    </tr>
+    <tr>
+      <td><strong>Evaluate</strong></td>
+      <td>Make criteria-based judgments</td>
+      <td>Assess, critique, justify, defend, argue, prioritize</td>
+      <td>Reflective writing, peer review, argumentation, recommendation reports</td>
+    </tr>
+    <tr>
+      <td><strong>Create</strong></td>
+      <td>Generate a novel product or solution</td>
+      <td>Design, develop, construct, formulate, compose, produce</td>
+      <td>Capstone projects, prototypes, original compositions, strategic plans</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Effective instructional design uses Bloom's Taxonomy not as a ladder to always climb as high as possible, but as a precise map. By identifying the correct cognitive level for each outcome, a designer creates a clear target that naturally guides decisions about what content to include, how to sequence it, what activities to assign, and how to build assessments that genuinely measure the intended learning. When outcomes, instruction, and assessment are aligned to the same Bloom's level, learners know exactly what is expected of them, and instructors have a principled basis for determining whether those expectations have been met.</p>
+        <div class="notes"><strong>Notes</strong>The table consolidates all six levels for quick reference and outcome alignment. Instructors may find it useful to print or project this table when writing or reviewing learning outcomes for a module. Emphasize to learners that the taxonomy is a tool for precision, not a hierarchy of value — a well-written Remember-level outcome is far more useful than a poorly constructed Create-level one.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

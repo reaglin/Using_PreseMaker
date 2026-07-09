@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloze Passages and Crossword Puzzles</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Generating Interactive Activities and Custom Materials</a></div>
+  <header>
+    <h1>Cloze Passages and Crossword Puzzles</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Cloze Passages and Crossword Puzzles</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Two of the most pedagogically grounded vocabulary and comprehension activities available in PreseMaker are the <strong>cloze passage</strong> and the <strong>crossword puzzle</strong>. Both are automatically generated from the key terms embedded in a module, meaning instructors spend no time manually constructing exercises. Instead, the platform reads the module's instructional content, identifies the terms that carry the most conceptual weight, and uses them to populate ready-to-use practice activities. Understanding how each format works — and why the two complement each other — helps instructors deploy them strategically and helps learners get the most out of every attempt.</p>
+
+<p>A <strong>cloze passage</strong> is a reading-based activity in which specific words are removed from a continuous piece of text and replaced with blanks. The learner's task is to supply the missing word by drawing on the surrounding context — the sentences, phrases, and ideas that remain visible. The technique has deep roots in reading research, where it was originally used to measure text difficulty and reading comprehension. In PreseMaker, cloze passages are repurposed as a <em>learning</em> tool rather than a measurement tool, leveraging the same mechanism to help learners consolidate new vocabulary.</p>
+
+<p>What makes PreseMaker's cloze passages distinctive is their source material. The system does not generate generic placeholder sentences. Instead, it pulls language directly from the module's own instructional content — the same explanations, definitions, and examples the learner has already encountered while studying. This means the surrounding context is <em>authentic instructional language</em>, not artificial filler. When a learner reads a sentence with a blank and sees familiar phrasing around it, the activity reinforces the original learning rather than introducing confusing new framings. The semantic clues embedded in that authentic text guide recall, making cloze passages especially powerful for vocabulary in context and reading comprehension simultaneously.</p>
+
+<p>The AI selects key terms from the module topic content and treats each one as a candidate blank. Selection is not random — terms that carry definitional weight, appear in critical explanations, or are used across multiple subtopics are prioritized. Once a term is selected, the sentence or passage segment containing it is retained as the surrounding context, and the term itself is replaced by a blank of standardized length. Instructors do not need to hunt through the content to decide which words to remove or how to format the blanks; the template handles all placement and visual formatting automatically. The result is a polished activity that is immediately ready for learner use or instructor review.</p>
+
+<p>A <strong>crossword puzzle</strong> approaches vocabulary from a different angle. Rather than embedding terms inside running text, the crossword isolates each key term and asks the learner to retrieve it directly from a clue — typically a definition, a usage example, or a descriptive phrase drawn from the module. The retrieved term must then be spelled correctly, letter by letter, into an interlocking grid of across and down entries. This adds an <em>orthographic</em> dimension that cloze passages do not address: the learner must not only know what a term means but must also be able to reproduce its exact spelling.</p>
+
+<p>The crossword grid is constructed automatically by the system. Each key term is mapped to a clue, and the layout algorithm fits as many terms as possible into an interlocking structure where shared letters create connections between entries. The result is a visually engaging puzzle that encourages repeated attempts. Because puzzles are inherently self-checking — a wrong letter in one word will prevent an intersecting word from fitting — learners receive immediate implicit feedback without the activity feeling punitive. This quality makes crosswords well suited to <strong>low-stakes retrieval practice</strong>, a learning strategy supported by extensive cognitive science research showing that the act of retrieving information strengthens long-term memory more than passive re-reading.</p>
+
+<p>Understanding the clue types used in crossword entries helps clarify what the activity is actually testing. Clues may take several forms depending on the available module content:</p>
+
+<ul>
+  <li><strong>Definition clues</strong> present the formal or working definition of the term as it appears in the module, asking the learner to name the concept being defined.</li>
+  <li><strong>Usage example clues</strong> embed the term in a sentence with the term itself omitted, functioning similarly to a single-item cloze prompt but presented in the crossword format rather than a passage.</li>
+  <li><strong>Descriptive phrase clues</strong> characterize the term through one of its key attributes or functions without stating its full definition, requiring the learner to synthesize what they know about the concept.</li>
+</ul>
+
+<p>This variety across clue types means that even within a single crossword puzzle, learners are practicing different cognitive operations — recognizing a formal definition, interpreting context, and applying conceptual knowledge — all while also practicing spelling.</p>
+
+<p>The conceptual distinction between cloze passages and crossword puzzles maps onto what vocabulary researchers call <strong>multiple dimensions of word knowledge</strong>. Knowing a word fully means more than being able to recite its definition. It means understanding how the word behaves in context, how it relates to surrounding ideas, what it looks like when spelled correctly, and how it can be used productively. No single activity format covers all of these dimensions at once. Cloze passages address the contextual, reading-comprehension dimension — the learner must interpret a surrounding text to identify the missing term. Crossword puzzles address the definitional and orthographic dimensions — the learner must match a clue to the correct term and spell it accurately.</p>
+
+<p>Pairing these two formats within the same module therefore creates a more complete vocabulary learning experience than either format could achieve alone. A learner who completes both activities encounters each key term at least twice, in two structurally different tasks that draw on different retrieval pathways. This <em>varied practice</em> is consistent with recommendations from vocabulary research emphasizing that robust word knowledge develops through multiple meaningful encounters rather than a single definitional study event.</p>
+
+<p>The table below summarizes the key characteristics of each format side by side to clarify how they differ and what they each contribute:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Cloze Passage</th>
+      <th>Crossword Puzzle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Primary cognitive demand</td>
+      <td>Contextual inference and reading comprehension</td>
+      <td>Direct definitional recall and spelling</td>
+    </tr>
+    <tr>
+      <td>Source of clues</td>
+      <td>Surrounding sentences from module content</td>
+      <td>Definitions, examples, or descriptive phrases from module content</td>
+    </tr>
+    <tr>
+      <td>Spelling required</td>
+      <td>Not necessarily (recognition versions exist)</td>
+      <td>Yes — letters must be placed correctly in the grid</td>
+    </tr>
+    <tr>
+      <td>Feedback mechanism</td>
+      <td>Answer reveal or instructor grading</td>
+      <td>Implicit self-checking via interlocking grid letters</td>
+    </tr>
+    <tr>
+      <td>Best for practicing</td>
+      <td>Vocabulary in context; reading fluency with domain language</td>
+      <td>Definitions, terminology, and orthographic form</td>
+    </tr>
+    <tr>
+      <td>Instructor effort to generate</td>
+      <td>None — fully automated from module key terms</td>
+      <td>None — fully automated from module key terms</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Once generated, both the cloze passage and the crossword puzzle are saved as <strong>artifacts</strong> in the <strong>Module Index</strong>. The Module Index is the centralized catalog of everything produced for a given module — slides, assessments, handouts, and activities alike. Each generated artifact is automatically labeled with its activity type and timestamped so that instructors can identify at a glance when it was created and whether it reflects the current version of the module's content.</p>
+
+<p>From the Module Index, instructors can <strong>open</strong> an artifact to review it in full, <strong>preview</strong> it in its learner-facing format to check appearance and usability, or <strong>export</strong> it for distribution through a learning management system or as a printable document — all without regenerating the activity from scratch. This workflow is important because regenerating an activity would create a new artifact tied to whatever key terms exist in the module at that moment. If the module's content has been revised since the first generation, a newly generated puzzle or passage might differ from the one learners have already begun working on. By preserving each artifact in the Module Index with its timestamp, PreseMaker allows instructors to manage version alignment deliberately.</p>
+
+<p>Keeping all artifacts in one location also ensures that cloze passages and crossword puzzles remain <em>aligned</em> with the key terms as they existed when the activity was generated. If an instructor updates the module's key terms — adding new ones, removing outdated ones, or revising definitions — the existing artifacts are preserved as-is until the instructor chooses to regenerate them. This gives instructors explicit control over when learners encounter an updated version of an activity, preventing unintended inconsistencies between what was studied and what is being practiced.</p>
+
+<p>In practical terms, a well-structured module deployment might use these activities as follows: the cloze passage is introduced partway through the learning sequence, after initial content exposure, to help learners consolidate new terms in context before moving to formal assessment. The crossword puzzle might be positioned near the end of the module as a review activity, capitalizing on the retrieval practice benefit and the learner's fuller conceptual understanding to make the definitional clue matching more meaningful. Neither activity replaces direct instruction or conceptual explanation, but both extend the learning beyond passive reading into active, effortful engagement with the module's key language — the kind of engagement that makes vocabulary stick.</p>
+        <div class="notes"><strong>Notes</strong>This topic covers cloze passages and crossword puzzles as complementary vocabulary practice formats in PreseMaker. Key instructional points include the automated generation from module key terms, the distinction between contextual (cloze) and word-level (crossword) practice, the orthographic demand added by the crossword format, and the Module Index as the central location for accessing and managing generated artifacts.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assembling Modules into a Course Website</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Publishing a Course Website and Keeping It Current</a></div>
+  <header>
+    <h1>Assembling Modules into a Course Website</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Assembling Modules into a Course Website</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Building a complete course website from a collection of individual modules is one of the most important final steps in the course development workflow. When you create a course using PreseMaker, your work naturally divides into discrete modules — each covering a distinct subject area, unit, or learning objective. Those modules are powerful on their own, but learners need a unified, navigable experience that lets them move through the entire course without confusion or dead ends. The assembly process is what transforms a collection of separate modules into a single, coherent, browsable website. Understanding how this process works from start to finish — before touching a single button — is the best way to avoid common mistakes and produce a polished result.</p>
+
+<p>The assembly process follows a clear sequence of events. First, PreseMaker refreshes each module's HTML index file to reflect the most current saved content. Then it compiles those refreshed index files into a unified site structure, generating the navigation links that connect every module together. The end product is a fully linked website that learners can open in any browser and explore from beginning to end. Each of the major concepts below builds on this overall picture, so keep the sequence in mind as you work through the details.</p>
+
+<p><strong>The Role of Each Module's HTML Index File</strong></p>
+
+<p>Every module in a PreseMaker course has an HTML index file at its core. Think of this file as the front door to that module — it is the very first page a learner sees when they navigate into that section of the course. The index file does not contain all of the module's content itself; instead, it acts as an organized entry point that links outward to that module's individual lessons, topics, sub-topics, media assets, and any other resources the module contains.</p>
+
+<p>Because the index file is the hub from which all of a module's content radiates, keeping it accurate and current is critically important. If a lesson is added, renamed, reordered, or removed, the index file must reflect that change before learners encounter it. An outdated index file can send learners to content that no longer exists, display an old title for a lesson that has been revised, or omit new content entirely — all of which undermine the learning experience and erode trust in the course.</p>
+
+<p>In practical terms, the index file holds information such as:</p>
+<ul>
+  <li><strong>Module title and description</strong> — the human-readable name and summary that appears when learners first enter the module.</li>
+  <li><strong>Links to individual lessons or topics</strong> — ordered references to every piece of content within the module, typically rendered as a list or menu.</li>
+  <li><strong>Links to downloadable assets</strong> — where applicable, references to PDFs, worksheets, or other supporting files attached to the module.</li>
+  <li><strong>Metadata used by the navigation system</strong> — behind-the-scenes information PreseMaker uses to integrate the module into the broader course site.</li>
+</ul>
+
+<p>Because the index file serves both learners and PreseMaker's own assembly engine, any inconsistency between the index file and the actual module content creates problems at two levels: the learner-facing experience breaks down, and the automated assembly process may produce incorrect navigation links or even fail to include the module in the final site structure altogether.</p>
+
+<p><strong>How Publishing Refreshes Module Content</strong></p>
+
+<p>One of PreseMaker's most important behaviors during the assembly process is the automatic refresh it performs on every module's HTML index file at the moment you initiate a publish action. This refresh cycle is what keeps the assembled website synchronized with the work you have done inside each module.</p>
+
+<p>Here is what happens step by step during a refresh:</p>
+<ul>
+  <li>PreseMaker reads the current saved state of each module — every lesson, every topic title, every asset reference, and every piece of structural metadata.</li>
+  <li>It rewrites the module's HTML index file to match that current state precisely, overwriting whatever the index file contained before.</li>
+  <li>It validates that all internal links within the module (lessons linking to sub-topics, topics linking to media, and so on) are still intact and pointing to the correct files.</li>
+  <li>Once all module index files have been refreshed, PreseMaker moves on to compile them into the top-level site structure.</li>
+</ul>
+
+<p>The practical implication of this behavior is significant: <em>the published website always represents the state of your modules at the exact moment you pressed publish</em>. Changes you make after publishing are not visible to learners until you publish again. Conversely, changes you made before publishing — even if you made them days earlier — will be captured correctly by the refresh cycle. This makes the publish action the definitive checkpoint in your workflow: everything before it is draft, and everything after it is live.</p>
+
+<p>This also means you should save all your work inside each module before initiating the publish process. PreseMaker reads from saved files. Any unsaved edits sitting in an open editor pane will not be included in the refresh, and the resulting website will not reflect those changes. A reliable habit is to close and save every open module editor before publishing, then verify the output.</p>
+
+<p><strong>Using PreseMaker's Publish Feature to Build the Site</strong></p>
+
+<p>The publish feature is the central control that drives the entire assembly process. Locating it correctly within PreseMaker's interface is the necessary first step — the exact location depends on the version of PreseMaker you are using, but it is typically found in the main toolbar, the File menu, or a dedicated Course panel. If you are working with PreseMaker for the first time, take a moment to explore the interface and identify the publish option before you begin, so you are not searching for it mid-process.</p>
+
+<p>Once you initiate publishing, PreseMaker proceeds through its sequence automatically. The stages of the publish process are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stage</th>
+      <th>What PreseMaker Does</th>
+      <th>What You Should Know</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1. Pre-publish validation</td>
+      <td>Checks that all modules are saved and that required metadata is present.</td>
+      <td>Errors here indicate unsaved work or missing module information that must be corrected before proceeding.</td>
+    </tr>
+    <tr>
+      <td>2. Index refresh</td>
+      <td>Rewrites every module's HTML index file based on current saved content.</td>
+      <td>This is automatic; no manual action is needed, but it may take a moment for large courses.</td>
+    </tr>
+    <tr>
+      <td>3. Site structure compilation</td>
+      <td>Combines all refreshed index files into the top-level site, generating the course homepage and inter-module navigation.</td>
+      <td>The order of modules in the compiled site is determined by the course structure you defined, not alphabetical file order.</td>
+    </tr>
+    <tr>
+      <td>4. Asset copying</td>
+      <td>Copies all referenced media, documents, and stylesheets into the output directory.</td>
+      <td>If any asset file is missing from its expected location, the publish may complete but the site will have broken links.</td>
+    </tr>
+    <tr>
+      <td>5. Output delivery</td>
+      <td>Writes the completed website to the designated output folder.</td>
+      <td>The output folder contains everything needed to deploy the site — all HTML, CSS, JavaScript, and media files are self-contained.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When the publish process completes successfully, the output folder contains a fully self-contained website. You can open the top-level <code>index.html</code> file from that folder in any modern browser to preview the site locally before distributing it to learners. If you plan to host the site on a web server or learning management system, you would upload the entire contents of the output folder to your hosting environment.</p>
+
+<p>A common mistake during this step is publishing to an incorrect output directory or overwriting a live site with a version that has not been fully reviewed. Establishing a clear folder convention — for example, keeping a <em>draft</em> output folder for preview and a separate <em>live</em> output folder for deployment — prevents accidental overwrites and gives you a safe space to verify the assembled site before learners see it.</p>
+
+<p><strong>Ensuring a Cohesive Navigation Structure</strong></p>
+
+<p>One of the most valuable things PreseMaker does during assembly is generate navigation links automatically. Rather than requiring you to manually write HTML links between every module, PreseMaker reads the course structure you have defined — the order of modules, the hierarchy of lessons within each module, and the relationships between them — and produces a consistent navigation system that carries learners through the course from beginning to end.</p>
+
+<p>Automatic generation, however, does not mean guaranteed correctness. The navigation PreseMaker produces is only as accurate as the course structure you defined. If modules are in the wrong order in your course settings, they will appear in that wrong order in the navigation. If a module was accidentally excluded from the course structure, it will be absent from the navigation even though its content files exist. This is why reviewing the assembled site after every publish is an essential part of the workflow, not an optional final check.</p>
+
+<p>When reviewing the assembled site's navigation, work through the following checklist:</p>
+<ul>
+  <li><strong>Module sequence</strong> — Open the course homepage and confirm that all modules appear in the intended order. The sequence should match your course design document or syllabus.</li>
+  <li><strong>Module accessibility</strong> — Click through to every module to confirm its index page loads without errors and displays the correct title and lesson list.</li>
+  <li><strong>Inter-module links</strong> — At the end of one module, verify that the navigation correctly points to the next module. At the beginning of a module, verify the back link points to the previous module or the course homepage as appropriate.</li>
+  <li><strong>Lesson-level navigation</strong> — Within at least one or two modules, click through individual lessons to confirm the forward and backward navigation within the module works correctly.</li>
+  <li><strong>Asset links</strong> — If modules include downloadable files or embedded media, verify that those assets load correctly in the assembled site.</li>
+</ul>
+
+<p>Consistent, well-functioning navigation has a direct impact on learner experience that is easy to underestimate. When navigation works correctly, learners focus entirely on the content — they are not thinking about where they are in the course or how to get to the next section. When navigation is broken or confusing, it interrupts the learning process, generates support requests, and can cause learners to miss content entirely because they cannot find it. Investing a few minutes in a thorough navigation review after every publish is one of the highest-value quality-assurance steps in the entire course production process.</p>
+
+<p>If you discover navigation issues during your review, the fix almost always involves correcting the course structure settings within PreseMaker — reordering modules, adding a missing module, or correcting a title — and then publishing again. Because the publish process refreshes everything from the source, a corrected publish will overwrite the previous output with an accurate version.</p>
+        <div class="notes"><strong>Notes</strong>Walks learners through the steps of combining individual course modules into a cohesive, browsable website structure using PreseMaker.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

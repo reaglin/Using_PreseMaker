@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Batch Actions in Course Manager</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Batch Actions: Generating Content Across Multiple Modules at Once</a></div>
+  <header>
+    <h1>Introduction to Batch Actions in Course Manager</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Introduction to Batch Actions in Course Manager</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When building a course with multiple modules, one of the most time-consuming challenges is populating each module with the right type of generated content. Doing this module by module — opening each one individually, triggering content generation, waiting for results, and then moving to the next — can turn what should be a streamlined workflow into a slow, repetitive process. The Batch Actions feature in Course Manager is designed specifically to eliminate that inefficiency. It allows instructors to initiate a single content generation operation that reaches across an entire course structure, touching many modules at once rather than requiring individual attention for each one.</p>
+
+<p><strong>What Are Batch Actions?</strong></p>
+
+<p>Batch Actions are a course-level feature in Course Manager that enable instructors to trigger content generation across multiple modules simultaneously through a single operation. Rather than navigating into each module and manually initiating generation, an instructor sets up one batch run from the course view, selects the target modules, chooses the type of content to generate, and lets the system do the work across all of them at once.</p>
+
+<p>The key distinction here is that Batch Actions operate <em>at the course level</em>. This means they are not found inside any individual module's settings or editing interface. They exist one level up — in the course view — because their purpose is inherently course-wide. A single batch run can affect just a handful of modules or every module in the course, depending on what the instructor selects. This architectural placement reflects the scope of the feature: it is a tool for managing a course as a whole, not for fine-tuning a single module.</p>
+
+<p>Before Batch Actions existed, an instructor building a twenty-module course would have needed to generate content twenty separate times, repeating the same steps over and over. Batch Actions replace that repetitive manual workflow with a single, unified operation.</p>
+
+<p><strong>Purpose of Batch Actions</strong></p>
+
+<p>The primary purpose of Batch Actions is to <em>save time and ensure consistency</em> when generating content across a multi-module course. These two goals are closely connected: when you automate the same operation across many modules at once, you not only finish faster, you also guarantee that each affected module receives the same type of generated content under the same conditions, rather than risking variation that can occur when repeating a manual process many times.</p>
+
+<p>Consider a scenario where an instructor is building a certification course with fifteen modules. They want every module to have a quiz. Without Batch Actions, they would open each module, navigate to the quiz generation option, initiate generation, and repeat that process fifteen times. With Batch Actions, they select all fifteen modules from the course view, choose the Quiz content type, and initiate one batch run. The system handles the rest uniformly.</p>
+
+<p>This makes Batch Actions especially valuable during the initial build phase of a large course, when the course structure exists but the content within each module still needs to be generated. It supports instructors in managing large course builds more effectively within the Course Manager environment by compressing what could be hours of repetitive work into a single, efficiently managed operation.</p>
+
+<p><strong>Types of Content That Can Be Generated</strong></p>
+
+<p>Batch Actions support several specific content types. Each batch run is focused on <em>one content type at a time</em> — the instructor selects the desired type before initiating the run, and that selection determines what gets generated across the chosen modules. The available content types are:</p>
+
+<ul>
+  <li><strong>Module Topics and Outcomes</strong> — These are generated together as a paired set. Topics define the subject matter covered in a module, while Outcomes describe what a learner should be able to know or do after completing it. Generating both together in a batch ensures that every selected module receives a coherent structure of topics and their associated learning outcomes.</li>
+  <li><strong>Quizzes</strong> — Assessment content is generated for each selected module. Running this as a batch operation means every selected module receives a quiz in one operation, rather than requiring the instructor to generate assessments one module at a time.</li>
+  <li><strong>Presentations</strong> — Slide-based or structured presentation content is generated for each selected module, useful for creating lecture-style or visual learning materials across the course.</li>
+  <li><strong>Text Documents (such as Topic Details)</strong> — Written content documents, including detailed topic explanations, are generated for each selected module. Topic Detail documents, for example, provide thorough written coverage of a module's subject matter and are a common use case for batch generation.</li>
+</ul>
+
+<p>Because only one content type is selected per batch run, instructors who need multiple content types across their modules will run separate batch operations for each type. For example, an instructor might first run a batch to generate Module Topics and Outcomes across all modules, then run a second batch to generate Quizzes, and a third to generate Topic Detail documents. Each run is independent and focused.</p>
+
+<p><strong>Course-Level Access to Batch Actions</strong></p>
+
+<p>Finding and using Batch Actions requires navigating to the <em>course view</em> in Course Manager — not into any specific module. This is an important detail for instructors who are accustomed to working inside individual modules, because the Batch Actions controls will not appear within a module's own interface. They are only accessible from the higher-level course view, where the full list of modules is visible and manageable as a group.</p>
+
+<p>This placement is intentional and logical. Because Batch Actions span multiple modules, it makes sense for them to live at the level where all those modules are visible and selectable together. Placing the feature at the course level also reinforces an important workflow habit: when you want to act on many modules at once, you work from the course view. When you want to act on one module's content in detail, you work from within that module.</p>
+
+<p><strong>Scope of a Batch Run</strong></p>
+
+<p>One of the most important aspects of Batch Actions is that instructors have precise control over <em>which modules</em> are included in any given batch run. The feature does not force an all-or-nothing approach. Instructors can choose to include every module in the course, or they can select a specific subset — for example, only the modules that have not yet had quizzes generated, or only the first five modules of a course that is still being built incrementally.</p>
+
+<p>This selective scope is critical for practical course management. A course is rarely built all at once or updated all at once. An instructor might add three new modules to an existing course and need to generate Topic Details only for those new modules, without regenerating content for the modules that are already complete. Batch Actions accommodate this by letting the instructor select only the new modules for the batch run.</p>
+
+<p>The following table summarizes the key characteristics of a batch run:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Characteristic</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Where it is initiated</td>
+      <td>Course view in Course Manager (not inside individual modules)</td>
+    </tr>
+    <tr>
+      <td>Content types available</td>
+      <td>Module Topics &amp; Outcomes, Quizzes, Presentations, Text Documents (e.g., Topic Details)</td>
+    </tr>
+    <tr>
+      <td>Content types per run</td>
+      <td>One content type per batch run</td>
+    </tr>
+    <tr>
+      <td>Module selection</td>
+      <td>All modules or a specific subset, chosen by the instructor</td>
+    </tr>
+    <tr>
+      <td>Primary benefit</td>
+      <td>Saves time and ensures consistency across a multi-module course</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In summary, Batch Actions represent a significant productivity feature for instructors working with multi-module courses in Course Manager. By understanding that the feature lives at the course level, generates one content type per run, and applies that generation to whichever modules the instructor selects, instructors can plan their course-building workflow efficiently — running targeted batch operations in sequence to fully populate a course with generated content in a fraction of the time it would take module by module.</p>
+        <div class="notes"><strong>Notes</strong>Introduces the Batch Actions feature available at the course level, explaining its purpose and the types of content that can be generated across multiple modules simultaneously.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

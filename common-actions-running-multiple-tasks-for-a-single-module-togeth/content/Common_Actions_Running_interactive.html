@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Per-Topic Quiz Generation and Reliability</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Common Actions: Running Multiple Tasks for a Single Module Together</a></div>
+  <header>
+    <h1>Per-Topic Quiz Generation and Reliability</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Per-Topic Quiz Generation and Reliability</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When designing automated quiz generation for a learning module, one of the most consequential architectural decisions is the <strong>granularity at which content is fed into the generation process</strong>. At first glance, generating a single quiz for an entire module seems efficient — one pass, one output, done. In practice, however, this approach consistently produces lower-quality assessments than generating quizzes on a per-topic basis. Understanding <em>why</em> requires a close look at how generation systems respond to content volume, topic diversity, and the structure of learning objectives.</p>
+
+<p>A well-designed module is not a monolithic block of information. It is a structured collection of distinct topics, each addressing its own concepts, terminology, processes, and learning goals. When all of that material is submitted as a single generation input, the system must simultaneously navigate every concept present across the entire module. The result is a kind of cognitive overload at the system level — the generator is forced to sample broadly rather than deeply, producing questions that tend toward surface-level recall rather than nuanced comprehension.</p>
+
+<p><strong>The Challenge of Module-Level Quiz Generation</strong></p>
+
+<p>Consider a module on database fundamentals that covers five topics: relational data models, SQL syntax, normalization, indexing strategies, and transaction management. Each of these topics has its own vocabulary, its own depth of reasoning, and its own set of learning objectives. If the full content of all five topics is submitted together for quiz generation, several predictable problems emerge.</p>
+
+<p>First, the generation process has no built-in mechanism for enforcing balanced coverage. It may produce six questions about SQL syntax — because SQL examples appear frequently and are syntactically distinctive — while producing only one question about normalization, even though normalization might represent a full 20% of the module's instructional content. This <strong>imbalanced sampling</strong> creates an assessment that misrepresents the module's actual scope, potentially leaving entire learning objectives untested.</p>
+
+<p>Second, larger inputs introduce ambiguity. When a question is generated in the context of a broad content set, the system may pull terminology or concepts from adjacent topics to construct distractors, resulting in answer choices that feel plausible on the surface but are conceptually muddled. A distractor for a normalization question might inadvertently reference indexing behavior in a way that confuses rather than challenges the learner. The signal-to-noise ratio of the generated content degrades as input size grows.</p>
+
+<p>Third, repetition becomes a significant risk. Concepts that appear across multiple topics — such as the notion of a "key" in database terminology, which appears in relational modeling, normalization, and indexing — may spawn near-duplicate questions without the system recognizing the redundancy, because it lacks the topic-scoped awareness needed to distinguish how "key" is being discussed in each context.</p>
+
+<p><strong>Why Per-Topic Quiz Generation Works Better</strong></p>
+
+<p>Per-topic generation solves these problems by fundamentally changing the unit of work. Instead of one large, complex generation task, the system executes multiple smaller, focused tasks — one per topic. Each task receives only the content relevant to that topic, creating a tight and unambiguous input context.</p>
+
+<p>This narrowed focus has immediate benefits for question precision. When the generation system is working exclusively with content about normalization, it produces questions that are genuinely <em>about</em> normalization — the specific forms, the rationale for decomposition, the anomalies that normalization prevents. It is not competing with SQL syntax examples or indexing diagrams for representational space. Every question that emerges from that generation pass is accountable to the normalization topic, because that is the only topic present.</p>
+
+<p>Per-topic generation also enforces <strong>complete coverage by design</strong>. If a module has eight topics and quizzes are generated per topic, then all eight topics will receive dedicated quiz content. There is no possibility that a topic is crowded out by neighboring topics with more voluminous content. The structure of the generation pipeline itself guarantees that no topic is left without assessment.</p>
+
+<p>Distractors — the incorrect answer choices in multiple-choice questions — also benefit enormously from focused generation. A well-constructed distractor should be plausible within the conceptual domain of the question but clearly wrong upon careful analysis. When the generation system has only topic-specific content to work with, it constructs distractors from the vocabulary, edge cases, and common misconceptions specific to that topic. These distractors are pedagogically richer because they challenge learners to think carefully within the correct conceptual frame, not across the entire module.</p>
+
+<p><strong>Impact on Quiz Accuracy and Question Quality</strong></p>
+
+<p>Quiz accuracy refers to how faithfully a question reflects the intended knowledge or skill it is meant to assess. Per-topic generation consistently improves accuracy along several dimensions.</p>
+
+<p>First, questions generated from topic-specific content use the precise terminology introduced in that topic. If a topic on transaction management consistently uses the phrase "atomicity" and defines it in a specific way, questions generated from that content will reflect that definition accurately. A module-level generation pass might use the term inconsistently or conflate it with related concepts from adjacent topics.</p>
+
+<p>Second, the depth of questioning aligns better with the topic's instructional level. A topic that introduces a concept at a foundational level will yield questions appropriate to that level; a topic that explores advanced applications will yield questions that probe deeper reasoning. When all topics are merged into a single input, the generation system has no mechanism for distinguishing foundational from advanced content within each topic — it averages across the module's overall complexity level, potentially producing questions that are too hard for introductory topics and too easy for advanced ones.</p>
+
+<p>Third, per-topic generation reduces instructor editing burden. One of the most time-consuming steps in deploying generated quizzes is human review — reading each question for accuracy, relevance, and fairness before publishing. When question quality is higher out of the generation process, fewer questions require substantial revision or outright rejection. This efficiency compounds across a large course with many modules and many topics.</p>
+
+<p>The following table illustrates the contrast between module-level and per-topic quiz generation across key quality dimensions:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Quality Dimension</th>
+      <th>Module-Level Generation</th>
+      <th>Per-Topic Generation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Topic coverage balance</td>
+      <td>Uneven; high-volume topics over-represented</td>
+      <td>Even; every topic receives dedicated questions</td>
+    </tr>
+    <tr>
+      <td>Terminology precision</td>
+      <td>May mix terminology across topics</td>
+      <td>Uses terminology specific to each topic</td>
+    </tr>
+    <tr>
+      <td>Distractor relevance</td>
+      <td>Distractors may reference unrelated topics</td>
+      <td>Distractors drawn from topic-specific concepts</td>
+    </tr>
+    <tr>
+      <td>Depth alignment</td>
+      <td>Averaged across module complexity</td>
+      <td>Matched to each topic's instructional depth</td>
+    </tr>
+    <tr>
+      <td>Repetition risk</td>
+      <td>High; cross-topic concepts generate duplicates</td>
+      <td>Low; scope limits redundancy</td>
+    </tr>
+    <tr>
+      <td>Instructor editing time</td>
+      <td>Higher; more corrections needed</td>
+      <td>Lower; questions are more publish-ready</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Reliability Across the Full Module</strong></p>
+
+<p>Reliability in assessment design refers to the consistency and dependability of an assessment — the degree to which it produces stable, trustworthy measurements of learner knowledge. Per-topic quiz generation improves module-level reliability in ways that compound positively across the entire course.</p>
+
+<p>When each topic's quiz is generated in an isolated pass, the generation conditions are consistent from topic to topic. The same focused, manageable task is executed repeatedly, one topic at a time, with the same quality constraints applied to each. This is analogous to the manufacturing principle that complex assemblies are more reliably produced by breaking them into controlled sub-processes than by attempting the entire assembly in one uncontrolled operation. Each sub-process is easier to monitor, easier to validate, and less prone to cascading failure.</p>
+
+<p>In practical terms, this means that if the generation of one topic's quiz encounters a problem — perhaps the content for that topic is unusually sparse or contains ambiguous phrasing — the problem is contained. Only that topic's quiz is affected. In a single-pass module approach, a problematic section of content can corrupt the quality of questions far outside its own scope, because the generation system is processing everything simultaneously.</p>
+
+<p>Instructors and course designers benefit from this reliability in a very concrete way: they can <strong>trust the structural completeness of the quiz set</strong> without manual verification. They do not need to count questions per topic, compare coverage against a content map, or audit whether certain topics were neglected. The per-topic generation pipeline guarantees that if a topic exists in the module, it has a quiz. That guarantee is a feature of the system's architecture, not a result of vigilant human oversight.</p>
+
+<p><strong>Per-Topic Quizzes and Alignment with Learning Objectives</strong></p>
+
+<p>Perhaps the most theoretically important advantage of per-topic quiz generation is its natural alignment with the structure of learning objectives. In instructional design, learning objectives are typically written at the topic level. A topic on normalization might carry objectives such as "explain the purpose of third normal form" or "identify functional dependencies in a sample schema." These objectives define exactly what a learner should know or be able to do after engaging with that topic's content.</p>
+
+<p>Because topic-level content is written to fulfill topic-level objectives, it is inherently scoped to those objectives. When that content serves as the generation input, the resulting questions are bounded by the same scope. A question generated from normalization content is almost certain to address normalization objectives — not indexing objectives, not SQL syntax objectives. This alignment is not achieved through any special instruction to the generation system; it emerges naturally from the structural decision to generate at the topic level.</p>
+
+<p>This stands in stark contrast to module-level generation, where the system has no inherent awareness of which questions should map to which objectives. Questions may accidentally address objectives in ways that are technically correct but misaligned with the intended learning level. A question might test recognition of a term when the corresponding objective calls for application of a concept, because the module-level input did not preserve the distinction between introductory and applied content.</p>
+
+<p>Assessment validity — the degree to which a quiz actually measures what it claims to measure — depends on this kind of alignment. A quiz that claims to assess understanding of normalization but actually tests incidental familiarity with indexing terminology is not a valid measure of normalization knowledge. Per-topic generation, by anchoring each quiz firmly within a single topic's content and objectives, produces assessments that are <strong>more valid by construction</strong>. Learners who perform well on the quiz have genuinely demonstrated understanding of that topic's intended knowledge and skills, giving both learners and instructors meaningful, trustworthy feedback on learning progress.</p>
+
+<p>In aggregate, the per-topic approach transforms quiz generation from a single, opaque, difficult-to-control process into a transparent, repeatable, topic-by-topic workflow. Each iteration is simpler, more focused, and more accountable to the content it is meant to assess. The cumulative effect across a full module is a quiz set that is balanced in coverage, accurate in content, reliable in quality, and valid as a measure of learner achievement — qualities that a single module-level pass reliably struggles to achieve.</p>
+        <div class="notes"><strong>Notes</strong>This topic provides a thorough conceptual and practical explanation of per-topic quiz generation. An HTML comparison table is included to visually anchor the quality dimension contrasts. No headings were used per the formatting constraint; structural transitions are handled via bold lead-in phrases within paragraph flow.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

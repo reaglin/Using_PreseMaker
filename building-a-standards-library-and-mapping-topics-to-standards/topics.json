@@ -1,0 +1,794 @@
+{
+  "ModuleFolderName": "Building_a_Standards",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T21:12:06.4209242-04:00",
+  "ModifiedDate": "2026-07-08T21:13:59.2951847-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "eb92f573-48f5-4503-a75a-86683f43d1d7",
+      "Title": "What Is the Standards Library",
+      "Summary": "Introduces the Standards Library as a reusable collection of academic standards built once and applied across multiple courses. Explains its purpose and its current \u0027System in Development\u0027 status as an evolving feature.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T21:12:06.4209242-04:00",
+      "ModifiedDate": "2026-07-08T21:12:06.4209242-04:00",
+      "Elements": [
+        {
+          "Id": "d44e2a4d-406e-4d67-869f-7ec303c423c9",
+          "TopicId": "eb92f573-48f5-4503-a75a-86683f43d1d7",
+          "Title": "Definition of the Standards Library",
+          "BodyText": "The Standards Library is a reusable collection of academic standards that you build once and apply across multiple courses.",
+          "Notes": "Think of it as a centralized repository rather than a per-course list \u2014 once assembled, the same library can serve many courses without rebuilding it each time.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:12:24.4470792-04:00",
+          "ModifiedDate": "2026-07-08T21:12:24.4470792-04:00",
+          "Items": [
+            {
+              "Id": "a5fa4580-9686-48e9-aa74-2a4040fc914f",
+              "Text": "The library stores academic standards in a single, organized location accessible across your courses.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "59fd260a-28ad-406d-9e16-733182846a0e",
+              "Text": "Because it is built once and reused, it eliminates the need to re-enter or recreate standards for every new course you design.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "578ef494-4476-4eb7-9d87-7dd3dbc71262",
+              "Text": "The library is the foundation that makes standards mapping and coverage reporting possible.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b0f14dc9-2ae9-4dd7-ae95-4eed5e3e4439",
+          "TopicId": "eb92f573-48f5-4503-a75a-86683f43d1d7",
+          "Title": "Purpose of the Standards Library",
+          "BodyText": "The Standards Library exists to connect your course content to recognized academic standards, enabling systematic coverage tracking.",
+          "Notes": "Without a library in place, there is no structured way to map topics or learning outcomes to standards, and therefore no way to generate meaningful coverage reports.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:12:24.4470792-04:00",
+          "ModifiedDate": "2026-07-08T21:12:24.4470792-04:00",
+          "Items": [
+            {
+              "Id": "fdcfb39d-8a62-4773-ad76-7243d89fb6fa",
+              "Text": "Its primary purpose is to give course designers a structured set of standards to map their topics and learning outcomes against.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "562b312d-2037-4574-8af0-97b1b4796570",
+              "Text": "By centralizing standards, the library makes coverage analysis consistent and comparable across courses.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "bac1a2f9-fa5f-4b5c-a2b9-7611824c8251",
+              "Text": "The library supports accountability by creating a clear link between what is taught and the standards it addresses.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "dbeac149-5b7e-4e27-a822-e7bd549d7f0c",
+          "TopicId": "eb92f573-48f5-4503-a75a-86683f43d1d7",
+          "Title": "AI-Assisted Assembly",
+          "BodyText": "Rather than typing every standard by hand, you provide PreseMaker with a standards source and the AI extracts the standards into your library for you.",
+          "Notes": "Acceptable sources include a web page URL from a standards site such as CPALMS, or text pasted directly from a standards document, as well as a plain-language description of the standards framework.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:12:24.4470792-04:00",
+          "ModifiedDate": "2026-07-08T21:12:24.4470792-04:00",
+          "Items": [
+            {
+              "Id": "ab1f5fe3-3294-47ca-a528-feaa5dd5a22e",
+              "Text": "You supply either a URL pointing to a standards page, pasted text from a standards source, or a description of the standards framework.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "8d28ea13-f2d6-4bed-a649-94d926d50424",
+              "Text": "The AI reads the material you provide and extracts individual standards, populating the library automatically.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "fdfbdef1-c210-47cc-b7bc-371242a1393e",
+              "Text": "After extraction, you review and save the standards before the library is ready for mapping.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f092a29d-3488-4806-a10f-e74fbf8a35f1",
+          "TopicId": "eb92f573-48f5-4503-a75a-86683f43d1d7",
+          "Title": "\u0027System in Development\u0027 Status",
+          "BodyText": "The Standards Library is a newer capability currently labeled \u0027System in Development,\u0027 meaning it is an evolving feature whose requirements are still being finalized.",
+          "Notes": "This label signals that workflows, interface elements, and specific behaviors may change as the feature matures. Instructors should expect refinements over time.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:12:24.4470792-04:00",
+          "ModifiedDate": "2026-07-08T21:12:24.4470792-04:00",
+          "Items": [
+            {
+              "Id": "3cf4f0cd-99f8-4936-9c7b-8678d9d4b56c",
+              "Text": "The \u0027System in Development\u0027 label indicates the feature is functional but not yet fully finalized.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2929da91-0563-48fa-8417-ca86369cc808",
+              "Text": "Because requirements are still evolving, some aspects of the library\u0027s behavior or interface may change in future updates.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "518dd700-7377-49ee-965b-bb9b3d4c3337",
+              "Text": "Users should treat current documentation as a working guide rather than a fixed specification.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4a7a3cf9-c0a1-4ca5-8968-7093fd1044ef",
+          "TopicId": "eb92f573-48f5-4503-a75a-86683f43d1d7",
+          "Title": "Reusability Across Courses",
+          "BodyText": "One of the Standards Library\u0027s core advantages is that a single library can be mapped to multiple courses without being rebuilt each time.",
+          "Notes": "This reusability is especially valuable for institutions or instructors who align many courses to the same standards framework, such as a state\u0027s K-12 standards.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:12:24.4470792-04:00",
+          "ModifiedDate": "2026-07-08T21:12:24.4470792-04:00",
+          "Items": [
+            {
+              "Id": "e7925291-a23a-40a0-8759-aa4b7befa109",
+              "Text": "Once a library is assembled and saved, it is available to use as the standards reference for any number of courses.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c4c51818-5ca1-4ae8-acb1-0d0f0473ec06",
+              "Text": "Reusability saves significant time compared to manually entering or verifying standards on a course-by-course basis.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "fd6dccf8-ab60-4f58-8530-44d6a78977d4",
+              "Text": "Sharing one library across courses also ensures consistency in how standards are defined and labeled throughout an institution.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "12e52ca5-96ba-4977-827e-e9669e4dc485",
+      "Title": "Building the Library with AI",
+      "Summary": "Covers how learners provide PreseMaker with a standards framework description, a web page URL, or pasted text from a standards source so the AI can extract and populate the library. Describes the review and save workflow after extraction.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T21:12:06.4209242-04:00",
+      "ModifiedDate": "2026-07-08T21:12:06.4209242-04:00",
+      "Elements": [
+        {
+          "Id": "9f4e5941-6ace-4e81-a058-e9d0d073049a",
+          "TopicId": "12e52ca5-96ba-4977-827e-e9669e4dc485",
+          "Title": "Providing Input to the AI",
+          "BodyText": "To build a Standards Library, you give PreseMaker one of several types of input that the AI uses to identify and extract standards.",
+          "Notes": "Acceptable inputs include a description of a standards framework by name, a URL pointing to a standards web page, or text pasted directly from a standards source such as a state site like CPALMS.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:12:45.3138-04:00",
+          "ModifiedDate": "2026-07-08T21:12:45.3138-04:00",
+          "Items": [
+            {
+              "Id": "4e2de476-79d4-4213-a8ba-e19fa49f31dc",
+              "Text": "A framework description tells the AI which standards body or system to reference, even without a direct source document.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a9533b01-2a08-4015-af25-5d2aa34603a6",
+              "Text": "A URL or pasted text gives the AI an actual source to read, providing more reliable extraction than a name alone.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e58b70d7-826d-469a-8c31-bd48c50979b6",
+              "Text": "Pasting text is useful when a standards page cannot be accessed by URL or when you want to target a specific section of a larger document.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "20e72d97-be58-4c81-8611-e37749b5ee35",
+          "TopicId": "12e52ca5-96ba-4977-827e-e9669e4dc485",
+          "Title": "How the AI Extracts Standards",
+          "BodyText": "Once you provide input, PreseMaker\u0027s AI reads the material and extracts individual standards into your library automatically, rather than requiring you to enter each standard by hand.",
+          "Notes": "This extraction process is the core time-saving feature of the Standards Library \u2014 it replaces manual data entry with AI-driven parsing of the source you supply.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:12:45.3138-04:00",
+          "ModifiedDate": "2026-07-08T21:12:45.3138-04:00",
+          "Items": [
+            {
+              "Id": "4e76ac40-af18-4fe6-a18c-4758b3568760",
+              "Text": "The AI parses the input to identify discrete standards, including their codes and wording.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "af14a4bb-e5ee-491e-8771-396681a82434",
+              "Text": "Extraction applies regardless of input type \u2014 framework description, URL, or pasted text \u2014 though accuracy varies by source quality.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "865475b2-311b-43d8-b658-ebb95a30c68e",
+              "Text": "Because this feature is still labeled \u0027System in Development,\u0027 extraction behavior and requirements may continue to evolve.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "ffd76142-6595-4f44-8d86-bccbb97bedd0",
+          "TopicId": "12e52ca5-96ba-4977-827e-e9669e4dc485",
+          "Title": "Reviewing Extracted Standards",
+          "BodyText": "After extraction, you review the standards the AI has populated before saving them to your library.",
+          "Notes": "The review step is essential for catching errors, particularly for standards derived only from a framework description with no real source document to validate against.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:12:45.3138-04:00",
+          "ModifiedDate": "2026-07-08T21:12:45.3138-04:00",
+          "Items": [
+            {
+              "Id": "c07d3f09-9d17-46a8-a5a4-b5119e4e84c9",
+              "Text": "Reviewing lets you confirm that codes and wording match what the official standards source actually states.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "93b9f52a-bb86-4fd8-bc2a-999babf6033b",
+              "Text": "You can identify any standards that appear approximate or unfamiliar before they are saved and reused across courses.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b3d8e21b-5350-49fb-adb4-d94c955c030a",
+              "Text": "The review step is especially important for Unverified standards, which may contain invented or approximate content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "179d2fa2-c3b4-4f5c-85e3-ac2e5aa07b71",
+          "TopicId": "12e52ca5-96ba-4977-827e-e9669e4dc485",
+          "Title": "Saving Standards to the Library",
+          "BodyText": "After reviewing the extracted standards, you save them to complete the library-building workflow, making the standards available for reuse across multiple courses.",
+          "Notes": "Saving is the final step in the build workflow; once saved, the library can be mapped to course topics and learning outcomes without repeating the extraction process.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:12:45.3138-04:00",
+          "ModifiedDate": "2026-07-08T21:12:45.3138-04:00",
+          "Items": [
+            {
+              "Id": "c84c96f3-c2f9-4e94-9ec9-c27175a6ae2e",
+              "Text": "Saving locks in the extracted and reviewed standards as a reusable collection.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b10eab4b-0e3f-4bb0-937f-aaf089649bad",
+              "Text": "A saved library eliminates the need to re-enter or re-extract the same standards when working on different courses.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b0f1fe95-db8c-4ef4-aed4-e75c47516bd9",
+              "Text": "The build-once, reuse-often model is a primary efficiency benefit of the Standards Library feature.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f0e40e61-06fe-4e2d-870e-3ac65057292f",
+          "TopicId": "12e52ca5-96ba-4977-827e-e9669e4dc485",
+          "Title": "The Verified vs. Unverified Marker",
+          "BodyText": "Each standard in the library is labeled either Verified or Unverified based on the source the AI used to produce it, not on the AI\u0027s confidence level.",
+          "Notes": "This distinction is critical: Verified does not mean \u0027approved\u0027 or \u0027high confidence score,\u0027 and Unverified does not mean \u0027low confidence\u0027 \u2014 the marker indicates only whether a real source document was available during extraction.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:12:45.3138-04:00",
+          "ModifiedDate": "2026-07-08T21:12:45.3138-04:00",
+          "Items": [
+            {
+              "Id": "38edbdea-2288-4c16-b0b2-be04a04da55a",
+              "Text": "Standards extracted from a URL or pasted text are marked Verified because they came from an actual source the AI could read.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7ada4b81-fc84-4b13-8a74-2da658fb8b8e",
+              "Text": "Standards produced from only a framework name or description are marked Unverified because no real source was available to validate their codes and wording.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f6d0d190-40d3-4e08-99a0-9b070016d899",
+              "Text": "Unverified standards may be approximate or even invented by the AI, so you should check them against the official source before relying on them.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "b9d22e3d-d3fd-44ed-b6d7-c21bb90b10ac",
+              "Text": "The Verified marker signals provenance \u2014 where the standard came from \u2014 not a percentage, confidence score, or pending-approval state.",
+              "SortOrder": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "1d60b9b2-cad7-45c6-8376-3d507d30f998",
+      "Title": "Understanding the Verified and Unverified Markers",
+      "Summary": "Explains that the Verified marker indicates the provenance of a standard \u2014 whether it came from a real source provided by the user or was generated by the AI from a framework name alone. Clarifies that Unverified standards may contain approximate or invented codes and wording that must be checked against official sources.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T21:12:06.4209242-04:00",
+      "ModifiedDate": "2026-07-08T21:12:06.4209242-04:00",
+      "Elements": [
+        {
+          "Id": "d71f20ba-3c2b-42b8-b31c-aa861f4adfda",
+          "TopicId": "1d60b9b2-cad7-45c6-8376-3d507d30f998",
+          "Title": "What the Verified/Unverified Marker Actually Means",
+          "BodyText": "The Verified and Unverified markers indicate the provenance \u2014 the origin \u2014 of a standard, not a confidence score or approval status.",
+          "Notes": "A common misconception is that the marker reflects how certain the AI is about the standard\u0027s accuracy. In reality, it only communicates where the standard came from.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:13:12.0941895-04:00",
+          "ModifiedDate": "2026-07-08T21:13:12.0941895-04:00",
+          "Items": [
+            {
+              "Id": "03c10b2c-405f-45a7-9407-9f3ec0daae5e",
+              "Text": "Provenance refers to the source from which a standard was drawn, and that is the sole basis for the Verified or Unverified label.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "868929f3-a59b-4198-94f5-a0e841104ce4",
+              "Text": "The marker is not a percentage, a confidence rating, or a \u0027pending approval\u0027 indicator of any kind.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c7e8a3fa-82a4-4b87-97e5-b08a8c7c801b",
+              "Text": "Understanding this distinction prevents misreading an Unverified standard as simply \u0027not yet approved\u0027 when it may actually contain inaccurate content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f765b82c-d917-453f-b125-0de7cc158d9a",
+          "TopicId": "1d60b9b2-cad7-45c6-8376-3d507d30f998",
+          "Title": "When a Standard Is Marked Verified",
+          "BodyText": "A standard receives the Verified marker when it was extracted from a real source that you provided to the AI, such as a URL or pasted text from an official standards site.",
+          "Notes": "For example, if you paste content from a state standards site like CPALMS or supply a direct web page address, the AI reads that material and extracts standards from it \u2014 those standards are marked Verified.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:13:12.0941895-04:00",
+          "ModifiedDate": "2026-07-08T21:13:12.0941895-04:00",
+          "Items": [
+            {
+              "Id": "cd32d5a7-ff3b-4dff-b3ae-9dc43460e49f",
+              "Text": "Verified standards are grounded in an actual document or page you supplied, so their codes and wording reflect what that source contained.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "78858357-317b-4837-8e94-bd1d2b61243a",
+              "Text": "Providing a real source is the most reliable way to ensure the standards in your library match the official published versions.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "04c8e1eb-2153-4830-94de-01869d2925e9",
+              "Text": "Even Verified standards should be spot-checked, but they carry significantly less risk of containing invented or approximate content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "1d4f51af-2528-4760-8115-1c63f31fec24",
+          "TopicId": "1d60b9b2-cad7-45c6-8376-3d507d30f998",
+          "Title": "When a Standard Is Marked Unverified",
+          "BodyText": "A standard is marked Unverified when the AI generated it from a framework name alone, with no actual source document or web page provided for it to read.",
+          "Notes": "For instance, if you simply name a standards framework without supplying a URL or pasted text, the AI will attempt to reconstruct the standards from its training knowledge \u2014 a process that can produce plausible-looking but inaccurate results.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:13:12.0941895-04:00",
+          "ModifiedDate": "2026-07-08T21:13:12.0941895-04:00",
+          "Items": [
+            {
+              "Id": "6552cf48-5690-43c9-b8e8-2a3608fc69a0",
+              "Text": "Unverified standards may have approximate codes that look correct but do not match the official numbering system.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "33bd5199-67f3-48e8-84f6-0399aa34b568",
+              "Text": "The wording of Unverified standards may be paraphrased, condensed, or even invented rather than taken verbatim from the official source.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "edefa2f6-73ee-49a2-9ff8-b6f38d57794a",
+              "Text": "The Unverified label is a direct signal that human review against the official source is required before these standards can be relied upon.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "ef198388-17ed-4274-ba4c-a0aee2f66a9c",
+          "TopicId": "1d60b9b2-cad7-45c6-8376-3d507d30f998",
+          "Title": "Why Unverified Standards Can Contain Invented Content",
+          "BodyText": "When an AI generates standards from a framework name without a source to read, it draws on its training data, which may be incomplete, outdated, or simply inaccurate for specific standard codes and language.",
+          "Notes": "This is a known limitation of AI language models: they can produce output that is internally consistent and plausible in format while still being factually wrong in its specifics.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:13:12.0941895-04:00",
+          "ModifiedDate": "2026-07-08T21:13:12.0941895-04:00",
+          "Items": [
+            {
+              "Id": "ad9b7511-618e-4c25-a4f9-4a744b21283c",
+              "Text": "Standard codes in particular \u2014 alphanumeric identifiers like \u0027LAFS.3.RI.1.2\u0027 \u2014 are highly specific and easy for an AI to approximate incorrectly.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "04ab85d1-d2cc-4ea4-b7b6-bfc79ce060bf",
+              "Text": "Official wording often contains precise legal or pedagogical language that an AI may paraphrase in ways that subtly change the meaning.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f44e0dbb-e460-4719-8509-a891532bed55",
+              "Text": "Treating Unverified standards as accurate without checking them could lead to mapping your course to standards that do not actually exist as described.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "857f7799-d4e0-4692-bd79-a188d43ff528",
+          "TopicId": "1d60b9b2-cad7-45c6-8376-3d507d30f998",
+          "Title": "How to Respond to Unverified Standards",
+          "BodyText": "Because Unverified standards may be approximate or invented, the appropriate response is to verify each one against the official published source before using it in your course mapping.",
+          "Notes": "Official sources include state department of education websites, standards body publications, and authoritative standards portals like CPALMS.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:13:12.0941895-04:00",
+          "ModifiedDate": "2026-07-08T21:13:12.0941895-04:00",
+          "Items": [
+            {
+              "Id": "6551a48a-a60a-4cd2-81c9-26648cb3b143",
+              "Text": "Locate the official source for the standards framework in question and compare each Unverified standard\u0027s code and wording against it.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "809b6af4-9dfe-4e32-aa00-e4698189a568",
+              "Text": "If a standard\u0027s code or language does not match the official source, edit it in your Standards Library to reflect the correct information.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7f602a08-8d34-43bc-9a10-6aaa8f62aabe",
+              "Text": "After verification, you can have confidence that your library accurately represents the framework, even if the standards initially arrived as Unverified.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "2c0f486a-f494-4f51-a06e-d3393ff34fa7",
+          "TopicId": "1d60b9b2-cad7-45c6-8376-3d507d30f998",
+          "Title": "What the Marker Does Not Tell You",
+          "BodyText": "It is important to understand the boundaries of what the Verified and Unverified markers communicate so you do not over- or under-rely on them.",
+          "Notes": "Keeping the marker\u0027s meaning narrow and specific helps avoid both complacency with Verified standards and unnecessary distrust of the overall system.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T21:13:12.0941895-04:00",
+          "ModifiedDate": "2026-07-08T21:13:12.0941895-04:00",
+          "Items": [
+            {
+              "Id": "34ccef69-9832-42c6-b561-b448dc0b867f",
+              "Text": "The marker does not indicate how pedagogically appropriate a standard is for your course or learners.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1aa86750-7adf-4911-93db-f340299561b5",
+              "Text": "Verified does not mean the standard is perfectly extracted \u2014 minor formatting or transcription issues can still occur \u2014 only that it came from a source you provided.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4ef0fa45-7abb-42d7-880f-03004e1dc427",
+              "Text": "The marker is not a workflow state; it does not automatically change to Verified after you review an Unverified standard, so manual editing and judgment remain your responsibility.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "4e27bf21-26f5-44ea-b8de-e4a9930fcac7",
+      "Title": "Cognitive Levels on Standards",
+      "Summary": "Describes how each standard in the library can carry a Bloom\u0027s Taxonomy cognitive level. Explains how this level is later used by the Standards Coverage view to assess whether course content addresses a standard at the required depth.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T21:12:06.4209242-04:00",
+      "ModifiedDate": "2026-07-08T21:12:06.4209242-04:00",
+      "Elements": [
+        {
+          "Id": "7cbdf850-eeba-43c7-b682-9175909001f5",
+          "TopicId": "4e27bf21-26f5-44ea-b8de-e4a9930fcac7",
+          "Title": "What Bloom\u0027s Taxonomy Cognitive Levels Represent",
+          "BodyText": "Bloom\u0027s Taxonomy organizes cognitive learning into a hierarchy of levels, from basic recall up to complex evaluation and creation.",
+          "Notes": "The six levels in ascending order are: Remember, Understand, Apply, Analyze, Evaluate, and Create. Each level represents a different depth of intellectual engagement with content.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:13:36.0961836-04:00",
+          "ModifiedDate": "2026-07-08T21:13:36.0961836-04:00",
+          "Items": [
+            {
+              "Id": "42a56a4c-bf10-40f8-8159-6adcc060d52c",
+              "Text": "Higher levels demand that learners do more than recall facts \u2014 they must manipulate, judge, or produce knowledge.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "45a209d9-d731-4e6b-a57b-3add731882d4",
+              "Text": "Assigning a cognitive level to a standard captures the depth at which a learner is expected to engage with that standard\u0027s content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "554945c4-e538-44f1-a245-741ccfaa3d36",
+              "Text": "Different standards within the same framework may require very different cognitive depths, making level assignment essential for accurate coverage analysis.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "403aebeb-b239-4562-84bd-c3594f533193",
+          "TopicId": "4e27bf21-26f5-44ea-b8de-e4a9930fcac7",
+          "Title": "Assigning a Cognitive Level to a Standard in the Library",
+          "BodyText": "Each standard stored in the Standards Library can carry a designated Bloom\u0027s Taxonomy cognitive level as one of its properties.",
+          "Notes": "This assignment happens at the library-building stage, so the level travels with the standard whenever it is reused across courses.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:13:36.0961836-04:00",
+          "ModifiedDate": "2026-07-08T21:13:36.0961836-04:00",
+          "Items": [
+            {
+              "Id": "6991af0c-3899-47e3-9f73-31337954ca46",
+              "Text": "The cognitive level is an attribute of the standard itself, not of the course content mapped to it.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2f41d54f-b712-44ee-a995-55ae9e050633",
+              "Text": "When AI extracts standards from a source, a cognitive level may be suggested based on the language of the standard \u2014 verbs like \u0027recall\u0027 signal lower levels, while verbs like \u0027evaluate\u0027 signal higher ones.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1b561ff4-bb54-4af3-a22b-070d2d118606",
+              "Text": "You can review and adjust the assigned level to ensure it accurately reflects the intellectual demand stated in the official standard.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "416f0eda-edb0-45ea-90c1-0061b35d80df",
+          "TopicId": "4e27bf21-26f5-44ea-b8de-e4a9930fcac7",
+          "Title": "How Cognitive Level Drives Depth Requirements",
+          "BodyText": "The cognitive level attached to a standard sets a benchmark for how deeply course content must address that standard.",
+          "Notes": "For example, a standard tagged at the \u0027Analyze\u0027 level means that simply presenting definitions in the course would not satisfy it \u2014 learners must be engaged in analysis.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:13:36.0961836-04:00",
+          "ModifiedDate": "2026-07-08T21:13:36.0961836-04:00",
+          "Items": [
+            {
+              "Id": "440593c2-d549-4466-af17-88a7fcf47dd2",
+              "Text": "A standard\u0027s cognitive level functions as a minimum depth requirement, not merely a label.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "91f0aa18-cd01-4d81-98b3-b65172675f8c",
+              "Text": "Course content that addresses the topic of a standard but at a lower cognitive level may be flagged as insufficient coverage.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "901d4c1f-84bf-4d56-be82-1786eb921d21",
+              "Text": "This distinction ensures that coverage reporting reflects genuine instructional depth, not just subject-matter overlap.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6d9ef587-139e-413d-8fa5-5e9b0d3bd195",
+          "TopicId": "4e27bf21-26f5-44ea-b8de-e4a9930fcac7",
+          "Title": "Role of Cognitive Level in the Standards Coverage View",
+          "BodyText": "The Standards Coverage view uses each standard\u0027s cognitive level to assess whether mapped course content meets the standard at the required depth.",
+          "Notes": "This means the coverage view performs a two-part check: does the course address the subject matter of the standard, and does it do so at or above the standard\u0027s cognitive level?",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:13:36.0961836-04:00",
+          "ModifiedDate": "2026-07-08T21:13:36.0961836-04:00",
+          "Items": [
+            {
+              "Id": "c462ebf9-7b3d-4318-af76-5790a3d44c9d",
+              "Text": "Coverage is considered adequate only when both the topic and the cognitive depth of the standard are addressed by course content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "285b5e5c-a322-4c94-8a19-d43a8782efb6",
+              "Text": "A standard may appear mapped but still be flagged as insufficiently covered if the instructional activities or outcomes operate at a lower Bloom\u0027s level.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3937a2c7-9192-41c8-b924-05deff553d26",
+              "Text": "This capability allows instructors and designers to close depth gaps, not just content gaps, in their courses.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "bec4fd35-1345-4fb2-a443-b69715e011d4",
+          "TopicId": "4e27bf21-26f5-44ea-b8de-e4a9930fcac7",
+          "Title": "Practical Implications of Getting the Cognitive Level Right",
+          "BodyText": "Accurately assigning cognitive levels at the library stage is critical because errors will propagate into every course that maps to those standards.",
+          "Notes": "Since the Standards Library is described as a system still in development, extra care in reviewing AI-suggested cognitive levels is advisable.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:13:36.0961836-04:00",
+          "ModifiedDate": "2026-07-08T21:13:36.0961836-04:00",
+          "Items": [
+            {
+              "Id": "a64b1f26-0074-43e6-8e07-9c45375f8b08",
+              "Text": "An underestimated cognitive level may cause the coverage view to pass content that does not actually meet the standard\u0027s full demand.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b24460f2-3241-4871-93fe-de3aa532a04b",
+              "Text": "An overestimated cognitive level may flag well-designed content as insufficient, creating unnecessary revision work.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d0aa243d-8bf9-4eed-85ff-7e3f9baf5504",
+              "Text": "Checking the official wording of each standard \u2014 especially its action verbs \u2014 is the most reliable way to confirm the correct Bloom\u0027s level.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "239cf7fa-1359-4eb1-bd52-581f958bffd9",
+      "Title": "Mapping Topics and Learning Outcomes to Standards",
+      "Summary": "Walks through the process of linking a course\u0027s topics and learning outcomes to the relevant standards in the library. Explains how this mapping enables accurate standards coverage reporting across a course.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T21:12:06.4209242-04:00",
+      "ModifiedDate": "2026-07-08T21:12:06.4209242-04:00",
+      "Elements": [
+        {
+          "Id": "cdc6b95b-00f5-44d9-bcc2-698b901f637a",
+          "TopicId": "239cf7fa-1359-4eb1-bd52-581f958bffd9",
+          "Title": "What Mapping Means in the Standards Library",
+          "BodyText": "Mapping is the process of linking your course\u0027s topics and learning outcomes to the relevant standards stored in your Standards Library.",
+          "Notes": "Mapping is a deliberate, manual alignment step that happens after the library has been built. Without it, the system has no basis for generating coverage reports.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:13:59.2945562-04:00",
+          "ModifiedDate": "2026-07-08T21:13:59.2945562-04:00",
+          "Items": [
+            {
+              "Id": "54eabd9a-bfdb-4c88-9de8-b3a6cf28d5cb",
+              "Text": "Each topic or learning outcome in your course can be connected to one or more standards from the library.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "86bd0630-f6f8-4f1b-8618-b674d0161fa5",
+              "Text": "These connections are what tell the system which standards your course addresses and how.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5d976285-efe4-458c-844d-05595889c71d",
+              "Text": "Mapping is distinct from building the library \u2014 you must complete the library first, then perform the mapping step.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "5a878b85-df6e-40cc-8748-1c8a2f065257",
+          "TopicId": "239cf7fa-1359-4eb1-bd52-581f958bffd9",
+          "Title": "Why Mapping Enables Standards Coverage Reporting",
+          "BodyText": "The mapping between course content and standards is the foundation that makes accurate standards coverage reporting possible.",
+          "Notes": "Without mapped connections, the system cannot determine which standards are taught, at what depth, or how many times across the course.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:13:59.2945562-04:00",
+          "ModifiedDate": "2026-07-08T21:13:59.2945562-04:00",
+          "Items": [
+            {
+              "Id": "5fc31f03-79a9-4da6-aa42-6dc46f5e517c",
+              "Text": "Once topics and learning outcomes are mapped, the Standards Coverage view can show which standards are addressed and which are missing.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7f7fd956-3f34-4948-8514-c514086c7c5b",
+              "Text": "Coverage reporting draws entirely from the mapped relationships \u2014 no mapping means no reportable coverage.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "de859f9f-e720-41bb-a597-a0adf242ae56",
+              "Text": "This allows educators and administrators to see at a glance where gaps or overlaps exist across the full course.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8b365f48-7e1b-470e-ad25-fee929acae51",
+          "TopicId": "239cf7fa-1359-4eb1-bd52-581f958bffd9",
+          "Title": "Mapping Topics to Standards",
+          "BodyText": "Individual course topics can be linked directly to one or more standards in the library to indicate which standards that topic addresses.",
+          "Notes": "A single topic may map to multiple standards, and a single standard may be addressed by multiple topics throughout the course.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:13:59.2945562-04:00",
+          "ModifiedDate": "2026-07-08T21:13:59.2945562-04:00",
+          "Items": [
+            {
+              "Id": "1db7a9e9-4141-44f7-ba54-785e9a3bf550",
+              "Text": "Navigate to a course topic and select the relevant standards from your library to create the association.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "285e7e23-ba8b-44ba-b27b-0d347ecc6958",
+              "Text": "Mapping a topic signals that instruction on that topic contributes to learner mastery of the linked standard.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "269649c5-6f33-498d-a46c-d7736d75d4b2",
+              "Text": "Reviewing topic-level mappings helps ensure every major instructional area is connected to at least one standard.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d1c1da3c-bb45-43cc-b7c9-d33eb3c9b52c",
+          "TopicId": "239cf7fa-1359-4eb1-bd52-581f958bffd9",
+          "Title": "Mapping Learning Outcomes to Standards",
+          "BodyText": "Learning outcomes can also be mapped to standards, providing a more precise alignment between what learners are expected to demonstrate and the standard being addressed.",
+          "Notes": "Outcome-level mapping is especially useful when cognitive depth matters, since outcomes often specify the level of mastery expected.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:13:59.2945562-04:00",
+          "ModifiedDate": "2026-07-08T21:13:59.2945562-04:00",
+          "Items": [
+            {
+              "Id": "b315013e-aa15-4025-bb6a-42e6dff8baac",
+              "Text": "A learning outcome describes a specific, measurable result of instruction and can be tied directly to the standard it fulfills.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b4dcd0b4-4e94-4857-a8f6-8da33aeeb4d8",
+              "Text": "Mapping at the outcome level offers finer granularity than topic-level mapping alone, supporting more detailed coverage analysis.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "fa73e96b-2f11-4f62-b7fa-43336c2962ba",
+              "Text": "When a standard carries a Bloom\u0027s Taxonomy cognitive level, the mapped outcome\u0027s depth can be compared to confirm the standard is taught at the required level.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6a427cef-6ce8-49eb-9669-7fb89b737878",
+          "TopicId": "239cf7fa-1359-4eb1-bd52-581f958bffd9",
+          "Title": "Using Cognitive Level in the Mapping Process",
+          "BodyText": "Standards in the library can carry a Bloom\u0027s Taxonomy cognitive level, and this level plays a role in how the coverage view evaluates your mapped content.",
+          "Notes": "For example, a standard requiring \u0027Evaluate\u0027 (a higher-order level) would not be fully satisfied by a learning outcome written only at the \u0027Remember\u0027 level.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:13:59.2945562-04:00",
+          "ModifiedDate": "2026-07-08T21:13:59.2945562-04:00",
+          "Items": [
+            {
+              "Id": "62e94dbd-8912-4182-a88a-e2fd2b391adb",
+              "Text": "When you map a learning outcome to a standard that has a cognitive level assigned, the system can check whether the outcome meets that depth.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1a78f3e0-6956-4dec-a1fb-8998b9ddece3",
+              "Text": "This helps instructors identify cases where a standard is technically covered but not taught at the rigor the standard demands.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "10d6c838-990a-4115-9f49-90eeba2d0f92",
+              "Text": "Attending to cognitive level during mapping improves the quality and defensibility of your standards alignment.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d1ced1c4-4382-4482-b9f2-a31f679b48ff",
+          "TopicId": "239cf7fa-1359-4eb1-bd52-581f958bffd9",
+          "Title": "Reviewing and Confirming Your Mappings",
+          "BodyText": "After mapping topics and outcomes to standards, reviewing the full set of connections ensures completeness and accuracy before relying on coverage reports.",
+          "Notes": "This review step is particularly important for Unverified standards, whose wording or codes may be approximate and should be checked against the official source.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T21:13:59.2945562-04:00",
+          "ModifiedDate": "2026-07-08T21:13:59.2945562-04:00",
+          "Items": [
+            {
+              "Id": "39a3a962-3419-45b6-a323-086d935b43b7",
+              "Text": "Scan all mapped standards to confirm each connection accurately reflects what the topic or outcome actually teaches.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7298defa-25dc-433e-91ab-7b9e06bffbb9",
+              "Text": "Look for standards in your library that have no mappings, as these represent potential gaps in your course\u0027s coverage.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "80e3f4b2-e63d-4139-b139-3b1ccd616832",
+              "Text": "Correcting or adding mappings at this stage ensures the coverage report reflects the true state of your course alignment.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 27
+}

@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opening and Reviewing Generated Files</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ The Module Index: Cataloguing and Viewing Generated Content</a></div>
+  <header>
+    <h1>Opening and Reviewing Generated Files</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Opening and Reviewing Generated Files</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Once a module has finished generating its output, the real work of reviewing, validating, and reusing that content begins. Understanding how to efficiently locate, open, and interact with generated artifacts saves time and prevents the frustration of hunting through file systems or reopening the application from scratch. The module environment provides a structured set of tools — chiefly the Module Index and its integrated viewer — that keep everything centralized and accessible. This section walks through every stage of that process in detail, from finding a specific artifact in the index to returning to the catalogue after a thorough review.</p>
+
+<p>The term <strong>artifact</strong> refers to any discrete piece of content the module produces: a document, a script, a data file, a report, or any other generated output. Each artifact is registered in the Module Index at the moment it is created, giving you a single, authoritative list of everything the module has produced.</p>
+
+<p><strong>Locating an Artifact in the Module Index</strong></p>
+
+<p>The Module Index is the central registry of all artifacts produced during a module's run. When you need to find a specific piece of output, the index is your starting point. There are two primary strategies for finding an artifact: scrolling and searching.</p>
+
+<ul>
+  <li><strong>Scrolling through the index</strong> is most useful when you have a general sense of where the artifact falls in the module's sequence. Because artifacts are listed in the order they were generated, you can reason about position — outputs produced early in the workflow appear near the top, while those generated toward the end of the run appear near the bottom. This chronological ordering also makes it easy to trace the module's progression: you can see at a glance which artifacts were prerequisites for later ones and how the overall output evolved.</li>
+  <li><strong>Searching the index</strong> is faster when you know the artifact's title or file name. Most module environments provide a search or filter control within the index panel. Typing a keyword filters the list in real time, narrowing potentially dozens of entries down to the one you need. Each entry is labeled with the artifact's title or file name exactly as it was defined during generation, so a partial match on a meaningful word in the title is usually sufficient.</li>
+</ul>
+
+<p>It is worth taking a moment to understand the labeling convention. Artifact titles are either assigned automatically by the module (often derived from the task or template that generated them) or defined explicitly by the module's configuration. File names follow a similar pattern and typically include a descriptive stem plus an extension that signals the artifact's type — for example, <code>summary_report.html</code>, <code>data_export.csv</code>, or <code>onboarding_script.txt</code>. Recognizing these patterns quickly becomes second nature and speeds up the process of locating any specific artifact.</p>
+
+<p><strong>Opening an Artifact Directly from the Index</strong></p>
+
+<p>Once you have located the artifact you want to review, opening it is a single deliberate action. Selecting the artifact's link or title within the Module Index — typically a click or tap — triggers the artifact to load immediately. There is no intermediate step requiring you to confirm a file path or choose an application.</p>
+
+<ul>
+  <li>The artifact loads inside the <strong>integrated viewer</strong>, which is embedded directly in the module environment. This means you never have to leave the application, switch windows, or locate the file manually in an operating-system file browser. Your workflow stays contained and uninterrupted.</li>
+  <li>Direct opening also eliminates a common source of error: navigating to the wrong folder or opening an outdated version of a file from a previous run. Because the index link points to the exact artifact registered during the current module run, you can be confident you are reviewing the correct, up-to-date output.</li>
+  <li>If a module produces many artifacts, you can open them one at a time in sequence, returning to the index between each one, or you can open a specific artifact repeatedly as you cross-reference its content against other outputs.</li>
+</ul>
+
+<p><strong>Using the Integrated Viewer to Review Content</strong></p>
+
+<p>The integrated viewer is designed to present artifact content in a clean, readable format without requiring any external application. When an artifact opens in the viewer, its full content is rendered according to its type: formatted text for documents, structured rows and columns for data files, syntax-highlighted code for scripts, and so on.</p>
+
+<ul>
+  <li><strong>Full content display</strong> means you are not looking at a truncated preview. The entire artifact is available in the viewer, and you can scroll from the very first line to the very last. For long documents this scrollability is essential — the viewer does not impose a page limit or cut off content arbitrarily.</li>
+  <li><strong>Formatted layout</strong> enhances readability. Headings, bullet points, tables, and other structural elements are rendered visually rather than shown as raw markup, so the content appears as it was intended to be read. For example, an HTML report opens as a formatted page rather than as a screen full of angle brackets and tags.</li>
+  <li><strong>No additional software required</strong> is one of the viewer's most practical advantages. You do not need a dedicated word processor, spreadsheet application, PDF reader, or code editor installed on your machine. The integrated viewer handles all supported artifact types natively, which is particularly valuable in managed or restricted computing environments where installing additional software may not be straightforward.</li>
+</ul>
+
+<p><strong>Interacting with Content Inside the Viewer</strong></p>
+
+<p>Reviewing content passively is only part of what the viewer enables. You can also interact with the content in several practical ways during your review session.</p>
+
+<ul>
+  <li><strong>Selecting and copying text</strong> is perhaps the most frequently used interaction. If you identify a passage, a data value, a code snippet, or any other piece of content that you need to reference elsewhere — in an email, a separate document, a ticket, or another system — you can select it directly in the viewer and copy it to your clipboard just as you would in any text-based application. This avoids the need to retype content and eliminates transcription errors.</li>
+  <li><strong>Following internal links or navigation elements</strong> is relevant when an artifact contains its own structure, such as a table of contents, section anchors, or cross-references to other parts of the document. Clicking these links within the viewer moves you to the referenced section, letting you navigate a complex artifact efficiently without manual scrolling.</li>
+  <li><strong>Zoom, scroll, and resize controls</strong> give you fine-grained control over how content is displayed. If a table is wide or a code block is long, zooming out lets you see more at once. Zooming in improves legibility for dense or small text. Resizing the viewer panel can give it more screen real estate when you need to compare content side by side with another application. These ergonomic adjustments make sustained review sessions considerably more comfortable.</li>
+</ul>
+
+<p><strong>Returning to the Module Index After Review</strong></p>
+
+<p>After you have finished reviewing an artifact, returning to the Module Index is straightforward and preserves your progress in the catalogue.</p>
+
+<ul>
+  <li>The viewer provides a <strong>back or index navigation control</strong> — commonly a button or a breadcrumb link labeled something like "Back to Index" or simply an arrow pointing left. Activating this control closes the current artifact view and returns you to the full Module Index, with the list displayed exactly as you left it.</li>
+  <li>Critically, the <strong>Module Index retains its state</strong> while you are inside the viewer. If you had scrolled halfway down the list before selecting an artifact, the index will be at approximately that same position when you return, rather than jumping back to the top. This state retention is important when you are working through a large catalogue and reviewing artifacts in sequence.</li>
+  <li>Artifacts you have already reviewed remain in the index and can be reopened at any time. There is no mechanism that removes or expires an artifact after it has been viewed once. This means you can revisit a previously reviewed artifact as many times as necessary — for example, if a later artifact raises a question that requires you to go back and check an earlier one.</li>
+</ul>
+
+<p><strong>Reviewing Content via the HTML Index</strong></p>
+
+<p>In addition to the in-application Module Index, the module generates a standalone <strong>HTML index file</strong> alongside its output folder. This file serves as a portable, self-contained catalogue of all artifacts produced during the module run.</p>
+
+<ul>
+  <li><strong>Opening in any modern web browser</strong> is all that is required. Because the HTML index is a standard web page, it works in Chrome, Firefox, Safari, Edge, and any other browser that supports basic HTML. No special software, no login, and no network connection are needed — the file and its linked artifacts work entirely from local storage.</li>
+  <li>The HTML index <strong>renders artifact links as clickable entries</strong>, mirroring the structure and behavior of the in-application Module Index. Clicking an entry opens the corresponding artifact, either directly in the browser (for HTML and plain-text artifacts) or by triggering a download (for binary formats such as spreadsheets or PDFs). The experience is familiar and requires no learning curve beyond basic web browsing.</li>
+  <li>Because the HTML index file is kept together with its output folder, the entire set — index plus all artifacts — can be <strong>saved, distributed, or archived</strong> as a coherent record of the module's output. You can copy the folder to a shared drive, attach it to a project archive, email it to a colleague, or back it up to long-term storage, and the index will continue to function correctly as long as the artifacts remain in their relative positions within the folder. This makes the HTML index an excellent option for compliance documentation, audit trails, or simply handing off work to another team member who does not have access to the originating application.</li>
+</ul>
+
+<p>The following table summarizes the key differences and similarities between the two methods of accessing module artifacts:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>In-Application Module Index</th>
+      <th>HTML Index File</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Access method</td>
+      <td>Within the module application</td>
+      <td>Any modern web browser</td>
+    </tr>
+    <tr>
+      <td>Requires application to be open</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Integrated viewer for artifacts</td>
+      <td>Yes</td>
+      <td>Browser renders supported types natively</td>
+    </tr>
+    <tr>
+      <td>Shareable / distributable</td>
+      <td>No (tied to local application session)</td>
+      <td>Yes (portable folder and file)</td>
+    </tr>
+    <tr>
+      <td>Retains index state between artifacts</td>
+      <td>Yes</td>
+      <td>Browser history handles navigation</td>
+    </tr>
+    <tr>
+      <td>Suitable for archiving</td>
+      <td>Limited</td>
+      <td>Yes — copy folder to preserve full record</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Together, the in-application Module Index and the HTML index file give you flexible, redundant ways to access and review everything a module produces. Whether you are doing a quick in-session review or building a long-term archive for distribution, both tools are designed to make artifact access reliable, efficient, and independent of manual file management.</p>
+        <div class="notes"><strong>Notes</strong>Covers all listed subtopics in depth including both index access methods, integrated viewer usage, interaction capabilities, navigation back to the index, and the HTML index as a portable archive. The comparison table is rendered as a proper HTML table per instructions.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

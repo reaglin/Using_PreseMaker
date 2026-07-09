@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to AI-Generated Presentations</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Generating Presentations and Narrated Presentations</a></div>
+  <header>
+    <h1>Introduction to AI-Generated Presentations</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Introduction to AI-Generated Presentations</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Creating a polished, well-structured presentation from written course content has traditionally been one of the most time-consuming steps in instructional design. Authors must manually decide how to break their material into slides, write concise slide text, choose layouts, and ensure the visual flow matches the logical progression of the content. The AI-generated presentation feature eliminates most of that manual labor by reading the module's existing topics and automatically producing a complete PowerPoint slide deck — correctly sequenced, meaningfully grouped, and ready to use or refine. Understanding how this feature works, where it lives in the platform, and what it can produce sets the stage for using it confidently and effectively.</p>
+
+<p><strong>What Is an AI-Generated Presentation?</strong></p>
+
+<p>An AI-generated presentation is a PowerPoint file created automatically by an artificial intelligence system that reads and interprets the structured content already written inside a module. Rather than asking a course creator to manually translate paragraphs of instructional text into bullet points and slide layouts, the AI performs that translation itself. It analyzes the topics, identifies the key ideas within each one, determines how to distribute and group that content across individual slides, and then writes the slide titles, body text, and organizational structure accordingly.</p>
+
+<p>The process is fully automated at the structural and content level. The AI decides how many slides are needed, what each slide should be titled, which content belongs together on a single slide, and how the information should be ordered to support a coherent narrative. None of these decisions require manual authoring — the system handles them based on what it finds in the module's topic content.</p>
+
+<p>The final output is a standard <strong>.pptx</strong> PowerPoint file, which means it is immediately compatible with Microsoft PowerPoint, Google Slides, Apple Keynote, and any other tool that supports the format. Course creators can open the file, review it exactly as they would any other presentation, make edits, apply custom branding, or deliver it without modification. The AI-generated file is not a locked or proprietary format — it is a fully editable, standard presentation asset from the moment it is produced.</p>
+
+<p><strong>Where the Feature Lives: The Module Editor</strong></p>
+
+<p>The presentation generation feature is accessed directly from the <strong>Module Editor</strong>, which is the primary workspace where topics are created, written, sequenced, and saved. This placement is intentional and important. Because the AI relies entirely on the module's topic content to build the slide deck, the generation tool must have direct access to that content at the moment it runs. Embedding the feature inside the editor guarantees that connection.</p>
+
+<p>Before a presentation can be generated, the module must have its topics defined and saved. A module with no content gives the AI nothing to structure into slides, so the generation option becomes meaningfully available once the instructional content is in place. Course creators working in the Module Editor will find the presentation generation option as part of the editor's toolset — accessible without leaving the authoring environment or navigating to a separate tool.</p>
+
+<p>This integration keeps the workflow efficient. A course creator writes and organizes the module's topics in the editor, then triggers the presentation generation from the same interface. There is no need to export content, paste it into a separate system, or reformat it before the AI can process it. The editor serves as both the content-authoring space and the launch point for AI-driven output.</p>
+
+<p><strong>How Module Topics Drive the Slide Deck</strong></p>
+
+<p>The relationship between module topics and the generated slide deck is direct and structural. Topics are not simply referenced by the AI — they are the <em>source material</em> from which every slide is built. The AI reads each topic's title, its explanatory content, and any subtopics or supporting detail, then uses all of that information to determine what the slides should say and how they should be arranged.</p>
+
+<p>The sequence of topics in the module is preserved in the slide deck. If a module covers three topics — say, an introduction to a concept, a deeper explanation, and a practical application — the slides will follow that same order. The AI does not reorder the content based on its own judgment about what should come first; it respects the structure the course creator has already established. This means that organizing topics thoughtfully in the editor directly influences the logical clarity of the generated presentation.</p>
+
+<p>The quality and completeness of the topic content also matters significantly. Topics that include clear, well-written summaries and specific subtopics give the AI richer material to work with. A topic described in a single vague sentence will yield a thinner slide than a topic explained with context, examples, and structured subtopics. Well-defined topics produce slides that are accurate, relevant, and informative — slides that genuinely reflect the instructional intent of the module rather than generic placeholder content.</p>
+
+<p>Consider a practical example: a module topic titled <em>Understanding Data Privacy Regulations</em> that includes subtopics covering GDPR, CCPA, and enforcement mechanisms will give the AI enough distinct, meaningful content to create multiple focused slides — perhaps one introducing the regulatory landscape, one covering each major regulation, and one addressing enforcement. A topic with the same title but no developed subtopics might produce only a single slide with limited content. The lesson is straightforward: investment in the module's topic content pays dividends in the quality of the generated presentation.</p>
+
+<p><strong>Purpose Within the Course Creation Workflow</strong></p>
+
+<p>Within a broader course creation workflow, the AI-generated presentation feature serves as a <strong>content transformation tool</strong> — it takes material that has already been written for one format (the module's instructional topics) and renders it in a second format (a visual slide deck) with minimal additional effort from the course creator.</p>
+
+<p>This has several practical benefits. First, it dramatically reduces the time required to move from written content to a presentation-ready asset. What might take hours of manual slide authoring can be completed in the time it takes the AI to process the module — typically seconds to minutes. Second, it ensures structural alignment between the module and the presentation. Because the slides are generated directly from the module's topics, there is no risk of the presentation drifting away from the instructional intent or omitting key points through oversight. The two artifacts — the module and the slide deck — are anchored to the same content.</p>
+
+<p>Third, the feature gives course creators a meaningful choice about how much further work they want to invest. The generated presentation can be used as a <strong>finished deliverable</strong> — distributed to learners, embedded in a course, or used in a live or recorded session — without any further modification. Alternatively, it can serve as a <strong>first draft</strong> or starting point that a creator refines, brands, restructures, or enhances with additional visuals, data, or custom formatting. Both uses are valid, and the AI's output is designed to support either path.</p>
+
+<p><strong>Overview of the Two Presentation Modes</strong></p>
+
+<p>The presentation generation feature offers two distinct output modes, each suited to different delivery contexts and learner experiences. Understanding the difference between them — and what they share — helps course creators choose the right mode for their needs.</p>
+
+<ul>
+  <li><strong>Standard Mode</strong> produces a PowerPoint slide deck structured by the AI from the module's topics. The output contains slide titles, organized content, and a logical flow reflecting the module's topic sequence. This mode delivers a clean, editable presentation file with no audio components. It is well suited for use in live instructor-led sessions, as a downloadable learner resource, or as a visual aid in any context where the presenter or learner will engage with the slides directly.</li>
+  <li><strong>Narrated Mode</strong> builds on everything the standard mode produces and adds three additional layers: the AI generates <strong>per-slide speaker notes</strong> that script what should be said about each slide's content; those notes are then converted to <strong>spoken audio</strong> using a text-to-speech engine; and the resulting audio is <strong>embedded directly into the PowerPoint file</strong> with timing so that each slide's audio plays automatically when that slide is displayed. The result is a self-running, narrated presentation — a format that functions similarly to a recorded lecture or an asynchronous e-learning module, requiring no live presenter to deliver it.</li>
+</ul>
+
+<p>Critically, both modes begin with the same AI-driven process: reading the module's topics, structuring the content into slides, and determining the appropriate layout and groupings. The standard presentation is not a lesser version of the narrated one — it is the <em>foundation</em> that the narrated mode extends. This shared foundation means that the quality of the underlying topic content benefits both output types equally, and that course creators choosing between the modes are selecting an output format, not a fundamentally different generation process.</p>
+
+<p>The table below summarizes the key characteristics of each mode side by side:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Standard Mode</th>
+      <th>Narrated Mode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AI-structured slide content</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Slide titles and body text</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Per-slide speaker notes</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Text-to-speech audio conversion</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Audio embedded with slide timing</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Output format</td>
+      <td>Editable .pptx file</td>
+      <td>Editable .pptx file with embedded audio</td>
+    </tr>
+    <tr>
+      <td>Suitable for live delivery</td>
+      <td>Yes</td>
+      <td>Yes (notes available to presenter)</td>
+    </tr>
+    <tr>
+      <td>Suitable for self-paced asynchronous use</td>
+      <td>With modifications</td>
+      <td>Yes, out of the box</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Together, these two modes give course creators a flexible toolkit for turning module content into presentation assets — whether the goal is a quick, clean visual aid for a live session or a fully narrated, self-contained learning experience that runs without a presenter.</p>
+        <div class="notes"><strong>Notes</strong>Overview of how the Module Editor uses AI to automatically structure PowerPoint slide decks from module topics. Learners are introduced to the presentation generation feature and its purpose within the course creation workflow.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

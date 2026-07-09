@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Running Multiple Tasks Together in One Step</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Common Actions: Running Multiple Tasks for a Single Module Together</a></div>
+  <header>
+    <h1>Running Multiple Tasks Together in One Step</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Running Multiple Tasks Together in One Step</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When building a course, instructors routinely need to produce several different assets for each module — a study document, a quiz, a slide deck, and more. Traditionally, each of those outputs would be generated separately, requiring the instructor to navigate to a different tool or menu, configure options, trigger the generation, wait for the result, and then repeat the entire process for the next deliverable. The <strong>Common Actions Hub</strong> is designed to eliminate that repetitive cycle by consolidating all of those generation tasks into a single, centralized workspace where everything can be configured and launched together in one operation.</p>
+
+<p>Understanding how the hub works — and why it is structured the way it is — helps instructors get the most out of it. The sections below walk through each dimension of the feature in depth, from what the hub actually is, to how settings are preserved across sessions.</p>
+
+<p><strong>What the Common Actions Hub Is</strong></p>
+
+<p>The Common Actions Hub is a dedicated interface that surfaces all of the major generation tasks available for a given module in one place. Rather than scattering quiz creation in one menu, document generation in another, and presentation building somewhere else entirely, the hub gathers them together so an instructor can see all available actions at a glance.</p>
+
+<p>A critical design principle of the hub is that it is <em>scoped per module</em>. This means that when you open the hub for Module 3, every task you see, every setting you configure, and every output that gets generated is tied specifically to the content of Module 3. You are not looking at a global tool that operates on the whole course at once; you are looking at a focused workspace for a single module's deliverables. This scoping ensures that generated content is always contextually accurate — a quiz built from Module 3 draws only on Module 3 material, not on content from other parts of the course.</p>
+
+<p>The tasks available within the hub typically include, but are not limited to:</p>
+
+<ul>
+  <li><strong>Document generation</strong> — producing a formatted study guide, notes document, or reading resource derived from the module's content.</li>
+  <li><strong>Quiz creation</strong> — generating assessment questions aligned to the module's learning objectives and subject matter.</li>
+  <li><strong>Presentation building</strong> — assembling a slide deck that covers the module's key concepts in a visual, structured format.</li>
+</ul>
+
+<p>Because all of these tasks live in the same hub, an instructor never has to leave the workspace to move from one generation task to another. This centralization directly reduces the cognitive load and the time spent navigating between different tools or menus — a small saving per task that compounds significantly across a full course with many modules.</p>
+
+<p><strong>Selecting and Configuring Tasks Before Running</strong></p>
+
+<p>Before any generation takes place, the hub requires the instructor to make two deliberate decisions for each task: whether to include it in the upcoming run, and how it should be configured. These two steps — selection and configuration — happen before the batch is launched, ensuring that the system has everything it needs to produce the right output without interrupting the instructor mid-run to ask clarifying questions.</p>
+
+<p><em>Selection</em> works through individual toggles. Each task in the hub has an on/off control. If an instructor only needs a quiz and a document for a particular module but does not need a slide deck right now, they simply leave the presentation task toggled off. Only the tasks that are switched on will be included when the run is initiated. This gives instructors precise control over what gets generated — nothing is produced that was not explicitly requested.</p>
+
+<p><em>Configuration</em> happens per task and allows the instructor to specify the details of what they want. For a quiz, configuration might include the number of questions, the question types (multiple choice, true/false, short answer), and the difficulty level. For a document, it might include the format, the level of detail, or whether to include a summary section. For a presentation, it might cover the number of slides or the visual structure. Each task's configuration options are set independently, so the quiz can be configured for ten challenging questions while the document is configured for a concise overview — all within the same session, before the run begins.</p>
+
+<p>The practical implication is important: <strong>only tasks that have been both selected and fully configured will be included in the batch run.</strong> A task that is toggled on but left at default settings will still run using those defaults, and a task that is toggled off entirely will be skipped regardless of how it was previously configured. This design prevents accidental generation of unwanted outputs and ensures the instructor is always in control of the final set of deliverables.</p>
+
+<p><strong>Running All Selected Tasks Together in One Step</strong></p>
+
+<p>Once the instructor has selected the tasks they want and configured each one, they initiate the batch run with a single command. From that point forward, the system takes over. It processes each selected task <em>in sequence</em>, one after another, without requiring any further input from the instructor. The quiz is generated, then the document, then the presentation — or in whatever order the system processes them — all as part of a single uninterrupted operation.</p>
+
+<p>This is the defining efficiency of the hub. Without batch execution, generating three deliverables would require the instructor to:</p>
+
+<ul>
+  <li>Navigate to the quiz tool, configure it, trigger generation, and wait for completion.</li>
+  <li>Navigate to the document tool, configure it, trigger generation, and wait for completion.</li>
+  <li>Navigate to the presentation tool, configure it, trigger generation, and wait for completion.</li>
+</ul>
+
+<p>Each of those steps involves not just the time for the generation itself, but the overhead of navigation, re-orientation, and re-entry of settings. With the hub's batch execution, all three tasks are configured once in one place and then processed in a single run. The instructor can step away while the system works through the queue, returning only when all outputs are ready.</p>
+
+<p>This approach is especially valuable in scenarios where an instructor needs to produce a full set of module deliverables before a course goes live, or when updating a module requires regenerating all associated assets at once. Instead of spending time managing each generation task individually, the instructor invests that time upfront in configuration — where their expertise actually matters — and then lets the system handle execution.</p>
+
+<p><strong>Efficiency Gains from Batching Generation Tasks</strong></p>
+
+<p>The time savings from batching are real and compounding. Consider a course with twelve modules, each requiring a quiz, a study document, and a presentation. Generating those assets individually would mean thirty-six separate generation workflows. Even if each workflow takes only a few minutes of active instructor attention, the total adds up quickly — and that estimate does not account for the mental switching cost of repeatedly shifting context between different tools.</p>
+
+<p>Batching reduces that overhead in two ways:</p>
+
+<ul>
+  <li><strong>Eliminating repetitive setup:</strong> Configuration happens once per module session, not once per task. An instructor setting up three tasks in the hub completes one setup workflow instead of three separate ones.</li>
+  <li><strong>Eliminating repetitive execution:</strong> One run command replaces three separate trigger actions, three separate waits, and three separate confirmations that each task completed successfully.</li>
+</ul>
+
+<p>Beyond time, there is a consistency benefit. When all of a module's deliverables are generated from the same content in the same pass, they share a common source. The quiz questions, the document explanations, and the presentation slides all draw from the same module material at the same point in time. This reduces the risk that assets become misaligned — for example, a quiz that reflects an older version of the content because it was regenerated separately at a different time. Batching keeps all outputs in sync with each other and with the current state of the module.</p>
+
+<p>At a broader level, the course production workflow becomes noticeably faster and more streamlined. Instructors who adopt batch generation as a standard practice find that the time from "module content is ready" to "all module assets are published" shrinks considerably, freeing up time for higher-value work like reviewing outputs, refining content, and responding to learner needs.</p>
+
+<p><strong>How Common Actions Remembers Settings Per Course</strong></p>
+
+<p>One of the most practical features of the hub is its ability to remember the configuration settings that were used for previous runs. Rather than requiring instructors to re-enter their preferences every time they return to a module, the hub stores those settings and makes them available on the next visit. When an instructor opens the hub for a module they have worked with before, their prior selections and configurations are already in place, ready to use.</p>
+
+<p>This memory feature operates at the course level, meaning that saved settings for one course do not interfere with settings for another course. Each course maintains its own record of what was configured for each module. This is particularly useful for courses that follow a consistent structure — for example, a course where every module is expected to have a ten-question multiple-choice quiz and a two-page summary document. Once that configuration is set up and run for the first module, it persists as the default for subsequent modules, so the instructor only needs to make adjustments rather than starting from scratch each time.</p>
+
+<p>Saved settings also make it easier to re-run tasks when module content changes. If an instructor updates the material in a module and needs to regenerate the quiz and document to reflect those changes, they can open the hub, confirm that the saved settings still match their intent, and immediately launch a new run without reconfiguring anything. The system remembers the decisions that were already made.</p>
+
+<p>Importantly, saved settings are never locked in. Instructors can adjust any saved configuration at any time before initiating a new run. If a particular module requires a longer quiz than usual, or if a presentation needs more slides to cover additional content, those adjustments can be made on the spot. The saved settings serve as a starting point — a convenience that preserves prior work — not as a constraint that limits flexibility.</p>
+
+<p>The following table summarizes the key aspects of the Common Actions Hub and their practical implications:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>How It Works</th>
+      <th>Practical Benefit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Module-scoped tasks</td>
+      <td>All tasks and settings apply to a single module at a time</td>
+      <td>Generated content is always contextually accurate for that module</td>
+    </tr>
+    <tr>
+      <td>Individual task toggles</td>
+      <td>Each task can be switched on or off independently</td>
+      <td>Instructors control exactly which deliverables are produced</td>
+    </tr>
+    <tr>
+      <td>Per-task configuration</td>
+      <td>Settings are specified for each task before the run begins</td>
+      <td>Outputs match the instructor's intent without mid-run interruptions</td>
+    </tr>
+    <tr>
+      <td>Single-run batch execution</td>
+      <td>One command processes all selected tasks in sequence</td>
+      <td>Eliminates repetitive triggering and waiting across multiple tools</td>
+    </tr>
+    <tr>
+      <td>Consistency of outputs</td>
+      <td>All assets are generated from the same module content in one pass</td>
+      <td>Reduces risk of misaligned or out-of-sync deliverables</td>
+    </tr>
+    <tr>
+      <td>Saved settings per course</td>
+      <td>Prior configurations are stored and restored on return visits</td>
+      <td>Speeds up setup for recurring workflows and multi-module courses</td>
+    </tr>
+    <tr>
+      <td>Editable saved settings</td>
+      <td>Stored configurations can be modified before any new run</td>
+      <td>Preserves prior work while allowing flexibility for content changes</td>
+    </tr>
+  </tbody>
+</table>
+        <div class="notes"><strong>Notes</strong>Topic covers the Common Actions Hub in depth including scoping, task selection, configuration, batch execution, efficiency rationale, and settings persistence. Table added to summarize key features and benefits for quick reference.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

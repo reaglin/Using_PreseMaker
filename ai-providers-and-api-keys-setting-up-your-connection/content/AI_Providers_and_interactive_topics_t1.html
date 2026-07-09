@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How PreseMaker Connects to AI Providers</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ AI Providers and API Keys: Setting Up Your Connection</a></div>
+  <header>
+    <h1>How PreseMaker Connects to AI Providers</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>How PreseMaker Connects to AI Providers</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>PreseMaker is designed to bring the power of modern artificial intelligence directly into your presentation workflow. Features like automatic content generation, smart suggestions, and intelligent structuring of ideas are central to the PreseMaker experience — but delivering these capabilities requires access to sophisticated AI technology that goes far beyond what a standard desktop or web application can bundle on its own. To understand how to get the most out of PreseMaker, it helps to understand exactly how it connects to the AI systems that power it, why that connection is necessary, and what role you play in establishing it.</p>
+
+<p>At its core, PreseMaker is an <strong>AI-powered application</strong> — meaning many of its most valuable features are driven by large language models (LLMs). These models are trained on vast amounts of text data and are capable of generating coherent, contextually appropriate content, offering creative suggestions, rephrasing text, summarising ideas, and much more. However, these models are enormous in scale. A state-of-the-art language model can contain hundreds of billions of parameters and requires specialised hardware — typically clusters of high-end GPUs or TPUs — to run efficiently. Bundling such a model directly inside PreseMaker and running it on a typical user's laptop or desktop would be completely impractical: the download sizes alone would be measured in hundreds of gigabytes, and most consumer devices simply lack the processing power to run inference at a usable speed. Instead, PreseMaker is architected to <strong>communicate with external AI providers over the internet</strong>, sending your requests to powerful remote servers and receiving intelligent responses back in real time. This keeps PreseMaker itself lightweight, responsive, and easy to install, while still giving you access to the very best AI capabilities available today.</p>
+
+<p>The companies that operate these remote AI systems are known as <strong>AI providers</strong>. PreseMaker supports four of them:</p>
+
+<ul>
+  <li><strong>Anthropic Claude</strong> — developed by Anthropic, Claude is known for its emphasis on safety, nuanced reasoning, and handling long, complex documents and conversations.</li>
+  <li><strong>Google Gemini</strong> — Google's family of multimodal AI models, offering strong performance across a wide range of language and reasoning tasks with deep integration into Google's infrastructure.</li>
+  <li><strong>OpenAI</strong> — the organisation behind the widely recognised GPT series of models, including GPT-4 and its successors, known for versatility and broad capability across creative and analytical tasks.</li>
+  <li><strong>Mistral</strong> — a provider offering highly efficient open-weight models that deliver strong performance, often with a focus on speed and cost-effectiveness.</li>
+</ul>
+
+<p>Each of these providers maintains its own AI infrastructure — data centres filled with specialised hardware running their proprietary or open-weight models. When you use an AI-driven feature in PreseMaker, your input is packaged into a structured request and sent securely over the internet to whichever provider you have configured. The provider's servers process the request using their AI model and return a response, which PreseMaker then presents to you. Because this entire process depends on reaching an external server, <strong>an active internet connection is required</strong> any time you wish to use PreseMaker's AI features. If your connection is interrupted, AI functionality will be unavailable until connectivity is restored — though non-AI aspects of the application can still be used offline.</p>
+
+<p>Understanding why this external connection is not just convenient but genuinely <strong>necessary</strong> is important. Consider what a large language model actually involves: training a frontier model like GPT-4 or Claude 3 Opus costs tens or hundreds of millions of dollars in compute alone and results in a model that occupies many gigabytes — sometimes hundreds of gigabytes — of storage even in compressed form. Running that model to generate a single response requires performing billions of mathematical operations in fractions of a second, which demands hardware that is orders of magnitude more powerful than a standard user device. By delegating this work to the provider's servers, PreseMaker achieves several things simultaneously: users always have access to the <strong>most capable and up-to-date models</strong> (since the provider can update or upgrade their infrastructure without requiring you to update the application), the <strong>processing burden is entirely offloaded</strong> from your device, and PreseMaker remains a fast, nimble application rather than a resource-hungry system. In short, the cloud-based model is not a limitation — it is what makes premium AI functionality accessible to everyone.</p>
+
+<p>Connecting to an AI provider is not as simple as pointing PreseMaker at a web address. AI provider APIs are protected services, and to use them you must authenticate yourself. This is where <strong>API keys</strong> come in. An API key is a unique string of characters — essentially a credential — that identifies you as an authorised user of a particular provider's API. Think of it like a password that your application presents automatically every time it makes a request. Without a valid API key, the provider's servers will reject every request PreseMaker sends, and no AI features will function.</p>
+
+<p>Critically, PreseMaker requires you to supply <strong>your own personal API key</strong> obtained directly from your chosen provider. This design choice has important implications:</p>
+
+<ul>
+  <li><strong>Usage is tied to your account.</strong> Every API call made using your key is logged against your provider account, giving you full visibility into how much AI processing you are consuming.</li>
+  <li><strong>Billing is personal and transparent.</strong> AI providers charge for usage (typically based on the volume of text processed, measured in tokens). Because your key is linked to your own account, you are billed directly by the provider according to your own usage — there are no hidden costs folded into a PreseMaker subscription, and you are never subsidising anyone else's usage.</li>
+  <li><strong>Privacy and control.</strong> PreseMaker does not route your requests through its own servers or use a shared key that pools multiple users together. Your prompts and content go directly from PreseMaker to the provider under your own credentials, meaning you maintain personal control over your AI service relationship.</li>
+  <li><strong>Security responsibility.</strong> Because the key grants access to a paid service on your behalf, it should be kept confidential. You should never share your API key with others or expose it in public spaces.</li>
+</ul>
+
+<p>To obtain an API key, you register an account with your chosen provider, navigate to their developer or API section, and generate a key. Each provider has its own sign-up process and pricing structure, but all four supported providers offer straightforward self-service account creation. Once you have your key, you enter it into PreseMaker's settings, and the application handles all the technical details of including it in every API request it makes on your behalf.</p>
+
+<p>Before you begin, you will need to decide which of the four supported providers you want to use. This is your <strong>choice of AI provider</strong>, and it determines which underlying model powers your PreseMaker AI features. You only need to configure a single provider to get started — PreseMaker will be fully functional with just one active connection. That said, you are free to configure multiple providers if you wish, which would allow you to switch between them and compare outputs or take advantage of the different strengths each offers.</p>
+
+<p>To help you make an informed decision, here is a high-level comparison of the four providers across some key dimensions:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Provider</th>
+      <th>Notable Models</th>
+      <th>Key Strengths</th>
+      <th>Typical Pricing Model</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Anthropic Claude</strong></td>
+      <td>Claude 3.5 Sonnet, Claude 3 Opus, Claude 3 Haiku</td>
+      <td>Long context windows, nuanced reasoning, safety-focused outputs</td>
+      <td>Per-token (input and output tokens billed separately)</td>
+    </tr>
+    <tr>
+      <td><strong>Google Gemini</strong></td>
+      <td>Gemini 1.5 Pro, Gemini 1.5 Flash, Gemini Ultra</td>
+      <td>Multimodal capabilities, large context, strong factual grounding</td>
+      <td>Per-token or per-character depending on model tier</td>
+    </tr>
+    <tr>
+      <td><strong>OpenAI</strong></td>
+      <td>GPT-4o, GPT-4 Turbo, GPT-3.5 Turbo</td>
+      <td>Versatility, large ecosystem, strong creative and analytical performance</td>
+      <td>Per-token (input and output tokens billed separately)</td>
+    </tr>
+    <tr>
+      <td><strong>Mistral</strong></td>
+      <td>Mistral Large, Mistral Small, Mixtral 8x7B</td>
+      <td>Efficiency, competitive performance at lower cost, open-weight options</td>
+      <td>Per-token, generally lower cost than larger providers</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Your choice may depend on factors such as the type of content you typically create, your budget for API usage, the context length you need (how much text the model can consider at once), or simply which provider you already have an account with. Because PreseMaker supports all four, you are not locked into any single ecosystem — you can always change your configured provider or add additional ones as your needs evolve.</p>
+
+<p>In summary, PreseMaker's AI capabilities are delivered through a carefully designed architecture: the application itself remains lean and fast, while heavy AI processing is handled by world-class external providers over a secure internet connection. You authenticate that connection using your own personal API key, keeping billing transparent and your data under your control. By understanding this relationship — and by choosing the provider that best fits your needs — you set yourself up for a powerful, personalised AI-assisted presentation experience from the very first session.</p>
+        <div class="notes"><strong>Notes</strong>The comparison table uses current, publicly known model names and general pricing structures as of mid-2024. Advise learners to check each provider&#39;s official pricing page for the most up-to-date rates before committing to a provider, as token prices and available models change frequently.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

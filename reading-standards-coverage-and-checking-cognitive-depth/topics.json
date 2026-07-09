@@ -1,0 +1,784 @@
+{
+  "ModuleFolderName": "Reading_Standards_Coverage",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T21:14:44.1109957-04:00",
+  "ModifiedDate": "2026-07-08T21:16:20.7210709-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "5235625e-3c6b-47ed-b3df-ba51044682b1",
+      "Title": "Introduction to the Standards Coverage View",
+      "Summary": "Overview of the Standards Coverage view in PreseMaker, including its current development status and the headline summary it provides about a course\u0027s standards alignment.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T21:14:44.1109957-04:00",
+      "ModifiedDate": "2026-07-08T21:14:44.1109957-04:00",
+      "Elements": [
+        {
+          "Id": "fd641845-7837-421a-808f-5afbf73beccb",
+          "TopicId": "5235625e-3c6b-47ed-b3df-ba51044682b1",
+          "Title": "What the Standards Coverage View Is",
+          "BodyText": "The Standards Coverage view is a feature in PreseMaker that shows how well your course materials cover the standards you have mapped, including whether coverage reaches the required cognitive depth.",
+          "Notes": "This view is a newer feature and is currently labeled \u0027System in Development,\u0027 indicating it is still being refined.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:15:00.4811998-04:00",
+          "ModifiedDate": "2026-07-08T21:15:00.4811998-04:00",
+          "Items": [
+            {
+              "Id": "d34b6dea-ce10-4031-86b0-17d20d661588",
+              "Text": "It provides a unified place to evaluate both the breadth and depth of your course\u0027s standards alignment.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1f2ccc44-3db0-488a-9f11-41554ce20438",
+              "Text": "The \u0027System in Development\u0027 label signals that users should expect the feature to evolve over time.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "47938465-ea7c-4c33-81d0-2022e7147de2",
+          "TopicId": "5235625e-3c6b-47ed-b3df-ba51044682b1",
+          "Title": "The Headline Summary",
+          "BodyText": "At the top of the Standards Coverage view, a headline summarizes the overall alignment picture for the entire course at a glance.",
+          "Notes": "For example, the headline might state what percentage of aligned standards are actually assessed and how many have a cognitive-depth gap.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:15:00.4811998-04:00",
+          "ModifiedDate": "2026-07-08T21:15:00.4811998-04:00",
+          "Items": [
+            {
+              "Id": "a842661b-c569-475b-87c5-cb9b374333b9",
+              "Text": "The headline gives instructors an immediate, high-level sense of how complete their standards coverage is without reading every row.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3b4a8a4e-c7f4-4ed8-a6ac-a7bfeb75177e",
+              "Text": "It surfaces two key concerns at once: the proportion of standards that are assessed and the number of standards with a depth gap.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "11de7f60-756c-4189-ab2e-0eb1a18ea017",
+          "TopicId": "5235625e-3c6b-47ed-b3df-ba51044682b1",
+          "Title": "How Standards Are Displayed as Rows",
+          "BodyText": "Each mapped standard appears as its own row in the view, presenting several pieces of information together in a structured layout.",
+          "Notes": "",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:15:00.4811998-04:00",
+          "ModifiedDate": "2026-07-08T21:15:00.4811998-04:00",
+          "Items": [
+            {
+              "Id": "111817a9-0425-4bda-b78b-67435cf31236",
+              "Text": "Each row shows the standard\u0027s code, its full statement, and its designated cognitive (Bloom\u0027s) level.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2f2df4ba-4c29-466e-8249-ed32059e55e4",
+              "Text": "The row also displays counts of aligned assignments, quiz items, and activities, giving a quick inventory of supporting materials.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9e6cadc4-774f-4e47-9090-2d7784b424ec",
+              "Text": "A Status indicator on each row communicates the current state of coverage for that standard.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "0375ded1-a09a-4510-a647-c00fe8f0f322",
+          "TopicId": "5235625e-3c6b-47ed-b3df-ba51044682b1",
+          "Title": "The Tiered Status System",
+          "BodyText": "Rather than a numeric score or percentage bar, each standard receives one of a small set of tiered status labels that describe the quality of its coverage.",
+          "Notes": "The key practical distinction is between \u0027practiced only\u0027 and \u0027assessed,\u0027 since assessment carries a higher level of accountability than practice alone.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:15:00.4811998-04:00",
+          "ModifiedDate": "2026-07-08T21:15:00.4811998-04:00",
+          "Items": [
+            {
+              "Id": "f5ecdff8-4f2e-43e8-8bd2-6efe42e4ebb2",
+              "Text": "\u0027Not aligned\u0027 means nothing has been mapped to the standard; \u0027not addressed\u0027 means it is mapped but no materials yet practice or assess it.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "84c47058-0192-4227-a541-be14b24b2553",
+              "Text": "\u0027Practiced only\u0027 means the standard is covered by an activity or assignment but no quiz item assesses it.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "90639daf-0710-4319-8e6f-7d5c1e7ba25d",
+              "Text": "\u0027Assessed\u0027 is the highest tier, meaning at least one assessment item covers the standard.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "fb31b559-1707-4108-aab0-9f6dce6a803e",
+          "TopicId": "5235625e-3c6b-47ed-b3df-ba51044682b1",
+          "Title": "Cognitive-Depth Checking Within the View",
+          "BodyText": "The Standards Coverage view automatically flags any standard whose coverage is shallower than the cognitive level the standard itself demands, creating a visible depth-gap warning.",
+          "Notes": "The required cognitive depth is determined by the standard\u0027s own Bloom\u0027s level, not by any external program setting.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:15:00.4811998-04:00",
+          "ModifiedDate": "2026-07-08T21:15:00.4811998-04:00",
+          "Items": [
+            {
+              "Id": "7475b9dd-19ff-4457-9ad6-8aa8eb86cb38",
+              "Text": "A warning marker with a tooltip appears inline on the affected standard\u0027s row, making depth gaps easy to spot while scanning the list.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "99f90281-bb81-4d2a-bba6-3a22cc577bb5",
+              "Text": "Depth-gap flags are also reflected in the headline summary, so the overall scale of the issue is visible immediately.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "11b6134b-aba4-48b9-8c13-4b481a09885b",
+              "Text": "There is no separate button to run the check and no option to export a depth report; the check is built directly into the view.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "bb38fc91-b728-4610-9aa1-157bc53f9df3",
+      "Title": "Understanding What the Coverage View Displays",
+      "Summary": "Explanation of the information shown for each mapped standard, including its code, statement, cognitive level, aligned item counts, and overall status.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T21:14:44.1109957-04:00",
+      "ModifiedDate": "2026-07-08T21:14:44.1109957-04:00",
+      "Elements": [
+        {
+          "Id": "3c060d54-3926-4c29-b002-3161db4991ef",
+          "TopicId": "bb38fc91-b728-4610-9aa1-157bc53f9df3",
+          "Title": "The Standard Row Layout",
+          "BodyText": "Each mapped standard appears as its own row in the Coverage view, consolidating all key information in one place.",
+          "Notes": "This row-based layout allows instructors to scan all mapped standards at a glance without navigating away from the view.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:15:19.2034181-04:00",
+          "ModifiedDate": "2026-07-08T21:15:19.2034181-04:00",
+          "Items": [
+            {
+              "Id": "9e5bade5-b186-4e54-a13b-b409c88eeac8",
+              "Text": "Every row displays the standard\u0027s code, which serves as its unique identifier within the standards framework.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0b54c025-e8ff-4bad-a900-a113810b5d41",
+              "Text": "The full statement of the standard is shown alongside the code, providing the complete description of what learners are expected to know or do.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6ac86041-6c16-4b20-bcbb-5f34c92b9eb8",
+              "Text": "Counts of aligned assignments, quiz items, and activities are displayed directly on each row, giving a quick snapshot of how much material is tied to that standard.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "cb5f1e7e-00d0-4610-bd6a-f93ec29ab64a",
+          "TopicId": "bb38fc91-b728-4610-9aa1-157bc53f9df3",
+          "Title": "The Cognitive (Bloom\u0027s) Level Column",
+          "BodyText": "Each standard row includes the cognitive level associated with that standard, drawn from Bloom\u0027s Taxonomy.",
+          "Notes": "This level is set by the standard itself, not by any program-level configuration, and it serves as the benchmark against which coverage depth is measured.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:15:19.2034181-04:00",
+          "ModifiedDate": "2026-07-08T21:15:19.2034181-04:00",
+          "Items": [
+            {
+              "Id": "64da67a9-b3ae-4b2f-b6d7-4acf1aab2c89",
+              "Text": "The cognitive level indicates the depth of thinking the standard demands, such as remembering, applying, or evaluating.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c29b91f8-e8ec-4922-9737-6aca702d5424",
+              "Text": "Both standards and learning outcomes carry Bloom\u0027s levels, enabling a direct comparison between what is required and what is being taught or assessed.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "57c75a64-0944-40fa-9eb4-f8817b88a135",
+              "Text": "This column is central to identifying whether course materials meet, exceed, or fall short of the intellectual rigor the standard requires.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6cff5d8b-4483-4308-8c94-036d4bddb4da",
+          "TopicId": "bb38fc91-b728-4610-9aa1-157bc53f9df3",
+          "Title": "The Tiered Status Field",
+          "BodyText": "Each standard is assigned one of a small set of status tiers rather than a numeric score, clearly categorizing how well it is currently covered.",
+          "Notes": "The distinction between \u0027practiced only\u0027 and \u0027assessed\u0027 is particularly important, as practicing a skill through an activity does not carry the same evaluative weight as a formal quiz assessment.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:15:19.2034181-04:00",
+          "ModifiedDate": "2026-07-08T21:15:19.2034181-04:00",
+          "Items": [
+            {
+              "Id": "7a7a9f72-714d-4e9d-9bbb-f655a329fa79",
+              "Text": "\u0027Not aligned\u0027 means nothing in the course has been mapped to that standard.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4200f897-7507-4029-841a-301b8b76f459",
+              "Text": "\u0027Not addressed\u0027 means the standard is mapped but no materials currently practice or assess it.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d5d4d26f-0ed5-4d17-9948-8be32fb5027f",
+              "Text": "\u0027Practiced only\u0027 means the standard is engaged through assignments or activities but is not covered by any quiz item.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "90fb8a7c-a0e2-484a-a186-242d2f4c9c76",
+              "Text": "\u0027Assessed\u0027 means at least one quiz or assessment item directly covers the standard.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "e1d850e0-4611-4e97-8f3b-287de29c716f",
+          "TopicId": "bb38fc91-b728-4610-9aa1-157bc53f9df3",
+          "Title": "The Coverage Headline Summary",
+          "BodyText": "A headline at the top of the Coverage view summarizes the overall state of standards coverage across the entire course.",
+          "Notes": "This summary gives instructors an immediate high-level picture before they examine individual standard rows in detail.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:15:19.2034181-04:00",
+          "ModifiedDate": "2026-07-08T21:15:19.2034181-04:00",
+          "Items": [
+            {
+              "Id": "5b5c78ef-bda6-4385-8abc-4e017b3ce9ba",
+              "Text": "The headline reports what percentage of aligned standards are actually assessed, helping instructors gauge overall assessment completeness.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "792aa341-2fbe-45a7-9602-564365052958",
+              "Text": "It also indicates how many standards have a cognitive-depth gap, flagging where coverage is shallower than the standard demands.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "07ced3cb-e228-4374-9118-b66c2a33bb10",
+              "Text": "These two figures together allow instructors to prioritize which standards need the most urgent attention.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "226a8b83-29da-4825-894f-33dbec94d2e9",
+          "TopicId": "bb38fc91-b728-4610-9aa1-157bc53f9df3",
+          "Title": "The Inline Cognitive-Depth Gap Flag",
+          "BodyText": "When a standard\u0027s coverage does not reach the cognitive depth its level requires, the row displays an inline warning marker.",
+          "Notes": "There is no separate button to run a depth check and no option to export a depth report; the flag appears automatically as part of the Coverage view itself.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:15:19.2034181-04:00",
+          "ModifiedDate": "2026-07-08T21:15:19.2034181-04:00",
+          "Items": [
+            {
+              "Id": "6213e82e-9f41-4968-b003-4a04581cded4",
+              "Text": "The warning marker appears directly on the standard\u0027s row, keeping the depth gap visible in context rather than in a separate report.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "640970c3-5557-469d-8277-851b61961f2e",
+              "Text": "A tooltip on the marker provides additional detail about the nature of the depth gap.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5bf4d498-3c56-4171-b92a-22a46bfdb704",
+              "Text": "The required depth is determined solely by the standard\u0027s own cognitive level, not by any external program or institutional setting.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "9cdece96-b992-4a19-aa22-afe487236b52",
+      "Title": "The Tiered Status System",
+      "Summary": "Breakdown of the four status tiers \u2014 not aligned, not addressed, practiced only, and assessed \u2014 and the key distinction between practiced-only and assessed coverage.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T21:14:44.1109957-04:00",
+      "ModifiedDate": "2026-07-08T21:14:44.1109957-04:00",
+      "Elements": [
+        {
+          "Id": "172ac9ab-c6ca-4ddb-8778-8fc20045fbba",
+          "TopicId": "9cdece96-b992-4a19-aa22-afe487236b52",
+          "Title": "Overview of the Four Status Tiers",
+          "BodyText": "Every mapped standard is assigned one of four discrete status tiers rather than a numeric score or percentage.",
+          "Notes": "The tiered system provides a qualitative classification that makes it easy to see at a glance which standards need attention.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:15:36.7286169-04:00",
+          "ModifiedDate": "2026-07-08T21:15:36.7286169-04:00",
+          "Items": [
+            {
+              "Id": "61e3b0be-cc06-43f3-9bc6-285c256a595b",
+              "Text": "The four tiers are: not aligned, not addressed, practiced only, and assessed.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3ed363b2-5dae-45b2-a649-54e69da72a4d",
+              "Text": "Each tier reflects a progressively deeper level of instructional engagement with the standard.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7661f02e-b9c3-4657-9f27-ff1f018cd75a",
+              "Text": "There are no percentage bars or numeric depth scores \u2014 status is categorical.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "44069925-9386-46dc-b751-2595ed1c4e90",
+          "TopicId": "9cdece96-b992-4a19-aa22-afe487236b52",
+          "Title": "Not Aligned",
+          "BodyText": "A standard is marked \u0027not aligned\u0027 when no course materials have been mapped to it at all.",
+          "Notes": "",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:15:36.7286169-04:00",
+          "ModifiedDate": "2026-07-08T21:15:36.7286169-04:00",
+          "Items": [
+            {
+              "Id": "1801af80-3668-4eb8-a979-589dc2b06d2e",
+              "Text": "This is the baseline state indicating the standard has been included in the library but has no associated assignments, quiz items, or activities.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e44fb58a-343a-479e-bd20-d97e9635d1cd",
+              "Text": "It signals that coverage work for this standard has not yet begun.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "f384802f-6ab8-420a-9d1d-5e5078ebfb13",
+          "TopicId": "9cdece96-b992-4a19-aa22-afe487236b52",
+          "Title": "Not Addressed",
+          "BodyText": "A standard is marked \u0027not addressed\u0027 when it has been mapped to the course but no materials yet practice or assess it.",
+          "Notes": "This tier distinguishes between the act of mapping a standard and actually delivering instruction against it.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:15:36.7286169-04:00",
+          "ModifiedDate": "2026-07-08T21:15:36.7286169-04:00",
+          "Items": [
+            {
+              "Id": "2a06e562-c0a9-4987-a6a2-f1b558a6759d",
+              "Text": "Mapping alone is insufficient \u2014 materials must actively engage with the standard for its status to advance.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b265b3f3-6cd1-4505-8652-0fe253de9eb0",
+              "Text": "A \u0027not addressed\u0027 standard has been acknowledged in the course design but remains without any instructional or assessment coverage.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "1a7fede2-9225-47c4-b14c-8f84447e2cfd",
+          "TopicId": "9cdece96-b992-4a19-aa22-afe487236b52",
+          "Title": "Practiced Only",
+          "BodyText": "A standard reaches \u0027practiced only\u0027 status when it is covered through an activity or assignment but has not yet been assessed by a quiz item.",
+          "Notes": "This tier is meaningful because practice and assessment serve different instructional purposes \u2014 practice builds skill, while assessment verifies mastery.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:15:36.7286169-04:00",
+          "ModifiedDate": "2026-07-08T21:15:36.7286169-04:00",
+          "Items": [
+            {
+              "Id": "d13de9fb-1da2-49d9-8238-523a2a3ce95d",
+              "Text": "Activities and assignments can move a standard from \u0027not addressed\u0027 to \u0027practiced only,\u0027 but they cannot raise it to \u0027assessed.\u0027",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ae547381-3534-440b-b158-8409f08f0f82",
+              "Text": "A practiced-only standard is receiving instructional attention but lacks the formal verification that an assessment provides.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "0de6352d-97c5-446e-9497-4060d9729170",
+              "Text": "This tier often indicates a gap that should be resolved by adding appropriate quiz or assessment items.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "774b2ad1-0815-47df-bf3f-90e2c2146907",
+          "TopicId": "9cdece96-b992-4a19-aa22-afe487236b52",
+          "Title": "Assessed",
+          "BodyText": "A standard achieves \u0027assessed\u0027 status when at least one quiz or assessment item directly covers it.",
+          "Notes": "",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:15:36.7286169-04:00",
+          "ModifiedDate": "2026-07-08T21:15:36.7286169-04:00",
+          "Items": [
+            {
+              "Id": "82de42ef-78a7-4264-b640-d301737bac3a",
+              "Text": "The \u0027assessed\u0027 tier is the highest status a standard can reach in the coverage view.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a510487c-b2eb-4d5b-8256-db3546c8467c",
+              "Text": "Reaching this tier means the standard has moved beyond practice into formal measurement of student mastery.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d27a153f-e689-47d3-835c-4c11b5665ba0",
+              "Text": "Even an assessed standard may still carry a cognitive-depth flag if the assessment item does not meet the standard\u0027s required Bloom\u0027s level.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "14c4e877-5dbf-48df-8e3c-0f2e2c1b6aaa",
+          "TopicId": "9cdece96-b992-4a19-aa22-afe487236b52",
+          "Title": "The Key Distinction: Practiced Only vs. Assessed",
+          "BodyText": "The most instructionally significant boundary in the tiered system is the line between \u0027practiced only\u0027 and \u0027assessed.\u0027",
+          "Notes": "Understanding this distinction helps instructors prioritize which standards require additional quiz items versus which simply need more practice materials.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T21:15:36.7286169-04:00",
+          "ModifiedDate": "2026-07-08T21:15:36.7286169-04:00",
+          "Items": [
+            {
+              "Id": "abfc410f-8085-4995-bcdf-b981b6993b0d",
+              "Text": "Practice through activities or assignments does not count as assessment \u2014 only dedicated quiz or assessment items elevate a standard to \u0027assessed.\u0027",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0492a0b4-8955-41b2-a387-19621f49e0af",
+              "Text": "A standard that is practiced but not assessed means students have engaged with the content but mastery has not been formally verified.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c5c15a8e-9c93-46d4-916f-eda300218758",
+              "Text": "Moving a standard from \u0027practiced only\u0027 to \u0027assessed\u0027 typically requires adding quiz questions that target the standard at the appropriate cognitive level.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "a11add96-4b89-4337-a36c-c74e6c32c24f",
+      "Title": "The Cognitive-Depth Check",
+      "Summary": "How the coverage view flags standards whose alignment is shallower than the standard\u0027s required Bloom\u0027s level, including where the flag appears and how the required depth is determined.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T21:14:44.1109957-04:00",
+      "ModifiedDate": "2026-07-08T21:14:44.1109957-04:00",
+      "Elements": [
+        {
+          "Id": "f8b93390-81a6-41d9-8220-e2fe47b19eb9",
+          "TopicId": "a11add96-4b89-4337-a36c-c74e6c32c24f",
+          "Title": "What a Cognitive-Depth Gap Is",
+          "BodyText": "A cognitive-depth gap occurs when a standard\u0027s coverage is shallower than the cognitive level the standard itself demands.",
+          "Notes": "Both standards and learning outcomes carry Bloom\u0027s taxonomy levels, making it possible to compare the depth of coverage against the depth the standard requires.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:15:56.5519038-04:00",
+          "ModifiedDate": "2026-07-08T21:15:56.5519038-04:00",
+          "Items": [
+            {
+              "Id": "b72d276e-81b7-4fd2-8443-1e66f6004eda",
+              "Text": "The coverage view compares the Bloom\u0027s level of aligned materials against the Bloom\u0027s level assigned to the standard.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6a1f9abf-e816-4b46-bdbf-95be0c4a360b",
+              "Text": "If the materials address the standard at a lower cognitive level than required, the system identifies this mismatch as a depth gap.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "35e659f8-a8db-49cc-9148-5897f06b6446",
+              "Text": "A depth gap can exist even when a standard has aligned assignments, quiz items, or activities \u2014 quantity of coverage does not guarantee sufficient depth.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "df6f64d8-d82f-420f-9526-8cf66681c239",
+          "TopicId": "a11add96-4b89-4337-a36c-c74e6c32c24f",
+          "Title": "How the Required Depth Is Determined",
+          "BodyText": "The required cognitive depth is drawn directly from the standard\u0027s own assigned Bloom\u0027s level, not from any external program setting.",
+          "Notes": "",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:15:56.5519038-04:00",
+          "ModifiedDate": "2026-07-08T21:15:56.5519038-04:00",
+          "Items": [
+            {
+              "Id": "7d63eb21-e06a-42e2-a791-236eab4c5d94",
+              "Text": "Each standard in the Standards Library carries a designated Bloom\u0027s taxonomy level as part of its definition.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "aab7ae2c-3eba-4708-98d4-68bcdc58d135",
+              "Text": "The coverage view uses that standard-level Bloom\u0027s assignment as the benchmark for the depth check.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7e64c433-b9f2-4e7c-81e5-3619a5d7b526",
+              "Text": "Instructors or administrators cannot override the required depth through a program or course setting \u2014 it is inherent to the standard itself.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "ee325b88-dbf5-4ebc-900d-eacacdf22945",
+          "TopicId": "a11add96-4b89-4337-a36c-c74e6c32c24f",
+          "Title": "Where the Depth-Gap Flag Appears",
+          "BodyText": "When a depth gap is detected, the flag surfaces in two places within the coverage view: inline on the standard\u0027s row and in the overall headline summary.",
+          "Notes": "The inline flag takes the form of a warning marker with a tooltip, allowing instructors to identify the specific standard that is shallowly covered at a glance.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:15:56.5519038-04:00",
+          "ModifiedDate": "2026-07-08T21:15:56.5519038-04:00",
+          "Items": [
+            {
+              "Id": "997a644d-029a-4c2d-bdd6-d748e7740871",
+              "Text": "A warning marker with a tooltip appears directly on the affected standard\u0027s row, identifying the depth gap at the individual standard level.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "eb9f2512-cd93-4646-836d-3c308d58a824",
+              "Text": "The coverage view headline summarizes how many standards across the course have a cognitive-depth gap, giving an at-a-glance course-wide picture.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8fc0a3e8-2fba-4923-a3ed-3f9c67969ff4",
+              "Text": "The flag is integrated into the existing coverage view and does not require any separate action to generate or display.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "050fb9bd-6db0-44d5-8bf9-c72a4140cff0",
+          "TopicId": "a11add96-4b89-4337-a36c-c74e6c32c24f",
+          "Title": "What the Depth Check Is Not",
+          "BodyText": "The cognitive-depth check is a built-in, automatic part of the coverage view rather than a separately triggered or exportable feature.",
+          "Notes": "Understanding these boundaries helps instructors know where to look and what to expect from the tool.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:15:56.5519038-04:00",
+          "ModifiedDate": "2026-07-08T21:15:56.5519038-04:00",
+          "Items": [
+            {
+              "Id": "12a2b5bb-5f94-4b58-8d3a-407ef0e93125",
+              "Text": "There is no separate button to run the depth check \u2014 it operates continuously as part of the coverage view itself.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b8b9367e-a2e8-4d05-9a58-af10762e2fff",
+              "Text": "The system does not generate a standalone depth report, nor does it provide a numeric depth score or percentage bar for each standard.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "bc91b8b3-2308-44a5-9bd3-05e0279fa88c",
+              "Text": "There is no option to export the depth-gap findings as a spreadsheet or PDF.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "acbb3c4f-753d-4f03-8167-deb717abc9a0",
+          "TopicId": "a11add96-4b89-4337-a36c-c74e6c32c24f",
+          "Title": "Relationship Between the Depth Flag and Tiered Status",
+          "BodyText": "A cognitive-depth gap flag is distinct from a standard\u0027s tiered status and can appear alongside any status tier that involves some coverage.",
+          "Notes": "A standard could carry an \u0027assessed\u0027 status yet still receive a depth-gap flag if the assessment items target a lower Bloom\u0027s level than the standard requires.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:15:56.5519038-04:00",
+          "ModifiedDate": "2026-07-08T21:15:56.5519038-04:00",
+          "Items": [
+            {
+              "Id": "b65477af-5b55-449b-9caf-cccb21495613",
+              "Text": "The tiered status \u2014 not aligned, not addressed, practiced only, or assessed \u2014 reflects whether and how a standard is covered, not the cognitive depth of that coverage.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6adefd0d-1814-44bd-b1fc-cb94a4ca4c00",
+              "Text": "A depth gap flag adds a second dimension of evaluation on top of the status tier, specifically targeting whether the cognitive level is sufficient.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c5da92c9-cd00-421e-8081-6ff3b8931776",
+              "Text": "Resolving a depth gap requires attention to the Bloom\u0027s level of materials, whereas improving a status tier may only require adding more aligned materials regardless of depth.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "79f34ce8-47d4-4691-9e48-4696fdfa3cab",
+      "Title": "Strengthening Shallow or Incomplete Coverage",
+      "Summary": "Strategies for addressing depth gaps and unassessed standards by adding or upgrading course materials to meet the required cognitive level of each standard.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T21:14:44.1109957-04:00",
+      "ModifiedDate": "2026-07-08T21:14:44.1109957-04:00",
+      "Elements": [
+        {
+          "Id": "6c4c9cec-a431-4fc5-ae8f-7387092f60ed",
+          "TopicId": "79f34ce8-47d4-4691-9e48-4696fdfa3cab",
+          "Title": "Recognizing When Coverage Needs Strengthening",
+          "BodyText": "Coverage gaps appear when a standard\u0027s status is \u0027not addressed,\u0027 \u0027practiced only,\u0027 or flagged with a depth gap warning.",
+          "Notes": "A depth gap is flagged inline on the standard\u0027s row with a warning marker and tooltip, and is also summarized in the module headline.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:16:20.720778-04:00",
+          "ModifiedDate": "2026-07-08T21:16:20.720778-04:00",
+          "Items": [
+            {
+              "Id": "8bb745b7-ae5a-4ef3-a64e-aeb383ca16fa",
+              "Text": "A \u0027not addressed\u0027 status means the standard is mapped but no materials yet practice or assess it.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "aabc4c04-3763-46c1-ba51-e4823b3f7798",
+              "Text": "A \u0027practiced only\u0027 status means no quiz item currently assesses the standard, even if activities or assignments address it.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2d5eb571-4083-4663-b091-6b007643f0fe",
+              "Text": "A depth gap flag indicates that existing coverage is at a lower Bloom\u0027s level than the standard itself requires.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "19a72f63-b641-4a51-91c7-d4b9ed9c0675",
+              "Text": "The headline summary tells you at a glance how many standards have depth gaps across the entire course.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "7deef58c-2f88-4ffb-be60-422d76cc034d",
+          "TopicId": "79f34ce8-47d4-4691-9e48-4696fdfa3cab",
+          "Title": "Understanding the Required Cognitive Level",
+          "BodyText": "The target cognitive depth for each standard comes directly from the standard\u0027s own assigned Bloom\u0027s level, not from any program-wide setting.",
+          "Notes": "Because both standards and learning outcomes carry Bloom\u0027s levels, the system can compare them automatically to identify mismatches.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:16:20.720778-04:00",
+          "ModifiedDate": "2026-07-08T21:16:20.720778-04:00",
+          "Items": [
+            {
+              "Id": "b9af245d-082b-4af0-a877-528828c3148d",
+              "Text": "Each standard row displays its Bloom\u0027s level, making it clear what cognitive depth your materials must reach.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c466cada-5288-4d2f-a3aa-9ed2e75ebdf4",
+              "Text": "You cannot adjust the required depth threshold in settings; it is fixed by the standard\u0027s own cognitive classification.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "64c33afe-1e3e-412a-a212-a6a10466b014",
+              "Text": "Matching or exceeding the standard\u0027s Bloom\u0027s level is the criterion for resolving a depth gap.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "fad46c75-6ba5-4fd3-a05d-576f31f31ce1",
+          "TopicId": "79f34ce8-47d4-4691-9e48-4696fdfa3cab",
+          "Title": "Moving a Standard from \u0027Practiced Only\u0027 to \u0027Assessed\u0027",
+          "BodyText": "The most direct way to close a \u0027practiced only\u0027 gap is to add at least one quiz item that is aligned to the standard.",
+          "Notes": "The key distinction in the coverage view is between practice (activities or assignments) and formal assessment (quiz items); only the latter achieves \u0027assessed\u0027 status.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:16:20.720778-04:00",
+          "ModifiedDate": "2026-07-08T21:16:20.720778-04:00",
+          "Items": [
+            {
+              "Id": "4ed51bfb-a78e-4eec-9eba-d60e2bd28e16",
+              "Text": "Adding a quiz question aligned to the standard promotes its status from \u0027practiced only\u0027 to \u0027assessed.\u0027",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e9615eaf-14d9-4b0b-a22e-60d8339ff8b2",
+              "Text": "The new quiz item must be mapped to the standard to be counted in the coverage view.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8bb02374-d231-4d48-bb3d-be4f6ca1cfbd",
+              "Text": "Even a single aligned quiz item is sufficient to change the status, though more items increase assessment robustness.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f120322c-1da2-4e66-9a01-c27cc7e041e7",
+          "TopicId": "79f34ce8-47d4-4691-9e48-4696fdfa3cab",
+          "Title": "Upgrading Materials to the Correct Bloom\u0027s Level",
+          "BodyText": "When a depth gap is flagged, existing materials must be supplemented or replaced with content that targets the standard at its required Bloom\u0027s level.",
+          "Notes": "For example, if a standard requires \u0027Analyze\u0027 but current quiz items only ask students to \u0027Remember\u0027 or \u0027Understand,\u0027 new higher-order questions must be added.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:16:20.720778-04:00",
+          "ModifiedDate": "2026-07-08T21:16:20.720778-04:00",
+          "Items": [
+            {
+              "Id": "b7065ce6-7709-45c0-8e5f-7fd85ebe22ad",
+              "Text": "Review the Bloom\u0027s level shown on the flagged standard\u0027s row to identify exactly what cognitive demand is missing.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "dab669f2-9ec6-4e04-9ac2-02743c13099e",
+              "Text": "Add quiz questions, assignments, or activities written at or above the standard\u0027s required Bloom\u0027s level.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d5a29417-b01d-4917-a93c-c8d9eb1a5ce4",
+              "Text": "Upgrading an existing item means revising its cognitive demand \u2014 for instance, changing a recall question into an analysis or evaluation task.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "f4a1f9cb-7d88-45eb-a4ff-be2346091bf7",
+              "Text": "Both quiz items and activities can contribute to resolving a depth gap, but only a quiz item will also resolve a \u0027practiced only\u0027 status.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "90197a33-363b-4ab3-9a32-9ba058203494",
+          "TopicId": "79f34ce8-47d4-4691-9e48-4696fdfa3cab",
+          "Title": "Addressing a \u0027Not Addressed\u0027 Standard",
+          "BodyText": "A standard with \u0027not addressed\u0027 status requires the creation of new course materials from scratch, since nothing currently practices or assesses it.",
+          "Notes": "This is the most significant coverage gap because the standard has been mapped to the course but no instructional or assessment activity yet targets it.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:16:20.720778-04:00",
+          "ModifiedDate": "2026-07-08T21:16:20.720778-04:00",
+          "Items": [
+            {
+              "Id": "2c587f70-fdb4-4231-91d1-8cf057dc6db8",
+              "Text": "Start by adding at least one activity or assignment that gives students practice with the standard\u0027s content and skill.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1e2e6859-3d35-40b6-b534-be7e17a3eec2",
+              "Text": "Follow up by adding an aligned quiz item so the standard reaches \u0027assessed\u0027 status rather than remaining \u0027practiced only.\u0027",
+              "SortOrder": 1
+            },
+            {
+              "Id": "edd88b2e-c15d-477b-8875-1131738a22dd",
+              "Text": "Ensure all new materials are written at the Bloom\u0027s level the standard demands to avoid immediately triggering a depth gap flag.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "e517ebec-71a5-485b-b858-b16c607a8933",
+          "TopicId": "79f34ce8-47d4-4691-9e48-4696fdfa3cab",
+          "Title": "Verifying That Gaps Are Resolved",
+          "BodyText": "After adding or upgrading materials, the coverage view updates each standard\u0027s status and depth-gap flag to reflect the new alignment.",
+          "Notes": "Because there is no separate report to export or regenerate, verification happens by returning to the Standards Coverage view and checking the updated status rows and headline.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T21:16:20.720778-04:00",
+          "ModifiedDate": "2026-07-08T21:16:20.720778-04:00",
+          "Items": [
+            {
+              "Id": "1baadec2-a942-4a17-b4ce-039a63c573d4",
+              "Text": "A resolved depth gap will no longer show the warning marker on the standard\u0027s row.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9a73ea7d-87fe-4a42-a62d-808a7996d968",
+              "Text": "A standard that has moved to \u0027assessed\u0027 status will reflect the updated quiz item count in its row.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4b56ed83-d954-4522-bcdc-070b543ea474",
+              "Text": "The headline summary percentage of assessed standards and the count of depth gaps will update to reflect all improvements made.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 27
+}

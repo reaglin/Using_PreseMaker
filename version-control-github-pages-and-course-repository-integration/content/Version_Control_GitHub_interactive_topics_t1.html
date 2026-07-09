@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Managing a Course as a Git Repository in PreseMaker</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Version Control, GitHub Pages, and Course Repository Integration</a></div>
+  <header>
+    <h1>Managing a Course as a Git Repository in PreseMaker</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Managing a Course as a Git Repository in PreseMaker</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Version control is a cornerstone of professional software development, and PreseMaker brings that same discipline to course authoring by integrating Git directly into its interface. Rather than requiring authors to open a terminal, memorize Git commands, or maintain a separate workflow outside the application, PreseMaker exposes the most essential Git operations — initializing a repository, committing changes, pushing to a remote, and pulling updates — as first-class actions within its course management UI. This means that even authors who have never typed <code>git init</code> or <code>git push</code> in their lives can take full advantage of version-controlled course development, while experienced developers will appreciate that the underlying mechanism is standard Git, making courses compatible with any Git host such as GitHub, GitLab, or Bitbucket.</p>
+
+<p>The integration is scoped deliberately. PreseMaker handles the everyday lifecycle of a course — track changes, save a snapshot, share it with a remote, and receive updates from collaborators — without exposing advanced Git concepts like rebasing, cherry-picking, or pull-request workflows. This keeps the interface approachable while covering the operations that matter most during active course development.</p>
+
+<p><strong>Initializing a Git Repository for a Course</strong></p>
+
+<p>Before any version control can take place, a Git repository must exist for the course. In a traditional Git workflow this means navigating to the course's directory in a terminal and running <code>git init</code>, followed by additional commands to configure the remote. In PreseMaker, all of this is consolidated into a single <em>initialize</em> action available from the course's settings or version-control panel.</p>
+
+<p>When you trigger the initialize action, PreseMaker does several things automatically on your behalf:</p>
+
+<ul>
+  <li>It creates the hidden <code>.git</code> directory inside the course's local folder, establishing the repository.</li>
+  <li>It records the <strong>remote URL</strong> you provide (for example, <code>https://github.com/your-org/your-course.git</code>) so that PreseMaker knows where to push and pull.</li>
+  <li>It stores the <strong>target branch</strong> — typically <code>main</code> or <code>master</code>, but configurable — so subsequent operations always operate against the correct branch.</li>
+  <li>It saves all of these details as <strong>per-course Git settings</strong> inside PreseMaker's own data store, meaning they persist across sessions without you having to re-enter them.</li>
+</ul>
+
+<p>Initialization is a <em>one-time setup step</em>. Once it is complete, the course is Git-enabled and every other version-control action — commit, push, pull — becomes available. You do not repeat initialization unless you need to point the course at an entirely new repository, in which case you update the stored settings rather than re-initializing from scratch.</p>
+
+<p>A practical example: suppose you are building a new course called <em>Introduction to Data Analysis</em>. You create a blank repository on GitHub named <code>intro-data-analysis</code>. In PreseMaker you open the course, navigate to its Git settings panel, paste in the HTTPS or SSH URL provided by GitHub, confirm the branch name, and click <strong>Initialize Repository</strong>. From that point on, PreseMaker treats the course as a tracked Git project.</p>
+
+<p><strong>Committing Changes with a Message</strong></p>
+
+<p>A Git commit is a snapshot — a permanent record of the course's exact state at a specific moment in time. Commits are the building blocks of version history: each one describes what changed and why, and together they form an auditable trail you can review or roll back to at any point.</p>
+
+<p>In PreseMaker, triggering a commit presents you with a single required input: the <strong>commit message</strong>. This message is your opportunity to describe what you changed since the last commit. Good commit messages are concise but informative. Compare the following:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Weak commit message</th>
+      <th>Better commit message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>updates</td>
+      <td>Add quiz questions to Module 3 introduction</td>
+    </tr>
+    <tr>
+      <td>fix</td>
+      <td>Fix broken image reference on slide 7 of Unit 2</td>
+    </tr>
+    <tr>
+      <td>stuff</td>
+      <td>Rewrite learning objectives for Section 4 to align with Bloom's taxonomy</td>
+    </tr>
+    <tr>
+      <td>wip</td>
+      <td>Draft video transcript for lesson on pivot tables (incomplete)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Once you confirm the message, PreseMaker executes the underlying <code>git add</code> and <code>git commit</code> sequence on your behalf, staging all modified course files and sealing them into the repository's history. No terminal interaction is required at any stage.</p>
+
+<p>A critically important distinction: <strong>committing and pushing are separate actions</strong>. A commit records the snapshot <em>locally</em> — it exists only on your machine until you explicitly push. This separation is intentional and beneficial. It means you can make several commits in sequence while working offline, building up a meaningful history, and then push all of them to the remote at once when you are ready. It also means that a commit is never "lost" simply because your network connection is unavailable at the moment you save your work.</p>
+
+<p><strong>Pushing Changes to a Remote Repository</strong></p>
+
+<p>Pushing is the act of transmitting your local commits to the remote repository. After a push, anyone with access to that remote — a collaborator, a deployment pipeline, or a backup system — can see the latest version of your course. In standard Git terminology, PreseMaker is essentially running <code>git push origin &lt;branch&gt;</code> for you.</p>
+
+<p>Because the remote URL and branch were stored during initialization, you do not need to supply them again. You simply click <strong>Push</strong> and PreseMaker handles authentication (using stored credentials or an SSH key configured on your system) and transmission. Key behaviors to understand:</p>
+
+<ul>
+  <li><strong>Only committed changes are pushed.</strong> If you have modified course files but have not yet committed them, those changes will not be included in the push. Always commit first.</li>
+  <li><strong>Multiple commits are sent at once.</strong> If you made three commits since your last push, all three travel to the remote in a single push operation, preserving the full history.</li>
+  <li><strong>PreseMaker records a last-pushed timestamp.</strong> After each successful push, PreseMaker stores the date and time. This timestamp is visible in the course's Git settings panel, giving you an at-a-glance answer to the question "Is the remote up to date?" If the timestamp is from two days ago and you have committed work since then, you know a push is overdue.</li>
+</ul>
+
+<p>Consider a collaborative scenario: two instructional designers are working on the same course. Designer A finishes revising Unit 1 on Monday, commits the changes with the message <em>"Revise Unit 1 assessments for clarity"</em>, and pushes. Designer B, who is responsible for Unit 2, can now pull those changes so that both copies of the course are synchronized before B begins connecting content across units.</p>
+
+<p><strong>Pulling Updates from a Remote Repository</strong></p>
+
+<p>The pull operation is the complement of push. Where push sends your local commits outward, pull brings commits that exist on the remote inward, merging them into your local copy of the course. This is how you receive work that a collaborator has pushed, or how you synchronize your laptop with changes you pushed earlier from a desktop machine.</p>
+
+<p>In PreseMaker, the pull action corresponds to <code>git pull origin &lt;branch&gt;</code> under the hood. The interface abstracts the command entirely — you click <strong>Pull</strong>, PreseMaker contacts the remote, downloads any new commits, and integrates them into your local course files. The stored remote URL and branch ensure the operation targets the correct source automatically.</p>
+
+<p>Pulling is especially important before you begin a new session of work. If you or a collaborator pushed changes since you last worked on the course, starting without pulling first means your local copy is stale. Working on a stale copy and then attempting to push will often result in a rejected push because the remote has moved ahead — a situation that is far easier to prevent (by pulling first) than to resolve after the fact.</p>
+
+<p><strong>Checking for Incoming Changes and Conflicts</strong></p>
+
+<p>PreseMaker offers a <em>check for incoming changes</em> feature that lets you inspect what is waiting on the remote before you commit to pulling it. Technically this is analogous to running <code>git fetch</code> followed by comparing the local and remote branch tips — you retrieve information about the remote's state without actually modifying your local files.</p>
+
+<p>This check is valuable for several reasons:</p>
+
+<ul>
+  <li><strong>Awareness before action.</strong> You can see a summary of what has changed on the remote — how many commits are ahead of your local copy, and potentially which files are affected — before deciding whether to pull immediately or finish your current work first.</li>
+  <li><strong>Conflict anticipation.</strong> If the remote contains changes to the same files you have been editing locally (but have not yet committed), you will be alerted to the potential for a merge conflict. This gives you the opportunity to commit your own changes first and then pull, so Git can attempt to merge both sets of changes rather than blindly overwriting one with the other.</li>
+  <li><strong>Avoiding unintended overwrites.</strong> Without this check, a pull on files that overlap with unsaved or uncommitted local work could result in losing changes. PreseMaker's check surface makes the risk visible before you act.</li>
+</ul>
+
+<p>It is worth noting what PreseMaker's Git integration deliberately does <em>not</em> cover. Branch management (creating, switching, or deleting branches), pull requests, rebase operations, and conflict resolution editors are all outside the scope of PreseMaker's interface. These are advanced Git workflows that, when needed, are best handled through a dedicated Git client or terminal. PreseMaker's integration is optimized for the linear, single-branch development pattern that characterizes most course authoring projects.</p>
+
+<p><strong>Stored Git Settings per Course</strong></p>
+
+<p>One of the most practical design decisions in PreseMaker's Git integration is that every course maintains its own independent set of Git settings. These settings are stored inside PreseMaker's data layer and include:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Purpose</th>
+      <th>Example value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Remote URL</td>
+      <td>Identifies the Git host and repository to push to and pull from</td>
+      <td><code>https://github.com/org/course-name.git</code></td>
+    </tr>
+    <tr>
+      <td>Target branch</td>
+      <td>Specifies which branch all operations act upon</td>
+      <td><code>main</code></td>
+    </tr>
+    <tr>
+      <td>Last-pushed timestamp</td>
+      <td>Records when the most recent successful push occurred</td>
+      <td><code>2025-06-10 14:32 UTC</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Because settings are stored per course rather than globally, you can have ten courses in PreseMaker each pointing to a different repository on different hosts, with different branch strategies, and PreseMaker will route each operation correctly without any confusion. When you open Course A and click Push, PreseMaker uses Course A's remote URL. When you open Course B and click Pull, it uses Course B's settings.</p>
+
+<p>If your remote location changes — for example, your organization migrates from GitHub to a self-hosted GitLab instance — you do not need to re-initialize. You simply navigate to the course's Git settings panel in PreseMaker, update the remote URL to the new address, and all subsequent operations will use the new location. The local Git history is preserved intact because initialization does not need to be repeated; only the stored pointer to the remote is updated.</p>
+
+<p>Taken together, these stored settings eliminate the most common source of friction in adopting version control: the need to remember and repeatedly type repository URLs, branch names, and credential details. PreseMaker handles the bookkeeping so that authors can focus on the course content itself, confident that their work is being tracked, backed up, and shareable through a robust version-control system.</p>
+        <div class="notes"><strong>Notes</strong>Covers the full Git integration lifecycle within PreseMaker: initialization, committing, pushing, pulling, checking for incoming changes, and the per-course stored settings model. All Git operations are framed as interface-driven actions with no command-line requirement, consistent with PreseMaker&#39;s design philosophy.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

@@ -1,0 +1,671 @@
+{
+  "ModuleFolderName": "The_Module_Index",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:35:41.2010074-04:00",
+  "ModifiedDate": "2026-07-08T19:37:00.7897737-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "a1b9a6ce-17f0-4ae0-a7de-169264346ad4",
+      "Title": "What Is the Module Index?",
+      "Summary": "Introduces the Module Index as the central catalogue of all artifacts produced within a module. Explains its dual role as both a record-keeping tool and a content viewer.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:35:41.2010074-04:00",
+      "ModifiedDate": "2026-07-08T19:35:41.2010074-04:00",
+      "Elements": [
+        {
+          "Id": "0974f78f-2580-4397-afcd-8b5ac2fe5fe3",
+          "TopicId": "a1b9a6ce-17f0-4ae0-a7de-169264346ad4",
+          "Title": "Defining the Module Index",
+          "BodyText": "The Module Index is the central catalogue that records every artifact produced within a module. It acts as a single, authoritative reference point for all generated content.",
+          "Notes": "Think of it as a table of contents combined with a file registry \u2014 everything created during the module\u0027s lifecycle is logged here.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:35:58.9566908-04:00",
+          "ModifiedDate": "2026-07-08T19:35:58.9566908-04:00",
+          "Items": [
+            {
+              "Id": "029fbc91-98ba-4f65-a752-809edec0c206",
+              "Text": "The Module Index is automatically populated as new artifacts are generated throughout the module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "897ccafc-9622-4c63-b984-629aa8a2d41a",
+              "Text": "It provides a consistent, structured overview so learners and instructors always know what has been produced.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e7aac777-b502-45c5-810f-5ddb7ceafba8",
+              "Text": "Every artifact entry in the index is linked directly to its source material, making retrieval straightforward.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "7ebda05d-3725-4c1a-9719-2377d7b17084",
+          "TopicId": "a1b9a6ce-17f0-4ae0-a7de-169264346ad4",
+          "Title": "The Record-Keeping Role",
+          "BodyText": "One of the Module Index\u0027s two core functions is to serve as a persistent record of all module artifacts. This ensures nothing produced during the module is lost or overlooked.",
+          "Notes": "Record-keeping in this context means maintaining a traceable log of what was generated, when, and in what form \u2014 supporting review, auditing, and continuity.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:35:58.9566908-04:00",
+          "ModifiedDate": "2026-07-08T19:35:58.9566908-04:00",
+          "Items": [
+            {
+              "Id": "5d741e4e-5fa8-421e-bf9f-1a787e31390b",
+              "Text": "Each artifact is catalogued with enough detail to identify its type, purpose, and place within the module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "43dba2af-4929-4325-b0a3-0dcc4c78242b",
+              "Text": "The record-keeping function supports accountability by making the full history of generated content visible in one place.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6a57d08e-49f7-4178-b9ed-931e1f86113f",
+              "Text": "You can return to the index at any time to confirm which materials exist and locate specific items.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f6e4802a-57a6-43ed-a1ab-c9e1b42dffdd",
+          "TopicId": "a1b9a6ce-17f0-4ae0-a7de-169264346ad4",
+          "Title": "The Content Viewer Role",
+          "BodyText": "Beyond record-keeping, the Module Index also functions as a unified viewer for opening and reviewing generated files. Users do not need to search external folders or systems to access content.",
+          "Notes": "This dual functionality reduces friction \u2014 the same interface used to catalogue content is also used to consume it.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:35:58.9566908-04:00",
+          "ModifiedDate": "2026-07-08T19:35:58.9566908-04:00",
+          "Items": [
+            {
+              "Id": "3481c29c-a406-4a7d-89a4-3f9b7bbe4a67",
+              "Text": "Artifacts can be opened directly from the index without navigating away to separate storage locations.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "fc07fb6b-4c11-4d23-91e1-a34c11971f86",
+              "Text": "The viewer role means the Module Index is an active tool for engagement, not just a passive list.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4a64340b-984f-4cee-b6d6-a24643a8f013",
+              "Text": "Both record-keeping and viewing capabilities are available within the same interface, streamlining the authoring workflow.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8a81109c-e08b-4b9c-92e9-73cf742fb55f",
+          "TopicId": "a1b9a6ce-17f0-4ae0-a7de-169264346ad4",
+          "Title": "The HTML Index as a Self-Contained Browsable Version",
+          "BodyText": "The Module Index includes an HTML version that serves as a browsable landing page for the module, linking to its generated files. This format lets you navigate the module in a standard web browser.",
+          "Notes": "The HTML index can be reviewed offline and shared by moving its whole output folder; it needs no external platform or application.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:35:58.9566908-04:00",
+          "ModifiedDate": "2026-07-08T19:35:58.9566908-04:00",
+          "Items": [
+            {
+              "Id": "5018c536-93dc-46e1-93bd-12a5c944b29a",
+              "Text": "The HTML index packages all catalogued artifacts into a navigable web format accessible without specialist software.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1bc5cc44-4475-422a-848c-e92c234413fc",
+              "Text": "Users can browse through the full scope of generated module content in a familiar, browser-based environment.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ab4d29ad-c214-4af8-b01d-a5c0f6c456d8",
+              "Text": "The self-contained nature of the HTML index makes it suitable for archiving, sharing, or offline review.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a539e5c1-d08c-474d-bb62-b70e5c6fff8a",
+          "TopicId": "a1b9a6ce-17f0-4ae0-a7de-169264346ad4",
+          "Title": "Why a Centralised Catalogue Matters",
+          "BodyText": "Having a single, centralised catalogue prevents fragmentation of generated content across multiple locations. It gives learners and instructors confidence that they are working with the complete picture.",
+          "Notes": "Without a centralised index, artifacts can become siloed or forgotten, reducing the overall value of the content generation process.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:35:58.9566908-04:00",
+          "ModifiedDate": "2026-07-08T19:35:58.9566908-04:00",
+          "Items": [
+            {
+              "Id": "65d72fba-e208-4f91-a2c1-55775ebad105",
+              "Text": "A centralised catalogue eliminates the need to search multiple systems or folders for generated materials.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "51a753c0-a2d6-4aaa-a2a6-f678eb3f678e",
+              "Text": "It ensures that every artifact \u2014 regardless of type or creation time \u2014 is equally visible and accessible.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e5c4614f-92fe-42d9-aa83-b5698480e99b",
+              "Text": "Centralisation also supports consistency, as all users reference the same authoritative list of module content.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "49899d68-015e-4a5f-8a7b-39b854580a5f",
+      "Title": "Navigating the Module Index Interface",
+      "Summary": "Guides learners through the layout and navigation of the Module Index. Covers how to locate, sort, and identify generated files within the interface.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:35:41.2010074-04:00",
+      "ModifiedDate": "2026-07-08T19:35:41.2010074-04:00",
+      "Elements": [
+        {
+          "Id": "c03730e0-52dd-47a0-bc8a-8b2a7deea71e",
+          "TopicId": "49899d68-015e-4a5f-8a7b-39b854580a5f",
+          "Title": "Overview of the Module Index Layout",
+          "BodyText": "The Module Index is the central hub that lists every artifact produced within a module, organized in a structured, browsable layout.",
+          "Notes": "Think of the Module Index as a table of contents for all generated content \u2014 it gives learners a bird\u0027s-eye view of everything the module has produced.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:36:18.7599536-04:00",
+          "ModifiedDate": "2026-07-08T19:36:18.7599536-04:00",
+          "Items": [
+            {
+              "Id": "cb59d207-b7cb-436f-921d-eb438ad14955",
+              "Text": "The interface displays all generated files in a single, unified view, making it easy to see the full scope of module output at a glance.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a8b1d0d8-dace-4786-8e10-053cd10cfe40",
+              "Text": "The layout is divided into logical sections that group related artifacts together for easier orientation.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c28f8c4a-74dd-40be-a722-3221571edca5",
+              "Text": "Key interface landmarks such as headers, file listings, and navigation controls are consistently positioned to reduce cognitive load.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "2fb106fa-af26-4975-95d6-1a3ee1503fc0",
+          "TopicId": "49899d68-015e-4a5f-8a7b-39b854580a5f",
+          "Title": "Locating Files Within the Index",
+          "BodyText": "You can find specific generated files by scanning or searching the Module Index, which acts as a complete catalogue of all module artifacts.",
+          "Notes": "This is particularly useful in larger modules where many files have been generated across multiple sessions or content types.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:36:18.7599536-04:00",
+          "ModifiedDate": "2026-07-08T19:36:18.7599536-04:00",
+          "Items": [
+            {
+              "Id": "0a17e219-4da3-40e4-b3d3-a4d03aef96a6",
+              "Text": "Each file entry in the index displays identifying information such as its name, type, and generation context.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d0da6a2d-0c2e-4adc-a1f7-b20b9ffaffe2",
+              "Text": "The index includes all artifact types \u2014 documents, media, data files, and others \u2014 in one consolidated location.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4049407d-3ef7-4221-8f74-a8913ff9f604",
+              "Text": "You can locate files without navigating external folders or file systems, since everything is surfaced within the interface.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "13e06384-aa6e-456a-9d28-f40d2e9040a5",
+          "TopicId": "49899d68-015e-4a5f-8a7b-39b854580a5f",
+          "Title": "Sorting and Filtering Generated Files",
+          "BodyText": "The Module Index provides sorting and filtering options that let you organize the file listing according to your needs.",
+          "Notes": "Sorting and filtering become especially valuable when revisiting a module to find a specific artifact among many generated items.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:36:18.7599536-04:00",
+          "ModifiedDate": "2026-07-08T19:36:18.7599536-04:00",
+          "Items": [
+            {
+              "Id": "ee3560f3-e14f-4441-9762-0f92993f9855",
+              "Text": "Files can be sorted by criteria such as name, file type, or the order in which they were generated.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0a277fea-2ec6-4d87-992e-c1e39de770fc",
+              "Text": "Filtering options let you narrow the displayed list to specific artifact types or categories.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4a8fa49a-d157-42e4-b633-ef7865a6f48b",
+              "Text": "Combining sort and filter functions helps you efficiently zero in on the exact file you need without scrolling through the entire catalogue.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "17b4bb6b-1d03-4684-8a08-f41226b3ae16",
+          "TopicId": "49899d68-015e-4a5f-8a7b-39b854580a5f",
+          "Title": "Identifying File Types and Artifacts",
+          "BodyText": "Each entry in the Module Index includes visual or textual cues that help learners quickly identify what type of artifact a file is.",
+          "Notes": "Recognizing file types at a glance reduces the time spent opening files to determine their content or purpose.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:36:18.7599536-04:00",
+          "ModifiedDate": "2026-07-08T19:36:18.7599536-04:00",
+          "Items": [
+            {
+              "Id": "3e51feb5-a4bf-4e70-9bb8-97ca4cfc3706",
+              "Text": "File type indicators \u2014 such as icons, labels, or extensions \u2014 are displayed alongside each entry in the index.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "afb98cc1-7325-47cc-8ed4-7dfaa44dc3d1",
+              "Text": "Artifact descriptions or metadata may be shown to provide additional context about a file\u0027s content or intended use.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "07684aad-e2ee-4258-8e23-c7f11bee4ec8",
+              "Text": "Understanding these identifiers helps learners distinguish between, for example, a generated document and a generated data file listed in the same index.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "668dd0e3-730b-49e0-9efe-b4f399cba19a",
+          "TopicId": "49899d68-015e-4a5f-8a7b-39b854580a5f",
+          "Title": "Using the HTML Index as a Browsable Version",
+          "BodyText": "The Module Index includes an HTML index that serves as a self-contained, browsable representation of the entire module\u0027s generated content.",
+          "Notes": "The HTML index can be opened in a standard web browser, making it accessible even outside the primary application environment.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:36:18.7599536-04:00",
+          "ModifiedDate": "2026-07-08T19:36:18.7599536-04:00",
+          "Items": [
+            {
+              "Id": "3854aaf6-b6e9-4ad8-917e-dee5b917e7b0",
+              "Text": "The HTML index mirrors the structure of the Module Index interface but is rendered as a standalone web page.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "263725c1-b52e-44d0-8a82-15ce2b7d1d33",
+              "Text": "Learners can click through linked entries in the HTML index to open and review individual artifacts directly.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "abe2a5d0-fd1b-4a7f-b4d1-f7718451acfd",
+              "Text": "Because it is self-contained, the HTML index preserves the catalogue and its navigation even when accessed offline or shared with others.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f05216c7-cad3-42f0-b084-3cb596cc51e3",
+          "TopicId": "49899d68-015e-4a5f-8a7b-39b854580a5f",
+          "Title": "Basic Navigation Controls and Interaction Patterns",
+          "BodyText": "The Module Index interface supports a set of standard navigation controls that learners use to move through the catalogue and interact with listed files.",
+          "Notes": "Familiarity with these controls allows learners to navigate the index efficiently without trial and error.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:36:18.7599536-04:00",
+          "ModifiedDate": "2026-07-08T19:36:18.7599536-04:00",
+          "Items": [
+            {
+              "Id": "19f1f5da-f675-451b-bb1b-fafb1050161b",
+              "Text": "Scroll and pagination controls allow learners to move through longer file listings without losing their place in the index.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "cd45eaec-5de8-43eb-8479-9c50dff9966f",
+              "Text": "Clickable file entries respond with a consistent interaction pattern \u2014 such as opening a viewer or expanding file details \u2014 across all artifact types.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "29d4cc66-c682-4639-9179-1fd22e861b60",
+              "Text": "Navigation breadcrumbs or positional indicators help learners understand where they are within the index at any point during browsing.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "18715e5f-bc21-4838-9204-be6e1f3221e0",
+      "Title": "Opening and Reviewing Generated Files",
+      "Summary": "Explains the process of opening individual artifacts directly from the Module Index. Covers how to review and interact with generated content within the viewer.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:35:41.2010074-04:00",
+      "ModifiedDate": "2026-07-08T19:35:41.2010074-04:00",
+      "Elements": [
+        {
+          "Id": "35ce1673-5885-41cd-89f2-5f63158f8bc2",
+          "TopicId": "18715e5f-bc21-4838-9204-be6e1f3221e0",
+          "Title": "Locating an Artifact in the Module Index",
+          "BodyText": "Before opening a file, you must first locate it within the Module Index catalogue. The Module Index lists every artifact produced in a module, giving you a single point of access for all generated content.",
+          "Notes": "Artifacts may include presentations, text and topic-detail documents, quizzes, assignments, interactive activities, cloze notes, custom materials, audio, and images depending on what was generated during the module.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:36:40.3269174-04:00",
+          "ModifiedDate": "2026-07-08T19:36:40.3269174-04:00",
+          "Items": [
+            {
+              "Id": "89d2efe5-6fb1-42b4-8b7d-350b10de9fbf",
+              "Text": "Scroll or search through the Module Index to find the specific artifact you wish to open.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4fb71f27-a9ed-476b-bd2c-61bd3177f298",
+              "Text": "Each entry in the index is labeled with the artifact\u0027s title or file name, making identification straightforward.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "dde8cfaa-3c9b-488a-80a1-6583c00df136",
+              "Text": "Artifacts are typically listed in the order they were generated, helping you trace the module\u0027s progression.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3575686d-d590-4b81-b863-852043c0c348",
+          "TopicId": "18715e5f-bc21-4838-9204-be6e1f3221e0",
+          "Title": "Opening an Artifact Directly from the Index",
+          "BodyText": "Individual artifacts can be opened directly from the Module Index with a single interaction. This direct-open capability means you do not need to navigate away from the index or locate files manually in a file system.",
+          "Notes": "Clicking or selecting an artifact link in the index launches it immediately within the viewer interface.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:36:40.3269174-04:00",
+          "ModifiedDate": "2026-07-08T19:36:40.3269174-04:00",
+          "Items": [
+            {
+              "Id": "2fcb658a-154d-4732-a265-944f613b586c",
+              "Text": "Select the artifact\u0027s link or title within the Module Index to trigger it to open.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "951784e1-f14a-4a54-b54a-f270dffc58d3",
+              "Text": "The artifact loads in the integrated viewer, keeping your workflow within the module environment.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "452f1f57-76de-4811-a818-d5e67df243c4",
+              "Text": "Direct opening eliminates the need to search external folders or directories for generated files.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f28a2a52-b40f-41f9-8a07-86f6df6bc94e",
+          "TopicId": "18715e5f-bc21-4838-9204-be6e1f3221e0",
+          "Title": "Using the Integrated Viewer to Review Content",
+          "BodyText": "Once an artifact is opened, the integrated viewer provides an environment for reading and interacting with the generated content. The viewer is designed to render files clearly without requiring external applications.",
+          "Notes": "The viewer supports the file types produced within the module, ensuring consistent display of text, structured data, or formatted documents.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:36:40.3269174-04:00",
+          "ModifiedDate": "2026-07-08T19:36:40.3269174-04:00",
+          "Items": [
+            {
+              "Id": "5874ed24-dae9-4ba4-a34b-2b91b248bebc",
+              "Text": "The viewer displays the artifact\u0027s full content in a readable, formatted layout.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2ccf3667-aedd-4ea0-9487-eee6e83bd921",
+              "Text": "You can scroll through the content to review it in its entirety from within the viewer.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "29519bc2-7e45-4901-904f-f0754cd3d920",
+              "Text": "No additional software or downloads are required to view artifacts in the integrated viewer.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "db8b845d-818a-41c0-b19b-7b600bafa765",
+          "TopicId": "18715e5f-bc21-4838-9204-be6e1f3221e0",
+          "Title": "Interacting with Content Inside the Viewer",
+          "BodyText": "The viewer is not purely passive \u2014 it allows you to interact with the displayed content in meaningful ways. Interaction options may include selecting text, following internal links, or navigating between sections.",
+          "Notes": "The level of interactivity depends on the artifact type; for example, an HTML file may have clickable navigation while a plain text file may only support reading and selection.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:36:40.3269174-04:00",
+          "ModifiedDate": "2026-07-08T19:36:40.3269174-04:00",
+          "Items": [
+            {
+              "Id": "26686d5b-c23b-4194-b021-48c0fa5b4b3d",
+              "Text": "Select and copy text from the artifact if you need to reference or reuse specific content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "719b28e0-6756-4e09-b80f-819de6d84b41",
+              "Text": "Follow any internal links or navigation elements embedded within the artifact to move between sections.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "32aad30a-f43b-4c61-9fd8-5f0d68674e77",
+              "Text": "Use the viewer\u0027s controls to zoom, scroll, or resize content for more comfortable review.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "2bb15e33-4db5-4443-8ddf-77858faea468",
+          "TopicId": "18715e5f-bc21-4838-9204-be6e1f3221e0",
+          "Title": "Returning to the Module Index After Review",
+          "BodyText": "After reviewing an artifact, you can return to the Module Index to open additional files or continue cataloguing. The index remains the central hub throughout your session.",
+          "Notes": "Returning to the index rather than closing the module entirely preserves your place in the catalogue and allows efficient sequential review of multiple artifacts.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:36:40.3269174-04:00",
+          "ModifiedDate": "2026-07-08T19:36:40.3269174-04:00",
+          "Items": [
+            {
+              "Id": "fe8db0ab-b81d-4b3b-8286-1a333a181ba1",
+              "Text": "Use the back or index navigation control within the viewer to return to the full Module Index.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "eba7f67e-1dce-4deb-9a5f-5628f7c6f51f",
+              "Text": "Returning to the index lets you open another artifact without losing your place in the catalogue.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9af060f5-2b1e-4862-9e4e-a8e8d6aeec4c",
+              "Text": "The Module Index retains its state, so previously reviewed artifacts remain accessible for re-opening.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8f146a28-a0fe-410d-861a-d9052d584260",
+          "TopicId": "18715e5f-bc21-4838-9204-be6e1f3221e0",
+          "Title": "Reviewing Content via the HTML Index",
+          "BodyText": "The Module Index also exists as a self-contained HTML file that serves as a browsable version of the entire module. This HTML index allows you to open and review generated artifacts in a standard web browser.",
+          "Notes": "The HTML index is particularly useful for offline review or sharing the module\u0027s output with others who may not have access to the original module environment.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:36:40.3269174-04:00",
+          "ModifiedDate": "2026-07-08T19:36:40.3269174-04:00",
+          "Items": [
+            {
+              "Id": "c5ab71ed-1976-4dad-b4af-f01b52225886",
+              "Text": "Open the HTML index file in any modern web browser to access the full catalogue of generated artifacts.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1a0a39c4-4db2-4d13-b313-92f6d53b79c6",
+              "Text": "The HTML index renders artifact links as clickable entries, mirroring the functionality of the in-application Module Index.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2d89af7b-5570-4ee5-b926-b3ef034d9bfd",
+              "Text": "Kept together with its output folder, the HTML index can be saved, distributed, or archived as a complete record of the module\u0027s output.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "8d158f07-a3b7-4eec-9294-60947751a2fb",
+      "Title": "The HTML Index as a Self-Contained Browsable Module",
+      "Summary": "Describes how the HTML index functions as a browsable landing page for the entire module. Highlights how to move or share it (keep its output folder together) and its use as an offline reference.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:35:41.2010074-04:00",
+      "ModifiedDate": "2026-07-08T19:35:41.2010074-04:00",
+      "Elements": [
+        {
+          "Id": "b5834625-0353-4a2b-8ffb-201e4076850a",
+          "TopicId": "8d158f07-a3b7-4eec-9294-60947751a2fb",
+          "Title": "What the HTML Index Is",
+          "BodyText": "The HTML index is a browsable landing page that links to the module's generated files, presenting the whole module in a web browser.",
+          "Notes": "Think of it as the module's landing page: it and the files it links to live together in the output folder and open in any browser with no internet connection required.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:37:00.7897159-04:00",
+          "ModifiedDate": "2026-07-08T19:37:00.7897159-04:00",
+          "Items": [
+            {
+              "Id": "d92c0f2f-b16b-4b65-bc83-cf7e39cdbe83",
+              "Text": "It consolidates all generated artifacts and their metadata into one structured HTML file.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0d8c065d-c5f5-45bb-8e77-eda7d03bdd9b",
+              "Text": "Opening the file in any modern web browser renders the full module catalogue without additional dependencies.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f3331cf6-6ae7-4623-9a6a-f29af2aed8d2",
+              "Text": "It mirrors the module\u0027s structure, preserving the organisation of topics, subtopics, and content elements.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f95367e2-6908-4936-8255-5f063612c007",
+          "TopicId": "8d158f07-a3b7-4eec-9294-60947751a2fb",
+          "Title": "Portability of the HTML Index",
+          "BodyText": "Because the HTML index and the files it links to live in one output folder, moving or copying that whole folder preserves its functionality.",
+          "Notes": "To move or share the module, copy its whole output folder (or use the website export); the HTML index links to sibling files, so copying only the single HTML file would break those links.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:37:00.7897159-04:00",
+          "ModifiedDate": "2026-07-08T19:37:00.7897159-04:00",
+          "Items": [
+            {
+              "Id": "65251d6f-da81-4ba1-9f81-9c5b9edd2c0a",
+              "Text": "The HTML index needs no server, so its output folder can be opened on any operating system with a browser.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3db55658-a925-4110-9bd8-86ba903b545c",
+              "Text": "The HTML index links to the module's other files using relative paths in the same output folder, so keep the whole folder together; browsing it locally needs no network access.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "fe373473-5d44-41e3-bdab-dff0a13b4262",
+              "Text": "Portability makes it easy to distribute a complete module snapshot to colleagues or stakeholders.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "eadb35ea-dd0f-47a8-bae8-bb0a9dcea990",
+          "TopicId": "8d158f07-a3b7-4eec-9294-60947751a2fb",
+          "Title": "Using the HTML Index Offline",
+          "BodyText": "The HTML index is designed to function entirely offline, making module content accessible in environments without internet connectivity.",
+          "Notes": "This is particularly valuable in fieldwork, travel, or secure environments where network access is restricted.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:37:00.7897159-04:00",
+          "ModifiedDate": "2026-07-08T19:37:00.7897159-04:00",
+          "Items": [
+            {
+              "Id": "2ad7d1f6-5503-4ce1-b322-1fcd9a7e3a80",
+              "Text": "Learners can download the index once and revisit it repeatedly without requiring a live connection.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e01c30d7-fcbe-4d0f-9bdb-a9bd5aca4523",
+              "Text": "Offline access ensures continuity of study regardless of connectivity conditions.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "09d92a7e-516c-4d3d-a32b-3a4434d97086",
+              "Text": "All browsing, navigation, and content review actions work locally within the file.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "52c1bdb5-e326-4952-bcef-57266bb17f1a",
+          "TopicId": "8d158f07-a3b7-4eec-9294-60947751a2fb",
+          "Title": "The HTML Index as a Shareable Reference",
+          "BodyText": "The HTML index serves as a ready-made reference document that can be shared with others who did not participate in the original module session.",
+          "Notes": "Recipients of the shared file receive a complete, self-explanatory view of the module\u0027s generated content without needing access to the authoring platform.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:37:00.7897159-04:00",
+          "ModifiedDate": "2026-07-08T19:37:00.7897159-04:00",
+          "Items": [
+            {
+              "Id": "ee3a0c01-a16c-4dc6-b552-9bc7c667422c",
+              "Text": "Sharing the HTML index allows reviewers, managers, or peers to browse all module artifacts in context.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "224813ba-ddb6-42ff-baa0-a0f20ce32f2b",
+              "Text": "The file preserves the full catalogue structure, so shared recipients see content in the same organised form as the original author.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7c4677fd-142c-4ba9-b23c-4ea1deb2935e",
+              "Text": "No special software or account credentials are required to open and review a shared HTML index.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c420b0be-c006-4278-98a6-5e6a117d04a8",
+          "TopicId": "8d158f07-a3b7-4eec-9294-60947751a2fb",
+          "Title": "Navigating Content Within the HTML Index",
+          "BodyText": "The HTML index provides an interactive browsing experience that lets users move through the module\u0027s content elements in an organised way.",
+          "Notes": "Navigation is handled entirely within the browser, using links or menus embedded in the file\u0027s structure.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:37:00.7897159-04:00",
+          "ModifiedDate": "2026-07-08T19:37:00.7897159-04:00",
+          "Items": [
+            {
+              "Id": "2346c036-861b-490f-aa66-030d0cea9a0d",
+              "Text": "Users can click through topics and subtopics to locate specific artifacts without scrolling through unrelated content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f85c3ba9-0784-48dc-a77c-1e347959a7c8",
+              "Text": "The index maintains a logical hierarchy that reflects how the module was originally structured.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3fedf0b4-cdb0-4545-8ea3-0abba4ec50e1",
+              "Text": "Browsing the HTML index closely replicates the in-platform experience of reviewing generated materials.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "7bd111bd-abb0-4f7f-8fe8-d9df42cf3186",
+          "TopicId": "8d158f07-a3b7-4eec-9294-60947751a2fb",
+          "Title": "The HTML Index as a Complete Module Snapshot",
+          "BodyText": "At any point in time, the HTML index represents a full snapshot of everything generated within the module up to that moment.",
+          "Notes": "If the index is regenerated or updated after new content is produced, the new file supersedes the previous snapshot with the latest complete catalogue.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:37:00.7897159-04:00",
+          "ModifiedDate": "2026-07-08T19:37:00.7897159-04:00",
+          "Items": [
+            {
+              "Id": "31ae0c6b-5fc5-4bf6-9bcd-7dc0c107d287",
+              "Text": "Every artifact catalogued in the module index is reflected in the HTML file, ensuring nothing is omitted from the browsable view.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c40497ad-3737-462a-8caa-460b2a0385c6",
+              "Text": "The snapshot nature of the file makes it useful for archiving module states at specific milestones.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "eedc826f-d074-49a2-9196-e952c81badd9",
+              "Text": "Comparing snapshots from different points in time can illustrate how a module evolved during development.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 23
+}

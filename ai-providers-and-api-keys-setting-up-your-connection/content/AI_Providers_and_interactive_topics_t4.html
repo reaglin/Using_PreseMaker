@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obtaining Your API Key</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ AI Providers and API Keys: Setting Up Your Connection</a></div>
+  <header>
+    <h1>Obtaining Your API Key</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Obtaining Your API Key</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>PreseMaker uses artificial intelligence to help you build presentations, but to do that it needs to communicate with an external AI service on your behalf. That communication is authenticated through an <strong>API key</strong> — a long, unique string of characters that acts like a private password between PreseMaker and your chosen AI provider. Before you can use any AI-powered features in PreseMaker, you must obtain one of these keys from a provider, copy it safely, and enter it into PreseMaker's Settings screen. This section walks you through every step of that process, from picking a provider to confirming your key is ready to use.</p>
+
+<p>PreseMaker is compatible with four AI providers: <strong>Anthropic Claude</strong>, <strong>Google Gemini</strong>, <strong>OpenAI</strong>, and <strong>Mistral</strong>. Each of these is an independent company with its own platform, pricing, and sign-up process. Because they are separate services, you will need a separate account — and therefore a separate API key — for each provider you want to use. You are not required to sign up with more than one; choosing a single provider and obtaining one key is all PreseMaker needs to get started. If you later decide to switch to a different provider, you can do so by repeating this process with the new provider and entering the new key into PreseMaker at that time. Your old key will remain valid with its original provider but will simply no longer be used by PreseMaker until you enter it again.</p>
+
+<p>To help you decide which provider to start with, here is a brief comparison of what each one offers:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Provider</th>
+      <th>Product Name</th>
+      <th>Developer Portal URL</th>
+      <th>Notable Consideration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Anthropic</td>
+      <td>Claude</td>
+      <td>console.anthropic.com</td>
+      <td>Waitlist or approval may apply for new accounts</td>
+    </tr>
+    <tr>
+      <td>Google</td>
+      <td>Gemini (via Google AI Studio)</td>
+      <td>aistudio.google.com</td>
+      <td>Free tier available; requires a Google account</td>
+    </tr>
+    <tr>
+      <td>OpenAI</td>
+      <td>GPT models</td>
+      <td>platform.openai.com</td>
+      <td>Requires a funded account or active trial credit</td>
+    </tr>
+    <tr>
+      <td>Mistral</td>
+      <td>Mistral models</td>
+      <td>console.mistral.ai</td>
+      <td>European provider; free tier available on some models</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Once you have chosen a provider, your first step is to <strong>create an account</strong> on that provider's official developer portal or console. Use the URLs in the table above, or search for the provider's name followed by "API" or "developer console" to find the correct site. Avoid third-party sites that claim to offer API keys, as these are not legitimate sources. On the provider's site, look for a <em>Sign Up</em> or <em>Get Started</em> button and complete the registration form. You will typically need to supply:</p>
+
+<ul>
+  <li>A valid email address, which you will use to verify your account</li>
+  <li>A password for the developer console</li>
+  <li>Your name and, in some cases, your organization or intended use</li>
+</ul>
+
+<p>After submitting the form, check your email inbox for a verification message and click the confirmation link. Some providers — particularly OpenAI and Anthropic — may also ask for a <strong>phone number</strong> to send a one-time verification code, or they may require you to enter <strong>billing information</strong> (a credit or debit card) before they grant you API access. This does not necessarily mean you will be charged immediately; many providers offer a free trial credit when you first sign up. However, API usage is generally a paid service, and your account must be in good standing for your key to function correctly. Complete any required billing or verification steps before moving on.</p>
+
+<p>With your account created and verified, <strong>log in to the developer console</strong> and locate the section where API keys are managed. The exact name and location of this section varies slightly by provider, but you are generally looking for one of the following:</p>
+
+<ul>
+  <li><strong>Anthropic Console:</strong> Click your account name or avatar in the top-right corner, then choose <em>API Keys</em> from the menu.</li>
+  <li><strong>Google AI Studio:</strong> Look for a <em>Get API Key</em> button on the main dashboard, or navigate to the left-hand panel and select <em>API Keys</em>.</li>
+  <li><strong>OpenAI Platform:</strong> From the left sidebar, select <em>API Keys</em> under your account section, or go to <em>Settings → API Keys</em>.</li>
+  <li><strong>Mistral Console:</strong> Click on <em>API Keys</em> in the left navigation panel of the console.</li>
+</ul>
+
+<p>If you cannot immediately find an "API Keys" section, look for menu items or tabs labeled <em>Access Tokens</em>, <em>Credentials</em>, <em>Developer Settings</em>, or simply <em>Keys</em>. These are all common alternative labels that different providers use for the same concept.</p>
+
+<p>Once you are on the API Keys page, you are ready to <strong>generate a new key</strong>. Click the button that creates a new key — it is commonly labeled <em>Create Key</em>, <em>Generate API Key</em>, <em>+ New Key</em>, or simply <em>Generate</em>. A dialog box or form may appear asking for additional details before the key is created. The most useful option at this stage is the <strong>key name</strong> or <strong>description</strong> field. Although this is often optional, it is strongly recommended that you enter a descriptive name such as:</p>
+
+<pre><code>PreseMaker - My Laptop
+</code></pre>
+
+<p>or</p>
+
+<pre><code>PreseMaker Production Key
+</code></pre>
+
+<p>Giving your key a clear, recognizable name means that later — if you have multiple keys for different applications — you can immediately identify which key belongs to PreseMaker without having to guess. Once you confirm the creation, the provider will generate the key and display it on screen.</p>
+
+<p>This is a critical moment: <strong>most providers display the full API key string only once</strong>. As soon as the key is shown, you must copy it immediately. Do not close the dialog or navigate away from the page before doing so. The key will typically look something like one of these formats, depending on your provider:</p>
+
+<pre><code>sk-proj-AbCdEfGhIjKlMnOpQrStUvWxYz1234567890abcdefghij
+AIzaSyD-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+sk-ant-api03-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+</code></pre>
+
+<p>Use the <strong>copy icon</strong> or button next to the key if one is provided — this reduces the risk of accidentally copying extra whitespace or missing a character. If there is no copy button, carefully click at the very beginning of the key string, drag to select the entire string, and then copy it using your keyboard shortcut (<em>Ctrl+C</em> on Windows, <em>Cmd+C</em> on Mac). The key may be 40 to over 100 characters long depending on the provider, so take care to select all of it.</p>
+
+<p>Immediately after copying, <strong>store the key somewhere secure</strong> until you are ready to paste it into PreseMaker. The best option is a <strong>password manager</strong> such as 1Password, Bitwarden, or the built-in password manager in your browser. If you do not use a password manager, a private, encrypted note is the next best option. What you should <em>never</em> do with your API key:</p>
+
+<ul>
+  <li>Paste it into a public forum, chat, or social media post</li>
+  <li>Include it in an email, especially an unencrypted one</li>
+  <li>Commit it to a code repository (such as GitHub), even a private one</li>
+  <li>Write it in a plain-text file stored in a shared or cloud-synced folder without encryption</li>
+</ul>
+
+<p>The reason these precautions matter is that your API key is directly linked to your provider account and its associated billing. Anyone who obtains your key can make API requests that are charged to your account. If a key is ever accidentally exposed, you should return to the provider's API Keys page, delete or revoke the compromised key immediately, and generate a fresh one.</p>
+
+<p>Before leaving the provider's console, take a moment to <strong>confirm that your new key is active</strong>. Return to the API Keys list — the key you just created should now appear in the list with a status indicator such as <em>Active</em>, <em>Enabled</em>, or a green checkmark. If it shows as <em>Inactive</em>, <em>Pending</em>, or <em>Restricted</em>, this usually means one of the following:</p>
+
+<ul>
+  <li>Your email address has not yet been verified — check your inbox and complete the verification step.</li>
+  <li>Your billing information is missing or a payment method has not been confirmed — navigate to the billing section of your account and resolve any outstanding requirements.</li>
+  <li>Your account is still under review — some providers, particularly Anthropic, may have a short review period for new accounts. In this case, you may need to wait before the key becomes usable.</li>
+</ul>
+
+<p>An inactive or unverified account will result in <strong>authentication errors</strong> when PreseMaker tries to use the key, so it is worth confirming everything is in order now rather than troubleshooting later. Once your key appears as active in the provider's console, and you have it safely copied, you have everything you need. The next step is to open PreseMaker's <strong>Settings screen</strong> and paste the key into the appropriate API key field — at which point PreseMaker will be fully connected to your chosen AI provider and ready to use.</p>
+        <div class="notes"><strong>Notes</strong>Learners should be reminded to keep their browser open on the provider console until they have successfully pasted the key into PreseMaker, in case they need to regenerate it. It may also be worth noting that free-tier limits vary significantly between providers and that hitting a usage limit will also cause authentication-style errors in PreseMaker.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

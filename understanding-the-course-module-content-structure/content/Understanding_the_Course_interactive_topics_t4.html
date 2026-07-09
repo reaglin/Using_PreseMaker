@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How PreseMaker Stores Files on Your Computer</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Understanding the Course-Module-Content Structure</a></div>
+  <header>
+    <h1>How PreseMaker Stores Files on Your Computer</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>How PreseMaker Stores Files on Your Computer</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Understanding how PreseMaker stores your work on your computer is fundamental to working confidently with the application. Unlike web-based tools that save your content to a remote server, PreseMaker is a local desktop application — meaning every file it creates lives directly on your own machine. This gives you complete control over your content, but it also means you are responsible for knowing where your files are, how they are organized, and how to keep them safe. This topic walks through all of that in detail.</p>
+
+<p><strong>Local Storage: Where PreseMaker Saves Your Files</strong></p>
+
+<p>Every time PreseMaker generates or updates content — whether that is a lesson, a presentation, or a quiz — it writes the resulting files directly to a designated folder on your local hard drive or SSD. This happens on your computer, not on any external server. There is no upload step, no synchronization with a cloud account, and no dependency on an internet connection for your files to be saved.</p>
+
+<p>This local-first approach has several practical consequences worth understanding:</p>
+
+<ul>
+  <li><strong>Your files are always accessible offline.</strong> Because nothing is stored remotely, you can open, edit, copy, or move your files at any time without needing to log in to a service or have a network connection.</li>
+  <li><strong>Your work is not affected by account status.</strong> If a subscription lapses or you uninstall the application, the files you have already generated remain on your computer exactly as they were. PreseMaker does not lock or revoke content that has been saved locally.</li>
+  <li><strong>You navigate to your files just like any other folder.</strong> Open File Explorer on Windows or Finder on macOS, browse to the PreseMaker storage location, and your files are there — no special tool or export step required.</li>
+</ul>
+
+<p><strong>Default File Location and Folder Structure</strong></p>
+
+<p>When you first set up PreseMaker, it creates a root folder in a standard, easy-to-find location on your computer. On most systems this is inside your <em>Documents</em> directory, resulting in a path such as <code>Documents/PreseMaker</code> on macOS or <code>C:\Users\YourName\Documents\PreseMaker</code> on Windows.</p>
+
+<p>Inside that root folder, PreseMaker uses a structured hierarchy that mirrors the way you organize content inside the application itself:</p>
+
+<ul>
+  <li><strong>One subfolder per course.</strong> Each course you create gets its own named subfolder inside the root PreseMaker directory. For example, a course called "Introduction to Marketing" might appear as <code>Documents/PreseMaker/Introduction to Marketing/</code>. This keeps projects cleanly separated so files from one course never mix with another.</li>
+  <li><strong>Modules and content nested within their course folder.</strong> Inside each course folder, PreseMaker organizes modules and their associated files in nested subfolders that reflect the logical hierarchy you see in the application's interface. If your course has three modules, you will find three corresponding subfolders, each containing the files generated for that module's lessons, presentations, and quizzes.</li>
+</ul>
+
+<p>This mirrored structure means that if you know where something is in the PreseMaker interface, you can predict almost exactly where to find the corresponding file on disk — which makes manual file management straightforward.</p>
+
+<p><strong>File Formats Used by PreseMaker</strong></p>
+
+<p>PreseMaker deliberately saves content in widely supported, non-proprietary formats. This is a significant advantage: you never need PreseMaker itself to open, read, or edit the files it generates. The following table summarizes the content types and their corresponding file formats:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content Type</th>
+      <th>File Format(s)</th>
+      <th>Opens With</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Text Lessons</td>
+      <td>HTML, Markdown (.md)</td>
+      <td>Any web browser, any text or Markdown editor</td>
+    </tr>
+    <tr>
+      <td>Presentations</td>
+      <td>PowerPoint (.pptx)</td>
+      <td>Microsoft PowerPoint, Google Slides, LibreOffice Impress</td>
+    </tr>
+    <tr>
+      <td>Quiz Banks</td>
+      <td>QTI (.xml), WPProQuiz (.json)</td>
+      <td>LMS platforms (Canvas, Moodle, etc.), WPProQuiz plugin</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li><strong>HTML and Markdown for lessons</strong> mean your text content is both human-readable in any plain-text editor and immediately renderable in a browser for a polished, interactive or printable view.</li>
+  <li><strong>.pptx for presentations</strong> is the industry-standard PowerPoint format, compatible with every major presentation application. You can open, brand, and modify slides without ever returning to PreseMaker.</li>
+  <li><strong>QTI and WPProQuiz for quizzes</strong> are the dominant formats for importing assessments into learning management systems. QTI (Question and Test Interoperability) is supported by platforms such as Canvas, Blackboard, and Moodle, while WPProQuiz is the standard for WordPress-based eLearning sites.</li>
+</ul>
+
+<p>Because none of these formats are proprietary to PreseMaker, you are never locked in. Your content belongs to the open ecosystem of tools that already exists around these standards.</p>
+
+<p><strong>Ownership and Access Rights to Your Files</strong></p>
+
+<p>PreseMaker does not claim any rights over the content you create. You retain full intellectual property ownership of everything you generate through the application. This applies to the raw files on disk as much as to the ideas and material inside them.</p>
+
+<ul>
+  <li><strong>No DRM or license flags.</strong> There are no digital rights management controls, license keys, or hidden flags embedded in your saved files. A .pptx file generated by PreseMaker is an ordinary .pptx file — nothing more.</li>
+  <li><strong>Full freedom to copy, move, share, or delete.</strong> You can drag your course folder to a USB drive, attach a file to an email, upload it to a shared drive, or delete it permanently — all without interacting with PreseMaker at all. The application has no say in what you do with files once they are written to disk.</li>
+  <li><strong>No account-gated access.</strong> Because the files live locally and carry no license restrictions, a colleague without a PreseMaker account can open and use the output files just as freely as you can.</li>
+</ul>
+
+<p><strong>Locating and Verifying Your Saved Files</strong></p>
+
+<p>PreseMaker provides built-in ways to help you confirm exactly where a file has been saved after it is generated. Immediately after content is created, the application typically displays the full file path or offers a <em>Show in Folder</em> button that opens your operating system's file explorer directly to the location of the new file. Clicking that button is the fastest way to confirm the file exists and is in the expected place.</p>
+
+<p>If you want to review or change the default save location at any point, you can do so through the application's <strong>Settings</strong> or <strong>Preferences</strong> panel. This panel shows the current root folder path and allows you to browse to a different location — useful if, for example, you want to save directly into a folder that is already being synced by a cloud storage service like Dropbox or OneDrive.</p>
+
+<p>Developing the habit of verifying the file location before you close a project is well worth the few seconds it takes. Because PreseMaker is a local application with no server-side backup, a file that is not where you expect it to be — or that was accidentally saved to a temporary directory — could be difficult to recover later.</p>
+
+<p><strong>Managing and Backing Up Your PreseMaker Files</strong></p>
+
+<p>Because PreseMaker keeps no copy of your work on any server, <em>you</em> are the sole guardian of your files. This makes a simple, consistent backup practice essential.</p>
+
+<ul>
+  <li><strong>External drive or cloud backup.</strong> Regularly copying your entire PreseMaker root folder to an external hard drive, a USB drive, or a cloud storage service (such as Google Drive, Dropbox, or OneDrive) protects you against hardware failure. If your computer's drive fails, a cloud-synced or externally backed-up copy means you lose nothing. The simplest approach is to point your cloud sync tool at the PreseMaker root folder so it is backed up automatically and continuously.</li>
+  <li><strong>Version control by duplication.</strong> Before making significant edits to a file — restructuring a presentation, rewriting a lesson, or regenerating a quiz — duplicate the file and rename the copy with a date stamp or version number, for example <code>Module3_Lesson1_v2_2025-06-01.pptx</code>. This preserves the previous iteration and allows you to roll back if the new version does not work out. This is a lightweight alternative to formal version control systems and is sufficient for most individual authors.</li>
+  <li><strong>Deletion is permanent.</strong> There is no recycle bin on PreseMaker's end. If you delete a file from your computer — or empty your operating system's recycle bin after moving a file there — it is gone. PreseMaker has no server-side copy to restore from, and it does not maintain its own version history. This is why verifying file locations and maintaining backups are not optional niceties; they are the only safety net available.</li>
+</ul>
+
+<p>Taken together, these practices ensure that the power of local, offline file storage works in your favor: you have full control, full ownership, and fast access — as long as you also take on the responsibility of keeping your files safe.</p>
+        <div class="notes"><strong>Notes</strong>Describes where and how PreseMaker saves files locally on the author&#39;s computer, ensuring users understand file locations and ownership of their work.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

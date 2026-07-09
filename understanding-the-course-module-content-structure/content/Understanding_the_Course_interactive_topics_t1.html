@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The PreseMaker Hierarchy Overview</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Understanding the Course-Module-Content Structure</a></div>
+  <header>
+    <h1>The PreseMaker Hierarchy Overview</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>The PreseMaker Hierarchy Overview</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>PreseMaker is a purpose-built authoring platform designed to help educators, trainers, and instructional designers structure, generate, and store e-learning materials in a consistent and repeatable way. Rather than leaving authors to invent their own organizational schemes from scratch, PreseMaker provides a predefined, logical framework — a <strong>hierarchy</strong> — that guides how content is created, grouped, and ultimately delivered to learners. Every piece of content in PreseMaker, from the broadest subject area down to a single generated quiz or slide deck, has a defined place within this hierarchy. Understanding that framework is the single most important foundation for working with PreseMaker effectively, because every action you take as an author — creating content, generating materials, finding files, or making updates — follows its logic.</p>
+
+<p>At its core, PreseMaker's hierarchy exists to solve a problem that every content creator eventually faces: <em>how do you keep a growing body of learning material organized, traceable, and easy to maintain?</em> Without a consistent structure, courses become difficult to navigate, outputs become hard to find, and updates in one area risk creating inconsistencies elsewhere. The PreseMaker hierarchy prevents that by establishing clear parent-child relationships between every level of content. Nothing floats freely; everything belongs somewhere specific, and that location is always meaningful.</p>
+
+<p>The hierarchy consists of <strong>four levels</strong>, each nested inside the one above it. From broadest to most specific, those levels are: <strong>Course</strong>, <strong>Module</strong>, <strong>Topic</strong>, and <strong>Subtopic</strong>. The materials that PreseMaker generates — slides, presenter notes, quizzes, and similar deliverables — are <em>outputs produced from</em> these levels, not levels of their own. Keeping that distinction clear from the start will prevent confusion as you work with the platform.</p>
+
+<p>The table below summarizes the four levels and the role each one plays before the sections that follow explore each in depth:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>Position in Hierarchy</th>
+      <th>Primary Role</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Course</strong></td>
+      <td>Top (Level 1)</td>
+      <td>Defines the overall subject, audience, or program</td>
+      <td><em>Introduction to Cybersecurity</em></td>
+    </tr>
+    <tr>
+      <td><strong>Module</strong></td>
+      <td>Level 2</td>
+      <td>Groups related Topics around a shared theme or unit</td>
+      <td><em>Network Security Fundamentals</em></td>
+    </tr>
+    <tr>
+      <td><strong>Topic</strong></td>
+      <td>Level 3</td>
+      <td>Represents a single, focused lesson or concept</td>
+      <td><em>Understanding Firewalls</em></td>
+    </tr>
+    <tr>
+      <td><strong>Subtopic</strong></td>
+      <td>Level 4</td>
+      <td>Divides a Topic into finer instructional points</td>
+      <td><em>Stateful vs. Stateless Packet Filtering</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Courses</strong> sit at the very top of the hierarchy and function as the master container for everything beneath them. A Course defines the overall subject matter, the intended audience, or the learning program that a collection of content belongs to. For example, a corporate training department might have a Course called <em>New Employee Onboarding</em>, while a higher-education institution might have one called <em>Principles of Microeconomics</em>. Every Module, every Topic, and every piece of Generated Material within PreseMaker ultimately traces back to a parent Course. This means that when you open a Course, you are opening a complete, self-contained learning program — nothing within that Course exists in isolation from it.</p>
+
+<p>The practical benefit of the Course as a top-level container is traceability and scope. When an author or administrator needs to review all content related to a particular subject, they navigate to that Course and everything is there. When files are stored on the author's computer, PreseMaker organizes them under the Course name, so the folder structure on disk mirrors the logical structure inside the platform. This alignment between the conceptual hierarchy and the physical file system is intentional, and it means you rarely have to wonder where something lives.</p>
+
+<p><strong>Modules</strong> sit one level below Courses and serve as thematic groupings. A single Course will typically contain multiple Modules, each of which covers a distinct area, unit, or phase of the overall subject. Returning to the cybersecurity example: the Course <em>Introduction to Cybersecurity</em> might contain Modules such as <em>Threats and Attack Vectors</em>, <em>Network Security Fundamentals</em>, and <em>Incident Response Procedures</em>. Each Module is coherent on its own — all of the Topics inside it relate to the same central theme — but the Modules together build toward the complete picture the Course promises.</p>
+
+<p>Modules provide an important navigational benefit for learners. Rather than facing an undifferentiated list of dozens of individual lessons, a learner can see the Course broken into meaningful chapters or units, understand roughly what each section covers, and orient themselves within the learning journey. For authors, Modules provide independence: you can add a new Module, reorder existing Modules, or substantially revise one Module without disrupting the content of the others. This modularity (the word is not accidental) makes large courses far easier to maintain and update over time.</p>
+
+<p><strong>Topics</strong> are the core instructional unit of the PreseMaker hierarchy. Each Topic lives inside a Module and represents a single, focused lesson or concept. Where a Module might be titled <em>Network Security Fundamentals</em>, a Topic within it might be <em>Understanding Firewalls</em> or <em>How VPNs Work</em>. The defining characteristic of a well-formed Topic is <em>focus</em>: it covers one coherent idea thoroughly rather than attempting to address multiple distinct concepts at once.</p>
+
+<p>A Topic in PreseMaker typically includes three key components that the platform uses when generating materials:</p>
+
+<ul>
+  <li><strong>A title</strong> — the name of the lesson or concept, which becomes the basis for labeling generated outputs.</li>
+  <li><strong>A summary</strong> — a concise description of what the Topic covers, which helps PreseMaker understand the instructional intent.</li>
+  <li><strong>Source content</strong> — the detailed subject-matter content (which may include subtopics and their supporting points) that PreseMaker draws on to produce slides, notes, quizzes, and other deliverables.</li>
+</ul>
+
+<p>Because each Topic is self-contained, it can be edited, regenerated, or even reused in a different Module without affecting any of its sibling Topics. This independence is particularly valuable when content needs to be updated: if new information changes only one lesson in a course, the author updates that Topic and regenerates its materials without touching anything else. The <em>specificity</em> of a Topic matters enormously here — a Topic that is too broad will produce generic, unfocused materials, while a Topic that is appropriately scoped will produce materials that are precise, relevant, and directly useful to learners.</p>
+
+<p><strong>Subtopics</strong> occupy the fourth and most granular level of the hierarchy. A Subtopic divides a Topic into finer instructional points, allowing authors to signal to PreseMaker exactly which aspects of the Topic should be covered and in what order. For example, the Topic <em>Understanding Firewalls</em> might contain Subtopics such as <em>What a Firewall Does</em>, <em>Stateful vs. Stateless Packet Filtering</em>, <em>Common Firewall Configurations</em>, and <em>Limitations of Firewall-Only Security</em>. Each Subtopic represents a distinct idea that contributes to the Topic's overall instructional goal.</p>
+
+<p>It is worth emphasizing again that Subtopics are the deepest <em>structural</em> level — they are the finest-grained inputs that an author defines. The slides, notes, quizzes, and other files that PreseMaker produces are not levels of the hierarchy; they are <strong>Generated Materials</strong>, the <em>output layer</em> that emerges from the content defined at the Topic and Subtopic levels. Generated Materials are the deliverables that learners and instructors actually use, and each set of them is tied back to the specific Topic from which they were produced. PreseMaker stores these outputs in an organized file structure on the author's computer, which means the author retains full ownership of and access to everything that is generated — nothing is locked inside the platform.</p>
+
+<p>Because Generated Materials trace back through the hierarchy to a specific Topic, which belongs to a specific Module, which belongs to a specific Course, it is always possible to answer the question: <em>where did this file come from, and what is it for?</em> That traceability is one of the most practical advantages of working within a defined hierarchy rather than generating content in an ad hoc way.</p>
+
+<p>Taken together, these four levels — Course, Module, Topic, and Subtopic — along with the Generated Materials they produce, form a <strong>unified system</strong>. The word "unified" is important: changes or additions at any level of the hierarchy are understood in the context of the levels above and below it. Adding a new Topic to a Module enriches the Module and, by extension, the Course. Updating the source content of a Topic changes what PreseMaker can generate from it. Reorganizing the Subtopics within a Topic reshapes the structure of the resulting lesson materials. Nothing in the system is isolated from the rest.</p>
+
+<p>This interconnectedness also means that the quality of the hierarchy an author builds has a direct impact on the quality of the materials PreseMaker generates. A well-structured Course with clearly scoped Modules, focused Topics, and logically ordered Subtopics gives PreseMaker the clearest possible picture of what to produce — and the result is generated content that is coherent, well-organized, and instructionally sound. Conversely, a loosely structured hierarchy with overlapping Topics and vague Subtopics will produce outputs that reflect that ambiguity. Investing time in understanding and applying the hierarchy correctly is therefore not just an administrative concern; it is a direct investment in the quality of the learning materials that reach your audience.</p>
+        <div class="notes"><strong>Notes</strong>Introduces the overall organizational structure of PreseMaker, explaining how courses, modules, topics, subtopics, and generated materials fit together as a unified system. The table provides a quick-reference summary of all four hierarchy levels before each is explained in depth.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

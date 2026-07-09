@@ -1,0 +1,52 @@
+﻿[
+  {
+    "title": "Generating Presentations and Narrated Presentations \u2014 Topics \u0026 Learning Outcomes",
+    "href": "topics-outcomes.html",
+    "type": "Page"
+  },
+  {
+    "title": "Generating Presentations and Narrated Presentations \u2014 Module Topics",
+    "href": "topics.html",
+    "type": "Page"
+  },
+  {
+    "title": "Embedding Audio and Timing into Slides",
+    "href": "content/Generating_Presentations_and_interactive.html",
+    "type": "Content"
+  },
+  {
+    "title": "Introduction to AI-Generated Presentations",
+    "href": "content/Generating_Presentations_and_interactive_topics_t1.html",
+    "type": "Content"
+  },
+  {
+    "title": "Generating a PowerPoint Slide Deck from Module Topics",
+    "href": "content/Generating_Presentations_and_interactive_topics_t2.html",
+    "type": "Content"
+  },
+  {
+    "title": "Understanding the Narrated Presentation Option",
+    "href": "content/Generating_Presentations_and_interactive_topics_t3.html",
+    "type": "Content"
+  },
+  {
+    "title": "Writing Per-Slide Speaker Notes",
+    "href": "content/Generating_Presentations_and_interactive_topics_t4.html",
+    "type": "Content"
+  },
+  {
+    "title": "Converting Speaker Notes to Spoken Audio with Text-to-Speech",
+    "href": "content/Generating_Presentations_and_interactive_topics_t5.html",
+    "type": "Content"
+  },
+  {
+    "title": "Embedding Audio and Timing into Slides",
+    "href": "content/Generating_Presentations_and_interactive_topics_t6.html",
+    "type": "Content"
+  },
+  {
+    "title": "Generating Presentations and Narrated Presentations \u2014 Module Topics",
+    "href": "content/module_topics.html",
+    "type": "Content"
+  }
+]

@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Version Control, GitHub Pages, and Course Repository Integration — Using PreseMaker</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: #f4f6f9;
+      color: #1e2535;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Top banner ── */
+    header {
+      background: linear-gradient(135deg, #1a3a5c 0%, #2563a8 100%);
+      color: #fff;
+      padding: 2.5rem 1.5rem 2rem;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .course-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #a8c8f0;
+      margin-bottom: 0.45rem;
+    }
+
+    header h1 {
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 0.9rem;
+    }
+
+    header p {
+      font-size: 0.97rem;
+      max-width: 680px;
+      color: #d0e4f7;
+      line-height: 1.65;
+    }
+
+    /* ── Main content ── */
+    main {
+      max-width: 960px;
+      margin: 2rem auto 3rem;
+      padding: 0 1.25rem;
+    }
+
+    .section-heading {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #5a6a84;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #dde3ee;
+    }
+
+    /* ── Card grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #dde3ee;
+      border-radius: 8px;
+      padding: 1.2rem 1.3rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      transition: box-shadow 0.18s ease, transform 0.18s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 18px rgba(30, 60, 120, 0.10);
+      transform: translateY(-2px);
+    }
+
+    /* ── Card meta badges ── */
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.18em 0.55em;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .badge-type {
+      background: #e8eef8;
+      color: #2a4a82;
+    }
+
+    .badge-filetype {
+      background: #edf7f1;
+      color: #1d6e45;
+    }
+
+    /* ── Card title row ── */
+    .card-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .card-name {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #1e2535;
+      line-height: 1.3;
+    }
+
+    .card-name a {
+      color: #1a4fa0;
+      text-decoration: none;
+    }
+
+    .card-name a:hover,
+    .card-name a:focus {
+      text-decoration: underline;
+      color: #0d3578;
+    }
+
+    .source-link {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #5a6a84;
+      text-decoration: none;
+      border: 1px solid #c4cedf;
+      border-radius: 4px;
+      padding: 0.15em 0.5em;
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .source-link:hover,
+    .source-link:focus {
+      background: #e8eef8;
+      color: #1a3a5c;
+      border-color: #8aa6cc;
+    }
+
+    /* ── Card description ── */
+    .card-description {
+      font-size: 0.865rem;
+      color: #4a5568;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 1.4rem 1rem;
+      font-size: 0.78rem;
+      color: #8a97ab;
+      border-top: 1px solid #dde3ee;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 500px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Using PreseMaker</a></div>
+<div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
+
+  <header>
+    <div class="header-inner">
+      <p class="course-label">Using PreseMaker</p>
+      <h1>Version Control, GitHub Pages, and Course Repository Integration</h1>
+      <p>
+        This module covers how PreseMaker integrates Git version control and GitHub Pages publishing
+        directly into its interface, how to work with the Course Repository Service to share and
+        reuse materials, and how to choose among all available course distribution methods — including
+        archive export and iFrame embedding.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <p class="section-heading">Module Artifacts &nbsp;·&nbsp; 7 items</p>
+
+    <div class="card-grid">
+
+      <!-- Artifact 1: Module Topics -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Module Topics</span>
+          <span class="badge badge-filetype">.json</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/module_topics.html">Module Topics</a>
+          </span>
+          <a class="source-link" href="source/hierarchy.json">source file</a>
+        </div>
+        <p class="card-description">
+          An outline of all topics covered in this module, listing the key lessons on Git repository
+          management, GitHub Pages publishing, the Course Repository Service, archive export, iFrame
+          embedding, and choosing a sharing method, used by learners and instructors to preview
+          module scope and navigate to specific sections.
+        </p>
+      </div>
+
+      <!-- Artifact 2: Managing a Course as a Git Repository -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Version_Control_GitHub_interactive_topics_t1.html">Managing a Course as a Git Repository in PreseMaker</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that explains how PreseMaker integrates Git version control directly into its
+          interface, walking learners through initializing a repository, committing changes with a
+          message, and pushing changes to a remote repository without needing a terminal.
+        </p>
+      </div>
+
+      <!-- Artifact 3: Publishing with GitHub Pages -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Version_Control_GitHub_interactive_topics_t2.html">Publishing a Course Website with GitHub Pages</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that explains how to publish a completed PreseMaker course as a publicly
+          accessible website using GitHub Pages, covering how to export the course, connect it to a
+          GitHub repository, and trigger publishing from within PreseMaker rather than through
+          GitHub's website.
+        </p>
+      </div>
+
+      <!-- Artifact 4: Course Repository Service -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Version_Control_GitHub_interactive_topics_t3.html">Using the Course Repository Service</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that describes PreseMaker's built-in integration with an external Course
+          Repository Service, explaining how educators can browse, share, upload, and reuse course
+          materials with colleagues directly from within the application.
+        </p>
+      </div>
+
+      <!-- Artifact 5: Archive Export and iFrame Embedding -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Version_Control_GitHub_interactive_topics_t4.html">Other Sharing Options: Archive Export and iFrame Embedding</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that covers two additional course distribution options in PreseMaker — exporting
+          a course as a downloadable archive file and embedding a course into another webpage using
+          an iFrame — explaining when and how to use each method.
+        </p>
+      </div>
+
+      <!-- Artifact 6: Choosing the Right Sharing Method (Topic Detail) -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Version_Control_GitHub_interactive_topics_t5.html">Choosing the Right Sharing Method</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that compares all five sharing and distribution methods available in PreseMaker,
+          helping learners and instructors decide which approach best fits their workflow, audience,
+          and technical environment.
+        </p>
+      </div>
+
+      <!-- Artifact 7: Choosing the Right Sharing Method (Text Content) -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Text Content</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Version_Control_GitHub_interactive.html">Choosing the Right Sharing Method</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A reading that compares all five sharing and distribution methods available in PreseMaker,
+          helping learners and instructors decide which approach best fits their workflow, audience,
+          and technical environment.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    Using PreseMaker &nbsp;·&nbsp; Version Control, GitHub Pages, and Course Repository Integration
+  </footer>
+
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+<section class="presemaker-extras" style="max-width:1000px;margin:2rem auto;padding:0 1rem;"><h2>Topics &amp; Learning Outcomes</h2><p><a href="topics-outcomes.html">View Topics &amp; Learning Outcomes</a></p><h2>Source Materials</h2><ul class="artifact-list">  <li class="artifact-item">
+    <div class="artifact-icon">⬇</div>
+    <div class="artifact-body">
+      <a class="artifact-link" href="source-materials/source-1.html" download>Topic Prompt</a>
+    </div>
+  </li></ul></section><script src="embed-inject.js" defer></script></body>
+</html>

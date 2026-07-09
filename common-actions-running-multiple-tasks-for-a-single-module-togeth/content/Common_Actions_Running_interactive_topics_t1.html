@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to the Common Actions Hub</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Common Actions: Running Multiple Tasks for a Single Module Together</a></div>
+  <header>
+    <h1>Introduction to the Common Actions Hub</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Introduction to the Common Actions Hub</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When building out a course module, instructors typically need to produce several different types of learning assets: written documents, assessments, presentations, and more. Without a centralized place to manage these tasks, the process can become fragmented — requiring an instructor to navigate to different areas of the platform, reconfigure settings each time, and generate each asset separately. The <strong>Common Actions Hub</strong> is the solution to this fragmentation. It provides a single, unified interface where instructors can configure and trigger multiple content generation tasks at once, all within the context of a specific module.</p>
+
+<p>Understanding what the Common Actions Hub is, why it exists, and how it fits into the broader instructor workflow is the foundation for using it effectively. Each of these dimensions is worth exploring in depth.</p>
+
+<p><strong>What Is the Common Actions Hub?</strong></p>
+
+<p>The Common Actions Hub is a dedicated interface within the platform that brings together the most frequently needed content generation tasks for a module. Rather than scattering these tasks across different menus or tool areas, the hub collects them in one place and presents them as a coordinated set of actions an instructor can take together.</p>
+
+<p>A critical design characteristic of the hub is that it is <em>scoped per module</em>. This means that when you open the Common Actions Hub, you are always opening it in relation to a specific module — its topics, its settings, its content structure. You are not working in a global tool that operates independently of your course content. Every task you configure and every asset you generate is anchored to that module. This scoping ensures that the outputs are always contextually relevant and aligned to the right content.</p>
+
+<p>For example, if your course has five modules, you will work through the Common Actions Hub five times — once per module — as you build out the course. Each session in the hub is its own contained workflow for that module's assets.</p>
+
+<p>The types of tasks the hub brings together include, but are not limited to:</p>
+
+<ul>
+  <li><strong>Document generation per topic</strong> — producing written learning documents that cover the topics defined within the module.</li>
+  <li><strong>Quiz creation</strong> — generating multiple-choice or other question-based assessments tied to the module's content.</li>
+  <li><strong>Presentation building</strong> — creating slide-based presentations derived from the module's topics and subtopics.</li>
+</ul>
+
+<p>By gathering these tasks under one roof, the hub eliminates the need to hunt for individual tools and re-establish context each time you want to generate a new type of asset.</p>
+
+<p><strong>Purpose of the Common Actions Hub</strong></p>
+
+<p>The hub exists to solve a practical problem: content creation for a module involves many moving parts, and doing them one at a time — in isolation — is slow, error-prone, and inconsistent. The Common Actions Hub addresses this by serving three core purposes.</p>
+
+<p>First, it <em>reduces the number of steps</em> required to produce a full set of learning materials. Instead of navigating to a document tool, generating a document, then navigating to a quiz tool, configuring it, generating a quiz, and so on, the instructor performs all configuration in one place and triggers all generation in one action.</p>
+
+<p>Second, it <em>ensures alignment</em> across all generated assets. Because every task is configured and run against the same module — with the same content structure and settings active at that moment — the outputs are coherent with one another. A document, a quiz, and a presentation generated together through the hub will all reflect the same topics, the same scope, and the same module state. This is harder to guarantee when assets are generated at different times using separate tools.</p>
+
+<p>Third, it supports a <em>batch-style approach</em> to content generation. Rather than a one-task-at-a-time workflow, the hub encourages instructors to think about what a module needs holistically, configure everything up front, and then produce all the needed assets in one pass. This mirrors how experienced instructors naturally think about module design — as a complete package of materials rather than a series of disconnected outputs.</p>
+
+<p><strong>Where Common Actions Fits in the Instructor Workflow</strong></p>
+
+<p>The Common Actions Hub is not a standalone tool or an external add-on — it is embedded directly in the standard module workflow. Instructors encounter it as a natural step after setting up a module's content structure. The placement is deliberate: the hub comes after content has been defined but before final assets are delivered to learners, positioning it as the bridge between <em>content setup</em> and <em>content delivery</em>.</p>
+
+<p>This positioning has an important practical implication. Because instructors access the hub <em>after</em> the module's topics and settings are in place, all task configurations within the hub can be reviewed and adjusted before any generation is triggered. Nothing is produced automatically or prematurely. The instructor retains full control over what gets generated and how, right up until the moment they choose to run the tasks.</p>
+
+<p>The per-module nature of the hub also means the workflow scales naturally as a course grows. An instructor building a ten-module course works through the hub ten times — once for each module — rather than trying to manage all modules simultaneously. This keeps the work focused and manageable at each stage.</p>
+
+<p>To illustrate how the hub sits within the broader workflow, consider the following sequence:</p>
+
+<ul>
+  <li>The instructor creates a module and defines its topics and subtopics.</li>
+  <li>The instructor opens the Common Actions Hub for that module.</li>
+  <li>The instructor reviews the available tasks and selects those needed for this module (for example, a document and a quiz, but not a presentation).</li>
+  <li>Each selected task is configured individually — specifying things like question count for a quiz or formatting preferences for a document.</li>
+  <li>With all configurations set, the instructor triggers all selected tasks together in a single step.</li>
+  <li>The generated assets are produced and become available as part of the module's resources.</li>
+  <li>The instructor moves on to the next module and repeats the process.</li>
+</ul>
+
+<p><strong>Types of Tasks Available in the Hub</strong></p>
+
+<p>The hub presents instructors with a set of task options, each representing a different type of learning asset. Instructors are not required to run every task — the design is flexible, allowing you to select only the tasks that are relevant to a given module's needs.</p>
+
+<p>The following table summarizes the common task types available in the hub and what each produces:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Output</th>
+      <th>Typical Use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Generate Document per Topic</td>
+      <td>Written learning document for each topic in the module</td>
+      <td>Providing learners with reading material that covers each topic in depth</td>
+    </tr>
+    <tr>
+      <td>Create Multiple-Choice Quiz</td>
+      <td>A question-based assessment tied to the module's content</td>
+      <td>Testing learner comprehension and recall after completing the module</td>
+    </tr>
+    <tr>
+      <td>Produce Presentation</td>
+      <td>A slide-based presentation derived from the module's topics</td>
+      <td>Supporting live instruction or providing a visual summary of the module</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Each task can be individually configured before generation. For a quiz, this might mean setting the number of questions or specifying the difficulty level. For a document, it might mean choosing the level of detail or the tone. These configurations are applied per task, giving instructors precise control over each asset type even when running all tasks together.</p>
+
+<p><strong>Running Tasks Together in One Step</strong></p>
+
+<p>The defining feature of the Common Actions Hub — the capability that most directly delivers its efficiency benefit — is the ability to run all selected and configured tasks together with a single action. Once an instructor has selected which tasks to include and has applied the relevant configuration to each, they trigger the entire batch at once rather than executing each task sequentially on its own.</p>
+
+<p>This matters for several reasons. Most obviously, it saves time. Generating three asset types one at a time requires three separate triggering actions, three waiting periods, and three separate moments of navigating to the next task. Running them together collapses this into a single action and a single wait.</p>
+
+<p>More subtly, running tasks together <em>guarantees consistency</em>. When assets are generated at different times — even within the same platform — there is always a risk that something changes between runs: a topic gets renamed, a setting is adjusted, or the module content is updated. Because the Common Actions Hub runs all tasks against the same module state at the same moment, all outputs are guaranteed to reflect the same version of the content. There is no risk of a quiz being generated from a slightly different version of the module than the document it is meant to accompany.</p>
+
+<p>Finally, the batch approach encourages a more disciplined workflow. By requiring instructors to configure everything before triggering generation, the hub naturally promotes upfront planning. Instructors consider all their asset needs for a module at once, make deliberate choices about what to generate and how, and then commit to those choices together. This is a more thoughtful and less reactive approach than generating assets ad hoc as needs arise, and it tends to produce a more cohesive set of learning materials as a result.</p>
+        <div class="notes"><strong>Notes</strong>This topic establishes foundational understanding of the Common Actions Hub before any hands-on task configuration is introduced. Emphasis should be placed on the per-module scoping and the batch-generation model, as these two concepts define how the hub differs from working with individual standalone tools.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Understanding the Course-Module-Content Structure | Using PreseMaker</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      background-color: #f4f6f9;
+      color: #1e2a38;
+    }
+
+    /* ── Page wrapper ── */
+    .page-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* ── Course breadcrumb ── */
+    .breadcrumb {
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #6b7a8d;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ── Header ── */
+    .module-header {
+      border-left: 5px solid #2e6fba;
+      padding: 1.2rem 1.4rem;
+      background: #ffffff;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      margin-bottom: 1.8rem;
+    }
+
+    .module-header h1 {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: #14243a;
+      margin-bottom: 0.55rem;
+    }
+
+    .module-header p {
+      font-size: 0.97rem;
+      color: #3c4e62;
+      max-width: 72ch;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6b7a8d;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid #dde3ec;
+    }
+
+    /* ── Card grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.1rem;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: #ffffff;
+      border: 1px solid #dde3ec;
+      border-radius: 8px;
+      padding: 1.15rem 1.2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      transition: box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 14px rgba(46,111,186,0.12);
+      border-color: #b3c9e8;
+    }
+
+    /* ── Card top row: name + badges ── */
+    .card-title-row {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.6rem;
+    }
+
+    .card-name {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: #14243a;
+      flex: 1 1 auto;
+      word-break: break-word;
+    }
+
+    .card-name a {
+      color: #1a5faa;
+      text-decoration: none;
+    }
+
+    .card-name a:hover,
+    .card-name a:focus {
+      text-decoration: underline;
+      color: #0d3f7a;
+    }
+
+    /* ── Source file link ── */
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: #5a7fa8;
+      border-radius: 4px;
+      padding: 0.18em 0.55em;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.15s;
+      align-self: flex-start;
+      margin-top: 0.1rem;
+    }
+
+    .source-link::before {
+      content: "⬇";
+      font-size: 0.68rem;
+    }
+
+    .source-link:hover,
+    .source-link:focus {
+      background: #2e6fba;
+      text-decoration: none;
+    }
+
+    /* ── Meta badges row ── */
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border-radius: 4px;
+      padding: 0.18em 0.55em;
+      white-space: nowrap;
+    }
+
+    .badge-type {
+      background: #e8f0fb;
+      color: #1a5faa;
+      border: 1px solid #c5d8f5;
+    }
+
+    .badge-filetype {
+      background: #eef2f7;
+      color: #4a6070;
+      border: 1px solid #d2dce8;
+      font-family: 'Courier New', monospace;
+      font-size: 0.68rem;
+    }
+
+    /* ── Description ── */
+    .card-description {
+      font-size: 0.86rem;
+      color: #4a5a6a;
+      line-height: 1.55;
+      margin-top: 0.15rem;
+      flex: 1;
+    }
+
+    /* ── Footer ── */
+    .page-footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #9aaabb;
+    }
+
+    /* ── Responsive tweaks ── */
+    @media (max-width: 480px) {
+      .module-header h1 { font-size: 1.3rem; }
+      .card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Using PreseMaker</a></div>
+<div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
+  <div class="page-wrap">
+
+    <!-- Breadcrumb -->
+    <p class="breadcrumb">Using PreseMaker &rsaquo; Module Index</p>
+
+    <!-- Module header -->
+    <header class="module-header">
+      <h1>Understanding the Course-Module-Content Structure</h1>
+      <p>
+        This module introduces the organisational hierarchy at the heart of PreseMaker &mdash; covering how
+        courses, modules, topics, and generated materials relate to one another, how files are stored
+        locally on your computer, and what content ownership means for you as a learner or author.
+        Use the cards below to navigate each artifact in the module.
+      </p>
+    </header>
+
+    <!-- Artifact grid -->
+    <p class="section-label">Module Artifacts &mdash; 7 items</p>
+
+    <div class="card-grid">
+
+      <!-- Card 1 -->
+      <article class="card">
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/module_topics.html">Module Topics</a>
+          </span>
+          <a class="source-link" href="source/hierarchy.json">source file</a>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Module Topics</span>
+          <span class="badge badge-filetype">.json</span>
+        </div>
+        <p class="card-description">
+          A structured outline listing all topics covered in the module &mdash; including PreseMaker&rsquo;s
+          hierarchy, courses, modules, topics, file storage, and content ownership &mdash; used by learners
+          and instructors to navigate the module&rsquo;s scope at a glance.
+        </p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Understanding_the_Course_interactive_topics_t1.html">The PreseMaker Hierarchy Overview</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-description">
+          An introductory reading that explains what PreseMaker is and describes its four-level
+          organisational hierarchy (course, module, topic, generated content), giving learners a
+          conceptual map of how the platform structures e-learning materials.
+        </p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Understanding_the_Course_interactive_topics_t2.html">Understanding Courses and Modules</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-description">
+          A reading that defines courses and modules in PreseMaker, explains the parent-child
+          relationship between them, and establishes how these two elements form the foundational
+          structure for all content created in the platform.
+        </p>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card">
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Understanding_the_Course_interactive_topics_t3.html">Topics and Generated Materials</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-description">
+          A reading that explains topics as the core instructional unit within PreseMaker modules,
+          covering how topics are created, nested inside modules, and connected to the generated
+          learning materials they produce.
+        </p>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="card">
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Understanding_the_Course_interactive_topics_t4.html">How PreseMaker Stores Files on Your Computer</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-description">
+          A reading that explains how PreseMaker stores all generated files locally on the user&rsquo;s
+          computer, describing the folder structure it creates and what that means for file access
+          and management.
+        </p>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="card">
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Understanding_the_Course_interactive_topics_t5.html">Accessing and Owning Your Work</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-description">
+          A reading that explains learner and author ownership of content created in PreseMaker,
+          emphasising that all generated files remain fully accessible and owned by the user rather
+          than held on a remote platform.
+        </p>
+      </article>
+
+      <!-- Card 7 -->
+      <article class="card">
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="content/Understanding_the_Course_interactive.html">Accessing and Owning Your Work</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Text Content</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-description">
+          A duplicate of the preceding reading on content ownership in PreseMaker, covering the same
+          material about user ownership and local file accessibility &mdash; instructors should verify
+          whether this duplication is intentional.
+        </p>
+      </article>
+
+    </div>
+    <!-- /card-grid -->
+
+    <footer class="page-footer">
+      <p>Using PreseMaker &mdash; Understanding the Course-Module-Content Structure</p>
+    </footer>
+
+  </div>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+<section class="presemaker-extras" style="max-width:1000px;margin:2rem auto;padding:0 1rem;"><h2>Topics &amp; Learning Outcomes</h2><p><a href="topics-outcomes.html">View Topics &amp; Learning Outcomes</a></p></section><script src="embed-inject.js" defer></script></body>
+</html>

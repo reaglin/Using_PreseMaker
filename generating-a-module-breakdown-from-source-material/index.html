@@ -1,0 +1,370 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generating a Module Breakdown from Source Material — Using PreseMaker</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #f4f6f9;
+      color: #1e2a38;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Page shell ── */
+    .page-wrapper {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* ── Course label ── */
+    .course-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #5a7fa8;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Hero header ── */
+    .module-header {
+      border-left: 5px solid #2f6eb5;
+      padding: 1.25rem 1.5rem;
+      background: #ffffff;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+
+    .module-header h1 {
+      font-size: clamp(1.35rem, 3vw, 1.9rem);
+      font-weight: 700;
+      color: #152540;
+      margin-bottom: 0.65rem;
+    }
+
+    .module-header p {
+      font-size: 0.97rem;
+      color: #3e5068;
+      max-width: 72ch;
+    }
+
+    /* ── Section label ── */
+    .artifacts-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #7a93b0;
+      margin-bottom: 1rem;
+      padding-left: 2px;
+    }
+
+    /* ── Card grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.1rem;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: #ffffff;
+      border: 1px solid #dce4ef;
+      border-radius: 8px;
+      padding: 1.2rem 1.3rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      transition: box-shadow 0.18s ease, transform 0.18s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 16px rgba(47, 110, 181, 0.13);
+      transform: translateY(-2px);
+    }
+
+    /* ── Card top row: name + source link ── */
+    .card-name-row {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .card-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #152540;
+      line-height: 1.35;
+    }
+
+    .card-name a {
+      color: #1d5fa6;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .card-name a:hover,
+    .card-name a:focus {
+      border-bottom-color: #1d5fa6;
+      outline: none;
+    }
+
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #5a7fa8;
+      text-decoration: none;
+      background: #eef3fa;
+      border: 1px solid #c5d6eb;
+      border-radius: 4px;
+      padding: 0.15rem 0.45rem;
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .source-link:hover,
+    .source-link:focus {
+      background: #d6e4f5;
+      color: #12427a;
+      outline: none;
+    }
+
+    .source-link::before {
+      content: '⬇';
+      font-size: 0.65rem;
+    }
+
+    /* ── Meta badges row ── */
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+    }
+
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.18rem 0.55rem;
+      border-radius: 20px;
+      line-height: 1.4;
+    }
+
+    .badge-type {
+      background: #e8f0fb;
+      color: #2557a0;
+      border: 1px solid #c2d5f0;
+    }
+
+    .badge-filetype {
+      background: #f0f4f0;
+      color: #336b42;
+      border: 1px solid #bcd4c0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.68rem;
+    }
+
+    /* ── Description ── */
+    .card-desc {
+      font-size: 0.875rem;
+      color: #3e5068;
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    /* ── Footer ── */
+    .page-footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #98afc9;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .module-header {
+        padding: 1rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Using PreseMaker</a></div>
+<div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
+
+  <div class="page-wrapper">
+
+    <p class="course-label">Course: Using PreseMaker</p>
+
+    <header class="module-header">
+      <h1>Generating a Module Breakdown from Source Material</h1>
+      <p>
+        This module guides you through the process of uploading source material into PreseMaker,
+        interpreting the AI-generated module breakdown, accepting or refining the proposed structure,
+        and understanding how your course content is stored on disk. Use the artifacts below to
+        explore each topic and access supporting resources.
+      </p>
+    </header>
+
+    <p class="artifacts-label">Module Artifacts — 7 items</p>
+
+    <div class="card-grid">
+
+      <!-- Card 1: Module Topics -->
+      <div class="card">
+        <div class="card-name-row">
+          <span class="card-name">
+            <a href="content/module_topics.html">Module Topics</a>
+          </span>
+          <a class="source-link" href="source/hierarchy.json">source file</a>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Module Topics</span>
+          <span class="badge badge-filetype">.json</span>
+        </div>
+        <p class="card-desc">
+          A structured list of all topics covered in this module — including uploading source material,
+          interpreting the AI-generated breakdown, accepting, and adjusting module structures — used by
+          instructors to see the module's scope at a glance and by learners as a navigation reference.
+        </p>
+      </div>
+
+      <!-- Card 2: How PreseMaker Analyzes Source Material -->
+      <div class="card">
+        <div class="card-name-row">
+          <span class="card-name">
+            <a href="content/Generating_a_Module_interactive_topics_t1.html">How PreseMaker Analyzes Source Material</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          An explanatory text page covering how PreseMaker uploads, reads, parses, and interprets
+          source material to drive course creation, intended for learners to read before working with
+          the platform so they understand what happens behind the scenes after an upload.
+        </p>
+      </div>
+
+      <!-- Card 3: Understanding the AI-Suggested Module Breakdown -->
+      <div class="card">
+        <div class="card-name-row">
+          <span class="card-name">
+            <a href="content/Generating_a_Module_interactive_topics_t2.html">Understanding the AI-Suggested Module Breakdown</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          An explanatory text page describing what the AI-generated module breakdown looks like, how
+          it is produced from uploaded source material, and what information each suggested module
+          contains, helping learners understand and interpret the output PreseMaker returns after analysis.
+        </p>
+      </div>
+
+      <!-- Card 4: Accepting the Proposed Module Structure -->
+      <div class="card">
+        <div class="card-name-row">
+          <span class="card-name">
+            <a href="content/Generating_a_Module_interactive_topics_t3.html">Accepting the Proposed Module Structure</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          An explanatory text page on the process and professional judgement involved in accepting
+          PreseMaker's proposed module structure, guiding course authors through evaluating whether
+          the AI suggestion is ready to serve as the foundation of their course.
+        </p>
+      </div>
+
+      <!-- Card 5: Adjusting and Replacing the Module Breakdown -->
+      <div class="card">
+        <div class="card-name-row">
+          <span class="card-name">
+            <a href="content/Generating_a_Module_interactive_topics_t4.html">Adjusting and Replacing the Module Breakdown</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          An explanatory text page covering the tools PreseMaker provides for editing, reordering,
+          rephrasing, and replacing an AI-generated module breakdown, intended to help course authors
+          refine the initial suggestion to match their instructional vision.
+        </p>
+      </div>
+
+      <!-- Card 6: Course and Module Storage (Topic Detail) -->
+      <div class="card">
+        <div class="card-name-row">
+          <span class="card-name">
+            <a href="content/Generating_a_Module_interactive_topics_t5.html">Course and Module Storage as Folders on Disk</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          An explanatory text page describing how PreseMaker stores courses and modules as a transparent
+          hierarchy of ordinary folders and files on disk, helping learners and instructors understand
+          the one-to-one relationship between the on-screen interface and the underlying file system.
+        </p>
+      </div>
+
+      <!-- Card 7: Course and Module Storage (Text Content) -->
+      <div class="card">
+        <div class="card-name-row">
+          <span class="card-name">
+            <a href="content/Generating_a_Module_interactive.html">Course and Module Storage as Folders on Disk</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Text Content</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          An explanatory text page describing how PreseMaker stores courses and modules as a transparent
+          hierarchy of ordinary folders and files on disk, helping learners and instructors understand
+          the one-to-one relationship between the on-screen interface and the underlying file system.
+        </p>
+      </div>
+
+    </div><!-- /.card-grid -->
+
+    <footer class="page-footer">
+      <p>Using PreseMaker &mdash; Generating a Module Breakdown from Source Material</p>
+    </footer>
+
+  </div><!-- /.page-wrapper -->
+
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+<section class="presemaker-extras" style="max-width:1000px;margin:2rem auto;padding:0 1rem;"><h2>Topics &amp; Learning Outcomes</h2><p><a href="topics-outcomes.html">View Topics &amp; Learning Outcomes</a></p></section><script src="embed-inject.js" defer></script></body>
+</html>

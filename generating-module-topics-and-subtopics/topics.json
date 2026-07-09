@@ -1,0 +1,961 @@
+{
+  "ModuleFolderName": "Generating_Module_Topics",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:21:32.7693029-04:00",
+  "ModifiedDate": "2026-07-08T19:23:32.6721044-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "573374b1-2ffc-496a-ab0d-a0b47a848c32",
+      "Title": "Introduction to Module Topics and Subtopics",
+      "Summary": "Overview of what module topics and subtopics are and why they serve as the foundational structure for all e-learning content. Establishes the purpose and importance of getting this structure right from the start.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:21:32.7693029-04:00",
+      "ModifiedDate": "2026-07-08T19:21:32.7693029-04:00",
+      "Elements": [
+        {
+          "Id": "29511810-4de7-4a87-8cf5-2976cf59a173",
+          "TopicId": "573374b1-2ffc-496a-ab0d-a0b47a848c32",
+          "Title": "What Are Module Topics?",
+          "BodyText": "Module topics are the major subject areas or learning units that make up an e-learning module.",
+          "Notes": "Think of topics as the chapter headings of a book \u2014 they signal distinct areas of content that learners will explore.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:21:51.7913528-04:00",
+          "ModifiedDate": "2026-07-08T19:21:51.7913528-04:00",
+          "Items": [
+            {
+              "Id": "29a344db-4d46-4a2f-8f03-5d7dd79ae3cb",
+              "Text": "Each topic represents a discrete, meaningful chunk of the overall subject matter.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a7fae29c-7f53-42b3-870e-49ddf2b63905",
+              "Text": "Topics are derived directly from the module\u0027s source materials to ensure alignment with intended learning goals.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "063d0d7f-a09e-4fe3-949c-f8718094b8f1",
+              "Text": "Together, the full list of topics forms the high-level outline of the entire module.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "887f0e93-36c3-4fb1-8192-6cbfd359bab3",
+          "TopicId": "573374b1-2ffc-496a-ab0d-a0b47a848c32",
+          "Title": "What Are Subtopics?",
+          "BodyText": "Subtopics break each module topic down into smaller, more focused concepts or steps.",
+          "Notes": "For example, a topic titled \u0027Generating Topics\u0027 might have subtopics such as \u0027How PreseMaker analyzes source content\u0027 and \u0027Reviewing the generated list.\u0027",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:21:51.7913528-04:00",
+          "ModifiedDate": "2026-07-08T19:21:51.7913528-04:00",
+          "Items": [
+            {
+              "Id": "e7a7c7cf-0f81-4f97-854a-c3156c0ac41c",
+              "Text": "Subtopics provide the granular detail that supports deep learning within each topic.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "27f11389-11a9-40ae-b490-27274bd092b8",
+              "Text": "Each subtopic should address a single, clearly defined idea or skill.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "04896966-265c-4444-9565-e8c7c9467985",
+              "Text": "The subtopics within a topic collectively cover that topic completely, without overlap or gaps.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "e23c3a66-322e-4bde-afcc-cf3e80dbacd4",
+          "TopicId": "573374b1-2ffc-496a-ab0d-a0b47a848c32",
+          "Title": "Why Topics and Subtopics Are the Foundational Structure",
+          "BodyText": "The topics-and-subtopics hierarchy is the architectural backbone upon which all other e-learning content is built.",
+          "Notes": "Every subsequent element \u2014 slides, assessments, narration scripts \u2014 traces back to this initial structure.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:21:51.7913528-04:00",
+          "ModifiedDate": "2026-07-08T19:21:51.7913528-04:00",
+          "Items": [
+            {
+              "Id": "70afb505-4768-4066-a8e7-e57933df0a1c",
+              "Text": "A clear structure ensures learners experience content in a logical, progressive sequence.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e4335e52-ce39-46b7-a679-4b6138ca8ea8",
+              "Text": "Content creators and subject-matter experts can review and validate scope before any detailed content is produced.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "be39b849-32be-4947-8e4f-58f36e9e6f19",
+              "Text": "Downstream tools and processes depend on a well-formed topic list to generate accurate, relevant material.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "87cd3d97-66fd-4341-baf6-f02dec3625be",
+          "TopicId": "573374b1-2ffc-496a-ab0d-a0b47a848c32",
+          "Title": "The Purpose of Getting the Structure Right Early",
+          "BodyText": "Establishing an accurate topic and subtopic structure at the outset prevents costly rework in later stages of development.",
+          "Notes": "Errors in the foundational structure tend to multiply \u2014 a misnamed topic can cause misaligned slides, assessments, and learning objectives throughout the module.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:21:51.7913528-04:00",
+          "ModifiedDate": "2026-07-08T19:21:51.7913528-04:00",
+          "Items": [
+            {
+              "Id": "9380c96e-79dc-4442-b8df-dd66464ff5e3",
+              "Text": "Early validation of topics allows stakeholders to agree on scope before significant effort is invested in content creation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4bd15817-3eb4-4272-83fe-93ccf131ef18",
+              "Text": "A solid structure reduces ambiguity for instructional designers working on detailed content later.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8851a648-23fc-4b59-81b8-4d9ab592d53e",
+              "Text": "Corrections made at the topic-and-subtopic stage are far less disruptive than changes made after full content has been authored.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "fd3a9a98-37c1-4b41-b211-ac0d226fbc78",
+          "TopicId": "573374b1-2ffc-496a-ab0d-a0b47a848c32",
+          "Title": "How PreseMaker Generates Topics and Subtopics",
+          "BodyText": "PreseMaker analyzes a module\u0027s source materials to automatically produce a structured list of topics and subtopics.",
+          "Notes": "This automated analysis accelerates the planning phase and surfaces a content structure grounded in the actual source material rather than guesswork.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:21:51.7913528-04:00",
+          "ModifiedDate": "2026-07-08T19:21:51.7913528-04:00",
+          "Items": [
+            {
+              "Id": "e2b4b917-aaae-43b1-b742-dd14d0c7ac5d",
+              "Text": "The system reads and interprets the provided source content to identify key themes and concepts.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3a20ca71-5a6c-4f4e-8654-8c0ffa4d33c8",
+              "Text": "Generated topics and subtopics reflect the scope and emphasis present in the source materials.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "96e5601e-65fb-4bc2-9472-8ab079afa18b",
+              "Text": "Learners can then browse, review, and edit the generated list to refine it before moving forward.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "9d4ba366-7a42-4b54-a6de-5806e61e097a",
+      "Title": "How PreseMaker Analyzes Source Materials",
+      "Summary": "Explains the process PreseMaker uses to examine uploaded or provided source materials and extract meaningful themes. Covers the logic behind how raw content is interpreted and converted into a structured topic list.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:21:32.7693029-04:00",
+      "ModifiedDate": "2026-07-08T19:21:32.7693029-04:00",
+      "Elements": [
+        {
+          "Id": "2d0ca7f1-92a1-4aab-8ce3-4daf28ce56f9",
+          "TopicId": "9d4ba366-7a42-4b54-a6de-5806e61e097a",
+          "Title": "Ingesting Uploaded or Provided Source Materials",
+          "BodyText": "PreseMaker begins its analysis by reading all source materials supplied for the module, whether uploaded files or directly provided text.",
+          "Notes": "Supported inputs may include documents, slides, outlines, transcripts, or pasted text blocks.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:22:10.2583204-04:00",
+          "ModifiedDate": "2026-07-08T19:22:10.2583204-04:00",
+          "Items": [
+            {
+              "Id": "8b6e483f-76c2-4067-ab79-80d2cc61bd8d",
+              "Text": "All provided content is treated as a unified body of raw material before any extraction begins.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6da6802f-6e68-45fe-8043-834edda646b8",
+              "Text": "PreseMaker processes the full scope of the input rather than sampling portions, helping ensure comprehensive coverage.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "117813b5-2351-433f-8556-e9e8087bab8a",
+          "TopicId": "9d4ba366-7a42-4b54-a6de-5806e61e097a",
+          "Title": "Identifying Key Themes and Concepts",
+          "BodyText": "Once the source material is ingested, PreseMaker scans for recurring ideas, central arguments, and distinct subject areas that represent meaningful themes.",
+          "Notes": "Themes are identified based on frequency, prominence, and conceptual distinctiveness within the content.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:22:10.2583204-04:00",
+          "ModifiedDate": "2026-07-08T19:22:10.2583204-04:00",
+          "Items": [
+            {
+              "Id": "c8f00279-fd0f-4d35-a8db-e7f65d055121",
+              "Text": "Repeated terms, headings, and emphasized concepts signal high-priority themes to the analysis engine.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "394ffc25-5380-4bcb-9420-db717a7f20e1",
+              "Text": "Loosely related ideas are grouped together to form coherent conceptual clusters rather than being listed as isolated points.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e53c191c-4e23-4cd6-a27f-32c4f77dff7c",
+              "Text": "Themes that appear only marginally in the source may be deprioritized or omitted from the topic list.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "e91703bc-acf6-4117-a875-06a1fe571d53",
+          "TopicId": "9d4ba366-7a42-4b54-a6de-5806e61e097a",
+          "Title": "Converting Raw Content into Structured Topics",
+          "BodyText": "Identified themes are transformed from unstructured source material into discrete, learner-facing topic entries that form the Module Topics list.",
+          "Notes": "This conversion step imposes logical order and instructional framing onto content that may originally have been unorganized.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:22:10.2583204-04:00",
+          "ModifiedDate": "2026-07-08T19:22:10.2583204-04:00",
+          "Items": [
+            {
+              "Id": "c45d9642-a856-461b-a7e2-3defbfc18dfe",
+              "Text": "Each extracted theme is reframed as a clear, teachable topic with a defined scope.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f4f397a5-3d49-470d-a2d9-5324fd53d65f",
+              "Text": "Topics are sequenced to reflect a logical instructional flow, typically moving from foundational to more complex ideas.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2d226a64-cf1a-4211-ba2e-019695e8618a",
+              "Text": "The resulting list serves as the structural blueprint for all content generated in subsequent steps.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b43cb441-7e54-497a-afda-79a14e0104d6",
+          "TopicId": "9d4ba366-7a42-4b54-a6de-5806e61e097a",
+          "Title": "Inferring Instructional Intent from the Source",
+          "BodyText": "PreseMaker does not simply extract words \u2014 it interprets the instructional purpose behind the source material to ensure topics align with learning goals.",
+          "Notes": "For example, a source document heavy with procedural steps signals task-based topics, while a conceptual essay signals knowledge-based topics.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:22:10.2583204-04:00",
+          "ModifiedDate": "2026-07-08T19:22:10.2583204-04:00",
+          "Items": [
+            {
+              "Id": "84c66945-8a3a-42e9-9ec8-ac484f756dc6",
+              "Text": "The tone, format, and structure of the source material provide contextual cues about the intended audience and depth of coverage.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "28fd4e48-be08-46ec-995e-1745d5b40aa4",
+              "Text": "Procedural content is recognized and mapped to step-oriented topics, while explanatory content is mapped to concept-oriented topics.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "59535ee7-1901-41f6-a864-79cebff4ba51",
+              "Text": "This intent-driven interpretation helps produce a topic list that feels purposeful rather than merely extracted.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "132fa175-a3b5-493a-b968-2461ae139c89",
+          "TopicId": "9d4ba366-7a42-4b54-a6de-5806e61e097a",
+          "Title": "Producing the Initial Topic List for Review",
+          "BodyText": "The output of PreseMaker\u0027s analysis is a draft Module Topics list that learners and authors can browse, evaluate, and edit before proceeding.",
+          "Notes": "This draft is a starting point, not a final product \u2014 human review is an expected and encouraged part of the workflow.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:22:10.2583204-04:00",
+          "ModifiedDate": "2026-07-08T19:22:10.2583204-04:00",
+          "Items": [
+            {
+              "Id": "833158d7-6b49-4e3f-9d80-6fefaa550226",
+              "Text": "Each topic in the list is drawn directly from patterns found in the source, giving authors a traceable connection between input and output.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c2abd538-6b86-4665-99af-16e433462056",
+              "Text": "The draft list may be accepted as-is, reordered, renamed, or supplemented based on the author\u0027s instructional judgment.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d7baa351-7821-43a6-9340-ea97fb56124e",
+              "Text": "Getting the topic list right at this stage reduces the need for corrections in all downstream content generation steps.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "6380d5ff-4b3c-4dc7-b85c-54b4490057f0",
+      "Title": "Generating the Module Topics List",
+      "Summary": "Walks learners through the steps to trigger and complete the topic generation process within PreseMaker. Covers what to expect as output and how the generated list relates to the original source materials.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:21:32.7693029-04:00",
+      "ModifiedDate": "2026-07-08T19:21:32.7693029-04:00",
+      "Elements": [
+        {
+          "Id": "8ffd5b41-0ba0-4d4b-8c73-f7a978b970c2",
+          "TopicId": "6380d5ff-4b3c-4dc7-b85c-54b4490057f0",
+          "Title": "Navigating to the Topic Generation Feature",
+          "BodyText": "Before generating topics, learners must locate the correct area within PreseMaker where source materials are linked to a module.",
+          "Notes": "In the Module Manager, this is presented as Step 1 — Create Module Topics.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:22:29.2408508-04:00",
+          "ModifiedDate": "2026-07-08T19:22:29.2408508-04:00",
+          "Items": [
+            {
+              "Id": "e949d997-e45e-430f-81c9-b7266e90082f",
+              "Text": "Open the target module from the Course Manager to reach its Module Manager.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "68a9fc27-c430-4df2-9f0f-119ac17ee1a8",
+              "Text": "Confirm that source materials have been uploaded or linked to the module before proceeding.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e36d8344-ef3f-4520-b9e3-8a84b3422533",
+              "Text": "In the Module Manager, use Step 1 — Create Module Topics to generate the topics from the module source material.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b23ef089-d31d-498b-8517-85631b552513",
+          "TopicId": "6380d5ff-4b3c-4dc7-b85c-54b4490057f0",
+          "Title": "Triggering the Topic Generation Process",
+          "BodyText": "Once source materials are in place, learners initiate the generation process with a single action that prompts PreseMaker to analyze the content.",
+          "Notes": "The generation process may take a few seconds to a minute depending on the length and complexity of the source materials.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:22:29.2408508-04:00",
+          "ModifiedDate": "2026-07-08T19:22:29.2408508-04:00",
+          "Items": [
+            {
+              "Id": "bac2a002-13f8-4c60-8264-6a83a9f507a7",
+              "Text": "Start Step 1 — Create Module Topics to begin the automated analysis of your source materials.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b0dbc389-4a64-4310-ad8e-c3e4dd427b57",
+              "Text": "A progress indicator will appear to show that PreseMaker is actively processing the content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c44b5ee6-1dfb-4e6a-a5e5-59cc793623b6",
+              "Text": "Do not navigate away from the module during generation to avoid interrupting the process.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f2719644-41eb-494e-bce9-44cc34770ed9",
+          "TopicId": "6380d5ff-4b3c-4dc7-b85c-54b4490057f0",
+          "Title": "Understanding the Generated Output",
+          "BodyText": "After processing completes, PreseMaker displays a structured Module Topics list derived directly from the source materials.",
+          "Notes": "The output reflects the main themes and logical sections PreseMaker identified in your source content. Topics are presented in a suggested sequence.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:22:29.2408508-04:00",
+          "ModifiedDate": "2026-07-08T19:22:29.2408508-04:00",
+          "Items": [
+            {
+              "Id": "c355e303-92c8-43d0-8768-45da3aef9287",
+              "Text": "The generated list presents topics as discrete, titled items organized in a suggested instructional order.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "02575afb-458d-4f16-a86f-f1f413ae7e8d",
+              "Text": "Each topic in the list represents a distinct concept or section drawn from the source materials.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f6a12a52-841c-491d-828f-c90aa180e6cb",
+              "Text": "The number of topics generated will vary based on the scope and depth of the uploaded content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a3c04a81-e06d-4290-bbd3-a44f1df43102",
+          "TopicId": "6380d5ff-4b3c-4dc7-b85c-54b4490057f0",
+          "Title": "How Generated Topics Relate to Source Materials",
+          "BodyText": "PreseMaker maps each generated topic back to specific portions of the original source content, maintaining a traceable connection.",
+          "Notes": "This relationship ensures that the topics list is grounded in the actual material rather than being generic or invented.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:22:29.2408508-04:00",
+          "ModifiedDate": "2026-07-08T19:22:29.2408508-04:00",
+          "Items": [
+            {
+              "Id": "83ea6d94-8554-48fc-986d-4502f9426ef0",
+              "Text": "Each topic corresponds to identifiable sections, themes, or concepts present in the source materials.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "73530605-d983-4c40-a0b0-7712d5346459",
+              "Text": "Topics are not created arbitrarily \u2014 they reflect the structure and emphasis found within the uploaded content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6f80544f-9d32-4b5a-aeff-71ef85f47857",
+              "Text": "Reviewing the source materials alongside the generated list helps learners verify accuracy and coverage.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f2de7277-46d5-47fc-a7a6-11b98cccfe0e",
+          "TopicId": "6380d5ff-4b3c-4dc7-b85c-54b4490057f0",
+          "Title": "Reviewing the Completeness of the Topics List",
+          "BodyText": "After generation, learners should evaluate whether the topics list fully and accurately represents the intended scope of the module.",
+          "Notes": "A quick comparison between the source material outline and the generated topics can reveal gaps or over-represented areas.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:22:29.2408508-04:00",
+          "ModifiedDate": "2026-07-08T19:22:29.2408508-04:00",
+          "Items": [
+            {
+              "Id": "f6de129f-1cf6-46ed-8ab3-b44cdb1ec543",
+              "Text": "Scan the entire generated list to confirm all major subject areas from the source content are represented.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "07342c03-f365-40ee-92bf-ad008599cc06",
+              "Text": "Look for topics that appear too broad, too narrow, or missing entirely compared to the source material.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "86d53fd6-3cf9-4009-87be-4c2682667a4b",
+              "Text": "Note any topics that seem redundant or that could be logically merged with adjacent items.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "645c4514-c456-48cc-88f1-e0994ecf31f4",
+          "TopicId": "6380d5ff-4b3c-4dc7-b85c-54b4490057f0",
+          "Title": "Why Getting Topics Right Early Matters",
+          "BodyText": "The Module Topics list serves as the structural foundation for all subsequent content generation steps in PreseMaker.",
+          "Notes": "Changes made to topics later in the workflow can require regenerating subtopics and other downstream content, so early accuracy saves significant rework.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:22:29.2408508-04:00",
+          "ModifiedDate": "2026-07-08T19:22:29.2408508-04:00",
+          "Items": [
+            {
+              "Id": "96064b21-99d2-4ae5-af98-4f2ba024eb11",
+              "Text": "Subtopics, content elements, and assessments are all built upon the initial topics list.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "da7e79aa-4317-4fdd-851c-6e97a57f02ed",
+              "Text": "Inaccurate or incomplete topics at this stage will propagate errors into every later phase of content development.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "dc83bb22-a0c0-468b-a8a0-1b709d5fc274",
+              "Text": "Investing time to review and refine the topics list now reduces the need for extensive revisions later.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "30107159-2ff7-4c54-8ebe-4e775d532b59",
+      "Title": "Browsing and Reviewing Generated Topics",
+      "Summary": "Describes how to navigate and evaluate the Module Topics list once it has been generated. Learners explore how to assess whether the topics accurately reflect the intended scope and learning goals.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:21:32.7693029-04:00",
+      "ModifiedDate": "2026-07-08T19:21:32.7693029-04:00",
+      "Elements": [
+        {
+          "Id": "03da9fd3-f72a-4152-96f8-6fdd81bb9259",
+          "TopicId": "30107159-2ff7-4c54-8ebe-4e775d532b59",
+          "Title": "Locating the Module Topics List",
+          "BodyText": "After generation completes, the Module Topics list appears as the central workspace for reviewing your module structure.",
+          "Notes": "The list is typically displayed in a scrollable panel, with each topic shown as a labeled entry that can be expanded or collapsed.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:22:50.2474878-04:00",
+          "ModifiedDate": "2026-07-08T19:22:50.2474878-04:00",
+          "Items": [
+            {
+              "Id": "b34e0697-f36c-4125-9da7-c9d4a34c6a48",
+              "Text": "The Module Topics list populates automatically once PreseMaker finishes analyzing the source materials.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "924de3ea-f36e-43ed-8168-fd22eae1d732",
+              "Text": "Each entry in the list represents a discrete topic that PreseMaker identified as relevant to the module.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "73879703-bc40-4e94-8c32-682fdc709e4d",
+              "Text": "Learners should confirm the list is fully loaded before beginning their review.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3c5f2757-bf45-484e-b273-999f4b659594",
+          "TopicId": "30107159-2ff7-4c54-8ebe-4e775d532b59",
+          "Title": "Reading and Interpreting Topic Titles",
+          "BodyText": "Topic titles summarize the core idea PreseMaker extracted from the source content, giving you a quick snapshot of the proposed module structure.",
+          "Notes": "A well-formed topic title should be specific enough to distinguish it from neighboring topics but broad enough to encompass its subtopics.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:22:50.2474878-04:00",
+          "ModifiedDate": "2026-07-08T19:22:50.2474878-04:00",
+          "Items": [
+            {
+              "Id": "14d06d9f-60e5-4c6b-bf8b-9f52af3a3080",
+              "Text": "Scan all topic titles from top to bottom to get a high-level sense of the overall flow before diving into details.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a127832b-485a-4f62-b0e8-e2ee2c0bf091",
+              "Text": "Check whether each title accurately reflects a meaningful, standalone concept rather than a vague or overly broad label.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b0e9c7a2-427b-4b54-b684-26e9f78b1e54",
+              "Text": "Look for duplicate or overlapping titles that may indicate the generator combined or split content inappropriately.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "bb2f91eb-e5df-470c-ba7c-960070a6d1f0",
+          "TopicId": "30107159-2ff7-4c54-8ebe-4e775d532b59",
+          "Title": "Evaluating Coverage Against Learning Goals",
+          "BodyText": "A critical review step is comparing the generated topics against the intended scope and learning objectives of the module.",
+          "Notes": "It helps to keep the original module description or learning goals visible alongside the topics list during this evaluation.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:22:50.2474878-04:00",
+          "ModifiedDate": "2026-07-08T19:22:50.2474878-04:00",
+          "Items": [
+            {
+              "Id": "fd70f1e5-8c86-494b-9eff-43af705bd49a",
+              "Text": "Verify that every major learning goal stated in the module description is represented by at least one topic in the list.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e8fe6b7c-1403-4284-b2d4-7877c81db3d2",
+              "Text": "Identify any gaps where important concepts from the source materials appear to be missing entirely.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "014d29e7-2f45-4aee-8cf2-d33c564bdf12",
+              "Text": "Check for topics that fall outside the intended scope, which may indicate the source content included extraneous material.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "14d46aef-aba2-440e-8717-4d2d4c63022f",
+          "TopicId": "30107159-2ff7-4c54-8ebe-4e775d532b59",
+          "Title": "Assessing Topic Sequence and Logic",
+          "BodyText": "The order of topics affects how learners build understanding, so evaluating the sequence is as important as evaluating the content of individual topics.",
+          "Notes": "A logical sequence generally moves from foundational concepts to more complex ones, or follows the natural workflow of a process.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:22:50.2474878-04:00",
+          "ModifiedDate": "2026-07-08T19:22:50.2474878-04:00",
+          "Items": [
+            {
+              "Id": "1fcbab91-cbdf-49f4-86f0-aa1f567d8ad6",
+              "Text": "Review whether the topics flow in a progression that makes instructional sense for the target audience.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7ab30444-d9c9-45e7-b2a9-6a65b25593c4",
+              "Text": "Identify any topics that appear too early before necessary background has been established.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "df48c99a-efbb-4dc3-8634-5862da5d504b",
+              "Text": "Note topics that seem out of place or would benefit from being repositioned later in the sequence.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "db485567-ca3a-4b94-8f58-36e9bc6bc891",
+          "TopicId": "30107159-2ff7-4c54-8ebe-4e775d532b59",
+          "Title": "Checking Topic Granularity",
+          "BodyText": "Granularity refers to how finely or broadly each topic is scoped, and getting this right ensures topics are teachable in a single focused segment.",
+          "Notes": "A topic that is too broad may need to be split; one that is too narrow may need to be merged with a related topic.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:22:50.2474878-04:00",
+          "ModifiedDate": "2026-07-08T19:22:50.2474878-04:00",
+          "Items": [
+            {
+              "Id": "93b65b2c-f286-46f0-a663-7a81a8ad7b4d",
+              "Text": "A well-scoped topic should cover one coherent idea that can be fully addressed without becoming overwhelming.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "af94764c-260e-4045-b86e-fcfeb80e95a0",
+              "Text": "Topics that feel like they contain multiple unrelated ideas are candidates for being broken into separate entries.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "83598857-09cc-4d6e-bc2e-ed049b52db10",
+              "Text": "Very short or thin topics that share a theme with a neighbor may work better combined into a single topic.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a99238ac-49ce-42e6-b6d7-0178faffdc2e",
+          "TopicId": "30107159-2ff7-4c54-8ebe-4e775d532b59",
+          "Title": "Making Notes for Edits Before Proceeding",
+          "BodyText": "Before making changes, it is good practice to note all required adjustments so edits can be made systematically rather than piecemeal.",
+          "Notes": "Capturing observations in a single pass reduces the risk of overlooking issues and helps prioritize which changes matter most.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:22:50.2474878-04:00",
+          "ModifiedDate": "2026-07-08T19:22:50.2474878-04:00",
+          "Items": [
+            {
+              "Id": "efae5c2e-4e7b-4f52-a0cf-52c4a3d5f158",
+              "Text": "Record topics that need to be renamed, reordered, split, merged, added, or removed.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7d156e8f-e2e9-421c-a875-a125083be552",
+              "Text": "Prioritize corrections that affect scope or learning goal alignment first, as these have the greatest downstream impact.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "afb70dcc-7ad1-4e46-8536-c8cae295ca4a",
+              "Text": "A complete review pass before editing ensures the final topics list accurately reflects the intended module before generating downstream content.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "eb06daed-cc6d-4cba-8757-671867aa3ef0",
+      "Title": "Editing and Refining Topics and Subtopics",
+      "Summary": "Covers the tools and techniques available for modifying, reordering, adding, or removing topics and subtopics. Emphasizes best practices for ensuring the structure is accurate before proceeding to later steps.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:21:32.7693029-04:00",
+      "ModifiedDate": "2026-07-08T19:21:32.7693029-04:00",
+      "Elements": [
+        {
+          "Id": "d5c8dc58-aeb8-4bd8-a05b-73cf9b6d98f7",
+          "TopicId": "eb06daed-cc6d-4cba-8757-671867aa3ef0",
+          "Title": "Reviewing the Generated Topics List",
+          "BodyText": "Before making any edits, it is important to carefully review the full list of topics and subtopics that PreseMaker has generated from your source materials.",
+          "Notes": "Look for gaps, redundancies, or misrepresentations of the source content before deciding what changes to make.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:23:12.1093451-04:00",
+          "ModifiedDate": "2026-07-08T19:23:12.1093451-04:00",
+          "Items": [
+            {
+              "Id": "8611891d-d56b-45fd-95ca-6b983d671fe8",
+              "Text": "Scroll through the entire Module Topics list to get an overview of the structure as a whole.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "82b2b4a8-bdb2-4618-9721-838066b59e69",
+              "Text": "Check that each topic accurately reflects a meaningful segment of the source material.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "930c672f-da24-479e-8d85-f90d0e2718c9",
+              "Text": "Identify any topics or subtopics that seem out of place, duplicated, or missing before making targeted edits.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "2ced44c1-5011-4562-ae9b-b9bb241138e7",
+          "TopicId": "eb06daed-cc6d-4cba-8757-671867aa3ef0",
+          "Title": "Renaming Topics and Subtopics",
+          "BodyText": "PreseMaker allows you to rename any topic or subtopic to better reflect its actual content or to match your instructional language.",
+          "Notes": "Clear, descriptive titles improve navigation for learners and help collaborators understand the module structure at a glance.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:23:12.1093451-04:00",
+          "ModifiedDate": "2026-07-08T19:23:12.1093451-04:00",
+          "Items": [
+            {
+              "Id": "085e3980-20f9-4e5e-ae76-4a2cb4fe2eb0",
+              "Text": "Select the topic or subtopic you wish to rename and use the edit option to enter a new title.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "aa28a9de-64f7-4df0-a18e-61e1ac5b0200",
+              "Text": "Choose names that are concise yet descriptive enough to convey the scope of the content covered.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "eaac028d-f6af-4abf-9904-698ce6303702",
+              "Text": "Consistent naming conventions across topics help learners anticipate what they will encounter in each section.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "22cce800-0740-4388-9620-6d75e95804fe",
+          "TopicId": "eb06daed-cc6d-4cba-8757-671867aa3ef0",
+          "Title": "Reordering Topics and Subtopics",
+          "BodyText": "The sequence of topics and subtopics shapes the learning journey, and PreseMaker provides tools to drag or move items into a more logical order.",
+          "Notes": "A well-sequenced structure typically moves from foundational concepts to more complex ones, supporting progressive skill-building.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:23:12.1093451-04:00",
+          "ModifiedDate": "2026-07-08T19:23:12.1093451-04:00",
+          "Items": [
+            {
+              "Id": "4078bc08-1781-42c7-aa2e-80ac714e061f",
+              "Text": "Use the Move Up and Move Down controls to reposition a topic or subtopic within the list.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3e62e294-fc31-4b61-a334-fa5063e8e30b",
+              "Text": "Ensure prerequisite concepts appear before topics that depend on them to support learner comprehension.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "42ed7b78-cead-41c2-b1cc-70d8fd083ce5",
+              "Text": "Review the overall flow after reordering to confirm the revised sequence still feels cohesive and logical.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "54e9b29e-18af-47eb-8892-4ff8057e2e5c",
+          "TopicId": "eb06daed-cc6d-4cba-8757-671867aa3ef0",
+          "Title": "Adding New Topics or Subtopics",
+          "BodyText": "If the generated list is missing important content areas, you can manually add new topics or subtopics to fill those gaps.",
+          "Notes": "Adding subtopics is particularly useful for breaking down a broad topic into more manageable, learner-friendly chunks.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:23:12.1093451-04:00",
+          "ModifiedDate": "2026-07-08T19:23:12.1093451-04:00",
+          "Items": [
+            {
+              "Id": "261fd719-7cf2-4dff-bc8c-f95b7dd42663",
+              "Text": "Use the Add Topic or Add Subtopic control to insert a new item at the desired location in the list.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4f2e0016-bf2d-4093-bd03-a76c5ab3f624",
+              "Text": "Provide a clear title and, if prompted, a brief description so PreseMaker can align the new item with the right source content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9bd1493b-0262-435a-85a2-cd0439a82dfb",
+              "Text": "Avoid adding topics that fall outside the scope of the module\u0027s source materials, as later content generation relies on those materials.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "e6e64f04-6af5-427c-af02-eb724a31cc93",
+          "TopicId": "eb06daed-cc6d-4cba-8757-671867aa3ef0",
+          "Title": "Removing Unnecessary Topics or Subtopics",
+          "BodyText": "Removing redundant or out-of-scope items keeps the module focused and prevents learners from encountering irrelevant content.",
+          "Notes": "When in doubt about removing an item, consider whether its absence would create a gap in the learner\u0027s understanding.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:23:12.1093451-04:00",
+          "ModifiedDate": "2026-07-08T19:23:12.1093451-04:00",
+          "Items": [
+            {
+              "Id": "a4788411-20bf-41e0-8501-8096eab60041",
+              "Text": "Select the topic or subtopic you want to remove and confirm the deletion using the available remove or delete control.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "73bbedc7-9098-48d7-93ce-aef8989b29ef",
+              "Text": "Check whether removing an item affects the logical flow or leaves any dependent subtopics without a parent topic.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c2ee6c1b-be69-4688-9b31-c6fff042b4f0",
+              "Text": "Eliminating redundant subtopics that cover the same ground as another item helps streamline the overall module structure.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "bf99065c-9348-4ff2-b8f7-f4f8e10b1355",
+          "TopicId": "eb06daed-cc6d-4cba-8757-671867aa3ef0",
+          "Title": "Best Practices for Finalizing the Structure",
+          "BodyText": "Getting the topic structure right before moving to later steps is critical, because subsequent content generation in PreseMaker is built directly on this foundation.",
+          "Notes": "Changes made to topics after content has been generated in later steps may require those steps to be redone, making early accuracy especially valuable.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:23:12.1093451-04:00",
+          "ModifiedDate": "2026-07-08T19:23:12.1093451-04:00",
+          "Items": [
+            {
+              "Id": "798f7557-b2f4-419b-818e-b17e6cbd0a47",
+              "Text": "Treat the topic list as a blueprint \u2014 invest time refining it now to avoid rework in later stages of the module build.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c7b103c0-ba81-42c5-92e0-e4da9c7db86f",
+              "Text": "Cross-reference the final topic list against the original source materials to confirm all key areas are represented.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "0eb32678-bb49-44f7-a913-62e7180e458e",
+              "Text": "Have a colleague or subject-matter expert review the structure before proceeding to catch issues you may have overlooked.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "b149e885-1a73-47ac-819a-e8e8994d0993",
+              "Text": "Confirm that the hierarchy of topics and subtopics reflects the intended depth of coverage for each content area.",
+              "SortOrder": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "b04ae15a-b995-48cb-849d-bc724f800455",
+      "Title": "Impact of Topic Structure on Downstream Content",
+      "Summary": "Explains how the finalized topics and subtopics directly influence every subsequent stage of content creation in PreseMaker. Highlights why early accuracy in topic definition reduces rework and improves overall module quality.",
+      "SortOrder": 5,
+      "CreatedDate": "2026-07-08T19:21:32.7693029-04:00",
+      "ModifiedDate": "2026-07-08T19:21:32.7693029-04:00",
+      "Elements": [
+        {
+          "Id": "aebe724c-172d-4424-be8e-4486f4c848a4",
+          "TopicId": "b04ae15a-b995-48cb-849d-bc724f800455",
+          "Title": "Topics as the Foundation for All Downstream Content",
+          "BodyText": "The topics and subtopics defined early in PreseMaker act as the structural blueprint from which every subsequent content element is generated.",
+          "Notes": "Think of the topic list as a master outline \u2014 every slide, assessment question, and learning objective traces back to an entry in this list.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:23:32.6686758-04:00",
+          "ModifiedDate": "2026-07-08T19:23:32.6686758-04:00",
+          "Items": [
+            {
+              "Id": "ce80efcd-97b7-4148-b3d4-e259f93bb154",
+              "Text": "Each topic and subtopic directly determines what content PreseMaker generates in later stages, including slides, notes, and assessments.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7d799b64-14fd-430e-9718-eb1be777d36e",
+              "Text": "Omitting or mislabeling a topic at this stage means that entire area of content may be missing or misaligned in the final module.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f8eb5b7b-4e6c-4fc4-9678-073987b5e623",
+              "Text": "The hierarchy established in the topic list shapes how learners navigate and experience the finished module.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "baddc9d5-768b-4032-99b5-afae75b0b163",
+          "TopicId": "b04ae15a-b995-48cb-849d-bc724f800455",
+          "Title": "Cascading Effect of Topic Accuracy",
+          "BodyText": "Errors or vagueness in topic definitions do not stay isolated \u2014 they propagate through every content generation step that follows.",
+          "Notes": "For example, a topic titled too broadly may cause PreseMaker to generate unfocused slide content, while an overly narrow topic may produce redundant or fragmented sections.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:23:32.6686758-04:00",
+          "ModifiedDate": "2026-07-08T19:23:32.6686758-04:00",
+          "Items": [
+            {
+              "Id": "baee794c-040d-4c84-a0e5-7ce9f4bc9d1a",
+              "Text": "A poorly scoped topic can cause downstream content to be either too broad, covering unrelated ideas, or too narrow, missing key concepts.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "afb68602-bafc-4be6-8f66-72d89242839d",
+              "Text": "Inaccurate topic titles may cause PreseMaker\u0027s AI to misinterpret the instructional intent, producing content that requires extensive manual correction.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f2bf1051-8236-428b-9c47-0fa8c1f0cd0b",
+              "Text": "Corrections made late in the workflow \u2014 after slides and assessments are generated \u2014 are significantly more time-consuming than fixing topics early.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "73a9a640-78ca-4ae7-8ced-3476ecf26f09",
+          "TopicId": "b04ae15a-b995-48cb-849d-bc724f800455",
+          "Title": "Reducing Rework Through Early Topic Validation",
+          "BodyText": "Investing time to review and refine topics before proceeding to content generation is the single most effective way to reduce overall rework in PreseMaker.",
+          "Notes": "Instructional designers who validate topics against the source materials and learning objectives before advancing report fewer revision cycles in later stages.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:23:32.6686758-04:00",
+          "ModifiedDate": "2026-07-08T19:23:32.6686758-04:00",
+          "Items": [
+            {
+              "Id": "91f01d83-4dab-44c2-b1c4-9ccec21077d8",
+              "Text": "Validating that each topic maps clearly to the source material ensures generated content stays accurate and relevant.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c60b7156-bd87-412b-be39-629e18de7246",
+              "Text": "Confirming topic coverage at the outline stage prevents gaps that would otherwise require new content to be inserted mid-production.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7224f44b-4d25-4f2f-a1d5-ed072b328343",
+              "Text": "Early accuracy in topic definition shortens total production time by minimizing the need to regenerate or manually rewrite downstream assets.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "48ce0a2b-bd8e-4bd8-85c1-9771e5c03524",
+          "TopicId": "b04ae15a-b995-48cb-849d-bc724f800455",
+          "Title": "Topic Structure and Module Quality",
+          "BodyText": "A well-structured topic list directly improves the coherence, flow, and instructional quality of the completed module.",
+          "Notes": "Logical sequencing of topics \u2014 moving from foundational to complex concepts, for instance \u2014 is reflected in the final presentation order and supports better learner comprehension.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:23:32.6686758-04:00",
+          "ModifiedDate": "2026-07-08T19:23:32.6686758-04:00",
+          "Items": [
+            {
+              "Id": "2fc58876-9b12-4ec5-b010-25569060fdf7",
+              "Text": "Topics arranged in a logical sequence guide PreseMaker to generate content that builds on prior knowledge in a pedagogically sound order.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "18f5b967-8928-48b5-a5fe-b49f000228ef",
+              "Text": "Clear, distinct subtopics help ensure each section of the module addresses a single focused concept, improving learner clarity.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "78189776-3595-4546-97c7-829f4deaab39",
+              "Text": "A high-quality topic structure reduces the likelihood of redundant content appearing across multiple sections of the module.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "96069e31-8c69-49bd-aaec-a9523105a23f",
+          "TopicId": "b04ae15a-b995-48cb-849d-bc724f800455",
+          "Title": "Dependency Chain from Topics to Final Output",
+          "BodyText": "PreseMaker\u0027s content generation pipeline treats the topic list as a dependency \u2014 each stage relies on the stage before it, starting with topics.",
+          "Notes": "This dependency model means that the topic list is the highest-leverage point in the entire workflow; changes here have the widest impact.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:23:32.6686758-04:00",
+          "ModifiedDate": "2026-07-08T19:23:32.6686758-04:00",
+          "Items": [
+            {
+              "Id": "b2cd490b-91bf-4b8f-a29d-77bb14a7d512",
+              "Text": "Slide content, speaker notes, knowledge checks, and summaries are all generated based on the approved topic and subtopic list.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "93a44401-22f7-4d28-8d46-7c501e30a18d",
+              "Text": "Changing a topic after downstream content has been generated typically requires that content to be regenerated or manually updated.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ff752547-694f-4d58-ac91-105d0a407125",
+              "Text": "Understanding this dependency encourages learners to treat topic generation as a critical milestone, not a preliminary step to rush through.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 33
+}

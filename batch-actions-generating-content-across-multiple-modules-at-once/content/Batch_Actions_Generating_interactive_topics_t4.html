@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitoring Live Batch Progress</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Batch Actions: Generating Content Across Multiple Modules at Once</a></div>
+  <header>
+    <h1>Monitoring Live Batch Progress</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Monitoring Live Batch Progress</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you launch a batch generation run in Course Manager, you don't simply click a button and wait in the dark. A dedicated live progress panel immediately becomes the central hub for everything happening during the run. Understanding how to read and interpret every element of that panel — from individual module status lines to the overall completion counter — gives you full situational awareness throughout the process, no matter how large or complex the batch may be.</p>
+
+<p>The live progress panel is displayed prominently within the Course Manager interface the moment a batch run begins. Rather than scattering status information across multiple screens or requiring you to open each module individually to check on it, the panel consolidates the real-time state of <em>every</em> selected module into a single, readable view. Nothing is hidden or tucked behind a secondary menu. Crucially, the panel updates automatically and continuously — there is no need to manually refresh the page or click a reload button. What you see on screen always reflects the current, live state of the batch.</p>
+
+<p>This design matters in practice because batch runs can involve dozens of modules running sequentially, and instructors frequently need to step away briefly, answer a message, or attend to something else. When they return, a single glance at the panel immediately re-orients them: how far along is the batch, which module is active right now, and has anything gone wrong.</p>
+
+<p><strong>Per-Module Status Indicators</strong></p>
+
+<p>Each module in the batch has its own status line within the panel, and that line is far more informative than a simple "running / done" toggle. The status line provides granular progress information at the topic level. For example, while a module is being generated you will see an indicator reading something like <em>Topic 3 of 7</em>, updating as each successive topic is completed. This means that even for a module with many topics — one that will take several minutes to finish — the status line shows visible, continuous movement. You are never left wondering whether the system has stalled or is silently making progress.</p>
+
+<p>Beyond the topic-level counter, each module's status line carries one of several discrete indicators at any given moment:</p>
+
+<ul>
+  <li><strong>In Progress:</strong> This indicator signals that content is actively being generated for that module right now. Only one module carries this indicator at a time during a sequential batch run. It is the "currently active" signal.</li>
+  <li><strong>Completed:</strong> This indicator confirms that the module's content has been fully generated and successfully saved. Once a module reaches this state it remains there for the rest of the run, giving you an at-a-glance record of everything that has finished.</li>
+  <li><strong>Queued / Waiting:</strong> Modules that have been selected but have not yet started processing are shown as waiting. This distinguishes them clearly from modules that are actively running or have already finished.</li>
+  <li><strong>Failed / Error:</strong> This indicator flags any module where generation did not complete successfully. It is visually distinct — typically a different color or icon — so it stands out immediately even in a long list of modules. It does not mean the batch has stopped; it simply marks that specific module as one requiring follow-up.</li>
+</ul>
+
+<p>Consider a practical example. Suppose you launch a batch containing eight modules. After a few minutes the panel might look like this in terms of status:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Status</th>
+      <th>Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Introduction to Data Types</td>
+      <td>Completed</td>
+      <td>All 5 topics generated and saved</td>
+    </tr>
+    <tr>
+      <td>Variables and Scope</td>
+      <td>Completed</td>
+      <td>All 6 topics generated and saved</td>
+    </tr>
+    <tr>
+      <td>Control Flow</td>
+      <td>In Progress</td>
+      <td>Topic 4 of 7</td>
+    </tr>
+    <tr>
+      <td>Functions and Closures</td>
+      <td>Queued</td>
+      <td>Waiting</td>
+    </tr>
+    <tr>
+      <td>Error Handling</td>
+      <td>Queued</td>
+      <td>Waiting</td>
+    </tr>
+    <tr>
+      <td>Working with APIs</td>
+      <td>Queued</td>
+      <td>Waiting</td>
+    </tr>
+    <tr>
+      <td>Data Structures</td>
+      <td>Queued</td>
+      <td>Waiting</td>
+    </tr>
+    <tr>
+      <td>Testing Fundamentals</td>
+      <td>Queued</td>
+      <td>Waiting</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This kind of view makes the state of the entire batch immediately legible without needing to interpret logs or navigate away from the panel.</p>
+
+<p><strong>Overall Batch Completion Counter</strong></p>
+
+<p>Alongside the per-module status lines, the panel displays a summary-level completion counter. This counter shows the number of modules that have reached a completed state alongside the total number of modules included in the batch — for example, <em>3 of 8 modules completed</em>. The counter increments each time an individual module transitions to the completed state, so it moves forward in discrete, observable steps throughout the run.</p>
+
+<p>The practical value of the counter is in time estimation. If you know from experience that each module in your course takes roughly two to three minutes to generate, and the counter shows 4 of 10 modules completed after approximately ten minutes, you can reasonably estimate that the remaining six modules will take another fifteen to eighteen minutes. This helps you decide whether to stay at your desk and watch the panel through to completion or whether you have time to step away and return later.</p>
+
+<p>It is worth noting that the counter reflects <em>completed</em> modules specifically — modules that end in an error state are counted separately and do not increment the completion counter. This keeps the counter an honest measure of successfully generated content rather than simply a measure of modules that are no longer actively processing.</p>
+
+<p><strong>Reading Generation Order and Queue Position</strong></p>
+
+<p>Modules are not processed in a random or unpredictable order. The batch processes modules in the order they were selected before the run was launched. This predictability is important: it means you can look at the panel and know not just what is happening <em>now</em>, but what will happen <em>next</em>.</p>
+
+<p>The panel visually distinguishes between the currently active module, the completed modules above it, and the queued modules below it. The currently active module — the one carrying the <em>In Progress</em> indicator — is your anchor point. Everything above it is done; everything below it is still waiting its turn.</p>
+
+<p>This queue visibility is particularly useful when you have a module you are especially eager to review. If you can see that the module you care about most is third in the queue and the current module is already at Topic 5 of 6, you know the module you are waiting for will begin very soon. Conversely, if your most important module is seventh of ten, you have time to do other work and return later without missing its generation window.</p>
+
+<p><strong>Interpreting Error or Warning Signals</strong></p>
+
+<p>One of the most important things to understand about error signals in the live progress panel is their <em>scope</em>. An error on one module does not automatically halt the entire batch. The failed module is marked with an error indicator, and the batch continues processing the remaining queued modules without interruption. This behavior is intentional and beneficial: a single problematic module should not block content generation for the other seven or seventeen modules in your batch.</p>
+
+<p>When a module fails, the status line may display a brief warning message describing why generation did not complete successfully. Common reasons include connectivity interruptions, content policy flags on specific topic material, or timeouts during generation of a particularly complex topic. These brief messages give you enough information to understand the likely cause and plan a fix.</p>
+
+<p>The recommended approach when you see error indicators appear during a run is straightforward: note which modules are flagged but do not interrupt the batch. Let the run complete in full. Once the batch is finished, you will address the failed modules individually — either by re-running generation for just those modules, adjusting their topic definitions, or investigating the specific warning messages more carefully. Attempting to intervene during the run itself is rarely necessary and can complicate the process.</p>
+
+<p><strong>Tracking Completion to Know When the Batch Has Finished</strong></p>
+
+<p>The batch run reaches its conclusion when every module has transitioned out of the <em>In Progress</em> or <em>Queued</em> state — that is, when every module has reached either a <em>Completed</em> or <em>Failed/Error</em> state. At this point, no further generation is occurring anywhere in the batch.</p>
+
+<p>The panel signals this final state clearly. A concluding status message appears — something along the lines of <em>Batch complete: 7 of 8 modules generated successfully, 1 module encountered an error</em> — and the visual state of the panel changes to indicate that the run is fully done. The in-progress animation or activity indicator associated with the active module disappears, and the panel becomes static.</p>
+
+<p>This final signal is your cue that it is safe to navigate away from the panel. You can now move into Course Manager's normal module view and begin reviewing the generated content in each completed module, checking topic bodies, making edits, or publishing material as appropriate. Any modules that ended in an error state are your priority follow-up items — they will contain no generated content and will need to be addressed before their material is available to learners.</p>
+
+<p>Building the habit of reading the live progress panel fluently — understanding what each indicator means, how the counter reflects true completion, and how error signals should inform (but not necessarily interrupt) your workflow — makes batch generation a smooth, low-anxiety process even when running large course builds with many modules at once.</p>
+        <div class="notes"><strong>Notes</strong>Describes how to read and interpret the live progress indicators displayed during an active batch run to track generation status across modules.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

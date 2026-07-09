@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primary vs. Secondary Sources</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Creating a Course: The Course Manager and Source Materials</a></div>
+  <header>
+    <h1>Primary vs. Secondary Sources</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Primary vs. Secondary Sources</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When building a course in PreseMaker, one of the most consequential decisions you make before the AI ever generates a single slide is how you designate your source materials. PreseMaker draws a firm distinction between a <strong>primary source</strong> and <strong>secondary sources</strong>, and understanding this distinction is essential because it directly controls what the AI produces — the course outline, the sequence of modules, the tone, and the depth of every section. Getting this designation right means the difference between an AI-generated course that feels intentional and well-structured and one that feels scattered or off-topic.</p>
+
+<p>Think of your source materials the way an architect thinks about blueprints versus reference books. The blueprint determines the shape of the building — its rooms, its flow, its purpose. Reference books inform the details inside those rooms. In PreseMaker, your primary source is the blueprint and your secondary sources are the reference materials that enrich what gets built inside the structure the blueprint defines.</p>
+
+<p><strong>Defining Primary Sources in PreseMaker</strong></p>
+
+<p>A primary source in PreseMaker is the single anchor document or input that the AI treats as the authoritative foundation for the entire course. The most important rule here is that <em>only one source can be designated as the primary source per course creation session</em>. You cannot split this role between two files or tell the AI to treat two documents equally — one must take precedence, and that one is your primary source.</p>
+
+<p>The primary source carries the greatest influence on the overall structure, tone, and content of the AI-generated course. When the AI reads your primary source, it extracts the core subject matter, identifies logical divisions in the content, and uses those divisions to propose a module sequence and a set of key learning points. If your primary source is a PowerPoint presentation with twelve organized slides, the AI is likely to reflect that twelve-section structure in the course outline. If your primary source is a dense written description of a single workflow, the AI will anchor the course to that workflow.</p>
+
+<p>PreseMaker accepts several material types as primary sources:</p>
+
+<ul>
+  <li><strong>PowerPoint files</strong> — uploaded directly into the platform</li>
+  <li><strong>Written descriptions</strong> — typed or pasted outlines and summaries</li>
+  <li><strong>Documents</strong> — such as Word files, PDFs, or similar text-based files</li>
+  <li><strong>Web pages</strong> — by providing a URL that PreseMaker can read</li>
+  <li><strong>Pasted text</strong> — raw content copied directly into the input field</li>
+  <li><strong>YouTube transcripts</strong> — allowing video content to serve as a course foundation</li>
+</ul>
+
+<p>Each of these types brings a different kind of structural signal to the AI. A PowerPoint file, for example, already has an inherent hierarchy — title slides, section headers, bullet points — which the AI can translate very naturally into a course outline. A YouTube transcript, on the other hand, is more conversational and linear, so the AI has to work harder to impose structure, making it a usable but sometimes less precise primary source than a well-organized document.</p>
+
+<p><strong>Defining Secondary Sources in PreseMaker</strong></p>
+
+<p>Secondary sources play a supporting role. Unlike the primary source, <em>multiple secondary sources can be added to a single course</em>. You might have one primary source and three, four, or more secondary sources all active in the same session. Each secondary source contributes its own information to the pool the AI draws from, but none of them overrides the structure established by the primary source.</p>
+
+<p>Secondary sources influence the depth and breadth of content. If your primary source defines a module on "Customer Onboarding Steps," a secondary source containing detailed case studies about onboarding challenges gives the AI specific examples and supplementary explanations to populate that module with richer content. The module itself — its existence, its position in the course, its title — was determined by the primary source. The secondary source simply makes what goes inside that module more substantive.</p>
+
+<p>Importantly, the same material types accepted as primary sources can also serve as secondary sources. A web page, a document, pasted text, a YouTube transcript — any of these can be designated secondary. This flexibility means you can mix and match material types freely as long as you are clear about which one holds the primary role.</p>
+
+<p>A practical example helps illustrate the relationship. Suppose you are building a course on workplace safety regulations. You have:</p>
+
+<ul>
+  <li>A comprehensive PDF of OSHA guidelines (your candidate for primary source)</li>
+  <li>A YouTube transcript from a safety training video</li>
+  <li>A web page summarizing common workplace injury statistics</li>
+  <li>A pasted internal company policy document</li>
+</ul>
+
+<p>Designating the OSHA PDF as primary means the AI builds the course outline around OSHA's own organizational logic — hazard categories, compliance requirements, inspection procedures. The YouTube transcript, injury statistics page, and company policy document are added as secondary sources. The AI uses them to add examples, real-world context, and company-specific nuance inside the structure OSHA's document already established. If you had mistakenly designated the YouTube transcript as primary, the AI might have organized the course around the order topics happened to come up in that video rather than around the logical regulatory framework the OSHA PDF provides.</p>
+
+<p><strong>How Source Designation Affects AI Generation</strong></p>
+
+<p>The AI generation process in PreseMaker is directly shaped by which source holds the primary designation at every level of course creation.</p>
+
+<p>First, the AI uses the primary source to determine the <em>course outline</em>. It reads the primary source's structure — its headers, sections, logical groupings — and proposes a sequence of modules that mirrors that structure. This is why choosing a well-organized primary source pays dividends: a primary source with clear internal organization produces a cleaner, more logical course outline with less need for manual correction afterward.</p>
+
+<p>Second, the AI uses the primary source to establish the <em>module sequence</em>. The order in which topics appear in your course will generally reflect the order in which they appear or are implied in the primary source. If your primary source moves from foundational concepts to advanced applications, your course will likely do the same.</p>
+
+<p>Third, the AI identifies <em>key learning points</em> from the primary source. These become the learning objectives and the central ideas that each module is built around. Secondary sources then inform the explanations, examples, and supporting material that develop those key points.</p>
+
+<p>The risk of misidentifying sources is significant. <em>Misidentifying a secondary source as primary may cause the AI to generate an unintended course structure or focus.</em> For instance, if a brief supplementary article is mistakenly designated as the primary source while the actual core document is added as secondary, the AI will attempt to build an entire course around that article's limited and narrower scope. The result may be a course that feels thin on foundational content and oddly focused on what should have been a minor supporting point.</p>
+
+<p><strong>Accepted Source Material Types</strong></p>
+
+<p>PreseMaker's flexibility in accepted source types is one of its strengths, and understanding the practical strengths of each type helps you make better designation choices.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source Type</th>
+      <th>Best Used As</th>
+      <th>Key Strength</th>
+      <th>Consideration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PowerPoint File</td>
+      <td>Primary</td>
+      <td>Already structured with slides, headers, and hierarchy — maps naturally to course modules</td>
+      <td>Quality depends on how well-organized the original presentation is</td>
+    </tr>
+    <tr>
+      <td>Written Description / Pasted Text</td>
+      <td>Primary or Secondary</td>
+      <td>Allows creators to provide raw outlines or briefs without needing a formal file</td>
+      <td>Less inherent structure; AI must infer organization from prose</td>
+    </tr>
+    <tr>
+      <td>Document (PDF, Word, etc.)</td>
+      <td>Primary or Secondary</td>
+      <td>Comprehensive, formal content; ideal when an authoritative text should anchor the course</td>
+      <td>Very long documents may require the creator to guide focus with a description</td>
+    </tr>
+    <tr>
+      <td>Web Page</td>
+      <td>Primary or Secondary</td>
+      <td>Pulls from current online content; useful for topics that change frequently</td>
+      <td>Page structure and quality vary widely; some pages may have limited extractable content</td>
+    </tr>
+    <tr>
+      <td>YouTube Transcript</td>
+      <td>Primary or Secondary</td>
+      <td>Expands source options to video content; good for conversational or demonstration-style material</td>
+      <td>Transcripts are linear and conversational — less structured than documents</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>PowerPoint files</strong> are particularly effective as primary sources when you already have a presentation whose structure should guide the course. The AI essentially reads your slide deck as the blueprint and converts its flow into a course outline, saving significant organizational effort. <strong>Written descriptions and pasted text</strong> are powerful for rapid ideation — a creator can type a brief paragraph describing what a course should cover, designate it as primary, and let the AI generate an initial structure to refine from there. <strong>Web pages and YouTube transcripts</strong> expand the universe of available materials considerably, letting creators pull from published articles, product pages, educational videos, and more without needing to reformat that content first.</p>
+
+<p><strong>Choosing the Right Primary Source</strong></p>
+
+<p>Choosing the right primary source is a strategic decision, and there are clear principles to guide it.</p>
+
+<p>The primary source should represent the <em>core subject matter</em> of the course and should provide enough internal structure for the AI to construct a logical course outline. A source that covers only one narrow aspect of a broader topic will produce a course that feels incomplete, because the AI will build its entire architecture around that narrow slice. The primary source should be broad enough to justify the full scope of the course you intend to create.</p>
+
+<p>When multiple strong materials exist, the one with the <em>broadest and most relevant coverage</em> of the topic is generally the best primary source candidate. Breadth here means that the source touches on most or all of the major themes the course needs to address. Relevance means it is directly about the subject matter at the level the course targets — not a tangentially related document that happens to mention the topic.</p>
+
+<p>Secondary sources should be chosen deliberately to <em>complement gaps or add depth</em> to what the primary source alone cannot fully address. Ask yourself: what does my primary source do well, and what does it leave underdeveloped? The answers tell you what to look for in secondary sources. If your primary source is strong on theory but light on practical examples, find secondary sources rich in case studies or demonstrations. If it covers a topic broadly but misses a recent development, add a secondary source that addresses that update.</p>
+
+<p>Consider a course on project management methodologies. A comprehensive textbook chapter on Agile, Scrum, and Waterfall would make an excellent primary source — it is broad, structured, and directly on-topic. A YouTube transcript from a practitioner's talk on Scrum ceremonies might add vivid real-world texture as a secondary source. A pasted excerpt from your organization's internal project handbook could add company-specific context as another secondary source. Each element has a clear role, and the primary source's authority over the course's shape is never in doubt.</p>
+
+<p>When you approach your source materials with this framework — one clear primary, multiple targeted secondaries, each chosen for a specific purpose — you give the AI the clearest possible signal about what course you want to build. The result is a generated course that reflects deliberate intent rather than the unpredictable outcome of competing or ambiguous inputs.</p>
+        <div class="notes"><strong>Notes</strong>Learners should understand that the primary vs. secondary designation is not simply about importance of the material in general, but specifically about which source the AI uses to derive course structure. Emphasize that this is a PreseMaker-specific workflow concept. The table comparing source types may be particularly useful for quick reference during actual course creation sessions.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

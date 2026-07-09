@@ -1,0 +1,52 @@
+﻿[
+  {
+    "title": "Configuring AI Providers per Task and Using the Prompt Button \u2014 Topics \u0026 Learning Outcomes",
+    "href": "topics-outcomes.html",
+    "type": "Page"
+  },
+  {
+    "title": "Configuring AI Providers per Task and Using the Prompt Button \u2014 Module Topics",
+    "href": "topics.html",
+    "type": "Page"
+  },
+  {
+    "title": "Understanding and Responding to Generation Failures",
+    "href": "content/Configuring_AI_Providers_interactive.html",
+    "type": "Content"
+  },
+  {
+    "title": "Introduction to AI Tasks in PreseMaker",
+    "href": "content/Configuring_AI_Providers_interactive_topics_t1.html",
+    "type": "Content"
+  },
+  {
+    "title": "Assigning AI Providers to Task Types",
+    "href": "content/Configuring_AI_Providers_interactive_topics_t2.html",
+    "type": "Content"
+  },
+  {
+    "title": "How PreseMaker Routes Tasks to Providers",
+    "href": "content/Configuring_AI_Providers_interactive_topics_t3.html",
+    "type": "Content"
+  },
+  {
+    "title": "Using the Prompt Button",
+    "href": "content/Configuring_AI_Providers_interactive_topics_t4.html",
+    "type": "Content"
+  },
+  {
+    "title": "Understanding and Responding to Generation Failures",
+    "href": "content/Configuring_AI_Providers_interactive_topics_t5.html",
+    "type": "Content"
+  },
+  {
+    "title": "Configuring AI Providers per Task and Using the Prompt Button \u2014 Module Topics",
+    "href": "content/module_topics.html",
+    "type": "Content"
+  },
+  {
+    "title": "Configuring AI Providers per Task and Using the Prompt Button \u2014 Topic Prompt (Source)",
+    "href": "source-materials/source-1.html",
+    "type": "Source-materials"
+  }
+]

@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Types: Topic Overview versus Topic Detail</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Generating Text-Based Lessons: Formats, Layouts, and Content Types</a></div>
+  <header>
+    <h1>Content Types: Topic Overview versus Topic Detail</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Content Types: Topic Overview versus Topic Detail</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Every piece of instructional content exists on a spectrum of depth. At one end sits the concise, orienting explanation that gives a learner just enough to understand what a subject is and why it matters. At the other end sits the thorough, granular treatment that equips a learner to actually <em>do</em> something with that knowledge — to apply it, analyze it, or evaluate it in real situations. These two positions on the spectrum correspond to two distinct content types: <strong>Topic Overview</strong> and <strong>Topic Detail</strong>. Understanding the difference between them — and knowing when to deploy each — is one of the most consequential decisions an instructional designer or content author makes. Choose the wrong depth for the wrong moment, and learners either feel lost in complexity they weren't prepared for, or they finish a lesson feeling informed but unable to act.</p>
+
+<p>The distinction is not simply about length. It is about <em>purpose</em>, <em>audience readiness</em>, and the <em>learning objective</em> being served. A well-crafted Overview is not a lazy or incomplete Detail — it is a deliberately scoped piece of content designed to build conceptual footing. Equally, a Detail is not a bloated Overview — it is a purposeful expansion that assumes foundational understanding is already in place. Mastering this distinction allows content creators to build learning experiences that meet learners exactly where they are and move them efficiently toward where they need to be.</p>
+
+<p><strong>Defining Topic Overview</strong></p>
+
+<p>A Topic Overview is concise and broad by design. Its primary mission is to answer the essential questions: <em>What is this?</em> and <em>Why does it matter?</em> It does not attempt to be exhaustive. Instead, it provides a conceptual anchor — a mental framework the learner can use to orient themselves before encountering more complex material.</p>
+
+<p>Topic Overviews are particularly well suited for learners who are genuinely new to a subject. When someone has no prior exposure to a concept, presenting them immediately with edge cases, exceptions, and step-by-step procedures is counterproductive. The brain needs a scaffold before it can hang detailed information on it. The Overview builds that scaffold.</p>
+
+<p>A well-constructed Topic Overview typically contains three core components:</p>
+<ul>
+  <li><strong>A clear definition:</strong> What is this concept, process, or principle? Stated plainly, without assuming prior knowledge.</li>
+  <li><strong>Relevance and context:</strong> Why should the learner care? How does this topic connect to their work, goals, or the broader subject area?</li>
+  <li><strong>A preview of what follows:</strong> A brief signal of the sub-topics or dimensions that will be explored in greater depth later, preparing the learner's expectations without front-loading all the detail.</li>
+</ul>
+
+<p>For example, an Overview of the topic <em>database indexing</em> might define what an index is (a data structure that speeds up retrieval), explain why it matters (queries on large tables become dramatically faster), and note that learners will later explore types of indexes, when to use them, and their trade-offs. It would <em>not</em> walk through the mechanics of a B-tree or explain partial versus composite indexes — that is Detail territory.</p>
+
+<p><strong>Defining Topic Detail</strong></p>
+
+<p>A Topic Detail is longer, more granular, and assumes that the learner already has foundational context in place — ideally from having encountered an Overview first. Where the Overview answers <em>what</em> and <em>why</em>, the Detail answers <em>how</em>, <em>when exactly</em>, <em>under what conditions</em>, and <em>what happens when things go wrong</em>.</p>
+
+<p>Topic Details are the instructional workhorses. They carry the content that enables actual performance. They typically include:</p>
+<ul>
+  <li><strong>Step-by-step explanations:</strong> Procedural content broken down into discrete, followable actions.</li>
+  <li><strong>Worked examples and scenarios:</strong> Concrete illustrations of the concept in action, showing learners not just the rule but how the rule plays out in practice.</li>
+  <li><strong>Edge cases and exceptions:</strong> The conditions under which the standard approach does not apply or must be modified — critical for learners who will face real-world complexity.</li>
+  <li><strong>Supporting evidence or elaborated definitions:</strong> More precise technical language, references to underlying principles, or data that substantiates the claims being made.</li>
+  <li><strong>Sub-sections and nested points:</strong> Because the content is deeper, it often requires internal structure to remain navigable.</li>
+</ul>
+
+<p>Returning to the database indexing example: a Topic Detail on this subject might explain clustered versus non-clustered indexes with diagrams and query examples, walk through the process of creating an index in SQL, discuss the performance cost of over-indexing on write-heavy tables, and provide a scenario in which a developer must decide which columns to index on a specific schema. None of this would appear in the Overview — and that is exactly right.</p>
+
+<p><strong>When to Use a Topic Overview</strong></p>
+
+<p>The decision to use an Overview is driven primarily by the learner's entry point and the instructional goal at that moment in the learning journey.</p>
+
+<ul>
+  <li><strong>Learners lack prior exposure:</strong> When the target audience is encountering a concept for the first time, an Overview is not optional — it is essential. Skipping it and going straight to Detail risks producing confusion, disengagement, or the kind of surface memorization that cannot transfer to real tasks.</li>
+  <li><strong>Time or attention is limited:</strong> Sometimes the goal is <em>awareness</em> rather than mastery. A manager who needs to understand what machine learning is in order to make a procurement decision does not need a Detail-level treatment of gradient descent. An Overview serves their actual need.</li>
+  <li><strong>The content will be revisited progressively:</strong> A well-designed curriculum often introduces a topic at Overview depth in an early module and returns to it at Detail depth in a later one. This spaced and layered approach to depth is pedagogically sound — the learner builds familiarity before building proficiency.</li>
+</ul>
+
+<p>A practical signal that an Overview is the right choice: if the learning objective begins with words like <em>identify</em>, <em>recognize</em>, <em>describe</em>, or <em>explain what</em>, the content depth required is Overview-level.</p>
+
+<p><strong>When to Use a Topic Detail</strong></p>
+
+<p>Topic Details become necessary when the learning objective moves from awareness into action. Several conditions clearly call for Detail-level content:</p>
+
+<ul>
+  <li><strong>Action-oriented learning objectives:</strong> When the objective uses verbs such as <em>apply</em>, <em>analyze</em>, <em>demonstrate</em>, <em>evaluate</em>, <em>troubleshoot</em>, or <em>design</em>, the learner must be equipped to perform — and that requires the depth that only a Detail provides.</li>
+  <li><strong>High-stakes contexts:</strong> In technical, medical, legal, or procedural training, an incomplete understanding is not just inefficient — it can be dangerous. A nurse who has only an Overview understanding of medication dosage calculation, or a technician who has only an Overview of electrical safety protocols, is not prepared to act safely. Detail content is a non-negotiable in these domains.</li>
+  <li><strong>After an Overview has already established context:</strong> The most important sequencing principle is this: Detail content should follow Overview content, not replace it. Presenting learners with full Detail before any conceptual foundation is in place overloads working memory and reduces the retention and transferability of what is learned.</li>
+</ul>
+
+<p><strong>Matching Content Depth to Instructional Goals</strong></p>
+
+<p>The most reliable method for choosing the right content type is to begin with the intended learning outcome and work backward to the content that serves it.</p>
+
+<ul>
+  <li><strong>Identify the learning outcome first:</strong> An orientation-level outcome — <em>learners will be able to describe the purpose of agile sprint planning</em> — calls for an Overview. A performance-level outcome — <em>learners will be able to facilitate a sprint planning session following the Scrum framework</em> — calls for a Detail.</li>
+  <li><strong>Assess learner entry point:</strong> A novice audience almost always needs an Overview before a Detail, regardless of how urgent the performance goal is. An experienced audience with established background knowledge can often enter directly at Detail level, and providing an Overview they don't need may feel patronizing or wasteful.</li>
+  <li><strong>Use both types within a single module when appropriate:</strong> There is no rule that a module must contain only one content type. A well-structured module might open with an Overview that orients the learner to the subject as a whole, then deliver Detail content for each sub-topic that requires deeper treatment. This is the natural architecture of progressive disclosure in instructional design.</li>
+</ul>
+
+<p>The table below summarizes the key decision factors side by side:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Topic Overview</th>
+      <th>Topic Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Primary purpose</td>
+      <td>Orient and anchor</td>
+      <td>Equip and enable performance</td>
+    </tr>
+    <tr>
+      <td>Typical length</td>
+      <td>Shorter, focused</td>
+      <td>Longer, multi-sectioned</td>
+    </tr>
+    <tr>
+      <td>Assumed prior knowledge</td>
+      <td>Little to none</td>
+      <td>Foundational context already established</td>
+    </tr>
+    <tr>
+      <td>Objective verb examples</td>
+      <td>Identify, describe, recognize, explain what</td>
+      <td>Apply, analyze, demonstrate, evaluate, troubleshoot</td>
+    </tr>
+    <tr>
+      <td>Includes worked examples?</td>
+      <td>Rarely or briefly</td>
+      <td>Yes, often multiple</td>
+    </tr>
+    <tr>
+      <td>Covers edge cases?</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Audience</td>
+      <td>Novices or awareness-level learners</td>
+      <td>Learners ready to perform or with some foundation</td>
+    </tr>
+    <tr>
+      <td>Use of technical language</td>
+      <td>Minimal, plain language preferred</td>
+      <td>Precise and domain-appropriate</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Structural Differences in Generated Output</strong></p>
+
+<p>When content is generated — whether by an AI system, a template-driven authoring tool, or a structured writing process — the structural signatures of each content type should be visible and consistent. These structural patterns are not arbitrary preferences; they reflect the cognitive and instructional logic of each type.</p>
+
+<p>A generated <strong>Topic Overview</strong> will characteristically:</p>
+<ul>
+  <li>Be shorter overall, often a few paragraphs at most before reaching natural completion</li>
+  <li>Use introductory, accessible language — defining terms rather than assuming them</li>
+  <li>Avoid jargon, deeply nested sub-points, or technical sub-sections that belong in a Detail</li>
+  <li>End with a forward-looking signal, such as noting what the learner will explore next</li>
+</ul>
+
+<p>A generated <strong>Topic Detail</strong> will characteristically:</p>
+<ul>
+  <li>Be substantially longer, with internal structure (multiple sections, nested points, examples) to manage complexity</li>
+  <li>Include elaborated explanations that go well beyond a single definition</li>
+  <li>Provide at least one concrete worked example or scenario that shows the concept in real application</li>
+  <li>Address sub-topics, variations, conditions, or exceptions that would be inappropriate in an Overview</li>
+  <li>Use domain-appropriate language with precision, not simplification for its own sake</li>
+</ul>
+
+<p>A critical quality-assurance step before any lesson is published or deployed is to review the generated content against the expected structural profile of its type. A piece labeled as an Overview that contains procedural sub-sections and edge case discussions has drifted into Detail territory — and may overwhelm the learner it was meant to orient. Conversely, a piece labeled as a Detail that reads like an Overview — brief, definitional, and thin on examples — will leave learners unequipped to meet a performance objective. Recognizing these mismatches and correcting them is what separates instructional content that merely covers a topic from content that genuinely teaches it.</p>
+        <div class="notes"><strong>Notes</strong>An exploration of the distinction between Topic Overview and Topic Detail content types, including when and why to use each. Learners develop judgment for matching content depth to instructional goals.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

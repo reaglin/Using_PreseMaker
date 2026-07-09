@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matching Cognitive Depth Across Outcome Levels</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Course Outcomes vs. Module Outcomes and the Alignment Map</a></div>
+  <header>
+    <h1>Matching Cognitive Depth Across Outcome Levels</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Matching Cognitive Depth Across Outcome Levels</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>One of the most consequential — and most frequently overlooked — dimensions of course design is whether the <strong>cognitive depth</strong> demanded of learners at the module level actually rises to meet what is promised at the course level. A course might claim in its outcomes that students will be able to <em>evaluate</em> competing theories, <em>synthesize</em> original arguments, or <em>design</em> functional solutions, yet if every module asks students only to recall definitions and identify examples, there is a fundamental disconnect. Students can dutifully complete every module, pass every quiz, and submit every assignment — and still arrive at the end of the course without having practiced the kind of thinking the credential implies they have mastered. This is the problem of mismatched cognitive depth, and it undermines both instructional integrity and learner readiness.</p>
+
+<p>Cognitive alignment — ensuring that the level of thinking required at each stage of the learning journey matches and progressively builds toward the level required at the course level — is distinct from mere <strong>topic coverage</strong>. A module can cover the right subject matter while still demanding only surface-level engagement with it. Covering a topic and thinking deeply about a topic are not the same thing. Instructional designers must therefore audit not just <em>what</em> is taught, but <em>how deeply</em> students are expected to engage with it at each outcome level. When this audit is neglected, the resulting credential becomes harder to defend to employers, accreditors, or institutional reviewers, because the gap between what the course claims and what it actually develops is real and demonstrable.</p>
+
+<p>Auditing cognitive depth also protects the learner. Students who have been guided only through lower-order thinking tasks and then assessed at higher-order levels — on a capstone, a licensure exam, or in a workplace — are set up to struggle. Conversely, students who are progressively challenged through well-sequenced cognitive demands arrive at those high-stakes moments genuinely prepared. Achieving this requires a deliberate, structured method for making cognitive expectations visible and comparable across all levels of the course architecture.</p>
+
+<p><strong>Bloom's Taxonomy as an Audit Tool</strong></p>
+
+<p>The most widely used and institutionally recognized framework for making cognitive demand visible and comparable is <strong>Bloom's Taxonomy of Educational Objectives</strong>, first published in 1956 and revised in 2001 by Anderson, Krathwohl, and colleagues. The revised taxonomy organizes cognitive processes into six hierarchical categories, each representing progressively more complex and demanding mental operations:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bloom's Level</th>
+      <th>Cognitive Operation</th>
+      <th>Representative Action Verbs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1 — Remember</td>
+      <td>Retrieving relevant knowledge from long-term memory</td>
+      <td>recall, list, define, identify, name, recognize, state</td>
+    </tr>
+    <tr>
+      <td>2 — Understand</td>
+      <td>Constructing meaning from instructional messages</td>
+      <td>explain, summarize, paraphrase, classify, describe, interpret, give examples</td>
+    </tr>
+    <tr>
+      <td>3 — Apply</td>
+      <td>Carrying out a procedure in a given situation</td>
+      <td>use, execute, implement, solve, demonstrate, calculate, carry out</td>
+    </tr>
+    <tr>
+      <td>4 — Analyze</td>
+      <td>Breaking material into parts and detecting how parts relate</td>
+      <td>differentiate, distinguish, compare, contrast, examine, deconstruct, organize</td>
+    </tr>
+    <tr>
+      <td>5 — Evaluate</td>
+      <td>Making judgments based on criteria and standards</td>
+      <td>judge, critique, justify, defend, assess, prioritize, recommend</td>
+    </tr>
+    <tr>
+      <td>6 — Create</td>
+      <td>Putting elements together to form a new, coherent whole</td>
+      <td>design, construct, produce, devise, formulate, compose, plan</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Because every outcome — whether at the course level, module level, or individual lesson level — is expressed through action verbs, Bloom's Taxonomy gives designers a <strong>common scale</strong> against which any outcome can be placed. This comparability is what makes it so powerful as an audit tool. Rather than relying on subjective impressions of whether a module feels rigorous enough, a designer can tag each outcome with a specific level number and immediately see the cognitive landscape of the entire course laid out in measurable terms.</p>
+
+<p>Bloom's Taxonomy is also broadly accepted across academic disciplines and professional fields, which makes it a <strong>defensible framework</strong> for institutional alignment reviews. When an accreditor asks how a program ensures that its stated outcomes are meaningfully developed rather than merely listed, a documented Bloom's-level audit provides a concrete, transparent answer. Its cross-disciplinary applicability — from nursing to literature to software engineering — means that the same audit methodology can be applied consistently across departments.</p>
+
+<p><strong>Identifying the Bloom's Level of Course-Level Outcomes</strong></p>
+
+<p>The audit begins at the top of the outcome hierarchy: the course-level outcomes. These are the statements that define what a learner will be able to do as a result of completing the entire course. To identify their Bloom's level, examine the <strong>action verbs</strong> embedded in each outcome statement and map them to the taxonomy categories.</p>
+
+<p>Consider the following examples:</p>
+
+<ul>
+  <li><em>"Students will be able to <strong>identify</strong> the major causes of the 2008 financial crisis."</em> — The verb <em>identify</em> maps to <strong>Remember (Level 1)</strong>. This is a recall task.</li>
+  <li><em>"Students will be able to <strong>explain</strong> how monetary policy influences inflation."</em> — The verb <em>explain</em> maps to <strong>Understand (Level 2)</strong>.</li>
+  <li><em>"Students will be able to <strong>evaluate</strong> competing investment strategies using risk-adjusted return metrics."</em> — The verb <em>evaluate</em> maps to <strong>Evaluate (Level 5)</strong>. This is a high-order judgment task.</li>
+  <li><em>"Students will be able to <strong>design</strong> a personal financial plan aligned with stated long-term goals."</em> — The verb <em>design</em> maps to <strong>Create (Level 6)</strong>.</li>
+</ul>
+
+<p>When a course outcome contains <strong>multiple verbs spanning different levels</strong> — for instance, "Students will compare monetary policy frameworks and recommend adjustments for a given economic scenario" — use the <strong>highest-level verb as the benchmark</strong>. Here, <em>compare</em> is Analyze (Level 4), but <em>recommend</em> is Evaluate (Level 5), so Level 5 is the benchmark for that outcome. The reasoning is straightforward: the most demanding cognitive task in the outcome is what students must ultimately be capable of, and that is what the module sequence must prepare them for.</p>
+
+<p>The practical output of this step is a <strong>documented Bloom's level for each course outcome</strong> — a reference point against which all module outcomes will subsequently be measured. Without this anchoring step, the audit has no fixed target to work toward.</p>
+
+<p><strong>Mapping Module Outcomes to Bloom's Levels</strong></p>
+
+<p>With course-level benchmarks established, the next step is to examine each module outcome individually, apply the same verb-mapping process, and assign it a Bloom's level. The goal is to tag every module outcome with the primary cognitive category it reflects — using the same taxonomy, the same scale, and the same anchor points used for course outcomes.</p>
+
+<p>Once tagged, module outcomes are <strong>grouped by the course outcome they are designed to support</strong>. This grouping reveals something crucial: the <em>collective</em> cognitive profile of the modules feeding each course outcome. Consider the following illustration for a single course outcome — <em>"Students will evaluate competing machine learning algorithms for a given classification task"</em> (Bloom's Level 5: Evaluate):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Module Outcome</th>
+      <th>Bloom's Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Module 1</td>
+      <td>Define supervised and unsupervised learning</td>
+      <td>1 — Remember</td>
+    </tr>
+    <tr>
+      <td>Module 2</td>
+      <td>Explain how a decision tree algorithm partitions data</td>
+      <td>2 — Understand</td>
+    </tr>
+    <tr>
+      <td>Module 3</td>
+      <td>Apply a logistic regression model to a training dataset</td>
+      <td>3 — Apply</td>
+    </tr>
+    <tr>
+      <td>Module 4</td>
+      <td>Compare the accuracy, precision, and recall of three classification models</td>
+      <td>4 — Analyze</td>
+    </tr>
+    <tr>
+      <td>Module 5</td>
+      <td>Recommend the most appropriate algorithm for a specified business scenario, justifying the choice with performance evidence</td>
+      <td>5 — Evaluate</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This cluster tells a healthy story: cognitive demand rises progressively from recall in Module 1 through evaluation in Module 5, arriving at the same level as the course outcome by the end of the sequence. Students are not asked to evaluate algorithms cold — they first define terms, then understand mechanisms, then practice application, then analyze comparatively, and finally make and justify judgments. This is deliberate, principled scaffolding.</p>
+
+<p>Now consider an unhealthy pattern for the same course outcome:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Module Outcome</th>
+      <th>Bloom's Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Module 1</td>
+      <td>List three common machine learning algorithms</td>
+      <td>1 — Remember</td>
+    </tr>
+    <tr>
+      <td>Module 2</td>
+      <td>Identify the inputs and outputs of a decision tree</td>
+      <td>1 — Remember</td>
+    </tr>
+    <tr>
+      <td>Module 3</td>
+      <td>Name the metrics used to measure classification model performance</td>
+      <td>1 — Remember</td>
+    </tr>
+    <tr>
+      <td>Module 4</td>
+      <td>Describe the difference between precision and recall</td>
+      <td>2 — Understand</td>
+    </tr>
+    <tr>
+      <td>Module 5</td>
+      <td>Summarize the trade-offs between different classification algorithms</td>
+      <td>2 — Understand</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In this pattern, every module outcome clusters at Levels 1 and 2 — Remember and Understand. The highest cognitive demand achieved by any module is Level 2, yet the course outcome requires Level 5 evaluation. This is a significant cognitive gap. A student who completes all five modules as designed has never been asked to apply an algorithm, analyze performance data, or make a defended recommendation. The course outcome's promise of evaluative capability is entirely unsupported.</p>
+
+<p><strong>Recognizing and Diagnosing Cognitive Gaps</strong></p>
+
+<p>Identifying a cognitive gap requires comparing the <strong>highest Bloom's level in the module outcome cluster</strong> against the <strong>benchmark Bloom's level of the course outcome</strong> it feeds. If the highest module level falls short of the course-level benchmark, a cognitive gap exists. The severity of the gap is proportional to the distance between the two levels — a one-level gap (e.g., modules reach Level 4 but the course outcome is Level 5) is far less problematic than a three- or four-level gap (modules reach only Level 2 for a Level 5 or Level 6 course outcome).</p>
+
+<p>Diagnosis requires distinguishing between two very different situations that can look superficially similar:</p>
+
+<ul>
+  <li><strong>Intentional scaffolding:</strong> Early modules in a sequence are deliberately positioned at lower cognitive levels to build foundational knowledge and skills before higher-order demands are introduced. This is pedagogically sound — students cannot evaluate what they do not yet understand. The key diagnostic question is: <em>Do later modules in the sequence rise to meet the course outcome's level?</em> If yes, the lower-order early modules represent proper scaffolding, not a gap.</li>
+  <li><strong>Unintentional gaps:</strong> No module in the entire sequence — early, middle, or late — ever reaches the cognitive level required by the course outcome. Lower-order outcomes appear throughout, but higher-order engagement is simply absent. This is the problematic pattern that requires intervention.</li>
+</ul>
+
+<p>A related but distinct problem arises when a <strong>course outcome is entirely unsupported</strong> by any module outcome. This represents both a cognitive gap and a <strong>coverage gap</strong> — the course promises to develop a capability that no module even addresses. This is arguably the most serious finding an audit can produce, because it means the course architecture provides no pathway whatsoever toward that outcome.</p>
+
+<p>Documenting these findings precisely — noting which course outcomes are unsupported, which module clusters fall short by how many Bloom's levels, and which gaps are intentional scaffolding versus unintentional omissions — creates the diagnostic foundation for targeted revision.</p>
+
+<p><strong>Strategies for Closing Cognitive Depth Gaps</strong></p>
+
+<p>Once gaps are diagnosed, revision strategies follow directly from the nature of the gap. The three most reliable approaches are verb revision, capstone outcomes, and sequence reordering.</p>
+
+<p><strong>Revising weak action verbs</strong> is often the simplest and highest-leverage intervention. Module outcomes are frequently written at lower cognitive levels not because the designer intended low demand, but because default verb choices — <em>identify, list, describe, define</em> — are cognitively vague and tend to cluster at Levels 1 and 2. Systematically replacing these with higher-order verbs recalibrates what is actually expected of learners without necessarily changing the subject matter. Consider these upgrade examples:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Original Outcome (Low Cognitive Level)</th>
+      <th>Revised Outcome (Higher Cognitive Level)</th>
+      <th>Bloom's Level Change</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Identify the characteristics of agile and waterfall project management methods</td>
+      <td>Differentiate between agile and waterfall methods by comparing their assumptions, workflows, and risk profiles</td>
+      <td>Level 1 → Level 4</td>
+    </tr>
+    <tr>
+      <td>List the ethical principles in the professional code of conduct</td>
+      <td>Justify the application of specific ethical principles to ambiguous workplace scenarios</td>
+      <td>Level 1 → Level 5</td>
+    </tr>
+    <tr>
+      <td>Describe the components of a marketing mix</td>
+      <td>Construct a marketing mix proposal for a specified product launch, explaining each decision</td>
+      <td>Level 2 → Level 6</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Verb revision alone is not always sufficient, particularly when the gap is large. In such cases, <strong>adding a capstone or integration module outcome</strong> that explicitly targets the highest-order thinking required by the course outcome is essential. This capstone outcome should be positioned near the end of the module sequence, after foundational and intermediate outcomes have been addressed, and it should be paired with a corresponding assessment task — a case analysis, a design project, a critique, a simulation — that genuinely requires students to operate at the target Bloom's level.</p>
+
+<p>The third strategy addresses <strong>sequence logic</strong>. Even when a module cluster does contain outcomes at the appropriate cognitive levels, those outcomes may be poorly ordered — placing evaluative tasks before analytical ones, or analytical tasks before students have had adequate practice applying foundational concepts. The sequence of module outcomes should follow a coherent cognitive progression: foundational knowledge and comprehension early, application and analysis in the middle, and evaluation or creation at the culminating stage. This sequencing ensures students build the cognitive tools they need at each step before the next, more demanding step is introduced.</p>
+
+<p><strong>Using the Alignment Map to Document Cognitive Alignment</strong></p>
+
+<p>The alignment map — the central working document of outcome-based course auditing — should be explicitly extended to capture cognitive depth as a visible dimension alongside content and assessment relationships. This means adding a <strong>Bloom's level column</strong> for both course outcomes and module outcomes, so that cognitive relationships are documented in the same place where coverage and assessment relationships are tracked.</p>
+
+<p>An annotated alignment map entry might look like this:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Course Outcome</th>
+      <th>CO Bloom's Level</th>
+      <th>Supporting Module Outcome</th>
+      <th>MO Bloom's Level</th>
+      <th>Assessment</th>
+      <th>Cognitive Gap?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Evaluate competing investment strategies using risk-adjusted metrics</td>
+      <td>5 — Evaluate</td>
+      <td>M1: Define key investment risk metrics</td>
+      <td>1 — Remember</td>
+      <td>Vocabulary quiz</td>
+      <td>No (scaffolding — Level 5 reached in M4)</td>
+    </tr>
+    <tr>
+      <td>Evaluate competing investment strategies using risk-adjusted metrics</td>
+      <td>5 — Evaluate</td>
+      <td>M2: Explain how Sharpe ratio is calculated and interpreted</td>
+      <td>2 — Understand</td>
+      <td>Explanation exercise</td>
+      <td>No (scaffolding)</td>
+    </tr>
+    <tr>
+      <td>Evaluate competing investment strategies using risk-adjusted metrics</td>
+      <td>5 — Evaluate</td>
+      <td>M3: Calculate risk-adjusted returns for provided portfolio data</td>
+      <td>3 — Apply</td>
+      <td>Calculation problem set</td>
+      <td>No (scaffolding)</td>
+    </tr>
+    <tr>
+      <td>Evaluate competing investment strategies using risk-adjusted metrics</td>
+      <td>5 — Evaluate</td>
+      <td>M4: Recommend an investment strategy for a client case, justifying the recommendation with metric evidence</td>
+      <td>5 — Evaluate</td>
+      <td>Case analysis report</td>
+      <td>No — gap closed</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When the annotated map is complete, a reviewer can scan the <strong>Bloom's level columns</strong> for the module outcomes supporting any given course outcome and verify at a glance whether the aggregate cognitive demand rises appropriately. The map confirms not just that topics are covered, but that the course architecture develops the cognitive capabilities it claims to develop.</p>
+
+<p>Because courses are living documents — outcomes change, modules are revised, assessments are updated — the cognitive annotations in the alignment map must be <strong>revisited and updated</strong> whenever any of those elements change. A revision to a module outcome's wording, even a small one, can shift its Bloom's level, which may reopen a gap that was previously closed. Treating the annotated alignment map as a maintained document rather than a one-time product ensures that cognitive alignment is preserved across the full lifecycle of the course.</p>
+
+<p>Taken together, these practices — anchoring audit work in Bloom's Taxonomy, systematically tagging outcomes at both levels, diagnosing gaps precisely, revising with targeted strategies, and documenting everything in an annotated alignment map — constitute a rigorous, defensible approach to ensuring that a course not only covers its promised content but genuinely develops the depth of thinking it claims to cultivate. This is the difference between a credential that represents real capability and one that merely represents seat time.</p>
+        <div class="notes"><strong>Notes</strong>Includes fully worked Bloom&#39;s-level mapping tables and before/after verb revision examples to make the audit process concrete and immediately applicable. Distinguishes intentional scaffolding from unintentional gaps to prevent over-correction. The annotated alignment map table illustrates how the cognitive audit integrates with the broader alignment documentation tool.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

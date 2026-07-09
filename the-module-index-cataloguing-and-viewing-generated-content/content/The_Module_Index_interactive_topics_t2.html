@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigating the Module Index Interface</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ The Module Index: Cataloguing and Viewing Generated Content</a></div>
+  <header>
+    <h1>Navigating the Module Index Interface</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Navigating the Module Index Interface</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>The Module Index Interface is your central hub for accessing everything a module generates. Rather than hunting through folders on a local file system or switching between multiple application windows, you interact with a single, unified interface that surfaces all artifacts — documents, media files, data exports, and more — in one place. Understanding how this interface is laid out, how to move through it efficiently, and how to interpret the information it presents will save you significant time and help you work with confidence regardless of how many files a module produces.</p>
+
+<p>Developing fluency with the Module Index is less about memorizing button locations and more about recognizing the consistent logic that governs the interface. Once you understand that logic, you can orient yourself quickly, locate what you need, and return to exactly where you left off — even in large or complex module outputs.</p>
+
+<p><strong>Overview of the Module Index Layout</strong></p>
+
+<p>The Module Index is designed around a principle of <em>unified visibility</em>: everything the module has generated appears in a single, scrollable or paginated view rather than being scattered across separate tabs or hidden in subfolders. This means that from the moment you open the index, you already have a complete picture of the module's output scope. There is no need to dig.</p>
+
+<p>The layout is divided into logical sections that group related artifacts together. For example, all document-type outputs may be grouped under one section, while data files occupy another, and media assets a third. This sectioning reduces the mental effort required to orient yourself because you can jump conceptually — and often physically via navigation anchors — to the category of artifact you care about rather than scanning the entire list linearly.</p>
+
+<p>Key interface landmarks are consistently positioned across sessions and module types:</p>
+<ul>
+  <li><strong>The header area</strong> typically contains the module name, generation timestamp, and any top-level summary information such as the total number of files produced.</li>
+  <li><strong>The file listing region</strong> occupies the main body of the interface and is where individual file entries are displayed.</li>
+  <li><strong>Navigation and control elements</strong> — such as sort menus, filter options, search bars, and pagination controls — are placed in predictable positions (commonly at the top or side of the listing region) so that you always know where to look when you need them.</li>
+</ul>
+
+<p>This consistent positioning reduces cognitive load: your brain does not need to re-learn the interface each time you open a new module's index. The spatial memory you build in one session transfers directly to the next.</p>
+
+<p><strong>Locating Files Within the Index</strong></p>
+
+<p>Every file entry in the Module Index displays a set of identifying details designed to give you enough information to recognize the file without opening it. A typical entry includes:</p>
+<ul>
+  <li><strong>File name</strong> — the human-readable or system-assigned name of the artifact.</li>
+  <li><strong>File type</strong> — a label or icon indicating whether the artifact is a document, spreadsheet, image, audio file, video, archive, or another format.</li>
+  <li><strong>Generation context</strong> — information such as which step or process in the module produced this file, or the timestamp at which it was created.</li>
+</ul>
+
+<p>A critical advantage of the Module Index is that <em>all artifact types appear in the same consolidated location</em>. Whether the module produced a formatted PDF report, a raw CSV data export, a set of PNG charts, and an audio narration file, they are all listed side by side in the index. You never need to navigate to an external folder, open a separate application, or consult a secondary manifest to find a particular artifact — it is all surfaced here.</p>
+
+<p>This is especially valuable in modules with large or varied outputs. Consider a module that generates the following during a single run:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Artifact Name</th>
+      <th>Type</th>
+      <th>Generated By</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>summary_report.pdf</td>
+      <td>Document</td>
+      <td>Report Generation Step</td>
+    </tr>
+    <tr>
+      <td>raw_data_export.csv</td>
+      <td>Data File</td>
+      <td>Data Export Step</td>
+    </tr>
+    <tr>
+      <td>chart_overview.png</td>
+      <td>Image</td>
+      <td>Visualization Step</td>
+    </tr>
+    <tr>
+      <td>narration_intro.mp3</td>
+      <td>Audio</td>
+      <td>Audio Generation Step</td>
+    </tr>
+    <tr>
+      <td>module_index.html</td>
+      <td>HTML Index</td>
+      <td>Index Generation Step</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>All five entries appear together in the index. You do not need to know in advance which step produced which artifact — the index tells you.</p>
+
+<p><strong>Sorting and Filtering Generated Files</strong></p>
+
+<p>When a module produces many files, locating a specific artifact by scrolling through an unsorted list becomes inefficient. The Module Index addresses this with <em>sorting</em> and <em>filtering</em> capabilities that work together to help you zero in on exactly what you need.</p>
+
+<p><strong>Sorting</strong> reorders the file listing according to a criterion you choose. Common sort options include:</p>
+<ul>
+  <li><strong>Name (A–Z or Z–A)</strong> — alphabetical ordering, useful when you know the file's name or a portion of it.</li>
+  <li><strong>File type</strong> — groups all PDFs together, all CSVs together, all images together, and so on, making it easy to compare similar artifacts or find all outputs of a particular format.</li>
+  <li><strong>Generation order</strong> — lists files in the sequence they were created, which is useful when you want to trace the module's workflow step by step.</li>
+</ul>
+
+<p><strong>Filtering</strong> goes a step further by hiding entries that do not match your selected criteria. Rather than reordering a full list, filtering shortens it. For example, if you want to see only data files, applying a filter for that artifact category will temporarily remove all documents, images, and media from view, leaving only the data files visible. This is especially powerful in modules with dozens or hundreds of outputs.</p>
+
+<p>The real efficiency gain comes from <em>combining</em> sort and filter. Suppose you want to find the most recently generated image file. You would:</p>
+<ul>
+  <li>Apply a filter to show only image-type artifacts.</li>
+  <li>Sort the filtered results by generation order, descending (newest first).</li>
+  <li>The file you need now appears at the top of a shortened list.</li>
+</ul>
+
+<p>Without these tools, you might scroll through an entire unfiltered, unsorted catalogue. With them, the task takes seconds.</p>
+
+<p><strong>Identifying File Types and Artifacts</strong></p>
+
+<p>Every entry in the Module Index includes visual or textual cues that identify what kind of artifact it is. These identifiers typically take one or more of the following forms:</p>
+<ul>
+  <li><strong>Icons</strong> — small graphical symbols that indicate file format at a glance (e.g., a document icon for PDFs, a grid icon for spreadsheets, a camera icon for images).</li>
+  <li><strong>Type labels</strong> — text labels such as "Document," "Data File," "Image," or "Audio" displayed alongside the file name.</li>
+  <li><strong>File extensions</strong> — the suffix of the file name (e.g., <code>.pdf</code>, <code>.csv</code>, <code>.png</code>, <code>.mp3</code>) which for many users is an immediately recognizable shorthand for format.</li>
+  <li><strong>Metadata or descriptions</strong> — some entries display a brief description of the file's content or intended use, such as "Learner-facing summary report" or "Raw response data for analysis."</li>
+</ul>
+
+<p>Learning to read these identifiers fluently is important because the index does not separate artifact types into different views by default — they all appear together. Being able to distinguish a generated document from a generated data file at a glance, without opening either, prevents confusion and helps you go directly to the artifact you intend to work with.</p>
+
+<p>For example, <code>results_table.html</code> and <code>results_data.csv</code> might both appear in the same listing. The HTML file is a formatted, human-readable presentation of results; the CSV is a raw data export intended for use in a spreadsheet application or analysis tool. Their icons, labels, and extensions each communicate this distinction before you click a single link.</p>
+
+<p><strong>Using the HTML Index as a Browsable Version</strong></p>
+
+<p>Among the artifacts the module generates is typically a dedicated <strong>HTML index file</strong>. This file is a standalone web page that mirrors the structure and content of the Module Index interface itself, but exists as a self-contained document that can be opened in any web browser — with or without an internet connection, and independently of the original application that generated it.</p>
+
+<p>The HTML index serves several important purposes:</p>
+<ul>
+  <li><strong>Portability</strong> — because it is a single file (or a small bundle of files) that requires only a browser to render, it can be shared via email, transferred on a USB drive, or stored in a cloud folder and accessed by anyone, anywhere, without needing access to the originating system.</li>
+  <li><strong>Offline access</strong> — the catalogue of generated artifacts and the navigational structure of the index remain fully usable even when you are not connected to the internet or the hosting platform.</li>
+  <li><strong>Linked navigation</strong> — entries in the HTML index are <em>clickable hyperlinks</em> that open the corresponding artifact directly. You can click a link to a PDF summary and the PDF opens; click a link to a CSV and the file downloads or opens in a viewer. The interaction is familiar and requires no special training.</li>
+</ul>
+
+<p>Think of the HTML index as a durable, shareable snapshot of the module's output catalogue. Even months after a module run, the HTML index accurately represents what was generated and provides a way to navigate and access those artifacts without reconstructing anything from memory or re-running any processes.</p>
+
+<p><strong>Basic Navigation Controls and Interaction Patterns</strong></p>
+
+<p>The Module Index includes a set of controls specifically designed to support smooth navigation through potentially large file listings. Understanding how these controls work — and the consistent interaction patterns that govern file entries — means you will never feel lost within the interface.</p>
+
+<p><strong>Scroll and pagination controls</strong> handle the case where more file entries exist than can comfortably fit on a single screen. The interface may implement this in one of two common ways:</p>
+<ul>
+  <li><strong>Continuous scroll</strong> — the file list extends downward and you scroll through it naturally, with the interface loading additional entries as needed.</li>
+  <li><strong>Pagination</strong> — the list is divided into pages (e.g., 20 or 50 entries per page) with controls to move to the next page, previous page, or a specific page number. Pagination is particularly useful for very large catalogues because it keeps the interface responsive and gives you a clear sense of how many entries exist.</li>
+</ul>
+
+<p><strong>Clickable file entries</strong> follow a consistent interaction pattern across all artifact types. Regardless of whether you click on a document, an image, a data file, or an audio artifact, the response follows the same logic: the interface either opens a built-in viewer for that artifact, expands an inline preview, or initiates a download — and it does so the same way every time, for every type. This consistency means you can confidently interact with any file entry without hesitation, knowing the interface will behave predictably.</p>
+
+<p><strong>Navigation breadcrumbs or positional indicators</strong> address a common problem in large catalogues: losing track of where you are. If you have filtered to a subset of files, sorted by a specific criterion, and scrolled several pages deep, breadcrumbs or status indicators communicate your current position clearly. A typical indicator might read: <em>"Showing page 3 of 7 — filtered by: Image — sorted by: Name A–Z"</em>. This means you can leave the index to open a file, then return and immediately understand your context without having to reconstruct it from scratch.</p>
+
+<p>Together, these navigation features — scroll or pagination, consistent click behavior, and positional indicators — form a coherent system that scales gracefully from a module that produces five files to one that produces five hundred. The interaction principles remain the same; only the volume changes.</p>
+        <div class="notes"><strong>Notes</strong>Guides learners through the layout and navigation of the Module Index. Covers how to locate, sort, and identify generated files within the interface.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

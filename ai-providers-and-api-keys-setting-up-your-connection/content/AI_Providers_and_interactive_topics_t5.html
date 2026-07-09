@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entering Your API Key in PreseMaker Settings</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ AI Providers and API Keys: Setting Up Your Connection</a></div>
+  <header>
+    <h1>Entering Your API Key in PreseMaker Settings</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Entering Your API Key in PreseMaker Settings</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Connecting PreseMaker to an AI provider requires one straightforward configuration step: entering your API key in the application's Settings screen. Because PreseMaker is a <strong>single-user desktop application</strong>, there is no account login or online registration process to navigate — you simply open the app, go to Settings, paste your key, and save. Once that key is in place, PreseMaker can communicate directly with your chosen AI provider every time you generate content. This guide walks through each part of that process in detail, from finding the right screen to understanding how your key is protected after it is saved.</p>
+
+<p><strong>Navigating to the PreseMaker Settings Screen</strong></p>
+
+<p>When you launch PreseMaker, the main window gives you immediate access to the Settings area without requiring any sign-in. Look for one of the following entry points, depending on your version and operating system:</p>
+
+<ul>
+  <li>A <strong>gear icon</strong> displayed in the toolbar or in a corner of the main interface — this is the most common shortcut to Settings.</li>
+  <li>A <strong>Settings or Preferences option</strong> inside the main menu (for example, under a menu labelled <em>File</em>, <em>Edit</em>, or the application name on macOS).</li>
+  <li>A dedicated <strong>Settings button</strong> visible directly on the main window or welcome screen.</li>
+</ul>
+
+<p>Once you click any of these entry points, the Settings screen opens. Inside Settings, locate the section labelled <strong>AI Providers</strong> or <strong>API Keys</strong>. This section is specifically dedicated to managing connections to external AI services and is where all provider configuration options are grouped together. You do not need to navigate through multiple sub-menus — all provider fields are visible in one place within that section.</p>
+
+<p><strong>Selecting Your AI Provider</strong></p>
+
+<p>Within the AI Providers section, PreseMaker displays individual input fields for each of its supported providers. The providers currently supported are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Provider</th>
+      <th>Model Family</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Anthropic</td>
+      <td>Claude</td>
+    </tr>
+    <tr>
+      <td>Google</td>
+      <td>Gemini</td>
+    </tr>
+    <tr>
+      <td>OpenAI</td>
+      <td>GPT series</td>
+    </tr>
+    <tr>
+      <td>Mistral</td>
+      <td>Mistral series</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Every provider has its <strong>own dedicated field</strong>. You can fill in keys for as many providers as you like — PreseMaker supports multiple active keys simultaneously. However, each key <em>must</em> be entered in the field that matches the provider it came from. An OpenAI key entered in the Anthropic field, for example, will not work and will produce an error when you first attempt to generate content. Identify which provider issued your key, locate that provider's field on the screen, and enter the key only there.</p>
+
+<p><strong>Entering the API Key Correctly</strong></p>
+
+<p>API keys are long, case-sensitive strings that are easy to mistype. The safest approach is always to <strong>copy and paste</strong> rather than type the key manually. Here is the recommended process:</p>
+
+<ul>
+  <li>Open your AI provider's website and sign in to your account dashboard. For Anthropic this is <em>console.anthropic.com</em>, for OpenAI it is <em>platform.openai.com</em>, for Google it is <em>aistudio.google.com</em>, and for Mistral it is <em>console.mistral.ai</em>.</li>
+  <li>Navigate to the API Keys section of that dashboard and click the button that reveals or copies your key. Some providers display the full key only once, so copy it immediately.</li>
+  <li>Switch back to PreseMaker Settings and click inside the input field for that provider to make sure it is focused.</li>
+  <li>Paste the key using <strong>Ctrl+V</strong> (Windows / Linux) or <strong>Cmd+V</strong> (macOS).</li>
+</ul>
+
+<p>After pasting, take a moment to inspect the field visually. Confirm that:</p>
+
+<ul>
+  <li>The key begins and ends correctly — most keys start with a recognisable prefix (for example, OpenAI keys begin with <code>sk-</code>).</li>
+  <li>There are <strong>no leading or trailing spaces</strong>. These can be introduced if you accidentally selected a space before or after the key text when copying.</li>
+  <li>There are <strong>no line breaks</strong> inside the key. If your browser wrapped the key across two lines in the dashboard, pasting may insert a hidden newline character that breaks authentication.</li>
+</ul>
+
+<p>If you are uncertain whether invisible characters were introduced, clear the field entirely, return to the provider dashboard to copy the key again, and paste it fresh.</p>
+
+<p><strong>Saving and Confirming the API Key Entry</strong></p>
+
+<p>After pasting and checking the key, you must explicitly save your entry. Look for a button labelled <strong>Save</strong>, <strong>Apply</strong>, or an equivalent confirmation control within the Settings screen. Clicking that button writes the key to PreseMaker's local storage. A few important points about this step:</p>
+
+<ul>
+  <li>The key is <strong>stored as soon as you confirm</strong> — there is no progress indicator or connection test to wait for at this stage.</li>
+  <li>PreseMaker does <em>not</em> display a separate "key verified" or "connection successful" banner after saving. The absence of an error message is normal — it simply means the key has been stored.</li>
+  <li>The key is <strong>exercised for the first time</strong> when you actually use an AI feature, such as generating slide content. If there is a problem with the key — it was entered incorrectly, has been revoked, or lacks the required permissions — PreseMaker will surface an error at that moment. The error will typically give you options to <strong>open Settings</strong> to correct the key, <strong>add a new key</strong>, or <strong>view the log</strong> for more technical detail.</li>
+</ul>
+
+<p><strong>Understanding Local Encryption of Your API Key</strong></p>
+
+<p>A key concern for many users is security: where does PreseMaker store the API key, and could it be accessed by third parties? PreseMaker addresses this by <strong>encrypting your API key locally</strong> on your device before storing it. This means:</p>
+
+<ul>
+  <li>The key is <strong>never transmitted to PreseMaker's servers</strong>. It remains entirely on the machine where you installed the application.</li>
+  <li>When you use an AI feature, PreseMaker decrypts the key in memory and uses it to make a request <strong>directly to your AI provider</strong> — the request goes from your device to, for example, Anthropic's servers, without passing through any PreseMaker infrastructure.</li>
+  <li>Because storage is local and tied to your installation, <strong>reinstalling PreseMaker or moving to a new device</strong> will result in your key being absent from the new installation. You will need to return to Settings and enter the key again. This is expected behaviour, not a bug — keep a secure copy of your API key (such as in a password manager) so you can retrieve it easily when needed.</li>
+</ul>
+
+<p><strong>Troubleshooting Common Key Entry Issues</strong></p>
+
+<p>If you attempt to generate content after saving your key and receive an authentication or connection error, work through the following checks systematically:</p>
+
+<ul>
+  <li><strong>Wrong provider field:</strong> Return to Settings and verify that the key is in the field labelled for the correct provider. API keys are provider-specific tokens — an Anthropic key cannot authenticate a request to OpenAI, and vice versa. If you see a key in the wrong field, clear it, locate the correct field, and paste it there.</li>
+  <li><strong>Expired or revoked key:</strong> Log in to your provider's dashboard and confirm that the key still appears as active. Providers sometimes automatically revoke keys that have not been used, that have exceeded a spending limit, or that the account owner manually deleted. If the key is inactive, generate a new one from the dashboard and enter it in PreseMaker.</li>
+  <li><strong>Hidden characters or whitespace:</strong> This is the most common cause of a key that looks correct but fails to authenticate. To eliminate this possibility, click inside the provider's key field in PreseMaker Settings, select all the text in the field (<strong>Ctrl+A</strong> or <strong>Cmd+A</strong>), delete it, then return to your provider dashboard, copy the key again carefully, and paste it into the now-empty field before saving. Even one extra space at the end of the key will cause authentication to fail.</li>
+  <li><strong>Insufficient permissions on the key:</strong> Some providers allow you to create restricted keys that only have access to certain models or API endpoints. If your key was created with restrictions that exclude the model PreseMaker is trying to use, the provider will reject the request. Check the key's permission settings in your provider dashboard and ensure it has access to the relevant models.</li>
+  <li><strong>No internet connection:</strong> Although the key itself is stored locally, every AI generation request requires an active internet connection to reach the provider. Confirm your device is online before assuming the key configuration is faulty.</li>
+</ul>
+
+<p>By following these steps carefully — copying rather than typing, pasting into the correct field, saving explicitly, and understanding that verification happens on first use — you will have your AI provider connected to PreseMaker quickly and reliably. The local encryption model means your credentials stay on your device, giving you both the convenience of a one-time setup and the assurance that your key is not exposed to external services beyond the AI provider itself.</p>
+        <div class="notes"><strong>Notes</strong>Guides learners step by step through locating the Settings screen in PreseMaker and correctly entering their API key to activate the AI connection.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

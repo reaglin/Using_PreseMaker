@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuring AI Providers per Task and Using the Prompt Button – Using PreseMaker</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-bg: #f4f6f9;
+      --color-surface: #ffffff;
+      --color-border: #dde2ea;
+      --color-primary: #2a5fc4;
+      --color-primary-dark: #1e45a0;
+      --color-secondary: #5b6b8a;
+      --color-accent: #e8f0fe;
+      --color-text: #1c2333;
+      --color-muted: #5b6b8a;
+      --color-tag-bg: #eef1f7;
+      --color-tag-text: #3a4a6b;
+      --color-source-bg: #f0f4ff;
+      --color-source-text: #2a5fc4;
+      --radius: 8px;
+      --shadow: 0 1px 4px rgba(0,0,0,0.08), 0 2px 12px rgba(0,0,0,0.05);
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2a5fc4 60%, #3b7de8 100%);
+      color: #fff;
+      padding: 3rem 2rem 2.5rem;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .course-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 0.25rem 0.75rem;
+      margin-bottom: 1rem;
+      color: #d6e4ff;
+    }
+
+    header h1 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #c7d9f8;
+      max-width: 680px;
+      line-height: 1.7;
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: 960px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem 3rem;
+    }
+
+    .section-heading {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    /* ── Card Grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 16px rgba(42,95,196,0.12), 0 1px 4px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    /* Card top row: type badge + file type pill */
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .badge-type {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: var(--color-accent);
+      color: var(--color-primary);
+      border-radius: 4px;
+      padding: 0.2rem 0.55rem;
+    }
+
+    .badge-filetype {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: var(--color-tag-bg);
+      color: var(--color-tag-text);
+      border-radius: 4px;
+      padding: 0.2rem 0.55rem;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* Card title row */
+    .card-title-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--color-text);
+    }
+
+    .card-title a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    .card-title a:hover,
+    .card-title a:focus {
+      color: var(--color-primary-dark);
+      text-decoration: underline;
+    }
+
+    .card-title a:focus {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--color-source-text);
+      background: var(--color-source-bg);
+      border: 1px solid #c3d4f8;
+      border-radius: 4px;
+      padding: 0.18rem 0.5rem;
+      text-decoration: none;
+      width: fit-content;
+      transition: background 0.15s ease;
+    }
+
+    .source-link:hover,
+    .source-link:focus {
+      background: #d8e6ff;
+      text-decoration: underline;
+    }
+
+    .source-link:focus {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    .source-link::before {
+      content: "↗";
+      font-size: 0.7rem;
+    }
+
+    /* Card description */
+    .card-description {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
+      font-size: 0.8rem;
+      color: #98a6be;
+      border-top: 1px solid var(--color-border);
+      background: var(--color-surface);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      header {
+        padding: 2rem 1.25rem 2rem;
+      }
+
+      main {
+        padding: 0 1rem 2.5rem;
+        margin-top: 1.75rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Using PreseMaker</a></div>
+<div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
+
+  <header>
+    <div class="header-inner">
+      <span class="course-label">Using PreseMaker</span>
+      <h1>Configuring AI Providers per Task and Using the Prompt Button</h1>
+      <p>
+        This module walks through how to assign AI providers to specific task types in PreseMaker,
+        understand how tasks are routed to providers, and use the Prompt button to inspect and refine
+        the exact text sent during generation. You'll also learn how to diagnose and respond to
+        generation failures when they occur.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="section-heading">Module Artifacts &nbsp;—&nbsp; 7 items</h2>
+
+    <div class="card-grid" role="list">
+
+      <!-- Artifact 1: Module Topics -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge-type">Module Topics</span>
+          <span class="badge-filetype">.json</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-title">
+            <a href="content/module_topics.html">Module Topics</a>
+          </span>
+          <a class="source-link" href="source/hierarchy.json">source file</a>
+        </div>
+        <p class="card-description">
+          An ordered list of the topics and subtopics covered in this module, used by learners
+          and instructors to preview the module's scope and navigate its sections.
+        </p>
+      </article>
+
+      <!-- Artifact 2: Introduction to AI Tasks -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge-type">Topic Detail</span>
+          <span class="badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-title">
+            <a href="content/Configuring_AI_Providers_interactive_topics_t1.html">Introduction to AI Tasks in PreseMaker</a>
+          </span>
+        </div>
+        <p class="card-description">
+          An explanatory reading that defines what AI tasks are in PreseMaker, covers the platform's
+          text-only generation scope, and lists the supported task types, giving learners the
+          conceptual foundation needed before configuring AI settings.
+        </p>
+      </article>
+
+      <!-- Artifact 3: Assigning AI Providers -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge-type">Topic Detail</span>
+          <span class="badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-title">
+            <a href="content/Configuring_AI_Providers_interactive_topics_t2.html">Assigning AI Providers to Task Types</a>
+          </span>
+        </div>
+        <p class="card-description">
+          An explanatory reading that walks learners through how to access provider assignment in
+          Settings, understand the available task types, and map specific AI providers to each task
+          type to optimize for cost, speed, or quality.
+        </p>
+      </article>
+
+      <!-- Artifact 4: How PreseMaker Routes Tasks -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge-type">Topic Detail</span>
+          <span class="badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-title">
+            <a href="content/Configuring_AI_Providers_interactive_topics_t3.html">How PreseMaker Routes Tasks to Providers</a>
+          </span>
+        </div>
+        <p class="card-description">
+          An explanatory reading that explains how PreseMaker's routing mechanism determines which AI
+          provider handles each task, covering the role of the default provider and how per-task
+          assignments override it, helping learners predict and control generation behavior.
+        </p>
+      </article>
+
+      <!-- Artifact 5: Using the Prompt Button -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge-type">Topic Detail</span>
+          <span class="badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-title">
+            <a href="content/Configuring_AI_Providers_interactive_topics_t4.html">Using the Prompt Button</a>
+          </span>
+        </div>
+        <p class="card-description">
+          An explanatory reading that describes the Prompt button in PreseMaker, explaining that it
+          surfaces the exact text sent to an AI provider before or after generation, and showing
+          learners how to use it to inspect, troubleshoot, and refine AI requests.
+        </p>
+      </article>
+
+      <!-- Artifact 6: Understanding Generation Failures (Topic Detail) -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge-type">Topic Detail</span>
+          <span class="badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-title">
+            <a href="content/Configuring_AI_Providers_interactive_topics_t5.html">Understanding and Responding to Generation Failures</a>
+          </span>
+        </div>
+        <p class="card-description">
+          An explanatory reading that identifies the dependency chain involved in AI generation
+          requests and explains how to diagnose and respond to generation failures, helping learners
+          troubleshoot issues with credentials, network, or provider infrastructure.
+        </p>
+      </article>
+
+      <!-- Artifact 7: Understanding Generation Failures (Text Content) -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="badge-type">Text Content</span>
+          <span class="badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-title">
+            <a href="content/Configuring_AI_Providers_interactive.html">Understanding and Responding to Generation Failures</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A duplicate of the generation failures explanatory reading covering the same dependency
+          chain concepts and troubleshooting guidance, appearing to be a repeated artifact within
+          the module.
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Using PreseMaker &nbsp;·&nbsp; Configuring AI Providers per Task and Using the Prompt Button</p>
+  </footer>
+
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+<section class="presemaker-extras" style="max-width:1000px;margin:2rem auto;padding:0 1rem;"><h2>Topics &amp; Learning Outcomes</h2><p><a href="topics-outcomes.html">View Topics &amp; Learning Outcomes</a></p><h2>Source Materials</h2><ul class="artifact-list">  <li class="artifact-item">
+    <div class="artifact-icon">⬇</div>
+    <div class="artifact-body">
+      <a class="artifact-link" href="source-materials/source-1.html" download>Topic Prompt</a>
+    </div>
+  </li></ul></section><script src="embed-inject.js" defer></script></body>
+</html>

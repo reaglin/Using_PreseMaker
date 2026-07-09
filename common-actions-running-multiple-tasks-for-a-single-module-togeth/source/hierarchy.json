@@ -1,0 +1,762 @@
+{
+  "ModuleFolderName": "Common_Actions_Running",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:44:46.781327-04:00",
+  "ModifiedDate": "2026-07-08T19:46:22.529271-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "c5f14257-2742-4713-9927-8883c602b26a",
+      "Title": "Introduction to the Common Actions Hub",
+      "Summary": "An overview of the per-module Common Actions hub and its purpose as a centralized interface for managing multiple generation tasks. This topic establishes what Common Actions is and where it fits within the instructor workflow.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:44:46.781327-04:00",
+      "ModifiedDate": "2026-07-08T19:44:46.781327-04:00",
+      "Elements": [
+        {
+          "Id": "de3c2847-958a-4ec6-89c6-8036f392eb04",
+          "TopicId": "c5f14257-2742-4713-9927-8883c602b26a",
+          "Title": "What Is the Common Actions Hub?",
+          "BodyText": "The Common Actions hub is a centralized interface within each module that allows instructors to manage and run multiple generation tasks in one place.",
+          "Notes": "Think of it as a control panel dedicated to a single module, consolidating all major generation options so instructors do not need to navigate to separate tools for each task.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:45:05.2932314-04:00",
+          "ModifiedDate": "2026-07-08T19:45:05.2932314-04:00",
+          "Items": [
+            {
+              "Id": "e77ec94e-cbac-4214-80fa-acb64bd40f18",
+              "Text": "The hub is scoped per module, meaning each module has its own dedicated Common Actions interface.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6a442050-5dfb-4861-92f0-a858ac64fc42",
+              "Text": "It brings together tasks such as document generation, quiz creation, and presentation building into a single unified view.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "05112164-c2e9-4942-aa68-6d0c1be645c5",
+              "Text": "Instructors access it as part of their standard module workflow rather than as a standalone or external tool.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c25cb599-988f-4789-bab1-8a187354031a",
+          "TopicId": "c5f14257-2742-4713-9927-8883c602b26a",
+          "Title": "Purpose of the Common Actions Hub",
+          "BodyText": "The primary purpose of the Common Actions hub is to streamline the instructor workflow by enabling multiple generation tasks to be selected, configured, and executed together.",
+          "Notes": "Without a centralized hub, instructors would need to trigger each generation task individually and in separate steps, increasing time and the risk of inconsistency.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:45:05.2932314-04:00",
+          "ModifiedDate": "2026-07-08T19:45:05.2932314-04:00",
+          "Items": [
+            {
+              "Id": "82f2660e-2a0a-4952-98c0-98680afcdceb",
+              "Text": "It reduces the number of steps required to produce a full set of learning materials for a module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3c044209-72b8-4b29-b48d-e3a5a3fcd748",
+              "Text": "By grouping tasks together, it ensures that all generated assets are aligned to the same module content and settings.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4baf1908-093a-42d6-9662-31777fcce97a",
+              "Text": "The hub supports a more efficient, batch-style approach to content generation rather than a one-task-at-a-time workflow.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8f9279b9-9bc1-4f8a-9746-4c063a23b470",
+          "TopicId": "c5f14257-2742-4713-9927-8883c602b26a",
+          "Title": "Where Common Actions Fits in the Instructor Workflow",
+          "BodyText": "Common Actions sits at the module level of the course-building process, making it a key stop for instructors after module content has been defined and before final review.",
+          "Notes": "Understanding its position in the workflow helps instructors know when to use it \u2014 typically after topics are established and the instructor is ready to generate supporting materials.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:45:05.2932314-04:00",
+          "ModifiedDate": "2026-07-08T19:45:05.2932314-04:00",
+          "Items": [
+            {
+              "Id": "8b28d338-3ee1-4ec3-870b-570b5e26171b",
+              "Text": "It is accessed on a per-module basis, so instructors work through it module by module as they build out a course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a9e3181c-0e94-4a2c-83c2-c996f2e92286",
+              "Text": "Common Actions acts as a bridge between content setup and the delivery of finished learning assets.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "00c85377-da75-4653-8b7b-a0174498afda",
+              "Text": "Its placement in the workflow means all task configurations can be reviewed and adjusted before any generation is triggered.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "81e36c45-2f4c-48fd-9d84-2bd8a25694f6",
+          "TopicId": "c5f14257-2742-4713-9927-8883c602b26a",
+          "Title": "Types of Tasks Available in the Hub",
+          "BodyText": "The Common Actions hub presents a set of generation task options that instructors can select and configure for their module, covering a range of common instructional asset types.",
+          "Notes": "The specific tasks available reflect the most frequently needed outputs in a typical e-learning module build, making the hub practical for everyday use.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:45:05.2932314-04:00",
+          "ModifiedDate": "2026-07-08T19:45:05.2932314-04:00",
+          "Items": [
+            {
+              "Id": "c4c1834f-a637-409d-aa9b-9fd8bde774c9",
+              "Text": "Example tasks include generating a document per topic, creating a multiple-choice quiz, and producing a presentation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "89fb0880-06fd-464c-a094-b4c6b615c9d3",
+              "Text": "Instructors can choose which tasks to run, allowing flexibility to generate only what is needed for a given module.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a39fb576-a8c7-4476-98f7-5881cd6436f9",
+              "Text": "Each task can be individually configured before all selected tasks are run together in one step.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "429d33ae-300d-4606-8863-55c53ad1a690",
+          "TopicId": "c5f14257-2742-4713-9927-8883c602b26a",
+          "Title": "Running Tasks Together in One Step",
+          "BodyText": "A defining feature of the Common Actions hub is the ability to run all selected and configured tasks together in a single operation, one after another, rather than starting each one manually.",
+          "Notes": "This batch execution capability is especially valuable when an instructor needs a complete set of materials \u2014 documents, quizzes, and presentations \u2014 generated consistently from the same module content.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:45:05.2932314-04:00",
+          "ModifiedDate": "2026-07-08T19:45:05.2932314-04:00",
+          "Items": [
+            {
+              "Id": "419fadca-5742-4e88-ad33-9beb82dd6189",
+              "Text": "Instructors select the desired tasks, apply their configurations, and then trigger all of them together with a single action.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d64a1f45-ab4f-499c-bb31-982b9b0d4207",
+              "Text": "Running tasks together saves time and ensures that all outputs are generated from the same module state and settings.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1611a926-c245-4937-9a0f-434720d84898",
+              "Text": "This approach minimizes the back-and-forth typically associated with generating each asset type separately.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "37740022-327a-4759-8776-2d1f103bfb92",
+      "Title": "Selecting and Configuring Generation Tasks",
+      "Summary": "Covers how instructors choose which tasks to include \u2014 such as a document per topic, a multiple-choice quiz, or a presentation \u2014 and configure the settings for each. Learners will understand the options available and how to tailor each task before running.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:44:46.781327-04:00",
+      "ModifiedDate": "2026-07-08T19:44:46.781327-04:00",
+      "Elements": [
+        {
+          "Id": "39115df8-a706-45d5-adc9-d1cf8b02dd5f",
+          "TopicId": "37740022-327a-4759-8776-2d1f103bfb92",
+          "Title": "Accessing the Common Actions Hub",
+          "BodyText": "The Common Actions hub is the central location within a module where instructors go to select and configure multiple generation tasks at once.",
+          "Notes": "Instructors navigate to the per-module Common Actions hub rather than triggering tasks individually, streamlining the overall workflow.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:45:25.739148-04:00",
+          "ModifiedDate": "2026-07-08T19:45:25.739148-04:00",
+          "Items": [
+            {
+              "Id": "3511db7d-d2af-4c99-b19b-f5e24a4ba838",
+              "Text": "The hub is accessible at the module level, meaning each module has its own dedicated Common Actions area.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b95ca443-ef65-40aa-88bf-ee697e316365",
+              "Text": "Opening the hub presents all available generation task options in a single interface, ready for selection and configuration.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "7254b648-39c7-47fc-a453-ba4dc0e1a4fc",
+          "TopicId": "37740022-327a-4759-8776-2d1f103bfb92",
+          "Title": "Understanding the Available Generation Tasks",
+          "BodyText": "Within the Common Actions hub, instructors can choose from several distinct task types designed to produce different types of learning content.",
+          "Notes": "Each task type serves a specific instructional purpose, so understanding what each one produces helps instructors make informed selections.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:45:25.739148-04:00",
+          "ModifiedDate": "2026-07-08T19:45:25.739148-04:00",
+          "Items": [
+            {
+              "Id": "df61b5b9-f007-406b-8359-e7ba95062a6d",
+              "Text": "The document-per-topic task generates a written content document broken down by individual topics within the module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3c1d98e5-4847-43bd-8a53-1d3b23b126af",
+              "Text": "The multiple-choice quiz task creates assessment questions based on the module\u0027s content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "85094924-3085-4fb5-b946-dcd0339a6f02",
+              "Text": "The presentation task produces a slide-based format suitable for classroom or self-paced delivery.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "c5d05944-20f5-46b4-8c85-ff7fb38a4efc",
+              "Text": "Instructors are not required to select all tasks \u2014 only the tasks relevant to their instructional goals need to be chosen.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "fb6cbdf9-544e-41c2-9ce2-d756e1c9e850",
+          "TopicId": "37740022-327a-4759-8776-2d1f103bfb92",
+          "Title": "Selecting Which Tasks to Include",
+          "BodyText": "Before running, instructors must actively choose which generation tasks they want to execute for the module.",
+          "Notes": "Selective task inclusion ensures that only the desired outputs are generated, avoiding unnecessary processing.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:45:25.739148-04:00",
+          "ModifiedDate": "2026-07-08T19:45:25.739148-04:00",
+          "Items": [
+            {
+              "Id": "71fdbe70-4b1c-4eed-b8fc-c3452dc903b2",
+              "Text": "Each available task can be individually toggled or selected within the hub interface.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f254811e-c410-4faf-9b0c-3152cea6f185",
+              "Text": "Instructors can include as few as one task or combine multiple tasks to be run together in a single operation.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9c128cd9-2db8-4b32-be51-ca779f569b4c",
+              "Text": "The selection step is a prerequisite to configuration \u2014 tasks must be selected before their settings become editable.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "753d6980-c57e-4e34-b337-261df710dba8",
+          "TopicId": "37740022-327a-4759-8776-2d1f103bfb92",
+          "Title": "Configuring Settings for Each Task",
+          "BodyText": "After selecting tasks, instructors configure the specific settings for each one to tailor the output to their needs.",
+          "Notes": "Configuration options vary by task type, so instructors should review each task\u0027s settings independently before running.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:45:25.739148-04:00",
+          "ModifiedDate": "2026-07-08T19:45:25.739148-04:00",
+          "Items": [
+            {
+              "Id": "bb816c73-3919-4d89-b9e6-2811b5dc3ac9",
+              "Text": "Each selected task has its own set of configurable parameters, such as format preferences, depth of content, or question count for quizzes.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c395757f-1b33-4606-8d1b-11ca2c560bc8",
+              "Text": "Settings are adjusted per task, allowing fine-grained control over how each type of content is generated.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "212d70ab-b525-4749-8db6-ea7a7b0a4e6a",
+              "Text": "Configuring tasks before running ensures the outputs align with the intended learning design without requiring post-generation edits.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "9d31dcfc-4faf-4b14-bced-a23eb267b861",
+          "TopicId": "37740022-327a-4759-8776-2d1f103bfb92",
+          "Title": "How Common Actions Remembers Settings Per Course",
+          "BodyText": "Common Actions includes a memory feature that retains the task configurations an instructor has previously set, scoped to each individual course.",
+          "Notes": "This persistence feature is especially useful for instructors managing multiple modules within the same course, as it reduces repetitive setup.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:45:25.739148-04:00",
+          "ModifiedDate": "2026-07-08T19:45:25.739148-04:00",
+          "Items": [
+            {
+              "Id": "055f22fd-8e1c-401b-9704-24cf3208b9b7",
+              "Text": "Settings configured in a previous session are automatically recalled when the instructor returns to Common Actions for the same course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f502b2b0-d83d-476b-9a40-0c542e811597",
+              "Text": "Because settings are saved per course rather than globally, different courses can maintain their own distinct configuration profiles.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6ec15d7f-6886-498f-b44b-61c921557474",
+              "Text": "Instructors should still review remembered settings before running to confirm they remain appropriate for the current module.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "93e8bf67-eec7-4f6a-a604-093bd6b91282",
+          "TopicId": "37740022-327a-4759-8776-2d1f103bfb92",
+          "Title": "Tailoring Quiz Generation with Per-Topic Settings",
+          "BodyText": "The multiple-choice quiz task includes an option to generate quizzes on a per-topic basis rather than across the module as a whole.",
+          "Notes": "Per-topic quiz generation is recommended because it improves reliability and ensures questions are tightly aligned with specific content areas.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:45:25.739148-04:00",
+          "ModifiedDate": "2026-07-08T19:45:25.739148-04:00",
+          "Items": [
+            {
+              "Id": "f3075cbc-ce9c-4be2-b0d6-905433bcb653",
+              "Text": "Generating quizzes per topic means a separate set of questions is created for each topic within the module, rather than one combined quiz.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6b511379-efa1-4fa2-92b9-a2970a8c970e",
+              "Text": "This approach improves reliability by keeping each quiz focused, reducing the risk of vague or misaligned questions.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7cc53f46-3621-4842-96be-5df83c4d856a",
+              "Text": "Instructors can configure this granularity setting within the quiz task\u0027s options before initiating the run.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "1d628632-0df8-4c81-829a-d8719d6b09d0",
+      "Title": "Running Multiple Tasks Together in One Step",
+      "Summary": "Explains how the Common Actions hub lets instructors run all selected and configured tasks together in a single operation, one after another, rather than starting each one manually. This topic highlights the efficiency gains of batching generation tasks into a single run.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:44:46.781327-04:00",
+      "ModifiedDate": "2026-07-08T19:44:46.781327-04:00",
+      "Elements": [
+        {
+          "Id": "d98dab62-e16e-4550-9b0b-0b8cee43c721",
+          "TopicId": "1d628632-0df8-4c81-829a-d8719d6b09d0",
+          "Title": "What the Common Actions Hub Is",
+          "BodyText": "The Common Actions hub is a centralized interface within each module that consolidates multiple generation tasks into one location.",
+          "Notes": "Rather than navigating to separate tools for each task, instructors work from a single hub tied to a specific module.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:45:43.3590767-04:00",
+          "ModifiedDate": "2026-07-08T19:45:43.3590767-04:00",
+          "Items": [
+            {
+              "Id": "fe9d0251-eff5-44bd-942f-f913feb3fa25",
+              "Text": "The hub is scoped per module, meaning its tasks and settings relate directly to the content of that one module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "cdb9a406-7aa7-4389-8bb1-1d0e630a901d",
+              "Text": "Available tasks within the hub can include document generation, quiz creation, and presentation building, among others.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e3f8847f-2e03-4782-86a3-3fcfcc9b8004",
+              "Text": "Centralizing tasks in one place reduces the time spent switching between different tools or menus.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "83adbb55-3d7d-4bef-ae9e-a2941ba51794",
+          "TopicId": "1d628632-0df8-4c81-829a-d8719d6b09d0",
+          "Title": "Selecting and Configuring Tasks Before Running",
+          "BodyText": "Before executing tasks, instructors choose which tasks they want to run and configure any relevant settings for each one.",
+          "Notes": "Configuration might include selecting output format, choosing topics to cover, or setting quiz parameters such as question count or difficulty.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:45:43.3590767-04:00",
+          "ModifiedDate": "2026-07-08T19:45:43.3590767-04:00",
+          "Items": [
+            {
+              "Id": "270c8a0e-fa90-453a-8f2d-0955f272f106",
+              "Text": "Each task can be individually toggled on or off, giving instructors control over exactly what gets generated.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "935415b0-0608-441f-8f0e-0ebe3d3b9331",
+              "Text": "Configuration options are set per task prior to the batch run, ensuring the output matches the instructor\u0027s intent.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ac2f0314-45af-4f3d-9ecc-06fe861da8e1",
+              "Text": "Only tasks that have been both selected and configured will be included when the batch run is initiated.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "59c45abf-1432-40bd-a472-493cbd8ac379",
+          "TopicId": "1d628632-0df8-4c81-829a-d8719d6b09d0",
+          "Title": "Running All Selected Tasks Together in One Step",
+          "BodyText": "Once tasks are selected and configured, the Common Actions hub allows instructors to execute all of them together with a single action.",
+          "Notes": "This is the core efficiency feature of the hub \u2014 a single \u0027run\u0027 command triggers generation for every selected task at the same time.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:45:43.3590767-04:00",
+          "ModifiedDate": "2026-07-08T19:45:43.3590767-04:00",
+          "Items": [
+            {
+              "Id": "84883253-f675-44a8-8876-6d6d2d3caa3c",
+              "Text": "Running the tasks together in one operation eliminates the need to manually trigger each generation task yourself.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "26bee5fd-a446-4a64-8586-d445d0b15fff",
+              "Text": "A single run command processes all selected tasks in sequence, one after another, without requiring further instructor input.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "cbe5da95-5d40-4fd1-875e-e9f855e1f5ce",
+              "Text": "This batch execution approach is especially valuable when an instructor needs to produce several deliverables for the same module at once.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8cb963ec-da55-4fb4-96c1-ae09c3631644",
+          "TopicId": "1d628632-0df8-4c81-829a-d8719d6b09d0",
+          "Title": "Efficiency Gains from Batching Generation Tasks",
+          "BodyText": "Batching multiple tasks into a single run significantly reduces the time and effort required to produce a full set of module materials.",
+          "Notes": "For example, generating a document, a quiz, and a presentation separately might require three separate workflows; batching collapses this into one.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:45:43.3590767-04:00",
+          "ModifiedDate": "2026-07-08T19:45:43.3590767-04:00",
+          "Items": [
+            {
+              "Id": "bfc035db-be98-4d9e-b43e-d2c559cbef1c",
+              "Text": "Instructors save time by avoiding repetitive setup and execution steps for each individual task.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0860da85-fbf6-4baf-a660-8d3fd203763c",
+              "Text": "Batching reduces the risk of inconsistency, since all outputs are generated from the same module content in one pass.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9cf00dac-ef03-48d9-942c-8f343ee06a3f",
+              "Text": "The overall course production workflow becomes faster and more streamlined when multiple assets are created together.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "5e9bc37b-7373-43b9-aa27-458f059f9acc",
+          "TopicId": "1d628632-0df8-4c81-829a-d8719d6b09d0",
+          "Title": "How Common Actions Remembers Settings Per Course",
+          "BodyText": "The Common Actions hub retains the task configurations an instructor has set, so they do not need to reconfigure from scratch each time.",
+          "Notes": "Settings persistence is scoped per course, meaning configurations saved in one course do not carry over to unrelated courses.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:45:43.3590767-04:00",
+          "ModifiedDate": "2026-07-08T19:45:43.3590767-04:00",
+          "Items": [
+            {
+              "Id": "5d8466de-db19-4278-b275-e918dbfa6f75",
+              "Text": "Saved settings allow instructors to return to a module and re-run tasks with the same configuration without re-entering preferences.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ebfbf9e8-a22c-4746-9bc1-eefc7a2569f1",
+              "Text": "This memory feature is particularly useful for courses that follow a consistent structure across multiple modules.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b0a1c665-06be-4861-95f0-4dbbbdf841f2",
+              "Text": "Instructors can adjust saved settings at any time before initiating a new run to accommodate changes in content or requirements.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "86e1029f-2fcb-4744-a4fe-d40793765ace",
+      "Title": "Persistent Settings Per Course",
+      "Summary": "Describes how Common Actions remembers configuration settings on a per-course basis so instructors do not need to reconfigure tasks each time they return. This topic explores the practical time-saving benefit of this memory feature.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:44:46.781327-04:00",
+      "ModifiedDate": "2026-07-08T19:44:46.781327-04:00",
+      "Elements": [
+        {
+          "Id": "7c10f7b4-01b0-4a68-9b79-14d9b943eb44",
+          "TopicId": "86e1029f-2fcb-4744-a4fe-d40793765ace",
+          "Title": "What \u0027Persistent Settings\u0027 Means in Common Actions",
+          "BodyText": "Persistent settings refer to the ability of Common Actions to automatically save and retain the configuration choices an instructor makes for a given course.",
+          "Notes": "Rather than treating each session as a blank slate, the system records which tasks were selected and how they were configured the last time the instructor used Common Actions for that course.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:46:02.670012-04:00",
+          "ModifiedDate": "2026-07-08T19:46:02.670012-04:00",
+          "Items": [
+            {
+              "Id": "b5a7b972-a58f-40cc-9f3d-fc5ce8376839",
+              "Text": "When an instructor configures tasks such as quiz generation or presentation creation, those selections are stored linked to the specific course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c154a85e-d7da-429f-a21e-f97381076703",
+              "Text": "The next time the instructor opens Common Actions for the same course, the previously chosen settings are pre-populated and ready to use.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8e04144d-39b7-4941-8eb8-902589b0276e",
+              "Text": "This persistence is course-specific, meaning settings for one course do not overwrite or interfere with settings for another course.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "416bf970-211b-4438-a1a1-fe1db8237b19",
+          "TopicId": "86e1029f-2fcb-4744-a4fe-d40793765ace",
+          "Title": "Per-Course Scope of Saved Settings",
+          "BodyText": "Settings are remembered on a per-course basis, ensuring that each course retains its own unique configuration independently of other courses.",
+          "Notes": "For example, an instructor teaching two different courses \u2014 one requiring only a quiz and another requiring a quiz plus a presentation \u2014 will find each course remembers its own distinct task selections.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:46:02.670012-04:00",
+          "ModifiedDate": "2026-07-08T19:46:02.670012-04:00",
+          "Items": [
+            {
+              "Id": "30177882-7d43-4460-8daa-0b9a337bc042",
+              "Text": "Each course maintains a separate settings profile, so customizations made for Course A are never applied to Course B.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "76c8c199-9cc8-497c-a34f-06a345e3b739",
+              "Text": "Instructors can therefore manage multiple courses with different task requirements without needing to manually separate or reset configurations.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "096ac351-f237-42f4-8587-8d9fe1e03b2f",
+              "Text": "The per-course scope reflects the reality that different courses often have different instructional needs and output preferences.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4785eb9c-e052-41c9-8115-7fa88861e513",
+          "TopicId": "86e1029f-2fcb-4744-a4fe-d40793765ace",
+          "Title": "Time-Saving Benefit of Settings Memory",
+          "BodyText": "The primary practical advantage of persistent settings is that instructors save significant time by eliminating repetitive reconfiguration work each time they return to a course.",
+          "Notes": "Over a semester with many modules, the cumulative time saved from not re-entering the same task selections and parameters can be substantial.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:46:02.670012-04:00",
+          "ModifiedDate": "2026-07-08T19:46:02.670012-04:00",
+          "Items": [
+            {
+              "Id": "f7660135-06e6-4aa2-a0ab-d21ebf37ec46",
+              "Text": "Instructors do not need to remember or re-select which tasks to run each time they process a new module within the same course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "96398f51-08ec-499b-be47-dd41265dfb63",
+              "Text": "Returning users can immediately proceed to running tasks rather than spending time navigating setup options they have already defined.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d305da9a-d60c-44dc-9a08-ba9206c6507a",
+              "Text": "This efficiency is especially valuable for courses with a large number of modules that need to be processed consistently throughout the term.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6316441a-38e5-484e-b122-7c63a3e4101b",
+          "TopicId": "86e1029f-2fcb-4744-a4fe-d40793765ace",
+          "Title": "Consistency Across Module Processing",
+          "BodyText": "Because settings persist, every module within a course is processed using the same task configuration, promoting consistency in the instructional materials produced.",
+          "Notes": "Consistent output formats help students know what to expect from module to module, and reduce the chance of an instructor accidentally applying an incorrect configuration to a specific module.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:46:02.670012-04:00",
+          "ModifiedDate": "2026-07-08T19:46:02.670012-04:00",
+          "Items": [
+            {
+              "Id": "fb9ba8e5-97db-4db9-a975-344684cfc6e4",
+              "Text": "All modules in a course can be run through the same set of tasks without the instructor having to manually verify that the correct options are selected each time.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e03cdc8e-f223-461a-bfa9-e040497c47bb",
+              "Text": "Consistent configuration reduces the risk of human error, such as accidentally omitting a task type for one module but not others.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2b9e88e4-6f74-4bc1-8b34-416d367480d9",
+              "Text": "Standardized outputs across modules contribute to a more cohesive and professional course experience for learners.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "11669751-065f-4578-8f81-7781af5bc064",
+          "TopicId": "86e1029f-2fcb-4744-a4fe-d40793765ace",
+          "Title": "Returning to a Course After a Break",
+          "BodyText": "Persistent settings are particularly beneficial when instructors return to a course after a period of time, such as between semesters or after a workflow interruption.",
+          "Notes": "Without persistent settings, instructors would need to recall or document their previous configuration choices \u2014 a burden that the memory feature eliminates entirely.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:46:02.670012-04:00",
+          "ModifiedDate": "2026-07-08T19:46:02.670012-04:00",
+          "Items": [
+            {
+              "Id": "cc4dc021-cf45-4a1a-aae8-6cd467dd7cb1",
+              "Text": "An instructor who pauses course development and resumes weeks later will find their Common Actions configuration exactly as they left it.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f642a92f-f10d-476d-a940-3a940ee6d3a5",
+              "Text": "There is no need to keep external notes or documentation about which tasks were enabled for a particular course.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "67448c9c-5263-4955-b012-559db9ea6b5e",
+              "Text": "This continuity supports efficient course maintenance and updates, even when significant time has elapsed between sessions.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "9a5dca78-7411-4884-99f1-e4bd582e611b",
+      "Title": "Per-Topic Quiz Generation and Reliability",
+      "Summary": "Examines why generating quizzes on a per-topic basis produces more reliable and accurate results compared to generating a single quiz for an entire module. This topic explains the reasoning behind this approach and its impact on quiz quality.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:44:46.781327-04:00",
+      "ModifiedDate": "2026-07-08T19:44:46.781327-04:00",
+      "Elements": [
+        {
+          "Id": "b46bb634-7f1f-4109-8816-6d6c47e3d1d7",
+          "TopicId": "9a5dca78-7411-4884-99f1-e4bd582e611b",
+          "Title": "The Challenge of Module-Level Quiz Generation",
+          "BodyText": "Generating a single quiz for an entire module at once can introduce reliability issues and reduce the overall quality of the output.",
+          "Notes": "When an AI or generation system processes a large amount of content in one pass, the likelihood of errors, omissions, or inconsistent question quality increases significantly.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:46:22.5290827-04:00",
+          "ModifiedDate": "2026-07-08T19:46:22.5290827-04:00",
+          "Items": [
+            {
+              "Id": "979e6f24-9da6-4ab1-a0ac-a1f6f6a578c9",
+              "Text": "A module typically contains multiple topics, each with distinct concepts, making it difficult to cover all areas evenly in a single generation pass.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "dfbdaf2f-e6c4-4b93-943d-9d32911f0961",
+              "Text": "Larger content inputs can overwhelm generation processes, leading to questions that are vague, repetitive, or misaligned with specific learning objectives.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d64902cb-ddb9-4d9a-88d3-50d0b8cabea9",
+              "Text": "Single-pass module quizzes may under-represent some topics while over-representing others, creating an unbalanced assessment.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6beab55c-909a-4916-aee5-01da37fee3a5",
+          "TopicId": "9a5dca78-7411-4884-99f1-e4bd582e611b",
+          "Title": "Why Per-Topic Quiz Generation Works Better",
+          "BodyText": "Generating quizzes on a per-topic basis means the system focuses on one discrete topic at a time, producing more targeted and accurate quiz questions.",
+          "Notes": "This approach mirrors how instructional designers manually create assessments \u2014 by focusing on one concept at a time to ensure alignment with learning outcomes.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:46:22.5290827-04:00",
+          "ModifiedDate": "2026-07-08T19:46:22.5290827-04:00",
+          "Items": [
+            {
+              "Id": "d889bb73-1d83-41af-a528-d5e0734a3737",
+              "Text": "Each quiz generation task receives a smaller, more focused body of content, reducing ambiguity and improving the precision of generated questions.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3f503d09-a3e0-42e2-a802-f63e22883a39",
+              "Text": "Per-topic generation ensures that every topic in the module receives dedicated quiz coverage, preventing gaps in assessment.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "17d2a2e0-6fc0-4924-a175-5d9b1d117fb4",
+              "Text": "Focused inputs allow the generation system to produce distractors and correct answers that are more contextually relevant to the specific topic.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "bf5d324a-ae0e-4588-8c70-f7db526d1b0b",
+          "TopicId": "9a5dca78-7411-4884-99f1-e4bd582e611b",
+          "Title": "Impact on Quiz Accuracy and Question Quality",
+          "BodyText": "The accuracy of individual quiz questions is directly tied to how well the source content is scoped during the generation process.",
+          "Notes": "Instructors reviewing per-topic quizzes often find fewer errors and less need for manual correction compared to module-wide quizzes generated in a single step.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:46:22.5290827-04:00",
+          "ModifiedDate": "2026-07-08T19:46:22.5290827-04:00",
+          "Items": [
+            {
+              "Id": "cc71122f-c971-4355-b84e-23a9028130a4",
+              "Text": "Per-topic quizzes yield questions that more accurately reflect the terminology, depth, and nuance of each individual topic.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d11ce419-32f7-4733-8bc9-7016beb19668",
+              "Text": "Narrower content scope reduces the chance of the system generating plausible but incorrect answers that could mislead learners.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ea0f1e9d-217d-4e35-9b6f-a60175ad5377",
+              "Text": "Higher question accuracy means less time spent by instructors reviewing and editing generated quiz content before publishing.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "75da2b59-364f-4603-9e6a-f17c7c891690",
+          "TopicId": "9a5dca78-7411-4884-99f1-e4bd582e611b",
+          "Title": "Reliability Across the Full Module",
+          "BodyText": "Running per-topic quiz generation as part of a combined Common Actions task ensures consistent reliability across all topics in the module.",
+          "Notes": "Because Common Actions can run multiple generation tasks together, per-topic quiz generation does not require additional manual effort from the instructor \u2014 it is built into the workflow.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:46:22.5290827-04:00",
+          "ModifiedDate": "2026-07-08T19:46:22.5290827-04:00",
+          "Items": [
+            {
+              "Id": "6bc7a650-d6c7-4705-a465-b34b767cfae1",
+              "Text": "When quizzes are generated per topic within a single run, the module as a whole benefits from uniform quality standards applied consistently across every topic.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1eec465c-9798-4cba-91ae-2a65e298a60a",
+              "Text": "Reliability is improved because each generation instance is an isolated, manageable task rather than a single complex operation prone to failure or degradation.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "647cfbd5-1915-4a79-b5d3-69910cb26a53",
+              "Text": "Instructors can trust that the resulting quiz set covers the module comprehensively without manually verifying topic-by-topic coverage.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "66273861-14c7-4e76-83e1-ba3b288fe9c4",
+          "TopicId": "9a5dca78-7411-4884-99f1-e4bd582e611b",
+          "Title": "Per-Topic Quizzes and Alignment with Learning Objectives",
+          "BodyText": "Generating quizzes at the topic level supports stronger alignment between quiz questions and the specific learning objectives of each topic.",
+          "Notes": "This alignment is a core principle of instructional design \u2014 assessments should directly measure what learners were taught at the appropriate level of specificity.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:46:22.5290827-04:00",
+          "ModifiedDate": "2026-07-08T19:46:22.5290827-04:00",
+          "Items": [
+            {
+              "Id": "12f12cbf-b431-4f05-a906-12760c507228",
+              "Text": "Topic-level source content is inherently scoped to the learning objectives defined for that topic, making it a natural unit for quiz generation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "5ccb1c13-9336-481f-b8b3-5befa622f9ef",
+              "Text": "Questions generated from topic-level content are more likely to test the intended knowledge or skill rather than peripheral or module-level generalities.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "dddd0a90-c61e-4541-a85c-ae2cc46a1f28",
+              "Text": "Better objective alignment leads to more valid assessments that accurately measure learner understanding of each topic.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 26
+}

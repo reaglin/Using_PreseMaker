@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embed in your LMS</title>
+<style>
+  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;color:#1a1a1a;background:#f6f8fb;margin:0}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 20px 60px}
+  h1{font-size:1.5rem;color:#1a3c6e;margin:0 0 4px}
+  h2{font-size:1.15rem;margin:18px 0 6px}
+  h3{font-size:1rem;margin:20px 0 6px;color:#555}
+  .instr{background:#eef4fb;border:1px solid #cfe0f0;border-radius:8px;padding:12px 14px;margin:10px 0}
+  .opts{display:flex;gap:18px;align-items:center;margin:10px 0;flex-wrap:wrap}
+  .opts input,.opts select{font:inherit;padding:3px 6px}
+  textarea{width:100%;font-family:Consolas,monospace;font-size:.86rem;background:#fff;border:1px solid #ccd;border-radius:6px;padding:10px;resize:vertical}
+  button{font:inherit;font-weight:600;padding:7px 16px;border:1px solid #1a6fb4;background:#1a6fb4;color:#fff;border-radius:6px;cursor:pointer}
+  .open{margin-left:10px;color:#1a6fb4;text-decoration:none}
+  .preview iframe{width:100%;height:420px;border:1px solid #ccc;border-radius:6px;background:#fff}
+  .list{list-style:none;padding:0;margin:8px 0}
+  .list li{padding:8px 0;border-bottom:1px solid #e6e6e6}
+  .list a{color:#1a6fb4;text-decoration:none;font-weight:600}
+  .list .ty{color:#999;font-size:.82rem;margin-left:8px}
+  .back a{color:#1a3c6e;text-decoration:none}
+  code{background:#e8eef6;padding:1px 5px;border-radius:3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Embed a page in your LMS</h1>
+  <div id="content"></div>
+</div>
+<script>
+(function(){
+  function qs(n){ return new URLSearchParams(location.search).get(n); }
+  function esc(s){ return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  var u = qs('u'), t = qs('t');
+  var box = document.getElementById('content');
+
+  if (u){
+    var abs = new URL(u, location.href).href;
+    var title = t || u;
+    box.innerHTML =
+      '<p class="back"><a href="embed.html">&#8592; All pages in this module</a></p>'
+      + '<h2>' + esc(title) + '</h2>'
+      + '<div class="instr"><strong>Copy this embed code and paste it into your LMS as HTML.</strong><br>'
+      + 'In the LMS page editor switch to HTML mode (an <code>&lt;&gt;</code>, &#8220;HTML&#8221;, or &#8220;Source&#8221; button), paste the code, and save.</div>'
+      + '<div class="opts"><label>Height <input type="number" id="h" value="650" min="200" max="2000" step="50"> px</label>'
+      + '<label>Scrolling <select id="sc"><option>auto</option><option>yes</option><option>no</option></select></label></div>'
+      + '<textarea id="code" readonly rows="4"></textarea>'
+      + '<div style="margin-top:8px"><button id="copy">Copy code</button>'
+      + '<a class="open" href="' + esc(abs) + '" target="_blank" rel="noopener">Open the page &#8599;</a></div>'
+      + '<h3>Preview</h3><div class="preview"><iframe src="' + esc(abs) + '"></iframe></div>';
+    function build(){
+      var h = document.getElementById('h').value || 650;
+      var sc = document.getElementById('sc').value || 'auto';
+      document.getElementById('code').value =
+        '<iframe src="' + abs + '" width="100%" height="' + h + '" '
+        + 'style="border:none;width:100%;min-height:' + h + 'px;" '
+        + 'frameborder="0" scrolling="' + sc + '" allowfullscreen></iframe>';
+    }
+    document.getElementById('h').addEventListener('input', build);
+    document.getElementById('sc').addEventListener('change', build);
+    build();
+    document.getElementById('copy').addEventListener('click', function(){
+      var c = document.getElementById('code'); c.select();
+      try { navigator.clipboard.writeText(c.value); } catch(e){ document.execCommand('copy'); }
+      var b = this; b.textContent = 'Copied!'; setTimeout(function(){ b.textContent = 'Copy code'; }, 1500);
+    });
+  } else {
+    box.innerHTML = '<p class="instr">Choose a page to get its LMS embed code:</p><ul id="list" class="list"><li>Loading&#8230;</li></ul>';
+    fetch('embed-artifacts.json').then(function(r){ return r.json(); }).then(function(items){
+      var ul = document.getElementById('list');
+      if (!items || !items.length){ ul.innerHTML = '<li>No embeddable pages found.</li>'; return; }
+      ul.innerHTML = items.map(function(it){
+        return '<li><a href="embed.html?u=' + encodeURIComponent(it.href) + '&t=' + encodeURIComponent(it.title) + '">'
+          + esc(it.title) + '</a><span class="ty">' + esc(it.type || '') + '</span></li>';
+      }).join('');
+    }).catch(function(){ document.getElementById('list').innerHTML = '<li>Could not load the page list.</li>'; });
+  }
+})();
+</script>
+</body>
+</html>

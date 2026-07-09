@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding the Verified and Unverified Markers</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Building a Standards Library and Mapping Topics to Standards</a></div>
+  <header>
+    <h1>Understanding the Verified and Unverified Markers</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Understanding the Verified and Unverified Markers</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Every standard in your Standards Library carries one of two markers: <strong>Verified</strong> or <strong>Unverified</strong>. At first glance these labels might suggest a quality-approval workflow — something like a draft waiting to be signed off — but that interpretation is incorrect and, if acted upon, can introduce serious errors into your course alignment. Understanding precisely what these markers mean, and equally what they do <em>not</em> mean, is essential before you build or rely on any standards-aligned content.</p>
+
+<p>The single concept that unlocks both markers is <strong>provenance</strong> — the origin or source from which a standard was drawn. When the system assigns a Verified or Unverified label, it is recording one fact and one fact only: did this standard come from an actual document or page you supplied, or was it generated by the AI working from nothing more than a framework name? Everything else that follows from the two labels flows directly from that one distinction.</p>
+
+<p>The marker is <em>not</em> a percentage score reflecting how confident the system is in a standard's accuracy. It is <em>not</em> a rating of pedagogical quality or grade-level appropriateness. And it is emphatically <em>not</em> a pending-approval flag that will automatically flip to Verified once someone reviews the content. Misreading the label in any of these ways is the most common source of confusion, so it is worth making the distinction concrete before going further.</p>
+
+<p><strong>When a standard is marked Verified</strong>, it means the standard was drawn from a real source document or page that you provided to the system. Because the system had actual text in front of it — an uploaded PDF, a pasted web page, an official standards document — the alphanumeric code and the exact wording it recorded are grounded in that source material. A standard labeled Verified is therefore significantly less likely to contain invented codes or paraphrased language, because the system was transcribing rather than generating. Providing a genuine source document is, accordingly, the single most reliable way to ensure your Standards Library reflects the official published versions of a framework.</p>
+
+<p>That said, Verified does not mean perfect. Minor transcription issues, formatting artifacts, or copy errors can still occur when text is extracted from complex documents. The practical implication is that Verified standards deserve a reasonable spot-check — particularly for any standard you intend to feature prominently in learner-facing materials — but they carry a substantially lower risk of containing fundamentally wrong information compared with their Unverified counterparts.</p>
+
+<p><strong>When a standard is marked Unverified</strong>, it means the system generated that standard using only a framework name or description as its input, with no source document to consult. The AI produced what it believed to be a plausible representation of the standard — but "plausible" and "accurate" are not the same thing. Three specific risks attach to every Unverified standard:</p>
+
+<ul>
+  <li><strong>Approximate or invented codes.</strong> Alphanumeric identifiers such as <code>LAFS.3.RI.1.2</code> or <code>CCSS.ELA-LITERACY.RI.4.3</code> are highly specific. An AI may produce a code that <em>looks</em> structurally correct — matching the expected prefix pattern, dot-separated segments, and numbering style — while actually referring to a standard that does not exist under that identifier, or referring to a different standard than intended.</li>
+  <li><strong>Paraphrased or condensed wording.</strong> Official standards documents frequently contain precise legal or pedagogical language developed through extended drafting and review processes. An AI generating from memory may produce wording that captures the general spirit of a standard while omitting qualifiers, changing grade-band specificity, or subtly shifting the cognitive demand described.</li>
+  <li><strong>Fully invented content.</strong> In some cases, especially for niche or regional frameworks with limited training representation, an Unverified standard may have no reliable basis at all — the code and the language may both be fabrications that bear only a surface resemblance to the actual framework.</li>
+</ul>
+
+<p>The Unverified label is therefore a direct, non-negotiable signal that <strong>human review against the official source is required</strong> before these standards can be used with confidence. This is not a bureaucratic formality; it is a substantive accuracy check.</p>
+
+<p>To understand why Unverified standards can contain invented content, it helps to think about what an AI is actually doing when it has no source document. It is drawing on patterns in its training data — fragments of standards documents, curriculum guides, textbook references, and academic articles it has encountered — and synthesizing what a standard for this framework, at this grade level, in this domain, probably looks like. For widely published frameworks, this synthesis may be quite good. For frameworks that are less commonly reproduced online, or for older versions of a framework that has since been revised, the synthesis may be substantially wrong. The code numbering is particularly vulnerable, because numbering conventions are arbitrary by design and must be memorized exactly; they do not follow logical rules that an AI can reliably reconstruct.</p>
+
+<p>The table below summarizes the key practical differences between the two markers:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Verified</th>
+      <th>Unverified</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Source of the standard</td>
+      <td>A document or page you supplied</td>
+      <td>AI generation from a framework name alone</td>
+    </tr>
+    <tr>
+      <td>Code accuracy risk</td>
+      <td>Low (transcribed from source)</td>
+      <td>High (synthesized, may be approximate or invented)</td>
+    </tr>
+    <tr>
+      <td>Wording accuracy risk</td>
+      <td>Low to moderate (transcription errors possible)</td>
+      <td>Moderate to high (paraphrase or invention possible)</td>
+    </tr>
+    <tr>
+      <td>Recommended action</td>
+      <td>Spot-check; use with reasonable confidence</td>
+      <td>Compare every standard against the official source before relying on it</td>
+    </tr>
+    <tr>
+      <td>Does the marker change automatically after review?</td>
+      <td>N/A</td>
+      <td>No — manual editing and judgment are your responsibility</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>How to respond to Unverified standards</strong> follows directly from understanding what the label means. The process has three steps:</p>
+
+<ul>
+  <li><strong>Locate the official source.</strong> Find the authoritative published version of the standards framework — typically the state education agency website, the standards body's official publication, or a government-hosted PDF. This is your reference document.</li>
+  <li><strong>Compare code and wording.</strong> For each Unverified standard in your library, look up that identifier in the official source and read the official language side by side with what the system generated. Pay close attention to the exact alphanumeric code, any strand or domain prefixes, grade-band specifications, and the precise verb or cognitive demand language in the standard's text.</li>
+  <li><strong>Edit as needed.</strong> Where the code, wording, or both do not match the official source, edit the standard in your Standards Library to reflect the correct information. After you have done this for every Unverified standard in a given framework, you can have genuine confidence that your library accurately represents that framework — even if every standard in it originally arrived as Unverified.</li>
+</ul>
+
+<p>It is also worth being clear about what the marker <strong>does not tell you</strong>, because over-reading the label in either direction causes problems. The Verified marker does not indicate that a standard is pedagogically appropriate for your course or your learners — appropriateness is a professional judgment that no provenance label can make for you. A standard can be accurately transcribed from an official source and still be the wrong choice for a particular learning objective or audience. Conversely, an Unverified standard that you have manually checked and corrected is not somehow less trustworthy than a Verified one; the label reflects origin, not your subsequent work.</p>
+
+<p>Finally — and this point is important for anyone expecting a managed workflow — the Unverified marker does not automatically update to Verified after you review and edit a standard. The system has no mechanism for detecting that a human has checked a standard's accuracy. The marker is a record of how the standard <em>entered</em> the library, not a live status tracking your review process. Managing the review workflow, deciding when a standard has been sufficiently verified, and ensuring the library remains accurate over time are all responsibilities that remain with you.</p>
+        <div class="notes"><strong>Notes</strong>The table renders the key comparison between Verified and Unverified across five practical dimensions. The three-step response process for Unverified standards is presented as a bulleted list for scannable action guidance. The explanation of why AI-generated codes are particularly unreliable is grounded in the structural arbitrariness of alphanumeric identifiers, which may help users understand the risk intuitively rather than simply accepting it as a rule.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

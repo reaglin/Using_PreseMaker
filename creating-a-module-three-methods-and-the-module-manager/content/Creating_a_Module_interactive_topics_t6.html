@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Empty Module to Content-Ready: The Module Lifecycle</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Creating a Module: Three Methods and the Module Manager</a></div>
+  <header>
+    <h1>From Empty Module to Content-Ready: The Module Lifecycle</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>From Empty Module to Content-Ready: The Module Lifecycle</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Every module you work with in PreseMaker follows a predictable path — a lifecycle that begins the moment the module is created and ends when it is fully prepared for content generation. Understanding this lifecycle is not merely a technical detail; it is the mental model that makes every subsequent action feel logical and purposeful. Rather than wondering <em>why</em> a certain button is unavailable or <em>what</em> needs to happen next, you can orient yourself immediately by knowing where the module currently sits in its lifecycle and what that stage demands of you. This topic walks through the entire journey, from the moment a module first exists as an empty shell to the moment it is declared content-ready and passed forward to the generation process.</p>
+
+<p><strong>The Starting Point: An Empty Module</strong></p>
+
+<p>When a module is first created, it arrives with structure but no substance. Think of it as a labeled folder that has been placed on a shelf — the folder exists, it has a name, and it occupies a real place in the system, but nothing has been filed inside it yet. This is the defining characteristic of an empty module: the necessary scaffolding is in place, but no generated content has been produced.</p>
+
+<p>It is worth being precise about what "empty" means in different creation scenarios, because not all new modules start from exactly the same place:</p>
+
+<ul>
+  <li><strong>AI-generated modules</strong> begin with no topics whatsoever. The module record exists, but the topics list is entirely blank. Before any other content can be produced, that topics list must be generated — this is the first active step the learner must take.</li>
+  <li><strong>Added or imported modules</strong> may arrive with topics and even some content already present. A module imported from an external source or manually built up through an add workflow can bypass some early stages because the foundational content already exists within it.</li>
+</ul>
+
+<p>This distinction matters because it means the lifecycle is not a rigid, one-size-fits-all sequence. The path a module travels depends partly on how it was born. What remains consistent across all creation methods, however, is the destination: every module must reach the content-ready state before generation can proceed, and the Module Manager is the instrument that guides it there.</p>
+
+<p><strong>Introducing the Module Manager as Lifecycle Hub</strong></p>
+
+<p>The Module Manager is the central workspace where a module's entire lifecycle is managed. Rather than scattering lifecycle tasks across multiple disconnected tools or screens, PreseMaker consolidates everything into the Module Manager. This design choice has a practical consequence: once you know how to read the Module Manager, you always know what is happening with a module and what needs to happen next.</p>
+
+<p>The Module Manager serves three overlapping functions as a lifecycle hub:</p>
+
+<ul>
+  <li><strong>Visibility:</strong> It surfaces the module's current lifecycle stage prominently, so there is never any ambiguity about where the module stands. Status indicators, progress cues, and the availability or suppression of action options all communicate the module's readiness level at a glance.</li>
+  <li><strong>Guidance:</strong> Rather than leaving learners to guess which actions are appropriate at a given stage, the Module Manager highlights the relevant options for the current stage and hides or disables those that are not yet applicable. This prevents premature actions and reduces errors.</li>
+  <li><strong>Unification:</strong> All three creation methods — AI generation, manual addition, and import — ultimately deposit the new module into the Module Manager. Regardless of how a module came into existence, it lands in the same place and is managed through the same interface. This means the skills you develop working with one module transfer directly to every other module you encounter.</li>
+</ul>
+
+<p>The Module Manager therefore acts less like a simple list view and more like a dashboard that actively participates in moving the module forward. It is not passive storage; it is a guided workflow environment.</p>
+
+<p><strong>Progressing Through Lifecycle Stages</strong></p>
+
+<p>The lifecycle is divided into distinct stages, each representing a clearly defined readiness level. Moving from one stage to the next is not automatic — it requires deliberate action, and that action must be completed fully before advancement occurs. Each stage signals two things simultaneously: what work has already been done and what work still remains.</p>
+
+<p>To make this concrete, consider the stages as a progression table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stage</th>
+      <th>What It Signals</th>
+      <th>What Must Happen to Advance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Empty / Created</td>
+      <td>Module exists but has no topics</td>
+      <td>Topics list must be generated or provided</td>
+    </tr>
+    <tr>
+      <td>Topics Present</td>
+      <td>A topics list exists; most content generation options unlock</td>
+      <td>Configuration must be completed</td>
+    </tr>
+    <tr>
+      <td>Configured</td>
+      <td>All required context has been supplied to PreseMaker</td>
+      <td>Final readiness check passes automatically</td>
+    </tr>
+    <tr>
+      <td>Content-Ready</td>
+      <td>Module has passed all prerequisite stages</td>
+      <td>Handed off to content generation process</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A critical milestone within this progression is the generation of the topics list. Most content generation capabilities in PreseMaker become available only once the module has a populated topics list. Until that list exists, the majority of generation actions remain inaccessible — not because of an arbitrary restriction, but because those actions require topics to operate on. There is nothing to generate content <em>for</em> until the topics themselves exist. This is why, for an AI-generated module, producing the topics list is the very first active step in the lifecycle.</p>
+
+<p>The Module Manager visually reflects whichever stage a module currently occupies. This means that at any moment, a learner can open the Module Manager and immediately understand the module's status without needing to inspect its contents in detail.</p>
+
+<p><strong>The Role of Configuration in the Lifecycle</strong></p>
+
+<p>Configuration is not a bureaucratic formality — it is the mechanism by which PreseMaker acquires the context it needs to generate meaningful, relevant content. An unconfigured or incompletely configured module gives PreseMaker insufficient information to work with, which is why configuration is a required stage rather than an optional enhancement.</p>
+
+<p>Configuration steps typically involve supplying information such as the intended audience, the subject domain, tone and depth preferences, and any other parameters that shape how content is generated. Without this context, PreseMaker would be generating into a vacuum — producing content that might be technically coherent but misaligned with the actual learning objectives or audience needs.</p>
+
+<p>The Module Manager reinforces configuration as a lifecycle requirement in a specific way: it surfaces the relevant configuration options at the appropriate stage. When a module has a topics list but has not been configured, the Module Manager presents the configuration interface and makes it clear that this step must be completed. It does not simply offer configuration as one of many optional menu items; it positions it as the next required action in the sequence.</p>
+
+<p>The consequence of skipping or incompletely finishing configuration is equally clear: the module cannot advance to the content-ready state. A partially configured module remains in its current stage, and the content-ready designation is withheld until all required configuration fields have been satisfied. This is a deliberate guardrail. It ensures that when a module finally reaches content-ready status, it has genuinely earned that designation — meaning PreseMaker has everything it needs to generate high-quality output.</p>
+
+<p><strong>Reaching the Content-Ready State</strong></p>
+
+<p>Content-ready is the culminating stage of the module lifecycle. A module that has reached this state has successfully passed through every prerequisite stage: it has a topics list, it has been fully configured, and all required information has been supplied. At this point, the module is considered ready for the content generation process to begin.</p>
+
+<p>The Module Manager makes the content-ready state visually distinct from earlier stages. This is intentional — learners need to be able to distinguish at a glance between modules that are ready to generate and those that still require attention. A module sitting in the empty stage and a module sitting in the content-ready stage look different in the Module Manager, even if both technically "exist" in the system.</p>
+
+<p>It is also important to understand what reaching content-ready does <em>not</em> mean: it does not mean that content has been generated. Content-ready is the handoff point — the moment at which the module transitions from the lifecycle preparation process into the content generation process. What happens after content-ready, including how generation is triggered and what it produces, is covered in subsequent lessons. For now, the key understanding is that content-ready is the goal of the lifecycle, and everything that happens between module creation and that state is oriented toward reaching it.</p>
+
+<p><strong>How the Module Manager Reinforces Each Stage</strong></p>
+
+<p>One of the most thoughtfully designed aspects of the Module Manager is the way it actively reinforces the lifecycle at every stage rather than simply recording it. This reinforcement happens through two complementary mechanisms: progressive disclosure of actions and persistent status communication.</p>
+
+<p><strong>Progressive disclosure</strong> means that the Module Manager shows learners only the actions that are appropriate for the module's current stage. Actions that belong to a later stage — actions that would be premature or meaningless at the current point — are either hidden entirely or displayed in a disabled state. This prevents learners from attempting steps out of sequence, which could otherwise lead to errors, confusion, or wasted effort. For example, attempting to trigger content generation before a topics list exists would be nonsensical; the Module Manager prevents this by keeping generation options inaccessible until the topics stage has been reached.</p>
+
+<p><strong>Status communication</strong> operates through indicators and progress cues embedded in the Module Manager interface. These might take the form of stage labels, completion checkmarks, warning indicators on incomplete configuration fields, or a clear visual distinction between modules at different stages. Together, these cues help learners build an accurate mental model of the lifecycle — not just for the module they are currently working on, but as a generalized understanding that applies to every module they will ever manage.</p>
+
+<p>This reinforcement is particularly valuable because all three creation methods — AI generation, manual addition, and import — funnel into the same Module Manager interface. A learner who created one module via AI generation and a second via import will manage both through identical Module Manager interactions. The creation origin fades into the background; what matters going forward is the lifecycle stage, and the Module Manager communicates that stage consistently regardless of how the module originated. Over time, this consistency builds fluency: learners stop thinking about <em>how</em> a module was created and start thinking naturally in terms of lifecycle stages and the actions those stages require.</p>
+        <div class="notes"><strong>Notes</strong>Walks learners through the progression a module follows after creation, ending at the point where it is ready for content generation. Reinforces how the Module Manager supports each stage of this lifecycle.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

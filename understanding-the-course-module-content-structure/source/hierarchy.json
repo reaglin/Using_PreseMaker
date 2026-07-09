@@ -1,0 +1,838 @@
+{
+  "ModuleFolderName": "Understanding_the_Course",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:10:04.203911-04:00",
+  "ModifiedDate": "2026-07-08T19:11:43.6246099-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "b8810af4-425e-4d9f-b69e-01a28fda0dc9",
+      "Title": "The PreseMaker Hierarchy Overview",
+      "Summary": "Introduces the overall organizational structure of PreseMaker, explaining how courses, modules, topics, and generated materials fit together as a unified system.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:10:04.203911-04:00",
+      "ModifiedDate": "2026-07-08T19:10:04.203911-04:00",
+      "Elements": [
+        {
+          "Id": "898ddc4b-2974-44d3-a112-05a943e38160",
+          "TopicId": "b8810af4-425e-4d9f-b69e-01a28fda0dc9",
+          "Title": "What Is PreseMaker?",
+          "BodyText": "PreseMaker is an e-learning authoring tool built around a clear, layered organizational system for creating and managing educational content.",
+          "Notes": "Understanding PreseMaker as a system\u2014rather than just a single tool\u2014helps learners appreciate why the hierarchy exists and how it supports scalable course creation.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:10:27.7417598-04:00",
+          "ModifiedDate": "2026-07-08T19:10:27.7417598-04:00",
+          "Items": [
+            {
+              "Id": "1844d780-21d8-4053-a8a9-2b3dff2f3c22",
+              "Text": "PreseMaker is designed to help authors structure, generate, and store e-learning materials in a consistent and repeatable way.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7b36b27c-ca2c-4eb9-9e48-93e3a4220c08",
+              "Text": "The entire platform revolves around a defined hierarchy that keeps content organized from the broadest level down to individual generated assets.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "fb9d4349-e8b1-439a-b618-98213d2001dd",
+          "TopicId": "b8810af4-425e-4d9f-b69e-01a28fda0dc9",
+          "Title": "The Four Levels of the Hierarchy",
+          "BodyText": "PreseMaker organizes content into nested levels: Courses contain Modules, Modules contain Topics, and Topics contain Subtopics. The materials PreseMaker produces are outputs generated from these levels.",
+          "Notes": "Think of the hierarchy like nested containers \u2014 each level holds and gives meaning to the level below it.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:10:27.7417598-04:00",
+          "ModifiedDate": "2026-07-08T19:10:27.7417598-04:00",
+          "Items": [
+            {
+              "Id": "cc7a09e2-4706-423a-8321-5e73bd546bab",
+              "Text": "A Course is the top-level container, representing a complete learning program or subject area.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "077fe94c-dd2e-420b-9429-baf5827b299d",
+              "Text": "A Module sits inside a Course and groups related instructional content around a specific theme or unit.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "88e0c97e-cc1f-43c6-94f4-81a329a46c6f",
+              "Text": "A Topic lives within a Module and represents a single, focused lesson or concept.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "be06b7fc-0d47-4fb6-9962-c2c79cdb1265",
+              "Text": "A Subtopic sits within a Topic, dividing a lesson into finer points; the materials PreseMaker generates (such as slides, notes, or quizzes) are outputs produced from these levels, not a level of their own.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "3c9d7762-9fd4-4792-b6b4-618ebeb769e9",
+          "TopicId": "b8810af4-425e-4d9f-b69e-01a28fda0dc9",
+          "Title": "How Courses Serve as the Top-Level Container",
+          "BodyText": "A Course is the broadest organizational unit in PreseMaker, providing the overarching framework under which all other content is grouped.",
+          "Notes": "A single PreseMaker project may contain one or many Courses, depending on the scope of the author\u0027s work.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:10:27.7417598-04:00",
+          "ModifiedDate": "2026-07-08T19:10:27.7417598-04:00",
+          "Items": [
+            {
+              "Id": "84b4db65-b381-4480-b0e1-de118e48ec5b",
+              "Text": "Courses define the overall subject, audience, or program that the content belongs to.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6811b6c6-87d1-42d0-8a30-4a30fda3499c",
+              "Text": "All Modules, Topics, and Generated Materials ultimately trace back to and are organized under a parent Course.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "67a04b26-9d1e-4278-949b-50c46d3171d4",
+          "TopicId": "b8810af4-425e-4d9f-b69e-01a28fda0dc9",
+          "Title": "Modules as Thematic Groupings",
+          "BodyText": "Modules break a Course into manageable sections, each focused on a distinct theme, unit, or instructional goal.",
+          "Notes": "Modules allow authors to plan and build content incrementally rather than tackling an entire Course at once.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:10:27.7417598-04:00",
+          "ModifiedDate": "2026-07-08T19:10:27.7417598-04:00",
+          "Items": [
+            {
+              "Id": "0ddb920d-c561-4f92-882f-574fe38949ba",
+              "Text": "Each Module contains one or more Topics, all of which relate to the Module\u0027s central theme.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "775d1996-9c84-4b55-9df1-78eaf3b521ce",
+              "Text": "Modules help learners navigate a Course by providing clear, logical boundaries between different areas of content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d4662966-ffe2-418d-9bbd-6578dc466443",
+              "Text": "Authors can add, reorder, or update Modules independently without disrupting the rest of the Course structure.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d6f9506e-153a-4fe2-8d8b-b182553a5a38",
+          "TopicId": "b8810af4-425e-4d9f-b69e-01a28fda0dc9",
+          "Title": "Topics as the Core Instructional Unit",
+          "BodyText": "Topics are where individual lessons are defined; each Topic represents a single, focused concept or learning objective within a Module.",
+          "Notes": "Topics are the direct source from which PreseMaker generates content assets, making them the most actionable level of the hierarchy.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:10:27.7417598-04:00",
+          "ModifiedDate": "2026-07-08T19:10:27.7417598-04:00",
+          "Items": [
+            {
+              "Id": "89822337-2511-419f-928a-ae0e80f117f9",
+              "Text": "A Topic typically includes a title, a summary, and source content that PreseMaker uses to produce materials.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e26199a2-0c46-4985-8135-30fa789fbac2",
+              "Text": "Each Topic is self-contained, allowing it to be edited, regenerated, or reused without affecting sibling Topics.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c2e4898e-e90f-4084-8840-4330b2ac1cac",
+              "Text": "The specificity of a Topic directly influences the relevance and quality of the materials PreseMaker generates from it.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3a23b59b-0004-49b5-a65f-3cac55f82da3",
+          "TopicId": "b8810af4-425e-4d9f-b69e-01a28fda0dc9",
+          "Title": "Generated Materials as the Output Layer",
+          "BodyText": "Generated Materials are the tangible content assets that PreseMaker produces from a Topic, such as presentation slides, speaker notes, or assessments.",
+          "Notes": "Because Generated Materials are derived from Topics, updating a Topic\u0027s source content allows authors to regenerate fresh materials without starting from scratch.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:10:27.7417598-04:00",
+          "ModifiedDate": "2026-07-08T19:10:27.7417598-04:00",
+          "Items": [
+            {
+              "Id": "c8d61de5-daf3-4fc3-a74d-f08bf9f74895",
+              "Text": "Generated Materials represent the final deliverables that learners or instructors will actually use.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d1d08f86-54b5-4a03-9a86-8636c3e31bf5",
+              "Text": "Each set of Generated Materials is tied to a specific Topic, keeping outputs traceable back through the full hierarchy.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b54237aa-5fc2-48ee-8248-79de23bdadbc",
+              "Text": "PreseMaker stores Generated Materials in an organized file structure on the author\u0027s computer, ensuring full ownership and accessibility.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8265a1d7-bed2-43ee-9f86-301c1cd47ac8",
+          "TopicId": "b8810af4-425e-4d9f-b69e-01a28fda0dc9",
+          "Title": "The Hierarchy as a Unified System",
+          "BodyText": "The four levels of the PreseMaker hierarchy are not isolated layers \u2014 they work together as a unified system where each level informs and supports the others.",
+          "Notes": "Viewing the hierarchy as a system rather than a simple folder structure helps authors make better decisions about how to organize and scope their content.",
+          "SortOrder": 6,
+          "CreatedDate": "2026-07-08T19:10:27.7417598-04:00",
+          "ModifiedDate": "2026-07-08T19:10:27.7417598-04:00",
+          "Items": [
+            {
+              "Id": "d5e857c5-22c6-4d8c-8afd-20713d16cb54",
+              "Text": "Changes or additions at any level of the hierarchy are reflected in the context of the levels above and below it.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "01716e2a-f488-43e2-9d9d-ad466f111f47",
+              "Text": "The unified structure ensures that content remains consistent, navigable, and easy to maintain over time.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5578eb01-d300-40c3-90a7-d045a878542d",
+              "Text": "Understanding how Courses, Modules, Topics, and Subtopics relate to one another — and how PreseMaker generates materials from them — is foundational to using PreseMaker effectively.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "a75dbf69-5cde-460c-87fe-37306704a6f8",
+      "Title": "Understanding Courses and Modules",
+      "Summary": "Explores the relationship between courses and modules, clarifying how modules serve as the primary building blocks organized within a course.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:10:04.203911-04:00",
+      "ModifiedDate": "2026-07-08T19:10:04.203911-04:00",
+      "Elements": [
+        {
+          "Id": "163ffbfb-1b01-4c12-b0dc-b9274b37f36e",
+          "TopicId": "a75dbf69-5cde-460c-87fe-37306704a6f8",
+          "Title": "What Is a Course?",
+          "BodyText": "A course is the top-level container in PreseMaker, representing the broadest organizational unit for a subject or learning program.",
+          "Notes": "Think of a course as the overall wrapper \u2014 for example, \u0027Introduction to Digital Marketing\u0027 \u2014 under which all related content lives.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:10:43.577684-04:00",
+          "ModifiedDate": "2026-07-08T19:10:43.577684-04:00",
+          "Items": [
+            {
+              "Id": "902c7899-e421-4742-87d4-1a108e0aba1f",
+              "Text": "A course defines the overall subject area or learning goal that a learner is working toward.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a48ee252-4aff-4954-98b6-fa2b0e5ba93d",
+              "Text": "All modules, topics, and generated materials ultimately belong to a single parent course.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c014b4f8-d82f-4909-83d3-c16861efa5ea",
+              "Text": "Creating a course is the first step before any content can be organized or produced in PreseMaker.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "0127b26d-9fd6-43f9-bbba-e5f60b2cabb1",
+          "TopicId": "a75dbf69-5cde-460c-87fe-37306704a6f8",
+          "Title": "What Is a Module?",
+          "BodyText": "A module is the primary building block within a course, representing a focused section or unit of instruction.",
+          "Notes": "For example, a course on Digital Marketing might contain modules such as \u0027SEO Basics,\u0027 \u0027Social Media Strategy,\u0027 and \u0027Email Campaigns.\u0027",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:10:43.577684-04:00",
+          "ModifiedDate": "2026-07-08T19:10:43.577684-04:00",
+          "Items": [
+            {
+              "Id": "ea4e45c8-b8c8-40c9-b1b4-280f9df0d7d5",
+              "Text": "Modules break a course into manageable, thematically grouped sections of content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f7b0e089-659d-4afb-a11f-42c3a4e7fbed",
+              "Text": "Each module sits one level below the course and one level above individual topics or content items.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f8766cde-0318-4e05-b456-3e0f11c89c04",
+              "Text": "A single course can contain multiple modules, allowing complex subjects to be organized into logical chunks.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c93b6e0c-7022-4fc7-964b-ff9ee0947de4",
+          "TopicId": "a75dbf69-5cde-460c-87fe-37306704a6f8",
+          "Title": "The Parent-Child Relationship Between Courses and Modules",
+          "BodyText": "Courses and modules share a hierarchical parent-child relationship, where the course acts as the parent and modules act as its children.",
+          "Notes": "This hierarchy ensures that content is always contextually anchored \u2014 a module cannot exist independently; it must belong to a course.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:10:43.577684-04:00",
+          "ModifiedDate": "2026-07-08T19:10:43.577684-04:00",
+          "Items": [
+            {
+              "Id": "2a5af30a-5c1c-4ad2-85e5-664ba4b0377d",
+              "Text": "A course can contain one or many modules, but each module belongs to exactly one course.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "39886227-f6c2-48dc-bfb2-f90d9ff2b55b",
+              "Text": "This relationship keeps related instructional content grouped together and easy to navigate.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "79e04a74-3d88-4cee-91c5-6872c43f7a91",
+              "Text": "Understanding this hierarchy is essential for knowing where to add, edit, or find content within PreseMaker.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "642bef58-da2a-47fc-bf17-763bf71c41d1",
+          "TopicId": "a75dbf69-5cde-460c-87fe-37306704a6f8",
+          "Title": "Why Modules Are the Primary Building Blocks",
+          "BodyText": "Modules are considered the primary building blocks of a course because they are the main units through which instructional content is structured and delivered.",
+          "Notes": "While courses define the \u0027what\u0027 at a high level, modules define \u0027how\u0027 that subject is divided into teachable segments.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:10:43.577684-04:00",
+          "ModifiedDate": "2026-07-08T19:10:43.577684-04:00",
+          "Items": [
+            {
+              "Id": "f64525cf-ed91-42fc-8cf5-de1cd817ca98",
+              "Text": "Modules provide the structural framework that keeps a course organized and pedagogically sound.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "24d5b372-c196-4bf5-a4c3-cde6b2d75577",
+              "Text": "All finer-grained content elements \u2014 such as topics and generated materials \u2014 are housed within modules.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "11a3dcf6-c25e-4cce-866a-f1ffce6f0936",
+              "Text": "Designing a course effectively begins with planning its modules, as they determine the learner\u0027s path through the material.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "0eb59fab-cd50-4d3b-87ef-fa13ff66c6b0",
+          "TopicId": "a75dbf69-5cde-460c-87fe-37306704a6f8",
+          "Title": "Organizing Modules Within a Course",
+          "BodyText": "Modules within a course can be arranged in a deliberate sequence to guide learners through content in a logical and progressive order.",
+          "Notes": "For instance, foundational modules might be placed first, with advanced or applied modules following later in the course sequence.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:10:43.577684-04:00",
+          "ModifiedDate": "2026-07-08T19:10:43.577684-04:00",
+          "Items": [
+            {
+              "Id": "eae63570-c595-4b13-b6fc-617dac430ed2",
+              "Text": "The order of modules within a course reflects the intended learning progression for the subject.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c3ba073f-63cc-4632-92dc-f8b3a0d40a9a",
+              "Text": "Instructors can structure modules to build on one another, supporting scaffolded learning.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "602455bd-d73f-4448-88a4-e5418d0e3eb0",
+              "Text": "A well-organized set of modules ensures learners experience content coherently rather than in isolated fragments.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "f5e12a96-c5ec-45aa-9cde-1d968bf5c4f3",
+      "Title": "Topics and Generated Materials",
+      "Summary": "Examines how topics nest within modules and how PreseMaker generates content materials from those topics, connecting structure to output.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:10:04.203911-04:00",
+      "ModifiedDate": "2026-07-08T19:10:04.203911-04:00",
+      "Elements": [
+        {
+          "Id": "07e9cd88-6ae3-4612-95cc-60f8ade71a30",
+          "TopicId": "f5e12a96-c5ec-45aa-9cde-1d968bf5c4f3",
+          "Title": "Topics as Building Blocks Within Modules",
+          "BodyText": "Topics are the smallest structural unit within a module, each representing a focused concept or skill area.",
+          "Notes": "Think of a module as a chapter and topics as the individual sections within that chapter, each covering one distinct idea.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:11:04.0120768-04:00",
+          "ModifiedDate": "2026-07-08T19:11:04.0120768-04:00",
+          "Items": [
+            {
+              "Id": "9c161660-fc7c-41ea-aab7-88b06bc7450d",
+              "Text": "Each module contains one or more topics that collectively cover the module\u0027s overall subject matter.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "99f9dcb5-be16-4979-805a-9623cc34c1e2",
+              "Text": "Topics are sequenced within a module to create a logical learning progression.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "051381a1-2804-480c-a212-04fb277f1d30",
+              "Text": "Keeping each topic tightly focused ensures generated materials remain clear and coherent.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6df69aca-3306-4090-b792-18f039c4f6a3",
+          "TopicId": "f5e12a96-c5ec-45aa-9cde-1d968bf5c4f3",
+          "Title": "How Topics Nest Inside Modules",
+          "BodyText": "PreseMaker organizes topics in a hierarchical relationship, where every topic belongs to exactly one parent module.",
+          "Notes": "This nesting means that editing or reorganizing a module directly affects which topics \u2014 and therefore which generated materials \u2014 are associated with it.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:11:04.0120768-04:00",
+          "ModifiedDate": "2026-07-08T19:11:04.0120768-04:00",
+          "Items": [
+            {
+              "Id": "4e0b8ba8-b202-4329-be3d-ceb98454c495",
+              "Text": "A topic cannot exist independently; it must always be assigned to a module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "02419239-5818-468c-97a8-68d88d156cd9",
+              "Text": "Multiple topics can be nested under a single module, allowing complex subjects to be broken into manageable pieces.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "754fca06-eb48-43e1-991a-9b0e8a8a5a78",
+              "Text": "The nesting structure is reflected in how PreseMaker displays and navigates content during authoring.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d1e1052a-37a9-4db6-93aa-eb66ed234a67",
+          "TopicId": "f5e12a96-c5ec-45aa-9cde-1d968bf5c4f3",
+          "Title": "From Topic to Generated Content",
+          "BodyText": "PreseMaker uses the information defined in a topic \u2014 its title, summary, and source content \u2014 to automatically generate learning materials.",
+          "Notes": "The quality and specificity of the topic definition directly influences the relevance and accuracy of the generated output.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:11:04.0120768-04:00",
+          "ModifiedDate": "2026-07-08T19:11:04.0120768-04:00",
+          "Items": [
+            {
+              "Id": "68a5f0aa-c071-4c98-8aec-3857da658b91",
+              "Text": "Each topic acts as the input source that drives PreseMaker\u0027s content generation process.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f190fd95-ed54-45be-a7e1-528ada86acc0",
+              "Text": "Generated materials are scoped to their topic, meaning output stays focused on that topic\u0027s defined subject matter.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e2a0fb10-764c-491a-94c7-4c39ed980ccf",
+              "Text": "Changing a topic\u0027s details will affect what gets generated when content is produced or regenerated.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "af9ca5c5-1736-4d09-90e2-b6f5d0ebceae",
+          "TopicId": "f5e12a96-c5ec-45aa-9cde-1d968bf5c4f3",
+          "Title": "Types of Materials Generated from Topics",
+          "BodyText": "For each topic, PreseMaker can produce a variety of content elements that together form the learner-facing material.",
+          "Notes": "These materials collectively build out the instructional content that learners experience when moving through a module.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:11:04.0120768-04:00",
+          "ModifiedDate": "2026-07-08T19:11:04.0120768-04:00",
+          "Items": [
+            {
+              "Id": "701b8c5b-e34a-4ecc-9310-78a9a2b4960d",
+              "Text": "Generated materials may include slides, explanatory text, key points, notes, and assessment items tied to the topic.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ba5da09f-6686-488c-a67e-7cdfb2a1be70",
+              "Text": "Each material type serves a distinct instructional purpose, from introducing concepts to reinforcing and testing understanding.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6589515b-3159-4a69-955f-20247725e7d8",
+              "Text": "All generated materials for a topic are linked back to that topic within the course structure.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "716e61eb-e212-446c-9356-d92cd2c8ce53",
+          "TopicId": "f5e12a96-c5ec-45aa-9cde-1d968bf5c4f3",
+          "Title": "The Structural Chain: Course \u2192 Module \u2192 Topic \u2192 Materials",
+          "BodyText": "Understanding the full hierarchy helps authors see how a top-level course ultimately produces granular learning content through a series of nested relationships.",
+          "Notes": "Visualizing this chain helps authors make intentional decisions about where to place content and how to organize their courses effectively.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:11:04.0120768-04:00",
+          "ModifiedDate": "2026-07-08T19:11:04.0120768-04:00",
+          "Items": [
+            {
+              "Id": "f84687d7-4409-47ea-903c-6a23bc2d6958",
+              "Text": "A course contains modules, modules contain topics, and topics produce generated materials \u2014 each level depends on the one above it.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b0b428a2-3248-46fe-bc32-3beafa028361",
+              "Text": "This chain ensures that all generated materials are always traceable back to their source topic, module, and course.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "54e35fb9-040c-4ef7-9c4b-fac92bfd60e2",
+              "Text": "Structural changes at any level, such as moving or renaming a module, cascade down to affect the topics and materials beneath it.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "9abd2e80-afcd-4917-bf2a-be521c18da3b",
+          "TopicId": "f5e12a96-c5ec-45aa-9cde-1d968bf5c4f3",
+          "Title": "Connecting Structure to Output",
+          "BodyText": "The relationship between topics and generated materials is what bridges course design with the actual learner experience in PreseMaker.",
+          "Notes": "A well-structured set of topics leads to coherent, well-scoped generated materials, making the authoring investment in structure directly visible in the final output.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:11:04.0120768-04:00",
+          "ModifiedDate": "2026-07-08T19:11:04.0120768-04:00",
+          "Items": [
+            {
+              "Id": "62955d78-127c-49fa-a5cf-08e5e5f32478",
+              "Text": "Every piece of generated output corresponds to a specific topic, making it easy to identify where content came from.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "26147077-e344-4b35-82c9-fe2e992cda19",
+              "Text": "Authors can refine or regenerate materials for individual topics without affecting content generated from other topics.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5fad4548-34dd-4dfb-ab30-e1529d8b3344",
+              "Text": "The structural connection between topics and materials supports consistent, organized course delivery.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "a20cb775-b9ad-4817-9181-bd5ba74d8a3f",
+      "Title": "How PreseMaker Stores Files on Your Computer",
+      "Summary": "Describes where and how PreseMaker saves files locally on the author\u0027s computer, ensuring users understand file locations and ownership of their work.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:10:04.203911-04:00",
+      "ModifiedDate": "2026-07-08T19:10:04.203911-04:00",
+      "Elements": [
+        {
+          "Id": "073c88df-e399-40dc-ae6a-5ab66b2ff22a",
+          "TopicId": "a20cb775-b9ad-4817-9181-bd5ba74d8a3f",
+          "Title": "Local Storage: Where PreseMaker Saves Your Files",
+          "BodyText": "PreseMaker saves all generated course materials directly to your local computer rather than storing them exclusively in the cloud.",
+          "Notes": "This means your files are accessible even without an internet connection, giving you full control over your content at all times.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:11:27.1560921-04:00",
+          "ModifiedDate": "2026-07-08T19:11:27.1560921-04:00",
+          "Items": [
+            {
+              "Id": "b22514a9-0e3c-4c94-b40a-ed66728a5d2e",
+              "Text": "Files are written to a designated folder on your local drive each time content is generated or updated.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9d868ae7-69f5-4ef1-ba3c-5a332e41d7c8",
+              "Text": "The local storage approach ensures that your work stays on your own computer and does not rely on any online service\u0027s servers or your account status.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9c8c32a2-2e4b-4a09-93c8-cfe9551c652c",
+              "Text": "You can navigate to the storage location using your operating system\u0027s file explorer just like any other folder on your computer.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "e5844b12-7df2-46a6-89f7-fca891746ade",
+          "TopicId": "a20cb775-b9ad-4817-9181-bd5ba74d8a3f",
+          "Title": "Default File Location and Folder Structure",
+          "BodyText": "PreseMaker organizes saved files into a predictable folder hierarchy that mirrors the course-module-content structure used inside the application.",
+          "Notes": "For example, a course titled \u0027Sales Training\u0027 might create a top-level folder of the same name, with subfolders for each module and individual files for each topic or content element.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:11:27.1560921-04:00",
+          "ModifiedDate": "2026-07-08T19:11:27.1560921-04:00",
+          "Items": [
+            {
+              "Id": "b651dc2d-7f95-4955-a04d-a2f1083f88d8",
+              "Text": "A root PreseMaker folder is created in a standard location such as your Documents directory during initial setup.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "34b42321-f6cd-4ad6-9bf7-2177aa13b150",
+              "Text": "Inside the root folder, each course is represented by its own named subfolder, keeping projects separated and easy to find.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8ac922b8-e832-4d33-8382-845c8deaebd8",
+              "Text": "Module and content files are nested within their respective course folders, preserving the logical hierarchy you see in the application.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "fd63b021-3469-4130-a859-d04c10bcea41",
+          "TopicId": "a20cb775-b9ad-4817-9181-bd5ba74d8a3f",
+          "Title": "File Formats Used by PreseMaker",
+          "BodyText": "Generated materials are saved in common, widely supported file formats so they can be opened, edited, and shared without requiring special software.",
+          "Notes": "Using standard formats reduces dependency on PreseMaker itself and makes it straightforward to hand off content to colleagues or import it into other tools.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:11:27.1560921-04:00",
+          "ModifiedDate": "2026-07-08T19:11:27.1560921-04:00",
+          "Items": [
+            {
+              "Id": "c6813882-3cd5-4348-82db-e463dcfb8ef2",
+              "Text": "Presentation files are typically saved in formats compatible with major presentation applications, such as .pptx.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2b3fe2ba-d28b-43d8-8328-3cef5379df7a",
+              "Text": "Text lessons are saved as HTML (interactive or printable) and Markdown, presentations as PowerPoint (.pptx) files, and quiz banks export to the QTI and WPProQuiz formats.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5db1c391-5ebf-46ac-bdb6-a0dd76267989",
+              "Text": "Because the formats are non-proprietary, you are never locked into PreseMaker to access or modify your own work.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b09fb4c7-9800-417d-ba27-de2886c874d0",
+          "TopicId": "a20cb775-b9ad-4817-9181-bd5ba74d8a3f",
+          "Title": "Ownership and Access Rights to Your Files",
+          "BodyText": "All files saved by PreseMaker belong entirely to the user; the application does not retain ownership or impose usage restrictions on generated content.",
+          "Notes": "This is an important distinction from subscription-based platforms that may restrict export or reuse of content created within their environment.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:11:27.1560921-04:00",
+          "ModifiedDate": "2026-07-08T19:11:27.1560921-04:00",
+          "Items": [
+            {
+              "Id": "8f6f04cd-b54c-486e-aaac-d0bd3e3cc840",
+              "Text": "You retain full intellectual property rights over any content you create and generate through PreseMaker.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "92c3396f-972f-4c0c-83ec-e736104ed61e",
+              "Text": "Files can be copied, moved, shared, or deleted at any time without needing to interact with the PreseMaker application.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d215a10a-28cc-4c79-b09a-5df1509e64c6",
+              "Text": "There are no license flags or digital rights management controls embedded in the saved files.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "efff2895-cc34-4b51-ba04-2607400fea56",
+          "TopicId": "a20cb775-b9ad-4817-9181-bd5ba74d8a3f",
+          "Title": "Locating and Verifying Your Saved Files",
+          "BodyText": "PreseMaker provides straightforward ways to confirm where a file has been saved and to open its containing folder directly from within the application.",
+          "Notes": "Being able to verify file location immediately after generation helps prevent confusion about which version of a file is the most current.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:11:27.1560921-04:00",
+          "ModifiedDate": "2026-07-08T19:11:27.1560921-04:00",
+          "Items": [
+            {
+              "Id": "17c189c1-e4fa-47dc-84cf-4bce45d8fb1f",
+              "Text": "A file path or \u0027Show in Folder\u0027 option is typically displayed after content is generated, allowing instant navigation to the saved file.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9da5b736-6708-4177-9b99-162d4c7636d7",
+              "Text": "You can also check the application\u0027s settings or preferences panel to view or change the default save location at any time.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "019d6d6a-c858-47ca-89c6-b651d6cb7b63",
+              "Text": "Verifying the file location before closing a project is a good habit that prevents accidental data loss.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "0e3a5b5f-b74c-4116-8ced-9296d87a7412",
+          "TopicId": "a20cb775-b9ad-4817-9181-bd5ba74d8a3f",
+          "Title": "Managing and Backing Up Your PreseMaker Files",
+          "BodyText": "Because files live on your local computer, it is the user\u0027s responsibility to back up and manage those files to prevent accidental loss.",
+          "Notes": "Integrating the PreseMaker output folder into an existing backup routine\u2014such as cloud sync or an external drive backup\u2014is the simplest way to protect your work.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:11:27.1560921-04:00",
+          "ModifiedDate": "2026-07-08T19:11:27.1560921-04:00",
+          "Items": [
+            {
+              "Id": "14095967-cd28-4abb-bbb9-5644d13c79d2",
+              "Text": "Regularly copying your PreseMaker folder to an external drive or cloud storage service protects against hardware failure.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "528b21ae-deef-4d15-a7d6-c9b76814dabe",
+              "Text": "Version control practices, such as duplicating a file before making major edits, help preserve previous iterations of your content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3638cf85-eb84-45eb-bb54-b42568910f59",
+              "Text": "Deleting a file from your computer permanently removes it, because PreseMaker keeps no server-side copy — it is a local desktop application with no backend.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "3373fecb-7276-4349-a077-47a5caca30b8",
+      "Title": "Accessing and Owning Your Work",
+      "Summary": "Reinforces that authors retain full ownership of all generated content and explains how to reliably locate and manage their files at any time.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:10:04.203911-04:00",
+      "ModifiedDate": "2026-07-08T19:10:04.203911-04:00",
+      "Elements": [
+        {
+          "Id": "66921c57-6326-4ba2-a09d-97569a5177f8",
+          "TopicId": "3373fecb-7276-4349-a077-47a5caca30b8",
+          "Title": "You Own Everything You Create",
+          "BodyText": "All content generated through PreseMaker belongs entirely to you, the author, with no restrictions or platform lock-in.",
+          "Notes": "This means you are free to use, edit, share, or repurpose your generated materials however you choose, outside of PreseMaker if needed.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:11:43.6242342-04:00",
+          "ModifiedDate": "2026-07-08T19:11:43.6242342-04:00",
+          "Items": [
+            {
+              "Id": "cacf83bb-9a8a-4482-bcb7-db134e07b6b4",
+              "Text": "Ownership is retained by the creator from the moment content is generated.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d2da3f43-c7ab-49d7-99d1-f145d7792508",
+              "Text": "PreseMaker does not claim rights over any materials produced using the platform.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3e961dcf-bd3c-44a0-b580-41be4adfa1ad",
+              "Text": "You may distribute or modify your generated files without seeking additional permissions.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "514e0c76-a239-4f85-8f02-3bb80391f9a8",
+          "TopicId": "3373fecb-7276-4349-a077-47a5caca30b8",
+          "Title": "Where PreseMaker Stores Your Files",
+          "BodyText": "PreseMaker saves all generated content to a designated location on your local computer, making files easy to find and manage.",
+          "Notes": "Knowing the default storage location prevents confusion when looking for files after a session ends.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:11:43.6242342-04:00",
+          "ModifiedDate": "2026-07-08T19:11:43.6242342-04:00",
+          "Items": [
+            {
+              "Id": "ac1af63f-45f9-4f13-9ee0-1ce9b50bde6d",
+              "Text": "Files are stored locally on your device, not exclusively in a remote cloud system.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "392d59c0-3e9a-49d3-a4c3-d9dd6f85da94",
+              "Text": "A default folder path is assigned by PreseMaker during installation or first use.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2662e3bb-d26f-4fd4-940e-88d371682853",
+              "Text": "Understanding this path ensures you can navigate directly to your work at any time.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3cc0b3ca-d172-4ec0-a5fe-89f806053f57",
+          "TopicId": "3373fecb-7276-4349-a077-47a5caca30b8",
+          "Title": "Locating Your Files at Any Time",
+          "BodyText": "PreseMaker provides consistent, reliable methods for finding your saved content whenever you need it.",
+          "Notes": "Using the platform\u0027s built-in file navigation alongside your operating system\u0027s file explorer gives you two complementary ways to access your work.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:11:43.6242342-04:00",
+          "ModifiedDate": "2026-07-08T19:11:43.6242342-04:00",
+          "Items": [
+            {
+              "Id": "1bb76991-9645-499c-8274-da9f1b818e87",
+              "Text": "You can access saved files directly through PreseMaker\u0027s interface using the course-module-content hierarchy.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1b68bf97-8e8b-4220-a171-58488de1a751",
+              "Text": "Files can also be located by browsing to the designated storage folder through your operating system\u0027s file explorer.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4be76c49-b64d-4d79-8cd3-a43ccfb16820",
+              "Text": "Content is organized by course and module, reflecting the structure you built inside PreseMaker.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "9538e312-daa2-4ff4-a12e-00e32aec3469",
+          "TopicId": "3373fecb-7276-4349-a077-47a5caca30b8",
+          "Title": "Managing and Organizing Your Generated Content",
+          "BodyText": "Keeping your files organized ensures long-term accessibility and makes it easier to revisit or build upon previous work.",
+          "Notes": "Consistent naming and folder organization habits reduce time spent searching for specific materials later.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:11:43.6242342-04:00",
+          "ModifiedDate": "2026-07-08T19:11:43.6242342-04:00",
+          "Items": [
+            {
+              "Id": "2fc3a1d5-97f8-453e-8fb8-b8a45135d25d",
+              "Text": "PreseMaker structures saved files to mirror the course-module-topic hierarchy, aiding natural organization.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "149a8931-98a1-4024-a54b-89a364022ff9",
+              "Text": "You can rename, move, or archive files using standard operating system tools without affecting the platform.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a8c49462-0941-4ca1-97eb-9a589fe9dc7a",
+              "Text": "Regularly reviewing your storage folder helps you stay aware of what has been generated and what may need updating.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c93f7b25-f2e0-4e97-9c17-402b50e05e88",
+          "TopicId": "3373fecb-7276-4349-a077-47a5caca30b8",
+          "Title": "Accessing Your Work Across Sessions",
+          "BodyText": "Your generated content persists between sessions, so progress and completed materials are never lost when you close the application.",
+          "Notes": "This persistence is especially valuable for long-term projects that span multiple working sessions.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:11:43.6242342-04:00",
+          "ModifiedDate": "2026-07-08T19:11:43.6242342-04:00",
+          "Items": [
+            {
+              "Id": "9376fba0-d507-476d-a994-05ff980d8f33",
+              "Text": "Files saved during one session remain available the next time you open PreseMaker or browse your storage folder.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d5b60c68-b2bf-4e02-ba28-69f5a14f7e04",
+              "Text": "There is no need to re-generate content unless you intentionally choose to update or replace it.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "f02a63e2-f318-43e6-aeac-822235f5abb5",
+              "Text": "Consistent local storage means your work is accessible even without an active internet connection.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 29
+}

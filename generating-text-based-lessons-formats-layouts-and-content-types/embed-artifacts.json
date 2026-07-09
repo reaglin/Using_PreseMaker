@@ -1,0 +1,47 @@
+﻿[
+  {
+    "title": "Generating Text-Based Lessons: Formats, Layouts, and Content Types \u2014 Topics \u0026 Learning Outcomes",
+    "href": "topics-outcomes.html",
+    "type": "Page"
+  },
+  {
+    "title": "Generating Text-Based Lessons: Formats, Layouts, and Content Types \u2014 Module Topics",
+    "href": "topics.html",
+    "type": "Page"
+  },
+  {
+    "title": "Specialized Content Types: Lesson Plans, Example Problems, and Suggested Sources",
+    "href": "content/Generating_Text_Based_interactive.html",
+    "type": "Content"
+  },
+  {
+    "title": "Introduction to Text-Based Lesson Generation in PreseMaker",
+    "href": "content/Generating_Text_Based_interactive_topics_t1.html",
+    "type": "Content"
+  },
+  {
+    "title": "Output Layouts: Accordion, Printable, WordPress, and Markdown",
+    "href": "content/Generating_Text_Based_interactive_topics_t2.html",
+    "type": "Content"
+  },
+  {
+    "title": "Selecting Visual Themes for HTML Output",
+    "href": "content/Generating_Text_Based_interactive_topics_t3.html",
+    "type": "Content"
+  },
+  {
+    "title": "Content Types: Topic Overview versus Topic Detail",
+    "href": "content/Generating_Text_Based_interactive_topics_t4.html",
+    "type": "Content"
+  },
+  {
+    "title": "Specialized Content Types: Lesson Plans, Example Problems, and Suggested Sources",
+    "href": "content/Generating_Text_Based_interactive_topics_t5.html",
+    "type": "Content"
+  },
+  {
+    "title": "Generating Text-Based Lessons: Formats, Layouts, and Content Types \u2014 Module Topics",
+    "href": "content/module_topics.html",
+    "type": "Content"
+  }
+]

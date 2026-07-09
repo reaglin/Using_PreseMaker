@@ -1,0 +1,757 @@
+{
+  "ModuleFolderName": "Configuring_AI_Providers",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T21:05:17.113904-04:00",
+  "ModifiedDate": "2026-07-08T21:06:43.6763985-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "35324855-2fcf-4c79-b054-2be332751e78",
+      "Title": "Introduction to AI Tasks in PreseMaker",
+      "Summary": "Explains what AI tasks are in PreseMaker and the range of text-based generation tasks supported. Clarifies the scope of AI capabilities, including what PreseMaker does and does not generate.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T21:05:17.113904-04:00",
+      "ModifiedDate": "2026-07-08T21:05:17.113904-04:00",
+      "Elements": [
+        {
+          "Id": "6b0d0fcf-a5e5-427e-a792-b1697f902cc6",
+          "TopicId": "35324855-2fcf-4c79-b054-2be332751e78",
+          "Title": "What Are AI Tasks in PreseMaker?",
+          "BodyText": "AI tasks in PreseMaker are the specific generation jobs that PreseMaker sends to a configured AI provider on your behalf.",
+          "Notes": "Every interaction PreseMaker has with an AI provider is task-based, meaning each distinct type of content generation is treated as its own assignable task.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:05:31.5007729-04:00",
+          "ModifiedDate": "2026-07-08T21:05:31.5007729-04:00",
+          "Items": [
+            {
+              "Id": "2f533269-9a78-4b5c-a9d4-fc985b8774be",
+              "Text": "Each AI task represents a discrete type of content generation request, such as creating quiz questions or writing slide content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "698d1036-6937-41c0-a0c7-b1eb3e3152f2",
+              "Text": "Tasks are discrete units, allowing PreseMaker to route different types of work to different providers depending on your configuration.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "49c3bbb5-086e-4aa0-812b-c722c3b15dba",
+              "Text": "Understanding tasks as individual units is foundational to configuring which AI provider handles which type of work.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "70f00425-997b-4e6d-8183-08229777a10b",
+          "TopicId": "35324855-2fcf-4c79-b054-2be332751e78",
+          "Title": "The Scope of AI Capabilities: Text-Only Generation",
+          "BodyText": "All AI tasks in PreseMaker are strictly text-based \u2014 every request sent to an AI provider involves generating or processing text.",
+          "Notes": "This is an important boundary to understand: PreseMaker\u0027s AI integration is limited to language-based outputs only.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:05:31.5007729-04:00",
+          "ModifiedDate": "2026-07-08T21:05:31.5007729-04:00",
+          "Items": [
+            {
+              "Id": "6c701a30-c2bf-4a8f-b0db-a40c00b3a932",
+              "Text": "PreseMaker does not include any image generation capability, and no \u0027vision\u0027 or image-related AI task exists within the platform.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1552da32-6095-406c-8c03-d49703e62312",
+              "Text": "The AI layer in PreseMaker is designed exclusively around natural language generation and should not be expected to produce visual assets.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "93737f94-475e-40c6-8966-2fb9baabc835",
+              "Text": "Clarifying this scope helps avoid misconfiguration or incorrect expectations about what an AI provider must support.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8496a0d3-3da4-498f-82e4-298e825059cf",
+          "TopicId": "35324855-2fcf-4c79-b054-2be332751e78",
+          "Title": "Supported Text Generation Tasks",
+          "BodyText": "PreseMaker supports a broad range of text generation tasks covering the major content types used in e-learning modules.",
+          "Notes": "These tasks map directly to the content structures within a PreseMaker course, ensuring AI assistance is available at each stage of course building.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:05:31.5007729-04:00",
+          "ModifiedDate": "2026-07-08T21:05:31.5007729-04:00",
+          "Items": [
+            {
+              "Id": "23c7346c-1def-4bb9-88f6-99606af6f111",
+              "Text": "Supported tasks include generating module topics, learning outcomes, and standards alignment.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6ec0f6f9-1a8c-4468-8d81-5f90faa3fa89",
+              "Text": "PreseMaker can also generate presentation slide content, text lessons, quiz questions, and assignments through AI tasks.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3b19d849-8443-4855-889c-4a671df40c95",
+              "Text": "Interactive activity content and speaker narration are additional text-based tasks that can be delegated to a configured AI provider.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "905e08da-f274-4718-8735-130da1aa1398",
+          "TopicId": "35324855-2fcf-4c79-b054-2be332751e78",
+          "Title": "AI Tasks as the Bridge Between PreseMaker and AI Providers",
+          "BodyText": "AI tasks serve as the structured interface through which PreseMaker communicates generation requests to the external AI providers you have set up.",
+          "Notes": "Rather than sending unstructured or ad-hoc requests, PreseMaker organizes all AI interactions into defined task types, making provider assignment predictable and manageable.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:05:31.5007729-04:00",
+          "ModifiedDate": "2026-07-08T21:05:31.5007729-04:00",
+          "Items": [
+            {
+              "Id": "ccf97228-f43e-4cae-b897-9c5569e5a080",
+              "Text": "Each task type acts as a named channel that connects a specific content generation need to a chosen AI provider.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d28cd695-1d6a-4401-8151-21a6f811d737",
+              "Text": "This task-based architecture is what makes per-task provider assignment possible within PreseMaker\u0027s Settings.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "816994a7-6c0b-4bac-b750-14408a43a5fa",
+              "Text": "Because tasks are well-defined, you can make informed decisions about which provider is best suited for each type of content.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "6a4a636c-b56b-4ae0-a364-dfa9615bc5bc",
+      "Title": "Assigning AI Providers to Task Types",
+      "Summary": "Covers how to configure which AI provider handles each specific task type in Settings, including the use of a default provider for unassigned tasks. Explains how this flexibility supports decisions based on cost, speed, or quality.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T21:05:17.113904-04:00",
+      "ModifiedDate": "2026-07-08T21:05:17.113904-04:00",
+      "Elements": [
+        {
+          "Id": "224ef5c6-0c88-4f48-bc19-c9b63912cf09",
+          "TopicId": "6a4a636c-b56b-4ae0-a364-dfa9615bc5bc",
+          "Title": "Accessing Provider Assignment in Settings",
+          "BodyText": "PreseMaker\u0027s Settings area is where you configure which AI provider handles each specific task type.",
+          "Notes": "This centralized configuration point means all provider-to-task mappings are managed in one place, making it straightforward to review or update assignments.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:05:51.320018-04:00",
+          "ModifiedDate": "2026-07-08T21:05:51.320018-04:00",
+          "Items": [
+            {
+              "Id": "6ffbb5c7-899b-4865-84a5-158752939df3",
+              "Text": "Navigate to Settings to view and edit the provider assigned to each available task type.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3e440eb1-6964-4d03-986c-748d7dc47357",
+              "Text": "Each task type can be individually mapped to any provider you have already configured in PreseMaker.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "cf2001db-ff18-4973-b091-7505800320b1",
+              "Text": "Changes made in Settings take effect the next time PreseMaker runs a task of that type.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3a78b323-76fe-4847-b2e5-7bf1ffe73802",
+          "TopicId": "6a4a636c-b56b-4ae0-a364-dfa9615bc5bc",
+          "Title": "Understanding Task Types",
+          "BodyText": "All AI tasks in PreseMaker are text-based, covering a defined set of content generation categories.",
+          "Notes": "Because all tasks are text-based, provider selection decisions focus entirely on text generation capabilities such as quality, speed, and cost.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:05:51.320018-04:00",
+          "ModifiedDate": "2026-07-08T21:05:51.320018-04:00",
+          "Items": [
+            {
+              "Id": "9ba31836-a64d-418e-be24-110a7594c328",
+              "Text": "Task types include generating module topics, learning outcomes, presentation slide content, text lessons, quiz questions, assignments, interactive-activity content, speaker narration, and standards.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "21254e54-a2c4-4a88-8b1b-f67ccde2e049",
+              "Text": "PreseMaker does not include image generation or vision tasks \u2014 every assignable task type is text-only.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3e1db281-753b-4ed4-83be-4cbb6cc3164f",
+              "Text": "Each of these task types can be independently assigned to a different provider.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "1b4d2b5d-834b-483c-a880-f31f177eb6e9",
+          "TopicId": "6a4a636c-b56b-4ae0-a364-dfa9615bc5bc",
+          "Title": "The Default Provider for Unassigned Tasks",
+          "BodyText": "PreseMaker maintains a single default provider that handles any task type you have not explicitly assigned to a specific provider.",
+          "Notes": "Using a default provider ensures no task is left without a handler, even if you have only partially configured your task-type assignments.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:05:51.320018-04:00",
+          "ModifiedDate": "2026-07-08T21:05:51.320018-04:00",
+          "Items": [
+            {
+              "Id": "064f80f1-6039-4ea4-a591-31102db623b4",
+              "Text": "If a task type has no specific provider assigned, PreseMaker automatically routes it to the designated default provider.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4cfdff22-e229-4ba6-b416-ad9532ddb227",
+              "Text": "You can set the default provider in Settings alongside your task-specific assignments.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5d7612a2-9319-42a0-8d0b-356ef9b58bbd",
+              "Text": "The default provider acts as a fallback for configuration gaps, not as an automatic retry mechanism during failures.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "92acdcf1-d326-4067-a0cf-ddeac1a3ddc0",
+          "TopicId": "6a4a636c-b56b-4ae0-a364-dfa9615bc5bc",
+          "Title": "Assigning Different Providers to Different Tasks",
+          "BodyText": "PreseMaker allows you to assign distinct providers to individual task types, so different kinds of content generation can use different AI services.",
+          "Notes": "For example, you might assign a faster, lower-cost provider to quiz generation while using a higher-quality provider for slide content.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:05:51.320018-04:00",
+          "ModifiedDate": "2026-07-08T21:05:51.320018-04:00",
+          "Items": [
+            {
+              "Id": "7cc63858-2b2e-4c1b-816a-dc976292fc05",
+              "Text": "You can use one provider for slide generation and a completely different provider for quiz question generation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3be96a9f-1c68-4470-970b-49b2e23305ad",
+              "Text": "Mixing providers across task types lets you optimize each task independently for cost, speed, or output quality.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "d3436305-c091-454a-886e-b18c78c4248e",
+              "Text": "There is no limit to how many task types can share the same provider, or how many different providers you use across tasks.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "00af3877-a6fb-44fb-97a0-7ccd1bb362b3",
+          "TopicId": "6a4a636c-b56b-4ae0-a364-dfa9615bc5bc",
+          "Title": "How PreseMaker Routes a Task to a Provider",
+          "BodyText": "When PreseMaker executes a task, it looks up the provider assigned to that task type and uses it directly \u2014 no ranking or automatic switching is involved.",
+          "Notes": "This deterministic one-to-one mapping means the behavior is predictable: you always know which provider will be used for a given task type.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:05:51.320018-04:00",
+          "ModifiedDate": "2026-07-08T21:05:51.320018-04:00",
+          "Items": [
+            {
+              "Id": "78429478-fccc-41b1-9623-c22ddb8f3bc4",
+              "Text": "Each task type maps to exactly one provider at any given time \u2014 either a specifically assigned provider or the default.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e9527664-abdf-47ac-b247-ae574aa8698d",
+              "Text": "There is no priority list or automatic fallback to a secondary provider if the assigned one is unavailable.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "940798a3-5645-4bbd-af0e-6939025f0cbc",
+              "Text": "The straightforward lookup ensures consistent, predictable routing for every generation request.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8b604283-90c0-4639-9e1d-38df159280bf",
+          "TopicId": "6a4a636c-b56b-4ae0-a364-dfa9615bc5bc",
+          "Title": "Choosing a Provider Based on Cost, Speed, or Quality",
+          "BodyText": "The flexibility of per-task provider assignment lets you make deliberate trade-off decisions for each content type.",
+          "Notes": "Different task types may have very different requirements \u2014 a narration script may benefit from a high-quality model, while repetitive structured tasks like standards generation may be well-served by a faster, cheaper option.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T21:05:51.320018-04:00",
+          "ModifiedDate": "2026-07-08T21:05:51.320018-04:00",
+          "Items": [
+            {
+              "Id": "7002437e-faca-4018-91ff-8113ea9f841c",
+              "Text": "Cost considerations might lead you to assign a less expensive provider to high-volume or lower-stakes tasks like quiz distractors.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7b536a59-21af-45bb-8761-9836284c1326",
+              "Text": "Speed considerations might favor a faster provider for tasks run frequently during a single authoring session.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "935ec81f-fd84-4b92-b7a9-4cd8e70c1ef2",
+              "Text": "Quality considerations might justify a premium provider for high-visibility outputs such as slide content or learning outcomes.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "25df24c4-17c0-4fb0-aacb-1fa5ec5bb25e",
+      "Title": "How PreseMaker Routes Tasks to Providers",
+      "Summary": "Describes the logic PreseMaker uses to select the correct provider when running a task, including the role of the default provider. Clarifies that there is no priority ranking or automatic fallback between providers.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T21:05:17.113904-04:00",
+      "ModifiedDate": "2026-07-08T21:05:17.113904-04:00",
+      "Elements": [
+        {
+          "Id": "e5ccc8b5-f88a-42d3-b887-932cac4fe137",
+          "TopicId": "25df24c4-17c0-4fb0-aacb-1fa5ec5bb25e",
+          "Title": "The Role of the Default Provider",
+          "BodyText": "PreseMaker maintains a single default provider that acts as a catch-all for any task type you have not explicitly assigned to a specific provider.",
+          "Notes": "This means you can configure the system minimally \u2014 with just one provider set as default \u2014 and all tasks will use it until you choose to specialize assignments.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:06:07.040646-04:00",
+          "ModifiedDate": "2026-07-08T21:06:07.040646-04:00",
+          "Items": [
+            {
+              "Id": "34f292fc-01df-428e-858a-29e1e69580cb",
+              "Text": "Every task type that lacks a specific provider assignment automatically falls through to the default provider.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "12d8432f-3d89-40cf-94aa-d60c646b5147",
+              "Text": "Setting a default provider ensures no task is left without a handler, even if you have not configured per-task assignments.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "7c9f1aff-1cd6-44de-8d6b-98fcb50ac233",
+          "TopicId": "25df24c4-17c0-4fb0-aacb-1fa5ec5bb25e",
+          "Title": "Per-Task Provider Assignment",
+          "BodyText": "PreseMaker lets you assign a distinct provider to each individual task type, giving you precise control over which AI service handles each kind of generation work.",
+          "Notes": "For example, you could route slide generation to one provider known for speed and quiz generation to another known for accuracy or lower cost.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:06:07.040646-04:00",
+          "ModifiedDate": "2026-07-08T21:06:07.040646-04:00",
+          "Items": [
+            {
+              "Id": "3cddaa74-c309-4c36-8b6c-7f1fde9ce7d5",
+              "Text": "Task-level assignments override the default provider for that specific task type only.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "49da6335-22ce-4bc0-8e08-ecd16bc2aad1",
+              "Text": "Assignments are made in Settings, where each task type can be mapped to any provider you have configured.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "67fd8221-7717-4378-9a69-145466c246e1",
+              "Text": "This flexibility lets you optimize for cost, speed, or output quality on a task-by-task basis.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b14a4bb0-4d2d-48f2-9b84-81ec9d86dd98",
+          "TopicId": "25df24c4-17c0-4fb0-aacb-1fa5ec5bb25e",
+          "Title": "The Routing Logic: One Task, One Provider",
+          "BodyText": "When PreseMaker runs a task, its router performs a straightforward lookup: find the provider assigned to that task type, or use the default if none is assigned.",
+          "Notes": "This deterministic, single-mapping design makes the system\u0027s behavior predictable \u2014 you always know which provider will handle a given task.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:06:07.040646-04:00",
+          "ModifiedDate": "2026-07-08T21:06:07.040646-04:00",
+          "Items": [
+            {
+              "Id": "90f318f0-8152-40f1-ba3b-3972371bc074",
+              "Text": "One task type maps to exactly one provider at any given time; there is no shared or split routing.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4ad466f0-8600-4531-8866-6c3c14e6f7ce",
+              "Text": "The lookup is immediate and direct \u2014 PreseMaker does not evaluate multiple providers or weigh options at runtime.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "adcf6109-fe69-4a93-b584-b27fa7feaa47",
+              "Text": "If a specific assignment exists, it takes precedence; otherwise the default provider is used.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8e7137c7-54ca-4596-bd4b-e3f439a35788",
+          "TopicId": "25df24c4-17c0-4fb0-aacb-1fa5ec5bb25e",
+          "Title": "No Priority Ranking Between Providers",
+          "BodyText": "PreseMaker does not rank configured providers in any order of preference or priority when selecting which one to use for a task.",
+          "Notes": "Users coming from systems that support provider priority lists should note this distinction \u2014 PreseMaker\u0027s model is flat assignment, not ranked selection.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:06:07.040646-04:00",
+          "ModifiedDate": "2026-07-08T21:06:07.040646-04:00",
+          "Items": [
+            {
+              "Id": "820e01ea-c792-4c17-ae1a-de35d01ad5ba",
+              "Text": "There is no concept of a \u0027first choice\u0027 or \u0027second choice\u0027 provider for any task type.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b6c05ad8-8e7e-47d3-9d6a-8be2c677166e",
+              "Text": "All routing decisions are based solely on the explicit task assignment or the single default, never on a ranked list.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "2eabf9ba-92d9-48c6-8451-1634958a96a9",
+          "TopicId": "25df24c4-17c0-4fb0-aacb-1fa5ec5bb25e",
+          "Title": "No Automatic Fallback Between Providers",
+          "BodyText": "If the assigned provider for a task cannot be reached or fails, PreseMaker does not automatically switch to another configured provider.",
+          "Notes": "This means a failure is always surfaced to the user rather than silently rerouted, keeping the system transparent and predictable.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:06:07.040646-04:00",
+          "ModifiedDate": "2026-07-08T21:06:07.040646-04:00",
+          "Items": [
+            {
+              "Id": "4e5c7c2d-eccf-4ad4-8820-a99b36d7d3b0",
+              "Text": "Automatic fallback to a secondary provider does not exist in PreseMaker\u0027s routing logic.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1378013d-7e45-4e4d-bb78-6f5aa7257bb4",
+              "Text": "A failure with the assigned provider results in a failure dialog, not a silent retry with a different provider.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6d9a2daf-6816-4313-b6a2-c8785e61b757",
+              "Text": "Resolving a failure requires user action \u2014 either fixing the underlying cause or manually reassigning the task to a different provider in Settings.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "e7728c60-7c41-4296-b61c-146013054e7d",
+      "Title": "Using the Prompt Button",
+      "Summary": "Explains how to use the Prompt button available on every generation screen to inspect the exact text sent to an AI provider. Covers when and why learners would use this feature before or after generation.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T21:05:17.113904-04:00",
+      "ModifiedDate": "2026-07-08T21:05:17.113904-04:00",
+      "Elements": [
+        {
+          "Id": "53ac3c49-8cec-462b-8d8d-23f4b90ca899",
+          "TopicId": "e7728c60-7c41-4296-b61c-146013054e7d",
+          "Title": "What the Prompt Button Is",
+          "BodyText": "Every generation screen in PreseMaker includes a Prompt button that gives you direct visibility into the exact text being sent to the AI provider.",
+          "Notes": "This button is consistently available across all task types, including slide generation, quiz questions, assignments, and narration screens.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:06:24.5704697-04:00",
+          "ModifiedDate": "2026-07-08T21:06:24.5704697-04:00",
+          "Items": [
+            {
+              "Id": "469ec1b0-9268-41b6-825a-42441e3c2f91",
+              "Text": "The Prompt button appears on every screen that sends a request to an AI provider.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "726f51b8-299d-4793-a518-48116128165d",
+              "Text": "Clicking it reveals the full, exact text of the prompt \u2014 nothing is hidden or summarized.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "cd116c74-5e62-4925-816a-d2f1ee64474e",
+              "Text": "This feature exists for all text-based AI tasks supported by PreseMaker.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "98ae69c9-4a4e-4aab-a0c3-24d037a035c6",
+          "TopicId": "e7728c60-7c41-4296-b61c-146013054e7d",
+          "Title": "Inspecting the Prompt Before Generation",
+          "BodyText": "You can open the Prompt button before triggering generation to preview exactly what will be sent to the AI provider.",
+          "Notes": "Reviewing the prompt beforehand is especially useful when you want to verify that your configured inputs, settings, or content details are reflected correctly before consuming API credits.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:06:24.5704697-04:00",
+          "ModifiedDate": "2026-07-08T21:06:24.5704697-04:00",
+          "Items": [
+            {
+              "Id": "a34eeaac-6e04-4674-9a58-fdf1cdef7800",
+              "Text": "Pre-generation inspection lets you confirm the prompt accurately represents your intended task and content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "7fc942f6-0b43-4832-a09d-4d0b04e5095e",
+              "Text": "Catching unexpected or incomplete prompt content before generation can save time and API usage.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "467a74ee-bbcf-4f11-8610-5be097319683",
+              "Text": "This is a proactive quality-check step you can build into your workflow.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "ced8bd80-3299-4fc7-862d-aedd57d4d3da",
+          "TopicId": "e7728c60-7c41-4296-b61c-146013054e7d",
+          "Title": "Inspecting the Prompt After Generation",
+          "BodyText": "The Prompt button remains accessible after generation has completed, allowing you to review what was actually sent when a result was produced.",
+          "Notes": "Post-generation review is particularly helpful when output quality is surprising \u2014 either better or worse than expected \u2014 and you want to understand why.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:06:24.5704697-04:00",
+          "ModifiedDate": "2026-07-08T21:06:24.5704697-04:00",
+          "Items": [
+            {
+              "Id": "ff333800-3dd6-4888-8cc3-0ec0a5a92e04",
+              "Text": "Reviewing the prompt after generation helps you understand why the AI produced a particular output.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "10aff90c-9d60-4b42-b083-59c39fb396e9",
+              "Text": "If results are unsatisfactory, the post-generation prompt view can pinpoint whether the issue originated in the prompt itself.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e015b2e6-e12b-4d07-a82f-c6b2c0eb0464",
+              "Text": "This retrospective use supports iterative improvement of your content and settings.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "833aacbf-60e2-4bd3-8300-af8adaed1d7e",
+          "TopicId": "e7728c60-7c41-4296-b61c-146013054e7d",
+          "Title": "Why Prompt Transparency Matters",
+          "BodyText": "Seeing the exact prompt sent to a provider ensures you always know what the AI received, removing ambiguity about the source of any generated output.",
+          "Notes": "Because PreseMaker maps each task to a single provider with no silent fallback, knowing the precise prompt helps you accurately diagnose issues and attribute results to the correct provider and input.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:06:24.5704697-04:00",
+          "ModifiedDate": "2026-07-08T21:06:24.5704697-04:00",
+          "Items": [
+            {
+              "Id": "318ea416-30b8-43ba-bf92-2d0b602e95d1",
+              "Text": "Full prompt visibility supports accountability \u2014 you can verify the AI was given the right instructions and context.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "cddea182-4911-467c-9e60-c2cc93807b09",
+              "Text": "Transparency helps when troubleshooting poor-quality or unexpected AI output, since you can assess both the prompt and the provider together.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "e2238c27-b51d-4b62-8578-5c2fda03e5e4",
+              "Text": "It also aids in comparing outputs across providers when you are deciding which provider to assign to a given task type.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4612926e-3736-43ac-b983-30b80434f8fd",
+          "TopicId": "e7728c60-7c41-4296-b61c-146013054e7d",
+          "Title": "The Prompt Button Across All Task Types",
+          "BodyText": "Because PreseMaker\u0027s AI tasks span a wide range of content types, the Prompt button is provided universally so no task is opaque to the user.",
+          "Notes": "Task types include generating module topics, learning outcomes, presentation slide content, text lessons, quiz questions, assignments, interactive-activity content, speaker narration, and standards.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:06:24.5704697-04:00",
+          "ModifiedDate": "2026-07-08T21:06:24.5704697-04:00",
+          "Items": [
+            {
+              "Id": "5682c6e2-d104-4ebe-8a61-dc71847a66fd",
+              "Text": "Whether you are generating quiz questions or speaker narration, the same Prompt button experience is available.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ceb83fce-a059-451f-a255-49e6cbccfdb6",
+              "Text": "Universal availability means you do not need to learn different inspection methods for different content types.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "bd00f803-6c7c-4c83-8e9f-94b7fedda1d8",
+              "Text": "This consistency makes it easier to audit prompts as part of a standard quality-assurance process across your entire course build.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "c3b9d037-d3ae-4cd5-a95b-56911c5e8bdf",
+      "Title": "Understanding and Responding to Generation Failures",
+      "Summary": "Describes the types of errors that can cause a provider request to fail, such as invalid API keys, rate limits, or network issues. Explains how to interpret the failure dialog and the steps available to resolve the problem.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T21:05:17.113904-04:00",
+      "ModifiedDate": "2026-07-08T21:05:17.113904-04:00",
+      "Elements": [
+        {
+          "Id": "138b15b8-309f-47b9-8b36-5686d9def0f4",
+          "TopicId": "c3b9d037-d3ae-4cd5-a95b-56911c5e8bdf",
+          "Title": "Common Causes of Generation Failures",
+          "BodyText": "A provider request can fail for several distinct reasons, each requiring a different resolution step.",
+          "Notes": "Understanding the root cause quickly helps you choose the correct fix without unnecessary trial and error.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T21:06:43.6679398-04:00",
+          "ModifiedDate": "2026-07-08T21:06:43.6679398-04:00",
+          "Items": [
+            {
+              "Id": "d4cad46b-5e8b-483f-9224-5185263b57b4",
+              "Text": "A missing or invalid API key prevents PreseMaker from authenticating with the provider.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "094d8e02-5c27-4a1a-859a-a0f7aee42930",
+              "Text": "Rate limits occur when your account has exceeded the number of requests allowed in a given time window.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "30e25898-7925-4487-b5c6-fa53def63a67",
+              "Text": "Network problems can interrupt the connection between PreseMaker and the provider\u0027s endpoint.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "78a37ed3-94cb-4212-be93-d34f7c034587",
+              "Text": "Model or endpoint errors arise when the specified model is unavailable, deprecated, or incorrectly configured.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "b782080b-73ef-4850-a7b4-63830b859ebc",
+          "TopicId": "c3b9d037-d3ae-4cd5-a95b-56911c5e8bdf",
+          "Title": "How PreseMaker Responds to a Failure",
+          "BodyText": "When a provider request fails, PreseMaker immediately surfaces a failure dialog rather than silently handling the error in the background.",
+          "Notes": "This transparent approach ensures you are always aware that a generation did not complete and are given actionable options.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T21:06:43.6679398-04:00",
+          "ModifiedDate": "2026-07-08T21:06:43.6679398-04:00",
+          "Items": [
+            {
+              "Id": "1dd8fa9c-dde7-4a7f-b3b6-d02ce8e296ba",
+              "Text": "PreseMaker shows a failure dialog that describes the specific problem that caused the request to fail.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "583f7dfc-fdc8-4d40-a613-79a93b60e3f6",
+              "Text": "PreseMaker does not silently retry with a different provider \u2014 the failure is always surfaced to you.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9ceaf243-7f5b-494e-a25f-54d8ab741ed4",
+              "Text": "No automatic fallback occurs; the same provider that was assigned to the task remains responsible until you take action.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "fb7ad8d2-6851-4ee2-9153-20249728c6a8",
+          "TopicId": "c3b9d037-d3ae-4cd5-a95b-56911c5e8bdf",
+          "Title": "Interpreting the Failure Dialog",
+          "BodyText": "The failure dialog provides contextual information to help you understand what went wrong with the provider request.",
+          "Notes": "Reading the dialog message carefully is the first step, as the description of the problem directly points to which resolution option is most appropriate.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T21:06:43.6679398-04:00",
+          "ModifiedDate": "2026-07-08T21:06:43.6679398-04:00",
+          "Items": [
+            {
+              "Id": "ab70fa6a-859b-43f3-b2ad-f47ff464fd39",
+              "Text": "The dialog explains the nature of the error, such as an authentication failure, rate limit exceeded, or connectivity issue.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3961c94e-02f7-493d-b206-c0494c66a6a0",
+              "Text": "It presents multiple options so you can act on the problem without manually navigating away from your current work.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "4791c374-e104-4b72-9d32-ef18b6bcdfc5",
+              "Text": "The information in the dialog corresponds directly to one of the known failure categories, making diagnosis straightforward.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "ad429098-ea25-43ad-95d1-7c95bde05dd9",
+          "TopicId": "c3b9d037-d3ae-4cd5-a95b-56911c5e8bdf",
+          "Title": "Resolution Options Offered by the Dialog",
+          "BodyText": "From the failure dialog, PreseMaker gives you direct shortcuts to the most likely resolution paths.",
+          "Notes": "These options reduce the steps needed to fix the problem and get back to generating content.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T21:06:43.6679398-04:00",
+          "ModifiedDate": "2026-07-08T21:06:43.6679398-04:00",
+          "Items": [
+            {
+              "Id": "75b25a86-c7fb-4d92-b562-273e7db76f12",
+              "Text": "You can open Settings directly from the dialog to review or update your provider configuration.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "69bdbe12-6867-4f69-be09-400cdcd1fb2c",
+              "Text": "The dialog provides an option to add a new API key, which is especially useful when the existing key is invalid or expired.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "90f83609-7f06-4f4c-843c-4427731c760c",
+              "Text": "You can view the log to see detailed error output, which is helpful for diagnosing network or endpoint issues.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "12656c6c-bc68-43da-ae45-621897e6e03f",
+          "TopicId": "c3b9d037-d3ae-4cd5-a95b-56911c5e8bdf",
+          "Title": "Fixing the Underlying Cause and Retrying",
+          "BodyText": "After using the dialog to identify and address the problem, you must resolve the root cause before attempting generation again.",
+          "Notes": "Simply dismissing the dialog without fixing the underlying issue will result in the same failure when you retry.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T21:06:43.6679398-04:00",
+          "ModifiedDate": "2026-07-08T21:06:43.6679398-04:00",
+          "Items": [
+            {
+              "Id": "a18fc006-cc07-4ef1-a5b7-e1a18c2df0d8",
+              "Text": "If the failure was caused by an invalid API key, correct or replace the key in Settings before retrying.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "bb7c6d0d-26a0-4955-9e17-f0e4b51cf3ad",
+              "Text": "If a rate limit was reached, you may need to wait for the limit to reset or upgrade your account tier with the provider.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2fd191dd-6f25-44e5-bf1c-956518a0ce73",
+              "Text": "Once the cause is resolved, you retry the generation manually \u2014 PreseMaker will not attempt the request again on its own.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "632fe426-dc70-4c82-ad4c-263aedb2ebe4",
+          "TopicId": "c3b9d037-d3ae-4cd5-a95b-56911c5e8bdf",
+          "Title": "Manually Reassigning the Task to a Different Provider",
+          "BodyText": "If you cannot immediately fix the failing provider, you can reassign the affected task type to a different, working provider in Settings.",
+          "Notes": "This is a practical workaround when, for example, a provider is experiencing an outage and you need to continue working.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T21:06:43.6679398-04:00",
+          "ModifiedDate": "2026-07-08T21:06:43.6679398-04:00",
+          "Items": [
+            {
+              "Id": "06274aed-eba9-4fa3-9942-5f1f6980fab5",
+              "Text": "In Settings, locate the task type that failed and change its assigned provider to one that is currently functional.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ca60f47f-c553-4f6a-91ca-9d4157cf7258",
+              "Text": "After reassigning, retrying the generation will use the newly assigned provider instead of the one that failed.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2a7cb954-09a0-41e5-b823-afc2e7efbe3f",
+              "Text": "This manual reassignment is the only way to route a task to a different provider \u2014 there is no automatic fallback mechanism.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 26
+}

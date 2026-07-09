@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Text-Based Lesson Generation in PreseMaker</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Generating Text-Based Lessons: Formats, Layouts, and Content Types</a></div>
+  <header>
+    <h1>Introduction to Text-Based Lesson Generation in PreseMaker</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Introduction to Text-Based Lesson Generation in PreseMaker</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>PreseMaker is a structured content generation tool designed to take raw instructional material — topics, subtopics, and supporting details — and transform that material into polished, web-ready lesson formats without requiring the author to manually handle layout, formatting, or presentation logic. At its core, PreseMaker operates on a simple but powerful premise: if a content creator can organize what they want to teach, the tool can handle how that content is displayed. This separation of concerns — content from presentation — is what makes PreseMaker particularly valuable in professional instructional design workflows.</p>
+
+<p>PreseMaker accepts structured topic information and transforms it into polished, web-ready lesson formats. Rather than working from a blank document or wrestling with inconsistent styles across a team, authors provide organized input and receive consistently formatted output. The tool is built to serve instructional designers, educators, and content developers who need consistent, repeatable output — meaning that whether you are generating a single lesson or an entire curriculum library, every piece of content follows the same structural and visual standards. By automating formatting, PreseMaker allows creators to focus on content quality rather than layout mechanics, which is where their expertise genuinely adds value.</p>
+
+<p>To appreciate what PreseMaker does, it helps to understand why that automation matters in practice. Instructional design is a discipline where quality of explanation, accuracy of information, and clarity of progression through concepts are paramount. When a subject-matter expert or educator is spending significant time adjusting margins, matching heading styles, or troubleshooting spacing in a word processor, that time is not being spent on the far more consequential questions of whether the content is accurate, whether the examples are well chosen, or whether the learning objectives are being met. PreseMaker removes that friction entirely.</p>
+
+<p><strong>Why Text-Based Lessons Matter in Instructional Design</strong></p>
+
+<p>Among the various media formats available to instructional designers — video, audio, interactive simulations, infographics — text-based lessons occupy a uniquely practical position. Text-based formats are highly accessible and can be consumed across devices without requiring specialized software or media players. A learner reading a well-structured HTML lesson page can do so on a desktop workstation, a tablet, or a smartphone, in a browser that came pre-installed on their device. There is no plugin to install, no video codec to worry about, and no streaming bandwidth requirement that might exclude learners in lower-connectivity environments.</p>
+
+<p>Beyond accessibility, text-based content carries a significant maintenance advantage. They are easier to update and maintain than video or audio content, making them cost-effective for rapidly changing subject matter. Consider the practical difference: if a policy changes, a procedure is updated, or a statistic becomes outdated, correcting a text lesson may take minutes — a few sentences edited and republished. Correcting a video requires re-recording, re-editing, re-rendering, and re-uploading, often at substantial cost. For organizations operating in fields where information evolves frequently — healthcare protocols, software documentation, compliance training, financial regulations — this maintainability is not a minor convenience but a strategic advantage.</p>
+
+<p>Well-structured text lessons also support learner self-pacing and can be repurposed across print, web, and learning management systems. A learner can read at their own speed, pause to look something up, re-read a difficult passage, or skip ahead to a section they already understand. This flexibility is much harder to achieve with linear media like video. Furthermore, a text lesson authored once can be deployed in multiple contexts: rendered as a webpage, exported to a PDF for printing, imported into a learning management system as a SCORM module, or reformatted for a knowledge base article. This reusability significantly extends the return on investment for any single piece of content development.</p>
+
+<p><strong>Output Formats Available in PreseMaker</strong></p>
+
+<p>One of PreseMaker's defining strengths is that it does not lock content into a single output format. Available formats include accordion layouts, printable documents, WordPress-ready content, and Markdown files. Each of these serves a distinct purpose and deployment context, and understanding the differences between them is essential to using PreseMaker effectively.</p>
+
+<ul>
+  <li><strong>Accordion layouts</strong> organize content into collapsible sections that learners expand interactively. This format is well suited to web pages where space is at a premium or where learners benefit from seeing the structure of a lesson before diving into any individual section. Accordion layouts encourage active navigation and can reduce cognitive overload by presenting content in digestible, on-demand chunks.</li>
+  <li><strong>Printable documents</strong> are formatted for clean rendering on paper or as PDF files. They prioritize linear flow, generous white space, and typography choices that remain readable when printed in black and white. This format is ideal for job aids, reference sheets, instructor guides, and any content that learners may want to annotate or refer to offline.</li>
+  <li><strong>WordPress-ready content</strong> is formatted to integrate cleanly into WordPress environments, the most widely used content management system in the world. This format accounts for the way WordPress handles block-level content, shortcodes, and theme styling, ensuring that imported lessons look intentional rather than like raw pasted text.</li>
+  <li><strong>Markdown files</strong> provide a lightweight, portable plain-text format that can be converted into HTML, imported into static site generators, stored in version-controlled repositories, or used in documentation platforms like GitHub, Notion, or Confluence. Markdown is the format of choice for technical writers and developers who value simplicity and portability.</li>
+</ul>
+
+<p>Each format is optimized for a specific deployment environment, such as a website, a learning management system, or a print workflow. Selecting the appropriate format early in the design process prevents costly reformatting later. A lesson built and refined as a printable document, for example, may need significant structural rethinking before it works well as an accordion layout — the two formats have fundamentally different assumptions about how learners will navigate the content. Making this decision deliberately at the outset, rather than retroactively, is a hallmark of efficient instructional design practice.</p>
+
+<p><strong>Content Types Supported by PreseMaker</strong></p>
+
+<p>In addition to output formats — which govern how content is presented — PreseMaker distinguishes between content types, which govern the depth and purpose of the content itself. This distinction is important because the same subject can be treated very differently depending on the instructional goal.</p>
+
+<p>Topic Overviews provide high-level summaries suitable for introducing a subject or orienting learners before deeper study. An overview answers the question "What is this about and why does it matter?" without necessarily answering "How does every detail work?" Overviews are appropriate for module introductions, executive summaries, pre-reading materials, or any situation where a learner needs orientation before engaging with more demanding content.</p>
+
+<p>Topic Details offer in-depth coverage of a concept, supporting learners who need comprehensive explanations. A detail goes beyond naming and categorizing concepts — it explains mechanisms, works through examples, addresses common misconceptions, and provides the kind of thorough treatment that a learner needs to actually understand and apply what they have read. The content you are reading right now is an example of a Topic Detail: it does not merely list what PreseMaker does, but explains why each capability matters and how the pieces relate to one another.</p>
+
+<p>Additional content types such as lesson plans, example problems, and suggested sources extend the instructional value of any generated lesson. A lesson plan gives instructors a structured guide for facilitating the content in a classroom or live virtual session. Example problems provide learners with practice opportunities that reinforce conceptual understanding through application. Suggested sources point learners toward further reading, authoritative references, or supplementary materials that deepen mastery beyond what a single lesson can achieve.</p>
+
+<p><strong>The Role of Visual Themes in HTML Output</strong></p>
+
+<p>When PreseMaker produces HTML output, the raw structure of the content — headings, paragraphs, lists, tables — is only part of the final product. Visual themes control elements such as color schemes, typography, and layout spacing in the rendered HTML output. A theme determines whether a lesson looks clinical and minimal, warm and approachable, or bold and corporate. It governs font choices that affect readability, color contrasts that affect accessibility, and spacing decisions that affect how dense or airy the content feels on screen.</p>
+
+<p>Choosing a theme that aligns with your organization's branding or the learner's context improves perceived professionalism and engagement. A lesson presented in an organization's brand colors and fonts signals that the content is authoritative and carefully produced, which subtly influences how seriously learners engage with it. Conversely, content that is clearly styled inconsistently with everything else a learner encounters in a platform can undermine confidence in the material itself, even when the content is excellent.</p>
+
+<p>Theme selection is a final-step decision in the PreseMaker workflow, applied after content type and format have been determined. This sequencing is deliberate and logical. The content and its structure should drive the design, not the other way around. Selecting a theme too early can tempt authors to shape their content to fit visual expectations rather than letting instructional goals determine structure. By reserving theme selection for the end of the workflow, PreseMaker reinforces a content-first approach to instructional design.</p>
+
+<p><strong>How This Module Is Organized</strong></p>
+
+<p>This module is structured to build understanding progressively, beginning with foundational concepts and moving toward practical application. The module begins with this introduction, establishing why text-based lessons matter and what PreseMaker can produce. That foundation is necessary before examining specific features, because understanding the purpose behind a tool's design makes its individual decisions far more comprehensible and easier to remember.</p>
+
+<p>Later topics cover specific formats such as accordion, printable, WordPress, and Markdown layouts in detail. Each of those topics will examine not only what the format produces but when it is the right choice, what its structural conventions are, and what authors need to keep in mind when designing content intended for that format. The goal is to give learners not just knowledge of what options exist, but the judgment to choose among them wisely.</p>
+
+<p>The module concludes with guidance on choosing between a Topic Overview and a Topic Detail, the two most commonly used content types. That guidance synthesizes the earlier material into a practical decision framework — the kind of applied knowledge that instructional designers can bring directly into their next project. By the end of this module, learners will have both a conceptual map of PreseMaker's capabilities and a set of concrete principles for putting those capabilities to work.</p>
+        <div class="notes"><strong>Notes</strong>This topic serves as the foundational introduction for the entire module. Instructors may wish to use it as a pre-reading assignment before live sessions, as it provides the conceptual scaffolding that all subsequent topics build upon. The distinction between output formats and content types is particularly worth reinforcing in discussion, as learners sometimes conflate the two.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

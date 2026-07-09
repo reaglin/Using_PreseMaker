@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cognitive Levels on Standards</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Building a Standards Library and Mapping Topics to Standards</a></div>
+  <header>
+    <h1>Cognitive Levels on Standards</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Cognitive Levels on Standards</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Every standard a course is expected to address carries with it not just a subject or skill area, but a specific intellectual demand — a level of cognitive engagement the learner must demonstrate to genuinely meet that standard. Bloom's Taxonomy provides the widely accepted framework for categorizing these demands. Understanding how cognitive levels work, how they are assigned to standards in a library, and how they drive coverage analysis is essential for designing and evaluating instruction that truly fulfills its stated requirements — not merely touches on the right topics.</p>
+
+<p>Bloom's Taxonomy organizes cognitive skills into six hierarchical levels, each representing a qualitatively different kind of thinking. The levels progress from the most basic to the most complex:</p>
+
+<ul>
+  <li><strong>Remember</strong> — Retrieving relevant knowledge from memory. Learners recall facts, definitions, or procedures without necessarily understanding them. Example verbs: <em>list, name, identify, recall, define.</em></li>
+  <li><strong>Understand</strong> — Constructing meaning from information. Learners explain concepts in their own words, summarize, or classify. Example verbs: <em>explain, summarize, paraphrase, classify, describe.</em></li>
+  <li><strong>Apply</strong> — Using knowledge in a new situation. Learners execute a procedure or use a concept to solve a problem. Example verbs: <em>use, solve, demonstrate, apply, execute.</em></li>
+  <li><strong>Analyze</strong> — Breaking information into parts and examining relationships. Learners differentiate, organize, or attribute. Example verbs: <em>analyze, compare, differentiate, examine, deconstruct.</em></li>
+  <li><strong>Evaluate</strong> — Making judgments based on criteria and standards. Learners critique, assess, or justify a position. Example verbs: <em>evaluate, justify, critique, defend, assess.</em></li>
+  <li><strong>Create</strong> — Producing something new by combining elements. Learners design, construct, or generate original work. Example verbs: <em>design, construct, generate, produce, formulate.</em></li>
+</ul>
+
+<p>The critical insight behind Bloom's hierarchy is that higher levels are not simply harder versions of lower ones — they require qualitatively different mental operations. A learner who can <em>recall</em> the steps of a research method has not necessarily demonstrated the ability to <em>evaluate</em> whether that method is appropriate for a given study. Higher levels demand that learners do more than retrieve facts; they must manipulate, restructure, judge, or produce knowledge in ways that lower-level tasks do not require. This distinction matters enormously when measuring whether instruction genuinely prepares learners to meet a standard.</p>
+
+<p>When a cognitive level is assigned to a standard, it captures the depth at which a learner is expected to engage with that standard's content. Two standards within the same framework — say, a national curriculum or a professional certification body — may sit in the same subject domain yet carry entirely different cognitive demands. Consider the contrast between a standard that asks students to <em>identify</em> the major causes of a historical event versus one that asks them to <em>evaluate</em> competing historical interpretations of that event. Both standards concern historical causation, but the first sits at <strong>Remember</strong> or <strong>Understand</strong>, while the second sits at <strong>Evaluate</strong>. Treating them as equivalent in depth would produce a misleading picture of how well a course actually prepares learners. Assigning the correct cognitive level to each standard makes these differences explicit and actionable.</p>
+
+<p>In a standards library, the cognitive level is an attribute of the standard itself — it describes what the standard officially demands, independent of any particular course or piece of content. This is an important conceptual distinction. The level does not belong to a lesson, an activity, or a learning outcome written by an instructor; it belongs to the standard as published by the authoritative body. When AI tools extract standards from source documents and populate a library, they may suggest a cognitive level based on the language of the standard. The verb used in the standard's official wording is the primary signal: a standard phrased as <em>"Students will recall the key provisions of…"</em> clearly indicates a lower level, while one phrased as <em>"Students will critique the effectiveness of…"</em> points to a higher level. These AI-suggested levels can be reviewed and adjusted by the course designer or subject-matter expert to ensure they accurately reflect the intellectual demand as stated in the official standard.</p>
+
+<p>Checking the official wording of each standard — particularly its action verbs — is the most reliable way to confirm the correct Bloom's level. The following table illustrates how verb choice in standard language maps to Bloom's levels and what that means for the expected learning depth:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bloom's Level</th>
+      <th>Typical Action Verbs in Standard Language</th>
+      <th>What the Standard Expects of the Learner</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Remember</td>
+      <td>recall, list, name, identify, define</td>
+      <td>Retrieve specific facts or procedures from memory</td>
+    </tr>
+    <tr>
+      <td>Understand</td>
+      <td>explain, describe, summarize, classify, interpret</td>
+      <td>Demonstrate comprehension by restating or organizing information</td>
+    </tr>
+    <tr>
+      <td>Apply</td>
+      <td>use, solve, demonstrate, apply, calculate</td>
+      <td>Execute a procedure or concept in a concrete situation</td>
+    </tr>
+    <tr>
+      <td>Analyze</td>
+      <td>analyze, compare, differentiate, examine, break down</td>
+      <td>Deconstruct information and identify relationships among parts</td>
+    </tr>
+    <tr>
+      <td>Evaluate</td>
+      <td>evaluate, justify, critique, assess, defend</td>
+      <td>Make reasoned judgments using criteria or standards</td>
+    </tr>
+    <tr>
+      <td>Create</td>
+      <td>design, construct, produce, generate, formulate</td>
+      <td>Synthesize elements into a novel, coherent product or plan</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Once a standard carries an assigned cognitive level, that level functions as a minimum depth requirement for coverage — not merely a descriptive label. This is where cognitive levels move from a theoretical classification into a practical quality-control mechanism. When a standards coverage view analyzes how well a course addresses its mapped standards, it does not simply ask whether the topic of a standard appears somewhere in the course. It also asks whether the course content engages with that topic at the required cognitive depth. Course content that addresses the subject matter of a standard but only at a lower cognitive level may be flagged as insufficient coverage, even if the topic itself is well represented.</p>
+
+<p>Consider a concrete example. Suppose a course maps to a standard that reads: <em>"Learners will evaluate the ethical implications of data collection practices in professional contexts."</em> This standard sits at the <strong>Evaluate</strong> level. The course includes several readings that describe common data collection practices and a lecture that explains privacy regulations — both valuable, but operating primarily at <strong>Understand</strong>. Without an activity or assessment that asks learners to make a reasoned judgment about the ethics of a specific scenario, the standard is not fully met. The coverage view, informed by the cognitive level assigned to the standard, can surface this depth gap explicitly, allowing the designer to add an appropriate evaluative task rather than assuming the standard is covered simply because data ethics appear in the course.</p>
+
+<p>This capability is particularly powerful because it distinguishes between two different kinds of gaps in a course: <strong>content gaps</strong> (a topic required by a standard is simply absent from the course) and <strong>depth gaps</strong> (the topic is present, but the instruction never reaches the cognitive level the standard demands). A coverage analysis that ignores cognitive levels can only detect content gaps. One that incorporates cognitive levels detects both, giving instructors and designers a much more accurate and actionable picture of how their course measures up to its standards framework.</p>
+
+<p>Getting the cognitive level right on each standard therefore has direct practical consequences. If a standard's level is <em>underestimated</em> — assigned a lower level than the standard actually demands — the coverage view may mark content as sufficient when it genuinely falls short of the standard's full intellectual requirement. Learners may complete a course believing they have met the standard, only to find they cannot perform at the level the certifying or accrediting body actually expects. Conversely, if a standard's level is <em>overestimated</em> — assigned a higher level than the wording justifies — well-designed and appropriate instructional content may be incorrectly flagged as insufficient, creating unnecessary revision work and potentially eroding confidence in the coverage analysis tool itself.</p>
+
+<p>The practical discipline of assigning cognitive levels accurately is therefore not administrative busywork. It is the foundation on which meaningful coverage analysis rests. By returning to the official language of each standard, focusing on its action verbs, and applying Bloom's framework consistently, designers ensure that the standards library reflects genuine instructional expectations — and that the coverage view produces results that instructors, designers, and accreditors can actually trust.</p>
+        <div class="notes"><strong>Notes</strong>Covers all five bullet-point clusters from the topic outline: what Bloom&#39;s levels represent, how cognitive levels are assigned to standards in the library, how they function as depth requirements, their role in the coverage view, and the practical stakes of assigning levels accurately. Includes a reference table mapping Bloom&#39;s levels to standard language verbs and a concrete worked example of a depth gap to ground the abstract concepts.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

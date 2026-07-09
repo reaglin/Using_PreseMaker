@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding and Responding to Generation Failures</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Configuring AI Providers per Task and Using the Prompt Button</a></div>
+  <header>
+    <h1>Understanding and Responding to Generation Failures</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Understanding and Responding to Generation Failures</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When PreseMaker sends a request to an AI provider — whether to generate slide content, rewrite text, or produce images — there is a meaningful chain of dependencies between your application, your network, your account credentials, and the provider's own infrastructure. Any link in that chain can break, and when it does, PreseMaker encounters what is called a <strong>generation failure</strong>. Understanding why these failures happen, how PreseMaker communicates them to you, and what concrete steps you can take to resolve them is essential for working confidently and efficiently within the application.</p>
+
+<p>Generation failures are not arbitrary or mysterious. They fall into a small set of well-defined categories, each with its own cause and its own resolution path. PreseMaker is designed to surface these failures explicitly and give you direct access to the tools you need to fix them — but it will never silently work around the problem for you. That design choice puts you in control and ensures you always know the real state of your provider connections.</p>
+
+<p><strong>Common Causes of Generation Failures</strong></p>
+
+<p>Before you can fix a generation failure, you need to understand what triggered it. There are four primary categories of failure, and recognizing which one you are dealing with is the first step toward a resolution.</p>
+
+<p>The most frequently encountered cause is a <strong>missing or invalid API key</strong>. Every AI provider — whether that is OpenAI, Anthropic, Google, or another service — requires an API key to authenticate your account and authorize your requests. This key acts like a password specific to your application usage. If the key has never been entered in PreseMaker's Settings, the provider has no way to verify who is making the request and will reject it outright. Similarly, if a key was entered but has since been revoked by the provider, replaced by a new key in your provider account dashboard, or simply typed incorrectly, authentication will fail even though a key appears to be present. This is one of the most common causes of failure for new setups and after any account changes on the provider's side.</p>
+
+<p>A second common cause is hitting a <strong>rate limit</strong>. AI providers enforce limits on how many requests you can make within a given time window — for example, a certain number of requests per minute, or a certain number of tokens processed per day. These limits vary by provider and by the tier of your subscription. When your usage exceeds the allowed threshold, the provider responds with a rate-limit error rather than fulfilling the request. This is not a malfunction; it is an intentional enforcement mechanism. Rate limits reset automatically after the time window expires, but if your usage patterns regularly push against the ceiling, you may need to consider upgrading your account tier with the provider.</p>
+
+<p>A third category is <strong>network problems</strong>. PreseMaker communicates with provider APIs over the internet, which means any interruption to your network connection — a dropped Wi-Fi connection, a VPN that is blocking outbound requests, a firewall rule, or transient internet instability — can prevent the request from reaching the provider's servers at all. In these cases, the failure is not caused by anything wrong with your credentials or your account; the request simply never arrived, or the response never returned. Network problems can be intermittent and may resolve themselves, but they can also require deliberate troubleshooting of your connection or network configuration.</p>
+
+<p>The fourth category is <strong>model or endpoint errors</strong>. Each task in PreseMaker is configured to use a specific AI model offered by the assigned provider — for example, a particular version of GPT or Claude. If that model has been deprecated and is no longer available, if the model identifier in your configuration is misspelled or references a version that does not exist, or if the provider is experiencing an outage on that specific endpoint, PreseMaker will receive an error from the provider indicating that the requested resource is unavailable. These errors often require you to update your configuration to reference a currently available and supported model.</p>
+
+<p>The table below summarizes these four failure categories alongside their typical indicators and initial resolution directions:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Failure Category</th>
+      <th>What Causes It</th>
+      <th>Typical Indicator</th>
+      <th>Initial Resolution Direction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Invalid or Missing API Key</td>
+      <td>Key not entered, revoked, expired, or mistyped</td>
+      <td>Authentication failure message</td>
+      <td>Correct or replace the API key in Settings</td>
+    </tr>
+    <tr>
+      <td>Rate Limit Exceeded</td>
+      <td>Too many requests in a given time window</td>
+      <td>Rate limit or quota exceeded message</td>
+      <td>Wait for reset or upgrade account tier</td>
+    </tr>
+    <tr>
+      <td>Network Problem</td>
+      <td>Connection interrupted, VPN, firewall, instability</td>
+      <td>Connectivity or timeout error</td>
+      <td>Check network, VPN, and firewall settings; view log</td>
+    </tr>
+    <tr>
+      <td>Model or Endpoint Error</td>
+      <td>Deprecated model, incorrect model ID, provider outage</td>
+      <td>Model unavailable or endpoint error</td>
+      <td>Update model configuration in Settings</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>How PreseMaker Responds to a Failure</strong></p>
+
+<p>When a generation request fails, PreseMaker's behavior is deliberate and consistent: it <strong>surfaces the failure to you immediately</strong> through a failure dialog. It does not silently retry the request with a different provider, and it does not attempt any automatic fallback. The provider that was assigned to the task at the time of the failure remains responsible for that task until you explicitly take action to either fix the configuration or reassign the task.</p>
+
+<p>This behavior is intentional. Silent retries or automatic fallbacks might seem convenient in the short term, but they obscure real problems — you might not realize that a key has become invalid, that you are consistently hitting rate limits, or that a model has been deprecated. By surfacing every failure explicitly, PreseMaker ensures you remain aware of the state of your provider connections and can make informed decisions about how to respond. The failure dialog is not an obstacle; it is a diagnostic tool.</p>
+
+<p>It is also worth understanding the implication of the <em>no automatic fallback</em> design. If you have configured multiple providers in PreseMaker, a failure with Provider A does not cause PreseMaker to automatically route the task to Provider B. Each task has a specific assigned provider, and that assignment holds until you manually change it. This means your other providers remain exactly where you configured them, and your task assignments remain predictable and intentional.</p>
+
+<p><strong>Interpreting the Failure Dialog</strong></p>
+
+<p>The failure dialog that PreseMaker presents is designed to be immediately actionable. Rather than showing a raw technical error code and leaving you to decipher it, the dialog translates the provider's response into a plain-language explanation that corresponds directly to one of the known failure categories. For example, an authentication failure will be identified as such — you will not simply see an HTTP 401 status code without context.</p>
+
+<p>The dialog tells you the <strong>nature of the error</strong>. This means you will know immediately whether the problem is that your credentials were rejected, that you have hit a usage ceiling, that a connection could not be established, or that the specified model is unavailable. This direct correspondence between what the dialog says and the known failure categories makes diagnosis straightforward — you do not have to guess what went wrong.</p>
+
+<p>Critically, the dialog also <strong>presents multiple resolution options inline</strong>. You do not need to dismiss the dialog, remember what went wrong, manually navigate to Settings, and then try to recall what you needed to change. The dialog keeps you in context and gives you direct pathways to take action. This reduces the friction between identifying a problem and resolving it.</p>
+
+<p><strong>Resolution Options Offered by the Dialog</strong></p>
+
+<p>The failure dialog provides three primary resolution options, each suited to a different failure scenario:</p>
+
+<ul>
+  <li><strong>Open Settings:</strong> This option takes you directly to the PreseMaker Settings panel where your provider configurations are managed. From there, you can review the current configuration for the provider that failed, check which model is specified, confirm that the provider endpoint is correct, or update any other configuration details. This is the appropriate route when you suspect a misconfiguration — for instance, an incorrect model name or an endpoint that has changed.</li>
+  <li><strong>Add a new API key:</strong> This option provides a focused pathway to enter or replace an API key, which is particularly useful when the existing key is known to be invalid or expired. Rather than navigating through the full Settings interface to find the key field, this shortcut brings you directly to the point of action. For authentication failures, this is typically the fastest resolution path.</li>
+  <li><strong>View the log:</strong> This option opens the detailed error log, which contains the raw output from the failed request. Logs are especially valuable when the cause of a failure is not immediately clear from the dialog's description — particularly for network issues or endpoint errors where the specific error message from the provider can point you toward the exact problem. If you need to report a problem or diagnose something unusual, the log is your primary source of ground-truth information.</li>
+</ul>
+
+<p><strong>Fixing the Underlying Cause and Retrying</strong></p>
+
+<p>The failure dialog guides you to a resolution path, but actually fixing the problem requires taking the appropriate action based on the failure category. Once you have taken action, you must <strong>manually retry the generation</strong> — PreseMaker will not re-attempt the request on its own after a failure, regardless of what you have changed.</p>
+
+<p>If the failure was caused by an <strong>invalid or missing API key</strong>, the resolution is to correct or replace the key. Open Settings (or use the direct shortcut from the dialog), locate the provider that failed, and update the API key field with a valid key from your provider account dashboard. Once the key is saved, retry the generation. If the key is valid and properly entered, the authentication error will not recur.</p>
+
+<p>If the failure was caused by a <strong>rate limit</strong>, you have two options depending on the urgency of your work. The simplest option is to wait for the rate limit window to reset — most providers reset limits on a per-minute or per-day basis, and the provider's documentation will tell you exactly how long to wait. If you are doing high-volume work and consistently hitting rate limits, the longer-term solution is to upgrade your account tier with the provider to access a higher request quota. Once the limit has reset or your tier has been upgraded, manually retry the generation.</p>
+
+<p>If the failure was caused by a <strong>network problem</strong>, start by confirming that your internet connection is active and stable. If you use a VPN, check whether it might be blocking outbound requests to the provider's API endpoint — some VPN configurations restrict certain types of traffic. If you are behind a corporate or institutional firewall, verify that the provider's API domain is not blocked. The detailed log can help here, as it may reveal whether the request timed out, was refused, or never received a response. Once your connectivity is restored or your network configuration is corrected, manually retry the generation.</p>
+
+<p>If the failure was caused by a <strong>model or endpoint error</strong>, open Settings and review the model specified for the task that failed. Confirm that the model name matches a currently available model offered by the provider — providers update their model offerings regularly, and a model that was available when you first configured the task may have been deprecated. Consult the provider's documentation or dashboard to identify the correct current model identifier, update the configuration in Settings, and then manually retry the generation.</p>
+
+<p><strong>Manually Reassigning the Task to a Different Provider</strong></p>
+
+<p>Sometimes the fastest path forward is not to fix the failing provider but to route the task to a different provider that is currently working. This is particularly useful in situations where the failing provider is experiencing an outage, where you are waiting for a rate limit to reset, or where resolving the credential problem will take time you do not want to spend right now.</p>
+
+<p>To do this, open Settings and locate the specific <strong>task type</strong> that failed. PreseMaker allows different task types — such as text generation, summarization, or image generation — to be assigned to different providers independently. Within the task's configuration, change the assigned provider from the one that failed to a provider that is currently configured and functional. Save the change, then return to your work and retry the generation. PreseMaker will now send the request to the newly assigned provider instead of the one that failed.</p>
+
+<p>It is important to understand that this <strong>manual reassignment is the only mechanism</strong> by which a task can be routed to a different provider. There is no automatic fallback, no priority list of providers that PreseMaker works through on its own. The assignment you set in Settings is definitive until you change it again. This means that if you reassign a task to work around an outage, you may want to revisit the assignment later once the original provider is restored — or you may decide that the new assignment is preferable and leave it as is. Either way, the decision is yours, and PreseMaker will honor whatever configuration you have set.</p>
+
+<p>To illustrate the end-to-end process, consider a practical example. Suppose you are working on a presentation and you trigger a generation that fails with an authentication error. The failure dialog appears and tells you the request could not be authenticated. You click the option to add a new API key, enter the updated key from your provider dashboard, and save it. You then manually retry the generation — this time, the request succeeds. Your work continues without having to navigate away from your presentation context any more than necessary, because the dialog kept you oriented and gave you a direct path to the fix.</p>
+
+<p>In a different scenario, suppose the failure dialog reports a rate limit error late in your workday and you cannot afford to wait for the limit to reset. You open Settings from the dialog, find the affected task type, and reassign it to a second provider whose credentials you have already configured. You retry the generation immediately using the new provider and continue working. The original provider's rate limit will reset overnight, and you can reassign the task back if you prefer — but for now, your work is unblocked.</p>
+
+<p>These workflows highlight the core design philosophy behind PreseMaker's failure handling: <em>transparency over convenience</em>. Every failure is visible, every failure has an identifiable cause, and every resolution is something you initiate deliberately. This gives you a clear, honest picture of how your AI provider integrations are functioning and keeps you in full control of how tasks are routed and retried.</p>
+        <div class="notes"><strong>Notes</strong>Describes the types of errors that can cause a provider request to fail, such as invalid API keys, rate limits, or network issues. Explains how to interpret the failure dialog and the steps available to resolve the problem.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

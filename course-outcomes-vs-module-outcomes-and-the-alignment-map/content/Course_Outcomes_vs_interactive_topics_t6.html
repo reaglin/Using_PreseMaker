@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identifying Gaps in Alignment</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Course Outcomes vs. Module Outcomes and the Alignment Map</a></div>
+  <header>
+    <h1>Identifying Gaps in Alignment</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Identifying Gaps in Alignment</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>An alignment map is not merely an administrative artifact — it is a diagnostic instrument. Once you have plotted module outcomes against course outcomes in a grid, the map begins to speak. Blank cells, overcrowded columns, and lopsided rows all carry meaning. Reading that meaning accurately is what allows a course designer or instructor to move from noticing a structural problem to understanding it clearly enough to fix it. This topic examines what a completed alignment map actually reveals, names and describes the distinct types of gaps that can appear, explains what those gaps signal about a course's coherence and integrity, and walks through both the diagnosis and the resolution of each gap type.</p>
+
+<p>When you look at a completed alignment map — a grid where rows represent module outcomes and columns represent course outcomes, with checkmarks or notations in cells where a connection exists — several things become immediately visible. First, <strong>every module outcome should map to at least one course outcome</strong>. If a row is entirely blank, that module outcome is floating free of the course's stated purposes. Students who master it have accomplished something the course never officially promised or needed, which raises a legitimate question about whether that learning experience belongs in the course at all. Second, and just as importantly, <strong>every column representing a course outcome should have at least one checkmark in it</strong>. A column that is entirely blank means that the course promises a destination — in its syllabus, its catalog description, its accreditation documentation — that none of its modules actually travel toward. Third, reviewing the map <em>as a whole</em>, rather than cell by cell, surfaces patterns that individual inspections miss: a cluster of outcomes all pressing toward one course goal while another course goal sits untouched, or a single module carrying instructional weight that should be distributed across three.</p>
+
+<p>Understanding what you are looking at requires a working vocabulary for gap types, because different gaps have different causes and call for different remedies.</p>
+
+<p>A <strong>missing connection gap</strong> occurs when a module outcome exists in the course but links to no course outcome at all. The instructional content may be interesting, accurate, and well-taught, but it does not advance any of the goals the course has publicly committed to achieving. From a learner's perspective, effort spent on that module is effort that does not compound — it does not build toward the course-level competency they are supposed to develop. From a program or accreditation perspective, it is instructional time that cannot be justified by reference to stated goals. The orphaned module outcome is the hallmark signature of this gap type.</p>
+
+<p>An <strong>uncovered course outcome gap</strong> is the mirror image. Here, a course outcome exists — it appears in the syllabus, in program documentation, perhaps in external standards — but not one module outcome links to it. The course has made a promise it structurally cannot keep. Learners who complete every module will still not have been guided toward that destination, because no module was designed to take them there. This is arguably the most serious gap type because it represents a breach of the implicit contract between the course and its learners and stakeholders.</p>
+
+<p>A <strong>weak connection gap</strong> is subtler and therefore easier to overlook. A checkmark appears in the cell — there is technically a connection between the module outcome and the course outcome — but the connection is tangential. The module outcome brushes past the course outcome without genuinely scaffolding it. For example, a module outcome asking students to <em>list</em> the components of a framework is technically related to a course outcome asking students to <em>evaluate</em> competing frameworks, but listing components provides very thin preparation for evaluation-level thinking. The map looks populated, but the instructional pathway is weak.</p>
+
+<p>A <strong>cognitive depth gap</strong> is a specific and important variant of the weak connection gap. It occurs when module outcomes cluster at the lower levels of Bloom's Taxonomy — remembering, understanding, perhaps applying — while the course outcome they are meant to support demands higher-order thinking such as analyzing, evaluating, or creating. The gap is not in subject matter coverage but in the level of intellectual engagement the modules require. Students never get the practice at higher-order thinking that the course outcome eventually demands of them, and they arrive at assessments or capstone experiences underprepared.</p>
+
+<p>Consider the following simplified alignment map to make these gap types concrete:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module Outcome</th>
+      <th>Course Outcome A: Analyze data to identify trends</th>
+      <th>Course Outcome B: Design an evidence-based intervention</th>
+      <th>Course Outcome C: Evaluate ethical implications of research</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>M1: Define key data types</td>
+      <td>✓ (weak — definitional only)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>M2: Summarize data collection methods</td>
+      <td>✓</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>M3: Apply a statistical formula to a dataset</td>
+      <td>✓</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>M4: Describe historical research controversies</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>M5: Compare intervention models</td>
+      <td></td>
+      <td>✓</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Reading this map reveals several problems at once. Course Outcome C has no checkmarks at all — an uncovered course outcome gap. Module 4 has no checkmarks at all — a missing connection gap. Course Outcome A is addressed by three module outcomes, but M1's connection is weak and all three operate at remember/understand/apply levels while "analyze" demands more — a cognitive depth gap. Course Outcome B is touched only once, by a module that merely asks students to <em>compare</em> models rather than design anything — another potential cognitive depth gap. The map makes all of this visible in a single glance.</p>
+
+<p>Before leaping to fix a gap, it is worth diagnosing its root cause, because the same apparent gap can arise from very different sources and each source points toward a different solution.</p>
+
+<p>The first diagnostic question to ask is whether the <strong>content addressing the course outcome actually exists somewhere in the course but was never captured in a formal module outcome</strong>. Instructors often teach things that are not written down anywhere as outcomes. If a module's lessons, readings, and activities do actually address a course outcome but the module outcome statement does not mention it, the map will show a false gap. The course is not broken; the outcome statement is just an incomplete description of what the module does. In this case, the fix is rewriting the module outcome to accurately name what is being taught — not rebuilding the module from scratch.</p>
+
+<p>The second diagnostic question is whether the <strong>course outcome itself is realistic given the course's scope and duration</strong>. Sometimes a gap does not reveal bad teaching or poor module design — it reveals an over-ambitious course outcome that no reasonable set of modules could fully address in the available time. If a one-semester introductory course promises that students will "master advanced synthesis of competing theoretical traditions," a gap between module outcomes and that course outcome may signal that the course outcome needs to be revised to reflect what is genuinely achievable, rather than that the modules need to be torn apart and rebuilt.</p>
+
+<p>The third diagnostic question is whether a <strong>module outcome is too narrowly worded to visibly connect to a broader course outcome</strong>, even though the underlying learning is genuinely relevant. This is a writing problem, not a content problem. If a module outcome says "identify three specific subordination conjunctions in sample sentences" and the course outcome says "apply grammatical principles to improve writing clarity," a reader might not draw the connection — but the connection is real. The fix is revising the module outcome's language so that the relationship becomes explicit and checkable.</p>
+
+<p>Once root causes are understood, resolution strategies follow logically from them.</p>
+
+<p>When a module outcome is orphaned — linked to no course outcome — the most efficient resolution is usually to <strong>rewrite the module outcome</strong> so that its language explicitly connects it to the relevant course outcome. This means choosing action verbs that match or scaffold the course outcome's verb, and using terminology that appears in or clearly relates to the course outcome's wording. If the content of the module genuinely supports a course goal, the outcome statement should say so plainly.</p>
+
+<p>When a course outcome is entirely uncovered — no module addresses it at all — the situation is more serious and typically requires adding instruction. The designer must <strong>add a new module, lesson segment, or activity</strong> whose explicit purpose is to move students toward that course outcome. Depending on the course's structure, this might mean inserting a new module, expanding an existing one, or adding a dedicated assignment that targets the uncovered outcome and is supported by its own module-level learning outcome.</p>
+
+<p>When the map reveals <strong>over-concentration</strong> — several modules all driving toward the same course outcome while another course outcome remains barely touched — the appropriate response is redistribution. Some of the instructional time and activities currently piled onto the over-addressed course outcome can be shifted, repurposed, or reframed to serve the neglected one. This does not necessarily mean writing new content from zero; it often means reorienting existing content and revising the outcomes that describe it.</p>
+
+<p>When a course outcome is genuinely unreachable given the course's real constraints, the honest response is to <strong>revise the course outcome itself</strong>. Stated goals should reflect what the course actually delivers. An inflated course outcome that no amount of module revision could satisfy is doing learners and stakeholders a disservice. Scaling it back to something achievable and verifiable is not a retreat — it is a commitment to honesty and to the integrity of the credential or completion the course represents.</p>
+
+<p>When the issue is cognitive depth — module outcomes clustering at lower Bloom's levels beneath a higher-order course outcome — the resolution is to <strong>add assessments or activities that require higher-order thinking</strong> within the relevant modules. This might mean replacing a recall quiz with a short analytical task, adding a case study that requires students to evaluate options rather than simply describe them, or structuring a discussion prompt around synthesis rather than summary. The goal is to build a cognitive staircase: lower-level outcomes in early modules provide foundational knowledge, while later modules progressively demand more sophisticated thinking that approaches the level the course outcome names.</p>
+
+<p>After revisions are made, the work is not finished until the alignment has been verified. The most important verification step is to <strong>rebuild or update the alignment map</strong> incorporating all the revised and newly written outcomes, and then re-examine it using the same diagnostic lens. The goal is to confirm that every course outcome column now has at least one module outcome linked to it, and that every module outcome row connects to at least one course outcome. The map should have no entirely blank columns and no entirely blank rows.</p>
+
+<p>It is also essential to check for <strong>unintended orphaning</strong> — situations where a revision made to fix one gap inadvertently disconnects a module outcome that was previously linked. When outcomes are rewritten, especially when terminology or action verbs change, previously existing connections can quietly disappear from the map. A fresh reading of the entire updated map catches these collateral effects before they become problems in a live course.</p>
+
+<p>Finally, verify that <strong>cognitive depth has genuinely improved</strong> across the revised map. Confirm that module outcomes now provide a scaffold that progressively builds toward the level of thinking each course outcome demands. If a course outcome requires evaluation, trace the sequence of module outcomes linked to it: do they move a learner from awareness through understanding, application, and analysis before arriving at evaluation? If the staircase still has missing steps, further revision of interim module outcomes or additional activities may be needed to close the depth gap completely.</p>
+
+<p>Taken together, these practices transform the alignment map from a one-time documentation exercise into an ongoing quality instrument — one that not only proves a course is coherent on paper but actually ensures that every hour a student invests in the course moves them measurably closer to the goals the course has promised to help them reach.</p>
+        <div class="notes"><strong>Notes</strong>Covers all listed subtopics in depth. The HTML table renders a concrete example alignment map illustrating all four gap types simultaneously. Root cause diagnosis is treated as a distinct phase between identifying and resolving gaps, following the topic outline. Bloom&#39;s Taxonomy is referenced as established supporting knowledge for the cognitive depth gap discussion.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopping a Batch Run Safely</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Batch Actions: Generating Content Across Multiple Modules at Once</a></div>
+  <header>
+    <h1>Stopping a Batch Run Safely</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Stopping a Batch Run Safely</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Running a batch process is an efficient way to generate content across multiple modules in sequence, but there are moments when you need to bring that run to a halt before it finishes. Whether you spot a configuration mistake, notice unexpected output in an early module, or simply need to intervene before more content is produced under the wrong settings, the system provides a dedicated mechanism for stopping the run safely. Understanding exactly how that mechanism works — what it protects, what it leaves incomplete, and how to recover cleanly — is essential for working confidently with batch processing.</p>
+
+<p><strong>Understanding the Stop Function</strong></p>
+
+<p>A dedicated <strong>Stop button</strong> is present in the batch progress interface from the moment a run begins and remains fully accessible throughout the entire process. It is not hidden behind a confirmation dialog that takes time to navigate, nor does it become unavailable once the run reaches a certain stage. This persistent availability is intentional: the faster you can trigger the stop, the fewer modules will be affected by whatever problem prompted the intervention.</p>
+
+<p>It is critically important to understand what the Stop function actually targets. When you issue the stop command, the system <em>does not</em> undo, roll back, or delete any content that was already generated in modules that had already reached a completed state. The stop action is forward-looking only — it cancels the processing of modules that had not yet been started at the moment the command was received. Think of it as pulling the emergency brake on a moving train: the carriages already at the station stay exactly where they are; only the forward motion is arrested.</p>
+
+<p>This distinction matters enormously in practice. If your batch run covered twenty modules and you stopped it after twelve had completed, those twelve modules retain their generated content intact. You are not losing work by stopping early — you are protecting the work already done while preventing further output under potentially flawed conditions.</p>
+
+<p><strong>When to Stop a Batch Run</strong></p>
+
+<p>Knowing <em>when</em> to use the Stop function is just as important as knowing how it works. The guiding principle is simple: stop as early as possible once a problem is identified, because every additional module that processes under a faulty configuration compounds the issue and increases the amount of content you may need to regenerate.</p>
+
+<p>The most common trigger for stopping a run is discovering an <strong>error in your batch configuration</strong>. This could be a wrong template applied to a group of modules, an incorrect source file linked to the batch, or a setting that was intended to apply only to a subset of modules but was inadvertently applied globally. As soon as you recognize the misconfiguration in the progress interface, stopping the run immediately limits the blast radius to only the modules processed before you intervened.</p>
+
+<p>A second reason to stop is <strong>unexpected output</strong> in an early module. Because the batch progress interface typically allows you to review completed modules while the run is still active, you may notice that a module's output looks wrong — perhaps the tone is off, key sections are missing, or the formatting does not match expectations. Rather than letting the same problem replicate across every remaining module, stopping gives you the opportunity to examine your settings in a deliberate, unhurried way before any more content is generated.</p>
+
+<p>This is where <strong>monitoring the live progress indicator</strong> becomes a practical skill. Watching the indicator as modules complete allows you to spot anomalies quickly. If the first two or three modules complete successfully but the fourth produces something unexpected, catching that deviation in real time — rather than after the full run finishes — gives you far more flexibility to course-correct with minimal rework.</p>
+
+<p><strong>How Completed Modules Are Preserved</strong></p>
+
+<p>The batch system saves content on a <strong>module-by-module basis</strong>. Each module is treated as an independent unit of output: the moment a module transitions to a completed state, its content is secured. That save event is tied to the individual module's completion, not to the conclusion of the overall batch run. This architecture means the batch does not need to finish in full for any of its output to be permanent.</p>
+
+<p>As a direct consequence, stopping the run <strong>does not roll back or erase</strong> any module that had already reached a completed state. The stop command has no retroactive effect on completed work. Once a module is saved as complete, it remains in that state regardless of what happens to the rest of the batch. This is a deliberate design choice that protects your work under exactly the kind of uncertain conditions that might prompt you to stop a run in the first place.</p>
+
+<p>Practically, this means you can <strong>review and use the preserved content immediately</strong> after stopping — there is no secondary save process to wait for, no batch-level finalization step that needs to run before the completed modules become accessible. If you stopped a run because of a configuration issue, you can open and review the completed modules right away while you work on correcting the settings for the follow-up run.</p>
+
+<p><strong>What Happens to In-Progress Modules</strong></p>
+
+<p>The one area of genuine uncertainty when stopping a batch run is a module that was <em>actively generating output</em> at the exact moment the stop command was received. Because content generation is a process that takes place over a span of time, it is possible for the stop signal to arrive while a module is mid-generation — after it has started but before it has finished and been marked as complete.</p>
+
+<p>In this situation, the module's output may be <strong>incomplete or entirely absent</strong>. The system stops processing at whatever point it had reached, which could mean a module with partial content, a module with placeholder sections, or in some cases a module with no usable output at all. This is not a defect in the stop mechanism; it is simply a reflection of the fact that the stop interrupted a process that had not yet concluded.</p>
+
+<p>Any partially generated content from an interrupted module <strong>should be reviewed carefully</strong> before it is used. Content that was cut off mid-generation may lack essential sections, end abruptly, or contain inconsistencies that are not immediately obvious on a quick scan. The quality and completeness standards you would apply to a fully processed module cannot automatically be assumed to apply to interrupted output.</p>
+
+<p>The recommended approach for an incomplete module is to <strong>re-include it in a new, targeted batch run</strong>. Rather than attempting to patch or manually complete the partial output, regenerating the module cleanly from scratch ensures that the final content meets the same standard as everything else in the batch. This also gives you the opportunity to verify that any configuration corrections you make for the follow-up run produce the correct result on this module before applying them more broadly.</p>
+
+<p><strong>Resuming or Rerunning After a Stop</strong></p>
+
+<p>Once you have stopped a run, a structured approach to setting up the follow-up run will save time and prevent you from inadvertently regenerating work that does not need to be redone.</p>
+
+<p>The first step is to <strong>review the batch progress log</strong> carefully. The log provides a definitive record of which modules reached a completed state, which module was interrupted mid-generation, and which modules were queued but never started. This three-way distinction is important: completed modules need no further action, the interrupted module needs clean regeneration, and unstarted modules simply need to be included in the new run. Conflating these categories — for example, accidentally regenerating a completed module — creates unnecessary duplicate work and risks overwriting preserved content.</p>
+
+<p>The following table summarizes the status categories and the appropriate follow-up action for each:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module Status at Stop</th>
+      <th>Content State</th>
+      <th>Recommended Follow-Up Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Completed</td>
+      <td>Fully generated and saved</td>
+      <td>Deselect from new run; no action needed</td>
+    </tr>
+    <tr>
+      <td>In-progress (interrupted)</td>
+      <td>Partial, incomplete, or absent</td>
+      <td>Include in new run for clean regeneration</td>
+    </tr>
+    <tr>
+      <td>Not yet started</td>
+      <td>No content generated</td>
+      <td>Include in new run as normal</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When configuring the follow-up run, <strong>deselect all modules that already contain preserved, completed content</strong>. Leaving completed modules selected when you rerun would cause their content to be regenerated unnecessarily, wasting processing time and potentially producing different output where the original was perfectly acceptable. Only the interrupted module and any unstarted modules should be included in the new run's scope.</p>
+
+<p>Before initiating the new run, take the time to <strong>correct any configuration errors</strong> that prompted the stop in the first place. This step cannot be skipped. Starting a new run with the same misconfiguration that caused the original problem simply reproduces the issue on the remaining modules and puts you back in the same position. Verify your settings methodically — check the template assignments, source file links, and any batch-level parameters — before committing to the new run. A few minutes spent on verification at this stage prevents the need for yet another corrective stop.</p>
+
+<p>By following this sequence — log review, targeted module selection, configuration correction, and then rerun — you can complete a batch run that was interrupted mid-process with the same final output quality as a run that succeeded on the first attempt. The stop mechanism is not a failure state; it is a controlled intervention tool that, when used correctly, protects your work and gives you the control needed to produce reliable results.</p>
+        <div class="notes"><strong>Notes</strong>Covers how to halt a batch run mid-process while ensuring that all content already generated in completed modules is preserved and not lost.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generating Interactive Activities and Custom Materials — Using PreseMaker</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6f9;
+      color: #1e2a38;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── Page shell ── */
+    .page-wrapper {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    /* ── Header ── */
+    .page-header {
+      background: linear-gradient(135deg, #1b4f8a 0%, #2b72c8 100%);
+      color: #fff;
+      border-radius: 10px;
+      padding: 2.25rem 2.5rem;
+      margin-bottom: 2.25rem;
+      box-shadow: 0 4px 18px rgba(27, 79, 138, 0.18);
+    }
+
+    .course-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      opacity: 0.82;
+      margin-bottom: 0.45rem;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 0.85rem;
+    }
+
+    .page-header p {
+      font-size: 0.97rem;
+      opacity: 0.9;
+      max-width: 680px;
+      line-height: 1.65;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #5a6a7e;
+      margin-bottom: 1rem;
+      padding-left: 0.25rem;
+    }
+
+    /* ── Card grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: #ffffff;
+      border: 1px solid #dde3ec;
+      border-radius: 9px;
+      padding: 1.35rem 1.5rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.055);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 22px rgba(27, 79, 138, 0.13);
+      transform: translateY(-2px);
+    }
+
+    /* ── Card top row ── */
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .card-name {
+      font-size: 1rem;
+      font-weight: 650;
+      color: #1b4f8a;
+      line-height: 1.35;
+      flex: 1 1 auto;
+    }
+
+    .card-name a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.18s, color 0.18s;
+    }
+
+    .card-name a:hover,
+    .card-name a:focus {
+      color: #1560bd;
+      border-bottom-color: #1560bd;
+      outline: none;
+    }
+
+    .card-name-plain {
+      color: #1e2a38;
+    }
+
+    /* ── Source link ── */
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.28rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #2b72c8;
+      background: #eaf2ff;
+      border: 1px solid #c2d9f8;
+      border-radius: 4px;
+      padding: 0.22rem 0.52rem;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.17s, border-color 0.17s, color 0.17s;
+    }
+
+    .source-link:hover,
+    .source-link:focus {
+      background: #2b72c8;
+      border-color: #2b72c8;
+      color: #fff;
+      outline: none;
+    }
+
+    .source-link svg {
+      flex-shrink: 0;
+    }
+
+    /* ── Badges row ── */
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border-radius: 4px;
+      padding: 0.18rem 0.55rem;
+      line-height: 1.4;
+    }
+
+    .badge-type {
+      background: #eef1f7;
+      color: #3d5272;
+      border: 1px solid #d2daea;
+    }
+
+    .badge-filetype {
+      background: #f0faf4;
+      color: #1e6e42;
+      border: 1px solid #b8e2cb;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* ── Description ── */
+    .card-desc {
+      font-size: 0.875rem;
+      color: #4a5668;
+      line-height: 1.6;
+      flex: 1 1 auto;
+    }
+
+    /* ── Responsive tweaks ── */
+    @media (max-width: 480px) {
+      .page-header { padding: 1.75rem 1.25rem; }
+      .card { padding: 1.1rem 1.15rem 1.2rem; }
+      .card-top { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Using PreseMaker</a></div>
+<div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
+  <div class="page-wrapper">
+
+    <!-- ── Header ── -->
+    <header class="page-header">
+      <p class="course-label">Using PreseMaker</p>
+      <h1>Generating Interactive Activities and Custom Materials</h1>
+      <p>
+        This module guides instructors through PreseMaker's suite of interactive activity
+        templates — including matching exercises, flashcards, cloze passages, and crossword
+        puzzles — and shows how to generate custom materials and navigate all produced
+        artifacts from the Module Index.
+      </p>
+    </header>
+
+    <!-- ── Artifact grid ── -->
+    <p class="section-label">Module Artifacts</p>
+
+    <div class="card-grid">
+
+      <!-- Card 1: Module Topics -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">
+            <a href="content/module_topics.html">Module Topics</a>
+          </span>
+          <a class="source-link" href="source/hierarchy.json">
+            <svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M2 2h6l4 4v8H2V2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M8 2v4h4" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+            source file
+          </a>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Module Topics</span>
+          <span class="badge badge-filetype">.json</span>
+        </div>
+        <p class="card-desc">
+          Lists the topics and subtopics covered in this module — including interactive activity
+          templates, matching, flashcards, cloze passages, crossword puzzles, and custom
+          materials — giving learners and instructors a structured overview of what the module
+          contains.
+        </p>
+      </article>
+
+      <!-- Card 2: Introduction to Interactive Activity Templates -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">
+            <a href="content/Generating_Interactive_Activ_interactive_topics_t1.html">Introduction to Interactive Activity Templates</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          Explains what interactive activity templates are, why they improve learning outcomes,
+          and what types are available in PreseMaker, serving as a conceptual introduction for
+          instructors before they begin building activities.
+        </p>
+      </article>
+
+      <!-- Card 3: Matching and Flashcard Activities -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">
+            <a href="content/Generating_Interactive_Activ_interactive_topics_t2.html">Matching and Flashcard Activities</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          Describes how matching and flashcard activities work in PreseMaker — including how
+          they are built from key terms and why they support vocabulary retention — helping
+          instructors understand when and how to use these two activity types.
+        </p>
+      </article>
+
+      <!-- Card 4: Cloze Passages and Crossword Puzzles -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">
+            <a href="content/Generating_Interactive_Activ_interactive_topics_t3.html">Cloze Passages and Crossword Puzzles</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          Covers how PreseMaker automatically generates cloze passages and crossword puzzles
+          from a module's key terms, explaining the pedagogical value of each and how instructors
+          can deploy them without manual construction.
+        </p>
+      </article>
+
+      <!-- Card 5: Generating Custom Materials -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">
+            <a href="content/Generating_Interactive_Activ_interactive_topics_t4.html">Generating Custom Materials</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          Explains how to use PreseMaker's custom materials generator to create freeform
+          instructional content — such as reference guides or bespoke exercises — that falls
+          outside the platform's standard activity templates, guiding instructors through the
+          process.
+        </p>
+      </article>
+
+      <!-- Card 6: Locating Artifacts in the Module Index (Topic Detail) -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">
+            <a href="content/Generating_Interactive_Activ_interactive_topics_t5.html">Locating Artifacts in the Module Index</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          Teaches instructors how to use the Module Index to locate, revisit, and manage all
+          generated activities, quizzes, and custom materials produced within a module,
+          establishing it as the central hub for output navigation.
+        </p>
+      </article>
+
+      <!-- Card 7: Locating Artifacts in the Module Index (Text Content) -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-name">
+            <a href="content/Generating_Interactive_Activ_interactive.html">Locating Artifacts in the Module Index</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Text Content</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          Teaches instructors how to use the Module Index to locate, revisit, and manage all
+          generated activities, quizzes, and custom materials produced within a module,
+          establishing it as the central hub for output navigation.
+        </p>
+      </article>
+
+    </div><!-- /.card-grid -->
+
+  </div><!-- /.page-wrapper -->
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+<section class="presemaker-extras" style="max-width:1000px;margin:2rem auto;padding:0 1rem;"><h2>Topics &amp; Learning Outcomes</h2><p><a href="topics-outcomes.html">View Topics &amp; Learning Outcomes</a></p></section><script src="embed-inject.js" defer></script></body>
+</html>

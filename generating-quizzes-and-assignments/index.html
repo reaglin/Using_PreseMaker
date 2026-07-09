@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generating Quizzes and Assignments – Using PreseMaker</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f9;
+      color: #2c3340;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Header banner ── */
+    header {
+      background: linear-gradient(135deg, #1a3a5c 0%, #2563a8 100%);
+      color: #fff;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    header .course-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px;
+      padding: 0.25rem 0.85rem;
+      margin-bottom: 0.9rem;
+      color: #d6e8ff;
+    }
+
+    header h1 {
+      font-size: clamp(1.5rem, 3.5vw, 2.3rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+    }
+
+    header p.intro {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1rem;
+      color: #c8ddf5;
+      line-height: 1.7;
+    }
+
+    /* ── Main content area ── */
+    main {
+      max-width: 1060px;
+      margin: 2.5rem auto 3rem;
+      padding: 0 1.25rem;
+    }
+
+    /* ── Section heading ── */
+    .section-heading {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: #6b7a94;
+      margin-bottom: 1.1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #dde3ed;
+    }
+
+    /* ── Card grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* ── Individual card ── */
+    .card {
+      background: #ffffff;
+      border: 1px solid #dde3ed;
+      border-radius: 10px;
+      padding: 1.3rem 1.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      transition: box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 18px rgba(37, 99, 168, 0.12);
+      border-color: #a8c4e8;
+    }
+
+    /* ── Card meta row ── */
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.6rem;
+      border-radius: 20px;
+    }
+
+    .badge-type {
+      background: #e8f0fb;
+      color: #1f5299;
+    }
+
+    .badge-filetype {
+      background: #eef2f8;
+      color: #55657e;
+      border: 1px solid #d3dcea;
+    }
+
+    /* ── Card title row ── */
+    .card-title-row {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a3a5c;
+      line-height: 1.35;
+    }
+
+    .card-title a {
+      color: #1a5bbf;
+      text-decoration: none;
+    }
+
+    .card-title a:hover {
+      text-decoration: underline;
+      color: #0f3d8a;
+    }
+
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.73rem;
+      font-weight: 600;
+      color: #5a7fa8;
+      text-decoration: none;
+      background: #f0f5fb;
+      border: 1px solid #c6d8ef;
+      border-radius: 4px;
+      padding: 0.12rem 0.45rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .source-link:hover {
+      background: #daeaf8;
+      color: #1a3a5c;
+    }
+
+    .source-link::before {
+      content: "⬇";
+      font-size: 0.65rem;
+    }
+
+    /* ── Card description ── */
+    .card-description {
+      font-size: 0.875rem;
+      color: #4a5568;
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    /* ── Divider between grid sections ── */
+    .section-gap {
+      margin-top: 2.25rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.78rem;
+      color: #8a97aa;
+      border-top: 1px solid #dde3ed;
+      background: #fff;
+    }
+
+    /* ── Responsive tweaks ── */
+    @media (max-width: 480px) {
+      header { padding: 2rem 1rem 1.75rem; }
+      .card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Using PreseMaker</a></div>
+<div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
+
+  <header>
+    <div class="course-label">Using PreseMaker</div>
+    <h1>Generating Quizzes and Assignments</h1>
+    <p class="intro">
+      This module covers the end-to-end process of creating, configuring, and exporting quizzes and
+      assignments inside PreseMaker — from choosing the right question types and using the Content
+      Source Selector, to building reusable question banks, structuring assignment tasks, and ensuring
+      every assessment aligns with your module's learning outcomes.
+    </p>
+  </header>
+
+  <main>
+
+    <!-- Navigation / Map artifact -->
+    <p class="section-heading">Module Resources</p>
+    <div class="card-grid">
+
+      <!-- 1: Module Topics -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Module Topics</span>
+          <span class="badge badge-filetype">.json</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-title">
+            <a href="content/module_topics.html">Module Topics</a>
+          </span>
+          <a class="source-link" href="source/hierarchy.json">source file</a>
+        </div>
+        <p class="card-description">
+          Lists the topics and subtopics covered in this module — including question types, the Content
+          Source Selector, question banks, exporting, assignment tasks, and assessment alignment —
+          giving learners and instructors an at-a-glance map of what the module contains.
+        </p>
+      </div>
+
+    </div><!-- /.card-grid -->
+
+    <!-- Topic Detail artifacts -->
+    <div class="section-gap">
+      <p class="section-heading">Topic Details</p>
+      <div class="card-grid">
+
+        <!-- 2: Introduction -->
+        <div class="card">
+          <div class="card-meta">
+            <span class="badge badge-type">Topic Detail</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title-row">
+            <span class="card-title">
+              <a href="content/Generating_Quizzes_and_interactive_topics_t1.html">Introduction to Quiz and Assignment Generation</a>
+            </span>
+          </div>
+          <p class="card-description">
+            Introduces the purpose and benefits of generating quizzes and assignments within PreseMaker,
+            explaining how automated assessment generation saves time and improves relevance; learners
+            read this to understand why and how the platform's assessment tools matter before using them.
+          </p>
+        </div>
+
+        <!-- 3: Understanding Question Types -->
+        <div class="card">
+          <div class="card-meta">
+            <span class="badge badge-type">Topic Detail</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title-row">
+            <span class="card-title">
+              <a href="content/Generating_Quizzes_and_interactive_topics_t2.html">Understanding Question Types</a>
+            </span>
+          </div>
+          <p class="card-description">
+            Explains the main question types supported by PreseMaker — multiple choice, true/false, and
+            short answer — including when and why to use each type to match the cognitive demands of a
+            learning outcome; learners use this to make informed decisions when designing assessments.
+          </p>
+        </div>
+
+        <!-- 4: Content Source Selector -->
+        <div class="card">
+          <div class="card-meta">
+            <span class="badge badge-type">Topic Detail</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title-row">
+            <span class="card-title">
+              <a href="content/Generating_Quizzes_and_interactive_topics_t3.html">Using the Content Source Selector</a>
+            </span>
+          </div>
+          <p class="card-description">
+            Describes what the Content Source Selector is, where to find it, and how to use it to focus
+            quiz and assignment generation on specific topics within a module; learners follow this as a
+            step-by-step guide to ensure generated questions are relevant and well-scoped.
+          </p>
+        </div>
+
+        <!-- 5: Building Question Banks -->
+        <div class="card">
+          <div class="card-meta">
+            <span class="badge badge-type">Topic Detail</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title-row">
+            <span class="card-title">
+              <a href="content/Generating_Quizzes_and_interactive_topics_t4.html">Building and Generating Question Banks</a>
+            </span>
+          </div>
+          <p class="card-description">
+            Explains what a question bank is and walks through how to build and generate one in
+            PreseMaker, covering how to organise and reuse assessment items across quizzes and exams;
+            instructors use this to create a reusable pool of questions rather than writing new items
+            from scratch each time.
+          </p>
+        </div>
+
+        <!-- 6: Exporting to LMS -->
+        <div class="card">
+          <div class="card-meta">
+            <span class="badge badge-type">Topic Detail</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title-row">
+            <span class="card-title">
+              <a href="content/Generating_Quizzes_and_interactive_topics_t5.html">Exporting to LMS-Compatible Formats</a>
+            </span>
+          </div>
+          <p class="card-description">
+            Covers how to export a generated question bank into LMS-compatible formats so that questions
+            can be delivered, rendered, and scored inside a Learning Management System; learners and
+            instructors follow this to complete the workflow from PreseMaker to their live course
+            environment.
+          </p>
+        </div>
+
+        <!-- 7: Creating Structured Assignment Tasks -->
+        <div class="card">
+          <div class="card-meta">
+            <span class="badge badge-type">Topic Detail</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title-row">
+            <span class="card-title">
+              <a href="content/Generating_Quizzes_and_interactive_topics_t6.html">Creating Structured Assignment Tasks</a>
+            </span>
+          </div>
+          <p class="card-description">
+            Guides users through creating well-structured assignment tasks in PreseMaker, including how
+            to write clear prompts, set precise expectations, and anchor tasks to learning outcomes;
+            instructors use this to design assignments that provide meaningful evidence of learner
+            achievement.
+          </p>
+        </div>
+
+        <!-- 8: Aligning Assessments (Topic Detail) -->
+        <div class="card">
+          <div class="card-meta">
+            <span class="badge badge-type">Topic Detail</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title-row">
+            <span class="card-title">
+              <a href="content/Generating_Quizzes_and_interactive_topics_t7.html">Aligning Assessments with the Module Plan</a>
+            </span>
+          </div>
+          <p class="card-description">
+            Explains how to ensure assessments align with a module's learning outcomes and content
+            coverage, describing why misalignment undermines assessment validity and how to check and
+            correct it in PreseMaker; instructors use this to audit and improve the coherence of their
+            assessment strategy.
+          </p>
+        </div>
+
+      </div><!-- /.card-grid -->
+    </div><!-- /.section-gap -->
+
+    <!-- Text Content artifacts -->
+    <div class="section-gap">
+      <p class="section-heading">Text Content</p>
+      <div class="card-grid">
+
+        <!-- 9: Aligning Assessments (Text Content) -->
+        <div class="card">
+          <div class="card-meta">
+            <span class="badge badge-type">Text Content</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+          <div class="card-title-row">
+            <span class="card-title">
+              <a href="content/Generating_Quizzes_and_interactive.html">Aligning Assessments with the Module Plan</a>
+            </span>
+          </div>
+          <p class="card-description">
+            Explains how to ensure assessments align with a module's learning outcomes and content
+            coverage, describing why misalignment undermines assessment validity and how to check and
+            correct it in PreseMaker; instructors use this to audit and improve the coherence of their
+            assessment strategy.
+          </p>
+        </div>
+
+      </div><!-- /.card-grid -->
+    </div><!-- /.section-gap -->
+
+  </main>
+
+  <footer>
+    <p>Using PreseMaker &mdash; Generating Quizzes and Assignments &mdash; Module Index</p>
+  </footer>
+
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+<section class="presemaker-extras" style="max-width:1000px;margin:2rem auto;padding:0 1rem;"><h2>Topics &amp; Learning Outcomes</h2><p><a href="topics-outcomes.html">View Topics &amp; Learning Outcomes</a></p></section><script src="embed-inject.js" defer></script></body>
+</html>

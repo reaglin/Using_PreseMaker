@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Version Control, GitHub Pages, and Course Repository Integration — Topics &amp; Learning Outcomes</title>
+<style>
+body{font-family:'Segoe UI',Arial,sans-serif;max-width:880px;margin:0 auto;padding:32px 24px;color:#222;line-height:1.55}
+h1{font-size:1.6rem;border-bottom:2px solid #dcdcdc;padding-bottom:8px}
+h2{font-size:1.25rem;margin-top:30px;color:#1a3c6e;border-bottom:1px solid #ececec;padding-bottom:4px}
+h3{font-size:1.05rem;margin-top:22px;color:#1a3c6e}
+.toc{border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:14px 0 6px;display:flex;gap:18px;flex-wrap:wrap}
+.toc a{color:#1a3c6e;font-weight:600;text-decoration:none}
+.toc a:hover{text-decoration:underline}
+.summary{color:#555;font-style:italic;margin:4px 0 10px}
+ul{margin:6px 0 6px 4px}
+li{margin:5px 0}
+.el-body{color:#555}
+.prefix{color:#555;font-style:italic;margin:6px 0 14px}
+.mo{border:1px solid #e2e2e2;border-radius:6px;padding:12px 16px;margin:12px 0}
+.mo .code{font-size:.8rem;color:#888;text-transform:uppercase;letter-spacing:.04em}
+.mo .statement{font-weight:600;margin:4px 0 8px}
+.meta span{display:inline-block;background:#eef2f8;color:#1a3c6e;border-radius:3px;padding:1px 8px;margin:0 6px 0 0;font-size:.85rem}
+.meta .map{background:#eaf6ec;color:#137333}
+.co{margin:7px 0}
+.co .code{font-weight:600;color:#1a3c6e;margin-right:6px}
+.empty{color:#888}
+</style>
+</head>
+<body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Version Control, GitHub Pages, and Course Repository Integration</a></div>
+<h1>Version Control, GitHub Pages, and Course Repository Integration — Topics &amp; Learning Outcomes</h1>
+<div class="toc"><a href="#topics">📋 Module Topics</a><a href="#outcomes">🎯 Student Learning Outcomes</a></div>
+
+<h2 id="topics">Module Topics</h2>
+<h3>Managing a Course as a Git Repository in PreseMaker</h3>
+<div class="summary">Covers how PreseMaker enables version control for courses without command-line git, including initializing a repository, committing changes, pushing to a remote, and pulling updates through PreseMaker&#39;s built-in interface.</div>
+<ul>
+<li><strong>Initializing a Git Repository for a Course</strong> <span class="el-body">— PreseMaker allows you to place any course under version control by initializing a git repository directly from within the application.</span></li>
+<li><strong>Committing Changes with a Message</strong> <span class="el-body">— After making edits to a course, you can record a snapshot of those changes by creating a commit through PreseMaker&#39;s built-in interface.</span></li>
+<li><strong>Pushing Changes to a Remote Repository</strong> <span class="el-body">— Once changes are committed locally, PreseMaker enables you to push those commits to a configured remote repository such as one hosted on GitHub.</span></li>
+<li><strong>Pulling Updates from a Remote Repository</strong> <span class="el-body">— PreseMaker also supports pulling changes from a remote repository, allowing you to bring in updates that exist on the remote but not yet on your local copy.</span></li>
+<li><strong>Checking for Incoming Changes and Conflicts</strong> <span class="el-body">— Before pulling, PreseMaker allows you to check whether there are incoming changes on the remote that differ from your local version.</span></li>
+<li><strong>Stored Git Settings per Course</strong> <span class="el-body">— PreseMaker maintains a set of git configuration details for each course, so you do not need to reconfigure version control every time you work on a project.</span></li>
+</ul>
+<h3>Publishing a Course Website with GitHub Pages</h3>
+<div class="summary">Explains how PreseMaker connects a course to GitHub and publishes the exported website through GitHub Pages, giving the course a live public web address without manual configuration on GitHub.</div>
+<ul>
+<li><strong>Exporting the Course Website Before Publishing</strong> <span class="el-body">— Before PreseMaker can publish a course online, you first export it as a website from within the application.</span></li>
+<li><strong>Connecting the Course to a GitHub Repository</strong> <span class="el-body">— PreseMaker handles the connection between your course and a GitHub repository directly through its own interface, without requiring you to configure anything manually on the GitHub website.</span></li>
+<li><strong>Publishing Through PreseMaker Rather Than GitHub&#39;s Website</strong> <span class="el-body">— PreseMaker assists with the full GitHub Pages publishing process so that you never need to navigate GitHub&#39;s settings pages or run git commands manually.</span></li>
+<li><strong>The Live Public Web Address</strong> <span class="el-body">— Once published, the course receives a live public web address through GitHub Pages, making it accessible to learners anywhere with a browser.</span></li>
+<li><strong>Pushing Updates to the Published Site</strong> <span class="el-body">— When you revise a course and re-export it, PreseMaker lets you push the updated files to the same repository, refreshing the live website.</span></li>
+</ul>
+<h3>Using the Course Repository Service</h3>
+<div class="summary">Describes PreseMaker&#39;s integration with external course-repository services, covering how to import course materials from a shared repository and publish your own materials for others to access and reuse.</div>
+<ul>
+<li><strong>What the Course Repository Service Is</strong> <span class="el-body">— PreseMaker integrates with an external course-repository service — such as floridacourserepo.com — that functions as a content-sharing hub for educators.</span></li>
+<li><strong>Connecting to the Repository Service from PreseMaker</strong> <span class="el-body">— PreseMaker provides a built-in interface to connect to the course-repository service, keeping the process inside the application.</span></li>
+<li><strong>Importing Course Materials from the Repository</strong> <span class="el-body">— Through the course-repository service, you can browse and import course materials that others have published, bringing them directly into PreseMaker for use or adaptation.</span></li>
+<li><strong>Publishing Your Materials to the Repository</strong> <span class="el-body">— You can contribute your own course materials to the shared repository through PreseMaker, making them available for other educators to discover and reuse.</span></li>
+<li><strong>How the Repository Service Differs from Other PreseMaker Features</strong> <span class="el-body">— The course-repository service fills a distinct role compared to PreseMaker&#39;s git integration and GitHub Pages publishing, and it is important to understand where each feature applies.</span></li>
+</ul>
+<h3>Other Sharing Options: Archive Export and iFrame Embedding</h3>
+<div class="summary">Introduces additional ways to share course content, including exporting a course as a portable archive file for import elsewhere and generating an iFrame embed code to display course content within another web page.</div>
+<ul>
+<li><strong>Overview of Additional Sharing Options</strong> <span class="el-body">— Beyond version control and GitHub Pages, PreseMaker provides two supplementary methods for distributing course content to different audiences and platforms.</span></li>
+<li><strong>Exporting a Course as an Archive File</strong> <span class="el-body">— PreseMaker can export an entire course as a self-contained archive file, making the course portable and importable into another environment.</span></li>
+<li><strong>When to Use Archive Export</strong> <span class="el-body">— Archive export is best suited for situations where a portable, standalone copy of the course is needed rather than a live published link.</span></li>
+<li><strong>Generating an iFrame Embed Code</strong> <span class="el-body">— PreseMaker can generate an iFrame embed code that allows course content to be displayed directly within another web page.</span></li>
+<li><strong>When to Use iFrame Embedding</strong> <span class="el-body">— iFrame embedding is the preferred option when course content needs to appear seamlessly within an existing website or learning management system page.</span></li>
+<li><strong>Comparing Archive Export and iFrame Embedding</strong> <span class="el-body">— Although both options extend how course content is shared, they serve distinct purposes and suit different distribution scenarios.</span></li>
+</ul>
+<h3>Choosing the Right Sharing Method</h3>
+<div class="summary">Helps learners compare all available sharing and distribution options — version control, GitHub Pages, course repository, archive export, and iFrame — so they can identify which best fits a given use case.</div>
+<ul>
+<li><strong>Overview of Available Sharing Methods</strong> <span class="el-body">— PreseMaker offers several distinct ways to share and distribute course content, each serving a different purpose and audience.</span></li>
+<li><strong>Version Control for Ongoing Course Development</strong> <span class="el-body">— Using PreseMaker&#39;s built-in git integration is best suited for tracking changes over time and maintaining a reliable history of a course.</span></li>
+<li><strong>GitHub Pages for Public Web Publishing</strong> <span class="el-body">— GitHub Pages takes an exported course website and gives it a live, public web address that anyone can visit in a browser.</span></li>
+<li><strong>The Course Repository Service for Content Sharing</strong> <span class="el-body">— The course repository service (such as floridacourserepo.com) is a dedicated platform for discovering, importing, and publishing reusable course materials within a community.</span></li>
+<li><strong>Archive Export for Portable, Offline Distribution</strong> <span class="el-body">— Exporting a course as an archive file packages all course content into a single transferable file that can be imported into another PreseMaker instance.</span></li>
+<li><strong>iFrame Embedding for Integration with Other Platforms</strong> <span class="el-body">— An iFrame embed code lets you display course content inside an existing web page, learning management system, or other platform without redirecting learners to a separate site.</span></li>
+<li><strong>Matching the Method to the Use Case</strong> <span class="el-body">— Each sharing method has a specific sweet spot, and the best choice depends on the combination of your collaboration needs, audience, and technical environment.</span></li>
+</ul>
+<h2 id="outcomes">Student Learning Outcomes</h2>
+<p class="prefix">By the end of this module, students will be able to:</p>
+<div class="mo">
+<div class="code">MO1</div>
+<div class="statement">Initialize a Git repository for a course project and commit tracked changes to course materials</div>
+<div class="meta"><span>Level: Apply</span><span>Type: Behavioral</span><span class="map">Course mapping: —</span></div>
+</div>
+<div class="mo">
+<div class="code">MO2</div>
+<div class="statement">Configure a GitHub repository to publish a course website using GitHub Pages</div>
+<div class="meta"><span>Level: Apply</span><span>Type: Behavioral</span><span class="map">Course mapping: —</span></div>
+</div>
+<div class="mo">
+<div class="code">MO3</div>
+<div class="statement">Connect PreseMaker to a course repository and execute import and export workflows to manage course materials</div>
+<div class="meta"><span>Level: Apply</span><span>Type: Behavioral</span><span class="map">Course mapping: —</span></div>
+</div>
+<div class="mo">
+<div class="code">MO4</div>
+<div class="statement">Compare the three available sharing methods — version control, GitHub Pages, and PreseMaker repository integration — based on their functional characteristics</div>
+<div class="meta"><span>Level: Analyze</span><span>Type: Cognitive</span><span class="map">Course mapping: —</span></div>
+</div>
+<div class="mo">
+<div class="code">MO5</div>
+<div class="statement">Select the most appropriate sharing method for a given instructional or collaborative scenario by applying structured decision criteria</div>
+<div class="meta"><span>Level: Evaluate</span><span>Type: Cognitive</span><span class="map">Course mapping: —</span></div>
+</div>
+<h3>Course Outcomes (reference)</h3>
+<p class="empty">No course outcomes have been defined.</p>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body>
+</html>

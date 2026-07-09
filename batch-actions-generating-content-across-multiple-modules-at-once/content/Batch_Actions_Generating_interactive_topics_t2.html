@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selecting Content Types for Batch Generation</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Batch Actions: Generating Content Across Multiple Modules at Once</a></div>
+  <header>
+    <h1>Selecting Content Types for Batch Generation</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Selecting Content Types for Batch Generation</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When working with a course that spans many modules, manually creating every piece of learning content one module at a time is impractical. Batch generation solves this by letting you run a single command that produces the same type of content across all selected modules simultaneously. However, the system does not offer one universal "generate everything" button. Instead, it provides <strong>separate batch actions</strong>, each dedicated to a specific content type. Understanding what each action produces, when it is appropriate to use it, and how the outputs relate to one another is the foundation of efficient course development at scale.</p>
+
+<p>The four distinct batch actions available are: <strong>Generate Module Topics and Outcomes</strong> (which produces both topics and their associated learning outcomes together in a single run), <strong>Generate Quizzes</strong>, <strong>Generate Presentations</strong>, and <strong>Generate Text Documents</strong> such as Topic Details. Each action has its own configuration form where you set the parameters before the run begins. You select the action that matches the content your modules currently need, configure it, and execute it. The separation is intentional — it gives you precise control over what gets created and when, rather than generating all content types at once whether or not your modules are ready for them. Choosing the wrong content type before running a large batch can result in unusable output spread across dozens of modules, making pre-run planning an important step that is easy to overlook but costly to skip.</p>
+
+<p><strong>Generating Topics in Batch</strong></p>
+
+<p>Topics are the structural backbone of a module. They define the key concepts or learning areas the module covers and give learners a clear map of what will be addressed. Without defined topics, a module is essentially an empty container — it has a name and perhaps a description, but no internal organization. When you run the <em>Generate Module Topics and Outcomes</em> batch action, the system reads each module's title, description, and any existing metadata to infer what topics logically belong inside it, then populates those topics automatically.</p>
+
+<p>Batch-generating topics is most valuable when you have multiple modules still in the outline stage — that is, you have established the course structure and named the modules, but have not yet populated them with specific learning areas. Running the topics batch at this point gives every module a consistent level of coverage simultaneously. For example, if you are building a twelve-module course on project management, you might have module titles like "Stakeholder Communication," "Risk Assessment," and "Budget Planning" without any content beneath them. A single topic batch run would generate relevant topic breakdowns for all twelve modules in one operation, rather than requiring you to open each module individually and draft topics by hand.</p>
+
+<p>Because topics and outcomes are generated together in this action, you do not need to run a separate pass just for outcomes immediately afterward — they arrive as a paired set.</p>
+
+<p><strong>Generating Outcomes in Batch</strong></p>
+
+<p>Learning outcomes describe what learners will be able to do after completing a module. They are typically written as observable, measurable statements — the kind that begin with action verbs like "analyze," "demonstrate," "compare," or "apply." Outcomes serve as the basis for assessment alignment: if a quiz question cannot be traced back to a stated outcome, it may be testing the wrong thing. Well-crafted outcomes also help learners understand exactly what is expected of them before they begin.</p>
+
+<p>Because outcomes are generated alongside topics in the <em>Generate Module Topics and Outcomes</em> action, running a topics batch automatically gives you outcomes as well. Generating outcomes across many modules this way saves significant time compared to writing individual objectives for every module manually — a task that, for a large course, can take hours of careful writing and editing. The batch process applies consistent logic across all selected modules, so the outcomes are structured similarly and reflect each module's inferred scope.</p>
+
+<p>After the batch run completes, it is important to review the auto-generated outcomes against each module's intended purpose. The system generates outcomes based on available information, but it cannot know nuances such as the specific learner audience, the depth of treatment intended, or organizational standards for outcome language. A generated outcome like "Understand the principles of risk assessment" might need to be refined to "Evaluate project risk using a standardized risk matrix" to meet a particular instructional design standard. Treating the batch output as a strong first draft rather than a finished product keeps quality high while still capturing the time savings.</p>
+
+<p><strong>Generating Quizzes in Batch</strong></p>
+
+<p>Quizzes provide the assessment layer of a course. They measure whether learners have absorbed and can apply the content in each module. Batch quiz generation is ideal when you need to add a consistent assessment layer across many modules at the same time — for instance, when a course's content has been written but no assessments exist yet, and a deadline requires you to build them quickly across the entire course.</p>
+
+<p>Before running a quiz batch, there is one critical prerequisite: each module must have <strong>sufficient content already in place</strong>. The system draws on the module's existing topics, outcomes, and any text content to generate meaningful questions. Modules that are thin — containing only a title and perhaps one vague topic — will yield low-quality or repetitive questions, because the generator has very little material to work with. A module on "Data Privacy" that has five well-developed topics with clear outcomes will produce a much more useful quiz than a module with the same title but no internal content at all. Running a quiz batch too early in the development process is one of the more common sources of poor batch output.</p>
+
+<p>After the batch run, generated quizzes should be reviewed for three qualities: <em>accuracy</em> (are the correct answers actually correct?), <em>relevance</em> (do the questions reflect the module's actual content and outcomes?), and <em>appropriate difficulty</em> (are questions neither trivially easy nor unfairly obscure for the intended audience?). Batch-generated quizzes are best treated as a structured starting point that a subject-matter expert then reviews and adjusts rather than content that goes live without review.</p>
+
+<p><strong>Generating Presentations and Text Documents in Batch</strong></p>
+
+<p>Beyond topics, outcomes, and assessments, courses typically need supplementary materials — the actual content learners read, watch, or work through. The system addresses this with two additional batch actions targeting different delivery formats.</p>
+
+<p>Selecting the <strong>Presentations</strong> batch action generates a slide deck structure for each module, organizing the module's key points into a format suitable for visual delivery. Each generated presentation maps the module's topics into a sequence of slides, providing a ready-made outline that an instructor or designer can then flesh out with visuals, speaker notes, and examples. This is particularly useful for courses that will be delivered live or synchronously, where a facilitator needs a presentation to guide the session.</p>
+
+<p>Selecting the <strong>Text Documents</strong> batch action — which includes content types such as Topic Details — produces written content summaries or explanations for each module. These can serve as reading materials, study guides, or the primary instructional text within a self-paced module. A Topic Detail document, for instance, takes a specific topic within a module and expands it into a full explanatory text, going well beyond a summary to provide the depth a learner needs to actually understand the concept.</p>
+
+<p>Both formats are generated in bulk across all selected modules in a single run, making it efficient to build out an entire course's supplementary materials at once. A designer working on a twenty-module course could, in a single afternoon, generate both presentation outlines and reading documents for every module, then spend subsequent time refining rather than drafting from scratch.</p>
+
+<p><strong>Matching Content Type to Module Needs</strong></p>
+
+<p>Choosing the right batch action at the right time is a matter of reading where each module currently stands in its development and selecting the action that addresses its most pressing gap. The table below summarizes the typical development stages and which batch action is most appropriate at each stage.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module Development Stage</th>
+      <th>Gap Being Addressed</th>
+      <th>Recommended Batch Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Module exists but has no topics or outcomes</td>
+      <td>No structure or measurable goals</td>
+      <td>Generate Module Topics and Outcomes</td>
+    </tr>
+    <tr>
+      <td>Topics and outcomes defined, no instructional text</td>
+      <td>No learner-facing reading material</td>
+      <td>Generate Text Documents (e.g., Topic Details)</td>
+    </tr>
+    <tr>
+      <td>Topics and outcomes defined, no visual delivery format</td>
+      <td>No presentation structure for facilitation</td>
+      <td>Generate Presentations</td>
+    </tr>
+    <tr>
+      <td>Content well developed, no assessments yet</td>
+      <td>No way to measure learner achievement</td>
+      <td>Generate Quizzes</td>
+    </tr>
+    <tr>
+      <td>All content types present and developed</td>
+      <td>None — module is complete</td>
+      <td>No batch action needed; review and refine manually</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Running multiple <strong>sequential batch actions</strong> — each targeting a different content type — allows you to systematically build out all layers of a course in a logical order. A practical sequence for a new course might look like this: first run the topics-and-outcomes batch to establish structure across all modules, then run the text documents batch to populate reading material, then run the presentations batch to create facilitation assets, and finally run the quiz batch once there is sufficient content to draw from. Each pass adds a new layer, and each layer informs the quality of the next.</p>
+
+<p>One important caution applies throughout: <strong>avoid selecting a content type that the modules already have well-developed</strong>. If a module already has a carefully crafted set of outcomes written by a subject-matter expert, running the topics-and-outcomes batch again risks overwriting or duplicating that work. Before initiating any batch run, it is worth auditing which modules in your selection already have the target content type present, and either excluding those modules from the batch or confirming that regeneration is intentional. Pre-run planning — knowing the state of your modules and the purpose of each available action — is what separates an efficient batch operation from one that creates more cleanup work than it saves.</p>
+        <div class="notes"><strong>Notes</strong>Covers the four separate batch actions (Generate Module Topics and Outcomes, Generate Quizzes, Generate Presentations, Generate Text Documents), when each is appropriate, prerequisites for quality output, and the importance of sequential planning across a full course build.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

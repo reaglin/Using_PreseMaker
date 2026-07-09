@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selecting and Configuring Generation Tasks</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Common Actions: Running Multiple Tasks for a Single Module Together</a></div>
+  <header>
+    <h1>Selecting and Configuring Generation Tasks</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Selecting and Configuring Generation Tasks</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When building course content efficiently, one of the most powerful capabilities available to instructors is the ability to generate multiple types of learning materials from a single, coordinated interface. Rather than producing documents, quizzes, and presentations through separate, disconnected workflows, the Common Actions Hub consolidates these generation tasks into one place, allowing instructors to select exactly what they need, configure each task to match their instructional intent, and run everything together in a single operation. Understanding how to navigate this process — from opening the hub to fine-tuning per-task settings — is essential to making content generation work reliably and purposefully.</p>
+
+<p><strong>Accessing the Common Actions Hub</strong></p>
+
+<p>The Common Actions Hub is scoped at the module level, which is an important architectural detail. This means every module within a course has its own dedicated Common Actions area, independent from other modules. When you open the hub for a given module, you are working exclusively within the context of that module's content — its topics, its structure, and its associated settings.</p>
+
+<p>Opening the hub presents a unified interface where all available generation task options are displayed together and ready for interaction. You do not need to navigate between separate menus or configuration screens to see what is available. Everything is surfaced in one place, making it straightforward to survey your options, make selections, and proceed to configuration without losing context.</p>
+
+<p>Because the hub is module-specific, instructors working across a course with multiple modules will interact with the Common Actions Hub separately for each module. This design ensures that the configuration choices made for one module do not inadvertently affect another, and it allows each module to carry its own tailored generation profile.</p>
+
+<p><strong>Understanding the Available Generation Tasks</strong></p>
+
+<p>The hub offers several distinct generation task types, each producing a different kind of learning artifact. Understanding what each task produces helps instructors make informed decisions about which tasks serve their current instructional goals.</p>
+
+<ul>
+  <li><strong>Document per topic:</strong> This task generates a written content document that is organized and broken down by the individual topics within the module. Rather than producing one undifferentiated block of text, the output mirrors the module's topic structure, making it easier for learners to read and reference specific sections. This is well-suited for use as reading material, study guides, or supplementary handouts.</li>
+  <li><strong>Multiple-choice quiz:</strong> This task creates assessment questions drawn from the module's content. The questions are designed to test comprehension and recall of key concepts, and the format follows a standard multiple-choice structure with a question stem and selectable answer options. This is useful for formative assessment, end-of-module checks, or practice activities.</li>
+  <li><strong>Presentation:</strong> This task produces a slide-based format appropriate for both instructor-led classroom delivery and self-paced learner review. The content is restructured into a visual, slide-oriented layout that emphasizes key points rather than comprehensive prose. This is particularly valuable when an instructor needs to deliver content verbally and wants supporting visuals, or when a learner-facing slide deck is part of the course design.</li>
+</ul>
+
+<p>A critical principle here is that instructors are not required to select all available tasks. The hub does not impose an all-or-nothing approach. If a particular module only calls for a quiz and a document — with no need for a presentation — the instructor selects only those two tasks and leaves the presentation task aside. This flexibility ensures that generation work is purposeful rather than formulaic.</p>
+
+<p><strong>Selecting Which Tasks to Include</strong></p>
+
+<p>Within the hub interface, each available generation task can be individually toggled or selected. The selection mechanism allows for granular control: an instructor might select only the document task for a module that is purely informational, or they might select all three tasks for a module that will be delivered live, assessed formally, and made available for independent study.</p>
+
+<p>There is no minimum beyond one task and no requirement to combine tasks in any particular way. Instructors can run as few as one task at a time or group multiple tasks to execute together in a single operation. Running tasks together is generally more efficient than executing them one by one, and it ensures that all selected outputs are generated from the same content state at the same time.</p>
+
+<p>It is important to understand that <strong>selection is a prerequisite to configuration</strong>. A task must be selected before its configurable settings become accessible and editable. This sequencing is intentional — it prevents instructors from spending time adjusting settings for tasks they have not yet committed to including. Once a task is selected, its configuration options become available and the instructor can proceed to tailor that task's behavior.</p>
+
+<p><strong>Configuring Settings for Each Task</strong></p>
+
+<p>After selecting the tasks to include, each selected task exposes its own set of configurable parameters. These parameters vary by task type and allow instructors to control how the generated content is shaped, structured, and scoped. Configuration happens per task, meaning the settings adjusted for the quiz task are entirely separate from those adjusted for the document or presentation task.</p>
+
+<p>Examples of configurable parameters by task type include:</p>
+
+<ul>
+  <li><strong>Document per topic:</strong> Instructors may be able to adjust depth of content, tone, or the level of detail included in explanations — for example, whether the document should read as an introductory overview or a comprehensive deep-dive into each topic.</li>
+  <li><strong>Multiple-choice quiz:</strong> Key parameters typically include the number of questions to generate, the difficulty calibration, and — importantly — whether questions should be generated per topic individually or as a single pooled quiz across the module. This granularity setting is discussed further below.</li>
+  <li><strong>Presentation:</strong> Settings may govern the number of slides, the density of content per slide, and whether the output is optimized for instructor delivery or self-paced learner consumption.</li>
+</ul>
+
+<p>The value of configuring tasks before running them cannot be overstated. When settings are aligned with instructional intent before generation begins, the outputs are far more likely to be usable as-is or with minimal revision. Relying on post-generation editing to fix misaligned outputs — such as a quiz with too many questions or a document that is too shallow — is less efficient and can introduce inconsistency across a course.</p>
+
+<p><strong>How Common Actions Remembers Settings Per Course</strong></p>
+
+<p>One of the more practically useful behaviors of the Common Actions Hub is its ability to recall previously configured settings. When an instructor has configured and run tasks for a module in a previous session, the settings used in that session are automatically stored and recalled when the instructor returns to Common Actions for the same course.</p>
+
+<p>This persistence is scoped <strong>per course</strong>, not globally across all courses. This means that the configuration profile maintained for one course — perhaps a technical training course that uses long-form documents and detailed quizzes — does not interfere with the profile maintained for a different course that might favor concise slides and shorter assessments. Each course carries its own remembered configuration, reflecting the distinct instructional context of that course.</p>
+
+<p>The following table summarizes how settings persistence works across different scenarios:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th>Settings Recalled?</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Returning to the same course, same module</td>
+      <td>Yes</td>
+      <td>Previously saved settings are automatically loaded for that module.</td>
+    </tr>
+    <tr>
+      <td>Returning to the same course, different module</td>
+      <td>Yes (course-level defaults)</td>
+      <td>Settings last saved within the course context are applied as a starting point.</td>
+    </tr>
+    <tr>
+      <td>Opening a different course</td>
+      <td>No (separate profile)</td>
+      <td>The other course maintains its own independent configuration profile.</td>
+    </tr>
+    <tr>
+      <td>First use of Common Actions for a course</td>
+      <td>No</td>
+      <td>No prior settings exist; defaults are presented for the instructor to configure.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Even though settings are remembered automatically, instructors should always review the recalled settings before initiating a run. Instructional needs evolve — a module that previously warranted a 10-question quiz may now be restructured to cover fewer topics, making a shorter quiz more appropriate. Treating remembered settings as a starting point for review, rather than as a final configuration, is a sound practice that prevents outdated settings from producing misaligned outputs.</p>
+
+<p><strong>Tailoring Quiz Generation with Per-Topic Settings</strong></p>
+
+<p>Among the available configuration options, the quiz task's granularity setting is one of the most consequential. By default or by choice, quizzes can be generated either as a single combined set of questions drawn from across the entire module, or as a separate, focused set of questions generated for each individual topic within the module.</p>
+
+<p>Choosing to generate quizzes per topic means that if a module contains, for example, five topics, five distinct question sets are produced — each one scoped tightly to the content of its corresponding topic. This approach carries several practical advantages:</p>
+
+<ul>
+  <li><strong>Improved reliability of questions:</strong> When the question generation is focused on a single, well-defined topic rather than attempting to draw from a broad and varied module, the resulting questions tend to be more precise, clearly worded, and directly aligned with the content. The risk of generating vague or tangentially related questions is reduced significantly.</li>
+  <li><strong>Instructional flexibility:</strong> Per-topic quizzes can be deployed at different points in the learning sequence — for instance, immediately after each topic is taught — rather than only at the end of a module. This supports formative assessment strategies and allows learners to check their understanding incrementally.</li>
+  <li><strong>Easier review and editing:</strong> When questions are organized by topic, reviewing and editing them is more manageable. An instructor can evaluate each topic's question set in context, rather than sifting through a mixed pool of questions from across an entire module.</li>
+</ul>
+
+<p>This granularity setting is configured within the quiz task's options before the run is initiated. Like all other task settings, it is accessible only after the quiz task has been selected in the hub. Instructors working on content-heavy modules with several distinct topics will generally find the per-topic approach yields higher quality outputs, while those with simpler, tightly unified modules may find a combined quiz entirely appropriate.</p>
+
+<p>Taken together, the process of selecting tasks, configuring their settings, and leveraging the hub's memory of course-specific configurations gives instructors meaningful control over what gets generated and how. The Common Actions Hub is not simply a trigger for automated content creation — it is a configuration layer that, when used thoughtfully, produces learning materials closely aligned with the instructor's design intent from the very first run.</p>
+        <div class="notes"><strong>Notes</strong>Covers the full workflow of the Common Actions Hub: accessing it at the module level, understanding the three generation task types (document, quiz, presentation), selecting tasks individually, configuring per-task settings, the course-scoped settings memory behavior, and the per-topic quiz granularity option. A summary table is included to clarify settings persistence across scenarios.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

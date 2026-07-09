@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How PreseMaker Analyzes Source Materials</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Generating Module Topics and Subtopics</a></div>
+  <header>
+    <h1>How PreseMaker Analyzes Source Materials</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>How PreseMaker Analyzes Source Materials</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When you provide source materials to PreseMaker — whether that is a transcript, a document, a set of slides, or any other body of written content — the system does not immediately begin drafting slides or generating questions. Instead, it first performs a careful, structured analysis of everything you have supplied. This analysis phase is the foundation upon which all subsequent content is built. Understanding how PreseMaker reads and interprets your source material helps you supply better inputs, anticipate what the generated topic list will look like, and make more informed editorial decisions when reviewing and refining that list before full content generation begins.</p>
+
+<p>The analysis process moves through several distinct stages: ingesting the full body of material, identifying which themes and concepts are most prominent, converting those themes into structured instructional topics, inferring the intent behind the original content, and finally producing a draft topic list that you can review and adjust. Each of these stages is described in depth below.</p>
+
+<p><strong>Ingesting Uploaded or Provided Source Materials</strong></p>
+
+<p>The very first thing PreseMaker does with your uploaded or provided content is treat it as a single, unified body of raw material. This is an important design principle: rather than breaking your input into chunks and processing each piece independently, PreseMaker reads the entire scope of what you have provided before it begins extracting anything meaningful from it. This whole-document approach matters because ideas in instructional material rarely live in isolation. A concept introduced in the opening paragraphs of a document may not be fully defined until several sections later, and a term used casually early on may turn out to be a central theme when viewed in the context of the whole.</p>
+
+<p>Consider a technical manual that opens with a brief mention of "configuration profiles" in the introduction, spends three sections on hardware setup, and then returns to configuration profiles in depth during a software walkthrough chapter. A sampling-based approach might treat the early mention as minor and the later coverage as a separate topic. By reading the full input first, PreseMaker can recognize that these references belong together and give the concept the priority it deserves in the final topic list.</p>
+
+<p>This full-scope ingestion also means that nothing you include is invisible to the analysis engine. Appendices, footnotes, callout boxes, and supplementary sections all contribute to the overall picture of what your material covers. Authors sometimes assume that peripheral sections will be ignored, but in practice they can reinforce or clarify themes that appear in the main body, and PreseMaker accounts for those reinforcing signals.</p>
+
+<p><strong>Identifying Key Themes and Concepts</strong></p>
+
+<p>Once the full content has been ingested, PreseMaker begins identifying which themes and concepts carry the most instructional weight. It does this by reading several types of signals simultaneously rather than relying on a single measure of importance.</p>
+
+<p><em>Repetition and frequency</em> are among the most reliable signals. A term or idea that appears consistently across multiple sections of your source material is almost certainly something the original author considered important. If the phrase "access control" appears in an introduction, a policy section, an implementation guide, and a troubleshooting appendix, the analysis engine registers that recurrence as strong evidence of a high-priority theme.</p>
+
+<p><em>Structural emphasis</em> also plays a significant role. Headings, subheadings, bold text, numbered lists, and section titles all signal that the author consciously elevated certain ideas above others. When a source document uses a heading like "Core Principles of Network Segmentation," PreseMaker reads that not just as a label but as a declaration that the content beneath it is intentional and organized — a strong candidate for its own instructional topic.</p>
+
+<p>Beyond individual signals, PreseMaker groups loosely related ideas into <em>conceptual clusters</em> rather than treating every distinct term as its own potential topic. This clustering step is what prevents the topic list from becoming an unwieldy catalog of micro-points. For example, a source document might discuss passwords, multi-factor authentication, biometric verification, and session timeouts in different sections. Although these are not identical concepts, they all belong to the broader theme of user authentication. PreseMaker recognizes that grouping them serves learners better than separating them, and it constructs a single coherent topic that encompasses the cluster.</p>
+
+<p>Themes that appear only briefly or tangentially — mentioned once in passing without elaboration or structural emphasis — are typically deprioritized or omitted from the draft topic list entirely. This is a deliberate quality filter. Including every peripheral mention would dilute the topic list with items that have insufficient content to support a meaningful learning experience. Authors who feel a marginal theme is actually important have the opportunity to add it during the review stage, but the default behavior keeps the list focused on what the source genuinely supports.</p>
+
+<p><strong>Converting Raw Content into Structured Topics</strong></p>
+
+<p>Identifying themes is not the same as producing instructional topics. A theme is a subject area; a topic is a teachable unit with a defined scope, a clear entry point, and an implied audience takeaway. The conversion step is where PreseMaker bridges that gap.</p>
+
+<p>Each extracted theme is reframed so that it functions as a discrete, teachable topic. This means giving it a scope boundary — what is included and, implicitly, what is not — so that the content generated for that topic stays focused rather than sprawling into adjacent areas. A theme like "data backup" might become a topic scoped specifically to "Backup Strategies for On-Premises Systems," making it clear what the topic addresses and distinguishing it from a separate topic that might cover cloud-based backup approaches.</p>
+
+<p>The sequencing of topics is equally important. PreseMaker arranges the list to reflect a logical instructional flow, typically moving from foundational concepts toward more complex or applied ones. This mirrors how effective instructional designers manually structure a course: you establish vocabulary and basic principles before you ask learners to apply those principles, and you cover prerequisites before you cover dependent skills. For example, a topic list derived from a cybersecurity document might be ordered so that "Understanding the Threat Landscape" precedes "Implementing Firewall Rules," which in turn precedes "Responding to Security Incidents." A learner encountering these topics in sequence builds understanding progressively rather than being dropped into advanced material without context.</p>
+
+<p>The resulting ordered list of structured topics serves as the architectural blueprint for everything PreseMaker generates afterward. Slide content, knowledge check questions, summaries, and other outputs are all built on top of this foundation. An accurate, well-scoped topic list therefore has a compounding effect on quality: getting it right early means every downstream artifact inherits that accuracy.</p>
+
+<p><strong>Inferring Instructional Intent from the Source</strong></p>
+
+<p>One of the more sophisticated aspects of PreseMaker's analysis is its ability to infer <em>why</em> the source material was written and <em>who</em> it was written for, even when those things are not explicitly stated. The tone, format, density, and structural conventions of a document all carry contextual cues that a skilled reader — human or automated — can interpret.</p>
+
+<p>A source written in dense technical prose with extensive use of defined terms and numbered procedures signals a professional or expert audience and a depth-first approach to coverage. A source written in accessible language with analogies, definitions embedded in running text, and frequent summaries signals a general or introductory audience. PreseMaker reads these stylistic and structural patterns and uses them to calibrate how topics are framed and how much assumed knowledge is built into the generated content.</p>
+
+<p>Beyond audience, the <em>type</em> of content shapes how topics are structured. PreseMaker distinguishes between procedural content and explanatory content, and it maps each type to an appropriate topic form:</p>
+
+<ul>
+  <li><strong>Procedural content</strong> — step-by-step instructions, workflows, checklists, and process descriptions — is recognized and mapped to step-oriented topics. These topics are structured around actions and sequences, making it clear to learners that they are acquiring a skill or a process they will be expected to execute.</li>
+  <li><strong>Explanatory content</strong> — definitions, principles, comparisons, and conceptual frameworks — is mapped to concept-oriented topics. These topics are structured around understanding rather than doing, and they are written to build the mental models learners need before they can apply knowledge effectively.</li>
+</ul>
+
+<p>This intent-driven interpretation is what gives the resulting topic list a purposeful quality rather than a merely extracted one. A topic list that simply mirrors the chapter headings of a source document is structural mimicry. A topic list that reflects what learners need to understand and be able to do as a result of the content is instructional design. PreseMaker aims for the latter by reading intent, not just content.</p>
+
+<p>Consider a source document that includes a section titled "How the Approval Workflow Functions." If the section contains a flowchart and a numbered walkthrough of each stage, PreseMaker recognizes this as procedural content and frames the resulting topic around navigating or executing the approval workflow. If the same section were written as an explanatory narrative describing the business rationale behind each stage, PreseMaker would frame the topic around understanding the workflow's purpose and logic instead. The source material determines which framing is appropriate.</p>
+
+<p><strong>Producing the Initial Topic List for Review</strong></p>
+
+<p>The output of the analysis phase is a draft topic list — an ordered set of proposed instructional topics, each drawn directly from patterns identified in the source material. Because every topic in the list has a traceable origin in the input, authors can look at any proposed topic and point to the section or pattern in the source that gave rise to it. This traceability makes it easy to evaluate whether the list accurately represents the source and to identify any gaps where important content did not produce a corresponding topic.</p>
+
+<p>The draft list is intentionally a starting point rather than a finished product. PreseMaker presents it for review precisely because the analysis engine, however thorough, cannot know everything about the instructional context: the background of the intended audience, the specific learning objectives of the course, or the organizational priorities that might elevate one theme above another. Human editorial judgment fills those gaps.</p>
+
+<p>Authors reviewing the draft topic list have several options available to them:</p>
+
+<ul>
+  <li><strong>Accept the list as-is</strong> if it accurately reflects the scope and sequence needed for the course.</li>
+  <li><strong>Reorder topics</strong> if the instructional sequence suggested by the analysis does not match the author's intended flow.</li>
+  <li><strong>Rename topics</strong> to better reflect organizational terminology, audience expectations, or instructional objectives.</li>
+  <li><strong>Remove topics</strong> that are out of scope for the specific course, even if they appeared prominently in the source material.</li>
+  <li><strong>Add topics</strong> to cover areas the author knows are important but that did not generate enough signal in the source to be automatically included — for example, a prerequisite concept that the source assumed readers already knew.</li>
+</ul>
+
+<p>The investment made at this review stage pays dividends through every subsequent step of content generation. Because all slides, assessments, and other outputs are generated on a topic-by-topic basis, a well-constructed topic list means well-scoped content at every stage. Conversely, a topic that is too broad will produce unfocused slides; a topic that is mislabeled will produce content that does not match the author's intent; a missing topic means a gap in the learning experience that may not become apparent until much later in the production process. Treating the topic list review as a critical editorial checkpoint — not a formality — is one of the highest-value practices an author can adopt when working with PreseMaker.</p>
+
+<p>The table below summarizes the five stages of PreseMaker's source analysis, what happens at each stage, and the key output produced:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stage</th>
+      <th>What Happens</th>
+      <th>Key Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ingestion</td>
+      <td>The full body of provided content is read as a unified whole before any extraction begins</td>
+      <td>Complete picture of all available source material</td>
+    </tr>
+    <tr>
+      <td>Theme Identification</td>
+      <td>Repeated terms, structural emphasis, and conceptual clusters are recognized; marginal ideas are filtered out</td>
+      <td>Ranked set of high-priority themes and conceptual groupings</td>
+    </tr>
+    <tr>
+      <td>Topic Conversion</td>
+      <td>Themes are reframed as scoped, teachable topics and arranged in a logical instructional sequence</td>
+      <td>Ordered list of candidate instructional topics</td>
+    </tr>
+    <tr>
+      <td>Intent Inference</td>
+      <td>Tone, format, and content type are read to determine audience, depth, and whether topics are procedural or conceptual</td>
+      <td>Contextually calibrated topic framing</td>
+    </tr>
+    <tr>
+      <td>Draft List Production</td>
+      <td>A traceable, author-reviewable topic list is produced with options to accept, reorder, rename, add, or remove topics</td>
+      <td>Draft topic list ready for editorial review</td>
+    </tr>
+  </tbody>
+</table>
+        <div class="notes"><strong>Notes</strong>Explains the process PreseMaker uses to examine uploaded or provided source materials and extract meaningful themes. Covers the logic behind how raw content is interpreted and converted into a structured topic list.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

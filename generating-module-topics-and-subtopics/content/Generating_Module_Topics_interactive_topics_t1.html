@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Module Topics and Subtopics</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Generating Module Topics and Subtopics</a></div>
+  <header>
+    <h1>Introduction to Module Topics and Subtopics</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Introduction to Module Topics and Subtopics</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Every well-designed e-learning module begins not with slides, quizzes, or videos, but with a carefully considered structure of <strong>topics</strong> and <strong>subtopics</strong>. This structure acts as the architectural blueprint of the entire learning experience — it determines what gets taught, in what order, and at what level of detail. Before a single paragraph of instructional content is written, before a single assessment question is drafted, the topic-and-subtopic outline must be in place and validated. Understanding what topics and subtopics are, why they matter, and how they are generated is therefore the essential first step for anyone working with a module in PreseMaker.</p>
+
+<p>Think of a module as a building. The topics are the rooms, and the subtopics are the fixtures, fittings, and features inside each room. A building with poorly planned rooms — rooms that are too large, too small, overlapping, or missing entirely — will be uncomfortable to inhabit no matter how fine the furnishings are. In the same way, a module with a poorly planned topic structure will confuse and frustrate learners no matter how well-written the individual paragraphs turn out to be. Getting the structure right first is not a bureaucratic formality; it is the single most high-leverage investment in the quality of the finished module.</p>
+
+<p><strong>What Are Module Topics?</strong></p>
+
+<p>A <em>topic</em> is a discrete, meaningful chunk of the overall subject matter that the module is designed to teach. The word "discrete" is important here: each topic should be sufficiently self-contained that it can be understood and evaluated on its own terms, even though it sits within the larger sequence of the module. "Meaningful" is equally important: a topic is not merely an arbitrary division of text — it represents a coherent concept, process, skill area, or body of knowledge that has genuine instructional significance.</p>
+
+<p>Topics are derived directly from the module's source materials. Those source materials might be a technical manual, a policy document, a set of learning objectives supplied by a subject-matter expert, a textbook chapter, or any other authoritative content the module is meant to convey. By anchoring topics to the source materials, PreseMaker ensures that the resulting module stays aligned with the intended learning goals rather than drifting toward tangential or irrelevant content. This alignment is not incidental — it is a deliberate design principle that protects the integrity of the instructional experience.</p>
+
+<p>Taken together, the full list of topics forms the high-level outline of the entire module. A learner scrolling through that list should be able to form a clear mental map of the journey ahead: what they will encounter, roughly in what order, and why each stop on the journey is worth making. That mental map reduces cognitive load and increases motivation, because learners who understand where they are going are better equipped to make sense of each new piece of information as it arrives.</p>
+
+<p>Consider a module on <em>workplace fire safety</em>. Its topic list might look like this:</p>
+
+<ul>
+  <li>Understanding fire hazards in the workplace</li>
+  <li>Fire prevention strategies and safe working practices</li>
+  <li>Fire detection systems and alarm procedures</li>
+  <li>Emergency evacuation procedures</li>
+  <li>Using portable fire extinguishers</li>
+  <li>Roles and responsibilities of fire wardens</li>
+  <li>Post-incident reporting and review</li>
+</ul>
+
+<p>Each item on that list is discrete — "fire detection systems" is a different subject from "evacuation procedures." Each is meaningful — every topic addresses something a real employee genuinely needs to know. And together they form a complete, logical outline of workplace fire safety from prevention through to post-incident review.</p>
+
+<p><strong>What Are Subtopics?</strong></p>
+
+<p>If topics are the rooms in the building, <em>subtopics</em> are the individual elements that furnish and define each room. A subtopic provides the granular detail that supports deep learning within its parent topic. Where a topic names a broad area of content, a subtopic identifies a single, clearly defined idea, concept, procedure, or skill that lives within that area.</p>
+
+<p>The discipline of keeping each subtopic focused on <em>one</em> clearly defined idea is fundamental to good instructional design. When a subtopic tries to cover two or three distinct ideas at once, learners have difficulty forming clear, retrievable memories of any of them. The cognitive science literature on learning consistently shows that the brain encodes information more effectively when ideas are presented in well-separated, clearly bounded units — a principle sometimes called "segmenting." Subtopics that each address a single idea operationalize this principle at the structural level, before a word of actual content is written.</p>
+
+<p>Equally important is the requirement that the subtopics within a topic collectively cover that topic <em>completely</em>, without overlap or gaps. Overlap creates confusion: if two subtopics address the same idea, learners encounter contradictory signals about which treatment is authoritative, and content creators waste effort producing redundant material. Gaps are even more dangerous: if a subtopic that should exist is simply missing, the topic's learning goals cannot be fully achieved, and learners may leave with false confidence that they understand something they have only partially encountered.</p>
+
+<p>Returning to the fire safety example, the topic <em>Using portable fire extinguishers</em> might be broken into these subtopics:</p>
+
+<ul>
+  <li>Types of fire extinguisher and the classes of fire each type addresses</li>
+  <li>The PASS technique: Pull, Aim, Squeeze, Sweep</li>
+  <li>Safe distance and positioning when operating an extinguisher</li>
+  <li>Recognising when <em>not</em> to use an extinguisher and when to evacuate instead</li>
+  <li>Post-use inspection and reporting requirements</li>
+</ul>
+
+<p>Each subtopic is a single, bounded idea. Together they cover the topic completely — a learner who masters all five subtopics will have a thorough, practical understanding of portable extinguisher use. There is no overlap between them, and no obvious gap.</p>
+
+<p><strong>Why Topics and Subtopics Are the Foundational Structure</strong></p>
+
+<p>The topic-and-subtopic outline is not merely a planning convenience — it is the <em>foundational structure</em> on which everything else in the module depends. There are three distinct reasons for this, each worth examining carefully.</p>
+
+<p>First, a clear structure ensures that learners experience content in a <strong>logical, progressive sequence</strong>. Good instructional sequencing is not accidental. Concepts that are prerequisites for other concepts must appear before those other concepts. Simpler ideas must precede complex ones. Concrete examples must arrive before abstract generalisations, or vice versa depending on the instructional strategy being used. None of this sequencing can be achieved if the structural outline has not first been carefully constructed. The outline is where sequencing decisions are made at low cost — it is far easier to drag a topic to a new position in an outline than to restructure hundreds of paragraphs of authored content after the fact.</p>
+
+<p>Second, the topic list gives <strong>content creators and subject-matter experts a manageable artefact to review and validate</strong> before any significant authoring effort begins. A subject-matter expert asked to review a completed 40-page module will struggle to spot structural problems — the sheer volume of content makes it difficult to see the shape of the whole. The same expert asked to review a one-page topic outline can quickly identify a topic that is missing, a topic that is out of order, or a subtopic that belongs to a different topic entirely. Early review at the structural level is efficient, effective, and far less expensive in time and effort than late-stage review of finished content.</p>
+
+<p>Third, <strong>downstream tools and automated processes</strong> depend on a well-formed topic list to generate accurate, relevant material. In PreseMaker, the topic-and-subtopic structure is not merely a planning document — it is an active input to the content generation pipeline. The system uses the structure to determine what content to produce, how to organise it, what assessment questions to generate, and how to sequence the learning experience. A poorly structured topic list therefore does not just make the module harder to navigate; it actively degrades the quality of every downstream output. Garbage in, garbage out is a cliché precisely because it is always true.</p>
+
+<p><strong>The Purpose of Getting the Structure Right Early</strong></p>
+
+<p>The emphasis on getting the structure right <em>before</em> content is produced is grounded in a well-understood principle of project management and systems design: the cost of fixing an error increases dramatically the later in the process it is discovered. In software engineering this is sometimes called the "cost of change curve." The same principle applies with equal force to instructional design.</p>
+
+<p>When stakeholders review and agree on the topic list early, they are effectively <strong>agreeing on scope</strong> before significant effort is invested. Scope agreement is one of the most valuable things a project team can achieve. It prevents the situation — familiar to any experienced instructional designer — where a module is nearly complete and a stakeholder suddenly realises that an important area of content was never included, or that a topic that consumed significant authoring effort is actually out of scope. Those situations are painful, expensive, and entirely avoidable if the topic list was properly reviewed and signed off at the start.</p>
+
+<p>A solid structure also <strong>reduces ambiguity for instructional designers</strong> working on detailed content later. When a designer sits down to write the content for a subtopic, they should be able to answer three questions immediately: What is the single idea this subtopic covers? Where does it fit in the sequence of the parent topic? What prerequisite knowledge can I assume the learner has already encountered? A well-formed topic-and-subtopic outline answers all three questions directly. An ambiguous or incomplete outline leaves the designer to make those decisions alone, inconsistently, and without stakeholder validation — a recipe for a module that feels disjointed and uneven.</p>
+
+<p>Finally, it is worth being explicit about the asymmetry between early and late corrections. <strong>Corrections made at the topic-and-subtopic stage are far less disruptive than changes made after full content has been authored.</strong> Consider what it means to add a missing topic after content has been written: new content must be authored, existing content may need to be revised to remove material that now belongs in the new topic, assessments must be updated, and the narrative flow of the module must be re-examined. The same addition made at the outline stage costs almost nothing — it is a single line added to a list. This asymmetry is not merely a reason to be careful; it is a reason to be deliberately systematic about structural review before any authoring begins.</p>
+
+<p><strong>How PreseMaker Generates Topics and Subtopics</strong></p>
+
+<p>PreseMaker does not require instructional designers or subject-matter experts to construct the topic-and-subtopic outline from scratch. Instead, the system <strong>reads and interprets the provided source content</strong> to identify key themes, concepts, processes, and skills. It analyses the structure, emphasis, and vocabulary of the source materials to determine what topics are present, how they relate to one another, and what level of detail is appropriate for each.</p>
+
+<p>Because the generated topics and subtopics are derived from the source materials themselves, they naturally <strong>reflect the scope and emphasis present in those materials</strong>. A source document that devotes substantial attention to a particular concept will produce a topic with well-developed subtopics for that concept. A concept mentioned only briefly will appear either as a minor subtopic or not at all. This proportionality helps ensure that the resulting module reflects the actual priorities of the subject domain rather than the personal preferences of any individual designer.</p>
+
+<p>The generation process produces a structured list — not a finished module, but a proposed outline that captures the system's best interpretation of the source material. This is an important distinction. The generated list is a <strong>starting point for human review and refinement</strong>, not a final deliverable. Once the list has been generated, learners and content owners can browse it, examine how topics and subtopics have been organised, and make edits to refine it before any detailed content is produced. Topics can be reordered, renamed, merged, split, added, or removed. Subtopics can be reassigned to different parent topics, expanded, or consolidated.</p>
+
+<p>This human-in-the-loop refinement step is where the value of automated generation is fully realised. The system does the time-consuming work of reading the source material and producing an initial structural interpretation. The human expert brings domain knowledge, pedagogical judgment, and awareness of the specific learner audience to refine that interpretation into a structure that is not just accurate but truly effective. The result of that collaboration is a validated topic-and-subtopic outline that provides a reliable, agreed foundation for all the content development that follows.</p>
+
+<p>The table below summarises the key characteristics that distinguish well-formed topics and subtopics from poorly formed ones:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dimension</th>
+      <th>Well-Formed</th>
+      <th>Poorly Formed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Scope of a topic</td>
+      <td>Discrete and meaningful; covers one coherent area</td>
+      <td>Too broad (covering unrelated areas) or too narrow (trivially small)</td>
+    </tr>
+    <tr>
+      <td>Derivation</td>
+      <td>Directly tied to source materials and learning goals</td>
+      <td>Based on guesswork or personal preference, not source content</td>
+    </tr>
+    <tr>
+      <td>Subtopic focus</td>
+      <td>Each subtopic addresses exactly one idea or skill</td>
+      <td>Subtopics bundle multiple unrelated ideas together</td>
+    </tr>
+    <tr>
+      <td>Coverage within a topic</td>
+      <td>Subtopics collectively cover the topic completely, with no gaps</td>
+      <td>Important ideas are missing; learners leave with incomplete understanding</td>
+    </tr>
+    <tr>
+      <td>Overlap between subtopics</td>
+      <td>None; each idea appears in exactly one subtopic</td>
+      <td>The same idea is addressed in two or more subtopics, creating redundancy</td>
+    </tr>
+    <tr>
+      <td>Sequence</td>
+      <td>Topics and subtopics are ordered to support progressive learning</td>
+      <td>Order is arbitrary or counterproductive; prerequisites appear after dependent concepts</td>
+    </tr>
+    <tr>
+      <td>Validation</td>
+      <td>Reviewed and agreed by stakeholders before authoring begins</td>
+      <td>Authoring proceeds without structural review; problems discovered late</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Understanding this foundational layer — what topics and subtopics are, what makes them well-formed, why their early validation matters, and how PreseMaker generates and supports their refinement — is the prerequisite for everything else in the module authoring process. Every subsequent step, from detailed content generation to assessment design to final review, builds directly on the structural foundation established here. Time invested in getting this foundation right is the highest-return investment available at the start of any module development project.</p>
+        <div class="notes"><strong>Notes</strong>Overview topic establishing the conceptual and practical foundation for the entire module authoring workflow. Key emphasis: the structural nature of topics/subtopics, the cost-of-change asymmetry favouring early validation, and the collaborative human-AI refinement model in PreseMaker.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

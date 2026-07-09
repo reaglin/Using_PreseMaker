@@ -1,0 +1,433 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generating Module Learning Outcomes with Bloom's Taxonomy — Using PreseMaker</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-bg: #f4f6f9;
+      --color-surface: #ffffff;
+      --color-border: #dde2ea;
+      --color-primary: #2c5f8a;
+      --color-primary-dark: #1e4369;
+      --color-accent: #4a90c4;
+      --color-text: #1e2530;
+      --color-text-secondary: #4f5a6a;
+      --color-muted: #6b7685;
+      --color-tag-bg: #eaf2fb;
+      --color-tag-text: #2c5f8a;
+      --color-source-bg: #f0f4f8;
+      --color-source-text: #4a6a88;
+      --color-source-border: #c5d5e8;
+      --radius: 8px;
+      --shadow: 0 1px 4px rgba(0,0,0,0.08), 0 2px 12px rgba(0,0,0,0.06);
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Header ────────────────────────────────────── */
+    .site-header {
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 60%, var(--color-accent) 100%);
+      color: #ffffff;
+      padding: 2.8rem 1.5rem 2.4rem;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .course-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background-color: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 4px;
+      padding: 0.25rem 0.65rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .site-header h1 {
+      font-size: clamp(1.45rem, 3.5vw, 2.1rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 0.9rem;
+      letter-spacing: -0.01em;
+    }
+
+    .site-header p {
+      font-size: 1rem;
+      line-height: 1.65;
+      max-width: 680px;
+      color: rgba(255,255,255,0.88);
+    }
+
+    /* ── Main layout ───────────────────────────────── */
+    .main-content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.4rem 1.5rem 3.5rem;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    /* ── Card grid ─────────────────────────────────── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+      gap: 1.1rem;
+    }
+
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.35rem 1.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1), 0 6px 20px rgba(0,0,0,0.08);
+      border-color: #b8c9dc;
+    }
+
+    /* ── Card header row ───────────────────────────── */
+    .card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.55rem;
+    }
+
+    .card-name {
+      font-size: 0.985rem;
+      font-weight: 650;
+      color: var(--color-text);
+      line-height: 1.35;
+    }
+
+    .card-name a {
+      color: var(--color-primary);
+      text-decoration: none;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .card-name a:hover,
+    .card-name a:focus {
+      color: var(--color-primary-dark);
+      border-bottom-color: var(--color-primary-dark);
+      outline: none;
+    }
+
+    .card-name a:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.28rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--color-source-text);
+      background: var(--color-source-bg);
+      border: 1px solid var(--color-source-border);
+      border-radius: 4px;
+      padding: 0.17rem 0.52rem;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .source-link::before {
+      content: "⬇";
+      font-size: 0.65rem;
+    }
+
+    .source-link:hover,
+    .source-link:focus {
+      background: #ddeaf5;
+      color: var(--color-primary-dark);
+      outline: none;
+    }
+
+    .source-link:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    /* ── Meta badges row ───────────────────────────── */
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border-radius: 4px;
+      padding: 0.18rem 0.55rem;
+      line-height: 1.4;
+    }
+
+    .badge-type {
+      background: var(--color-tag-bg);
+      color: var(--color-tag-text);
+      border: 1px solid #c5daf0;
+    }
+
+    .badge-filetype {
+      background: #f2f4f7;
+      color: var(--color-muted);
+      border: 1px solid #dde2ea;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    /* ── Card description ──────────────────────────── */
+    .card-description {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      line-height: 1.62;
+      margin-top: 0.1rem;
+    }
+
+    /* ── Footer ────────────────────────────────────── */
+    .site-footer {
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
+      font-size: 0.78rem;
+      color: var(--color-muted);
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* ── Responsive tweaks ─────────────────────────── */
+    @media (max-width: 540px) {
+      .site-header {
+        padding: 2rem 1.1rem 1.8rem;
+      }
+
+      .main-content {
+        padding: 1.6rem 1rem 2.5rem;
+      }
+
+      .card {
+        padding: 1.1rem 1.1rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Using PreseMaker</a></div>
+<div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <span class="course-label">Using PreseMaker</span>
+      <h1>Generating Module Learning Outcomes with Bloom's Taxonomy</h1>
+      <p>
+        This module guides instructors through the process of creating well-structured Student Learning
+        Outcomes (SLOs) using Bloom's Taxonomy cognitive levels and PreseMaker's automated SLO
+        generation workflow. Explore the resources below for topic overviews, detailed explanations,
+        and full text content.
+      </p>
+    </div>
+  </header>
+
+  <main class="main-content" role="main">
+    <p class="section-label">Module Artifacts &mdash; 8 items</p>
+
+    <div class="card-grid" role="list">
+
+      <!-- Artifact 1: Module Topics -->
+      <article class="card" role="listitem">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/module_topics.html">Module Topics</a>
+          </span>
+          <a class="source-link" href="source/hierarchy.json">source file</a>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Module Topics</span>
+          <span class="badge badge-filetype">.json</span>
+        </div>
+        <p class="card-description">
+          Lists all topic headings and subtopics covered in the module — including SLOs, Bloom's
+          Taxonomy levels, and PreseMaker's SLO generation process — giving instructors and learners
+          a structural overview of what the module addresses.
+        </p>
+      </article>
+
+      <!-- Artifact 2: Introduction to SLOs -->
+      <article class="card" role="listitem">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/Generating_Module_Learning_interactive_topics_t1.html">Introduction to Student Learning Outcomes (SLOs)</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-description">
+          Explains what Student Learning Outcomes are, why they are central to instructional design,
+          and how they function as measurable targets, providing learners with the conceptual
+          foundation needed before working with Bloom's Taxonomy or PreseMaker.
+        </p>
+      </article>
+
+      <!-- Artifact 3: Bloom's Taxonomy Cognitive Levels -->
+      <article class="card" role="listitem">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/Generating_Module_Learning_interactive_topics_t2.html">Overview of Bloom's Taxonomy Cognitive Levels</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-description">
+          Describes Bloom's Taxonomy's six hierarchical cognitive levels — from Remember through
+          Create — including their origins and revisions, giving learners the framework needed to
+          understand how learning outcomes are categorized by complexity.
+        </p>
+      </article>
+
+      <!-- Artifact 4: How PreseMaker Generates SLOs -->
+      <article class="card" role="listitem">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/Generating_Module_Learning_interactive_topics_t3.html">How PreseMaker Generates SLOs from Module Topics</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-description">
+          Explains the step-by-step process PreseMaker uses to convert instructor-supplied module
+          topics into precise, actionable Student Learning Outcomes, helping instructors understand
+          and trust the system's SLO generation logic.
+        </p>
+      </article>
+
+      <!-- Artifact 5: Calibrating Outcomes -->
+      <article class="card" role="listitem">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/Generating_Module_Learning_interactive_topics_t4.html">Calibrating Outcomes to Bloom's Taxonomy Levels</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-description">
+          Covers how to match learning outcomes to the correct Bloom's Taxonomy cognitive level for
+          a given module's demands, helping instructors ensure their outcomes are neither too basic
+          nor too advanced for the intended learning goals.
+        </p>
+      </article>
+
+      <!-- Artifact 6: Reviewing and Interpreting Generated Learning Outcomes -->
+      <article class="card" role="listitem">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/Generating_Module_Learning_interactive_topics_t5.html">Reviewing and Interpreting Generated Learning Outcomes</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-description">
+          Guides instructors through reading and interpreting the SLOs PreseMaker generates by
+          explaining the three-part structure — source topic, Bloom's level, and action verb — so
+          they can evaluate whether each outcome accurately reflects instructional intent.
+        </p>
+      </article>
+
+      <!-- Artifact 7: SLOs as Foundation (Topic Detail) -->
+      <article class="card" role="listitem">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/Generating_Module_Learning_interactive_topics_t6.html">SLOs as the Foundation for Subsequent Content Generation</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-description">
+          Explains how approved SLOs serve as the structural backbone that drives all subsequent
+          content generation in PreseMaker, helping instructors understand why reviewing and
+          confirming SLOs is a critical step before proceeding.
+        </p>
+      </article>
+
+      <!-- Artifact 8: SLOs as Foundation (Text Content) -->
+      <article class="card" role="listitem">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/Generating_Module_Learning_interactive.html">SLOs as the Foundation for Subsequent Content Generation</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="badge badge-type">Text Content</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <p class="card-description">
+          Explains how approved SLOs serve as the structural backbone that drives all subsequent
+          content generation in PreseMaker, helping instructors understand why reviewing and
+          confirming SLOs is a critical step before proceeding.
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    Using PreseMaker &mdash; Generating Module Learning Outcomes with Bloom's Taxonomy
+  </footer>
+
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+<section class="presemaker-extras" style="max-width:1000px;margin:2rem auto;padding:0 1rem;"><h2>Topics &amp; Learning Outcomes</h2><p><a href="topics-outcomes.html">View Topics &amp; Learning Outcomes</a></p></section><script src="embed-inject.js" defer></script></body>
+</html>

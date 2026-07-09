@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generating Custom Materials</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Generating Interactive Activities and Custom Materials</a></div>
+  <header>
+    <h1>Generating Custom Materials</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Generating Custom Materials</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Within PreseMaker, most content creation flows through structured, template-driven activity builders — matching exercises, quizzes, flashcard sets, and similar formats. These templates are powerful precisely because they impose a consistent structure. However, instructors frequently need materials that fall outside those predefined shapes: a bespoke reference sheet, a custom rubric, a narrative case study, a differentiated reading passage, a worked-example handout, or any other artifact whose form is dictated by pedagogy rather than a fixed template. The <strong>Custom Materials Generator</strong> exists to fill that gap, giving instructors a flexible, prompt-driven pathway to produce HTML-rendered learning artifacts that are as unique as the courses they support.</p>
+
+<p>Understanding this generator fully means understanding five interconnected ideas: what the tool actually is and where it sits in the PreseMaker workflow, how to articulate the kind of material you want, how to configure the settings that shape generation, what happens when you trigger the generation process, and how to locate and manage the resulting artifact inside the Module Index. Each of these ideas builds on the last, so working through them in order gives the clearest picture of the end-to-end process.</p>
+
+<p><strong>What the Custom Materials Generator Is</strong></p>
+
+<p>The Custom Materials Generator is a content-production tool embedded directly in the PreseMaker module workflow — the same environment where instructors build interactive activities. Because it lives inside the same workflow, instructors do not need to leave a module, switch to a separate application, or stitch together output from an external tool. Everything produced by the generator is automatically associated with the module in which it was created, which means it appears alongside any interactive activities built in that same module.</p>
+
+<p>The key distinction between the Custom Materials Generator and PreseMaker's standard activity builders is <em>flexibility of form</em>. Standard builders know in advance what their output will look like — a quiz has questions and answer choices, a matching activity has two columns of items, and so on. The Custom Materials Generator makes no such assumptions. It accepts a natural-language description of the artifact you want and produces HTML content whose structure is determined by that description. This makes it suitable for a wide range of deliverable types that would otherwise require manual authoring:</p>
+
+<ul>
+  <li>Narrative or scenario-based reading passages for discussion or analysis</li>
+  <li>Instructor-designed rubrics with custom criteria and performance-level descriptors</li>
+  <li>Reference sheets, glossaries, or summary tables tailored to a specific unit</li>
+  <li>Worked examples or annotated solution walkthroughs</li>
+  <li>Differentiated versions of the same content at varying complexity levels</li>
+  <li>Study guides, review outlines, or concept maps rendered as structured HTML</li>
+  <li>Custom prompts, writing frames, or graphic organizers</li>
+</ul>
+
+<p>Because the generator expands the range of deliverables available inside a single module, instructors can keep an entire unit's worth of content — interactive activities and custom supporting materials alike — organized in one place rather than scattered across separate files and platforms.</p>
+
+<p><strong>Defining Your Custom Material Type</strong></p>
+
+<p>The Custom Materials Generator is <em>prompt-driven</em>, which means the most important input you provide is a clear description of what you want PreseMaker to produce. Before touching any configuration field, the most valuable thing an instructor can do is think carefully about instructional purpose: <em>Why does this material need to exist? Who will use it, and how?</em> The answers to those questions should be visible in the instructions you write.</p>
+
+<p>A vague prompt produces vague output. A precise prompt — one that names the material type, specifies its purpose, identifies its audience, and describes any structural or content constraints — gives PreseMaker's content engine the information it needs to produce something genuinely usable. Consider the difference between these two descriptions:</p>
+
+<ul>
+  <li><em>Weak prompt:</em> "Make something about photosynthesis for my students."</li>
+  <li><em>Strong prompt:</em> "Create a one-page reference sheet on the light-dependent reactions of photosynthesis for tenth-grade biology students. Include a labeled summary of the electron transport chain, a short glossary of six key terms (chlorophyll, photosystem I and II, ATP synthase, NADPH, and thylakoid), and two common misconceptions with brief corrections."</li>
+</ul>
+
+<p>The strong prompt specifies the <strong>material type</strong> (reference sheet), the <strong>topic and scope</strong> (light-dependent reactions only, not all of photosynthesis), the <strong>audience</strong> (tenth-grade biology), and the <strong>required components</strong> (labeled summary, glossary of named terms, misconceptions section). Each of those details constrains the output in a useful way.</p>
+
+<p>Aligning material type with instructional purpose also means choosing the right kind of artifact for the moment in a learning sequence. A worked example belongs near the beginning of a skill-building sequence; a rubric belongs where students need evaluative criteria; a differentiated reading passage belongs where access to content at the right complexity level is the barrier. Naming this alignment explicitly in your prompt — "this is meant to scaffold students before they attempt the practice problems" — gives the generator additional context that improves output quality.</p>
+
+<p><strong>Configuring the Generator Settings</strong></p>
+
+<p>Beyond the main instructional prompt, the Custom Materials Generator presents a set of configuration fields that allow instructors to shape the artifact more precisely. While the exact field labels may vary, the configuration layer typically covers three broad categories:</p>
+
+<ul>
+  <li><strong>Subject or topic:</strong> The disciplinary area and the specific concept or skill the material addresses. Being specific here — "cellular respiration in AP Biology" rather than just "biology" — helps the generator select accurate, appropriately technical content.</li>
+  <li><strong>Intended audience:</strong> The grade level, course level, or learner profile for whom the material is designed. Audience information influences vocabulary level, assumed prior knowledge, and the complexity of examples and explanations the generator will produce.</li>
+  <li><strong>Specific content requirements:</strong> Any structural, stylistic, or curricular constraints the artifact must satisfy. This might include alignment to a particular standard, a required number of sections, a specific format (table, numbered list, narrative paragraphs), or content that must be included or excluded.</li>
+</ul>
+
+<p>Scope settings deserve particular attention. PreseMaker allows instructors to control both the <strong>depth</strong> (how thoroughly any given concept is treated) and the <strong>breadth</strong> (how many concepts or subtopics are covered) of the generated material. These two dimensions are in tension: a deeply detailed treatment of one narrow concept and a broad survey of many related concepts are both legitimate goals, but they require different scope settings and different prompts. An instructor building a single-topic deep-dive reference should set narrow breadth and high depth; an instructor building a unit overview should do the reverse.</p>
+
+<p>The practical principle is straightforward: <strong>precise inputs produce accurate, usable outputs</strong>. Every configuration field is an opportunity to reduce ambiguity. Instructors who treat configuration as a quick formality and rely entirely on a short prompt tend to need more rounds of editing after generation. Instructors who invest two or three minutes in thorough configuration consistently receive output that is closer to classroom-ready on the first pass.</p>
+
+<p>The following table summarizes the configuration dimensions and their effect on output:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Configuration Field</th>
+      <th>What It Controls</th>
+      <th>Effect of Vague Input</th>
+      <th>Effect of Precise Input</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Subject / Topic</td>
+      <td>Disciplinary content area and specific concept</td>
+      <td>Generic content that may not match course vocabulary or curriculum</td>
+      <td>Accurate, course-aligned terminology and examples</td>
+    </tr>
+    <tr>
+      <td>Intended Audience</td>
+      <td>Reading level, assumed prior knowledge, tone</td>
+      <td>Content pitched at an indeterminate level, possibly too simple or too complex</td>
+      <td>Appropriately scaffolded language and examples for the target learner</td>
+    </tr>
+    <tr>
+      <td>Specific Content Requirements</td>
+      <td>Structure, format, required elements, exclusions</td>
+      <td>Default structure chosen by the generator, may omit needed components</td>
+      <td>Artifact that includes exactly what the instructor specified</td>
+    </tr>
+    <tr>
+      <td>Scope — Depth</td>
+      <td>How thoroughly each concept is explained</td>
+      <td>Shallow treatment that may leave learners with unanswered questions</td>
+      <td>Detailed explanations matched to the complexity the task requires</td>
+    </tr>
+    <tr>
+      <td>Scope — Breadth</td>
+      <td>How many concepts or subtopics are covered</td>
+      <td>Either too narrow (missing important related ideas) or too sprawling</td>
+      <td>A focused artifact that covers the right number of concepts for its purpose</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Generating the Custom Artifact</strong></p>
+
+<p>Once all configuration fields are complete and the instructional prompt is written, the instructor triggers generation. This action submits every input — the prompt text, the subject and audience fields, the scope settings, and any specific requirements — to PreseMaker's content engine simultaneously. The engine processes these inputs as a unified set of instructions rather than treating the prompt and the configuration fields as separate, independent requests. This is why thorough configuration and a strong prompt work together: neither is sufficient alone.</p>
+
+<p>Generation produces a <strong>complete HTML artifact</strong>. The output is not a draft outline or a skeleton to be filled in manually; it is a fully rendered piece of content that can, in principle, be used directly in a classroom context. That said, "ready for review" is not the same as "ready for distribution." Before sharing a generated artifact with students, instructors should read through the output with their original instructional intent in mind and ask a series of evaluative questions:</p>
+
+<ul>
+  <li>Does the content accurately represent the subject matter at the appropriate level of sophistication?</li>
+  <li>Are all required components present, and are any components missing that were implied by the prompt?</li>
+  <li>Does the tone and vocabulary match the intended audience?</li>
+  <li>Is the structure logical and does it support the way students will use the material?</li>
+  <li>Are there any factual errors, ambiguous statements, or gaps that need correction?</li>
+</ul>
+
+<p>PreseMaker supports editing of generated output, so this review step is not a binary pass/fail decision. Instructors can correct specific passages, restructure sections, add examples, or remove content that does not serve the instructional goal. The generator's role is to produce a high-quality starting point; the instructor's professional judgment determines what the final artifact looks like. This division of labor — machine-assisted drafting, human expert review — is the same model that makes other AI-assisted authoring tools effective in professional contexts.</p>
+
+<p><strong>Locating Produced Artifacts in the Module Index</strong></p>
+
+<p>After generation is complete, the artifact is automatically stored within the module in which it was created. Navigating to the <strong>Module Index</strong> displays every artifact associated with that module: interactive activities, custom materials, and any other content produced during the module's development. Custom materials appear in the index alongside the module's other deliverables, not in a separate location or a different part of the interface.</p>
+
+<p>The Module Index serves several practical functions beyond simple storage. Instructors can use it to:</p>
+
+<ul>
+  <li><strong>Compare artifacts:</strong> If multiple versions of a custom material were generated with different prompts or settings, the index allows side-by-side review to identify which version best meets the instructional goal.</li>
+  <li><strong>Organize content:</strong> Artifacts can be reviewed in the context of the full module, making it easier to check that all necessary materials are present and that the module as a whole is coherent.</li>
+  <li><strong>Export content:</strong> The index provides access to export options, allowing instructors to deliver materials through their LMS, share files with colleagues, or print physical copies for classroom distribution.</li>
+  <li><strong>Retrieve materials across sessions:</strong> Because the index persists between login sessions, instructors do not need to regenerate content they produced in a previous session. Everything produced within a module remains accessible in that module's index until the instructor removes it.</li>
+</ul>
+
+<p>This persistence is worth emphasizing. One of the practical frustrations of content creation is losing work between sessions — files saved in unexpected locations, browser tabs closed before downloading, generated text that disappears when a page is refreshed. The Module Index eliminates this problem for all PreseMaker-generated content. An artifact produced on a Tuesday afternoon is still in the Module Index on Thursday morning, fully accessible and ready for editing or export. This makes the Module Index not just a storage location but a reliable content management layer that supports efficient, organized module development over time.</p>
+        <div class="notes"><strong>Notes</strong>An introduction to PreseMaker&#39;s custom materials generator, which allows instructors to define and produce tailored content beyond the standard template library. Learners discover how to configure and generate instructor-specific artifacts.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generating the Module Topics List</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Generating Module Topics and Subtopics</a></div>
+  <header>
+    <h1>Generating the Module Topics List</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Generating the Module Topics List</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Generating the module topics list is the foundational first step in building any course within PreseMaker. Everything that follows — the subtopics, the detailed content, the assessments, and the instructional flow — depends directly on the quality and accuracy of this initial list. Understanding how to trigger the generation process, what to expect from the output, and how to critically evaluate the results will save significant time and effort throughout the entire course development lifecycle.</p>
+
+<p>Before you can generate topics, you need to be working inside the correct area of the platform. Begin by opening the <strong>Course Manager</strong>, which serves as the central hub for all courses you are building or maintaining. From the Course Manager, locate the course you are working on and open the specific module for which you want to generate topics. Opening the module takes you into the <strong>Module Manager</strong> — the workspace dedicated to that individual module's structure and content.</p>
+
+<p>A critical prerequisite before proceeding is confirming that your source materials are already in place. Source materials are the raw inputs — documents, PDFs, slides, transcripts, linked resources, or any other content — that PreseMaker will analyze to produce the topics list. If no source materials have been uploaded or linked to the module, the system has nothing to work from and the generation step cannot produce meaningful results. Take a moment to verify that all relevant files or links appear in the module's source materials area. If anything is missing, add it before moving on. The quality of the generated topics is directly proportional to the completeness and clarity of the source materials provided.</p>
+
+<p>Once you have confirmed that your source materials are in place, you are ready to begin. Inside the Module Manager, the workflow is organized into clearly labeled steps. To start the topic generation process, initiate <strong>Step 1 — Create Module Topics</strong>. This action instructs PreseMaker to begin its automated analysis of the source materials you have provided. The system reads through the uploaded content, identifies major themes, concepts, and structural divisions, and then organizes these into a proposed list of discrete topics.</p>
+
+<p>After you trigger Step 1, a <strong>progress indicator</strong> will appear on screen. This indicator signals that PreseMaker is actively working through your content — it is not a frozen screen or an error. Depending on the volume and complexity of your source materials, this process may take anywhere from a few seconds to a couple of minutes. During this time, it is essential that you <strong>do not navigate away from the module</strong>. Leaving the page mid-process can interrupt the generation job, potentially resulting in incomplete output or requiring you to restart the process from the beginning. Stay on the page and allow the system to finish.</p>
+
+<p>When the process completes, the generated topics list will appear within the Module Manager. Understanding what this output represents helps you evaluate it properly. The list presents topics as <strong>discrete, titled items</strong> — each one a self-contained label representing a distinct concept, theme, or instructional section drawn from your source materials. These items are arranged in a <strong>suggested instructional order</strong>, meaning PreseMaker has made an attempt to sequence them in a way that supports logical learning progression, typically moving from foundational concepts toward more complex or applied ones.</p>
+
+<p>The number of topics generated will vary. A short, focused document might produce five or six topics, while a comprehensive technical manual or multi-chapter textbook might yield twenty or more. This variability is expected and reflects the <strong>scope and depth of the uploaded content</strong> rather than any limitation or error in the system. A larger, richer set of source materials naturally produces a more extensive topics list.</p>
+
+<p>It is also important to understand the relationship between the generated topics and the original source materials. PreseMaker does not invent topics arbitrarily. Each topic in the generated list corresponds to <strong>identifiable sections, themes, or concepts actually present</strong> in what you uploaded. The system reflects the structure and emphasis it detects within the content — so if your source material spends considerable space on a particular subject, that subject is likely to appear as its own topic. Conversely, concepts that are mentioned only briefly may be absorbed into a broader topic rather than listed separately.</p>
+
+<p>This relationship between source material and output means that reviewing them side by side is a valuable practice. Open your source documents alongside the generated list and trace each topic back to the content it originates from. This cross-referencing helps you confirm that the list accurately captures what your materials actually teach, and that nothing significant has been overlooked or misrepresented.</p>
+
+<p>Once the list has been generated, your immediate task is to review it for completeness and accuracy. Work through the entire list systematically rather than skimming it quickly. As you review, consider the following:</p>
+
+<ul>
+  <li><strong>Coverage:</strong> Are all major subject areas from the source content represented? If an important concept from your materials does not appear anywhere in the list, that is a gap that needs to be addressed.</li>
+  <li><strong>Granularity:</strong> Are any topics too broad — trying to cover so much ground that they would be difficult to address coherently? Conversely, are any topics too narrow — so specific that they would be better treated as a subtopic under a broader heading rather than a standalone topic?</li>
+  <li><strong>Redundancy:</strong> Do any two topics in the list cover essentially the same ground under different labels? If so, they are candidates for being merged into a single, more precisely defined topic.</li>
+  <li><strong>Logical order:</strong> Does the sequence of topics make instructional sense? Would a learner encountering these topics in the listed order build understanding progressively, or does the sequence assume knowledge that hasn't been introduced yet?</li>
+</ul>
+
+<p>This review step is not a formality — it is one of the most consequential decisions in the entire course-building process. The reason is straightforward: <strong>everything built later depends on this list</strong>. When you proceed past Step 1, PreseMaker uses the confirmed topics list as the scaffolding for generating subtopics, developing detailed content bodies, and constructing assessments. If a topic is missing at this stage, the content and assessments for that concept will also be missing downstream. If a topic is framed too broadly or inaccurately, the subtopics and content generated from it will reflect that inaccuracy.</p>
+
+<p>Think of the topics list as the architectural blueprint for the module. Just as errors in a building's blueprint are far cheaper to correct before construction begins than after walls have been built, errors or omissions in the topics list are far easier to fix now than after detailed content has been generated for every item. Investing the time to get this list right — adding missing topics, removing redundant ones, adjusting granularity, and confirming the sequence — pays dividends at every subsequent stage of development.</p>
+
+<p>To illustrate with a concrete example: suppose you are building a module on data privacy regulations, and your source materials cover GDPR principles, CCPA requirements, breach notification rules, and organizational compliance frameworks. If the generated topics list includes entries for GDPR and CCPA but omits breach notification entirely, any assessments or content bodies generated later will also lack that coverage. A learner completing the module would finish without ever encountering one of its core subject areas. Catching that gap now — by adding a topic for breach notification before proceeding — keeps the entire downstream workflow accurate and complete.</p>
+
+<p>The following table summarizes the key stages of the topic generation workflow and what each stage requires from you:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stage</th>
+      <th>Action Required</th>
+      <th>What to Watch For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Navigate to the Module Manager</td>
+      <td>Open the target module from the Course Manager</td>
+      <td>Confirm you are inside the correct module before proceeding</td>
+    </tr>
+    <tr>
+      <td>Verify source materials</td>
+      <td>Confirm all files or links are uploaded and accessible</td>
+      <td>Missing materials will result in incomplete or inaccurate topic generation</td>
+    </tr>
+    <tr>
+      <td>Trigger Step 1 — Create Module Topics</td>
+      <td>Initiate the generation process from within the Module Manager</td>
+      <td>Do not navigate away while the progress indicator is active</td>
+    </tr>
+    <tr>
+      <td>Review the generated output</td>
+      <td>Read through the complete topics list carefully</td>
+      <td>Check for gaps, overly broad or narrow topics, redundancy, and sequence logic</td>
+    </tr>
+    <tr>
+      <td>Refine before proceeding</td>
+      <td>Add, remove, or adjust topics as needed</td>
+      <td>All later content and assessments will be built from this confirmed list</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>By treating the topic generation step with the care it deserves — verifying prerequisites, allowing the process to complete without interruption, and thoroughly reviewing the output — you establish a strong, accurate foundation that will support efficient and high-quality content development throughout the rest of the module-building process.</p>
+        <div class="notes"><strong>Notes</strong>Learners should be encouraged to keep their source materials open alongside the generated list during review, as direct comparison is the most reliable way to catch gaps or misrepresentations. Emphasise that editing the topics list at this stage is expected and encouraged — the generated output is a starting point, not a final product.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

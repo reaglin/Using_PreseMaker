@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is the Standards Library</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Building a Standards Library and Mapping Topics to Standards</a></div>
+  <header>
+    <h1>What Is the Standards Library</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>What Is the Standards Library</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>When designing courses that need to align with external academic or professional standards, one of the most time-consuming challenges is simply managing the standards themselves. Standards frameworks can contain dozens or even hundreds of individual items, each with its own identifier, description, and scope. Without a centralized place to store and organize them, course designers end up re-entering the same standards repeatedly, risking inconsistency, transcription errors, and wasted effort. The Standards Library solves this problem by providing a single, organized repository of academic standards that is built once and then made available across every course you work with.</p>
+
+<p>The Standards Library is best understood as the foundational layer of any standards-based course design workflow. Before you can map a learning outcome to a standard, before you can generate a coverage report, before you can demonstrate accountability to an accrediting body or institutional stakeholder, you need a reliable, structured collection of standards to work from. The library provides exactly that. It is not a per-course tool — it is an institutional or project-level resource that sits beneath your courses and makes standards-aware design possible.</p>
+
+<p><strong>What the Standards Library Is</strong></p>
+
+<p>At its core, the Standards Library is a stored collection of individual academic standards, organized in a way that makes them easy to browse, select, and map against course content. Rather than treating standards as free-form text scattered across documents or spreadsheets, the library structures each standard as a discrete, addressable item. This structure is what enables the system to perform meaningful analysis — comparing what a course teaches against what the standards require, identifying gaps, and producing reports that are consistent and comparable.</p>
+
+<p>Three properties define what makes the library powerful:</p>
+
+<ul>
+  <li><strong>Centralization:</strong> All standards for a given framework live in one place. There is no need to hunt through external documents every time you begin a new course design. Once a standards framework — such as a set of national curriculum standards, professional competency frameworks, or accreditation criteria — has been added to the library, it is immediately accessible.</li>
+  <li><strong>Reusability:</strong> The library is built once and used many times. A department that designs ten courses against the same set of professional standards only needs to assemble the library a single time. Every subsequent course simply references the same library.</li>
+  <li><strong>Consistency:</strong> Because all courses draw from the same stored definitions, every course in an institution uses identical wording, identifiers, and categorization for each standard. This eliminates the drift that naturally occurs when different designers paraphrase or reformat standards independently.</li>
+</ul>
+
+<p><strong>The Purpose of the Standards Library</strong></p>
+
+<p>The Standards Library exists to give course designers a structured, authoritative reference set to map their topics and learning outcomes against. This mapping is the mechanism through which a course can demonstrate alignment — showing that a particular topic, assessment, or learning outcome addresses a specific standard, and that the standard is addressed with sufficient depth and frequency across the course.</p>
+
+<p>Without a centralized library, coverage analysis becomes unreliable. If one course designer interprets a standard slightly differently from another, the resulting coverage data cannot be meaningfully compared. The library resolves this by acting as a single source of truth. When Course A and Course B both map to the same library, a program director can meaningfully ask: which standards are well-covered across both courses, which are covered by only one, and which are not addressed at all? These are the kinds of accountability questions that accreditors, curriculum committees, and institutional reviewers regularly ask — and the library makes answering them straightforward.</p>
+
+<p>The library therefore supports three interconnected purposes:</p>
+
+<ul>
+  <li><strong>Structured mapping:</strong> Providing the fixed reference points that course content and outcomes are mapped against.</li>
+  <li><strong>Consistent analysis:</strong> Enabling coverage reports that are comparable across courses because they reference the same definitions.</li>
+  <li><strong>Accountability:</strong> Creating a documented, auditable link between what is taught and the standards it addresses — an increasingly important requirement in accredited programs.</li>
+</ul>
+
+<p><strong>How the Library Is Assembled: AI-Assisted Extraction</strong></p>
+
+<p>One of the most practical features of the Standards Library is the way it is built. Rather than requiring course designers to manually type out every individual standard — a process that is both slow and error-prone, particularly for large frameworks — the system uses AI to assist with extraction and population.</p>
+
+<p>The process works in three stages:</p>
+
+<ul>
+  <li><strong>You provide source material.</strong> This can take one of several forms: a URL pointing to a webpage where the standards are published, text that you paste directly from a standards document, or a plain-language description of the standards framework you want to work with. The system is flexible about input format because standards are published in many different ways — some as structured web pages, others as PDF documents, others as narrative descriptions.</li>
+  <li><strong>The AI extracts individual standards.</strong> Once you supply the source material, the AI reads and interprets it, identifying individual standards items and populating the library with them automatically. For example, if you provide the URL of a national curriculum standards page that lists forty competencies organized into five domains, the AI will extract all forty competencies as discrete library entries, preserving their identifiers, domain groupings, and descriptions.</li>
+  <li><strong>You review and save.</strong> Before the library becomes active and available for mapping, you have the opportunity to review what the AI has extracted. This review step is important: it lets you catch any misinterpretations, merge items that were split incorrectly, or remove entries that do not belong. Once you are satisfied with the extracted standards, you save the library and it is ready to use.</li>
+</ul>
+
+<p>This AI-assisted approach dramatically reduces the time required to set up a standards library. What might otherwise take hours of manual data entry can typically be accomplished in minutes, with the designer's effort focused on reviewing and verifying rather than transcribing.</p>
+
+<p><strong>Understanding the 'System in Development' Status</strong></p>
+
+<p>You will notice that the Standards Library is currently labeled as a <em>System in Development</em>. This label carries specific meaning that is worth understanding clearly, because it affects how you should approach the library and its documentation.</p>
+
+<p><em>System in Development</em> does not mean the feature is broken or unavailable — the library is functional and you can use it right now to build standards collections, map them to courses, and generate coverage reports. What the label signals is that the feature has not yet reached its final, fully finalized state. The requirements that govern how the library works, what options it exposes, and how it integrates with other parts of the system are still evolving based on user feedback, technical refinements, and expanding use cases.</p>
+
+<p>In practical terms, this means:</p>
+
+<ul>
+  <li><strong>Interfaces may change.</strong> The screens and controls you use to build and manage the library may look different in future versions. A button might move, a workflow might be reordered, or new options might appear that do not currently exist.</li>
+  <li><strong>Behaviors may be refined.</strong> The way the AI extracts standards, the format in which they are stored, or the options available during the review step may be adjusted as the team learns more about how designers use the library in practice.</li>
+  <li><strong>Documentation is a working guide.</strong> Any documentation you read about the Standards Library — including this material — should be treated as an accurate description of the system as it currently exists, not as a permanent specification. If you return to this documentation after a significant system update, some details may have changed.</li>
+</ul>
+
+<p>This is a normal and healthy stage for a feature to be in. Treating the documentation as a working guide rather than a fixed reference allows you to use the library confidently today while remaining open to the improvements that future development will bring.</p>
+
+<p><strong>Reusability Across Courses</strong></p>
+
+<p>Perhaps the most strategically important property of the Standards Library is its reusability. Once a library has been assembled and saved, it does not belong to a single course — it is available as a shared resource that any number of courses can reference.</p>
+
+<p>Consider a concrete example. A nursing program needs to align its courses with a set of professional practice competencies defined by a national nursing body. That competency framework contains sixty individual standards organized into eight domains. Without a standards library, every course designer working on the program would need to either re-enter all sixty standards or work from an external document, keeping it synchronized manually with whatever system they use to design their courses. With the Standards Library, a single designer assembles the library once — spending perhaps thirty minutes on setup and review — and every course in the program can then reference it directly. Six courses, twelve courses, twenty courses: the number does not change the setup effort.</p>
+
+<p>Reusability produces three compounding benefits:</p>
+
+<ul>
+  <li><strong>Time savings:</strong> The setup cost is paid once. Every subsequent course skips the standards-entry step entirely and goes straight to mapping.</li>
+  <li><strong>Consistency:</strong> Every course in the program uses exactly the same wording for Standard 4.2 or Competency C-7. There is no ambiguity about whether two courses are addressing the same standard, because they are both referencing the identical library entry.</li>
+  <li><strong>Program-level analysis:</strong> Because multiple courses share the same library, the system can perform analysis across an entire program — identifying which standards are addressed early in a curriculum, which are reinforced across multiple courses, and which might be underrepresented. This kind of program-level coverage analysis is only meaningful when all courses use the same standard definitions, which the shared library guarantees.</li>
+</ul>
+
+<p>The Standards Library is therefore not just a convenience feature for individual course designers — it is an infrastructure component that makes coherent, institution-wide standards alignment possible.</p>
+        <div class="notes"><strong>Notes</strong>Introduces the Standards Library as a reusable collection of academic standards built once and applied across multiple courses. Covers its definition, purpose, AI-assisted assembly process, current &#39;System in Development&#39; status, and reusability across courses.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

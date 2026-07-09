@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Course-Level Outcomes</title>
+  <style>
+:root {
+    --bg:         #ffffff;
+    --surface:    #f8f9fa;
+    --border:     #dee2e6;
+    --accent:     #2563eb;
+    --accent-bg:  #eff6ff;
+    --text:       #1e293b;
+    --muted:      #64748b;
+    --bullet-bg:  #f1f5f9;
+    --notes-bg:   #fefce8;
+    --notes-border:#fbbf24;
+    --code-bg:    #f8fafc;
+    --code-border:#e2e8f0;
+    --radius:     8px;
+    --shadow:     0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; line-height: 1.7; margin: 0; padding: 0; }
+header { background: var(--accent); color: #fff; padding: 2.5rem 2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 2rem; font-weight: 700; }
+header p  { margin: 0; opacity: .85; font-size: .95rem; }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+.slide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.25rem; box-shadow: var(--shadow); overflow: hidden; }
+.slide-header { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; cursor: pointer; user-select: none; background: var(--accent-bg); border-bottom: 1px solid var(--border); }
+.slide-header:hover { background: #dbeafe; }
+.slide-num { background: var(--accent); color: #fff; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; flex-shrink: 0; }
+.slide-header h2 { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--text); flex: 1; }
+.chevron { transition: transform .25s; font-size: .8rem; color: var(--muted); }
+.slide-body { padding: 1.25rem; display: none; }
+.slide-body.open { display: block; }
+.bullets { list-style: none; margin: 0 0 1rem; padding: 0; }
+.bullets li { background: var(--bullet-bg); border-radius: 6px; padding: .55rem .9rem; margin-bottom: .4rem; display: flex; gap: .6rem; align-items: flex-start; }
+.bullets li::before { content: "•"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+.notes { background: var(--notes-bg); border-left: 3px solid var(--notes-border); border-radius: 0 6px 6px 0; padding: .75rem 1rem; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.notes strong { display: block; margin-bottom: .25rem; color: #92400e; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+/* Document layout */
+.doc-section { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.doc-section:last-child { border-bottom: none; }
+.doc-section h2 { color: var(--accent); font-size: 1.4rem; margin: 0 0 1rem; display: flex; gap: .75rem; align-items: center; }
+pre, code { font-family: 'Cascadia Code', 'Consolas', monospace; }
+pre { background: var(--code-bg); border: 1px solid var(--code-border); border-radius: 6px; padding: 1rem; overflow-x: auto; white-space: pre; line-height: 1.5; font-size: .9rem; }
+  </style>
+  <style>
+    body { padding-left: 1.1rem; padding-right: 1.1rem; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid rgba(128,128,128,.45); padding: .45em .7em; text-align: left; vertical-align: top; }
+    thead th { background: rgba(128,128,128,.18); font-weight: 600; }
+    tbody tr:nth-child(even) { background: rgba(128,128,128,.08); }
+    a.topic-detail-link { text-decoration: underline; }
+  </style>
+  <style>
+    summary.slide-header { list-style: none; }
+    summary.slide-header::-webkit-details-marker { display: none; }
+    details.slide-card[open] > .slide-body { display: block; }
+    details.slide-card[open] .chevron { transform: rotate(90deg); }
+    @media print { details.slide-card > .slide-body { display: block !important; } .chevron { display: none; } }
+  </style>
+</head><body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Course Outcomes vs. Module Outcomes and the Alignment Map</a></div>
+  <header>
+    <h1>Understanding Course-Level Outcomes</h1>
+  </header><main>
+    <details class="slide-card" open>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Understanding Course-Level Outcomes</h2><span class="chevron">▶</span></summary>
+      <div class="slide-body">
+        <p>Every well-designed course begins with a clear answer to a deceptively simple question: <em>What should learners be able to do by the time they finish?</em> Course-level outcomes are the formal, written answer to that question. They sit at the top of the instructional architecture, functioning as the overarching goals that give every lesson, activity, reading, and assessment its ultimate justification. Understanding what course-level outcomes are, why they matter, and how they differ from more granular learning targets is the essential foundation for any serious work in course design or curriculum alignment.</p>
+
+<p><strong>Defining Course-Level Outcomes</strong></p>
+
+<p>A course-level outcome is a precise, publicly stated description of what a learner will be able to demonstrate at the conclusion of a course. Several features of that definition deserve careful attention.</p>
+
+<ul>
+  <li><strong>They represent the broadest layer of intended learning.</strong> Unlike a lesson objective that addresses a single concept introduced on a Tuesday afternoon, or a module outcome that captures what a learner can do after two weeks of study, a course-level outcome describes a capability that the entire course — every module, every assessment, every discussion — works together to build. It is the summit, and everything else is the trail leading to it.</li>
+  <li><strong>They are written from the learner's perspective using action verbs.</strong> This is not a stylistic convention; it is a logical requirement. An outcome describes observable, demonstrable behavior, not an instructor's intention or a topic to be covered. The difference between "This course covers financial statement analysis" and "Learners will be able to evaluate the financial health of a publicly traded company using ratio analysis and trend data" is the difference between a syllabus topic list and a genuine outcome. The second statement uses a concrete action verb (<em>evaluate</em>), specifies the learner as the actor, and describes a result that could, in principle, be assessed.</li>
+  <li><strong>They describe results that are demonstrable and assessable.</strong> If you cannot design a credible task that would allow a learner to show whether they have achieved the outcome, the outcome is not yet well-written. Vague language such as "appreciate," "understand," or "be familiar with" fails this test because no assessment can reliably distinguish between a learner who appreciates something and one who does not.</li>
+  <li><strong>They answer a specific diagnostic question.</strong> A useful internal test for any course-level outcome is this: <em>What will learners be able to do after completing this course that they could not reliably do before?</em> If the outcome survives that question — if it describes a genuine capability gain rather than mere exposure — it is doing its job.</li>
+</ul>
+
+<p><strong>The Role of Course-Level Outcomes in Course Design</strong></p>
+
+<p>Course-level outcomes are not decorative statements printed in a catalog. They perform active, structural work throughout the design process, and their influence extends to every decision a designer or instructor makes.</p>
+
+<ul>
+  <li><strong>They establish non-negotiable end goals.</strong> Once course-level outcomes are set, they become the criteria against which all other course components are judged. A module, an activity, or an assessment earns its place in the course by contributing — directly or indirectly — to at least one course-level outcome. Components that cannot be connected to any outcome are candidates for removal, no matter how interesting or tradition-bound they may be. This filtering function is one of the most practically valuable things outcomes provide: they give designers a principled basis for saying "no" to content that is merely tangential.</li>
+  <li><strong>They serve as a design filter.</strong> Consider a project management course with a course-level outcome stating that learners will be able to develop a risk mitigation plan for a complex project. When a proposed module on the history of project management methodologies comes up for review, the design team must ask: does exposure to this history meaningfully contribute to learners' ability to develop a risk mitigation plan? If the answer is "not really," the module may need to be cut, condensed, or reconceived as an optional enrichment resource rather than core content. Outcomes provide the logic for that conversation.</li>
+  <li><strong>They create a transparent contract with learners.</strong> When course-level outcomes are shared with learners at the outset — in the syllabus, in an orientation module, in an introductory video — they communicate exactly what the course promises to help them accomplish. This transparency has practical benefits: learners can gauge whether the course aligns with their goals before investing significant time, they can self-monitor their progress throughout, and they can hold the course accountable to its stated promises. A course that publishes outcomes but then spends most of its time on loosely related topics has violated that contract.</li>
+</ul>
+
+<p><strong>Characteristics That Define Course-Level Outcomes</strong></p>
+
+<p>Not every statement about learning qualifies as a course-level outcome. Genuine course-level outcomes share a cluster of characteristics that distinguish them from lower-level objectives or vague aspirational statements.</p>
+
+<ul>
+  <li><strong>Broad scope requiring sustained engagement.</strong> A course-level outcome cannot be achieved in a single sitting or even in a single module. It requires the accumulation of knowledge, skill, and practice across multiple learning experiences. For example, an outcome like "Learners will synthesize evidence from multiple research traditions to construct an original theoretical argument" cannot be demonstrated after one reading or one discussion post. It demands that learners first understand individual research traditions, then practice comparing them, then attempt synthesis in lower-stakes contexts, and finally produce a substantive original argument. That trajectory spans a course, not a lesson.</li>
+  <li><strong>Higher-order or integrative thinking.</strong> Course-level outcomes are almost always written at the upper levels of cognitive taxonomies. Using Bloom's Revised Taxonomy as a reference point, course-level outcomes typically involve <em>analyzing</em>, <em>evaluating</em>, or <em>creating</em> — the three highest levels — rather than <em>remembering</em> or <em>understanding</em>, which are more appropriate targets for individual lessons. This does not mean that remembering and understanding are unimportant; they are essential building blocks. But a course whose highest-stated ambition is that learners will recall a list of facts has set the bar too low. The course-level outcome signals the intellectual ceiling the course is designed to reach.</li>
+  <li><strong>Limited in number.</strong> A well-designed course typically has between three and seven course-level outcomes. This constraint is deliberate. A course with twelve or fifteen outcomes is either too ambitious for its time frame, has confused granular objectives with genuine course-level goals, or lacks a coherent organizing purpose. Keeping outcomes few in number forces designers to identify what truly matters — the core capabilities a graduate of this course should possess — and to let less essential content exist in service of those goals rather than as goals in their own right.</li>
+  <li><strong>Durability across cohorts and instructors.</strong> A course-level outcome describes what the course fundamentally exists to produce. That does not change when a new instructor takes over, when a different textbook is adopted, or when the course is offered to a new cohort of learners. A course in introductory statistics should produce learners who can interpret and apply statistical reasoning regardless of whether the instructor prefers a frequentist or Bayesian emphasis, and regardless of which software package is used. The fundamental outcome — statistical reasoning ability — is durable. Module outcomes, by contrast, may shift as instructors update content and methods; course-level outcomes should be far more stable.</li>
+</ul>
+
+<p><strong>Cognitive Depth at the Course Level</strong></p>
+
+<p>The cognitive level encoded in a course-level outcome is one of the most consequential design decisions a curriculum team makes, because it sets the intellectual ambition of the entire course and determines the kinds of assessments that are appropriate.</p>
+
+<ul>
+  <li><strong>Cognitive level signals intellectual ambition.</strong> An outcome written with the verb <em>list</em> signals a very different course experience than one written with the verb <em>critique</em> or <em>design</em>. The verb choice is not merely semantic — it defines what learners must actually be able to do, and therefore what instruction must prepare them to do. A course whose outcomes are dominated by low-cognitive-level verbs is likely to default toward lectures, readings, and recall-based assessments, because those are the instructional strategies that produce recall. A course whose outcomes demand synthesis and evaluation will require more complex pedagogical moves: guided practice, feedback-rich drafting cycles, case-based reasoning, or project-based work.</li>
+  <li><strong>Low cognitive depth produces learners who cannot transfer knowledge.</strong> One of the most persistent gaps in higher education and professional training is the difference between knowing something in the context of a course and being able to use that knowledge in novel, real-world situations. When course-level outcomes are written at low cognitive levels, the course is implicitly designed to produce recognition and recall, not transferable capability. Learners may perform well on in-course assessments but find they cannot apply what they learned when the context changes. Writing outcomes at appropriately high cognitive levels is the first step toward closing this gap.</li>
+  <li><strong>Cognitive depth as a quality-check criterion.</strong> During the alignment-mapping process — when designers verify that module outcomes, activities, and assessments all connect coherently to course-level outcomes — cognitive depth serves as a quality check. If a course-level outcome is written at the <em>evaluate</em> level but every module outcome and every assessment operates at the <em>remember</em> or <em>understand</em> level, there is a structural gap: the course promises to produce evaluative thinkers but is only designed to produce knowers. The alignment map makes this mismatch visible and correctable.</li>
+</ul>
+
+<p>The table below illustrates how cognitive level shapes both the language of course-level outcomes and the corresponding assessment strategies appropriate to each level, using Bloom's Revised Taxonomy as the organizing framework.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bloom's Level</th>
+      <th>Sample Action Verbs</th>
+      <th>Example Course-Level Outcome</th>
+      <th>Appropriate Assessment Types</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Remember</td>
+      <td>list, identify, recall, name</td>
+      <td>Learners will identify the major bones of the human skeleton.</td>
+      <td>Multiple-choice quizzes, labeling diagrams</td>
+    </tr>
+    <tr>
+      <td>Understand</td>
+      <td>explain, summarize, describe, paraphrase</td>
+      <td>Learners will explain the mechanisms by which vaccines confer immunity.</td>
+      <td>Short-answer responses, concept maps</td>
+    </tr>
+    <tr>
+      <td>Apply</td>
+      <td>use, solve, demonstrate, execute</td>
+      <td>Learners will use regression analysis to model real-world data sets.</td>
+      <td>Practical exercises, problem sets, simulations</td>
+    </tr>
+    <tr>
+      <td>Analyze</td>
+      <td>differentiate, examine, compare, deconstruct</td>
+      <td>Learners will analyze competing historical interpretations of a primary source event.</td>
+      <td>Comparative essays, annotated source analyses</td>
+    </tr>
+    <tr>
+      <td>Evaluate</td>
+      <td>judge, critique, justify, appraise</td>
+      <td>Learners will evaluate the ethical implications of a proposed public health intervention.</td>
+      <td>Position papers, structured debates, peer review tasks</td>
+    </tr>
+    <tr>
+      <td>Create</td>
+      <td>design, construct, produce, synthesize</td>
+      <td>Learners will design an original instructional unit aligned to stated learning outcomes.</td>
+      <td>Capstone projects, portfolios, original design artifacts</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>How Course-Level Outcomes Differ from Module Outcomes</strong></p>
+
+<p>One of the most common sources of confusion in curriculum work is the conflation of course-level outcomes with module outcomes. They are related but operate at different levels of the instructional hierarchy, and confusing them leads to poorly scoped outcomes at both levels.</p>
+
+<ul>
+  <li><strong>Scope and time horizon.</strong> Module outcomes are narrow enough to be demonstrated within a single instructional unit — a week of study, a chapter, a project phase. Course-level outcomes require the full arc of the course. A module outcome might be: "Learners will calculate the net present value of a proposed investment." The corresponding course-level outcome might be: "Learners will evaluate the financial viability of a business opportunity using multiple quantitative and qualitative frameworks." The module outcome is a component skill; the course-level outcome is the integrated capability that component skill helps to build.</li>
+  <li><strong>Presence in day-to-day instruction.</strong> Module outcomes are the targets learners are consciously working toward in each unit. They appear in module introductions, are referenced in activity instructions, and are directly assessed by module assignments. Course-level outcomes, by contrast, often recede into the background during day-to-day instruction — not because they are unimportant, but because they are too large to tackle directly in any single learning episode. They become visible again at the end of the course, when a capstone project or comprehensive assessment asks learners to demonstrate the cumulative capability the entire course was designed to build.</li>
+  <li><strong>Hierarchical relationship.</strong> The connection between module outcomes and course-level outcomes is hierarchical and additive. Each module outcome represents a piece of the larger puzzle. Multiple module outcomes, taken together, should collectively enable learners to achieve a course-level outcome. This relationship is typically made explicit in an alignment map or curriculum matrix, where each course-level outcome is listed alongside the module outcomes that contribute to it. If a course-level outcome has only one or two module outcomes feeding into it, it is probably not a genuine course-level outcome — it is a module outcome that has been mislabeled. If a course-level outcome has no module outcomes feeding into it at all, the course is promising something it is not actually designed to deliver.</li>
+</ul>
+
+<p>To make this hierarchical relationship concrete, consider a course in professional writing. One course-level outcome might read: <em>Learners will produce polished professional documents tailored to specific audiences and purposes.</em> That single outcome is supported by a chain of narrower module outcomes distributed across the course: one module might target audience analysis, another genre conventions, another revision strategies, another visual design principles, and another the mechanics of professional editing. No single module produces a learner who can write polished, audience-tailored professional documents. But the cumulative effect of all those modules — if they are well-sequenced and well-taught — should produce exactly that capability. The course-level outcome is the promise; the module outcomes are the plan for keeping it.</p>
+        <div class="notes"><strong>Notes</strong>Includes a Bloom&#39;s Taxonomy alignment table rendered as a full HTML table. The hierarchical relationship between course-level and module outcomes is illustrated with a concrete professional writing example to ground the abstract structural concepts.</div>
+      </div>
+    </details>
+  </main>
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+</body></html>

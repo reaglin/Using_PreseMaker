@@ -1,0 +1,789 @@
+{
+  "ModuleFolderName": "Batch_Actions_Generating",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:42:58.0454143-04:00",
+  "ModifiedDate": "2026-07-08T19:44:33.1894765-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "4f7e7217-28c2-402f-bd37-ae12c691f6c2",
+      "Title": "Introduction to Batch Actions in Course Manager",
+      "Summary": "Introduces the Batch Actions feature available at the course level, explaining its purpose and the types of content that can be generated across multiple modules simultaneously.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:42:58.0454143-04:00",
+      "ModifiedDate": "2026-07-08T19:42:58.0454143-04:00",
+      "Elements": [
+        {
+          "Id": "155f7740-d7da-47b2-9c23-193adb67ccfe",
+          "TopicId": "4f7e7217-28c2-402f-bd37-ae12c691f6c2",
+          "Title": "What Are Batch Actions?",
+          "BodyText": "Batch Actions is a course-level feature in Course Manager that allows instructors to generate content across multiple modules in a single operation.",
+          "Notes": "Rather than opening each module individually and generating content one at a time, Batch Actions consolidates this work into one streamlined run.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:43:13.6833505-04:00",
+          "ModifiedDate": "2026-07-08T19:43:13.6833505-04:00",
+          "Items": [
+            {
+              "Id": "b2e0877c-895c-4999-8156-e2cf4ed6185e",
+              "Text": "Batch Actions operate at the course level, meaning they are initiated from the course view rather than from within an individual module.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "84aeea0a-c086-4d3f-84ff-ff5d99a16a6f",
+              "Text": "The feature is designed to save significant time when an instructor needs to apply the same type of content generation to many modules at once.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "48980483-0ae7-403d-bcad-96755d420ea2",
+              "Text": "It replaces the need for repetitive, manual content generation across a large course structure.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "fca99e0f-0814-4b5d-82f2-2b95a9cf1dd0",
+          "TopicId": "4f7e7217-28c2-402f-bd37-ae12c691f6c2",
+          "Title": "Purpose of Batch Actions",
+          "BodyText": "The primary purpose of Batch Actions is to improve efficiency by letting instructors scale content creation across an entire course simultaneously.",
+          "Notes": "This is especially valuable for courses with many modules, where generating content individually would be time-consuming and prone to inconsistency.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:43:13.6833505-04:00",
+          "ModifiedDate": "2026-07-08T19:43:13.6833505-04:00",
+          "Items": [
+            {
+              "Id": "7d425b83-39c7-401b-a387-b30c60b3e0aa",
+              "Text": "Batch Actions reduce the time investment required to populate a multi-module course with generated content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ddbc1c89-df83-4d15-ab5d-85c086dac845",
+              "Text": "By running a single batch operation, instructors can ensure a consistent type of content is generated uniformly across selected modules.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9157a49a-9bfd-4e9d-8d51-51fa79d902fb",
+              "Text": "The feature supports instructors in managing large course builds more effectively within the Course Manager environment.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8fc62670-ae4e-4398-b131-526159739fdf",
+          "TopicId": "4f7e7217-28c2-402f-bd37-ae12c691f6c2",
+          "Title": "Types of Content That Can Be Generated",
+          "BodyText": "Batch Actions support the generation of several content types, each of which can be applied across multiple modules in one run.",
+          "Notes": "The availability of multiple content types means instructors can use Batch Actions for a variety of course-building needs, from assessment to instructional delivery.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:43:13.6833505-04:00",
+          "ModifiedDate": "2026-07-08T19:43:13.6833505-04:00",
+          "Items": [
+            {
+              "Id": "4ef44511-bd6b-42d0-b62e-fffdfb58d592",
+              "Text": "The batch actions generate Module Topics and Outcomes together, Quizzes, Presentations, and Text documents such as Topic Details.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1b9fd73d-4b32-4b6b-bc67-c4c1079a8c4a",
+              "Text": "Each batch run is focused on one content type at a time, applied to the selected modules during that operation.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8ef9c0d1-414e-4649-868c-820fed29dd0c",
+              "Text": "Instructors choose which specific content type to generate before initiating the batch run.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c7da1a65-3ffc-48f4-8984-ec92c3831534",
+          "TopicId": "4f7e7217-28c2-402f-bd37-ae12c691f6c2",
+          "Title": "Course-Level Access to Batch Actions",
+          "BodyText": "Batch Actions are accessed from the course level within Course Manager, distinguishing them from actions taken inside individual modules.",
+          "Notes": "Understanding where to find and launch Batch Actions is a foundational step before using the feature effectively.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:43:13.6833505-04:00",
+          "ModifiedDate": "2026-07-08T19:43:13.6833505-04:00",
+          "Items": [
+            {
+              "Id": "ed127ca5-c71d-4987-9e49-75a22fa72509",
+              "Text": "The Batch Actions feature is located at the course level, not within any single module\u0027s settings or editor.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "8fa805aa-f9ed-40a5-a4cc-eb1eaae7a6f0",
+              "Text": "Instructors must navigate to the course view in Course Manager to locate and initiate a batch operation.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b4ae23a9-61c9-4929-b2e3-247e6c1e1253",
+              "Text": "This course-level placement reflects the feature\u0027s scope, which spans multiple modules rather than targeting just one.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8417045e-2b12-44cd-b785-63ac32e67bcf",
+          "TopicId": "4f7e7217-28c2-402f-bd37-ae12c691f6c2",
+          "Title": "Scope of a Batch Run",
+          "BodyText": "A single batch run can encompass many modules within a course, with instructors selecting which modules to include before generation begins.",
+          "Notes": "The ability to select specific modules gives instructors flexibility \u2014 they can target all modules or only a subset depending on their needs.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:43:13.6833505-04:00",
+          "ModifiedDate": "2026-07-08T19:43:13.6833505-04:00",
+          "Items": [
+            {
+              "Id": "a5a704ff-169f-4a6e-b597-a621a95a479d",
+              "Text": "Instructors can choose to include all modules in a course or select a specific subset for the batch operation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c711b8f1-9687-42e6-a754-2e1405c1e70d",
+              "Text": "Only the modules selected during setup will have content generated during that batch run.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2c096b8a-c7e7-4376-9b00-7e81aec147d6",
+              "Text": "This selective scope ensures instructors maintain control over which parts of the course are affected.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "0b1da31c-4735-4f74-8cf7-8303249d1083",
+      "Title": "Selecting Content Types for Batch Generation",
+      "Summary": "Covers the separate batch actions you can run — Generate Module Topics and Outcomes, Generate Quizzes, Generate Presentations, and Generate Text documents — and how to choose the one you need.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:42:58.0454143-04:00",
+      "ModifiedDate": "2026-07-08T19:42:58.0454143-04:00",
+      "Elements": [
+        {
+          "Id": "aa6281c2-cb2e-4a1e-b305-90743074209e",
+          "TopicId": "0b1da31c-4735-4f74-8cf7-8303249d1083",
+          "Title": "Overview of Available Content Types",
+          "BodyText": "When setting up a batch run, you must first select which type of content you want the system to generate across your chosen modules.",
+          "Notes": "Each content type serves a distinct instructional purpose, so choosing the right one before launching the batch is essential to getting useful output.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:43:35.6796479-04:00",
+          "ModifiedDate": "2026-07-08T19:43:35.6796479-04:00",
+          "Items": [
+            {
+              "Id": "6f93485d-b354-46d7-8b02-6f2bfa6ef4e2",
+              "Text": "The batch actions are separate commands: Generate Module Topics and Outcomes (topics and their outcomes are produced together), Generate Quizzes, Generate Presentations, and Generate Text documents such as Topic Details.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3ebcd4a4-d336-4507-83ee-e7faeddc7f93",
+              "Text": "Each batch action is its own command with its own configuration form; you run the one you need for your chosen modules.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "54fc3288-f4ec-4149-936f-c9ecffb4d56b",
+              "Text": "Selecting the wrong content type before running a large batch can result in unusable output across many modules, making pre-run planning important.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b269f4e1-970c-469b-8b23-e6de7489fc6e",
+          "TopicId": "0b1da31c-4735-4f74-8cf7-8303249d1083",
+          "Title": "Generating Topics in Batch",
+          "BodyText": "Choosing \u0027Topics\u0027 as the content type generates the structured topics for each selected module and, in the same run, the module's learning outcomes.",
+          "Notes": "This is often the first step when building out a new course, as generated topics provide the foundational outline that other content types build upon.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:43:35.6796479-04:00",
+          "ModifiedDate": "2026-07-08T19:43:35.6796479-04:00",
+          "Items": [
+            {
+              "Id": "c593667e-00f8-4703-a2da-2d9c75b536c6",
+              "Text": "Topics define the key concepts or learning areas within each module and give the module its organizational structure.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6ba5aa97-3748-4a97-ac28-40baf23d6e59",
+              "Text": "Batch-generating topics is most useful when multiple modules are still in the outline stage and need consistent coverage.",
+              "SortOrder": 1
+            }
+          ]
+        },
+        {
+          "Id": "fef1ebd1-74f1-467b-81a0-780e5940850a",
+          "TopicId": "0b1da31c-4735-4f74-8cf7-8303249d1083",
+          "Title": "Generating Outcomes in Batch",
+          "BodyText": "Selecting \u0027Outcomes\u0027 is not a separate step: outcomes are produced together with topics by the Generate Module Topics and Outcomes action for every module included in the batch.",
+          "Notes": "Well-formed outcomes are measurable and aligned to module content; batch generation ensures consistency in language and format across the course.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:43:35.6796479-04:00",
+          "ModifiedDate": "2026-07-08T19:43:35.6796479-04:00",
+          "Items": [
+            {
+              "Id": "0e5e5f97-be54-485b-ad6d-d30ac52296b8",
+              "Text": "Learning outcomes describe what learners will be able to do after completing each module, serving as the basis for assessment alignment.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3ffd19d8-e7fd-4fa2-87cc-4e0d3cb95b3d",
+              "Text": "Batch-generating outcomes across modules saves significant time compared to writing individual objectives for each module manually.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ee80d372-9ee3-4e50-8c88-1a158fb3682d",
+              "Text": "Review auto-generated outcomes after the run to confirm they accurately reflect each module\u0027s intended scope.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "ffaba295-6b22-4771-bea3-326ff62da8e6",
+          "TopicId": "0b1da31c-4735-4f74-8cf7-8303249d1083",
+          "Title": "Generating Quizzes in Batch",
+          "BodyText": "The \u0027Quizzes\u0027 content type option directs the batch process to create assessment questions tied to the content of each selected module.",
+          "Notes": "Quiz questions generated in batch are typically drawn from the existing module content, so modules with more detailed content tend to yield higher-quality questions.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:43:35.6796479-04:00",
+          "ModifiedDate": "2026-07-08T19:43:35.6796479-04:00",
+          "Items": [
+            {
+              "Id": "31c57845-42aa-48b7-b062-8d2a6c3e1244",
+              "Text": "Batch quiz generation is ideal when you need a consistent assessment layer added to many modules at the same time.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "93a37771-809f-49a2-80be-5f3fee5efd18",
+              "Text": "Generated quizzes should be reviewed after the batch run to verify accuracy, relevance, and appropriate difficulty level.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6daa19e3-9eb8-4f54-9d47-53e9a69bc59e",
+              "Text": "Ensure each module has sufficient content before running a quiz batch, as thin modules may produce low-quality or repetitive questions.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "bcf7a006-04ca-4eb9-9b12-63cea0027d77",
+          "TopicId": "0b1da31c-4735-4f74-8cf7-8303249d1083",
+          "Title": "Generating Presentations and Text Documents in Batch",
+          "BodyText": "Batch generation also supports creating slide-based presentations or written text documents, giving instructors flexible output formats for module content.",
+          "Notes": "Presentations are useful for lecture-style delivery, while text documents work well for reading materials or supplementary handouts.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:43:35.6796479-04:00",
+          "ModifiedDate": "2026-07-08T19:43:35.6796479-04:00",
+          "Items": [
+            {
+              "Id": "89f13b24-89f8-47ec-be7c-557c68e82770",
+              "Text": "Selecting \u0027Presentations\u0027 generates a slide deck structure for each module, organizing key points into a format suitable for visual delivery.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e75ba089-90cd-42b5-b26c-e2c29257441a",
+              "Text": "Selecting \u0027Text Documents\u0027 produces written content summaries or explanations that can serve as reading materials within each module.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "64b5666a-f200-42c2-9309-a5d187f71b65",
+              "Text": "Both formats are generated in bulk across all selected modules, making it efficient to build out an entire course\u0027s supplementary materials in one run.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "fb68c58b-0e4f-473a-86ce-ed821f0ee7e4",
+          "TopicId": "0b1da31c-4735-4f74-8cf7-8303249d1083",
+          "Title": "Matching Content Type to Module Needs",
+          "BodyText": "Choosing the right content type requires evaluating where each module currently stands in its development and what it still needs.",
+          "Notes": "A common workflow is to run topics first, then outcomes, then quizzes, progressing through content types in a logical instructional design sequence.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:43:35.6796479-04:00",
+          "ModifiedDate": "2026-07-08T19:43:35.6796479-04:00",
+          "Items": [
+            {
+              "Id": "3284127b-4654-4f56-82ba-28b81f7027b4",
+              "Text": "Modules that lack structure benefit most from a topics batch run, while modules with defined topics but no assessments are ready for a quiz batch.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "36ea98fd-0732-4251-a56c-708025d59424",
+              "Text": "Running multiple sequential batch actions \u2014 each with a different content type \u2014 allows you to systematically build out all layers of a course.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9b06a2ba-fe5f-4ef6-bbed-85d88c77a7aa",
+              "Text": "Avoid selecting a content type that the modules already have well-developed, as this may overwrite or duplicate existing content.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "98a461a2-7045-4ab4-b481-3b7d048bf359",
+      "Title": "Choosing and Configuring Modules for a Batch Run",
+      "Summary": "Explains how to select which modules to include in a batch action and how to configure the batch settings before initiating a run.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:42:58.0454143-04:00",
+      "ModifiedDate": "2026-07-08T19:42:58.0454143-04:00",
+      "Elements": [
+        {
+          "Id": "094f2a21-276b-4bbc-976e-5bfd69ddcc07",
+          "TopicId": "98a461a2-7045-4ab4-b481-3b7d048bf359",
+          "Title": "Accessing Batch Actions in the Course Manager",
+          "BodyText": "Batch Actions are initiated from within the Course Manager, the central hub for managing your course structure and content generation.",
+          "Notes": "Look for the Batch Actions option in the course-level menu or toolbar, distinct from individual module-level controls.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:43:52.765649-04:00",
+          "ModifiedDate": "2026-07-08T19:43:52.765649-04:00",
+          "Items": [
+            {
+              "Id": "438c2f33-55b5-4750-b710-63bc0567f062",
+              "Text": "Navigate to the Course Manager to find the Batch Actions feature at the course level, not the individual module level.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "5b371524-a57d-4e2a-94ec-06ef3ac422f0",
+              "Text": "Batch Actions are designed to operate across multiple modules simultaneously, so they are accessible from a course-wide view.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "70d394c2-c030-42a2-8550-efb8e32b0424",
+              "Text": "Ensure your course has at least one module with generated topics before initiating a batch run.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "dc9a6a3a-4d19-4208-bcec-8e8bb16c8d3e",
+          "TopicId": "98a461a2-7045-4ab4-b481-3b7d048bf359",
+          "Title": "Selecting Which Modules to Include",
+          "BodyText": "Before running a batch action, you must choose which specific modules will be included in the run, giving you precise control over scope.",
+          "Notes": "You may want to exclude modules that already have generated content or are not yet ready for content creation.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:43:52.765649-04:00",
+          "ModifiedDate": "2026-07-08T19:43:52.765649-04:00",
+          "Items": [
+            {
+              "Id": "ad78c138-f782-457c-a7b3-588b0e9ebe11",
+              "Text": "Use the module selection interface to check or uncheck individual modules you want to include or exclude from the batch run.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3a463412-687f-449d-8adb-d763d03ded51",
+              "Text": "You can typically select all modules at once using a \u0027Select All\u0027 option, then deselect any exceptions.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1799a30e-07ef-4c73-9ff5-ad11253cc867",
+              "Text": "Carefully review your selection before proceeding, as the batch action will generate content for every checked module.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "aefcaf04-2d43-488f-8ca2-8bc99f2c87e9",
+          "TopicId": "98a461a2-7045-4ab4-b481-3b7d048bf359",
+          "Title": "Choosing the Content Type to Generate",
+          "BodyText": "A key configuration step is specifying what type of content the batch action will produce across all selected modules.",
+          "Notes": "Each content type serves a different instructional purpose, so choose the one that aligns with your current course-building goal.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:43:52.765649-04:00",
+          "ModifiedDate": "2026-07-08T19:43:52.765649-04:00",
+          "Items": [
+            {
+              "Id": "5000289f-e7bb-479b-8cf8-1bf198d5e393",
+              "Text": "Choose the batch action you need — Generate Module Topics and Outcomes, Generate Quizzes, Generate Presentations, or Generate Text documents.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "9a03dbb8-5459-4b05-bd1e-92e0bb02d455",
+              "Text": "The chosen content type will be generated consistently across all selected modules in the same batch run.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "381bd528-cf9b-45ba-a9b7-8de4b1d813dd",
+              "Text": "Each batch action is a separate command, so you run the one you need and choose which modules it applies to.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a54db86e-7194-4c37-a2c0-ea58a0ce00ba",
+          "TopicId": "98a461a2-7045-4ab4-b481-3b7d048bf359",
+          "Title": "Reviewing and Configuring Batch Settings",
+          "BodyText": "Beyond selecting modules and content type, additional batch settings allow you to fine-tune how content is generated across the run.",
+          "Notes": "Taking time to configure settings carefully before starting helps avoid the need to stop and restart a batch run mid-way.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:43:52.765649-04:00",
+          "ModifiedDate": "2026-07-08T19:43:52.765649-04:00",
+          "Items": [
+            {
+              "Id": "1180ec1f-4110-4cc1-84d6-691e93891bd9",
+              "Text": "Review the options for the chosen action: quizzes use question counts and types (with optional hints and feedback), presentations use audience, tone, and slide count, and text uses format and theme.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e6591d3f-d3d5-4a50-956d-dcc85f99f485",
+              "Text": "Settings configured at the batch level will be applied uniformly to all selected modules unless overridden individually.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "200d94f0-f36e-46a5-bb93-cf0766bb27b3",
+              "Text": "Confirm that your course-level details and module titles are accurate, as the AI uses this context to generate relevant content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a527455f-b403-4819-83a9-20c5ff2c669f",
+          "TopicId": "98a461a2-7045-4ab4-b481-3b7d048bf359",
+          "Title": "Confirming Your Selections Before Initiating",
+          "BodyText": "A final review step before launching the batch run ensures all modules, content types, and settings are correctly configured.",
+          "Notes": "This confirmation step is important because once a batch run begins, changes to the configuration require stopping the run first.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:43:52.765649-04:00",
+          "ModifiedDate": "2026-07-08T19:43:52.765649-04:00",
+          "Items": [
+            {
+              "Id": "7bba2dbc-6b47-4e94-bdbf-c6f80363646c",
+              "Text": "Double-check the list of selected modules to confirm no unintended modules are included or excluded.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "12df9286-48fd-4a1d-8448-c896367bb864",
+              "Text": "Verify the chosen content type matches your current instructional objective for this batch.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "070c9bf2-9b4c-4dfa-bc6c-52bf31683077",
+              "Text": "Once satisfied with all configurations, use the designated start or run button to initiate the batch action.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "8a64131e-1bdb-47d8-8b43-1c803af0bbb1",
+      "Title": "Monitoring Live Batch Progress",
+      "Summary": "Describes how to read and interpret the live progress indicators displayed during an active batch run to track generation status across modules.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:42:58.0454143-04:00",
+      "ModifiedDate": "2026-07-08T19:42:58.0454143-04:00",
+      "Elements": [
+        {
+          "Id": "ff6b8bc2-3ab9-4274-bbbe-f3dd9f414835",
+          "TopicId": "8a64131e-1bdb-47d8-8b43-1c803af0bbb1",
+          "Title": "The Live Progress Panel",
+          "BodyText": "When a batch run is active, a live progress panel appears on screen to give real-time visibility into the generation process across all selected modules.",
+          "Notes": "The panel updates automatically without requiring a page refresh, so instructors can watch status changes as they happen.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:44:14.3826551-04:00",
+          "ModifiedDate": "2026-07-08T19:44:14.3826551-04:00",
+          "Items": [
+            {
+              "Id": "10a91504-fe5b-4203-8779-4c748a213020",
+              "Text": "The progress panel is displayed prominently in the Course Manager interface as soon as the batch run begins.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "51f4b658-86c9-4dbe-aa2a-1a1354c1a9ea",
+              "Text": "It consolidates the status of every selected module into a single, readable view so nothing is hidden from the instructor.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "fa2b37e9-7a22-42da-ad6a-9c9b584368ba",
+              "Text": "No manual refresh is needed; the panel reflects the current state of the batch in real time.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "3bee8fc6-9856-4cc5-be87-66c86bc3e4ac",
+          "TopicId": "8a64131e-1bdb-47d8-8b43-1c803af0bbb1",
+          "Title": "Per-Module Status Indicators",
+          "BodyText": "Each module included in the batch displays its own individual status indicator, allowing instructors to see exactly where generation stands for every module at a glance.",
+          "Notes": "As each module finishes, it adds a result row showing whether its content was generated, skipped, or failed, so you can distinguish completed modules from those still to come.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:44:14.3826551-04:00",
+          "ModifiedDate": "2026-07-08T19:44:14.3826551-04:00",
+          "Items": [
+            {
+              "Id": "17686f7b-7d42-4530-b84b-13fa47f2a7df",
+              "Text": "Within a module, the status line reports progress such as Topic 3 of 7 as each topic is generated, so long-running modules still show movement.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b8184123-2267-4d62-bd1d-1283b78e3df6",
+              "Text": "An in-progress indicator signals that content is actively being generated for that module at that moment.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "0df991ec-d3b7-467e-b7fb-94ae8a789236",
+              "Text": "A completed indicator confirms that the module\u0027s content has been successfully generated and saved.",
+              "SortOrder": 2
+            },
+            {
+              "Id": "51c76bb6-683a-4931-9d34-5f37fba1fddb",
+              "Text": "A failed or error indicator flags any module where generation did not complete successfully, allowing targeted follow-up.",
+              "SortOrder": 3
+            }
+          ]
+        },
+        {
+          "Id": "cf9420cb-c77b-4cdc-8866-fd15328309b2",
+          "TopicId": "8a64131e-1bdb-47d8-8b43-1c803af0bbb1",
+          "Title": "Overall Batch Completion Counter",
+          "BodyText": "In addition to individual module indicators, the progress panel displays an overall completion counter that summarizes how many modules have finished out of the total selected.",
+          "Notes": "For example, a counter reading \u00277 of 12 completed\u0027 gives a quick sense of how far along the batch run is without requiring the instructor to manually tally individual statuses.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:44:14.3826551-04:00",
+          "ModifiedDate": "2026-07-08T19:44:14.3826551-04:00",
+          "Items": [
+            {
+              "Id": "5fcefdcd-03a7-4b1a-8c85-4786374bee6d",
+              "Text": "The counter shows the number of modules completed alongside the total number of modules included in the batch.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "a94e320e-534e-4060-8733-a3d6ca0b05a4",
+              "Text": "This summary metric helps instructors estimate how much time remains before the entire batch finishes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8c3d1461-e786-45a2-a56b-97d3747f7855",
+              "Text": "The counter updates incrementally each time an individual module reaches a completed state.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b67240d4-9da2-484d-9ecc-8e78d46868d2",
+          "TopicId": "8a64131e-1bdb-47d8-8b43-1c803af0bbb1",
+          "Title": "Reading Generation Order and Queue Position",
+          "BodyText": "Batch runs process modules sequentially or in a defined order, and the progress panel reflects this queue so instructors understand which module is being worked on next.",
+          "Notes": "Understanding queue position helps instructors anticipate when specific modules will be processed, which is useful if they need to review output shortly after a particular module completes.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:44:14.3826551-04:00",
+          "ModifiedDate": "2026-07-08T19:44:14.3826551-04:00",
+          "Items": [
+            {
+              "Id": "6cc46436-037d-466a-805b-b31cd61a9cf6",
+              "Text": "Modules are processed in a predictable order based on the selection made before the batch was launched.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "3a55d689-23cb-4ce8-9dc4-a0bb6b81b7eb",
+              "Text": "The panel visually distinguishes the currently active module from those still waiting in the queue.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "cf639eb5-4351-4503-83c7-300a3214b838",
+              "Text": "Instructors can use queue position to plan when to check results for any module they are particularly interested in.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "e611ddf2-b707-440b-8e06-b17dc954d5f6",
+          "TopicId": "8a64131e-1bdb-47d8-8b43-1c803af0bbb1",
+          "Title": "Interpreting Error or Warning Signals",
+          "BodyText": "The progress panel surfaces errors or warnings for individual modules without stopping the entire batch, ensuring instructors can identify issues while other modules continue generating.",
+          "Notes": "Errors might occur due to missing source content, connectivity interruptions, or configuration gaps in a specific module.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:44:14.3826551-04:00",
+          "ModifiedDate": "2026-07-08T19:44:14.3826551-04:00",
+          "Items": [
+            {
+              "Id": "3a33eda3-d443-481d-8cdd-a6c9439f56ba",
+              "Text": "An error signal on one module does not automatically halt the rest of the batch run; other modules continue processing.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "77857efc-de11-47da-84e4-dafa60198558",
+              "Text": "Warning messages may provide brief detail about why a particular module\u0027s generation failed or produced incomplete output.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "450880e4-ab59-4e08-8582-2aecf7a1ba32",
+              "Text": "Instructors should note which modules show errors so they can take corrective action after the batch completes.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a33f2900-f534-46dc-bf2c-4b3ac84c4c9a",
+          "TopicId": "8a64131e-1bdb-47d8-8b43-1c803af0bbb1",
+          "Title": "Tracking Completion to Know When the Batch Has Finished",
+          "BodyText": "The progress panel provides a clear final state indicator so instructors know definitively when the entire batch run has concluded and all results are ready to review.",
+          "Notes": "A completed batch state is distinct from individual module completion; it confirms that no modules remain in a queued or in-progress state.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:44:14.3826551-04:00",
+          "ModifiedDate": "2026-07-08T19:44:14.3826551-04:00",
+          "Items": [
+            {
+              "Id": "8260de75-f703-4170-aca5-9ac313075aff",
+              "Text": "When every module has reached either a completed or error state, the overall batch is marked as finished.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "18f790ec-e224-4405-9ed6-d71b0bbba8f8",
+              "Text": "A concluding status message or visual change in the panel signals that the run is done and no further generation is occurring.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "78e45ca1-ff18-4994-9246-f177a12de8c9",
+              "Text": "At this point, instructors can safely navigate away from the panel and begin reviewing the generated content in each module.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "09d308a7-8c35-4e8a-ae1f-6bc2b3c48dcf",
+      "Title": "Stopping a Batch Run Safely",
+      "Summary": "Covers how to halt a batch run mid-process while ensuring that all content already generated in completed modules is preserved and not lost.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:42:58.0454143-04:00",
+      "ModifiedDate": "2026-07-08T19:42:58.0454143-04:00",
+      "Elements": [
+        {
+          "Id": "696223c1-26a8-4951-b0fd-c0bac89d46e7",
+          "TopicId": "09d308a7-8c35-4e8a-ae1f-6bc2b3c48dcf",
+          "Title": "Understanding the Stop Function",
+          "BodyText": "The Stop function allows you to interrupt a batch run at any point during processing without losing the work that has already been completed.",
+          "Notes": "This is particularly useful when you notice an error in settings mid-run, or when you need to reclaim system resources urgently.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:44:33.1893528-04:00",
+          "ModifiedDate": "2026-07-08T19:44:33.1893528-04:00",
+          "Items": [
+            {
+              "Id": "ce7e9185-ba60-4917-aac9-979c26bd0ecb",
+              "Text": "A dedicated Stop button is available in the batch progress interface and remains accessible throughout the entire run.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "c50b8903-fd42-46a9-8e54-2538a4ac75b4",
+              "Text": "Triggering the Stop function does not undo or delete content that has already been generated in completed modules.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ac4b1b54-4cd9-416e-92da-1275a199a821",
+              "Text": "The stop action targets only the modules that have not yet been processed at the time the command is issued.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b139bc0f-977f-438f-8998-c399f13519d7",
+          "TopicId": "09d308a7-8c35-4e8a-ae1f-6bc2b3c48dcf",
+          "Title": "When to Stop a Batch Run",
+          "BodyText": "Knowing the right moment to stop a batch run helps you minimize wasted processing and protect the quality of your generated content.",
+          "Notes": "Common scenarios include discovering a misconfigured content type selection, realizing the wrong modules were included, or encountering unexpected system load.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:44:33.1893528-04:00",
+          "ModifiedDate": "2026-07-08T19:44:33.1893528-04:00",
+          "Items": [
+            {
+              "Id": "99bafc43-1f72-4671-b1ea-6b6eddddc1e9",
+              "Text": "Stop the run as soon as you identify an error in your batch configuration to prevent the error from propagating to additional modules.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "0004b037-d2d1-4639-bedb-371063c3dc7a",
+              "Text": "If a module produces unexpected output, stopping early gives you the opportunity to review settings before more content is generated.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a683e22d-7cff-49dc-ab59-311ca594ed2f",
+              "Text": "Monitoring the live progress indicator helps you decide quickly whether continuing the run is appropriate.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "ddbe74f1-8df0-4831-8687-a0dea7ca2719",
+          "TopicId": "09d308a7-8c35-4e8a-ae1f-6bc2b3c48dcf",
+          "Title": "How Completed Modules Are Preserved",
+          "BodyText": "Any module that has fully finished processing before the stop command is issued retains all of its generated content automatically.",
+          "Notes": "Preservation is automatic and requires no manual save action from the instructor; the system commits completed module output as each module finishes.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:44:33.1893528-04:00",
+          "ModifiedDate": "2026-07-08T19:44:33.1893528-04:00",
+          "Items": [
+            {
+              "Id": "9ff5f8ef-80c9-4b3c-b1f7-80e3391c264a",
+              "Text": "Content is saved on a module-by-module basis, meaning each completed module is secured independently of the modules that follow.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "cbec058d-69a6-485c-a022-ccb61501bf99",
+              "Text": "Stopping the run does not roll back or erase content in modules that had already reached a completed state.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9831a369-7eaa-40ca-bfb8-1bdcd46f841d",
+              "Text": "You can review and use the preserved content immediately after stopping, without waiting for any additional save process.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "9361e8a7-fc65-4322-af70-e87e4ec2879e",
+          "TopicId": "09d308a7-8c35-4e8a-ae1f-6bc2b3c48dcf",
+          "Title": "What Happens to In-Progress Modules",
+          "BodyText": "A module that is actively being processed at the moment you stop the run may not produce complete or usable content.",
+          "Notes": "The behavior of a partially processed module can vary; it is best practice to verify the state of the last active module after stopping.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:44:33.1893528-04:00",
+          "ModifiedDate": "2026-07-08T19:44:33.1893528-04:00",
+          "Items": [
+            {
+              "Id": "4e758e47-150e-414c-9a69-a1c47f554526",
+              "Text": "If a module is mid-generation when the stop command is received, its output may be incomplete or absent.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f15a34ec-f874-45ad-b7b4-a365150aedf3",
+              "Text": "Partially generated content should be reviewed carefully before use, as it may not meet the quality or completeness of fully processed modules.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c718ef68-cbe1-45fc-a15a-1e56321702b7",
+              "Text": "You can re-include an incomplete module in a new, targeted batch run to regenerate its content cleanly.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "38b5f4e7-6afb-4d41-94e7-ddfaf303968d",
+          "TopicId": "09d308a7-8c35-4e8a-ae1f-6bc2b3c48dcf",
+          "Title": "Resuming or Rerunning After a Stop",
+          "BodyText": "After safely stopping a batch run, you have the option to launch a new batch run targeting only the modules that were not yet completed.",
+          "Notes": "Selectively rerunning only the unfinished modules saves time and avoids overwriting content that was already successfully generated.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:44:33.1893528-04:00",
+          "ModifiedDate": "2026-07-08T19:44:33.1893528-04:00",
+          "Items": [
+            {
+              "Id": "5b341301-f55b-45c6-afa3-fd7c1adc1896",
+              "Text": "Review the batch progress log to identify exactly which modules were completed, which was interrupted, and which were not yet started.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "ae61ba8c-1c93-4654-8958-3290d9cad671",
+              "Text": "When setting up the follow-up run, deselect all modules that already contain preserved, completed content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "16aa0884-76a6-41a7-ac30-fc490396930f",
+              "Text": "Correct any configuration errors that prompted the stop before initiating the new run to ensure consistent output.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 27
+}

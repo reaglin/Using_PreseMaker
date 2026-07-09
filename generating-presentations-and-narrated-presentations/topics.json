@@ -1,0 +1,988 @@
+{
+  "ModuleFolderName": "Generating_Presentations_and",
+  "CourseName": "Using PreseMaker",
+  "GeneratedDate": "2026-07-08T19:26:26.0213337-04:00",
+  "ModifiedDate": "2026-07-08T19:28:29.6908815-04:00",
+  "Outcomes": [],
+  "Topics": [
+    {
+      "Id": "e883c570-3976-46cd-a099-e11e4847efe9",
+      "Title": "Introduction to AI-Generated Presentations",
+      "Summary": "Overview of how the Module Editor uses AI to automatically structure PowerPoint slide decks from module topics. Learners are introduced to the presentation generation feature and its purpose within the course creation workflow.",
+      "SortOrder": 0,
+      "CreatedDate": "2026-07-08T19:26:26.0213337-04:00",
+      "ModifiedDate": "2026-07-08T19:26:26.0213337-04:00",
+      "Elements": [
+        {
+          "Id": "8d7e1790-d342-40d6-82e5-e63afcc29d0b",
+          "TopicId": "e883c570-3976-46cd-a099-e11e4847efe9",
+          "Title": "What Is an AI-Generated Presentation?",
+          "BodyText": "An AI-generated presentation is a PowerPoint slide deck automatically structured by artificial intelligence based on the topics within a module.",
+          "Notes": "Rather than building slides manually, the system analyzes the module\u0027s content and organizes it into a logical slide structure on behalf of the course creator.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:26:43.2905852-04:00",
+          "ModifiedDate": "2026-07-08T19:26:43.2905852-04:00",
+          "Items": [
+            {
+              "Id": "4150e49e-b99a-42b2-81cc-fe04142a5987",
+              "Text": "The AI reads the module\u0027s topics and determines how to distribute content across individual slides.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "8fbea9ea-b3ee-4984-b8ce-3fa76bafbd30",
+              "Text": "Slide titles, layout, and content groupings are all produced automatically without manual authoring.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8e03bf8b-eb62-46e5-b07e-0e4d30bc104a",
+              "Text": "The output is a standard PowerPoint file that can be used, edited, or enhanced further.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b94c9565-6783-4aea-949a-a92bc826f7bc",
+          "TopicId": "e883c570-3976-46cd-a099-e11e4847efe9",
+          "Title": "Where the Feature Lives: The Module Editor",
+          "BodyText": "The presentation generation feature is accessed directly within the Module Editor, the central workspace for building and managing course modules.",
+          "Notes": "Locating the feature inside the Module Editor means learners do not need to switch to an external tool; the entire process stays within the course creation environment.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:26:43.2905852-04:00",
+          "ModifiedDate": "2026-07-08T19:26:43.2905852-04:00",
+          "Items": [
+            {
+              "Id": "a4ec65ab-03d5-4805-9891-3b536f4d702f",
+              "Text": "The Module Editor is the primary interface where topics are created and organized before a presentation is generated.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4c368a52-f21d-4bce-bc0a-e2df17b939d3",
+              "Text": "The presentation generation option is available once module topics have been defined and saved.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7de42842-665b-46fd-a936-f6179435397f",
+              "Text": "Keeping the feature inside the editor ensures the AI has direct access to the module\u0027s topic structure and content.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "31389b29-4034-4b81-b28d-a99417766e14",
+          "TopicId": "e883c570-3976-46cd-a099-e11e4847efe9",
+          "Title": "How Module Topics Drive the Slide Deck",
+          "BodyText": "The AI uses the module\u0027s individual topics as the foundational input for determining the structure and content of the generated slide deck.",
+          "Notes": "Each topic may correspond to one or more slides depending on the depth and volume of its content, ensuring the deck mirrors the module\u0027s instructional flow.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:26:43.2905852-04:00",
+          "ModifiedDate": "2026-07-08T19:26:43.2905852-04:00",
+          "Items": [
+            {
+              "Id": "2fb1b41f-d4ed-40b4-8d9e-5472a4446883",
+              "Text": "Topics serve as the primary source of information the AI organizes into slide content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6d1a77de-1daf-4a1d-8dc8-94cbbb7e4a31",
+              "Text": "The sequence of topics in the module is reflected in the order of slides within the generated deck.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "79be2c00-0d28-46e6-8bb9-375a674d8eb5",
+              "Text": "Well-defined topics with clear summaries give the AI more material to produce accurate and relevant slides.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "f4aab0e4-6507-41b4-8aa7-a743b118436b",
+          "TopicId": "e883c570-3976-46cd-a099-e11e4847efe9",
+          "Title": "Purpose Within the Course Creation Workflow",
+          "BodyText": "AI-generated presentations are designed to accelerate the course development process by automating a time-intensive step in instructional design.",
+          "Notes": "This feature is particularly valuable when a course creator needs to produce presentation materials that are consistent with the module\u0027s learning objectives without building slides from scratch.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:26:43.2905852-04:00",
+          "ModifiedDate": "2026-07-08T19:26:43.2905852-04:00",
+          "Items": [
+            {
+              "Id": "381cbd87-341a-49ba-81fd-4d85da9eb98a",
+              "Text": "The feature reduces the time and effort required to translate written module content into a visual presentation format.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "dd32b3a1-49ac-441e-af8c-795784756201",
+              "Text": "It ensures alignment between the module\u0027s instructional topics and the slide deck\u0027s structure.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "abd512fd-f405-4558-be2d-9a1df8731d3a",
+              "Text": "Course creators can use the generated presentation as a finished asset or as a starting point for further customization.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "522c3986-4487-4763-8891-243ac3006fc1",
+          "TopicId": "e883c570-3976-46cd-a099-e11e4847efe9",
+          "Title": "Overview of the Two Presentation Modes",
+          "BodyText": "The Module Editor offers two presentation generation options: a standard AI-structured slide deck and a narrated presentation with embedded audio.",
+          "Notes": "Understanding that two modes exist helps learners recognize which option fits their delivery needs before they begin the generation process.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:26:43.2905852-04:00",
+          "ModifiedDate": "2026-07-08T19:26:43.2905852-04:00",
+          "Items": [
+            {
+              "Id": "7cc69f5c-c021-43ae-85ac-673192652441",
+              "Text": "The standard mode produces a PowerPoint slide deck structured by the AI from the module\u0027s topics.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4ba3db27-e5e9-4f6b-9f02-ff89a1fa78e7",
+              "Text": "The narrated mode adds per-slide speaker notes, converts those notes to spoken audio using text-to-speech, and embeds the audio into the slides with timing.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6c791a03-3cb0-4b27-93ba-0c490c7f2819",
+              "Text": "Both modes begin with the same AI-driven topic-to-slide structuring process, making the standard presentation the foundation for narrated output as well.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "327a6c2c-6b35-476b-8c04-7a15400bb43a",
+      "Title": "Generating a PowerPoint Slide Deck from Module Topics",
+      "Summary": "Step-by-step walkthrough of initiating and completing the AI-driven slide deck generation process within the Module Editor. Covers how module topics are mapped and transformed into organized PowerPoint slides.",
+      "SortOrder": 1,
+      "CreatedDate": "2026-07-08T19:26:26.0213337-04:00",
+      "ModifiedDate": "2026-07-08T19:26:26.0213337-04:00",
+      "Elements": [
+        {
+          "Id": "1eeb1dc2-535d-4e91-98b0-7cd651793a21",
+          "TopicId": "327a6c2c-6b35-476b-8c04-7a15400bb43a",
+          "Title": "Accessing the Slide Deck Generator in the Module Editor",
+          "BodyText": "The slide deck generation process begins inside the Module Editor, where the AI-driven tool is available once your module topics are defined.",
+          "Notes": "Ensure all module topics are saved and organized before initiating generation, as the AI uses these topics as the foundation for slide content.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:27:01.0662816-04:00",
+          "ModifiedDate": "2026-07-08T19:27:01.0662816-04:00",
+          "Items": [
+            {
+              "Id": "d5d7fb09-65d9-472c-8c04-f742345f3b47",
+              "Text": "Navigate to the Module Editor and confirm that all desired topics are created and properly ordered.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "4ee49384-5661-40ba-a7e2-f9628acd43fd",
+              "Text": "Locate the presentation generation option within the Module Editor interface to begin the process.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a00b7763-2f38-4806-bd1a-ace3edb1e088",
+              "Text": "The tool becomes active only when at least one module topic exists, so content preparation is a prerequisite.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "7b6ad4c6-8a42-4059-8086-e2bc878e375f",
+          "TopicId": "327a6c2c-6b35-476b-8c04-7a15400bb43a",
+          "Title": "How Module Topics Are Mapped to Slides",
+          "BodyText": "Each module topic is analyzed by the AI and transformed into one or more corresponding PowerPoint slides, preserving the logical structure of the module.",
+          "Notes": "The mapping process ensures that the hierarchy and sequence of topics in the module are reflected in the resulting slide deck, maintaining instructional flow.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:27:01.0662816-04:00",
+          "ModifiedDate": "2026-07-08T19:27:01.0662816-04:00",
+          "Items": [
+            {
+              "Id": "a7716ca5-6b16-4a8b-838d-d7ade5171053",
+              "Text": "Each topic in the module is treated as a primary unit, typically generating at least one dedicated slide per topic.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "8d45b71b-0319-45d8-9f4a-1dffb35c6d76",
+              "Text": "The AI extracts key concepts, headings, and supporting details from each topic to populate slide titles and body content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "7b742318-0329-4d2f-9b28-7a59e9e5e463",
+              "Text": "The resulting slide order mirrors the topic order established in the Module Editor.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "b9b12068-6e42-4e4a-9ed4-6250e6ae8d1a",
+          "TopicId": "327a6c2c-6b35-476b-8c04-7a15400bb43a",
+          "Title": "Initiating the AI-Driven Generation Process",
+          "BodyText": "Once the module topics are ready, the learner triggers the AI generation process, which automatically structures and populates the slide deck.",
+          "Notes": "The generation process runs automatically after being triggered, requiring no manual slide-by-slide input from the user during creation.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:27:01.0662816-04:00",
+          "ModifiedDate": "2026-07-08T19:27:01.0662816-04:00",
+          "Items": [
+            {
+              "Id": "f8b8a3bc-ad39-4df4-8e90-db5cb33413be",
+              "Text": "Select the option to generate a PowerPoint slide deck, which prompts the AI to begin processing all module topics.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "004aefd2-0d01-47d2-9832-3d6742b08263",
+              "Text": "The AI organizes content into slide layouts, applying titles, bullet points, and structured formatting based on topic content.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "c06f26ac-be25-48ad-93dc-f9b0dd51c0af",
+              "Text": "Generation time may vary depending on the number of topics and the volume of content within the module.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "ea29c838-e22c-4ea5-aba4-15356c1cb83f",
+          "TopicId": "327a6c2c-6b35-476b-8c04-7a15400bb43a",
+          "Title": "Reviewing the Organized Slide Structure",
+          "BodyText": "After generation completes, the slide deck is presented in an organized format that reflects the module\u0027s instructional design.",
+          "Notes": "Reviewing the output at this stage allows learners to verify that all topics are represented and that the content hierarchy is accurate before any further steps.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:27:01.0662816-04:00",
+          "ModifiedDate": "2026-07-08T19:27:01.0662816-04:00",
+          "Items": [
+            {
+              "Id": "8aa44b14-2654-4b3f-ac44-775cd44a4d64",
+              "Text": "Each slide is labeled with a title derived directly from the corresponding module topic.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "886ba503-a4d3-4e14-88f6-c6ad5d41f074",
+              "Text": "Body content on each slide is drawn from the topic\u0027s key points, condensed into concise, presentation-appropriate language.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2a35430a-8bb1-484d-9932-16a6aefcdec0",
+              "Text": "Slides are grouped and sequenced to support a logical instructional flow from start to finish.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "6aa52315-6228-4801-be3e-ccc3cbac4bcd",
+          "TopicId": "327a6c2c-6b35-476b-8c04-7a15400bb43a",
+          "Title": "Completing and Exporting the PowerPoint Slide Deck",
+          "BodyText": "The final step in the process involves completing the generation and exporting the finished slide deck as a PowerPoint file.",
+          "Notes": "The exported file is formatted as a standard .pptx file, making it compatible with Microsoft PowerPoint and other presentation tools for further editing if needed.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:27:01.0662816-04:00",
+          "ModifiedDate": "2026-07-08T19:27:01.0662816-04:00",
+          "Items": [
+            {
+              "Id": "d007a348-7fda-41dc-a13b-6361237e3ae9",
+              "Text": "Once the AI has finished generating slides, the completed deck is made available for download or export.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "1b65d1ff-908d-4a93-8c44-896f85e67242",
+              "Text": "The exported PowerPoint file retains all AI-structured content, including slide titles, body text, and layout formatting.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8820f0b5-e0cf-487f-b412-245c003c6e1c",
+              "Text": "Users can open the exported file in any compatible presentation application to make manual refinements as needed.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "c484c0bf-3e67-4dc0-9c34-abe0ac8b365e",
+      "Title": "Understanding the Narrated Presentation Option",
+      "Summary": "Introduction to the narrated presentation feature and how it differs from a standard generated presentation. Explains the end-to-end concept of combining slides, speaker notes, audio, and timing into a single cohesive output.",
+      "SortOrder": 2,
+      "CreatedDate": "2026-07-08T19:26:26.0213337-04:00",
+      "ModifiedDate": "2026-07-08T19:26:26.0213337-04:00",
+      "Elements": [
+        {
+          "Id": "ee256105-07c3-469a-aa6d-aad8dbd10995",
+          "TopicId": "c484c0bf-3e67-4dc0-9c34-abe0ac8b365e",
+          "Title": "What Is a Narrated Presentation?",
+          "BodyText": "A narrated presentation is an enhanced version of a standard generated slide deck that combines visual slides with spoken audio and precise timing.",
+          "Notes": "Think of it as the difference between handing someone a slide deck to read on their own versus delivering a guided, self-running presentation they can watch and listen to.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:27:22.1644572-04:00",
+          "ModifiedDate": "2026-07-08T19:27:22.1644572-04:00",
+          "Items": [
+            {
+              "Id": "d5f67947-56e0-4cca-bd11-aac017f1cbab",
+              "Text": "A standard generated presentation produces slides and speaker notes as static, readable content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "85f43542-e840-4fcd-b7d0-c16f08ea7262",
+              "Text": "A narrated presentation goes further by converting those speaker notes into spoken audio that plays automatically with each slide.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1e93ca32-34c1-4f55-a11a-875c7f555c64",
+              "Text": "The result is a cohesive, self-contained learning experience that does not require a live presenter.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "8c72ab99-ecac-43ef-8a96-b8feb329606f",
+          "TopicId": "c484c0bf-3e67-4dc0-9c34-abe0ac8b365e",
+          "Title": "The Role of Speaker Notes in Narration",
+          "BodyText": "Speaker notes serve as the script for the narrated presentation, providing the text that will be converted into spoken audio for each slide.",
+          "Notes": "Because the speaker notes become the literal narration script, their clarity and completeness directly determine the quality of the final audio output.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:27:22.1644572-04:00",
+          "ModifiedDate": "2026-07-08T19:27:22.1644572-04:00",
+          "Items": [
+            {
+              "Id": "e015a25d-ece4-4320-964d-99c1b958cbc4",
+              "Text": "Each slide receives its own set of speaker notes written to correspond with the slide\u0027s visual content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "06130f0e-ed95-4369-9a37-4e0577537f5d",
+              "Text": "These notes are authored on a per-slide basis, ensuring the narration is contextually matched to what the learner sees.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5dfd6d43-a099-44cc-a883-c8e48fa16030",
+              "Text": "Well-structured speaker notes produce natural-sounding narration that guides the learner through the material.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "edaa0484-ce0e-4436-bc2a-c8763cb9b6b5",
+          "TopicId": "c484c0bf-3e67-4dc0-9c34-abe0ac8b365e",
+          "Title": "Text-to-Speech Conversion",
+          "BodyText": "The narrated presentation feature uses text-to-speech technology to automatically convert written speaker notes into spoken audio.",
+          "Notes": "This eliminates the need for a human voice actor or recording studio, making professional-sounding narration accessible directly within the module editor workflow.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:27:22.1644572-04:00",
+          "ModifiedDate": "2026-07-08T19:27:22.1644572-04:00",
+          "Items": [
+            {
+              "Id": "d8baaad8-e6a4-4681-9ba9-b6c604935800",
+              "Text": "Text-to-speech processes the speaker notes for each slide and generates a corresponding audio track.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "dea51aee-604d-417c-af28-b8fbf1a2863e",
+              "Text": "The conversion happens automatically as part of the narrated presentation generation process.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "80dd9c37-81e6-44dd-9e80-00af28f52641",
+              "Text": "The audio is embedded directly into the presentation file rather than stored as a separate asset.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d7eca85f-e09f-4b6b-90f6-1e33f8639197",
+          "TopicId": "c484c0bf-3e67-4dc0-9c34-abe0ac8b365e",
+          "Title": "Slide Timing and Synchronization",
+          "BodyText": "Timing is embedded into the narrated presentation so that each slide advances automatically in sync with its corresponding audio narration.",
+          "Notes": "Synchronized timing transforms a passive slide deck into an active, paced learning experience, similar to a recorded lecture or video walkthrough.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:27:22.1644572-04:00",
+          "ModifiedDate": "2026-07-08T19:27:22.1644572-04:00",
+          "Items": [
+            {
+              "Id": "b398a821-36d6-45ca-8659-45909b4f0f53",
+              "Text": "Each slide\u0027s display duration is set to match the length of its audio narration.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "94494a1f-d330-4db7-b6dd-325fc8c4b77b",
+              "Text": "Slides advance automatically when the narration for that slide finishes, creating a seamless flow.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "1462fefa-8826-44cd-9f7d-d0f2ae86cb41",
+              "Text": "This synchronization ensures learners are always viewing the relevant slide while hearing its explanation.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "411a1f06-9d5d-4483-a22e-d04a0525b154",
+          "TopicId": "c484c0bf-3e67-4dc0-9c34-abe0ac8b365e",
+          "Title": "A Single Cohesive Output",
+          "BodyText": "The narrated presentation bundles slides, speaker notes, audio tracks, and timing data into one unified output file.",
+          "Notes": "Delivering everything in a single file simplifies distribution and ensures the presentation plays consistently for any learner without requiring additional setup or separate files.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:27:22.1644572-04:00",
+          "ModifiedDate": "2026-07-08T19:27:22.1644572-04:00",
+          "Items": [
+            {
+              "Id": "47efaabc-3126-46ba-bb6d-4fcc793b80fc",
+              "Text": "All components \u2014 visuals, narration audio, and timing \u2014 are packaged together rather than kept as separate files.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "68300233-a196-447a-905e-2a838e2ba01b",
+              "Text": "Learners can open and play the presentation without needing to manage or locate additional assets.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "14a1ea3b-5659-45f2-8555-1720c0052c94",
+              "Text": "This end-to-end integration makes the narrated presentation immediately ready for deployment or sharing.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "35872ada-cbfa-49bd-8366-073525628d53",
+          "TopicId": "c484c0bf-3e67-4dc0-9c34-abe0ac8b365e",
+          "Title": "How the Narrated Option Differs from a Standard Presentation",
+          "BodyText": "While both options generate AI-structured slide decks from module topics, the narrated option adds the audio and timing layer that a standard presentation lacks.",
+          "Notes": "Choosing between the two options depends on the intended use case: standard presentations suit instructor-led or self-read contexts, while narrated presentations suit self-paced or asynchronous learning.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:27:22.1644572-04:00",
+          "ModifiedDate": "2026-07-08T19:27:22.1644572-04:00",
+          "Items": [
+            {
+              "Id": "0e4be33e-03a0-4774-92a8-1ab975ed2e04",
+              "Text": "A standard presentation delivers slides and notes for a human presenter or self-study reader to use at their own pace.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "83b830d2-8250-41c3-ab5b-18c9db22e602",
+              "Text": "A narrated presentation automates the delivery by embedding a voice and controlling the pace programmatically.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "90743d3a-f8cf-40c6-a825-167a30b15fc5",
+              "Text": "The narrated option requires the additional steps of speaker note authoring, text-to-speech conversion, and timing configuration.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "5c1d054b-c29a-4627-bd34-908b638a5f69",
+      "Title": "Writing Per-Slide Speaker Notes",
+      "Summary": "Explains how speaker notes are authored or AI-generated for each individual slide within the narrated presentation workflow. Covers best practices for effective, clear narration text that aligns with slide content.",
+      "SortOrder": 3,
+      "CreatedDate": "2026-07-08T19:26:26.0213337-04:00",
+      "ModifiedDate": "2026-07-08T19:26:26.0213337-04:00",
+      "Elements": [
+        {
+          "Id": "951feba3-79ce-4b67-a678-85d55e4e1831",
+          "TopicId": "5c1d054b-c29a-4627-bd34-908b638a5f69",
+          "Title": "Purpose of Speaker Notes in Narrated Presentations",
+          "BodyText": "Speaker notes serve as the script for the audio narration that accompanies each slide, giving learners a spoken explanation of the on-screen content.",
+          "Notes": "Unlike traditional presenter notes meant for a live speaker, these notes are directly converted to audio, so they must be written as natural, spoken language rather than bullet reminders.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:27:46.1091351-04:00",
+          "ModifiedDate": "2026-07-08T19:27:46.1091351-04:00",
+          "Items": [
+            {
+              "Id": "33cbf1ab-3b77-4f6f-b8ae-c1747ff4a984",
+              "Text": "Each slide\u0027s notes field contains the exact text that will be read aloud by the text-to-speech engine.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "f91e58e9-3290-4caa-8cf4-c83106b9e17e",
+              "Text": "Well-crafted notes ensure the audio narration complements rather than simply repeats the visual content on the slide.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "3a5ce1a3-0a67-42e9-a8bf-17f63879d56e",
+              "Text": "Notes drive the timing of the presentation, so their length directly affects how long each slide is displayed.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "e07b3569-e94d-4f49-8d86-a5aa0137b4de",
+          "TopicId": "5c1d054b-c29a-4627-bd34-908b638a5f69",
+          "Title": "AI-Generated vs. Manually Authored Notes",
+          "BodyText": "Speaker notes can either be automatically generated by the AI based on the module\u0027s topic content or written and edited manually by the course author.",
+          "Notes": "AI-generated notes provide a useful starting point, especially for authors who want to accelerate production, but manual review and editing are recommended to ensure accuracy and tone.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:27:46.1091351-04:00",
+          "ModifiedDate": "2026-07-08T19:27:46.1091351-04:00",
+          "Items": [
+            {
+              "Id": "b3a5d9b1-7d73-414b-a6ac-3190b66c0ec4",
+              "Text": "AI generation drafts notes by drawing from the existing topic content already structured in the Module Editor.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "5923f01f-6b93-473d-b82c-47bdc8628092",
+              "Text": "Authors can accept AI-generated notes as-is, refine them, or replace them entirely with custom text.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "dedde16c-6b24-41d3-9ee7-e865e62b7c4d",
+              "Text": "Manual authoring gives full control over pacing, emphasis, and instructional tone for each slide.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "941f203c-9cea-4b5f-a6c8-1aa3b9d4ac0b",
+          "TopicId": "5c1d054b-c29a-4627-bd34-908b638a5f69",
+          "Title": "Writing Notes in a Conversational, Spoken Style",
+          "BodyText": "Because notes are converted directly to speech, they should be written the way a person naturally speaks rather than in a formal written style.",
+          "Notes": "Reading the notes aloud before finalizing them is a practical way to catch awkward phrasing, overly long sentences, or punctuation that disrupts natural speech flow.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:27:46.1091351-04:00",
+          "ModifiedDate": "2026-07-08T19:27:46.1091351-04:00",
+          "Items": [
+            {
+              "Id": "011629c3-af05-4166-91e2-4adec2aa2159",
+              "Text": "Use complete sentences with natural transitions, avoiding abbreviated bullet-point language.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6c5ba53f-eaf0-486a-bbd8-be0f0faf8350",
+              "Text": "Avoid jargon, acronyms, or symbols that a text-to-speech engine may mispronounce or render awkwardly.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "bb123674-f94a-45a2-bfd7-0eff3da09695",
+              "Text": "Contractions and conversational connectors like \u0027first,\u0027 \u0027next,\u0027 and \u0027for example\u0027 help the narration sound natural and engaging.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "d93add7f-fe9e-44de-bbf4-fe6e573deba3",
+          "TopicId": "5c1d054b-c29a-4627-bd34-908b638a5f69",
+          "Title": "Aligning Notes with Slide Visual Content",
+          "BodyText": "Effective speaker notes expand on or contextualize the information shown visually on the slide rather than reading out every word already visible to the learner.",
+          "Notes": "A common best practice is to treat the slide visuals as headlines and the speaker notes as the explanatory narrative that gives those headlines meaning.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:27:46.1091351-04:00",
+          "ModifiedDate": "2026-07-08T19:27:46.1091351-04:00",
+          "Items": [
+            {
+              "Id": "b20c122c-46d5-48bc-853b-2135d2e3c73c",
+              "Text": "Avoid reading slide text verbatim; instead, add depth, examples, or explanations that reinforce the visual.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "8df985c5-1e35-480b-8267-ceb24d2a302e",
+              "Text": "Reference visual elements explicitly when helpful, such as \u0027the diagram on this slide shows\u2026\u0027 to connect audio to visuals.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "6bd21a5d-eb8c-4357-a954-38f0efb5e30a",
+              "Text": "Ensure the notes cover all key learning points for that slide so learners are not dependent on visual content alone.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "77f1881f-f4af-486f-a2e7-a986c127aa30",
+          "TopicId": "5c1d054b-c29a-4627-bd34-908b638a5f69",
+          "Title": "Controlling Length and Pacing Through Notes",
+          "BodyText": "The length of each slide\u0027s speaker notes determines how long that slide remains on screen, making note length a key tool for controlling presentation pacing.",
+          "Notes": "Slides with complex diagrams or dense information may warrant longer notes, while transitional or summary slides may need only a few sentences.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:27:46.1091351-04:00",
+          "ModifiedDate": "2026-07-08T19:27:46.1091351-04:00",
+          "Items": [
+            {
+              "Id": "fa0a7756-b82c-4456-aa56-41e8c6397a61",
+              "Text": "Aim for a note length that gives learners enough time to absorb the slide content without feeling rushed or waiting too long.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "cca33bac-9af5-455a-96b8-a6e62d59dbc8",
+              "Text": "A general guideline is to write notes that take approximately 20 to 45 seconds to narrate for a typical content slide.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "30ba35ee-15f2-49b5-b348-eadc2df6a071",
+              "Text": "Consistent note length across similar slide types helps maintain a steady, professional pacing throughout the module.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "40443d5a-9c7f-4815-bed5-b4302d682f0a",
+          "TopicId": "5c1d054b-c29a-4627-bd34-908b638a5f69",
+          "Title": "Reviewing and Refining Notes Before Audio Conversion",
+          "BodyText": "Before triggering the text-to-speech conversion, authors should review all per-slide notes to check for clarity, accuracy, and consistency across the full presentation.",
+          "Notes": "Catching errors at the notes stage is far more efficient than regenerating audio after conversion, which may require re-embedding and re-timing the slides.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:27:46.1091351-04:00",
+          "ModifiedDate": "2026-07-08T19:27:46.1091351-04:00",
+          "Items": [
+            {
+              "Id": "376aea48-046d-4646-930a-c7978d038d2b",
+              "Text": "Check that terminology is spelled correctly and consistently, as text-to-speech engines read exactly what is written.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "5c9b3dd1-66df-48e6-a0af-b433259d2b69",
+              "Text": "Verify that the narrative flows logically from one slide to the next, creating a cohesive learning experience.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "939ae496-3ac2-42d9-bde8-3172c5d87870",
+              "Text": "Confirm that each slide\u0027s notes align with the learning objective or key message that slide is intended to convey.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "2dabc479-77a6-4399-9825-2caf826880c7",
+      "Title": "Converting Speaker Notes to Spoken Audio with Text-to-Speech",
+      "Summary": "Covers the process of transforming written speaker notes into spoken audio using Google Cloud Text-to-Speech. Learners explore available voice options and how the conversion is applied across slides.",
+      "SortOrder": 4,
+      "CreatedDate": "2026-07-08T19:26:26.0213337-04:00",
+      "ModifiedDate": "2026-07-08T19:26:26.0213337-04:00",
+      "Elements": [
+        {
+          "Id": "f543c6d7-f46e-47f1-9663-270ece0d6c1e",
+          "TopicId": "2dabc479-77a6-4399-9825-2caf826880c7",
+          "Title": "What Is Text-to-Speech Conversion in This Context",
+          "BodyText": "Text-to-speech (TTS) conversion transforms the written speaker notes associated with each slide into synthesized spoken audio using Google Cloud Text-to-Speech.",
+          "Notes": "This process eliminates the need for manual voice recording, making narration faster and more consistent across a presentation.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:28:08.3492363-04:00",
+          "ModifiedDate": "2026-07-08T19:28:08.3492363-04:00",
+          "Items": [
+            {
+              "Id": "a350cef2-4057-44db-955f-b8eb73ac55a5",
+              "Text": "Speaker notes serve as the script that the TTS engine reads aloud for each corresponding slide.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "d4ea4efc-c75c-4bdb-8a9c-17b07e54aafc",
+              "Text": "The platform handles the conversion automatically once the notes are written and the narrated presentation option is selected.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "2cc17cad-8ca9-4c51-9259-06cfedb0b4e6",
+              "Text": "The result is a fully voiced narration track generated without any recording equipment or human voice talent.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "a1429bb3-6dc0-45b7-8eb8-b0a64c78d577",
+          "TopicId": "2dabc479-77a6-4399-9825-2caf826880c7",
+          "Title": "Writing Speaker Notes for TTS Compatibility",
+          "BodyText": "To achieve natural-sounding audio output, speaker notes should be written in clear, complete sentences that are optimized for speech rather than visual reading.",
+          "Notes": "Avoid bullet-point fragments or shorthand in speaker notes intended for TTS, as these can produce awkward or choppy audio output.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:28:08.3492363-04:00",
+          "ModifiedDate": "2026-07-08T19:28:08.3492363-04:00",
+          "Items": [
+            {
+              "Id": "aa58a6f3-2fe0-4f29-86f7-5c2f0488b8a6",
+              "Text": "Use full sentences with proper punctuation to guide the TTS engine\u0027s pacing and intonation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e7056657-8681-4a69-934c-e29f97b59e1c",
+              "Text": "Avoid abbreviations, symbols, or technical shorthand that the engine may mispronounce or skip.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "9340c59c-fecd-4032-ad23-9975f2dbee36",
+              "Text": "Each slide\u0027s notes should stand alone as a coherent spoken segment without relying on visual context.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "be93d9aa-a714-4eed-81cb-2e3556cc2b0b",
+          "TopicId": "2dabc479-77a6-4399-9825-2caf826880c7",
+          "Title": "Selecting a Voice from Available TTS Options",
+          "BodyText": "The platform offers a selection of TTS voice options, allowing learners to choose the voice that best fits the tone and audience of their presentation.",
+          "Notes": "Voice options may vary by language, gender, or speaking style depending on what the platform provides through its TTS engine.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:28:08.3492363-04:00",
+          "ModifiedDate": "2026-07-08T19:28:08.3492363-04:00",
+          "Items": [
+            {
+              "Id": "a6bc1923-5236-4e88-b4bb-464c73a78915",
+              "Text": "Learners can browse and preview available voices before applying one to the full presentation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "b6ea0fac-e80d-4686-8b74-ff5c6cb5aaee",
+              "Text": "Choosing a consistent voice across all slides ensures a unified and professional narration experience.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "ec3cbd8c-3690-4a37-b97a-ff59c345e9af",
+              "Text": "Consider the audience and subject matter when selecting a voice \u2014 a formal technical course may call for a different style than an onboarding module.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "1bf2ae08-7cbb-470b-b6fc-ebecf0365c70",
+          "TopicId": "2dabc479-77a6-4399-9825-2caf826880c7",
+          "Title": "Applying TTS Conversion Across All Slides",
+          "BodyText": "Once a voice is selected, the TTS conversion is applied across all slides in the presentation, processing each slide\u0027s speaker notes into its own audio segment.",
+          "Notes": "Processing all slides in a single pass ensures consistency in voice and audio quality throughout the narrated presentation.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:28:08.3492363-04:00",
+          "ModifiedDate": "2026-07-08T19:28:08.3492363-04:00",
+          "Items": [
+            {
+              "Id": "eb11f55e-ef1b-44af-8042-3a95862f47dd",
+              "Text": "Each slide receives its own individual audio track generated from its corresponding speaker notes.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "688486cf-57fb-441a-a79a-e2a33f3c133e",
+              "Text": "Slides without speaker notes will not receive a narration audio segment, so all slides intended to have narration must have notes written.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "fa349d27-83f6-4640-be30-a0121acd6dcd",
+              "Text": "The platform processes the conversion automatically, removing the need to handle audio files slide by slide.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "534f0386-609a-4cbc-b574-724895906dbd",
+          "TopicId": "2dabc479-77a6-4399-9825-2caf826880c7",
+          "Title": "How TTS Audio Is Embedded into Slides",
+          "BodyText": "After conversion, the generated audio is embedded directly into each slide, synchronizing the narration with the slide\u0027s display timing.",
+          "Notes": "Embedding audio within the slides ensures that the narration plays automatically when each slide is presented, without requiring manual audio management.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:28:08.3492363-04:00",
+          "ModifiedDate": "2026-07-08T19:28:08.3492363-04:00",
+          "Items": [
+            {
+              "Id": "2bd391e2-89ae-4399-807f-407a01564edb",
+              "Text": "The audio is linked to the individual slide it was generated from, so narration plays in sync with the correct visual content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "8c0a7417-c1b7-4d3d-ac92-7b06e4dc47db",
+              "Text": "Embedded audio supports a self-paced or automated presentation experience for the learner.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "b95adcc6-ed2c-4040-9150-65a262be1a85",
+              "Text": "Timing for each slide is informed by the length of its generated audio, ensuring the slide remains visible for the full duration of narration.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "4d710ef2-7bfe-496a-846d-4fdab70fc033",
+          "TopicId": "2dabc479-77a6-4399-9825-2caf826880c7",
+          "Title": "Reviewing and Regenerating TTS Audio",
+          "BodyText": "After initial conversion, learners can review the generated audio for each slide and regenerate narration for any slides where the speaker notes have been updated.",
+          "Notes": "Regenerating audio for individual slides avoids the need to reprocess the entire presentation when only minor edits are made.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:28:08.3492363-04:00",
+          "ModifiedDate": "2026-07-08T19:28:08.3492363-04:00",
+          "Items": [
+            {
+              "Id": "1ac92f2f-0eba-4646-8d63-8d2996f91a36",
+              "Text": "Preview each slide\u0027s audio to verify that the TTS engine has rendered the notes accurately and naturally.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e69f81d4-71ca-4f37-99e5-b66375c7f2b0",
+              "Text": "If a slide\u0027s notes are edited after initial conversion, the audio for that slide should be regenerated to reflect the changes.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "be554568-098c-4426-a258-9c891b7e3dc9",
+              "Text": "Consistent review of all slides before finalizing ensures a polished and error-free narrated presentation.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "e252c053-d47b-49f0-9f56-6c2e845cd997",
+      "Title": "Embedding Audio and Timing into Slides",
+      "Summary": "Details how the generated audio is synchronized with each slide and embedded into the final PowerPoint file. Explains how timing is set so narration plays in alignment with the corresponding slide content.",
+      "SortOrder": 5,
+      "CreatedDate": "2026-07-08T19:26:26.0213337-04:00",
+      "ModifiedDate": "2026-07-08T19:26:26.0213337-04:00",
+      "Elements": [
+        {
+          "Id": "d648ccf1-6a64-4e8d-87f3-010bf83cdcdb",
+          "TopicId": "e252c053-d47b-49f0-9f56-6c2e845cd997",
+          "Title": "How Generated Audio is Linked to Individual Slides",
+          "BodyText": "Each slide in the narrated presentation receives its own dedicated audio clip, generated from that slide\u0027s speaker notes using text-to-speech.",
+          "Notes": "This one-to-one relationship ensures that the narration heard by the viewer is always contextually matched to the visual content displayed on screen.",
+          "SortOrder": 0,
+          "CreatedDate": "2026-07-08T19:28:29.6858564-04:00",
+          "ModifiedDate": "2026-07-08T19:28:29.6858564-04:00",
+          "Items": [
+            {
+              "Id": "c10a8780-5021-420f-88fc-d96293872357",
+              "Text": "Speaker notes written for each slide serve as the script that is converted into a spoken audio file.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "81edcf00-52f2-4f44-acf5-0e021147121c",
+              "Text": "The resulting audio clip is associated exclusively with its corresponding slide rather than being a single continuous track across the deck.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "386d2cd2-4949-42a2-9410-e1c64fb23f81",
+              "Text": "This per-slide approach allows each narration segment to be managed, reviewed, or regenerated independently.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "65cdcad8-08e5-4f6e-a9d1-537ea63f59a8",
+          "TopicId": "e252c053-d47b-49f0-9f56-6c2e845cd997",
+          "Title": "Text-to-Speech Conversion Process",
+          "BodyText": "The system converts the written speaker notes for each slide into spoken audio using a text-to-speech engine before embedding begins.",
+          "Notes": "The quality and clarity of the generated audio depend on how well the speaker notes are written; complete, naturally phrased sentences tend to produce the most intelligible narration.",
+          "SortOrder": 1,
+          "CreatedDate": "2026-07-08T19:28:29.6858564-04:00",
+          "ModifiedDate": "2026-07-08T19:28:29.6858564-04:00",
+          "Items": [
+            {
+              "Id": "ee968d29-1dd9-4ac2-8923-1c7a829691e1",
+              "Text": "Speaker notes are passed through a text-to-speech process that renders them as an audio file.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "e0fb5afd-aef8-4365-8525-bdd894296920",
+              "Text": "The conversion happens automatically as part of the narrated presentation generation workflow.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "a5dce382-4a62-455f-a5e8-0cc927b899aa",
+              "Text": "Each slide\u0027s notes are processed separately, producing individual audio segments rather than one combined recording.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "eb87c684-a895-4e6e-88b6-d30353431790",
+          "TopicId": "e252c053-d47b-49f0-9f56-6c2e845cd997",
+          "Title": "Embedding Audio Directly into the PowerPoint File",
+          "BodyText": "Once generated, the audio clips are embedded inside the PowerPoint file itself, making the narration portable and self-contained.",
+          "Notes": "Embedding the audio means recipients of the file do not need access to any external system or internet connection to hear the narration when they open the presentation.",
+          "SortOrder": 2,
+          "CreatedDate": "2026-07-08T19:28:29.6858564-04:00",
+          "ModifiedDate": "2026-07-08T19:28:29.6858564-04:00",
+          "Items": [
+            {
+              "Id": "03781599-e6a7-4452-830c-fcc10733ec78",
+              "Text": "Audio is stored within the PowerPoint file structure rather than linked to an external source.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "6bef1d70-d0af-4787-8f6f-67a0faf037d5",
+              "Text": "This self-contained format ensures the narrated presentation can be distributed and played back without additional dependencies.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "8b25ce12-9e62-43d4-9e71-4c3983eb62bb",
+              "Text": "The embedding step occurs automatically during the final stage of the narrated presentation generation process.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "e3b9082b-32e4-4c48-9ef1-7effaa56dd6b",
+          "TopicId": "e252c053-d47b-49f0-9f56-6c2e845cd997",
+          "Title": "Setting Slide Timing to Match Narration Length",
+          "BodyText": "Slide timing is configured so that each slide remains visible for exactly the duration of its corresponding narration audio clip.",
+          "Notes": "Accurate timing alignment prevents slides from advancing too early, cutting off narration, or dwelling too long after the audio has finished.",
+          "SortOrder": 3,
+          "CreatedDate": "2026-07-08T19:28:29.6858564-04:00",
+          "ModifiedDate": "2026-07-08T19:28:29.6858564-04:00",
+          "Items": [
+            {
+              "Id": "ab8c1074-9d03-4c0b-a148-74d7f6880272",
+              "Text": "The duration of each generated audio clip is measured and used to set the automatic advance timing for that slide.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "2d2bb6b5-7432-442e-b267-bf5fa0a13ff1",
+              "Text": "Timing is applied on a per-slide basis, meaning slides with longer narration stay on screen longer than slides with shorter narration.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "5dd3963d-b690-4e90-8c4d-5f3000d3249e",
+              "Text": "This automatic timing setup removes the need for manual adjustment of slide durations after export.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "c68c2abd-efbd-4e87-a115-24e137b6a426",
+          "TopicId": "e252c053-d47b-49f0-9f56-6c2e845cd997",
+          "Title": "Synchronization Between Narration and Slide Content",
+          "BodyText": "Synchronization ensures that what the viewer hears aligns precisely with the slide content being displayed at that moment.",
+          "Notes": "Because speaker notes are written specifically for each slide\u0027s content, the narration naturally references and complements the visual elements on that slide.",
+          "SortOrder": 4,
+          "CreatedDate": "2026-07-08T19:28:29.6858564-04:00",
+          "ModifiedDate": "2026-07-08T19:28:29.6858564-04:00",
+          "Items": [
+            {
+              "Id": "4c55cbaa-3a2e-4cd9-906c-f8e9b25c1dd0",
+              "Text": "Audio playback begins at the moment a slide is displayed, so narration starts in sync with the visual content.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "13a90718-1d04-4ee9-aac7-71e31dd35507",
+              "Text": "The slide does not advance until the audio for that slide has completed, maintaining continuous alignment throughout the presentation.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "234e307d-009d-46bf-a143-944cfdbd70f8",
+              "Text": "This synchronized structure creates a cohesive viewing experience similar to a recorded lecture or guided walkthrough.",
+              "SortOrder": 2
+            }
+          ]
+        },
+        {
+          "Id": "493bf6e8-ea54-4a6f-ae38-cdc2fe283277",
+          "TopicId": "e252c053-d47b-49f0-9f56-6c2e845cd997",
+          "Title": "Result: A Self-Playing Narrated Presentation",
+          "BodyText": "The combination of embedded audio and automatic timing produces a finished presentation that plays through on its own without requiring a live presenter.",
+          "Notes": "This format is well suited for asynchronous learning scenarios where learners access the presentation independently at their own time and pace.",
+          "SortOrder": 5,
+          "CreatedDate": "2026-07-08T19:28:29.6858564-04:00",
+          "ModifiedDate": "2026-07-08T19:28:29.6858564-04:00",
+          "Items": [
+            {
+              "Id": "74ca5272-b44e-485b-87b6-ee588a7600b2",
+              "Text": "Viewers can open the PowerPoint file and initiate playback to experience a fully narrated, automatically advancing presentation.",
+              "SortOrder": 0
+            },
+            {
+              "Id": "aa273250-9aea-4238-9d28-64048712eae0",
+              "Text": "No external tools, plugins, or live facilitation are required to deliver the narrated content to the audience.",
+              "SortOrder": 1
+            },
+            {
+              "Id": "25190bb3-860c-4a8a-8c4b-4e02e98e4a7b",
+              "Text": "The self-playing format makes the narrated presentation suitable for sharing via email, learning management systems, or direct download.",
+              "SortOrder": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "TotalElementCount": 34
+}
