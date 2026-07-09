@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How PreseMaker Routes Tasks to Providers</title>
+  <title>The Active AI Provider Setting</title>
   <style>
 :root {
     --bg:         #ffffff;
@@ -62,72 +62,78 @@ pre { background: var(--code-bg); border: 1px solid var(--code-border); border-r
 </head><body>
 <div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Configuring AI Providers per Task and Using the Prompt Button</a></div>
   <header>
-    <h1>How PreseMaker Routes Tasks to Providers</h1>
+    <h1>The Active AI Provider Setting</h1>
   </header><main>
     <details class="slide-card" open>
-      <summary class="slide-header"><span class="slide-num">1</span><h2>How PreseMaker Routes Tasks to Providers</h2><span class="chevron">▶</span></summary>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>The Active AI Provider Setting</h2><span class="chevron">▶</span></summary>
       <div class="slide-body">
-        <p>Every time PreseMaker runs a task — generating a slide outline, writing speaker notes, creating imagery, or any other AI-driven operation — it needs to know which provider to send that task to. The mechanism it uses to make that decision is called routing. Understanding how routing works in PreseMaker is essential for getting predictable results, managing costs, and knowing exactly what to do when something goes wrong. The routing model is deliberately simple and deterministic: one task type always maps to exactly one provider, the decision is made immediately when the task is triggered, and there are no hidden layers of logic running in the background.</p>
+        <p>Every AI-powered action in PreseMaker — whether it is generating module topics, building quiz questions, drafting speaker narration, or producing any other content — is processed by a single, centrally configured provider. That provider is determined entirely by one control: the <strong>Active AI Provider</strong> dropdown located in the application's Settings area. Understanding how this setting works, what it governs, and why it is designed this way is essential before you begin any AI-assisted content creation in PreseMaker.</p>
 
-<p>At the foundation of PreseMaker's routing system is the <strong>default provider</strong>. Think of the default provider as the catch-all handler for any task type that has not been given a specific, explicit assignment. When you first configure PreseMaker and connect your AI providers, you designate one of those providers as the default. From that point on, any task that runs without a dedicated per-task assignment will be sent automatically to the default provider — no additional configuration required on your part.</p>
+<p>The <strong>Active AI Provider dropdown</strong> is the singular point of control for all AI functionality in PreseMaker. You will find it inside the Settings area of the application. When you open that dropdown and select a provider — for example, OpenAI, Anthropic, Google Gemini, or whichever options the current version surfaces — that selection immediately becomes the governing choice for every AI operation the application will perform from that moment forward. There is no secondary control, no per-feature override, and no hidden default that operates in the background independently of this dropdown. Whatever appears selected in that dropdown <em>is</em> the active provider, full stop.</p>
 
-<p>This matters for a practical reason: PreseMaker supports a wide range of task types, and it is entirely normal to configure specific assignments for only a handful of them while leaving the rest unassigned. Without a default provider, those unassigned tasks would have nowhere to go. The default provider ensures that <em>every</em> task has a valid handler, even tasks you have never thought about configuring individually. Setting a thoughtful default — typically a capable, general-purpose provider you trust for quality and reliability — means PreseMaker can operate fully even with a minimal configuration.</p>
+<p>It is worth being precise about the scope of the phrase <em>every AI task</em>. PreseMaker performs AI generation across a range of content types during a typical authoring session. Consider the variety of work the application can hand off to an AI provider:</p>
 
-<p>Beyond the default, PreseMaker allows you to configure <strong>per-task provider assignments</strong>. A per-task assignment is a direct mapping between one specific task type and one specific provider. When an assignment exists for a task type, that assignment takes complete precedence over the default provider for that task type, and only that task type. Every other task type is unaffected and continues to route however it was previously configured — either to its own specific assignment or to the default.</p>
+<ul>
+  <li>Generating module topics and subtopic outlines from a subject description</li>
+  <li>Writing detailed body content for each topic</li>
+  <li>Producing quiz questions, answer choices, and feedback text</li>
+  <li>Drafting speaker narration scripts tied to slide content</li>
+  <li>Suggesting titles, summaries, or other supplementary text</li>
+</ul>
 
-<p>Per-task assignments are managed in PreseMaker's Settings, where you will find a list of recognized task types alongside a selector for each one. Any provider you have already connected and configured will appear as an option. This setup gives you fine-grained control over how your provider resources are used. For example, you might assign a fast, low-cost provider to a high-volume task like bullet-point generation, while reserving a slower but higher-quality provider for a task like executive summary writing where output quality is the priority. The ability to optimize on a task-by-task basis — for cost, speed, or quality — is the primary reason per-task assignments exist.</p>
+<p>Every item on that list — and any other AI-driven generation the application performs — is routed to the <strong>one provider currently selected</strong> in the Active AI Provider dropdown. There is no scenario in which module topic generation travels to one provider while quiz generation travels to another. The architecture does not allow it. A single selection governs all of it simultaneously.</p>
 
-<p>To see how the default and per-task assignments work together, consider a concrete example. Suppose you have connected three providers — Provider A, Provider B, and Provider C — and made the following configuration:</p>
+<p>This point deserves its own emphasis because it is a common source of confusion for users who have experience with other platforms that allow granular, per-task AI routing. <strong>No per-task provider assignment exists in PreseMaker.</strong> There is no interface panel where you can specify "use Provider A for slide content and Provider B for assessments." There is no concept of a <em>default provider for unassigned tasks</em> that sits quietly in the background handling overflow work. The dropdown in Settings is the only configuration that matters, and it applies universally. Attempting to look for task-level routing options will not be productive — no such options are present in the current version of the application.</p>
+
+<p>The following table summarizes the relationship between the active provider setting and the tasks it affects:</p>
 
 <table>
   <thead>
     <tr>
-      <th>Task Type</th>
-      <th>Specific Assignment</th>
-      <th>Provider That Runs It</th>
+      <th>AI Task in PreseMaker</th>
+      <th>Which Provider Handles It</th>
+      <th>Can It Be Routed to a Different Provider?</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Slide outline generation</td>
-      <td>Provider B</td>
-      <td>Provider B</td>
+      <td>Module topic and subtopic generation</td>
+      <td>Active AI Provider (dropdown selection)</td>
+      <td>No — only one provider is active at a time</td>
     </tr>
     <tr>
-      <td>Speaker notes</td>
-      <td>Provider C</td>
-      <td>Provider C</td>
+      <td>Topic body content generation</td>
+      <td>Active AI Provider (dropdown selection)</td>
+      <td>No — only one provider is active at a time</td>
     </tr>
     <tr>
-      <td>Image prompt creation</td>
-      <td><em>None</em></td>
-      <td>Provider A (default)</td>
+      <td>Quiz question and answer generation</td>
+      <td>Active AI Provider (dropdown selection)</td>
+      <td>No — only one provider is active at a time</td>
     </tr>
     <tr>
-      <td>Title suggestions</td>
-      <td><em>None</em></td>
-      <td>Provider A (default)</td>
+      <td>Speaker narration drafting</td>
+      <td>Active AI Provider (dropdown selection)</td>
+      <td>No — only one provider is active at a time</td>
     </tr>
     <tr>
-      <td>Translation</td>
-      <td><em>None</em></td>
-      <td>Provider A (default)</td>
+      <td>Titles, summaries, and supplementary text</td>
+      <td>Active AI Provider (dropdown selection)</td>
+      <td>No — only one provider is active at a time</td>
     </tr>
   </tbody>
 </table>
 
-<p>In this example, Provider A is the default. Slide outline generation and speaker notes have explicit assignments to Provider B and Provider C respectively. All remaining task types — image prompt creation, title suggestions, translation, and any others not listed — fall through to Provider A automatically. The logic PreseMaker applies when any task fires is straightforward: <em>does this task type have a specific assignment? If yes, use it. If no, use the default.</em> That is the entire decision tree.</p>
+<p>The unified design of this setting carries meaningful practical benefits. Because every AI task flows through the same provider and the same API key, <strong>configuration is dramatically simplified</strong>. If generation succeeds for one task — say, a module outline is produced without error — you can be confident that the same provider and key will work for every other task you ask PreseMaker to perform. You never need to audit multiple providers to confirm they are all correctly set up. There are no gaps where some tasks might have no assigned provider and silently fail for a configuration reason rather than a content reason.</p>
 
-<p>A critical aspect of PreseMaker's routing design is that <strong>one task type maps to exactly one provider at any given time</strong>. There is no concept of shared routing, split routing, or load balancing across providers for a single task type. When PreseMaker resolves which provider to use, it performs a single, immediate lookup — it finds the assignment for the task type (or the default), and it sends the task there. There is no runtime evaluation of provider availability, no comparison of response times, and no weighing of options. The decision is made once, instantly, and executed.</p>
+<p>Troubleshooting errors also becomes more straightforward under this model. If something goes wrong during AI generation, there is only one provider's status and one API key to inspect. You do not need to trace which task was being performed at the time of failure and then determine which of several providers that task was assigned to. The answer is always the same: check the provider currently selected in the Active AI Provider dropdown and verify that its key is valid, active, and has sufficient quota.</p>
 
-<p>Related to this is the absence of any <strong>priority ranking between providers</strong>. PreseMaker has no concept of a "first choice" or "second choice" provider for a given task. You cannot configure a ranked list such as "try Provider A first, then Provider B, then Provider C." The routing system simply does not have that concept. Every routing decision is binary: either a specific assignment exists and is used, or the single default provider is used. There is no ordering, no weighting, and no preference hierarchy among your connected providers.</p>
+<p>When it comes to <strong>choosing which provider to make active</strong>, there are a few practical steps to follow. You must first obtain an API key from the provider you intend to use. Each of the major AI providers — OpenAI, Anthropic, Google, and others — issues API keys through their respective developer portals, typically after you create an account and, in most cases, set up a billing method. Once you have that key, you enter it into the appropriate field in PreseMaker's Settings area. Only after a valid key has been entered for a provider can that provider be meaningfully selected in the Active AI Provider dropdown.</p>
 
-<p>This also means there is <strong>no automatic fallback between providers</strong>. If the assigned provider for a task experiences a failure — the API returns an error, the provider is temporarily unavailable, a quota is exceeded, or any other problem occurs — PreseMaker does not silently retry the task with a different provider. Instead, PreseMaker surfaces a failure dialog, informing you that the task could not be completed. The outcome is a visible, explicit failure, not a transparent retry that might mask which provider is actually handling your work.</p>
+<p>Importantly, you do <strong>not</strong> need accounts with all available providers. PreseMaker only requires a key for the provider you plan to use. If you have an OpenAI key and you select OpenAI as your active provider, that is a complete and fully functional configuration. You are not expected to populate keys for every provider listed — only the one you intend to activate.</p>
 
-<p>The implication for users is important: resolving a provider failure always requires a deliberate action on your part. You have two paths available. First, you can address the underlying cause of the failure — for instance, checking your API key, reviewing your account quota with the provider, or waiting for the provider's service to recover — and then re-run the task. Second, if you want to continue working immediately using a different provider, you can go into Settings, update the assignment for that task type to point to a different provider, and then re-run the task. Either way, the decision about which provider handles your work remains yours, made explicitly, rather than being made quietly in the background by PreseMaker's routing logic.</p>
-
-<p>The overall design philosophy behind PreseMaker's routing model is <strong>transparency and predictability</strong>. Because routing is deterministic — a lookup with no branching beyond "specific assignment or default" — you always know which provider will handle a given task before you run it. Because there is no automatic fallback, you always know that a failure with Provider X means Provider X was the one that failed, not that the system already tried Providers Y and Z without telling you. This makes it straightforward to audit your provider usage, manage costs accurately, and troubleshoot problems without ambiguity about what happened behind the scenes.</p>
-        <div class="notes"><strong>Notes</strong>Describes the logic PreseMaker uses to select the correct provider when running a task, including the role of the default provider. Clarifies that there is no priority ranking or automatic fallback between providers.</div>
+<p>Switching the active provider at any point is simple: open the dropdown in Settings, select a different provider, and save. From that moment forward, all AI generation will use the newly selected provider — provided, again, that a valid API key for that provider has been entered. The switch is immediate; there is no restart or cache-clearing required. If you find that a particular provider produces output that better suits your content style, or if you are managing costs across different provider pricing tiers, you can change the active selection freely. Just be aware that the moment you switch, <em>all</em> subsequent generation goes to the new provider, not just certain task types.</p>
+        <div class="notes"><strong>Notes</strong>This topic explains the Active AI Provider dropdown in PreseMaker Settings, covering its universal scope across all AI tasks, the absence of per-task routing, the configuration and troubleshooting simplicity it provides, and the steps required to choose and switch providers.</div>
       </div>
     </details>
   </main>

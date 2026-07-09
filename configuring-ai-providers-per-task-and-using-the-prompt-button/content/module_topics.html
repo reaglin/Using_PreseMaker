@@ -18,51 +18,61 @@ li{margin:5px 0}
 <body>
 <div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Configuring AI Providers per Task and Using the Prompt Button</a></div>
 <h1>Configuring AI Providers per Task and Using the Prompt Button — Module Topics</h1>
-<h2>Introduction to AI Tasks in PreseMaker</h2>
-<div class="summary">Explains what AI tasks are in PreseMaker and the range of text-based generation tasks supported. Clarifies the scope of AI capabilities, including what PreseMaker does and does not generate.</div>
+<h2>Introduction to AI Providers in PreseMaker</h2>
+<div class="summary">An overview of the four AI providers supported by PreseMaker and how they are used to handle text-based generation tasks. This topic establishes the foundational context for configuring and working with AI providers.</div>
 <ul>
-<li><strong>What Are AI Tasks in PreseMaker?</strong> <span class="el-body">— AI tasks in PreseMaker are the specific generation jobs that PreseMaker sends to a configured AI provider on your behalf.</span></li>
-<li><strong>The Scope of AI Capabilities: Text-Only Generation</strong> <span class="el-body">— All AI tasks in PreseMaker are strictly text-based — every request sent to an AI provider involves generating or processing text.</span></li>
-<li><strong>Supported Text Generation Tasks</strong> <span class="el-body">— PreseMaker supports a broad range of text generation tasks covering the major content types used in e-learning modules.</span></li>
-<li><strong>AI Tasks as the Bridge Between PreseMaker and AI Providers</strong> <span class="el-body">— AI tasks serve as the structured interface through which PreseMaker communicates generation requests to the external AI providers you have set up.</span></li>
+<li><strong>What PreseMaker Uses AI Providers For</strong> <span class="el-body">— PreseMaker relies on AI providers exclusively for text-based generation tasks across the course-building workflow.</span></li>
+<li><strong>The Four Supported AI Providers</strong> <span class="el-body">— PreseMaker supports exactly four AI providers: Claude (Anthropic), Gemini (Google), GPT-4o (OpenAI), and Mistral AI.</span></li>
+<li><strong>How API Keys Are Stored and Secured</strong> <span class="el-body">— When you enter an API key into PreseMaker&#39;s Settings, the application encrypts and stores it securely on your local machine.</span></li>
+<li><strong>The Active AI Provider Setting</strong> <span class="el-body">— PreseMaker uses a single Active AI Provider setting in Settings to determine which provider handles all AI requests.</span></li>
+<li><strong>One Provider Handles Every Task — No Per-Task Routing</strong> <span class="el-body">— There is no mechanism in PreseMaker to assign different AI providers to different types of tasks — one active provider serves all tasks universally.</span></li>
 </ul>
-<h2>Assigning AI Providers to Task Types</h2>
-<div class="summary">Covers how to configure which AI provider handles each specific task type in Settings, including the use of a default provider for unassigned tasks. Explains how this flexibility supports decisions based on cost, speed, or quality.</div>
+<h2>Obtaining and Entering API Keys</h2>
+<div class="summary">How to acquire an API key from a supported AI provider and enter it in PreseMaker&#39;s Settings. This topic also covers how keys are securely stored using Windows DPAPI and what minimum key requirements exist.</div>
 <ul>
-<li><strong>Accessing Provider Assignment in Settings</strong> <span class="el-body">— PreseMaker&#39;s Settings area is where you configure which AI provider handles each specific task type.</span></li>
-<li><strong>Understanding Task Types</strong> <span class="el-body">— All AI tasks in PreseMaker are text-based, covering a defined set of content generation categories.</span></li>
-<li><strong>The Default Provider for Unassigned Tasks</strong> <span class="el-body">— PreseMaker maintains a single default provider that handles any task type you have not explicitly assigned to a specific provider.</span></li>
-<li><strong>Assigning Different Providers to Different Tasks</strong> <span class="el-body">— PreseMaker allows you to assign distinct providers to individual task types, so different kinds of content generation can use different AI services.</span></li>
-<li><strong>How PreseMaker Routes a Task to a Provider</strong> <span class="el-body">— When PreseMaker executes a task, it looks up the provider assigned to that task type and uses it directly — no ranking or automatic switching is involved.</span></li>
-<li><strong>Choosing a Provider Based on Cost, Speed, or Quality</strong> <span class="el-body">— The flexibility of per-task provider assignment lets you make deliberate trade-off decisions for each content type.</span></li>
+<li><strong>The Four Supported AI Providers</strong> <span class="el-body">— PreseMaker is compatible with four AI providers, each requiring its own API key obtained directly from the provider&#39;s platform.</span></li>
+<li><strong>Acquiring an API Key from a Provider</strong> <span class="el-body">— To obtain an API key, you must create a developer or API account with your chosen AI provider and generate a key through their platform.</span></li>
+<li><strong>Entering Your API Key in PreseMaker Settings</strong> <span class="el-body">— Once you have your API key, you enter it in PreseMaker&#39;s Settings panel, where it is associated with the corresponding provider.</span></li>
+<li><strong>Secure Storage with Windows DPAPI</strong> <span class="el-body">— PreseMaker encrypts every API key using Windows Data Protection API (DPAPI) before storing it, ensuring keys are protected at rest on your machine.</span></li>
+<li><strong>Keys Are Never Shared or Stored in Course Files</strong> <span class="el-body">— API keys remain entirely local to your machine and are never embedded in course content or transmitted to a repository.</span></li>
+<li><strong>Minimum Key Requirements</strong> <span class="el-body">— You do not need to configure API keys for all four providers — a single valid key for one provider is the minimum requirement to enable AI features in PreseMaker.</span></li>
 </ul>
-<h2>How PreseMaker Routes Tasks to Providers</h2>
-<div class="summary">Describes the logic PreseMaker uses to select the correct provider when running a task, including the role of the default provider. Clarifies that there is no priority ranking or automatic fallback between providers.</div>
+<h2>The Active AI Provider Setting</h2>
+<div class="summary">An explanation of the single Active AI Provider dropdown in Settings and how the selected provider handles every AI task in PreseMaker. This topic clarifies that one provider is responsible for all generation work simultaneously.</div>
 <ul>
-<li><strong>The Role of the Default Provider</strong> <span class="el-body">— PreseMaker maintains a single default provider that acts as a catch-all for any task type you have not explicitly assigned to a specific provider.</span></li>
-<li><strong>Per-Task Provider Assignment</strong> <span class="el-body">— PreseMaker lets you assign a distinct provider to each individual task type, giving you precise control over which AI service handles each kind of generation work.</span></li>
-<li><strong>The Routing Logic: One Task, One Provider</strong> <span class="el-body">— When PreseMaker runs a task, its router performs a straightforward lookup: find the provider assigned to that task type, or use the default if none is assigned.</span></li>
-<li><strong>No Priority Ranking Between Providers</strong> <span class="el-body">— PreseMaker does not rank configured providers in any order of preference or priority when selecting which one to use for a task.</span></li>
-<li><strong>No Automatic Fallback Between Providers</strong> <span class="el-body">— If the assigned provider for a task cannot be reached or fails, PreseMaker does not automatically switch to another configured provider.</span></li>
+<li><strong>What the Active AI Provider Setting Is</strong> <span class="el-body">— In PreseMaker&#39;s Settings, there is a single dropdown called the Active AI Provider, which determines which AI service handles all generation work in the application.</span></li>
+<li><strong>One Provider Covers Every AI Task</strong> <span class="el-body">— The selected Active AI Provider handles all text-based generation tasks in PreseMaker simultaneously — there is no division of responsibility between providers.</span></li>
+<li><strong>No Per-Task Provider Assignment Exists</strong> <span class="el-body">— PreseMaker does not allow you to assign different AI providers to different types of tasks; the application has no routing table or per-task dropdown of any kind.</span></li>
+<li><strong>Why a Single Active Provider Simplifies Configuration</strong> <span class="el-body">— The single Active AI Provider model was designed to eliminate the confusion that arose when different tasks were silently routed to different providers, which could cause unexpected failures.</span></li>
+<li><strong>Choosing Which Provider to Make Active</strong> <span class="el-body">— PreseMaker supports four AI providers — Claude (Anthropic), Gemini (Google), GPT-4o (OpenAI), and Mistral AI — and you select the one you want to use from the Active AI Provider dropdown after entering its API key.</span></li>
 </ul>
-<h2>Using the Prompt Button</h2>
-<div class="summary">Explains how to use the Prompt button available on every generation screen to inspect the exact text sent to an AI provider. Covers when and why learners would use this feature before or after generation.</div>
+<h2>Understanding That There Is No Per-Task Provider Assignment</h2>
+<div class="summary">A focused clarification that PreseMaker does not support routing different task types to different providers, and why that feature was removed. This topic corrects common misconceptions and explains the simplified single-provider model.</div>
 <ul>
-<li><strong>What the Prompt Button Is</strong> <span class="el-body">— Every generation screen in PreseMaker includes a Prompt button that gives you direct visibility into the exact text being sent to the AI provider.</span></li>
-<li><strong>Inspecting the Prompt Before Generation</strong> <span class="el-body">— You can open the Prompt button before triggering generation to preview exactly what will be sent to the AI provider.</span></li>
-<li><strong>Inspecting the Prompt After Generation</strong> <span class="el-body">— The Prompt button remains accessible after generation has completed, allowing you to review what was actually sent when a result was produced.</span></li>
-<li><strong>Why Prompt Transparency Matters</strong> <span class="el-body">— Seeing the exact prompt sent to a provider ensures you always know what the AI received, removing ambiguity about the source of any generated output.</span></li>
-<li><strong>The Prompt Button Across All Task Types</strong> <span class="el-body">— Because PreseMaker&#39;s AI tasks span a wide range of content types, the Prompt button is provided universally so no task is opaque to the user.</span></li>
+<li><strong>The Single-Provider Rule</strong> <span class="el-body">— PreseMaker uses exactly one active AI provider for every task it performs, with no exceptions.</span></li>
+<li><strong>What Per-Task Assignment Means — and Why It Does Not Exist</strong> <span class="el-body">— Per-task provider assignment would mean routing specific task types — such as quizzes or narration — to different AI providers, but PreseMaker does not support this.</span></li>
+<li><strong>Why the Feature Was Removed</strong> <span class="el-body">— An earlier version of PreseMaker did include per-task provider assignment, but it was deliberately removed because it caused significant user confusion.</span></li>
+<li><strong>Correcting Common Misconceptions</strong> <span class="el-body">— Because per-task routing existed in an older version, some users arrive with the expectation that different tasks can still be sent to different providers.</span></li>
+<li><strong>Practical Implication: One Key Is All You Need</strong> <span class="el-body">— Because every task uses the same provider, you only need to obtain and configure a single API key to use all of PreseMaker&#39;s AI features.</span></li>
 </ul>
-<h2>Understanding and Responding to Generation Failures</h2>
-<div class="summary">Describes the types of errors that can cause a provider request to fail, such as invalid API keys, rate limits, or network issues. Explains how to interpret the failure dialog and the steps available to resolve the problem.</div>
+<h2>Using the Prompt Button to Inspect AI Requests</h2>
+<div class="summary">How to use the Prompt button to view the exact text sent to the active AI provider before or during generation. This topic helps learners understand and verify the input their chosen provider receives.</div>
 <ul>
-<li><strong>Common Causes of Generation Failures</strong> <span class="el-body">— A provider request can fail for several distinct reasons, each requiring a different resolution step.</span></li>
-<li><strong>How PreseMaker Responds to a Failure</strong> <span class="el-body">— When a provider request fails, PreseMaker immediately surfaces a failure dialog rather than silently handling the error in the background.</span></li>
-<li><strong>Interpreting the Failure Dialog</strong> <span class="el-body">— The failure dialog provides contextual information to help you understand what went wrong with the provider request.</span></li>
-<li><strong>Resolution Options Offered by the Dialog</strong> <span class="el-body">— From the failure dialog, PreseMaker gives you direct shortcuts to the most likely resolution paths.</span></li>
-<li><strong>Fixing the Underlying Cause and Retrying</strong> <span class="el-body">— After using the dialog to identify and address the problem, you must resolve the root cause before attempting generation again.</span></li>
-<li><strong>Manually Reassigning the Task to a Different Provider</strong> <span class="el-body">— If you cannot immediately fix the failing provider, you can reassign the affected task type to a different, working provider in Settings.</span></li>
+<li><strong>What the Prompt Button Does</strong> <span class="el-body">— The Prompt button allows you to inspect the exact text that PreseMaker will send to your active AI provider before or during generation.</span></li>
+<li><strong>When to Use the Prompt Button</strong> <span class="el-body">— The Prompt button is most useful when you want to verify, troubleshoot, or simply understand the input being sent before committing to a full generation.</span></li>
+<li><strong>Understanding the Text Shown in the Prompt</strong> <span class="el-body">— All AI tasks in PreseMaker are text-based, so every prompt you inspect will be a text request — there are no image or vision requests.</span></li>
+<li><strong>The Prompt Reflects Your Active Provider Selection</strong> <span class="el-body">— Because PreseMaker uses a single active AI provider for all tasks, the prompt you inspect is always destined for that one selected provider.</span></li>
+<li><strong>Verifying Input to Diagnose Generation Issues</strong> <span class="el-body">— The Prompt button is a practical diagnostic tool when AI output does not match your expectations, letting you rule out input-side problems.</span></li>
+</ul>
+<h2>Interpreting and Responding to Generation Failures</h2>
+<div class="summary">What generation failure messages mean and how to respond to them effectively. This topic guides learners through diagnosing common causes of failed AI requests and taking corrective action.</div>
+<ul>
+<li><strong>What a Generation Failure Means</strong> <span class="el-body">— A generation failure occurs when PreseMaker sends a request to the active AI provider and does not receive a successful response.</span></li>
+<li><strong>Common Cause: Missing or Invalid API Key</strong> <span class="el-body">— The most frequent cause of a generation failure is that the API key for the active provider is absent, incorrectly entered, or has been revoked by the provider.</span></li>
+<li><strong>Common Cause: Wrong Active Provider Selected</strong> <span class="el-body">— PreseMaker uses a single Active AI Provider for every task, so selecting a provider whose key has not been entered will cause all AI requests to fail.</span></li>
+<li><strong>Common Cause: Provider-Side Issues</strong> <span class="el-body">— Even with a correct key and active provider, failures can occur due to outages, rate limits, or quota exhaustion on the provider&#39;s platform.</span></li>
+<li><strong>Diagnosing the Failure: A Step-by-Step Approach</strong> <span class="el-body">— Effective diagnosis follows a consistent order: verify the active provider, verify the key, then look outward to the provider&#39;s platform.</span></li>
+<li><strong>Taking Corrective Action</strong> <span class="el-body">— Once the cause is identified, corrective actions are straightforward and typically require only a Settings update or a provider account action.</span></li>
 </ul>
 
 <footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>

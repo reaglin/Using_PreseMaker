@@ -10,38 +10,43 @@
     "type": "Page"
   },
   {
-    "title": "Understanding and Responding to Generation Failures",
-    "href": "content/Configuring_AI_Providers_interactive.html",
-    "type": "Content"
-  },
-  {
-    "title": "Introduction to AI Tasks in PreseMaker",
+    "title": "Introduction to AI Providers in PreseMaker",
     "href": "content/Configuring_AI_Providers_interactive_topics_t1.html",
     "type": "Content"
   },
   {
-    "title": "Assigning AI Providers to Task Types",
+    "title": "Obtaining and Entering API Keys",
     "href": "content/Configuring_AI_Providers_interactive_topics_t2.html",
     "type": "Content"
   },
   {
-    "title": "How PreseMaker Routes Tasks to Providers",
+    "title": "The Active AI Provider Setting",
     "href": "content/Configuring_AI_Providers_interactive_topics_t3.html",
     "type": "Content"
   },
   {
-    "title": "Using the Prompt Button",
+    "title": "Understanding That There Is No Per-Task Provider Assignment",
     "href": "content/Configuring_AI_Providers_interactive_topics_t4.html",
     "type": "Content"
   },
   {
-    "title": "Understanding and Responding to Generation Failures",
+    "title": "Using the Prompt Button to Inspect AI Requests",
     "href": "content/Configuring_AI_Providers_interactive_topics_t5.html",
+    "type": "Content"
+  },
+  {
+    "title": "Interpreting and Responding to Generation Failures",
+    "href": "content/Configuring_AI_Providers_interactive_topics_t6.html",
     "type": "Content"
   },
   {
     "title": "Configuring AI Providers per Task and Using the Prompt Button \u2014 Module Topics",
     "href": "content/module_topics.html",
+    "type": "Content"
+  },
+  {
+    "title": "Interpreting and Responding to Generation Failures",
+    "href": "content/_interactive.html",
     "type": "Content"
   },
   {

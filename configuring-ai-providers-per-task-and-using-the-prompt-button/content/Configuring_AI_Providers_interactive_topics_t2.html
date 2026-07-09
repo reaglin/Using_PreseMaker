@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assigning AI Providers to Task Types</title>
+  <title>Obtaining and Entering API Keys</title>
   <style>
 :root {
     --bg:         #ffffff;
@@ -62,124 +62,120 @@ pre { background: var(--code-bg); border: 1px solid var(--code-border); border-r
 </head><body>
 <div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Configuring AI Providers per Task and Using the Prompt Button</a></div>
   <header>
-    <h1>Assigning AI Providers to Task Types</h1>
+    <h1>Obtaining and Entering API Keys</h1>
   </header><main>
     <details class="slide-card" open>
-      <summary class="slide-header"><span class="slide-num">1</span><h2>Assigning AI Providers to Task Types</h2><span class="chevron">▶</span></summary>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Obtaining and Entering API Keys</h2><span class="chevron">▶</span></summary>
       <div class="slide-body">
-        <p>PreseMaker allows you to take precise control over which AI provider handles each specific kind of generation task it performs. Rather than routing all AI work through a single provider, the platform lets you map individual task types to whichever provider best fits your goals — whether that means minimizing cost, maximizing speed, or ensuring the highest-quality output. This configuration lives in Settings and takes effect immediately the next time PreseMaker executes a task of the relevant type. Understanding how this system works, what task types are available, and how the default provider fits into the picture gives you the foundation to build a well-optimized authoring workflow.</p>
+        <p>To use any of PreseMaker's AI-powered features, you must supply at least one valid API key from a supported AI provider. An API key is a unique credential — essentially a long string of characters — that identifies your account to the AI provider's servers, authorizes your requests, and links any usage costs back to your account. Without a key, PreseMaker has no way to communicate with external AI models. This topic walks through every step of the process: understanding which providers are supported, navigating their developer portals to generate a key, entering that key inside PreseMaker, and understanding exactly how PreseMaker protects your credentials once they are stored.</p>
 
-<p><strong>Accessing Provider Assignment in Settings</strong></p>
+<p><strong>The Four Supported AI Providers</strong></p>
 
-<p>All provider assignment configuration is managed from within PreseMaker's Settings area. When you navigate to Settings, you will find each available task type listed, and alongside each one you can view and edit which provider is currently mapped to it. The providers available for assignment are those you have already configured in PreseMaker — you must first add and authenticate a provider before it can be selected for any task type.</p>
-
-<p>The mapping interface is intentionally straightforward: each task type has exactly one assigned provider at any given time, and you simply select from your available providers to change it. Once you save your changes, PreseMaker begins using the newly assigned provider the very next time it runs a task of that type. There is no restart required and no caching of old assignments — the routing logic reads the current configuration at the moment each task is triggered.</p>
-
-<p><strong>Understanding Task Types</strong></p>
-
-<p>PreseMaker supports a defined set of task types, each representing a distinct kind of content generation the platform performs during course authoring. Every one of these task types is text-based — PreseMaker does not include image generation or vision (image-reading) capabilities, so every assignable task works purely with text input and output. The full set of task types you can independently assign includes:</p>
-
-<ul>
-  <li><strong>Module topics</strong> — generating the topic structure and subtopic breakdown for a module</li>
-  <li><strong>Learning outcomes</strong> — producing measurable objectives that describe what learners will be able to do</li>
-  <li><strong>Presentation slide content</strong> — drafting the text that appears on individual slides within a presentation</li>
-  <li><strong>Text lessons</strong> — writing longer-form instructional body text for lesson pages</li>
-  <li><strong>Quiz questions</strong> — creating assessment questions, including stems, correct answers, and distractors</li>
-  <li><strong>Assignments</strong> — generating assignment prompts and descriptions</li>
-  <li><strong>Interactive-activity content</strong> — producing content for interactive learning activities</li>
-  <li><strong>Speaker narration</strong> — writing the spoken-word script that accompanies slides or lessons</li>
-  <li><strong>Standards</strong> — generating or aligning content to educational or industry standards</li>
-</ul>
-
-<p>Because each of these task types serves a different authoring purpose and has different characteristics — some are high-volume, some are high-visibility, some demand stylistic precision — the ability to assign them to different providers is directly useful in practice.</p>
-
-<p><strong>The Default Provider for Unassigned Tasks</strong></p>
-
-<p>Not every task type needs to have a specific provider explicitly assigned to it. If a task type has no provider selected, PreseMaker automatically routes it to a designated <em>default provider</em>, which you also configure in Settings alongside your task-specific assignments. The default provider is a safety net for configuration gaps — it ensures that PreseMaker can always attempt to execute any task type even if you have not made a deliberate choice for it.</p>
-
-<p>It is important to understand what the default provider is <em>not</em>: it is not an automatic retry mechanism. If a task type has a specific provider assigned and that provider is unavailable or returns an error, PreseMaker does not silently fall back to the default. The default provider only comes into play when <em>no specific provider has been assigned</em> to a task type, not as a secondary option when the primary assignment fails. This distinction keeps routing behavior transparent and predictable — you always know which provider was attempted for any given task.</p>
-
-<p><strong>Assigning Different Providers to Different Tasks</strong></p>
-
-<p>The practical power of the assignment system is the freedom to mix providers across task types according to your own priorities. Consider a straightforward example: you might assign a capable, cost-effective provider to quiz question generation because you produce a large number of questions across many modules, and the cost of a premium provider at that volume would be significant. At the same time, you might assign a higher-capability premium provider to slide content generation because those slides are highly visible to learners and the quality of language directly affects the learner experience.</p>
-
-<p>There are no artificial constraints on how you configure the mapping. Multiple task types can share the same provider — for instance, you might use the same provider for both learning outcomes and standards because they are closely related and you want stylistic consistency between them. Alternatively, every task type could be assigned to a different provider if your evaluation of each one led to that conclusion. The system imposes no minimum or maximum on provider diversity across the task map.</p>
-
-<p><strong>How PreseMaker Routes a Task to a Provider</strong></p>
-
-<p>The routing logic PreseMaker uses is a simple, direct lookup. When a generation request is triggered — for example, when an author asks PreseMaker to generate quiz questions — the platform checks the task-type-to-provider mapping for that task type. If a provider is specifically assigned, that provider receives the request. If no specific assignment exists, the default provider receives the request. There is no ranked list, no priority queue, and no secondary fallback provider.</p>
-
-<p>This design means routing is consistent and predictable. Every generation request for a given task type goes to the same provider every time, as long as the Settings configuration has not changed. Authors do not need to wonder which provider handled a particular output or whether a fallback silently changed the source of a generation. The one-to-one mapping at any given moment makes the system easy to reason about and easy to troubleshoot if output quality or cost patterns are not meeting expectations.</p>
-
-<p><strong>Choosing a Provider Based on Cost, Speed, or Quality</strong></p>
-
-<p>The decision of which provider to assign to each task type naturally involves weighing three practical dimensions: cost, speed, and output quality. These considerations often pull in different directions, and the assignment system gives you the flexibility to make different trade-offs for different tasks rather than accepting a single compromise across the board.</p>
-
-<p><strong>Cost</strong> becomes a significant factor for high-volume tasks. Quiz distractor generation, for example, might be executed dozens or hundreds of times across a course build. Assigning a less expensive provider to that task type — even if its output is slightly less polished — can produce meaningful savings without affecting the parts of the course that learners notice most. Lower-stakes background tasks, where the output feeds into a process rather than appearing directly in front of learners, are natural candidates for cost-optimized providers.</p>
-
-<p><strong>Speed</strong> matters most for tasks that are run frequently within a single authoring session, or for tasks where an author is actively waiting for output before proceeding. If a particular provider returns results significantly faster than others for a given task type, assigning that provider can meaningfully reduce idle time during content development. This is especially relevant for iterative tasks where an author might regenerate output multiple times to find a version they want to keep.</p>
-
-<p><strong>Quality</strong> justifies premium provider assignment for high-visibility or high-stakes outputs. Slide content, learning outcomes, and text lessons are seen directly by learners and reflect on the overall quality of the course. Speaker narration must read naturally when converted to audio. For these task types, the incremental cost of a more capable provider is often well justified by the improvement in output that reaches the learner. The following table summarizes how these three dimensions might guide typical assignment decisions:</p>
+<p>PreseMaker integrates with four major AI providers, each of which is an independent company operating its own platform, pricing model, and developer infrastructure. The table below summarizes the four providers and the primary model or product family associated with each:</p>
 
 <table>
   <thead>
     <tr>
-      <th>Task Type</th>
-      <th>Primary Consideration</th>
-      <th>Rationale</th>
+      <th>Provider</th>
+      <th>Primary Model / Product</th>
+      <th>Developer Portal URL</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Presentation slide content</td>
-      <td>Quality</td>
-      <td>Directly visible to learners; language quality has high impact on course perception</td>
+      <td>Anthropic</td>
+      <td>Claude</td>
+      <td>console.anthropic.com</td>
     </tr>
     <tr>
-      <td>Learning outcomes</td>
-      <td>Quality</td>
-      <td>Sets expectations for the entire module; precision and alignment matter significantly</td>
+      <td>OpenAI</td>
+      <td>GPT-4o</td>
+      <td>platform.openai.com</td>
     </tr>
     <tr>
-      <td>Speaker narration</td>
-      <td>Quality / Speed</td>
-      <td>Must read naturally; iterative regeneration during authoring makes speed valuable too</td>
+      <td>Google</td>
+      <td>Gemini</td>
+      <td>aistudio.google.com / console.cloud.google.com</td>
     </tr>
     <tr>
-      <td>Text lessons</td>
-      <td>Quality</td>
-      <td>Extended instructional content where coherence and clarity directly affect learning</td>
-    </tr>
-    <tr>
-      <td>Quiz questions</td>
-      <td>Quality / Cost</td>
-      <td>Assessment integrity matters, but volume can be high across a full course build</td>
-    </tr>
-    <tr>
-      <td>Assignments</td>
-      <td>Quality</td>
-      <td>Prompts need to be clear and well-scoped; typically lower volume than quiz questions</td>
-    </tr>
-    <tr>
-      <td>Interactive-activity content</td>
-      <td>Quality / Speed</td>
-      <td>Learner-facing; iterative refinement during authoring is common</td>
-    </tr>
-    <tr>
-      <td>Module topics</td>
-      <td>Speed / Cost</td>
-      <td>Structural scaffolding task; often run early and quickly revised by the author</td>
-    </tr>
-    <tr>
-      <td>Standards</td>
-      <td>Quality</td>
-      <td>Alignment accuracy is important for compliance and credentialing contexts</td>
+      <td>xAI</td>
+      <td>Grok</td>
+      <td>console.x.ai</td>
     </tr>
   </tbody>
 </table>
 
-<p>These are guiding patterns rather than fixed rules. Your specific provider options, the volume of content you produce, and the standards your organization applies to learner-facing material will all influence where you land on each task type. The value of the assignment system is precisely that it lets you apply your own judgment task by task rather than accepting a uniform approach across all of PreseMaker's generation work.</p>
-        <div class="notes"><strong>Notes</strong>Covers provider assignment configuration in Settings, all assignable text-only task types, the role and scope of the default provider (fallback for unassigned tasks only, not a retry mechanism), the flexibility of mixing providers across tasks, the deterministic one-to-one routing model, and practical guidance on cost/speed/quality trade-offs with a summary table.</div>
+<p>Because each provider is a separate company, the sign-up process, billing setup, free-tier availability, and key management interface differ from one portal to the next. However, the general workflow is the same across all four: create an account, add a payment method if required, navigate to the API keys section, and generate a new key. You do <em>not</em> need keys from all four providers. Obtaining a key from even one of them is sufficient to begin using PreseMaker's AI features immediately.</p>
+
+<p><strong>Acquiring an API Key from a Provider</strong></p>
+
+<p>The steps below describe the general process that applies to all four supported providers. Where the experience differs meaningfully, provider-specific notes are included.</p>
+
+<ul>
+  <li><strong>Navigate to the official developer portal.</strong> Always start from the provider's official website to avoid phishing sites. Bookmark the correct URL from the table above. For example, to obtain a Claude key you would go to <code>console.anthropic.com</code>; for GPT-4o you would go to <code>platform.openai.com</code>.</li>
+  <li><strong>Create or log in to your account.</strong> Most providers allow you to register with an email address or an existing Google or GitHub account. Some providers, including OpenAI and Anthropic, require you to verify a phone number during initial sign-up as an anti-abuse measure.</li>
+  <li><strong>Set up billing if required.</strong> Free trial credits are available on some platforms for new accounts, but production API access generally requires a valid payment method on file. Add your billing information before attempting to generate a key, as some portals will not display the key-creation option until billing is configured.</li>
+  <li><strong>Locate the API Keys section.</strong> Once logged in, look for a menu item labeled <em>API Keys</em>, <em>Credentials</em>, or similar — typically found in the left-hand navigation sidebar or under account/settings menus. In the Anthropic Console this is directly in the main navigation; on OpenAI's platform it is under your profile icon in the top-right corner.</li>
+  <li><strong>Generate a new key.</strong> Click the button labeled <em>Create new secret key</em>, <em>Generate key</em>, or equivalent. Some portals allow you to assign a descriptive name to a key (for example, "PreseMaker - Work Laptop"), which makes it easier to identify and revoke specific keys later if needed.</li>
+  <li><strong>Copy the key immediately.</strong> This is a critical step. Most providers display the full key <em>only once</em> — at the moment of creation. Once you navigate away from that screen, the key is no longer shown in full; only a masked or truncated version appears for reference. Copy the key to your clipboard right away, before closing or refreshing the page. If you forget to copy it, you will need to delete the old key and generate a new one.</li>
+</ul>
+
+<p>A newly generated API key typically looks like a long, random string of letters, numbers, and sometimes hyphens. For example, an OpenAI key begins with the prefix <code>sk-</code> followed by a long alphanumeric sequence:</p>
+
+<pre><code>sk-proj-A1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q7r8S9t0...</code></pre>
+
+<p>Anthropic keys begin with <code>sk-ant-</code>, while other providers have their own formats. The exact format is not something you need to memorize — what matters is that you copy the <em>entire</em> string without adding any spaces or line breaks.</p>
+
+<p><strong>Entering Your API Key in PreseMaker Settings</strong></p>
+
+<p>Once you have copied your key, switch to PreseMaker and follow these steps:</p>
+
+<ul>
+  <li><strong>Open the Settings panel.</strong> In PreseMaker, navigate to the Settings area. This is typically accessible from the main menu or a gear icon in the application toolbar. The Settings panel contains configuration options for the application, including all AI provider integrations.</li>
+  <li><strong>Locate the API key entry fields.</strong> Within Settings, you will find clearly labeled text fields for each of the four supported providers — Anthropic, OpenAI, Google, and xAI. Each field is dedicated to one provider's key and will not accept a key intended for a different provider.</li>
+  <li><strong>Paste your key into the correct field.</strong> Click into the field that corresponds to the provider whose key you just generated and paste your key. Ensure you are pasting into the <em>matching</em> provider's field. For example, an Anthropic Claude key must go into the Anthropic field — entering it in the OpenAI field will result in failed API requests because the key format and authentication endpoint will not match.</li>
+  <li><strong>Save your settings.</strong> Click the Save or Apply button to confirm your entry. PreseMaker will process and store the key at this point. After saving, the field will typically display a masked representation (for example, <code>sk-ant-••••••••••••••••••••••••WXYZ</code>) to confirm the key is stored without exposing it visually.</li>
+</ul>
+
+<p><strong>Secure Storage with Windows DPAPI</strong></p>
+
+<p>A legitimate concern whenever software stores credentials is: how safe is that storage? PreseMaker addresses this by using the <strong>Windows Data Protection API (DPAPI)</strong>, a built-in encryption facility provided by the Windows operating system itself.</p>
+
+<p>Here is how the protection works in practice:</p>
+
+<ul>
+  <li><strong>Immediate encryption on save.</strong> The moment you click Save in PreseMaker's Settings, your API key is encrypted using DPAPI before it is written to disk. The plaintext key never sits unprotected on your file system — even momentarily after saving.</li>
+  <li><strong>Storage location.</strong> The encrypted key is written to a file called <code>app_settings.json</code>, located inside your Windows user profile directory. A typical path looks like this:</li>
+</ul>
+
+<pre><code>C:\Users\YourUsername\AppData\Roaming\PreseMaker\app_settings.json</code></pre>
+
+<ul>
+  <li><strong>User-account binding.</strong> DPAPI ties the encrypted data to the specific Windows user account that performed the encryption. This means that even if another user on the same computer were to copy <code>app_settings.json</code> to their own profile, they could not decrypt the keys — the decryption will fail because it is happening under a different user account. This is a strong, OS-enforced protection that does not rely on PreseMaker storing its own master password.</li>
+  <li><strong>No master password to remember.</strong> Because DPAPI uses your Windows login session as the root of trust, you do not need to create or remember a separate encryption password for your API keys. The protection is seamless and automatic.</li>
+</ul>
+
+<p><strong>Keys Are Never Shared or Stored in Course Files</strong></p>
+
+<p>PreseMaker is designed so that your API credentials are entirely separate from your course content. This separation is intentional and important, especially for teams or anyone who publishes or distributes course projects.</p>
+
+<ul>
+  <li><strong>Keys live only in your local settings file.</strong> Your API key data exists solely inside <code>app_settings.json</code> on your local machine. Course project files — the files that define your slides, questions, media, and structure — contain no API key data whatsoever.</li>
+  <li><strong>Safe to share, export, and push.</strong> When you share a course file with a colleague, export it for delivery, or push it to a version control repository such as Git, you can do so with full confidence that no credentials are embedded in those files. A collaborator who opens your course project in their own copy of PreseMaker will see all your content but will be prompted to supply their own API key.</li>
+  <li><strong>No risk of accidental credential leakage.</strong> Because the architecture enforces this separation at the file level rather than relying on the user to remember to remove sensitive data before sharing, there is no scenario in which an API key could accidentally travel with a course file.</li>
+</ul>
+
+<p><strong>Minimum Key Requirements</strong></p>
+
+<p>Before PreseMaker's AI features become functional, a small but firm set of conditions must be met:</p>
+
+<ul>
+  <li><strong>At least one valid key must be present.</strong> PreseMaker requires a minimum of one active, valid API key stored in Settings. If no key has been entered at all, every AI-powered feature — content generation, question creation, feedback drafting, and so on — will be unavailable or will display an error prompting you to configure a key.</li>
+  <li><strong>The active provider and the stored key must match.</strong> PreseMaker's Settings include an <em>Active AI Provider</em> dropdown that determines which provider's model PreseMaker will use for AI requests at any given time. If you select <em>Anthropic (Claude)</em> as your active provider but have only entered an OpenAI key — or have entered the Anthropic key in the wrong field — AI requests will fail. The key stored must correspond to the currently selected active provider.</li>
+  <li><strong>Multiple keys for flexibility.</strong> You may optionally enter keys for more than one provider simultaneously. Doing so gives you the flexibility to switch the Active AI Provider dropdown between, for example, Claude and GPT-4o without needing to re-enter credentials each time. This is useful for comparing outputs between models or for switching to a different provider if one is temporarily unavailable.</li>
+  <li><strong>Validate your key before heavy use.</strong> An easy way to confirm a key is working is to attempt a small AI action in PreseMaker immediately after saving the key. If the action completes successfully, the key is valid and correctly matched to the active provider. If you receive an authentication error, double-check that you copied the full key without truncation, that it is in the correct provider field, and that the active provider dropdown matches.</li>
+</ul>
+        <div class="notes"><strong>Notes</strong>The four supported providers referenced in the table (Anthropic, OpenAI, Google, xAI) should be verified against the current PreseMaker release notes if new providers are added in future versions. The DPAPI storage path example uses a typical AppData\Roaming location — confirm the exact subfolder name used by PreseMaker if it differs from the example shown.</div>
       </div>
     </details>
   </main>

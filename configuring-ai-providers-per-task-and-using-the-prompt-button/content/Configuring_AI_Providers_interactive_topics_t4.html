@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Using the Prompt Button</title>
+  <title>Understanding That There Is No Per-Task Provider Assignment</title>
   <style>
 :root {
     --bg:         #ffffff;
@@ -62,92 +62,131 @@ pre { background: var(--code-bg); border: 1px solid var(--code-border); border-r
 </head><body>
 <div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Configuring AI Providers per Task and Using the Prompt Button</a></div>
   <header>
-    <h1>Using the Prompt Button</h1>
+    <h1>Understanding That There Is No Per-Task Provider Assignment</h1>
   </header><main>
     <details class="slide-card" open>
-      <summary class="slide-header"><span class="slide-num">1</span><h2>Using the Prompt Button</h2><span class="chevron">▶</span></summary>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Understanding That There Is No Per-Task Provider Assignment</h2><span class="chevron">▶</span></summary>
       <div class="slide-body">
-        <p>Every time PreseMaker prepares to send a request to an AI provider — whether it is generating quiz questions, producing speaker narration, summarizing content, or handling any other text-based task — a <strong>Prompt button</strong> appears on that screen. This button gives you direct, unfiltered access to the exact text that will be, or has just been, transmitted to the AI. Nothing is paraphrased, abbreviated, or hidden behind a summary view. What you see when you click the Prompt button is precisely what the AI receives, word for word. Understanding how and when to use this feature is one of the most practical skills you can develop when working with AI-assisted course authoring, because the quality of any AI output is inseparable from the quality of the prompt that produced it.</p>
+        <p>One of the most important things to understand about how PreseMaker handles AI-powered content generation is that there is exactly one provider doing all of the work at any given time. Every feature that calls on artificial intelligence — whether it is generating module topics, writing learning outcomes, building slide content, drafting text lessons, creating quizzes and assignments, producing interactive activities, writing narration scripts, or aligning content to standards — is handled by a single, unified provider selection. That selection lives in one place: the <strong>Active AI Provider</strong> dropdown inside Settings. Nothing else in the application controls which provider is used, and no task is ever silently routed somewhere else.</p>
 
-<p><strong>What the Prompt Button Is</strong></p>
+<p>This design is deliberate, and understanding it will save you significant troubleshooting time. The sections below explain exactly what the single-provider rule means in practice, what per-task assignment was, why it no longer exists, and how to correct some common misconceptions that arise — particularly for users who worked with older versions of the application.</p>
 
-<p>The Prompt button is a transparency tool built into every generation screen in PreseMaker that communicates with an AI provider. Its sole purpose is to surface the complete prompt text so that you, the author, are never left guessing about what instructions and context the AI actually received. This matters more than it might initially seem. AI systems do not interpret intent — they respond to text. If that text contains an ambiguity, an omission, or an unintended instruction, the AI will follow it faithfully and produce output that reflects the flaw. Because PreseMaker constructs prompts dynamically based on your settings, your content, and the task type, the assembled prompt can sometimes look different from what you imagined it would be. The Prompt button removes that uncertainty entirely.</p>
+<p><strong>The Single-Provider Rule</strong></p>
 
-<p>The button is consistently present across <em>all</em> text-based AI tasks the platform supports. Whether you are on the quiz generation screen, the narration screen, the content summarization screen, or any other generation interface, the same button and the same inspection experience are available. This universality is intentional — it means you only need to learn one method of prompt inspection, and that method applies everywhere.</p>
+<p>The Active AI Provider dropdown in Settings is the one and only place where a provider is selected for use inside PreseMaker. Whichever provider is chosen there — for example, OpenAI, Anthropic, or Google — becomes the provider for <em>every</em> AI task the application performs during that session. There is no secondary provider waiting in reserve, no fallback that takes over when the primary provider is slow or temporarily unavailable, and no mechanism that quietly uses a different provider for certain kinds of requests.</p>
 
-<p><strong>Inspecting the Prompt Before Generation</strong></p>
-
-<p>One of the most valuable habits you can build is clicking the Prompt button <em>before</em> you trigger generation. This pre-generation inspection step lets you read through the full prompt and confirm that it accurately represents both your intended task and the content you expect the AI to work with. Consider it a preflight check — similar to reviewing a document before sending it to a client, or verifying data inputs before running a report.</p>
-
-<p>There are several things worth looking for during a pre-generation review:</p>
+<p>To make this completely concrete, consider everything PreseMaker can generate on your behalf:</p>
 
 <ul>
-  <li><strong>Completeness:</strong> Is all the relevant content present? If the prompt is supposed to include slide text, topic descriptions, or other source material, confirm that material has been included and has not been truncated or omitted.</li>
-  <li><strong>Accuracy of instructions:</strong> Do the instructions in the prompt match the settings you selected? For example, if you configured the AI to generate five multiple-choice questions at a medium difficulty level, verify that those parameters are reflected in the prompt text.</li>
-  <li><strong>Absence of unexpected content:</strong> Sometimes placeholder text, residual content from a previous session, or formatting artifacts can find their way into a prompt. Reading it in full lets you catch these before they influence output.</li>
-  <li><strong>Tone and framing:</strong> If the prompt instructs the AI to adopt a particular persona or writing style, confirm the framing matches what you want for this specific piece of content.</li>
+  <li><strong>Module topics and subtopics</strong> — the structural outline of a course module</li>
+  <li><strong>Learning outcomes</strong> — measurable objectives tied to module content</li>
+  <li><strong>Slide content</strong> — text, bullet points, and layout suggestions for individual slides</li>
+  <li><strong>Text lessons</strong> — longer-form written explanations of a topic</li>
+  <li><strong>Quizzes</strong> — questions, answer choices, and correct-answer logic</li>
+  <li><strong>Assignments</strong> — task descriptions and rubric suggestions</li>
+  <li><strong>Interactive activities</strong> — drag-and-drop, matching, scenario-based, and similar formats</li>
+  <li><strong>Narration scripts</strong> — spoken-word text that accompanies slides or lessons</li>
+  <li><strong>Standards alignment</strong> — mapping content to curriculum or competency frameworks</li>
 </ul>
 
-<p>Catching a problem at this stage is far preferable to discovering it after generation. AI generation consumes API credits or usage quota with your provider. A flawed prompt that produces unusable output means you spend those resources and still need to regenerate. Pre-generation inspection is therefore both a quality-control step and a practical cost-saving measure when you are working at scale across a large course build.</p>
+<p>Every item on that list is handled by the same active provider. If you have selected OpenAI in the dropdown, OpenAI processes all of those requests. If you switch to Anthropic, Anthropic processes all of them from that point forward. The list never gets split across providers.</p>
 
-<p><strong>Inspecting the Prompt After Generation</strong></p>
+<p><strong>What Per-Task Assignment Means — and Why It Does Not Exist in PreseMaker</strong></p>
 
-<p>The Prompt button is equally useful <em>after</em> generation has completed. When the AI returns output that surprises you — whether the results are better than expected, worse than expected, or simply different from what you intended — the post-generation prompt view gives you a concrete starting point for understanding why. Rather than guessing at the cause of an unsatisfactory result, you can read the prompt the AI actually received and trace the output back to its source.</p>
+<p>Per-task assignment refers to a configuration model in which different types of AI work are individually mapped to different providers. In such a system, an administrator might open a settings panel and see something like a routing table: one row for slide generation pointing to Provider A, another row for quiz generation pointing to Provider B, and so on. Each task type has its own provider selection.</p>
 
-<p>This retrospective use of the Prompt button supports a structured, iterative improvement process. Consider a scenario where you generate narration for a slide and the tone comes out more formal than you wanted. Without prompt visibility, you might adjust a setting and regenerate, uncertain whether your change actually addressed the root cause. With prompt visibility, you can inspect the narration prompt, identify that the persona instruction used language like <em>"deliver in a professional and authoritative tone"</em>, and then trace that instruction back to a setting you can modify before your next attempt. The feedback loop becomes much tighter and more deliberate.</p>
-
-<p>Post-generation inspection is also useful when output is surprisingly good. Understanding what a high-quality prompt looks like — what level of specificity, what structural choices, what context it included — helps you replicate that success intentionally rather than by accident.</p>
-
-<p><strong>Why Prompt Transparency Matters</strong></p>
-
-<p>Full prompt visibility is not simply a convenience feature — it serves several deeper purposes that become increasingly important as you rely more heavily on AI assistance in your course production workflow.</p>
+<p>PreseMaker has no such routing table. There is no per-task dropdown, no task-type configuration screen, and no way to direct one category of content generation to one provider while directing another category to a different provider. The application simply does not contain those controls. A few specific scenarios that are <em>not</em> possible — and that users sometimes ask about — are worth naming explicitly:</p>
 
 <ul>
-  <li><strong>Accountability:</strong> When AI-generated content will be published to learners, you carry responsibility for its accuracy and appropriateness. Prompt transparency lets you verify that the AI was given correct instructions and sound source material. If a subject-matter expert or a reviewer questions a piece of AI-generated content, you can produce the prompt that generated it and demonstrate what context the AI was working with.</li>
-  <li><strong>Troubleshooting:</strong> Poor AI output can stem from many sources — an underpowered model, an insufficiently specific instruction, missing context, or even a provider outage affecting response quality. Prompt visibility lets you isolate the prompt as a variable. If the prompt looks correct and complete but the output is still weak, attention shifts to the provider or model selection. If the prompt itself contains a flaw, you have identified the fix without needing to guess.</li>
-  <li><strong>Provider comparison:</strong> PreseMaker supports multiple AI providers, and different providers can respond quite differently to identical prompts. When you are deciding which provider to assign to a particular task type — for example, choosing between providers for quiz generation versus narration — being able to hold the prompt constant and vary only the provider gives you a controlled basis for comparison. The Prompt button makes that possible by ensuring you know exactly what each provider received.</li>
+  <li>You <strong>cannot</strong> configure slide generation to use GPT-4o while quiz generation uses Claude. Both go to the single active provider.</li>
+  <li>You <strong>cannot</strong> assign narration to a provider that is better at natural language while assigning standards alignment to a provider that is better at structured data. Both go to the single active provider.</li>
+  <li>There is <strong>no concept</strong> of a "default provider for unassigned tasks." Because tasks are never individually assigned in the first place, there is nothing to fall back on. One provider covers everything.</li>
 </ul>
 
-<p><strong>The Prompt Button Across All Task Types</strong></p>
+<p>This is not a limitation that can be worked around through advanced settings or configuration files. It is the intended architecture of the current version of PreseMaker.</p>
 
-<p>Because the Prompt button appears on every generation screen without exception, you do not need to learn a different inspection method depending on what kind of content you are producing. The experience of clicking the button, reading the prompt, and acting on what you find is the same whether you are generating quiz questions, slide narration, learning objectives, content summaries, or any other AI-assisted output PreseMaker supports.</p>
+<p><strong>Why the Feature Was Removed</strong></p>
 
-<p>This consistency has a meaningful practical benefit: prompt inspection can become a standard, repeatable step in your quality-assurance process rather than an ad hoc troubleshooting measure. The table below illustrates how the same Prompt button workflow applies uniformly across several common task types:</p>
+<p>An earlier version of PreseMaker did support per-task provider assignment. That version allowed different task types to be routed to different AI providers, which sounded flexible in theory but created a consistent and frustrating class of problem in practice.</p>
+
+<p>The core issue was a mismatch between the API key a user believed was active and the key that a specific task actually required. Consider a typical failure scenario under the old model:</p>
+
+<ul>
+  <li>A user enters an API key for Provider A and confirms it works by generating a few slides successfully.</li>
+  <li>Behind the scenes, quiz generation has been mapped — perhaps by a previous user or by a default setting the user never noticed — to Provider B.</li>
+  <li>The user attempts to generate a quiz. The request fails.</li>
+  <li>The user assumes the API key is invalid, re-enters it, and tries again. It fails again — because the key is for Provider A, and the quiz task is trying to reach Provider B, for which no valid key has been entered.</li>
+</ul>
+
+<p>From the user's perspective, the system appeared to be ignoring a valid API key, or the error message pointed at a provider the user had never intentionally configured. Diagnosing this required understanding the routing table, which most users were unaware existed. The result was support burden, user frustration, and wasted time.</p>
+
+<p>Removing per-task assignment eliminated that entire class of configuration error. When there is only one active provider, an API failure is unambiguous: something is wrong with the one key or the one provider currently selected. There is no hidden routing to investigate, no secondary key to check, and no provider mismatch to untangle. The simplification made errors faster to diagnose and easier to resolve.</p>
+
+<p><strong>Correcting Common Misconceptions</strong></p>
+
+<p>Because per-task assignment existed in an older version of PreseMaker, some users carry forward assumptions from that version that no longer apply. The following misconceptions come up often enough to address directly.</p>
+
+<ul>
+  <li><strong>Misconception: "I need to configure each task type separately."</strong> This was true in the older version. It is not true now. The single Active AI Provider selection covers all task types automatically. There are no per-task settings to configure.</li>
+  <li><strong>Misconception: "There must be a hidden or advanced setting that re-enables per-task routing."</strong> There is not. The feature is fully removed from the application — not hidden behind a toggle, not accessible via a configuration file, not available in any admin or developer mode. It does not exist in the current version.</li>
+  <li><strong>Misconception: "My API failures might be caused by tasks being routed to a provider I haven't configured."</strong> Under the single-provider model, this cannot happen. Every AI task goes to the active provider. If a task fails, the cause is related to the one active provider — the key may be invalid, the account may have insufficient credits, the provider's API may be experiencing an outage, or there may be a network issue. There is no second provider involved.</li>
+  <li><strong>Misconception: "Switching the active provider only changes it for certain tasks."</strong> Switching the Active AI Provider dropdown changes it for all tasks, immediately. From the moment you save a new provider selection, every subsequent AI request in PreseMaker goes to that new provider.</li>
+</ul>
+
+<p><strong>Practical Implication: One Key Is All You Need</strong></p>
+
+<p>The most immediate practical consequence of the single-provider model is straightforward: entering a valid API key for one provider in Settings is sufficient to enable every AI-powered feature in PreseMaker. You do not need to obtain keys from multiple providers, you do not need to configure keys for different task types, and you do not need to do anything beyond selecting a provider and entering its key.</p>
+
+<p>You <em>may</em> choose to enter API keys for more than one provider. Doing so gives you the flexibility to switch the active provider whenever you want — for instance, if you want to compare output quality between providers, or if one provider's service is temporarily degraded and you want to move to another. But having multiple keys entered does not mean multiple providers are ever used simultaneously. Only the one currently selected in the Active AI Provider dropdown is active at any moment.</p>
+
+<p>Switching providers is a single action: change the Active AI Provider dropdown to the desired provider and save. From that point forward, all AI tasks — every item on the list above — use the newly selected provider. The transition is complete and immediate; there is no partial switchover or task-level override to manage.</p>
+
+<p>To illustrate the contrast between the old model and the current one, the table below summarizes the key differences:</p>
 
 <table>
   <thead>
     <tr>
-      <th>Task Type</th>
-      <th>What the Prompt Typically Contains</th>
-      <th>Key Things to Check</th>
+      <th>Aspect</th>
+      <th>Old Per-Task Model</th>
+      <th>Current Single-Provider Model</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Quiz question generation</td>
-      <td>Source content, question count, difficulty level, question format instructions</td>
-      <td>Correct number of questions requested, appropriate difficulty framing, full source text present</td>
+      <td>Provider selection location</td>
+      <td>Multiple dropdowns, one per task type</td>
+      <td>One dropdown: Active AI Provider in Settings</td>
     </tr>
     <tr>
-      <td>Speaker narration</td>
-      <td>Slide text, persona or tone instructions, length or pacing guidance</td>
-      <td>Tone matches intended audience, slide content is complete, no extraneous content included</td>
+      <td>Number of providers active at once</td>
+      <td>Potentially many (one per task type)</td>
+      <td>Exactly one</td>
     </tr>
     <tr>
-      <td>Content summarization</td>
-      <td>Full source material, summarization target length or format</td>
-      <td>All source sections included, target format clearly specified</td>
+      <td>API keys required</td>
+      <td>One per provider assigned to at least one task</td>
+      <td>One (for the single active provider)</td>
     </tr>
     <tr>
-      <td>Learning objective generation</td>
-      <td>Topic description, Bloom's taxonomy level or action verb guidance, module context</td>
-      <td>Correct taxonomy level reflected, topic scope is accurate</td>
+      <td>Failure diagnosis</td>
+      <td>Complex — must check which provider a failing task was routed to</td>
+      <td>Simple — every failure points to the one active provider</td>
+    </tr>
+    <tr>
+      <td>Switching providers</td>
+      <td>Update each task-type assignment individually</td>
+      <td>Change one dropdown; all tasks update immediately</td>
+    </tr>
+    <tr>
+      <td>Risk of key/provider mismatch</td>
+      <td>High — easy to leave a task mapped to a provider with no valid key</td>
+      <td>None — one key covers every task</td>
     </tr>
   </tbody>
 </table>
 
-<p>Incorporating the Prompt button into your standard workflow — reviewing the prompt before generation for high-stakes or complex tasks, and reviewing it after generation whenever output needs analysis — transforms prompt inspection from an occasional troubleshooting step into a routine part of responsible AI-assisted authoring. Over time, this practice builds familiarity with how PreseMaker constructs prompts, which in turn makes you better at configuring your settings and content inputs to produce stronger results from the start.</p>
-        <div class="notes"><strong>Notes</strong>Explains how to use the Prompt button available on every generation screen to inspect the exact text sent to an AI provider. Covers when and why learners would use this feature before or after generation.</div>
+<p>Understanding this table — and internalizing the shift from the old model to the current one — resolves the vast majority of configuration questions that arise around AI provider setup in PreseMaker. There is one provider, selected in one place, handling everything. That simplicity is the point.</p>
+        <div class="notes"><strong>Notes</strong>A focused clarification that PreseMaker does not support routing different task types to different providers, and why that feature was removed. This topic corrects common misconceptions and explains the simplified single-provider model.</div>
       </div>
     </details>
   </main>

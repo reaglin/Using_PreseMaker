@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Introduction to AI Tasks in PreseMaker</title>
+  <title>Introduction to AI Providers in PreseMaker</title>
   <style>
 :root {
     --bg:         #ffffff;
@@ -62,104 +62,109 @@ pre { background: var(--code-bg); border: 1px solid var(--code-border); border-r
 </head><body>
 <div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Configuring AI Providers per Task and Using the Prompt Button</a></div>
   <header>
-    <h1>Introduction to AI Tasks in PreseMaker</h1>
+    <h1>Introduction to AI Providers in PreseMaker</h1>
   </header><main>
     <details class="slide-card" open>
-      <summary class="slide-header"><span class="slide-num">1</span><h2>Introduction to AI Tasks in PreseMaker</h2><span class="chevron">▶</span></summary>
+      <summary class="slide-header"><span class="slide-num">1</span><h2>Introduction to AI Providers in PreseMaker</h2><span class="chevron">▶</span></summary>
       <div class="slide-body">
-        <p>PreseMaker's AI layer is built around a concept called <strong>AI tasks</strong> — a structured system that defines exactly what kinds of content the platform can generate using artificial intelligence, how those generation requests are categorized, and how they are routed to the AI providers you configure. Before you can make good decisions about which AI service to connect to PreseMaker, or how to configure the platform for your instructional design workflow, you need a clear picture of what an AI task actually is, what tasks are supported, and — just as importantly — what falls outside the scope of PreseMaker's AI capabilities entirely.</p>
+        <p>PreseMaker integrates artificial intelligence into its authoring workflow by connecting to external AI providers through API keys. These providers supply the language model intelligence that powers every automated content generation feature inside the application. Before configuring any provider, it helps to understand precisely what PreseMaker asks these providers to do, which providers are supported, how credentials are protected, and how the application decides which provider handles a given request. Each of these dimensions is covered in full below.</p>
 
-<p>Think of AI tasks as the vocabulary PreseMaker uses to describe its own content generation needs. Rather than treating "generate something with AI" as a single undifferentiated action, PreseMaker breaks the process down into named, well-defined units, each representing a specific type of content generation request. This granularity is intentional: it gives you control, predictability, and flexibility in how AI is applied across your projects.</p>
+<p><strong>What PreseMaker Uses AI Providers For</strong></p>
 
-<p><strong>What Are AI Tasks in PreseMaker?</strong></p>
+<p>Every AI task that PreseMaker performs is strictly <em>text-based</em>. There is no image generation, no image recognition, no computer vision, and no audio synthesis delegated to an AI provider. When PreseMaker calls an external model, it is always sending a text prompt and expecting a text response — nothing more.</p>
 
-<p>An AI task in PreseMaker is a <em>discrete unit of content generation work</em> — a clearly defined request for a specific type of output that the platform can hand off to a configured AI provider. The word "discrete" is important here. Each task is self-contained and independently named, meaning PreseMaker treats "generate quiz questions" as a fundamentally different request from "generate slide content," even though both involve natural language generation under the hood.</p>
+<p>This matters because some AI platforms offer a broad suite of capabilities, and it would be easy to assume PreseMaker exploits all of them. It does not. The integration is deliberately narrow: only the text-generation endpoint of a provider is ever used. What changes across different authoring tasks is the <em>content</em> of the prompt and the <em>structure</em> of the expected response, not the fundamental nature of the call.</p>
 
-<p>This design has a direct practical consequence: because tasks are individual units, PreseMaker can route different tasks to <em>different AI providers</em> depending on how you have configured the system. For example, you might find that one provider excels at generating structured quiz questions while another produces richer narrative text for lessons. The task-based architecture lets you assign each type of work to whichever provider is best suited for it, rather than locking the entire platform into a single AI service for everything.</p>
+<p>The range of authoring tasks that trigger an AI call is wide. Examples include:</p>
 
-<p>Understanding tasks as individual, named units is therefore foundational to working effectively with PreseMaker's Settings. When you navigate to the AI configuration area of the platform, you are essentially building a map: for each task type, which provider should handle it? Without a clear mental model of what the tasks are and how they differ, that configuration process becomes guesswork.</p>
+<ul>
+  <li>Generating quiz questions and answer choices for a knowledge check</li>
+  <li>Writing assignment instructions and grading criteria</li>
+  <li>Drafting slide narration scripts that accompany course content</li>
+  <li>Producing learning outcomes or course objectives</li>
+  <li>Suggesting or refining activity descriptions and scenario content</li>
+  <li>Aligning content to educational standards</li>
+</ul>
 
-<p><strong>The Scope of AI Capabilities: Text-Only Generation</strong></p>
+<p>Because every one of these tasks is text-in / text-out, configuring an AI provider means you are unlocking the full breadth of PreseMaker's generation features in a single step. Understanding this also sets accurate expectations: swapping one AI provider for another will not change whether a task is possible — all four supported providers are capable of text generation — but it may change the quality, tone, or style of the output, since each underlying model has different strengths.</p>
 
-<p>Before surveying the supported tasks, it is essential to establish a firm boundary around what PreseMaker's AI layer is designed to do. <em>PreseMaker does not include any image generation capability.</em> There is no AI task for producing visual assets, no "vision" feature, and no integration pathway for image-based AI models within the platform. The AI layer in PreseMaker is designed exclusively around <strong>natural language generation</strong> — the production of written text.</p>
+<p><strong>The Four Supported AI Providers</strong></p>
 
-<p>This is not a limitation that is likely to be resolved by connecting a more powerful AI provider. It is a deliberate architectural boundary. No matter which text-based AI provider you configure, PreseMaker will only ever use it for text output. Any provider capabilities related to image generation, image analysis, or multimodal processing simply have no corresponding task in PreseMaker to invoke them.</p>
-
-<p>Why does this matter practically? It prevents two common problems. First, it prevents <em>misconfiguration</em> — there is no point in selecting a provider specifically because it offers image generation, since PreseMaker will never call that capability. Second, it prevents <em>incorrect expectations</em> — course authors and administrators who understand this boundary will not be surprised or confused when AI-generated content appears as text only. Visual assets in PreseMaker come from other sources; the AI layer is not one of them.</p>
-
-<p><strong>Supported Text Generation Tasks</strong></p>
-
-<p>Within the scope of natural language generation, PreseMaker supports a well-defined set of AI tasks that map closely to the stages and components of instructional content development. The following table summarizes the supported task types and what each one produces:</p>
+<p>PreseMaker currently recognizes four external AI providers. Each represents a distinct company and underlying language model family:</p>
 
 <table>
   <thead>
     <tr>
-      <th>AI Task</th>
-      <th>What It Generates</th>
-      <th>Where It Fits in Course Development</th>
+      <th>Provider Name</th>
+      <th>Developed By</th>
+      <th>Model / Brand</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Module Topics</td>
-      <td>Suggested topics and subtopics for a module</td>
-      <td>Early planning and course structure</td>
+      <td>Claude</td>
+      <td>Anthropic</td>
+      <td>Claude (various versions)</td>
     </tr>
     <tr>
-      <td>Learning Outcomes</td>
-      <td>Measurable outcome statements for a module or lesson</td>
-      <td>Instructional design and alignment</td>
+      <td>Gemini</td>
+      <td>Google</td>
+      <td>Gemini model family</td>
     </tr>
     <tr>
-      <td>Standards Alignment</td>
-      <td>Mapped standards or competencies relevant to content</td>
-      <td>Curriculum compliance and documentation</td>
+      <td>GPT-4o</td>
+      <td>OpenAI</td>
+      <td>GPT-4o</td>
     </tr>
     <tr>
-      <td>Presentation Slide Content</td>
-      <td>Text for individual slides in a presentation</td>
-      <td>Building slide-based learning materials</td>
-    </tr>
-    <tr>
-      <td>Text Lessons</td>
-      <td>Narrative explanatory text for reading-based lessons</td>
-      <td>Long-form instructional content</td>
-    </tr>
-    <tr>
-      <td>Quiz Questions</td>
-      <td>Assessment questions with answer options and feedback</td>
-      <td>Formative and summative assessment</td>
-    </tr>
-    <tr>
-      <td>Assignments</td>
-      <td>Assignment prompts, instructions, and criteria</td>
-      <td>Performance-based assessment design</td>
-    </tr>
-    <tr>
-      <td>Interactive Activity Content</td>
-      <td>Text-based content for interactive learning activities</td>
-      <td>Engagement and applied practice</td>
-    </tr>
-    <tr>
-      <td>Speaker Narration</td>
-      <td>Script text for voiceover or on-screen narration</td>
-      <td>Audio-accompanied or narrated presentations</td>
+      <td>Mistral AI</td>
+      <td>Mistral AI</td>
+      <td>Mistral model family</td>
     </tr>
   </tbody>
 </table>
 
-<p>Each of these tasks reflects a genuine, recurring need in the course authoring process. Consider a few examples in depth. When generating <strong>module topics</strong>, PreseMaker is asking an AI provider to analyze a subject area and propose a logical breakdown of content into teachable chunks — the kind of work that might otherwise require a subject matter expert to outline by hand. When generating <strong>quiz questions</strong>, the platform is requesting structured assessment content: not just question stems, but answer choices, correct answers, and often explanatory feedback — all as text. When generating <strong>speaker narration</strong>, the task is producing a readable script that can accompany slides or be fed into a text-to-speech workflow, bridging the gap between visual content and audio delivery.</p>
+<p>A critical practical point: you do <em>not</em> need API keys for all four providers. Having a valid, active key for at least one provider is entirely sufficient to use PreseMaker's AI features. Many users work with a single provider throughout their entire authoring practice and never configure the others. You can add additional keys at any time if your organization later obtains access to a second or third provider and you want the option to switch between them.</p>
 
-<p>The breadth of these tasks means that AI can be involved at virtually every stage of content creation within PreseMaker, from the earliest structural planning all the way through to the final narration of a completed presentation. However, because each stage is a <em>separate named task</em>, you retain the ability to engage AI selectively — using it for the tasks where it adds the most value in your workflow and leaving others to human authors.</p>
+<p>Each provider's API key is entered separately in PreseMaker's Settings area. The fields are independent — entering a key for GPT-4o has no effect on the Claude field, and vice versa. Keys can be added, updated, or removed individually without disturbing the configuration of the other providers.</p>
 
-<p><strong>AI Tasks as the Bridge Between PreseMaker and AI Providers</strong></p>
+<p><strong>How API Keys Are Stored and Secured</strong></p>
 
-<p>The task-based architecture serves a second, equally important function beyond simply categorizing content: it acts as the <em>connection layer</em> between PreseMaker and external AI providers. Each task type is a named channel. When PreseMaker needs to generate quiz questions, it does not simply send a request to "some AI" — it sends a request specifically tagged as the quiz question task, and the platform's configuration determines which provider receives that request.</p>
+<p>API keys are sensitive credentials. A leaked key can result in unauthorized charges to your account or misuse of your provider quota. PreseMaker addresses this through a combination of encryption and storage isolation.</p>
 
-<p>This is what makes <strong>per-task provider assignment</strong> possible. In PreseMaker's Settings, administrators can specify a different AI provider for each task if desired. The task names act as the keys in that configuration: they are the identifiers that bind a content need to a chosen service. Because the tasks are well-defined and stable — their names and behaviors do not change arbitrarily — you can make considered, informed decisions about provider assignment. You can ask questions like: Which provider generates the most pedagogically sound learning outcomes? Which one handles long-form narrative text better? Which one produces the most accurate standards alignment? The task boundaries give you a meaningful framework for evaluating and comparing providers against specific, concrete use cases rather than in the abstract.</p>
+<p>When you save an API key in PreseMaker's Settings, the application immediately encrypts it using <strong>Windows DPAPI</strong> (Data Protection API). DPAPI is a built-in Windows cryptographic service that ties encrypted data to the <em>specific Windows user account</em> that encrypted it. This means the ciphertext stored on disk is useless to anyone who does not have access to that same Windows session — even if they obtain the file directly.</p>
 
-<p>In summary, AI tasks in PreseMaker represent a thoughtfully designed system that makes AI-assisted content generation both <em>flexible</em> and <em>transparent</em>. They define what can be generated (text-only, across a specific set of content types), establish clear boundaries around what cannot (no image generation), and create the infrastructure for granular control over which AI providers handle which kinds of work. Grasping this model is the essential first step before exploring provider configuration, task-level settings, or any other aspect of PreseMaker's AI capabilities.</p>
-        <div class="notes"><strong>Notes</strong>Explains what AI tasks are in PreseMaker and the range of text-based generation tasks supported. Clarifies the scope of AI capabilities, including what PreseMaker does and does not generate.</div>
+<p>The encrypted key is written to a file named <code>app_settings.json</code>, located under your local user profile directory. This file is not a shared or network location; it lives on the individual user's machine, within their profile.</p>
+
+<p>Two important security consequences follow from this design:</p>
+
+<ul>
+  <li><strong>Keys are never embedded in course files.</strong> When you publish or export a course package, no API credentials travel with it. A colleague who opens your exported course in their own PreseMaker installation will not inherit your provider configuration.</li>
+  <li><strong>Keys are never shared with any repository.</strong> Whether you use a local folder, a shared network drive, or a version-controlled repository to store your course source files, the <code>app_settings.json</code> file stays on your machine and is not part of the course project structure.</li>
+</ul>
+
+<p>A practical consequence of this architecture is that <em>every user who needs to run AI features must configure their own API key in their own installation of PreseMaker</em>. There is no central credential store that a team can point to. If three authors on a team all need AI generation, each person must obtain an API key from the relevant provider and enter it in their own copy of the application. This is by design — it keeps each person's billing and usage tied to their own credentials.</p>
+
+<p><strong>The Active AI Provider Setting</strong></p>
+
+<p>Having one or more API keys stored in PreseMaker is a prerequisite, but it does not by itself tell the application which provider to use. That decision is made through the <strong>Active AI Provider</strong> dropdown in the Settings area.</p>
+
+<p>The dropdown lists the four supported providers. Selecting one designates it as the provider responsible for all AI work PreseMaker performs from that point forward. The selection is global — it applies across every project you open and every content type you work with.</p>
+
+<p>Changing the active provider takes effect immediately. There is no restart required. As soon as you save the new selection, the very next AI request PreseMaker makes will be routed to the newly selected provider. This makes it straightforward to experiment: you can generate a quiz with one provider, switch the active provider in Settings, generate a second quiz, and compare the outputs side by side.</p>
+
+<p>Note that selecting a provider for which you have not yet entered an API key will cause AI requests to fail. PreseMaker cannot authenticate with a provider unless a valid key for that provider is present. The recommended workflow is to enter a key first, then set that provider as active.</p>
+
+<p><strong>One Provider Handles Every Task — No Per-Task Routing</strong></p>
+
+<p>A question that often arises from experienced users is whether different AI tasks can be sent to different providers — for example, using GPT-4o for quiz generation because of its strong reasoning, while using Claude for narration because of its natural prose style. In the current version of PreseMaker, the answer is <em>no</em>.</p>
+
+<p>There is no routing table. There is no per-task provider dropdown. There is no concept of a "default provider for unassigned tasks." The active provider handles <em>everything</em>: narration, outcomes, quizzes, activities, standards alignment, assignments, and any other text generation feature the application offers. If you want a different provider to handle a particular task, the only way to achieve that is to switch the active provider in Settings, perform the task, and then switch back if needed.</p>
+
+<p>This single-provider model was introduced deliberately. In an earlier design that allowed per-task provider assignment, users encountered a category of configuration errors that proved difficult to diagnose — for instance, a task failing silently because it was assigned to a provider whose key had expired, while the key for the user's preferred provider was valid and active. By collapsing all routing to a single selection, PreseMaker eliminates that class of problem entirely. When something goes wrong with an AI request, there is exactly one provider to inspect.</p>
+
+<p>When planning your PreseMaker configuration, the practical guidance is straightforward: choose the provider whose overall text quality best fits your authoring needs, enter its key, set it as active, and expect every AI feature in the application to use it consistently. If your needs change or you want to compare providers, the active provider can be switched at any time with immediate effect.</p>
+        <div class="notes"><strong>Notes</strong>An overview of the four AI providers supported by PreseMaker and how they are used to handle text-based generation tasks. This topic establishes the foundational context for configuring and working with AI providers.</div>
       </div>
     </details>
   </main>
