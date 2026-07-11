@@ -3,225 +3,238 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reading Standards Coverage and Checking Cognitive Depth – Using PreseMaker</title>
+  <title>Reading Standards Coverage and Checking Cognitive Depth | Using PreseMaker</title>
   <style>
-    /* ── Reset & Base ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-bg: #f4f6f9;
+      --color-surface: #ffffff;
+      --color-primary: #1a4f8a;
+      --color-primary-dark: #133a66;
+      --color-accent: #2e7d52;
+      --color-accent-light: #e8f4ee;
+      --color-text: #1e2530;
+      --color-text-muted: #5a6474;
+      --color-border: #dde2ea;
+      --color-tag-bg: #eef1f7;
+      --color-tag-text: #3b4a62;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.13);
+      --font-sans: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    }
 
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      font-size: 1rem;
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-text);
       line-height: 1.6;
-      background: #f4f6f9;
-      color: #1e2a38;
       min-height: 100vh;
     }
 
-    /* ── Page Shell ── */
-    .page-wrapper {
-      max-width: 1060px;
-      margin: 0 auto;
-      padding: 2.5rem 1.25rem 4rem;
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      color: #ffffff;
+      padding: 48px 24px 40px;
     }
 
-    /* ── Course Label ── */
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
     .course-label {
       display: inline-block;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #5a7fa8;
-      background: #e6edf5;
-      border-radius: 4px;
-      padding: 0.25rem 0.65rem;
-      margin-bottom: 0.85rem;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 12px;
     }
 
-    /* ── Header ── */
-    .module-header {
-      border-bottom: 2px solid #d0dae6;
-      padding-bottom: 1.75rem;
-      margin-bottom: 2.25rem;
-    }
-
-    .module-header h1 {
-      font-size: clamp(1.5rem, 3vw, 2.1rem);
+    header h1 {
+      font-size: clamp(1.5rem, 3vw + 0.5rem, 2.25rem);
       font-weight: 700;
-      color: #12202e;
       line-height: 1.25;
-      margin-bottom: 0.75rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
     }
 
-    .module-header p {
+    header p {
       font-size: 1rem;
-      color: #3d5166;
-      max-width: 72ch;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 680px;
     }
 
-    /* ── Section Label ── */
+    /* ── Main content ── */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+    }
+
     .section-heading {
-      font-size: 0.7rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
-      color: #7a93ab;
-      margin-bottom: 1.1rem;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--color-border);
     }
 
-    /* ── Card Grid ── */
+    /* ── Card grid ── */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-      gap: 1.15rem;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
     }
 
-    /* ── Card ── */
     .card {
-      background: #ffffff;
-      border: 1px solid #dae2ec;
-      border-radius: 10px;
-      padding: 1.35rem 1.4rem 1.25rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
-      transition: box-shadow 0.18s ease, border-color 0.18s ease;
+      gap: 12px;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
     }
 
     .card:hover {
-      box-shadow: 0 4px 18px rgba(30, 60, 100, 0.1);
-      border-color: #b0c4d8;
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
     }
 
-    /* ── Card Meta Row ── */
-    .card-meta {
+    /* ── Card header row ── */
+    .card-header {
       display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.45rem;
+      flex-direction: column;
+      gap: 8px;
     }
 
-    .badge {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      border-radius: 4px;
-      padding: 0.18rem 0.55rem;
-      white-space: nowrap;
-    }
-
-    .badge-type {
-      background: #eaf0f7;
-      color: #3a6490;
-    }
-
-    .badge-filetype {
-      background: #f0f4f0;
-      color: #3a6b44;
-      font-family: 'Courier New', monospace;
-      font-size: 0.67rem;
-    }
-
-    /* ── Card Title Row ── */
     .card-title-row {
       display: flex;
       align-items: baseline;
       flex-wrap: wrap;
-      gap: 0.55rem;
+      gap: 8px;
     }
 
-    .card-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #12202e;
-      line-height: 1.3;
+    .card-name {
+      font-size: 0.975rem;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.35;
+      word-break: break-word;
     }
 
-    .card-title a {
-      color: #1a5fa8;
+    .card-name a {
+      color: var(--color-primary);
       text-decoration: none;
       border-bottom: 1.5px solid transparent;
       transition: border-color 0.15s ease, color 0.15s ease;
     }
 
-    .card-title a:hover,
-    .card-title a:focus {
-      color: #0d3f73;
-      border-bottom-color: #0d3f73;
+    .card-name a:hover,
+    .card-name a:focus {
+      color: var(--color-primary-dark);
+      border-bottom-color: var(--color-primary-dark);
       outline: none;
     }
 
-    .card-title a:focus-visible {
-      outline: 2px solid #1a5fa8;
-      outline-offset: 2px;
-      border-radius: 2px;
-    }
-
-    /* ── Source Link ── */
     .source-link {
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: #5a7fa8;
-      text-decoration: none;
       white-space: nowrap;
-      border: 1px solid #b8cfe0;
+      font-size: 0.73rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      background: var(--color-accent-light);
+      border: 1px solid #b8ddc8;
       border-radius: 4px;
-      padding: 0.15rem 0.5rem;
-      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      padding: 2px 7px;
+      text-decoration: none;
+      transition: background 0.15s ease, color 0.15s ease;
     }
 
     .source-link:hover,
     .source-link:focus {
-      background: #ddeaf5;
-      color: #0d3f73;
-      border-color: #7aaacf;
+      background: #d0ecdc;
+      color: #1f5c3a;
       outline: none;
     }
 
-    .source-link:focus-visible {
-      outline: 2px solid #1a5fa8;
-      outline-offset: 2px;
+    /* ── Meta badges ── */
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
     }
 
-    .source-link::before {
-      content: '↓ ';
+    .badge {
+      display: inline-block;
       font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 3px 9px;
+      border-radius: 20px;
+      background: var(--color-tag-bg);
+      color: var(--color-tag-text);
+      border: 1px solid var(--color-border);
     }
 
-    /* ── Card Description ── */
+    .badge-type {
+      background: #eef1f7;
+      color: #3b4a62;
+      border-color: #c9d2e3;
+    }
+
+    .badge-filetype {
+      background: #fdf3e7;
+      color: #7a4e10;
+      border-color: #f0d4a8;
+      font-family: 'Courier New', monospace;
+      font-size: 0.67rem;
+    }
+
+    /* ── Card description ── */
     .card-description {
-      font-size: 0.89rem;
-      color: #3d5166;
-      line-height: 1.55;
-      flex: 1;
-    }
-
-    /* ── Divider ── */
-    .card-divider {
-      height: 1px;
-      background: #e8edf3;
-      border: none;
-      margin: 0.1rem 0;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      flex-grow: 1;
     }
 
     /* ── Footer ── */
-    .page-footer {
-      margin-top: 3.5rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid #d0dae6;
+    footer {
       text-align: center;
+      padding: 24px;
       font-size: 0.78rem;
-      color: #8a9fb5;
+      color: var(--color-text-muted);
+      border-top: 1px solid var(--color-border);
+      background: var(--color-surface);
     }
 
-    /* ── Responsive ── */
-    @media (max-width: 520px) {
+    /* ── Responsive tweaks ── */
+    @media (max-width: 480px) {
+      header {
+        padding: 36px 18px 32px;
+      }
+
+      main {
+        padding: 28px 16px 48px;
+      }
+
       .card-grid {
         grid-template-columns: 1fr;
-      }
-      .module-header h1 {
-        font-size: 1.4rem;
       }
     }
   </style>
@@ -229,170 +242,195 @@
 <body>
 <div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Using PreseMaker</a></div>
 <div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
-  <div class="page-wrapper">
 
-    <!-- ── Header ── -->
-    <header class="module-header">
+  <header>
+    <div class="header-inner">
       <span class="course-label">Using PreseMaker</span>
       <h1>Reading Standards Coverage and Checking Cognitive Depth</h1>
       <p>
-        This module walks you through PreseMaker's Standards Coverage view — how to read its layout,
-        interpret tiered status indicators, distinguish assessment from practice, and use the platform's
-        cognitive-depth analysis to ensure your course materials fully and appropriately address each
-        mapped standard.
+        This module guides instructors and course designers through PreseMaker's Standards Coverage view,
+        showing how to interpret coverage reports, understand the tiered status system, distinguish
+        assessment from practice activities, and verify that learning outcomes meet the cognitive
+        depth demanded by mapped standards.
       </p>
-    </header>
+    </div>
+  </header>
 
-    <!-- ── Artifact Grid ── -->
-    <main>
-      <p class="section-heading">Module Artifacts &nbsp;·&nbsp; 7 items</p>
+  <main>
+    <h2 class="section-heading">Module Artifacts</h2>
 
-      <div class="card-grid" role="list">
+    <div class="card-grid">
 
-        <!-- Card 1 – Module Topics -->
-        <article class="card" role="listitem">
+      <!-- Card 1: Module Topics -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-row">
+            <span class="card-name">
+              <a href="content/module_topics.html">Module Topics</a>
+            </span>
+            <a class="source-link" href="source/hierarchy.json">source file</a>
+          </div>
           <div class="card-meta">
             <span class="badge badge-type">Module Topics</span>
             <span class="badge badge-filetype">.json</span>
           </div>
-          <hr class="card-divider" />
-          <div class="card-title-row">
-            <span class="card-title">
-              <a href="content/module_topics.html">Module Topics</a>
-            </span>
-            <a class="source-link" href="source/hierarchy.json" aria-label="Source file for Module Topics">source file</a>
-          </div>
-          <p class="card-description">
-            A structured outline listing the topics and subtopics covered in this module, including the
-            Standards Coverage view, tiered status indicators, assessment vs. practice distinctions, and
-            cognitive-depth checking, used by instructors to see the module's scope at a glance.
-          </p>
-        </article>
+        </div>
+        <p class="card-description">
+          A structured outline listing the topics and subtopics covered in this module, including the
+          Standards Coverage view, tiered status indicators, assessment vs. practice distinctions, and
+          cognitive-depth checking, used by instructors to see the module's scope at a glance.
+        </p>
+      </div>
 
-        <!-- Card 2 – Introduction to the Standards Coverage View -->
-        <article class="card" role="listitem">
-          <div class="card-meta">
-            <span class="badge badge-type">Topic Detail</span>
-            <span class="badge badge-filetype">.html</span>
-          </div>
-          <hr class="card-divider" />
+      <!-- Card 2: Presentation -->
+      <div class="card">
+        <div class="card-header">
           <div class="card-title-row">
-            <span class="card-title">
+            <span class="card-name">
+              <a href="presentation/Reading_Standards_Coverage_generated.pptx">Reading_Standards_Coverage_generated.pptx</a>
+            </span>
+          </div>
+          <div class="card-meta">
+            <span class="badge badge-type">Presentation</span>
+            <span class="badge badge-filetype">.pptx</span>
+          </div>
+        </div>
+        <p class="card-description">
+          A slide deck explaining how to interpret PreseMaker's Standards Coverage view and
+          cognitive-depth analysis, covering the layout of coverage rows, headline summaries, and the
+          'System in Development' label; course designers use it to understand how well their materials
+          address mapped standards and at what cognitive depth.
+        </p>
+      </div>
+
+      <!-- Card 3: Topic 1 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-row">
+            <span class="card-name">
               <a href="content/Reading_Standards_Coverage_interactive_topics_t1.html">Introduction to the Standards Coverage View</a>
             </span>
           </div>
-          <p class="card-description">
-            A lesson explaining what PreseMaker's Standards Coverage view is, how its layout is organised,
-            and what the tiered status indicators mean, used by learners to understand how to read and
-            interpret the view when auditing whether their course materials adequately address mapped
-            standards.
-          </p>
-        </article>
-
-        <!-- Card 3 – Reading the Coverage View Layout -->
-        <article class="card" role="listitem">
           <div class="card-meta">
             <span class="badge badge-type">Topic Detail</span>
             <span class="badge badge-filetype">.html</span>
           </div>
-          <hr class="card-divider" />
+        </div>
+        <p class="card-description">
+          A lesson explaining what PreseMaker's Standards Coverage view is, how its layout is organised,
+          and what the tiered status indicators mean, used by learners to understand how to read and
+          interpret the view when auditing whether their course materials adequately address mapped
+          standards.
+        </p>
+      </div>
+
+      <!-- Card 4: Topic 2 -->
+      <div class="card">
+        <div class="card-header">
           <div class="card-title-row">
-            <span class="card-title">
+            <span class="card-name">
               <a href="content/Reading_Standards_Coverage_interactive_topics_t2.html">Reading the Coverage View Layout</a>
             </span>
           </div>
-          <p class="card-description">
-            Describes how the Coverage View's row-based layout consolidates assignments, quizzes, and
-            activities against standards, and shows learners how to read the display to identify coverage
-            gaps and strengths at a glance.
-          </p>
-        </article>
-
-        <!-- Card 4 – Understanding the Tiered Status System -->
-        <article class="card" role="listitem">
           <div class="card-meta">
             <span class="badge badge-type">Topic Detail</span>
             <span class="badge badge-filetype">.html</span>
           </div>
-          <hr class="card-divider" />
+        </div>
+        <p class="card-description">
+          Describes how the Coverage View's row-based layout consolidates assignments, quizzes, and
+          activities against standards, and shows learners how to read the display to identify coverage
+          gaps and strengths at a glance.
+        </p>
+      </div>
+
+      <!-- Card 5: Topic 3 -->
+      <div class="card">
+        <div class="card-header">
           <div class="card-title-row">
-            <span class="card-title">
+            <span class="card-name">
               <a href="content/Reading_Standards_Coverage_interactive_topics_t3.html">Understanding the Tiered Status System</a>
             </span>
           </div>
-          <p class="card-description">
-            Defines the four-tier status labelling system used to classify how well each standard is
-            addressed, explaining what each label means so learners can accurately interpret coverage
-            report results.
-          </p>
-        </article>
-
-        <!-- Card 5 – Assessment vs. Practice -->
-        <article class="card" role="listitem">
           <div class="card-meta">
             <span class="badge badge-type">Topic Detail</span>
             <span class="badge badge-filetype">.html</span>
           </div>
-          <hr class="card-divider" />
+        </div>
+        <p class="card-description">
+          Defines the four-tier status labelling system used to classify how well each standard is
+          addressed, explaining what each label means so learners can accurately interpret coverage
+          report results.
+        </p>
+      </div>
+
+      <!-- Card 6: Topic 4 -->
+      <div class="card">
+        <div class="card-header">
           <div class="card-title-row">
-            <span class="card-title">
+            <span class="card-name">
               <a href="content/Reading_Standards_Coverage_interactive_topics_t4.html">Assessment vs. Practice: Key Distinctions</a>
             </span>
           </div>
-          <p class="card-description">
-            Clarifies the difference between assessment and practice activities within coverage reports,
-            explaining why the distinction matters for correctly judging whether a standard has been
-            assessed, only practised, or left uncovered.
-          </p>
-        </article>
-
-        <!-- Card 6 – How the Cognitive-Depth Check Works -->
-        <article class="card" role="listitem">
           <div class="card-meta">
             <span class="badge badge-type">Topic Detail</span>
             <span class="badge badge-filetype">.html</span>
           </div>
-          <hr class="card-divider" />
+        </div>
+        <p class="card-description">
+          Clarifies the difference between assessment and practice activities within coverage reports,
+          explaining why the distinction matters for correctly judging whether a standard has been
+          assessed, only practised, or left uncovered.
+        </p>
+      </div>
+
+      <!-- Card 7: Topic 5 -->
+      <div class="card">
+        <div class="card-header">
           <div class="card-title-row">
-            <span class="card-title">
+            <span class="card-name">
               <a href="content/Reading_Standards_Coverage_interactive_topics_t5.html">How the Cognitive-Depth Check Works</a>
             </span>
           </div>
-          <p class="card-description">
-            A lesson explaining how PreseMaker automatically checks whether the cognitive depth of a
-            course's learning outcomes matches the depth demanded by each mapped standard, used by
-            learners to understand the logic and criteria behind the platform's cognitive-depth analysis.
-          </p>
-        </article>
-
-        <!-- Card 7 – Identifying and Addressing Cognitive-Depth Gaps -->
-        <article class="card" role="listitem">
           <div class="card-meta">
             <span class="badge badge-type">Topic Detail</span>
             <span class="badge badge-filetype">.html</span>
           </div>
-          <hr class="card-divider" />
+        </div>
+        <p class="card-description">
+          A lesson explaining how PreseMaker automatically checks whether the cognitive depth of a
+          course's learning outcomes matches the depth demanded by each mapped standard, used by
+          learners to understand the logic and criteria behind the platform's cognitive-depth analysis.
+        </p>
+      </div>
+
+      <!-- Card 8: Topic 6 -->
+      <div class="card">
+        <div class="card-header">
           <div class="card-title-row">
-            <span class="card-title">
+            <span class="card-name">
               <a href="content/Reading_Standards_Coverage_interactive_topics_t6.html">Identifying and Addressing Cognitive-Depth Gaps</a>
             </span>
           </div>
-          <p class="card-description">
-            A lesson explaining what cognitive-depth gaps are, how to spot them in PreseMaker's coverage
-            reports, and what steps instructors can take to revise learning outcomes or assignments so
-            their cognitive level matches the demands of the relevant standards.
-          </p>
-        </article>
+          <div class="card-meta">
+            <span class="badge badge-type">Topic Detail</span>
+            <span class="badge badge-filetype">.html</span>
+          </div>
+        </div>
+        <p class="card-description">
+          A lesson explaining what cognitive-depth gaps are, how to spot them in PreseMaker's coverage
+          reports, and what steps instructors can take to revise learning outcomes or assignments so
+          their cognitive level matches the demands of the relevant standards.
+        </p>
+      </div>
 
-      </div><!-- /.card-grid -->
-    </main>
+    </div>
+  </main>
 
-    <!-- ── Footer ── -->
-    <footer class="page-footer">
-      <p>Using PreseMaker &nbsp;·&nbsp; Reading Standards Coverage and Checking Cognitive Depth</p>
-    </footer>
+  <footer>
+    <p>Using PreseMaker &mdash; Reading Standards Coverage and Checking Cognitive Depth</p>
+  </footer>
 
-  </div><!-- /.page-wrapper -->
 
 <footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
 <section class="presemaker-extras" style="max-width:1000px;margin:2rem auto;padding:0 1rem;"><h2>Topics &amp; Learning Outcomes</h2><p><a href="topics-outcomes.html">View Topics &amp; Learning Outcomes</a></p><h2>Source Materials</h2><ul class="artifact-list">  <li class="artifact-item">

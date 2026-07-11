@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Batch Actions: Generating Content Across Multiple Modules at Once</title>
+  <title>Batch Actions: Generating Content Across Multiple Modules at Once — Using PreseMaker</title>
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -14,93 +14,90 @@
     :root {
       --color-bg: #f4f6f9;
       --color-surface: #ffffff;
-      --color-primary: #1a4f8a;
-      --color-primary-light: #2563a8;
-      --color-accent: #e8f0fb;
-      --color-border: #d1d9e6;
-      --color-text: #1e2a3a;
-      --color-text-muted: #5a6880;
-      --color-tag-bg: #eef2f8;
-      --color-tag-text: #3a5278;
-      --color-source-bg: #f0f7ef;
-      --color-source-text: #2e6b35;
-      --color-source-border: #b6d9b8;
+      --color-primary: #2c5f8a;
+      --color-primary-dark: #1e4266;
+      --color-accent: #3a8fc4;
+      --color-text: #1e2a35;
+      --color-text-muted: #5a6a78;
+      --color-border: #d6e0ea;
+      --color-tag-bg: #e8f0f8;
+      --color-tag-text: #2c5f8a;
+      --color-source-bg: #f0f7f0;
+      --color-source-text: #2a6e3f;
+      --color-source-border: #b3d9be;
       --radius: 8px;
       --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.13);
+      --shadow-hover: 0 6px 20px rgba(44, 95, 138, 0.15);
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: var(--font-sans);
       background-color: var(--color-bg);
       color: var(--color-text);
       line-height: 1.6;
-      padding: 0 0 48px;
+      min-height: 100vh;
     }
 
-    /* ── Header banner ── */
+    /* ── Header ── */
     header {
-      background: linear-gradient(135deg, #1a4f8a 0%, #2563a8 60%, #1e6fa8 100%);
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 60%, var(--color-accent) 100%);
       color: #ffffff;
       padding: 48px 24px 40px;
     }
 
     .header-inner {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
     }
 
     .course-label {
       display: inline-block;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 4px;
-      padding: 3px 10px;
-      margin-bottom: 16px;
-      color: #ddeeff;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 12px;
     }
 
     header h1 {
-      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
       font-weight: 700;
       line-height: 1.25;
       margin-bottom: 16px;
-      letter-spacing: -0.01em;
+      color: #ffffff;
     }
 
     header p {
       font-size: 1rem;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 680px;
       line-height: 1.7;
-      color: #cce0f5;
-      max-width: 700px;
     }
 
-    /* ── Main content ── */
+    /* ── Main ── */
     main {
-      max-width: 900px;
-      margin: 36px auto 0;
-      padding: 0 20px;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
     }
 
-    .section-label {
-      font-size: 0.72rem;
+    .section-heading {
+      font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--color-text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       padding-bottom: 8px;
       border-bottom: 2px solid var(--color-border);
     }
 
-    /* ── Card grid ── */
+    /* ── Card Grid ── */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 20px;
     }
 
@@ -109,10 +106,10 @@
       border: 1px solid var(--color-border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 22px 22px 18px;
+      padding: 22px 20px 20px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       transition: box-shadow 0.2s ease, transform 0.2s ease;
     }
 
@@ -121,7 +118,7 @@
       transform: translateY(-2px);
     }
 
-    /* ── Card top row: badges ── */
+    /* ── Card Meta Row ── */
     .card-meta {
       display: flex;
       flex-wrap: wrap;
@@ -130,28 +127,28 @@
     }
 
     .badge {
+      display: inline-block;
       font-size: 0.7rem;
       font-weight: 600;
-      letter-spacing: 0.05em;
       padding: 2px 8px;
-      border-radius: 4px;
-      white-space: nowrap;
+      border-radius: 20px;
+      letter-spacing: 0.03em;
     }
 
     .badge-type {
-      background: var(--color-tag-bg);
+      background-color: var(--color-tag-bg);
       color: var(--color-tag-text);
-      border: 1px solid #c8d5ec;
+      border: 1px solid #c4d8ee;
     }
 
     .badge-filetype {
-      background: #f5f0ff;
-      color: #5b3ea6;
-      border: 1px solid #d4c9f5;
+      background-color: #f5f0fb;
+      color: #5b3d8a;
+      border: 1px solid #d9c9f0;
     }
 
-    /* ── Card title area ── */
-    .card-title-row {
+    /* ── Card Name / Links ── */
+    .card-name-row {
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
@@ -159,14 +156,15 @@
     }
 
     .card-name {
-      font-size: 1rem;
-      font-weight: 600;
+      font-size: 0.975rem;
+      font-weight: 700;
+      line-height: 1.4;
       color: var(--color-text);
-      line-height: 1.35;
+      word-break: break-word;
     }
 
     .card-name a {
-      color: var(--color-primary-light);
+      color: var(--color-primary);
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: border-color 0.15s ease, color 0.15s ease;
@@ -174,18 +172,11 @@
 
     .card-name a:hover,
     .card-name a:focus {
-      color: var(--color-primary);
-      border-bottom-color: var(--color-primary);
+      color: var(--color-primary-dark);
+      border-bottom-color: var(--color-primary-dark);
       outline: none;
     }
 
-    .card-name a:focus-visible {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 2px;
-      border-radius: 2px;
-    }
-
-    /* ── Source file link ── */
     .source-link {
       display: inline-flex;
       align-items: center;
@@ -193,60 +184,58 @@
       font-size: 0.72rem;
       font-weight: 600;
       color: var(--color-source-text);
-      background: var(--color-source-bg);
+      background-color: var(--color-source-bg);
       border: 1px solid var(--color-source-border);
       border-radius: 4px;
-      padding: 2px 8px;
+      padding: 2px 7px;
       text-decoration: none;
       white-space: nowrap;
-      transition: background 0.15s ease, color 0.15s ease;
+      transition: background-color 0.15s ease, color 0.15s ease;
+      flex-shrink: 0;
+    }
+
+    .source-link::before {
+      content: "↗";
+      font-size: 0.68rem;
     }
 
     .source-link:hover,
     .source-link:focus {
-      background: #d6f0d8;
-      color: #1e4e23;
+      background-color: #d4edda;
+      color: #1a5230;
       outline: none;
     }
 
-    .source-link:focus-visible {
-      outline: 2px solid var(--color-source-text);
-      outline-offset: 2px;
-    }
-
-    .source-link::before {
-      content: "↓";
-      font-size: 0.8em;
-    }
-
-    /* ── Card description ── */
+    /* ── Card Description ── */
     .card-description {
       font-size: 0.875rem;
       color: var(--color-text-muted);
-      line-height: 1.6;
+      line-height: 1.65;
       flex-grow: 1;
     }
 
     /* ── Footer ── */
     footer {
-      max-width: 900px;
-      margin: 40px auto 0;
-      padding: 0 20px;
-      font-size: 0.78rem;
-      color: var(--color-text-muted);
       text-align: center;
+      padding: 24px;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
       border-top: 1px solid var(--color-border);
-      padding-top: 20px;
+      background: var(--color-surface);
     }
 
-    /* ── Responsive ── */
-    @media (max-width: 500px) {
+    /* ── Responsive tweaks ── */
+    @media (max-width: 480px) {
       header {
-        padding: 36px 18px 30px;
+        padding: 36px 16px 32px;
       }
 
-      .card {
-        padding: 18px 16px 16px;
+      main {
+        padding: 28px 16px 48px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -257,29 +246,29 @@
 
   <header>
     <div class="header-inner">
-      <div class="course-label">Using PreseMaker</div>
+      <span class="course-label">Course: Using PreseMaker</span>
       <h1>Batch Actions: Generating Content Across Multiple Modules at Once</h1>
       <p>
-        This module explores how to use PreseMaker's batch actions feature to efficiently generate
-        content across many modules simultaneously. Topics range from understanding what batch actions
-        are and selecting content types, through configuring and launching a run, to monitoring live
-        progress and stopping a run safely when needed.
+        This module introduces PreseMaker's Batch Actions feature, showing you how to generate content
+        across multiple course modules simultaneously. Explore the topics and resources below to learn
+        how to select content types, configure and launch batch runs, monitor live progress, and stop
+        a run safely when needed.
       </p>
     </div>
   </header>
 
   <main>
-    <p class="section-label">Module Artifacts &mdash; 7 items</p>
+    <h2 class="section-heading">Module Artifacts &amp; Resources</h2>
 
-    <div class="card-grid" role="list">
+    <div class="card-grid">
 
       <!-- Card 1: Module Topics -->
-      <article class="card" role="listitem">
+      <div class="card">
         <div class="card-meta">
           <span class="badge badge-type">Module Topics</span>
           <span class="badge badge-filetype">.json</span>
         </div>
-        <div class="card-title-row">
+        <div class="card-name-row">
           <span class="card-name">
             <a href="content/module_topics.html">Module Topics</a>
           </span>
@@ -290,15 +279,33 @@
           configuring modules, monitoring progress, and stopping a run — giving learners and instructors
           a structured overview of the module's scope.
         </p>
-      </article>
+      </div>
 
-      <!-- Card 2: Introduction to Batch Actions -->
-      <article class="card" role="listitem">
+      <!-- Card 2: PPTX Presentation -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Presentation</span>
+          <span class="badge badge-filetype">.pptx</span>
+        </div>
+        <div class="card-name-row">
+          <span class="card-name">
+            <a href="presentation/Batch_Actions_Generating_generated.pptx">Batch_Actions_Generating_generated.pptx</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A PowerPoint presentation explaining PreseMaker's Batch Actions feature in Course Manager,
+          covering what it is, its purpose, and how instructors can use it to generate content across
+          multiple modules simultaneously instead of working module by module.
+        </p>
+      </div>
+
+      <!-- Card 3: Topic 1 -->
+      <div class="card">
         <div class="card-meta">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
+        <div class="card-name-row">
           <span class="card-name">
             <a href="content/Batch_Actions_Generating_interactive_topics_t1.html">Introduction to Batch Actions in Course Manager</a>
           </span>
@@ -308,15 +315,15 @@
           generated content, and how to access the feature in Course Manager, serving as the learner's
           conceptual introduction before they attempt any batch tasks.
         </p>
-      </article>
+      </div>
 
-      <!-- Card 3: Selecting Content Types -->
-      <article class="card" role="listitem">
+      <!-- Card 4: Topic 2 -->
+      <div class="card">
         <div class="card-meta">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
+        <div class="card-name-row">
           <span class="card-name">
             <a href="content/Batch_Actions_Generating_interactive_topics_t2.html">Selecting Content Types for Batch Generation</a>
           </span>
@@ -326,15 +333,15 @@
           how to choose the appropriate type for a run, and why only one content type can be generated
           per batch, helping learners make informed selections before starting.
         </p>
-      </article>
+      </div>
 
-      <!-- Card 4: Choosing and Configuring Modules -->
-      <article class="card" role="listitem">
+      <!-- Card 5: Topic 3 -->
+      <div class="card">
         <div class="card-meta">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
+        <div class="card-name-row">
           <span class="card-name">
             <a href="content/Batch_Actions_Generating_interactive_topics_t3.html">Choosing and Configuring Modules for a Batch Run</a>
           </span>
@@ -344,15 +351,15 @@
           Manager, selecting which modules to include, and configuring generation settings — so learners
           can correctly prepare and launch a multi-module content generation run.
         </p>
-      </article>
+      </div>
 
-      <!-- Card 5: Monitoring Live Batch Progress -->
-      <article class="card" role="listitem">
+      <!-- Card 6: Topic 4 -->
+      <div class="card">
         <div class="card-meta">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
+        <div class="card-name-row">
           <span class="card-name">
             <a href="content/Batch_Actions_Generating_interactive_topics_t4.html">Monitoring Live Batch Progress</a>
           </span>
@@ -362,15 +369,15 @@
           individual module status indicators and the overall completion counter, so learners can
           actively monitor and interpret what is happening while generation is in progress.
         </p>
-      </article>
+      </div>
 
-      <!-- Card 6: Stopping a Batch Run Safely (Topic Detail) -->
-      <article class="card" role="listitem">
+      <!-- Card 7: Topic 5 -->
+      <div class="card">
         <div class="card-meta">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
+        <div class="card-name-row">
           <span class="card-name">
             <a href="content/Batch_Actions_Generating_interactive_topics_t5.html">Stopping a Batch Run Safely</a>
           </span>
@@ -380,15 +387,15 @@
           for halting the process safely, and what happens to modules already processed, enabling learners
           to intervene without causing unintended data issues.
         </p>
-      </article>
+      </div>
 
-      <!-- Card 7: Stopping a Batch Run Safely (Text Content) -->
-      <article class="card" role="listitem">
+      <!-- Card 8: Text Content -->
+      <div class="card">
         <div class="card-meta">
           <span class="badge badge-type">Text Content</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
+        <div class="card-name-row">
           <span class="card-name">
             <a href="content/Batch_Actions_Generating_interactive.html">Stopping a Batch Run Safely</a>
           </span>
@@ -398,7 +405,7 @@
           for halting the process safely, and what happens to modules already processed, enabling learners
           to intervene without causing unintended data issues.
         </p>
-      </article>
+      </div>
 
     </div>
   </main>

@@ -1,0 +1,500 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuring AI Providers and Using the Prompt Button — Using PreseMaker</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-bg: #f4f6f9;
+      --color-surface: #ffffff;
+      --color-primary: #1a4f8a;
+      --color-primary-dark: #133c6b;
+      --color-accent: #2e7d9e;
+      --color-text: #1e2329;
+      --color-text-muted: #5a6370;
+      --color-border: #d8dee6;
+      --color-tag-bg: #eaf0f8;
+      --color-tag-text: #1a4f8a;
+      --color-link: #1a5fa8;
+      --color-link-hover: #133c6b;
+      --color-source-bg: #f0f7fb;
+      --color-source-border: #b0d4e8;
+      --color-source-text: #2e7d9e;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.13);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+      color: #ffffff;
+      padding: 3rem 2rem 2.5rem;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .course-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.82;
+      margin-bottom: 0.65rem;
+    }
+
+    header h1 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      max-width: 680px;
+      opacity: 0.9;
+      line-height: 1.7;
+    }
+
+    /* ── Main content ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+
+    .section-heading {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    /* ── Card grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.35rem 1.4rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      transition: box-shadow 0.18s ease, transform 0.18s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    /* ── Card header row ── */
+    .card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 0.75rem;
+    }
+
+    .card-name {
+      font-size: 0.975rem;
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.35;
+      flex: 1 1 auto;
+    }
+
+    .card-name a {
+      color: var(--color-link);
+      text-decoration: none;
+    }
+
+    .card-name a:hover,
+    .card-name a:focus {
+      color: var(--color-link-hover);
+      text-decoration: underline;
+    }
+
+    /* ── Source file link ── */
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--color-source-text);
+      background: var(--color-source-bg);
+      border: 1px solid var(--color-source-border);
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+
+    .source-link:hover,
+    .source-link:focus {
+      background: #d8eef7;
+      text-decoration: underline;
+    }
+
+    .source-link svg {
+      width: 10px;
+      height: 10px;
+      flex-shrink: 0;
+    }
+
+    /* ── Meta tags row ── */
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      background: var(--color-tag-bg);
+      color: var(--color-tag-text);
+      border: 1px solid #c5d8ef;
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      white-space: nowrap;
+    }
+
+    .tag.filetype {
+      background: #f3f4f6;
+      color: var(--color-text-muted);
+      border-color: var(--color-border);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-weight: 500;
+    }
+
+    /* ── Description ── */
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* ── Responsive tweaks ── */
+    @media (max-width: 540px) {
+      header {
+        padding: 2rem 1.25rem 1.75rem;
+      }
+      main {
+        padding: 2rem 1.25rem 3rem;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Using PreseMaker</a></div>
+<div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
+
+  <header>
+    <div class="header-inner">
+      <p class="course-label">Using PreseMaker</p>
+      <h1>Configuring AI Providers and Using the Prompt Button</h1>
+      <p>
+        This module guides you through setting up AI providers in PreseMaker, managing API keys,
+        understanding the global active-provider setting, and using the Prompt button to inspect
+        and troubleshoot AI requests. Use the resources below to explore topics, presentations,
+        video, and supplementary materials.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="section-heading">Module Artifacts &mdash; 12 items</h2>
+
+    <div class="card-grid">
+
+      <!-- 1. Module Topics -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/module_topics.html">Module Topics</a>
+          </span>
+          <a class="source-link" href="source/hierarchy.json">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M4.5 2A2.5 2.5 0 0 0 2 4.5v7A2.5 2.5 0 0 0 4.5 14h7A2.5 2.5 0 0 0 14 11.5v-3a.75.75 0 0 0-1.5 0v3A1 1 0 0 1 11.5 12.5h-7A1 1 0 0 1 3.5 11.5v-7A1 1 0 0 1 4.5 3.5h3a.75.75 0 0 0 0-1.5h-3Z"/>
+              <path d="M9.25 2a.75.75 0 0 0 0 1.5h2.19L6.22 8.72a.75.75 0 1 0 1.06 1.06l5.22-5.22v2.19a.75.75 0 0 0 1.5 0V2.75A.75.75 0 0 0 13.25 2H9.25Z"/>
+            </svg>
+            source file
+          </a>
+        </div>
+        <div class="card-meta">
+          <span class="tag">Module Topics</span>
+          <span class="tag filetype">.json</span>
+        </div>
+        <p class="card-desc">
+          A structured outline of the module's topics covering AI provider setup in PreseMaker,
+          including what providers are used for, how API keys are obtained and stored, and how
+          the active provider setting and prompt button work, serving as a navigation and
+          planning reference for learners and instructors.
+        </p>
+      </div>
+
+      <!-- 2. Configuring_AI_Providers_generated.pptx -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="presentation/Configuring_AI_Providers_generated.pptx">Configuring_AI_Providers_generated.pptx</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="tag">Presentation</span>
+          <span class="tag filetype">.pptx</span>
+        </div>
+        <p class="card-desc">
+          A slide presentation covering PreseMaker Module 4, introducing the four supported AI
+          providers (Claude, Gemini, GPT-4o, and one other), how to configure them per task,
+          manage API keys, and troubleshoot generation issues; used by learners as the primary
+          visual learning resource for this module.
+        </p>
+      </div>
+
+      <!-- 3. Configuring_AI_Providers_generated_narrated.pptx -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="Configuring_AI_Providers_generated_narrated.pptx">Configuring_AI_Providers_generated_narrated.pptx</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="tag">Narrated Presentation</span>
+          <span class="tag filetype">.pptx</span>
+        </div>
+        <p class="card-desc">
+          The same Module 4 slide deck enhanced with speaker narration audio embedded in each
+          slide, covering AI provider setup, API key management, and diagnosing generation
+          issues in PreseMaker; used by learners who prefer a self-paced, audio-guided
+          walkthrough of the presentation.
+        </p>
+      </div>
+
+      <!-- 4. Introduction to AI Providers in PreseMaker -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/Configuring_AI_Providers_interactive_topics_t1.html">Introduction to AI Providers in PreseMaker</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="tag">Topic Detail</span>
+          <span class="tag filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          An explanatory lesson covering what the four AI providers supported by PreseMaker are,
+          how PreseMaker connects to them via API keys, and which tasks each provider handles,
+          giving learners the foundational knowledge needed before configuring any provider.
+        </p>
+      </div>
+
+      <!-- 5. Obtaining and Entering API Keys -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/Configuring_AI_Providers_interactive_topics_t2.html">Obtaining and Entering API Keys</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="tag">Topic Detail</span>
+          <span class="tag filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          A step-by-step instructional lesson explaining what an API key is, how to obtain one
+          from a supported AI provider, and how to enter it into PreseMaker so that AI-powered
+          content generation features become available.
+        </p>
+      </div>
+
+      <!-- 6. The Active AI Provider Setting -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/Configuring_AI_Providers_interactive_topics_t3.html">The Active AI Provider Setting</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="tag">Topic Detail</span>
+          <span class="tag filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          Describes the Active AI Provider dropdown in PreseMaker's Settings area, explaining
+          that this single control determines which provider processes every AI-powered action
+          in the application.
+        </p>
+      </div>
+
+      <!-- 7. Understanding That There Is No Per-Task Provider Assignment -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/Configuring_AI_Providers_interactive_topics_t4.html">Understanding That There Is No Per-Task Provider Assignment</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="tag">Topic Detail</span>
+          <span class="tag filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          Clarifies that PreseMaker uses one globally selected AI provider for all generation
+          tasks simultaneously, with no option to assign different providers to different
+          features or task types.
+        </p>
+      </div>
+
+      <!-- 8. Using the Prompt Button to Inspect AI Requests -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/Configuring_AI_Providers_interactive_topics_t5.html">Using the Prompt Button to Inspect AI Requests</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="tag">Topic Detail</span>
+          <span class="tag filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          A lesson explaining what PreseMaker's Prompt button is, how clicking it reveals the
+          exact text request sent to an AI provider during any generation task, and how learners
+          or instructors can use that information to review, edit, or troubleshoot AI requests.
+        </p>
+      </div>
+
+      <!-- 9. Interpreting and Responding to Generation Failures -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/Configuring_AI_Providers_interactive_topics_t6.html">Interpreting and Responding to Generation Failures</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="tag">Topic Detail</span>
+          <span class="tag filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          A troubleshooting lesson that explains what a generation failure is, why it occurs
+          when PreseMaker cannot complete a request to an external AI provider, and how learners
+          or instructors should interpret error messages and take corrective action.
+        </p>
+      </div>
+
+      <!-- 10. PreseMaker Module 4: Configuring AI Providers (Video) -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="content/ext_31b583c0.html">PreseMaker Module 4: Configuring AI Providers</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="tag">Video</span>
+          <span class="tag filetype">.html</span>
+        </div>
+        <p class="card-desc">
+          This video covers how to select and configure AI providers within PreseMaker. It
+          addresses the setup and configuration process relevant to assigning providers for use
+          within the application. The content is focused on the practical configuration steps
+          learners need to work with AI providers in PreseMaker.
+        </p>
+      </div>
+
+      <!-- 11. Slide Narration Audio -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="audio">Slide Narration Audio (11 files)</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="tag">Slide Audio</span>
+          <span class="tag filetype">.wav</span>
+        </div>
+        <p class="card-desc">
+          A set of 11 individual WAV audio files containing the spoken narration for each slide
+          in the module; used by the course system to sync voiceover playback to the
+          corresponding slides during presentation.
+        </p>
+      </div>
+
+      <!-- 12. Narration Transcript -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-name">
+            <a href="Configuring_AI_Providers_generated_narrations.vtt">Narration Transcript (Configuring_AI_Providers_generated)</a>
+          </span>
+        </div>
+        <div class="card-meta">
+          <span class="tag">Narration Transcript</span>
+          <span class="tag filetype">.vtt</span>
+        </div>
+        <p class="card-desc">
+          A VTT caption/transcript file containing the timed spoken narration text for the
+          Configuring AI Providers presentation; used by learners for accessibility or reference
+          and by instructors to review or edit narration content.
+        </p>
+      </div>
+
+    </div><!-- /.card-grid -->
+  </main>
+
+  <footer>
+    <p>Using PreseMaker &mdash; Configuring AI Providers and Using the Prompt Button</p>
+  </footer>
+
+
+<footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
+<section class="presemaker-extras" style="max-width:1000px;margin:2rem auto;padding:0 1rem;"><h2>Topics &amp; Learning Outcomes</h2><p><a href="topics-outcomes.html">View Topics &amp; Learning Outcomes</a></p><h2>Source Materials</h2><ul class="artifact-list">  <li class="artifact-item">
+    <div class="artifact-icon">⬇</div>
+    <div class="artifact-body">
+      <a class="artifact-link" href="source-materials/source-1.html" download>Topic Prompt</a>
+    </div>
+  </li></ul></section><script src="embed-inject.js" defer></script></body>
+</html>

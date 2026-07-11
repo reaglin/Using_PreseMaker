@@ -1,11 +1,11 @@
 ﻿[
   {
-    "title": "Configuring AI Providers per Task and Using the Prompt Button \u2014 Topics \u0026 Learning Outcomes",
+    "title": "Configuring AI Providers and Using the Prompt Button \u2014 Topics \u0026 Learning Outcomes",
     "href": "topics-outcomes.html",
     "type": "Page"
   },
   {
-    "title": "Configuring AI Providers per Task and Using the Prompt Button \u2014 Module Topics",
+    "title": "Configuring AI Providers and Using the Prompt Button \u2014 Module Topics",
     "href": "topics.html",
     "type": "Page"
   },
@@ -40,12 +40,17 @@
     "type": "Content"
   },
   {
-    "title": "Configuring AI Providers per Task and Using the Prompt Button \u2014 Module Topics",
+    "title": "PreseMaker Module 4: Configuring AI Providers",
+    "href": "content/ext_31b583c0.html",
+    "type": "Content"
+  },
+  {
+    "title": "Configuring AI Providers and Using the Prompt Button \u2014 Module Topics",
     "href": "content/module_topics.html",
     "type": "Content"
   },
   {
-    "title": "Configuring AI Providers per Task and Using the Prompt Button \u2014 Topic Prompt (Source)",
+    "title": "Configuring AI Providers and Using the Prompt Button \u2014 Topic Prompt (Source)",
     "href": "source-materials/source-1.html",
     "type": "Source-materials"
   }

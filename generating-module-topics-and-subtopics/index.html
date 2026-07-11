@@ -5,208 +5,248 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Generating Module Topics and Subtopics — Using PreseMaker</title>
   <style>
-    /* ── Reset & Base ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --brand-primary: #1a4a7a;
+      --brand-secondary: #2c6fad;
+      --brand-accent: #e8f1f9;
+      --brand-highlight: #f0a500;
+      --text-main: #1e2a38;
+      --text-muted: #5a6a7a;
+      --text-light: #ffffff;
+      --border-color: #d0dce8;
+      --card-bg: #ffffff;
+      --page-bg: #f4f7fb;
+      --tag-bg: #e2ecf7;
+      --tag-text: #1a4a7a;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(26, 74, 122, 0.10);
+      --shadow-hover: 0 6px 20px rgba(26, 74, 122, 0.16);
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
 
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: #f4f6f9;
-      color: #1e2530;
+      font-family: var(--font);
+      background-color: var(--page-bg);
+      color: var(--text-main);
       line-height: 1.6;
       min-height: 100vh;
     }
 
-    /* ── Header / Hero ── */
+    /* ── Header ── */
     header {
-      background: linear-gradient(135deg, #1a3a5c 0%, #2563a8 100%);
-      color: #ffffff;
-      padding: 3rem 2rem 2.5rem;
-      text-align: center;
+      background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+      color: var(--text-light);
+      padding: 48px 24px 40px;
     }
 
-    header .course-label {
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .course-label {
       display: inline-block;
       font-size: 0.78rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.90);
+      padding: 4px 12px;
       border-radius: 20px;
-      padding: 0.25rem 0.9rem;
-      margin-bottom: 1rem;
-      color: #d6e8ff;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     header h1 {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
       font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
       line-height: 1.25;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
     }
 
     header p {
-      font-size: 1rem;
-      max-width: 640px;
-      margin: 0 auto;
-      color: #c8ddf5;
-      line-height: 1.7;
+      font-size: 1.05rem;
+      max-width: 680px;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.65;
     }
 
     /* ── Main Content ── */
     main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
+      padding: 40px 24px 64px;
     }
 
-    /* ── Section heading ── */
-    .section-heading {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .section-heading h2 {
-      font-size: 1.05rem;
+    .section-label {
+      font-size: 0.75rem;
       font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      letter-spacing: 0.09em;
-      color: #4a5568;
-    }
-
-    .section-heading::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #d1d9e6;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border-color);
     }
 
     /* ── Card Grid ── */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
     }
 
-    /* ── Card ── */
     .card {
-      background: #ffffff;
-      border: 1px solid #dde3ee;
-      border-radius: 10px;
-      padding: 1.4rem 1.5rem 1.3rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px 24px 20px;
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
-      transition: box-shadow 0.18s ease, transform 0.18s ease;
-      position: relative;
+      gap: 12px;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
     }
 
     .card:hover {
-      box-shadow: 0 6px 24px rgba(37, 99, 168, 0.12);
+      box-shadow: var(--shadow-hover);
       transform: translateY(-2px);
     }
 
-    /* ── Card badges row ── */
-    .card-meta {
+    /* ── Card Header Row ── */
+    .card-header {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 8px;
     }
 
-    .badge {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      border-radius: 4px;
-      padding: 0.18rem 0.55rem;
-      white-space: nowrap;
-    }
-
-    .badge-type {
-      background: #e8f0fb;
-      color: #1e4d96;
-      border: 1px solid #c2d5f5;
-    }
-
-    .badge-filetype {
-      background: #f0f4f0;
-      color: #3a6b3a;
-      border: 1px solid #bdd5bd;
-      font-family: 'Courier New', monospace;
-      font-weight: 700;
-    }
-
-    /* ── Card title row ── */
-    .card-title-row {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-    }
-
-    .card-title {
+    .card-name {
       font-size: 1rem;
-      font-weight: 700;
-      color: #1e2530;
+      font-weight: 600;
+      color: var(--text-main);
       line-height: 1.35;
     }
 
-    .card-title a {
-      color: #1a5bb5;
+    .card-name a {
+      color: var(--brand-secondary);
       text-decoration: none;
+      transition: color 0.15s;
     }
 
-    .card-title a:hover {
+    .card-name a:hover,
+    .card-name a:focus {
+      color: var(--brand-primary);
       text-decoration: underline;
-      color: #0e3d82;
     }
 
     .source-link {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: #6b7a99;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: var(--text-muted);
       text-decoration: none;
-      border: 1px solid #c8cedc;
+      background: var(--page-bg);
+      border: 1px solid var(--border-color);
+      padding: 2px 8px;
       border-radius: 4px;
-      padding: 0.13rem 0.5rem;
+      margin-left: 6px;
       white-space: nowrap;
       transition: background 0.15s, color 0.15s;
-      flex-shrink: 0;
     }
 
-    .source-link:hover {
-      background: #eef1f8;
-      color: #2c3e6a;
-      border-color: #a0aac4;
+    .source-link::before {
+      content: "⬇";
+      font-size: 0.7rem;
     }
 
-    /* ── Card description ── */
+    .source-link:hover,
+    .source-link:focus {
+      background: var(--tag-bg);
+      color: var(--brand-primary);
+      border-color: var(--brand-secondary);
+    }
+
+    /* ── Tags row ── */
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 3px 9px;
+      border-radius: 20px;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid #c2d8ef;
+      white-space: nowrap;
+    }
+
+    .tag.filetype {
+      background: #eef6ee;
+      color: #2a6b2a;
+      border-color: #b4d8b4;
+      font-family: 'Courier New', monospace;
+      font-size: 0.70rem;
+    }
+
+    /* ── Description ── */
     .card-description {
-      font-size: 0.88rem;
-      color: #4a5568;
-      line-height: 1.65;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
       flex: 1;
+    }
+
+    /* ── No-link badge ── */
+    .no-link-badge {
+      display: inline-block;
+      font-size: 0.70rem;
+      color: #8a9aaa;
+      font-style: italic;
     }
 
     /* ── Footer ── */
     footer {
       text-align: center;
-      padding: 1.5rem 1rem 2rem;
-      font-size: 0.78rem;
-      color: #8a95a8;
-      border-top: 1px solid #dde3ee;
+      padding: 24px;
+      font-size: 0.80rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      background: var(--card-bg);
     }
 
-    /* ── Responsive tweaks ── */
-    @media (max-width: 500px) {
-      header { padding: 2.2rem 1.25rem 2rem; }
-      main { padding: 2rem 1rem 3rem; }
-      .card { padding: 1.2rem 1.2rem 1.1rem; }
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      header {
+        padding: 36px 16px 32px;
+      }
+
+      main {
+        padding: 28px 16px 48px;
+      }
+
+      .card {
+        padding: 18px 18px 16px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -215,174 +255,146 @@
 <div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
 
   <header>
-    <div class="course-label">Using PreseMaker</div>
-    <h1>Generating Module Topics and Subtopics</h1>
-    <p>
-      This module guides you through every stage of building a solid topic structure in
-      PreseMaker — from understanding what topics and subtopics are, to generating them
-      from source materials, reviewing and refining the output, and recognising how your
-      finalized outline shapes all downstream content.
-    </p>
+    <div class="header-inner">
+      <span class="course-label">Using PreseMaker</span>
+      <h1>Generating Module Topics and Subtopics</h1>
+      <p>This module covers the full workflow for producing a well-structured topic and subtopic outline in PreseMaker — from understanding what topics are and how they are generated, through reviewing, editing, and appreciating their impact on all downstream e-learning content.</p>
+    </div>
   </header>
 
   <main>
-
-    <div class="section-heading">
-      <h2>Module Artifacts</h2>
-    </div>
+    <p class="section-label">Module Artifacts &mdash; 9 items</p>
 
     <div class="card-grid">
 
-      <!-- Card 1: Module Topics -->
+      <!-- Artifact 1: Module Topics -->
       <div class="card">
-        <div class="card-meta">
-          <span class="badge badge-type">Module Topics</span>
-          <span class="badge badge-filetype">.json</span>
-        </div>
-        <div class="card-title-row">
-          <span class="card-title">
+        <div class="card-header">
+          <div class="card-name">
             <a href="content/module_topics.html">Module Topics</a>
-          </span>
-          <a class="source-link" href="source/hierarchy.json">source file</a>
+            <a class="source-link" href="source/hierarchy.json">source file</a>
+          </div>
+          <div class="card-meta">
+            <span class="tag">Module Topics</span>
+            <span class="tag filetype">.json</span>
+          </div>
         </div>
-        <p class="card-description">
-          A structured outline of all topics and subtopics covered in this module — from defining
-          topics and subtopics through generating, reviewing, editing, and understanding their
-          downstream impact — used by instructors to understand the module's full scope and by
-          learners as a navigation reference.
-        </p>
+        <p class="card-description">A structured outline of all topics and subtopics covered in this module — from defining topics and subtopics through generating, reviewing, editing, and understanding their downstream impact — used by instructors to understand the module's full scope and by learners as a navigation reference.</p>
       </div>
 
-      <!-- Card 2: Introduction to Module Topics and Subtopics -->
+      <!-- Artifact 2: Presentation -->
       <div class="card">
-        <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
-          <span class="badge badge-filetype">.html</span>
+        <div class="card-header">
+          <div class="card-name">
+            <a href="presentation/Generating_Module_Topics_generated.pptx">Generating_Module_Topics_generated.pptx</a>
+          </div>
+          <div class="card-meta">
+            <span class="tag">Presentation</span>
+            <span class="tag filetype">.pptx</span>
+          </div>
         </div>
-        <div class="card-title-row">
-          <span class="card-title">
+        <p class="card-description">A PowerPoint presentation explaining how PreseMaker organises e-learning content into topics and subtopics, covering what topics and subtopics are, why their hierarchy matters, and how the structure drives subsequent content generation; learners use it to understand the foundational framework before building a module in PreseMaker.</p>
+      </div>
+
+      <!-- Artifact 3: Topic Detail t1 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-name">
             <a href="content/Generating_Module_Topics_interactive_topics_t1.html">Introduction to Module Topics and Subtopics</a>
-          </span>
+          </div>
+          <div class="card-meta">
+            <span class="tag">Topic Detail</span>
+            <span class="tag filetype">.html</span>
+          </div>
         </div>
-        <p class="card-description">
-          An explanatory lesson defining module topics and subtopics, why they serve as the
-          foundational architectural blueprint of an e-learning module, and how learners and
-          instructional designers should think about structure before building any other content.
-        </p>
+        <p class="card-description">An explanatory lesson defining module topics and subtopics, why they serve as the foundational architectural blueprint of an e-learning module, and how learners and instructional designers should think about structure before building any other content.</p>
       </div>
 
-      <!-- Card 3: How PreseMaker Analyzes Source Materials -->
+      <!-- Artifact 4: Topic Detail t2 -->
       <div class="card">
-        <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
-          <span class="badge badge-filetype">.html</span>
-        </div>
-        <div class="card-title-row">
-          <span class="card-title">
+        <div class="card-header">
+          <div class="card-name">
             <a href="content/Generating_Module_Topics_interactive_topics_t2.html">How PreseMaker Analyzes Source Materials</a>
-          </span>
+          </div>
+          <div class="card-meta">
+            <span class="tag">Topic Detail</span>
+            <span class="tag filetype">.html</span>
+          </div>
         </div>
-        <p class="card-description">
-          An explanatory lesson describing how PreseMaker ingests uploaded source materials,
-          identifies key themes and concepts within them, and converts that raw content into a
-          structured list of topics and subtopics before generating any slides or assessments.
-        </p>
+        <p class="card-description">An explanatory lesson describing how PreseMaker ingests uploaded source materials, identifies key themes and concepts within them, and converts that raw content into a structured list of topics and subtopics before generating any slides or assessments.</p>
       </div>
 
-      <!-- Card 4: Generating the Module Topics List -->
+      <!-- Artifact 5: Topic Detail t3 -->
       <div class="card">
-        <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
-          <span class="badge badge-filetype">.html</span>
-        </div>
-        <div class="card-title-row">
-          <span class="card-title">
+        <div class="card-header">
+          <div class="card-name">
             <a href="content/Generating_Module_Topics_interactive_topics_t3.html">Generating the Module Topics List</a>
-          </span>
+          </div>
+          <div class="card-meta">
+            <span class="tag">Topic Detail</span>
+            <span class="tag filetype">.html</span>
+          </div>
         </div>
-        <p class="card-description">
-          A procedural lesson walking learners through how to navigate to PreseMaker's topic
-          generation feature, trigger the generation process, and understand what the system
-          produces so they can use the resulting topics list as the foundation for their module.
-        </p>
+        <p class="card-description">A procedural lesson walking learners through how to navigate to PreseMaker's topic generation feature, trigger the generation process, and understand what the system produces so they can use the resulting topics list as the foundation for their module.</p>
       </div>
 
-      <!-- Card 5: Browsing and Reviewing Generated Topics -->
+      <!-- Artifact 6: Topic Detail t4 -->
       <div class="card">
-        <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
-          <span class="badge badge-filetype">.html</span>
-        </div>
-        <div class="card-title-row">
-          <span class="card-title">
+        <div class="card-header">
+          <div class="card-name">
             <a href="content/Generating_Module_Topics_interactive_topics_t4.html">Browsing and Reviewing Generated Topics</a>
-          </span>
+          </div>
+          <div class="card-meta">
+            <span class="tag">Topic Detail</span>
+            <span class="tag filetype">.html</span>
+          </div>
         </div>
-        <p class="card-description">
-          A procedural lesson explaining how to browse and review the Module Topics list
-          PreseMaker produces after analysis, so learners can assess its accuracy and
-          completeness before proceeding to build downstream content.
-        </p>
+        <p class="card-description">A procedural lesson explaining how to browse and review the Module Topics list PreseMaker produces after analysis, so learners can assess its accuracy and completeness before proceeding to build downstream content.</p>
       </div>
 
-      <!-- Card 6: Editing and Refining Topics and Subtopics -->
+      <!-- Artifact 7: Topic Detail t5 -->
       <div class="card">
-        <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
-          <span class="badge badge-filetype">.html</span>
-        </div>
-        <div class="card-title-row">
-          <span class="card-title">
+        <div class="card-header">
+          <div class="card-name">
             <a href="content/Generating_Module_Topics_interactive_topics_t5.html">Editing and Refining Topics and Subtopics</a>
-          </span>
+          </div>
+          <div class="card-meta">
+            <span class="tag">Topic Detail</span>
+            <span class="tag filetype">.html</span>
+          </div>
         </div>
-        <p class="card-description">
-          A procedural lesson covering how to edit, add, remove, and refine the AI-generated
-          topics and subtopics in PreseMaker, emphasizing the role of subject-matter expertise
-          and instructional judgment in improving the initial automated output.
-        </p>
+        <p class="card-description">A procedural lesson covering how to edit, add, remove, and refine the AI-generated topics and subtopics in PreseMaker, emphasizing the role of subject-matter expertise and instructional judgment in improving the initial automated output.</p>
       </div>
 
-      <!-- Card 7: Impact of Topic Structure on Downstream Content (Topic Detail) -->
+      <!-- Artifact 8: Topic Detail t6 -->
       <div class="card">
-        <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
-          <span class="badge badge-filetype">.html</span>
-        </div>
-        <div class="card-title-row">
-          <span class="card-title">
+        <div class="card-header">
+          <div class="card-name">
             <a href="content/Generating_Module_Topics_interactive_topics_t6.html">Impact of Topic Structure on Downstream Content</a>
-          </span>
+          </div>
+          <div class="card-meta">
+            <span class="tag">Topic Detail</span>
+            <span class="tag filetype">.html</span>
+          </div>
         </div>
-        <p class="card-description">
-          An explanatory lesson describing how the finalized topic and subtopic structure in
-          PreseMaker directly drives the generation of all downstream content — including slides,
-          speaker notes, knowledge checks, and summaries — so learners understand why getting
-          the outline right matters.
-        </p>
+        <p class="card-description">An explanatory lesson describing how the finalized topic and subtopic structure in PreseMaker directly drives the generation of all downstream content — including slides, speaker notes, knowledge checks, and summaries — so learners understand why getting the outline right matters.</p>
       </div>
 
-      <!-- Card 8: Impact of Topic Structure on Downstream Content (Text Content) -->
+      <!-- Artifact 9: Text Content -->
       <div class="card">
-        <div class="card-meta">
-          <span class="badge badge-type">Text Content</span>
-          <span class="badge badge-filetype">.html</span>
-        </div>
-        <div class="card-title-row">
-          <span class="card-title">
+        <div class="card-header">
+          <div class="card-name">
             <a href="content/Generating_Module_Topics_interactive.html">Impact of Topic Structure on Downstream Content</a>
-          </span>
+          </div>
+          <div class="card-meta">
+            <span class="tag">Text Content</span>
+            <span class="tag filetype">.html</span>
+          </div>
         </div>
-        <p class="card-description">
-          An explanatory lesson describing how the finalized topic and subtopic structure in
-          PreseMaker directly drives the generation of all downstream content — including slides,
-          speaker notes, knowledge checks, and summaries — so learners understand why getting
-          the outline right matters.
-        </p>
+        <p class="card-description">An explanatory lesson describing how the finalized topic and subtopic structure in PreseMaker directly drives the generation of all downstream content — including slides, speaker notes, knowledge checks, and summaries — so learners understand why getting the outline right matters.</p>
       </div>
 
-    </div><!-- /.card-grid -->
-
+    </div>
   </main>
 
   <footer>

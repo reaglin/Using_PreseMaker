@@ -3,344 +3,410 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Building a Standards Library and Mapping Topics to Standards | Using PreseMaker</title>
+  <title>Building a Standards Library and Mapping Topics to Standards – Using PreseMaker</title>
   <style>
-    /* ── Reset & base ── */
+    /* ── Reset & Base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f4f6f9;
-      color: #2c3341;
+      font-size: 16px;
       line-height: 1.6;
-      min-height: 100vh;
+      background: #f4f6f9;
+      color: #2c3340;
+    }
+
+    /* ── Page Shell ── */
+    .page-wrapper {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3.5rem;
+    }
+
+    /* ── Course Label ── */
+    .course-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #5a6a85;
+      margin-bottom: 0.4rem;
     }
 
     /* ── Header ── */
-    header {
-      background: linear-gradient(135deg, #1a3a5c 0%, #2563a8 100%);
-      color: #fff;
-      padding: 2.5rem 1.5rem 2rem;
+    .module-header {
+      background: linear-gradient(135deg, #1a3d6e 0%, #2563a8 100%);
+      border-radius: 10px;
+      padding: 2.25rem 2.5rem;
+      margin-bottom: 2rem;
+      color: #ffffff;
     }
 
-    .header-inner {
-      max-width: 960px;
-      margin: 0 auto;
+    .module-header .course-label {
+      color: #a8c8f0;
     }
 
-    .course-label {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 4px;
-      padding: 0.2rem 0.65rem;
-      margin-bottom: 0.85rem;
-      color: #d6e8ff;
-    }
-
-    header h1 {
+    .module-header h1 {
       font-size: clamp(1.4rem, 3vw, 2rem);
       font-weight: 700;
       line-height: 1.25;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
     }
 
-    header p {
+    .module-header p {
       font-size: 0.97rem;
-      color: #c8dcf5;
-      max-width: 680px;
+      color: #d6e8fb;
+      max-width: 72ch;
       line-height: 1.65;
     }
 
-    /* ── Main content ── */
-    main {
-      max-width: 960px;
-      margin: 2.25rem auto 3rem;
-      padding: 0 1.25rem;
-    }
-
+    /* ── Section Heading ── */
     .section-heading {
-      font-size: 0.72rem;
+      font-size: 0.8rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
-      color: #6b7896;
+      color: #5a6a85;
       margin-bottom: 1rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 2px solid #dce3ee;
+      padding-left: 0.1rem;
     }
 
-    /* ── Card grid ── */
+    /* ── Card Grid ── */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.15rem;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.1rem;
     }
 
+    /* ── Card ── */
     .card {
-      background: #fff;
-      border: 1px solid #dce3ee;
+      background: #ffffff;
+      border: 1px solid #dde3ec;
       border-radius: 8px;
-      padding: 1.25rem 1.35rem;
+      padding: 1.35rem 1.4rem 1.2rem;
       display: flex;
       flex-direction: column;
       gap: 0.55rem;
-      transition: box-shadow 0.2s, border-color 0.2s;
+      transition: box-shadow 0.18s ease, transform 0.18s ease;
     }
 
     .card:hover {
-      box-shadow: 0 4px 18px rgba(37, 99, 168, 0.12);
-      border-color: #a8c2e8;
+      box-shadow: 0 4px 18px rgba(37, 99, 168, 0.13);
+      transform: translateY(-2px);
     }
 
-    /* ── Card top row: badges ── */
-    .card-meta {
+    /* ── Card Top Row ── */
+    .card-top {
       display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .card-name-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.28rem;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .card-name {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: #1a3d6e;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+
+    .card-name a {
+      color: #1a3d6e;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .card-name a:hover,
+    .card-name a:focus {
+      color: #2563a8;
+      border-bottom-color: #2563a8;
+      outline: none;
+    }
+
+    /* Source file link */
+    .source-link {
+      display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
+      gap: 0.25rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #5a6a85;
+      text-decoration: none;
+      border: 1px solid #c5cede;
+      border-radius: 4px;
+      padding: 0.15rem 0.45rem;
+      width: fit-content;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+
+    .source-link:hover,
+    .source-link:focus {
+      background: #eef2f9;
+      color: #1a3d6e;
+      border-color: #9aaec8;
+      outline: none;
+    }
+
+    .source-link::before {
+      content: '⬇';
+      font-size: 0.68rem;
+    }
+
+    /* ── Badges ── */
+    .badge-row {
+      display: flex;
       flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
     }
 
     .badge {
-      font-size: 0.67rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      border-radius: 4px;
-      padding: 0.18rem 0.5rem;
+      letter-spacing: 0.03em;
+      padding: 0.18rem 0.55rem;
+      border-radius: 20px;
       white-space: nowrap;
     }
 
     .badge-type {
       background: #e8f0fb;
-      color: #2563a8;
-      border: 1px solid #c2d6f5;
+      color: #1a3d6e;
     }
 
     .badge-filetype {
-      background: #f0f3f8;
-      color: #5a6a88;
-      border: 1px solid #dce3ee;
-      font-family: 'Courier New', monospace;
-      letter-spacing: 0.03em;
+      background: #f0f4f9;
+      color: #4a5a72;
+      border: 1px solid #d0d9e8;
     }
 
-    /* ── Card title row ── */
-    .card-title-row {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .card-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #1a3a5c;
-      line-height: 1.3;
-    }
-
-    .card-title a {
-      color: #1a5fa8;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: color 0.15s, border-color 0.15s;
-    }
-
-    .card-title a:hover,
-    .card-title a:focus {
-      color: #0d3e7a;
-      border-bottom-color: #0d3e7a;
-      outline: none;
-    }
-
-    .source-link {
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: #5a7fa8;
-      text-decoration: none;
-      border: 1px solid #b8ceea;
-      border-radius: 4px;
-      padding: 0.12rem 0.45rem;
-      background: #f0f6ff;
-      white-space: nowrap;
-      transition: background 0.15s, color 0.15s;
-    }
-
-    .source-link:hover,
-    .source-link:focus {
-      background: #daeafc;
-      color: #1a3a5c;
-      outline: none;
-    }
-
-    /* ── Card description ── */
-    .card-desc {
+    /* ── Card Description ── */
+    .card-description {
       font-size: 0.875rem;
       color: #4a5568;
       line-height: 1.6;
       flex: 1;
     }
 
-    /* ── Footer ── */
-    footer {
-      text-align: center;
-      font-size: 0.78rem;
-      color: #8a97ae;
-      padding: 1.25rem 1rem 1.75rem;
-      border-top: 1px solid #dce3ee;
+    /* ── Divider ── */
+    .card-divider {
+      border: none;
+      border-top: 1px solid #eaeef4;
+      margin: 0.1rem 0 0;
     }
 
-    /* ── Responsive: single column on small screens ── */
-    @media (max-width: 480px) {
-      header { padding: 1.75rem 1rem 1.5rem; }
-      .card-grid { grid-template-columns: 1fr; }
+    /* ── Footer ── */
+    .page-footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid #dde3ec;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #8a97aa;
+    }
+
+    /* ── Responsive Tweaks ── */
+    @media (max-width: 520px) {
+      .module-header {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .card {
+        padding: 1.1rem 1.1rem 1rem;
+      }
     }
   </style>
 </head>
 <body>
 <div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Using PreseMaker</a></div>
 <div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
+  <div class="page-wrapper">
 
-  <header>
-    <div class="header-inner">
-      <span class="course-label">Using PreseMaker</span>
+    <!-- ── Module Header ── -->
+    <header class="module-header">
+      <p class="course-label">Using PreseMaker</p>
       <h1>Building a Standards Library and Mapping Topics to Standards</h1>
       <p>
-        This module guides you through setting up a centralized Standards Library in PreseMaker,
-        using AI to extract and organize frameworks, interpreting verification markers, applying
-        Bloom's Taxonomy cognitive levels, and creating explicit mappings between course topics,
-        learning outcomes, and standards.
+        This module walks you through the full workflow of creating and managing a Standards Library
+        in PreseMaker — from using AI to extract and organize standards frameworks, to understanding
+        verification markers, applying Bloom's Taxonomy cognitive levels, and mapping course topics
+        and learning outcomes to specific standards. Use the resources below to explore each aspect
+        of the process.
       </p>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <h2 class="section-heading">Module Artifacts</h2>
+    <!-- ── Artifacts ── -->
+    <p class="section-heading">Module Artifacts</p>
 
     <div class="card-grid">
 
       <!-- Card 1: Module Topics -->
-      <div class="card">
-        <div class="card-meta">
+      <article class="card">
+        <div class="card-top">
+          <div class="card-name-block">
+            <span class="card-name">
+              <a href="content/module_topics.html">Module Topics</a>
+            </span>
+            <a class="source-link" href="source/hierarchy.json">source file</a>
+          </div>
+        </div>
+        <div class="badge-row">
           <span class="badge badge-type">Module Topics</span>
           <span class="badge badge-filetype">.json</span>
         </div>
-        <div class="card-title-row">
-          <span class="card-title">
-            <a href="content/module_topics.html">Module Topics</a>
-          </span>
-          <a class="source-link" href="source/hierarchy.json">source file</a>
-        </div>
-        <p class="card-desc">
+        <hr class="card-divider" />
+        <p class="card-description">
           A structured outline of the module listing all topics and subtopics covered, used by
           instructors and designers to understand the scope and sequence of the module at a glance.
         </p>
-      </div>
+      </article>
 
-      <!-- Card 2: What Is the Standards Library -->
-      <div class="card">
-        <div class="card-meta">
+      <!-- Card 2: Presentation -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-name-block">
+            <span class="card-name">
+              <a href="presentation/Building_a_Standards_generated.pptx">Building_a_Standards_generated.pptx</a>
+            </span>
+          </div>
+        </div>
+        <div class="badge-row">
+          <span class="badge badge-type">Presentation</span>
+          <span class="badge badge-filetype">.pptx</span>
+        </div>
+        <hr class="card-divider" />
+        <p class="card-description">
+          This presentation walks learners through creating and managing a Standards Library in
+          PreseMaker, covering how to use AI to build the library, verify and map standards to
+          course topics, and track standards coverage across courses.
+        </p>
+      </article>
+
+      <!-- Card 3: What Is the Standards Library -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-name-block">
+            <span class="card-name">
+              <a href="content/Building_a_Standards_interactive_topics_t1.html">What Is the Standards Library</a>
+            </span>
+          </div>
+        </div>
+        <div class="badge-row">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
-          <span class="card-title">
-            <a href="content/Building_a_Standards_interactive_topics_t1.html">What Is the Standards Library</a>
-          </span>
-        </div>
-        <p class="card-desc">
+        <hr class="card-divider" />
+        <p class="card-description">
           This reading explains what the Standards Library feature is in PreseMaker, describing how
           it provides a centralized location to store, organize, and manage external academic or
           professional standards frameworks so course designers can efficiently align course content
           to those standards.
         </p>
-      </div>
+      </article>
 
-      <!-- Card 3: Building the Library with AI -->
-      <div class="card">
-        <div class="card-meta">
+      <!-- Card 4: Building the Library with AI -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-name-block">
+            <span class="card-name">
+              <a href="content/Building_a_Standards_interactive_topics_t2.html">Building the Library with AI</a>
+            </span>
+          </div>
+        </div>
+        <div class="badge-row">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
-          <span class="card-title">
-            <a href="content/Building_a_Standards_interactive_topics_t2.html">Building the Library with AI</a>
-          </span>
-        </div>
-        <p class="card-desc">
+        <hr class="card-divider" />
+        <p class="card-description">
           A lesson explaining how to use PreseMaker's AI to automatically extract and organize
           standards from a framework, covering what input to provide, how the AI processes it, and
           how to review the results.
         </p>
-      </div>
+      </article>
 
-      <!-- Card 4: Understanding the Verified and Unverified Markers -->
-      <div class="card">
-        <div class="card-meta">
+      <!-- Card 5: Understanding Verified and Unverified Markers -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-name-block">
+            <span class="card-name">
+              <a href="content/Building_a_Standards_interactive_topics_t3.html">Understanding the Verified and Unverified Markers</a>
+            </span>
+          </div>
+        </div>
+        <div class="badge-row">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
-          <span class="card-title">
-            <a href="content/Building_a_Standards_interactive_topics_t3.html">Understanding the Verified and Unverified Markers</a>
-          </span>
-        </div>
-        <p class="card-desc">
+        <hr class="card-divider" />
+        <p class="card-description">
           This reading clarifies the meaning of the Verified and Unverified markers that appear on
           standards in the Standards Library, warning learners that these labels do not indicate an
           approval workflow and explaining what they actually signify to prevent misuse that could
           cause alignment errors.
         </p>
-      </div>
+      </article>
 
-      <!-- Card 5: Cognitive Levels on Standards -->
-      <div class="card">
-        <div class="card-meta">
+      <!-- Card 6: Cognitive Levels on Standards -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-name-block">
+            <span class="card-name">
+              <a href="content/Building_a_Standards_interactive_topics_t4.html">Cognitive Levels on Standards</a>
+            </span>
+          </div>
+        </div>
+        <div class="badge-row">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
-          <span class="card-title">
-            <a href="content/Building_a_Standards_interactive_topics_t4.html">Cognitive Levels on Standards</a>
-          </span>
-        </div>
-        <p class="card-desc">
+        <hr class="card-divider" />
+        <p class="card-description">
           A lesson covering how Bloom's Taxonomy cognitive levels apply to standards in PreseMaker,
           explaining why matching the cognitive demand of a standard matters when designing topics
           and learning outcomes.
         </p>
-      </div>
+      </article>
 
-      <!-- Card 6: Mapping Topics and Learning Outcomes to Standards -->
-      <div class="card">
-        <div class="card-meta">
+      <!-- Card 7: Mapping Topics and Learning Outcomes to Standards -->
+      <article class="card">
+        <div class="card-top">
+          <div class="card-name-block">
+            <span class="card-name">
+              <a href="content/Building_a_Standards_interactive_topics_t5.html">Mapping Topics and Learning Outcomes to Standards</a>
+            </span>
+          </div>
+        </div>
+        <div class="badge-row">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
-          <span class="card-title">
-            <a href="content/Building_a_Standards_interactive_topics_t5.html">Mapping Topics and Learning Outcomes to Standards</a>
-          </span>
-        </div>
-        <p class="card-desc">
+        <hr class="card-divider" />
+        <p class="card-description">
           A lesson explaining how to create explicit, documented connections between course topics,
           learning outcomes, and specific standards in PreseMaker, guiding instructors through the
           mapping process.
         </p>
-      </div>
+      </article>
 
     </div><!-- /.card-grid -->
-  </main>
 
-  <footer>
-    <p>Using PreseMaker &mdash; Building a Standards Library and Mapping Topics to Standards</p>
-  </footer>
+    <!-- ── Footer ── -->
+    <footer class="page-footer">
+      <p>Using PreseMaker &mdash; Building a Standards Library and Mapping Topics to Standards</p>
+    </footer>
 
+  </div><!-- /.page-wrapper -->
 
 <footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
 <section class="presemaker-extras" style="max-width:1000px;margin:2rem auto;padding:0 1rem;"><h2>Topics &amp; Learning Outcomes</h2><p><a href="topics-outcomes.html">View Topics &amp; Learning Outcomes</a></p><h2>Source Materials</h2><ul class="artifact-list">  <li class="artifact-item">

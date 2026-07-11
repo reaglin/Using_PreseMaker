@@ -14,26 +14,25 @@
     :root {
       --color-bg: #f4f6f9;
       --color-surface: #ffffff;
-      --color-primary: #2c5f8a;
-      --color-primary-dark: #1e4266;
-      --color-accent: #3d8bcd;
-      --color-accent-light: #e8f2fb;
-      --color-text: #1e2d3d;
-      --color-text-muted: #5a6a7a;
-      --color-border: #dce3ec;
-      --color-badge-bg: #eef3f9;
-      --color-badge-text: #2c5f8a;
-      --color-filetype-bg: #f0f7ee;
-      --color-filetype-text: #3a7d44;
-      --color-source-link: #6b4fa0;
+      --color-border: #dde2ea;
+      --color-primary: #2a5fac;
+      --color-primary-dark: #1d4480;
+      --color-secondary: #5a7fa8;
+      --color-accent: #e8f0fb;
+      --color-text: #1e2535;
+      --color-text-muted: #5c6678;
+      --color-badge-bg: #eef2f8;
+      --color-badge-text: #3a5080;
+      --color-source-bg: #f0f4fb;
+      --color-source-text: #4a6fa0;
       --radius: 8px;
-      --shadow: 0 2px 8px rgba(44, 95, 138, 0.10);
-      --shadow-hover: 0 6px 20px rgba(44, 95, 138, 0.16);
-      --transition: 0.2s ease;
+      --shadow: 0 2px 8px rgba(42, 95, 172, 0.08);
+      --shadow-hover: 0 6px 18px rgba(42, 95, 172, 0.14);
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: var(--font);
       background-color: var(--color-bg);
       color: var(--color-text);
       line-height: 1.6;
@@ -42,88 +41,66 @@
 
     /* ── Header ── */
     header {
-      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 60%, var(--color-accent) 100%);
-      color: #ffffff;
+      background: linear-gradient(135deg, #1d3f78 0%, #2a5fac 60%, #3b79cc 100%);
+      color: #fff;
       padding: 3rem 2rem 2.5rem;
+      text-align: center;
     }
 
-    .header-inner {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .course-label {
+    header .course-label {
       display: inline-block;
       font-size: 0.78rem;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.30);
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #d6e6ff;
+      padding: 0.3rem 0.85rem;
       border-radius: 20px;
-      padding: 0.25rem 0.85rem;
-      margin-bottom: 1rem;
-      color: #e0edf8;
+      margin-bottom: 1.1rem;
     }
 
     header h1 {
-      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-size: clamp(1.55rem, 3.5vw, 2.25rem);
       font-weight: 700;
       line-height: 1.25;
-      margin-bottom: 1rem;
-      color: #ffffff;
+      max-width: 780px;
+      margin: 0 auto 1rem;
+      letter-spacing: -0.01em;
     }
 
     header p {
       font-size: 1rem;
+      color: #ccddf5;
       max-width: 680px;
-      color: #c8dff0;
-      line-height: 1.7;
+      margin: 0 auto;
     }
 
-    /* ── Main content ── */
+    /* ── Main container ── */
     main {
-      max-width: 960px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 2.5rem 1.5rem 4rem;
     }
 
+    /* ── Section label ── */
     .section-label {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.10em;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
       color: var(--color-text-muted);
       margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .section-label::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: var(--color-border);
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-border);
     }
 
     /* ── Card grid ── */
     .card-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.1rem;
-    }
-
-    @media (min-width: 640px) {
-      .card-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (min-width: 900px) {
-      .card-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
     }
 
     /* ── Card ── */
@@ -135,111 +112,96 @@
       padding: 1.35rem 1.4rem 1.25rem;
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
-      transition: box-shadow var(--transition), transform var(--transition);
+      gap: 0.6rem;
+      transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
     }
 
     .card:hover {
       box-shadow: var(--shadow-hover);
       transform: translateY(-2px);
+      border-color: #b8ccec;
     }
 
-    /* ── Card meta row ── */
+    /* ── Card top row ── */
     .card-meta {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
       flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
     }
 
     .badge {
-      display: inline-block;
-      font-size: 0.70rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      letter-spacing: 0.04em;
-      padding: 0.18rem 0.65rem;
-      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: var(--color-badge-bg);
+      color: var(--color-badge-text);
+      border: 1px solid #c8d6ed;
+      padding: 0.18rem 0.55rem;
+      border-radius: 4px;
       white-space: nowrap;
     }
 
-    .badge-type {
-      background: var(--color-badge-bg);
-      color: var(--color-badge-text);
-      border: 1px solid #c7d9ee;
-    }
-
     .badge-filetype {
-      background: var(--color-filetype-bg);
-      color: var(--color-filetype-text);
-      border: 1px solid #c2ddc5;
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      background: #eef6f0;
+      color: #2e6b42;
+      border-color: #bdddc8;
+      font-family: 'Courier New', monospace;
+      font-size: 0.68rem;
     }
 
     /* ── Card title row ── */
     .card-title-row {
       display: flex;
-      align-items: baseline;
       flex-wrap: wrap;
-      gap: 0.55rem;
+      align-items: baseline;
+      gap: 0.5rem;
+      row-gap: 0.3rem;
     }
 
-    .card-name {
-      font-size: 0.975rem;
+    .card-title {
+      font-size: 0.97rem;
       font-weight: 700;
       color: var(--color-text);
-      line-height: 1.3;
+      line-height: 1.35;
     }
 
-    .card-name a {
+    .card-title a {
       color: var(--color-primary);
       text-decoration: none;
-      border-bottom: 1.5px solid transparent;
-      transition: color var(--transition), border-color var(--transition);
     }
 
-    .card-name a:hover,
-    .card-name a:focus {
-      color: var(--color-accent);
-      border-bottom-color: var(--color-accent);
-      outline: none;
-    }
-
-    .card-name a:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
-      border-radius: 2px;
+    .card-title a:hover {
+      color: var(--color-primary-dark);
+      text-decoration: underline;
     }
 
     .source-link {
       font-size: 0.72rem;
       font-weight: 600;
-      color: var(--color-source-link);
-      text-decoration: none;
+      color: var(--color-source-text);
+      background: var(--color-source-bg);
+      border: 1px solid #c5d5ec;
+      border-radius: 4px;
       padding: 0.15rem 0.5rem;
-      border: 1px solid #d0bef0;
-      border-radius: 12px;
-      background: #f7f3fd;
+      text-decoration: none;
       white-space: nowrap;
-      transition: background var(--transition), color var(--transition);
+      transition: background 0.15s, color 0.15s;
+      align-self: center;
     }
 
-    .source-link:hover,
-    .source-link:focus {
-      background: #ede5fb;
-      color: #4a2d80;
-      outline: none;
-    }
-
-    .source-link:focus-visible {
-      outline: 2px solid var(--color-source-link);
-      outline-offset: 2px;
+    .source-link:hover {
+      background: #dce8f8;
+      color: var(--color-primary-dark);
+      text-decoration: none;
     }
 
     /* ── Card description ── */
     .card-description {
       font-size: 0.875rem;
       color: var(--color-text-muted);
-      line-height: 1.65;
+      line-height: 1.6;
       flex: 1;
     }
 
@@ -248,8 +210,23 @@
       text-align: center;
       padding: 1.5rem 1rem 2rem;
       font-size: 0.78rem;
-      color: #9aaab8;
+      color: #8a97ab;
       border-top: 1px solid var(--color-border);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 520px) {
+      header {
+        padding: 2.2rem 1.2rem 2rem;
+      }
+
+      main {
+        padding: 2rem 1rem 3rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -258,177 +235,233 @@
 <div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
 
   <header>
-    <div class="header-inner">
-      <span class="course-label">Using PreseMaker</span>
-      <h1>AI Providers and API Keys: Setting Up Your Connection</h1>
-      <p>
-        This module covers everything you need to connect PreseMaker to an external AI provider.
-        You will learn how PreseMaker communicates with AI services, what API keys are and how to
-        obtain them, how to enter and save your key in PreseMaker's settings, and how your credentials
-        are stored securely on your device.
-      </p>
-    </div>
+    <div class="course-label">Using PreseMaker</div>
+    <h1>AI Providers and API Keys: Setting Up Your Connection</h1>
+    <p>
+      Everything you need for this module — readings, presentations, video, audio, and supporting resources
+      — is listed below. Select any linked artifact to open it directly.
+    </p>
   </header>
 
   <main>
-    <p class="section-label">Module Artifacts</p>
+    <p class="section-label">Module Artifacts &mdash; 13 items</p>
 
-    <div class="card-grid" role="list">
+    <div class="card-grid">
 
-      <!-- Artifact 1: Module Topics -->
-      <article class="card" role="listitem">
+      <!-- 1 Module Topics -->
+      <div class="card">
         <div class="card-meta">
-          <span class="badge badge-type">Module Topics</span>
+          <span class="badge">Module Topics</span>
           <span class="badge badge-filetype">.json</span>
         </div>
         <div class="card-title-row">
-          <span class="card-name">
+          <span class="card-title">
             <a href="content/module_topics.html">Module Topics</a>
           </span>
-          <a class="source-link" href="source/hierarchy.json" aria-label="Source file for Module Topics">source file</a>
+          <a class="source-link" href="source/hierarchy.json">source file</a>
         </div>
         <p class="card-description">
-          A structured outline of the module listing all topics and subtopics covered, used by
-          learners and instructors to preview the scope of the module on how PreseMaker connects to
-          AI providers, what API keys are, and how to obtain, enter, and secure them.
+          A structured outline of the module listing all topics and subtopics covered, used by learners and instructors to preview the scope of the module on how PreseMaker connects to AI providers, what API keys are, and how to obtain, enter, and secure them.
         </p>
-      </article>
+      </div>
 
-      <!-- Artifact 2 -->
-      <article class="card" role="listitem">
+      <!-- 2 Presentation -->
+      <div class="card">
         <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge">Presentation</span>
+          <span class="badge badge-filetype">.pptx</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-title">
+            <a href="presentation/AI_Providers_and_generated.pptx">AI_Providers_and_generated.pptx</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A slide presentation covering how to connect PreseMaker to four supported external AI providers (including Anthropic Claude and Google Gemini) using API keys, including guidance on choosing the right provider; used by learners as the core visual reference for the module.
+        </p>
+      </div>
+
+      <!-- 3 Narrated Presentation -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge">Narrated Presentation</span>
+          <span class="badge badge-filetype">.pptx</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-title">
+            <a href="AI_Providers_and_generated_narrated.pptx">AI_Providers_and_generated_narrated.pptx</a>
+          </span>
+        </div>
+        <p class="card-description">
+          The same AI provider and API key connection content as the base presentation but with recorded narration embedded, allowing learners to follow along with spoken explanation on each slide.
+        </p>
+      </div>
+
+      <!-- 4 Topic Detail t1 -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
         <div class="card-title-row">
-          <span class="card-name">
+          <span class="card-title">
             <a href="content/AI_Providers_and_interactive_topics_t1.html">How PreseMaker Connects to AI Providers</a>
           </span>
         </div>
         <p class="card-description">
-          An explanatory reading that describes how PreseMaker relies on external AI providers to
-          deliver features like content generation and smart suggestions, and why a direct API
-          connection to those providers is necessary; learners read it to understand the architectural
-          relationship between PreseMaker and AI services.
+          An explanatory reading that describes how PreseMaker relies on external AI providers to deliver features like content generation and smart suggestions, and why a direct API connection to those providers is necessary; learners read it to understand the architectural relationship between PreseMaker and AI services.
         </p>
-      </article>
+      </div>
 
-      <!-- Artifact 3 -->
-      <article class="card" role="listitem">
+      <!-- 5 Topic Detail t2 -->
+      <div class="card">
         <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
         <div class="card-title-row">
-          <span class="card-name">
+          <span class="card-title">
             <a href="content/AI_Providers_and_interactive_topics_t2.html">Overview of Supported AI Providers</a>
           </span>
         </div>
         <p class="card-description">
-          An explanatory reading that introduces the concept of AI providers, profiles the supported
-          options (including Anthropic Claude and Google Gemini), and explains how the choice of
-          provider affects content quality, style, and cost; learners use it to compare providers
-          before selecting one.
+          An explanatory reading that introduces the concept of AI providers, profiles the supported options (including Anthropic Claude and Google Gemini), and explains how the choice of provider affects content quality, style, and cost; learners use it to compare providers before selecting one.
         </p>
-      </article>
+      </div>
 
-      <!-- Artifact 4 -->
-      <article class="card" role="listitem">
+      <!-- 6 Topic Detail t3 -->
+      <div class="card">
         <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
         <div class="card-title-row">
-          <span class="card-name">
+          <span class="card-title">
             <a href="content/AI_Providers_and_interactive_topics_t3.html">Understanding API Keys</a>
           </span>
         </div>
         <p class="card-description">
-          An explanatory reading that defines what an API key is, why PreseMaker requires one to
-          communicate with external AI services, and how it functions as a credential authenticating
-          requests; learners read it to understand the purpose and importance of API keys before
-          obtaining their own.
+          An explanatory reading that defines what an API key is, why PreseMaker requires one to communicate with external AI services, and how it functions as a credential authenticating requests; learners read it to understand the purpose and importance of API keys before obtaining their own.
         </p>
-      </article>
+      </div>
 
-      <!-- Artifact 5 -->
-      <article class="card" role="listitem">
+      <!-- 7 Topic Detail t4 -->
+      <div class="card">
         <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
         <div class="card-title-row">
-          <span class="card-name">
+          <span class="card-title">
             <a href="content/AI_Providers_and_interactive_topics_t4.html">Obtaining Your API Key</a>
           </span>
         </div>
         <p class="card-description">
-          A step-by-step guide that walks learners through selecting an AI provider, creating an
-          account on that provider's platform, and generating an API key so they are ready to connect
-          PreseMaker to their chosen AI service.
+          A step-by-step guide that walks learners through selecting an AI provider, creating an account on that provider's platform, and generating an API key so they are ready to connect PreseMaker to their chosen AI service.
         </p>
-      </article>
+      </div>
 
-      <!-- Artifact 6 -->
-      <article class="card" role="listitem">
+      <!-- 8 Topic Detail t5 -->
+      <div class="card">
         <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
         <div class="card-title-row">
-          <span class="card-name">
+          <span class="card-title">
             <a href="content/AI_Providers_and_interactive_topics_t5.html">Entering Your API Key in PreseMaker Settings</a>
           </span>
         </div>
         <p class="card-description">
-          A procedural guide that shows learners exactly how to open PreseMaker's Settings screen,
-          paste their API key into the correct field, and save the configuration so the application
-          can begin making authenticated requests to the AI provider.
+          A procedural guide that shows learners exactly how to open PreseMaker's Settings screen, paste their API key into the correct field, and save the configuration so the application can begin making authenticated requests to the AI provider.
         </p>
-      </article>
+      </div>
 
-      <!-- Artifact 7 -->
-      <article class="card" role="listitem">
+      <!-- 9 Topic Detail t6 -->
+      <div class="card">
         <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
+          <span class="badge">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
         <div class="card-title-row">
-          <span class="card-name">
+          <span class="card-title">
             <a href="content/AI_Providers_and_interactive_topics_t6.html">API Key Encryption and Local Storage</a>
           </span>
         </div>
         <p class="card-description">
-          An informational reading that explains how PreseMaker encrypts and stores API keys locally
-          on the user's device, where the key resides, and what happens to it during normal use,
-          helping learners assess the security implications of adding their key to the application.
+          An informational reading that explains how PreseMaker encrypts and stores API keys locally on the user's device, where the key resides, and what happens to it during normal use, helping learners assess the security implications of adding their key to the application.
         </p>
-      </article>
+      </div>
 
-      <!-- Artifact 8 -->
-      <article class="card" role="listitem">
+      <!-- 10 Text Content -->
+      <div class="card">
         <div class="card-meta">
-          <span class="badge badge-type">Text Content</span>
+          <span class="badge">Text Content</span>
           <span class="badge badge-filetype">.html</span>
         </div>
         <div class="card-title-row">
-          <span class="card-name">
+          <span class="card-title">
             <a href="content/AI_Providers_and_interactive.html">API Key Encryption and Local Storage</a>
           </span>
         </div>
         <p class="card-description">
-          A duplicate of the Topic Detail above — an informational reading that explains how
-          PreseMaker encrypts and stores API keys locally on the user's device, where the key
-          resides, and what happens to it during normal use, helping learners assess the security
-          implications of adding their key to the application.
+          A duplicate of artifact 7 — an informational reading that explains how PreseMaker encrypts and stores API keys locally on the user's device, where the key resides, and what happens to it during normal use, helping learners assess the security implications of adding their key to the application.
         </p>
-      </article>
+      </div>
 
-    </div>
+      <!-- 11 Video -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge">Video</span>
+          <span class="badge badge-filetype">.html</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-title">
+            <a href="content/ext_6f7654aa.html">PreseMaker Module 3: AI Providers in PreseMaker</a>
+          </span>
+        </div>
+        <p class="card-description">
+          This video covers how PreseMaker integrates with external AI providers, focusing on the configuration and setup required to connect the application to services such as Anthropic Claude, Google Gemini, OpenAI, and Mistral. It walks learners through the role of API keys, how to obtain them, and how to enter them within PreseMaker's Settings screen. The video also addresses how PreseMaker handles API key storage and protection.
+        </p>
+      </div>
+
+      <!-- 12 Slide Audio -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge">Slide Audio</span>
+          <span class="badge badge-filetype">.wav</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-title">
+            <a href="audio">Slide Narration Audio (14 files)</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A set of 14 individual audio files containing the spoken narration for each slide in the presentation, used by the course system to play voiceover commentary as learners progress through the module.
+        </p>
+      </div>
+
+      <!-- 13 Narration Transcript -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge">Narration Transcript</span>
+          <span class="badge badge-filetype">.vtt</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-title">
+            <a href="AI_Providers_and_generated_narrations.vtt">Narration Transcript (AI_Providers_and_generated)</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A VTT-format transcript of the slide narration audio, providing a text version of all spoken content for accessibility, review, or caption display during playback.
+        </p>
+      </div>
+
+    </div><!-- /.card-grid -->
   </main>
 
   <footer>
-    <p>Using PreseMaker &mdash; AI Providers and API Keys: Setting Up Your Connection</p>
+    Using PreseMaker &mdash; AI Providers and API Keys: Setting Up Your Connection
   </footer>
 
 

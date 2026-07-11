@@ -5,391 +5,447 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Creating a Module: Three Methods and the Module Manager — Using PreseMaker</title>
   <style>
-    /* ── Reset & base ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-bg: #f4f6f9;
+      --color-surface: #ffffff;
+      --color-border: #dde2ea;
+      --color-primary: #2c5f9e;
+      --color-primary-dark: #1e4275;
+      --color-accent: #4a90d9;
+      --color-text: #1e2530;
+      --color-text-muted: #5a6477;
+      --color-tag-bg: #eaf1fb;
+      --color-tag-text: #2c5f9e;
+      --color-source-bg: #f0f4fa;
+      --color-source-text: #3a6ea8;
+      --color-source-border: #b8cde8;
+      --radius: 8px;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 6px 20px rgba(44, 95, 158, 0.14);
+      --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
 
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
-      font-size: 1rem;
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-text);
       line-height: 1.6;
-      color: #1e2a35;
-      background: #f4f6f9;
       min-height: 100vh;
     }
 
-    /* ── Page wrapper ── */
-    .page-wrapper {
-      max-width: 1060px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2c5f9e 60%, #3d7bc4 100%);
+      color: #ffffff;
+      padding: 48px 24px 40px;
+      text-align: center;
     }
 
-    /* ── Course label ── */
+    .header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
     .course-label {
       display: inline-block;
       font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #5a7a96;
-      background: #dce8f3;
-      border-radius: 4px;
-      padding: 0.25rem 0.65rem;
-      margin-bottom: 0.9rem;
+      color: #a8c8ef;
+      margin-bottom: 14px;
     }
 
-    /* ── Header ── */
-    .module-header {
-      background: linear-gradient(135deg, #1b3a54 0%, #2d6a9f 100%);
-      color: #ffffff;
-      border-radius: 10px;
-      padding: 2.4rem 2.2rem 2rem;
-      margin-bottom: 2.4rem;
-      box-shadow: 0 4px 18px rgba(29, 58, 84, 0.18);
-    }
-
-    .module-header .course-label {
-      background: rgba(255,255,255,0.15);
-      color: #cde3f7;
-    }
-
-    .module-header h1 {
-      font-size: clamp(1.4rem, 3vw, 2rem);
+    header h1 {
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
       font-weight: 700;
       line-height: 1.25;
-      margin-bottom: 0.85rem;
-      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+      color: #ffffff;
     }
 
-    .module-header p {
-      font-size: 0.97rem;
-      color: #c8dff0;
-      max-width: 72ch;
-      line-height: 1.65;
+    header p {
+      font-size: 1rem;
+      color: #cde0f5;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.7;
     }
 
-    /* ── Section heading ── */
-    .section-heading {
+    /* ── Main content ── */
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .section-label {
       font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #7a90a4;
-      margin-bottom: 1rem;
-      padding-left: 0.15rem;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--color-border);
     }
 
     /* ── Card grid ── */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.1rem;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 20px;
     }
 
-    /* ── Card ── */
     .card {
-      background: #ffffff;
-      border: 1px solid #dce3eb;
-      border-radius: 8px;
-      padding: 1.35rem 1.4rem 1.2rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px 22px 20px;
       display: flex;
       flex-direction: column;
-      gap: 0.55rem;
-      transition: box-shadow 0.18s ease, transform 0.18s ease;
+      gap: 10px;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
     }
 
     .card:hover {
-      box-shadow: 0 6px 22px rgba(29, 58, 84, 0.1);
+      box-shadow: var(--shadow-hover);
       transform: translateY(-2px);
     }
 
-    /* ── Card meta row ── */
+    /* ── Card top row: tags ── */
     .card-meta {
       display: flex;
-      align-items: center;
-      gap: 0.45rem;
       flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
     }
 
-    .badge {
+    .tag {
+      display: inline-block;
       font-size: 0.68rem;
       font-weight: 600;
       letter-spacing: 0.05em;
       text-transform: uppercase;
+      padding: 3px 8px;
       border-radius: 4px;
-      padding: 0.18rem 0.52rem;
-      white-space: nowrap;
+      background: var(--color-tag-bg);
+      color: var(--color-tag-text);
+      border: 1px solid #c5d9f2;
     }
 
-    .badge-type {
-      background: #e8f0fa;
-      color: #2d6a9f;
-    }
-
-    .badge-filetype {
-      background: #eef6ee;
-      color: #3a7a3a;
-      font-family: 'Courier New', Courier, monospace;
+    .tag-filetype {
+      background: #f5f5f5;
+      color: #555;
+      border-color: #ddd;
+      font-family: 'Courier New', monospace;
       font-size: 0.67rem;
     }
 
     /* ── Card title row ── */
     .card-title-row {
       display: flex;
-      align-items: baseline;
       flex-wrap: wrap;
-      gap: 0.55rem;
+      align-items: baseline;
+      gap: 8px;
     }
 
     .card-name {
-      font-size: 0.97rem;
-      font-weight: 600;
-      color: #1e2a35;
-      line-height: 1.35;
+      font-size: 0.975rem;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.3;
+      word-break: break-word;
     }
 
     .card-name a {
-      color: #1b5fa8;
+      color: var(--color-primary);
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.15s, color 0.15s;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.15s ease, color 0.15s ease;
     }
 
     .card-name a:hover,
     .card-name a:focus {
-      color: #0d3f75;
-      border-bottom-color: #0d3f75;
+      color: var(--color-primary-dark);
+      border-bottom-color: var(--color-primary-dark);
       outline: none;
     }
 
+    .card-name a:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
     .source-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
       font-size: 0.72rem;
       font-weight: 500;
-      color: #5a7a96;
-      text-decoration: none;
-      background: #f0f4f9;
-      border: 1px solid #ccd8e6;
+      color: var(--color-source-text);
+      background: var(--color-source-bg);
+      border: 1px solid var(--color-source-border);
+      padding: 2px 8px;
       border-radius: 4px;
-      padding: 0.12rem 0.48rem;
+      text-decoration: none;
       white-space: nowrap;
-      transition: background 0.15s, color 0.15s;
-      flex-shrink: 0;
+      transition: background 0.15s ease, color 0.15s ease;
     }
 
     .source-link:hover,
     .source-link:focus {
-      background: #dce8f3;
-      color: #1b3a54;
+      background: #ddeaf8;
+      color: var(--color-primary-dark);
       outline: none;
     }
 
+    .source-link:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    .source-link-icon {
+      font-size: 0.75rem;
+      opacity: 0.75;
+    }
+
     /* ── Card description ── */
-    .card-desc {
+    .card-description {
       font-size: 0.875rem;
-      color: #4a5d6e;
-      line-height: 1.6;
+      color: var(--color-text-muted);
+      line-height: 1.65;
       flex: 1;
     }
 
-    /* ── Divider between type groups (optional visual separator) ── */
-    .group-divider {
-      grid-column: 1 / -1;
-      border: none;
-      border-top: 1px dashed #d0dae4;
-      margin: 0.3rem 0;
-    }
-
     /* ── Footer ── */
-    .page-footer {
-      margin-top: 3rem;
+    footer {
       text-align: center;
+      padding: 24px 16px;
       font-size: 0.78rem;
-      color: #9aaab8;
+      color: #8a96a8;
+      border-top: 1px solid var(--color-border);
+      background: #eef1f6;
     }
 
-    /* ── Responsive tweaks ── */
+    /* ── Responsive ── */
     @media (max-width: 480px) {
-      .module-header { padding: 1.7rem 1.2rem 1.5rem; }
-      .card { padding: 1.1rem 1.1rem 1rem; }
-      .card-grid { grid-template-columns: 1fr; }
+      header {
+        padding: 36px 16px 30px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 18px 16px;
+      }
     }
   </style>
 </head>
 <body>
 <div class="pm-backlink" style="font-family:'Segoe UI',Arial,sans-serif;padding:8px 16px;background:#f5f8fc;border-bottom:1px solid #dce3ec"><a href="../index.html" style="color:#1a3c6e;font-weight:600;text-decoration:none">↑ Using PreseMaker</a></div>
 <div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
-  <div class="page-wrapper">
 
-    <!-- ── Header ── -->
-    <header class="module-header">
+  <header>
+    <div class="header-inner">
       <span class="course-label">Using PreseMaker</span>
       <h1>Creating a Module: Three Methods and the Module Manager</h1>
       <p>
-        This module introduces the three ways to create a module in PreseMaker — AI-powered generation,
-        adding an existing folder from disk, and importing from a file or repository — and shows how every
-        pathway converges in the Module Manager, the central hub for module configuration and setup.
-        Work through the topics below to build a complete picture of the module creation lifecycle.
+        Explore how PreseMaker supports multiple module creation workflows — from AI-generated scaffolding
+        to importing existing folders and packages — and learn how the Module Manager serves as the central
+        hub for configuring any module regardless of how it was created.
       </p>
-    </header>
+    </div>
+  </header>
 
-    <!-- ── Artifact grid ── -->
-    <p class="section-heading">Module Artifacts</p>
+  <main>
+    <p class="section-label">Module Artifacts &mdash; 9 items</p>
 
-    <div class="card-grid">
+    <div class="card-grid" role="list">
 
-      <!-- Card 1 — Module Topics -->
-      <article class="card">
+      <!-- Card 1: Module Topics -->
+      <article class="card" role="listitem">
         <div class="card-meta">
-          <span class="badge badge-type">Module Topics</span>
-          <span class="badge badge-filetype">.json</span>
+          <span class="tag">Module Topics</span>
+          <span class="tag tag-filetype">.json</span>
         </div>
         <div class="card-title-row">
           <span class="card-name">
             <a href="content/module_topics.html">Module Topics</a>
           </span>
-          <a class="source-link" href="source/hierarchy.json">source file</a>
+          <a class="source-link" href="source/hierarchy.json">
+            <span class="source-link-icon">&#128196;</span> source file
+          </a>
         </div>
-        <p class="card-desc">
+        <p class="card-description">
           A structured list of all topics covered in this module — from what a module is and why multiple
           creation methods exist, through each of the three creation methods and the Module Manager — used
           by authors and learners as a navigational outline of the module's scope.
         </p>
       </article>
 
-      <!-- Card 2 — Overview -->
-      <article class="card">
+      <!-- Card 2: PowerPoint Presentation -->
+      <article class="card" role="listitem">
         <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
-          <span class="badge badge-filetype">.html</span>
+          <span class="tag">Presentation</span>
+          <span class="tag tag-filetype">.pptx</span>
+        </div>
+        <div class="card-title-row">
+          <span class="card-name">
+            <a href="presentation/Creating_a_Module_generated.pptx">Creating_a_Module_generated.pptx</a>
+          </span>
+        </div>
+        <p class="card-description">
+          A PowerPoint presentation covering the three methods for creating a module in PreseMaker and how
+          to use the Module Manager as the central hub for those actions; learners use it to understand
+          which creation workflow suits their starting point, while instructors can use it as a slide-based
+          teaching aid or reference during training.
+        </p>
+      </article>
+
+      <!-- Card 3: Overview Topic -->
+      <article class="card" role="listitem">
+        <div class="card-meta">
+          <span class="tag">Topic Detail</span>
+          <span class="tag tag-filetype">.html</span>
         </div>
         <div class="card-title-row">
           <span class="card-name">
             <a href="content/Creating_a_Module_interactive_topics_t1.html">Overview of Module Creation in PreseMaker</a>
           </span>
         </div>
-        <p class="card-desc">
+        <p class="card-description">
           An introductory reading that explains what a module is in PreseMaker, why the application offers
           several creation methods, and how all pathways lead to the Module Manager, giving learners the
           conceptual foundation needed before exploring specific creation workflows.
         </p>
       </article>
 
-      <!-- Card 3 — Method 1 -->
-      <article class="card">
+      <!-- Card 4: Method 1 -->
+      <article class="card" role="listitem">
         <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
-          <span class="badge badge-filetype">.html</span>
+          <span class="tag">Topic Detail</span>
+          <span class="tag tag-filetype">.html</span>
         </div>
         <div class="card-title-row">
           <span class="card-name">
             <a href="content/Creating_a_Module_interactive_topics_t2.html">Method 1: Generating a New Module with AI</a>
           </span>
         </div>
-        <p class="card-desc">
+        <p class="card-description">
           A reading that walks learners through PreseMaker's AI-powered module generation method, covering
           how to access it, what inputs are required, and how the AI produces an initial module structure,
           so learners can use this approach to quickly scaffold a new module.
         </p>
       </article>
 
-      <!-- Card 4 — Method 2 -->
-      <article class="card">
+      <!-- Card 5: Method 2 -->
+      <article class="card" role="listitem">
         <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
-          <span class="badge badge-filetype">.html</span>
+          <span class="tag">Topic Detail</span>
+          <span class="tag tag-filetype">.html</span>
         </div>
         <div class="card-title-row">
           <span class="card-name">
             <a href="content/Creating_a_Module_interactive_topics_t3.html">Method 2: Adding an Existing Module Folder from Disk</a>
           </span>
         </div>
-        <p class="card-desc">
+        <p class="card-description">
           A reading that explains how to bring an existing module folder stored on a local disk into
           PreseMaker without rebuilding it from scratch, detailing how to locate the folder and register
           it through the appropriate interface.
         </p>
       </article>
 
-      <!-- Card 5 — Method 3 -->
-      <article class="card">
+      <!-- Card 6: Method 3 -->
+      <article class="card" role="listitem">
         <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
-          <span class="badge badge-filetype">.html</span>
+          <span class="tag">Topic Detail</span>
+          <span class="tag tag-filetype">.html</span>
         </div>
         <div class="card-title-row">
           <span class="card-name">
             <a href="content/Creating_a_Module_interactive_topics_t4.html">Method 3: Importing from a File or Repository</a>
           </span>
         </div>
-        <p class="card-desc">
+        <p class="card-description">
           A reading that covers the third module creation method — importing a packaged module from a file
           or remote repository — explaining when to use this approach and how to complete the import process
           within PreseMaker.
         </p>
       </article>
 
-      <!-- Card 6 — Module Manager -->
-      <article class="card">
+      <!-- Card 7: Module Manager -->
+      <article class="card" role="listitem">
         <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
-          <span class="badge badge-filetype">.html</span>
+          <span class="tag">Topic Detail</span>
+          <span class="tag tag-filetype">.html</span>
         </div>
         <div class="card-title-row">
           <span class="card-name">
             <a href="content/Creating_a_Module_interactive_topics_t5.html">The Module Manager: Central Hub for Module Setup</a>
           </span>
         </div>
-        <p class="card-desc">
+        <p class="card-description">
           A reading that describes the Module Manager as PreseMaker's central interface for module setup,
           explaining what configuration options it consolidates and how learners and instructors use it
           after a module has been created by any of the three methods.
         </p>
       </article>
 
-      <!-- Card 7 — Lifecycle (Topic Detail) -->
-      <article class="card">
+      <!-- Card 8: Module Lifecycle (Topic Detail) -->
+      <article class="card" role="listitem">
         <div class="card-meta">
-          <span class="badge badge-type">Topic Detail</span>
-          <span class="badge badge-filetype">.html</span>
+          <span class="tag">Topic Detail</span>
+          <span class="tag tag-filetype">.html</span>
         </div>
         <div class="card-title-row">
           <span class="card-name">
             <a href="content/Creating_a_Module_interactive_topics_t6.html">From Empty Module to Content-Ready: The Module Lifecycle</a>
           </span>
         </div>
-        <p class="card-desc">
-          A reading that traces the full lifecycle of a PreseMaker module from initial creation through
-          each setup stage to content-ready status, giving learners a mental model of the predictable
-          sequence of steps any module follows.
+        <p class="card-description">
+          A reading that traces the full lifecycle of a PreseMaker module from initial creation through each
+          setup stage to content-ready status, giving learners a mental model of the predictable sequence of
+          steps any module follows.
         </p>
       </article>
 
-      <!-- Card 8 — Lifecycle (Text Content) -->
-      <article class="card">
+      <!-- Card 9: Module Lifecycle (Text Content) -->
+      <article class="card" role="listitem">
         <div class="card-meta">
-          <span class="badge badge-type">Text Content</span>
-          <span class="badge badge-filetype">.html</span>
+          <span class="tag">Text Content</span>
+          <span class="tag tag-filetype">.html</span>
         </div>
         <div class="card-title-row">
           <span class="card-name">
             <a href="content/Creating_a_Module_interactive.html">From Empty Module to Content-Ready: The Module Lifecycle</a>
           </span>
         </div>
-        <p class="card-desc">
+        <p class="card-description">
           A duplicate of the module lifecycle reading that traces the full lifecycle of a PreseMaker module
           from initial creation through each setup stage to content-ready status, giving learners a mental
           model of the predictable sequence of steps any module follows.
         </p>
       </article>
 
-    </div><!-- /.card-grid -->
+    </div>
+  </main>
 
-    <!-- ── Footer ── -->
-    <footer class="page-footer">
-      <p>Using PreseMaker &mdash; Creating a Module: Three Methods and the Module Manager</p>
-    </footer>
+  <footer>
+    <p>Using PreseMaker &mdash; Creating a Module: Three Methods and the Module Manager</p>
+  </footer>
 
-  </div><!-- /.page-wrapper -->
 
 <footer class="presemaker-credit" style="margin-top:2rem;padding:14px 0;border-top:1px solid #ddd;text-align:center;font:13px/1.4 -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#777;">Created with <a href="https://apps.microsoft.com/detail/9mt854nv3fgf?hl=en-US&amp;gl=US" target="_blank" rel="noopener" style="color:#3b6ea5;text-decoration:none;">PreseMaker</a></footer>
 <section class="presemaker-extras" style="max-width:1000px;margin:2rem auto;padding:0 1rem;"><h2>Topics &amp; Learning Outcomes</h2><p><a href="topics-outcomes.html">View Topics &amp; Learning Outcomes</a></p></section><script src="embed-inject.js" defer></script></body>

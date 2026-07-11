@@ -1,8 +1,8 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Generating Text-Based Lessons: Formats, Layouts, and Content Types</title>
   <style>
     *, *::before, *::after {
@@ -12,26 +12,29 @@
     }
 
     :root {
-      --color-bg: #f4f6f9;
+      --color-bg: #f5f6f8;
       --color-surface: #ffffff;
-      --color-border: #dde2ea;
       --color-primary: #2c5f8a;
-      --color-primary-dark: #1e4368;
+      --color-primary-dark: #1e4268;
       --color-accent: #4a90c4;
-      --color-text: #1e2530;
-      --color-text-muted: #5a6478;
-      --color-tag-bg: #eaf1f8;
-      --color-tag-text: #2c5f8a;
-      --color-source-bg: #f0f5f0;
-      --color-source-text: #2e6b3e;
-      --color-source-border: #b6d4bc;
+      --color-text: #1e2b38;
+      --color-text-muted: #5a6a7a;
+      --color-border: #dde3ea;
+      --color-badge-bg: #eaf2fb;
+      --color-badge-text: #2c5f8a;
+      --color-tag-bg: #f0f4f8;
+      --color-tag-text: #4a5568;
+      --color-source-bg: #f7f9fb;
+      --color-source-text: #5a6a7a;
+      --color-source-border: #c4d0dc;
       --radius: 8px;
-      --shadow: 0 1px 4px rgba(0,0,0,0.08), 0 2px 12px rgba(0,0,0,0.06);
-      --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-hover: 0 6px 18px rgba(0,0,0,0.13);
+      --font-main: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
     }
 
     body {
-      font-family: var(--font-sans);
+      font-family: var(--font-main);
       background-color: var(--color-bg);
       color: var(--color-text);
       line-height: 1.6;
@@ -42,214 +45,200 @@
     header {
       background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 60%, var(--color-accent) 100%);
       color: #ffffff;
-      padding: 3rem 2rem 2.5rem;
+      padding: 48px 24px 40px;
+      text-align: center;
     }
 
-    .header-inner {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .course-label {
+    header .course-label {
       display: inline-block;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       background: rgba(255,255,255,0.18);
       border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 4px;
-      padding: 0.25rem 0.65rem;
-      margin-bottom: 1rem;
-      color: rgba(255,255,255,0.92);
+      border-radius: 20px;
+      padding: 4px 14px;
+      margin-bottom: 18px;
+      color: #e0eefc;
     }
 
     header h1 {
-      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
       font-weight: 700;
       line-height: 1.25;
-      margin-bottom: 1rem;
-      color: #ffffff;
+      max-width: 760px;
+      margin: 0 auto 16px;
     }
 
-    header p {
+    header p.intro {
       font-size: 1rem;
-      color: rgba(255,255,255,0.88);
       max-width: 680px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.88);
       line-height: 1.7;
     }
 
     /* ── Main ── */
     main {
-      max-width: 960px;
-      margin: 2.5rem auto;
-      padding: 0 1.25rem 3rem;
+      max-width: 1080px;
+      margin: 40px auto 60px;
+      padding: 0 20px;
     }
 
     .section-label {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--color-text-muted);
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.5rem;
+      margin-bottom: 18px;
+      padding-bottom: 8px;
       border-bottom: 2px solid var(--color-border);
     }
 
     /* ── Card Grid ── */
     .card-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.1rem;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
     }
 
-    @media (min-width: 640px) {
-      .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 900px) {
-      .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* ── Card ── */
     .card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 1.35rem 1.4rem 1.25rem;
+      padding: 22px 22px 18px;
       display: flex;
       flex-direction: column;
-      gap: 0.65rem;
-      transition: box-shadow 0.18s ease, border-color 0.18s ease;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
     }
 
     .card:hover {
-      box-shadow: 0 4px 16px rgba(44,95,138,0.13), 0 1px 4px rgba(0,0,0,0.07);
-      border-color: #b8ccde;
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
     }
 
-    /* ── Card Meta Row ── */
+    /* Card top row: badges */
     .card-meta {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      gap: 0.45rem;
+      gap: 6px;
+      margin-bottom: 12px;
     }
 
     .badge {
-      display: inline-block;
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       font-weight: 600;
       letter-spacing: 0.04em;
-      padding: 0.2rem 0.55rem;
-      border-radius: 4px;
+      padding: 3px 9px;
+      border-radius: 20px;
       white-space: nowrap;
     }
 
     .badge-type {
-      background: var(--color-tag-bg);
-      color: var(--color-tag-text);
-      border: 1px solid #c5dbed;
+      background: var(--color-badge-bg);
+      color: var(--color-badge-text);
+      border: 1px solid #b8d5ee;
     }
 
     .badge-filetype {
-      background: #f3f0fa;
-      color: #5c3fa0;
-      border: 1px solid #d3c8ef;
+      background: var(--color-tag-bg);
+      color: var(--color-tag-text);
+      border: 1px solid var(--color-border);
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
     }
 
-    /* ── Card Title Row ── */
-    .card-title-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 0.5rem 0.75rem;
-    }
-
-    .card-name {
-      font-size: 0.975rem;
-      font-weight: 600;
-      line-height: 1.35;
+    /* Card name / title */
+    .card-title {
+      font-size: 0.97rem;
+      font-weight: 700;
       color: var(--color-text);
+      line-height: 1.35;
+      margin-bottom: 8px;
     }
 
-    .card-name a {
+    .card-title a {
       color: var(--color-primary);
       text-decoration: none;
       border-bottom: 1.5px solid transparent;
-      transition: border-color 0.15s ease, color 0.15s ease;
+      transition: border-color 0.15s, color 0.15s;
     }
 
-    .card-name a:hover,
-    .card-name a:focus {
+    .card-title a:hover,
+    .card-title a:focus {
       color: var(--color-primary-dark);
-      border-bottom-color: var(--color-primary);
+      border-bottom-color: var(--color-primary-dark);
       outline: none;
     }
 
-    .card-name a:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
-      border-radius: 2px;
+    /* Source file link */
+    .source-link-wrap {
+      margin-top: 4px;
+      margin-bottom: 6px;
     }
 
-    /* ── Source Link ── */
     .source-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
-      font-size: 0.72rem;
+      gap: 5px;
+      font-size: 0.73rem;
       font-weight: 600;
       color: var(--color-source-text);
       background: var(--color-source-bg);
       border: 1px solid var(--color-source-border);
       border-radius: 4px;
-      padding: 0.18rem 0.5rem;
+      padding: 2px 8px;
       text-decoration: none;
-      white-space: nowrap;
-      transition: background 0.15s ease, border-color 0.15s ease;
-      vertical-align: middle;
-    }
-
-    .source-link::before {
-      content: "⬡";
-      font-size: 0.65rem;
-      opacity: 0.75;
+      letter-spacing: 0.02em;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
     }
 
     .source-link:hover,
     .source-link:focus {
-      background: #daeedd;
-      border-color: #8abe99;
+      background: #e6eef5;
+      color: var(--color-primary);
+      border-color: var(--color-accent);
       outline: none;
     }
 
-    .source-link:focus-visible {
-      outline: 2px solid var(--color-accent);
-      outline-offset: 2px;
+    .source-link svg {
+      flex-shrink: 0;
     }
 
-    /* ── Card Description ── */
+    /* Description */
     .card-description {
-      font-size: 0.875rem;
+      font-size: 0.87rem;
       color: var(--color-text-muted);
       line-height: 1.65;
-      flex: 1;
+      flex-grow: 1;
+      margin-top: 8px;
     }
 
     /* ── Footer ── */
     footer {
       text-align: center;
-      padding: 1.5rem 1rem 2rem;
+      padding: 20px 16px 32px;
       font-size: 0.78rem;
-      color: #8a94a6;
+      color: var(--color-text-muted);
       border-top: 1px solid var(--color-border);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 520px) {
+      header {
+        padding: 36px 16px 30px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        margin: 28px auto 48px;
+      }
     }
   </style>
 </head>
@@ -258,148 +247,121 @@
 <div style="border:1px solid #c9d4e3;background:#f5f8fc;border-radius:8px;padding:10px 16px;margin:0 0 18px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:'Segoe UI',Arial,sans-serif"><strong style="color:#1a3c6e">Module outline:</strong><a href="topics-outcomes.html#topics" style="color:#1a3c6e;font-weight:600;text-decoration:none">📋 Module Topics</a><a href="topics-outcomes.html#outcomes" style="color:#137333;font-weight:600;text-decoration:none">🎯 Student Learning Outcomes</a></div>
 
   <header>
-    <div class="header-inner">
-      <span class="course-label">Course: Using PreseMaker</span>
-      <h1>Generating Text-Based Lessons:<br>Formats, Layouts, and Content Types</h1>
-      <p>
-        This module explores how PreseMaker generates structured, text-based instructional content.
-        You will learn about available output layouts, visual theming options for HTML output, and
-        the range of content types — from concise topic overviews to specialized lesson plans and
-        worked examples — so you can select the right format for any instructional context.
-      </p>
-    </div>
+    <div class="course-label">Using PreseMaker</div>
+    <h1>Generating Text-Based Lessons: Formats, Layouts, and Content Types</h1>
+    <p class="intro">
+      Explore the resources in this module to learn how PreseMaker generates structured, text-based instructional content. Topics include available output formats, layout options, visual theming, and the range of content types — from topic overviews to lesson plans and example problems.
+    </p>
   </header>
 
   <main>
-    <p class="section-label">Module Artifacts &mdash; 7 items</p>
+    <p class="section-label">Module Artifacts &mdash; 8 items</p>
 
     <div class="card-grid">
 
-      <!-- Artifact 1: Module Topics -->
+      <!-- Card 1: Module Topics -->
       <div class="card">
         <div class="card-meta">
           <span class="badge badge-type">Module Topics</span>
           <span class="badge badge-filetype">.json</span>
         </div>
-        <div class="card-title-row">
-          <span class="card-name">
-            <a href="content/module_topics.html">Module Topics</a>
-          </span>
-          <a class="source-link" href="source/hierarchy.json">source file</a>
+        <div class="card-title">
+          <a href="content/module_topics.html">Module Topics</a>
         </div>
-        <p class="card-description">
-          Lists the topics and subtopics covered in the module, including PreseMaker's purpose, output formats,
-          visual themes, and content types; used by learners and instructors to preview the module's scope and
-          navigate its sections.
-        </p>
+        <div class="source-link-wrap">
+          <a class="source-link" href="source/hierarchy.json">
+            <svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 2h7l4 4v8H2V2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M9 2v4h4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+            source file
+          </a>
+        </div>
+        <p class="card-description">Lists the topics and subtopics covered in the module, including PreseMaker's purpose, output formats, visual themes, and content types; used by learners and instructors to preview the module's scope and navigate its sections.</p>
       </div>
 
-      <!-- Artifact 2: Introduction -->
+      <!-- Card 2: Presentation -->
+      <div class="card">
+        <div class="card-meta">
+          <span class="badge badge-type">Presentation</span>
+          <span class="badge badge-filetype">.pptx</span>
+        </div>
+        <div class="card-title">
+          <a href="presentation/Generating_Text_Based_generated.pptx">Generating_Text_Based_generated.pptx</a>
+        </div>
+        <p class="card-description">A slide deck covering PreseMaker's text generation features — including output formats, layout options, and content types — that instructional designers can use as a reference guide or classroom presentation when learning to create and structure text-based lessons with the tool.</p>
+      </div>
+
+      <!-- Card 3: Topic Detail t1 -->
       <div class="card">
         <div class="card-meta">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
-          <span class="card-name">
-            <a href="content/Generating_Text_Based_interactive_topics_t1.html">Introduction to Text-Based Lesson Generation in PreseMaker</a>
-          </span>
+        <div class="card-title">
+          <a href="content/Generating_Text_Based_interactive_topics_t1.html">Introduction to Text-Based Lesson Generation in PreseMaker</a>
         </div>
-        <p class="card-description">
-          Introduces PreseMaker as a structured content generation tool and explains what it does, why text-based
-          lessons matter in instructional design, and what output formats it offers; used by learners as an
-          orientation to the tool before exploring its specific features.
-        </p>
+        <p class="card-description">Introduces PreseMaker as a structured content generation tool and explains what it does, why text-based lessons matter in instructional design, and what output formats it offers; used by learners as an orientation to the tool before exploring its specific features.</p>
       </div>
 
-      <!-- Artifact 3: Output Layouts -->
+      <!-- Card 4: Topic Detail t2 -->
       <div class="card">
         <div class="card-meta">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
-          <span class="card-name">
-            <a href="content/Generating_Text_Based_interactive_topics_t2.html">Output Layouts: Accordion, Printable, WordPress, and Markdown</a>
-          </span>
+        <div class="card-title">
+          <a href="content/Generating_Text_Based_interactive_topics_t2.html">Output Layouts: Accordion, Printable, WordPress, and Markdown</a>
         </div>
-        <p class="card-description">
-          Explains the four output layouts available in PreseMaker — Accordion, Printable, WordPress, and Markdown —
-          describing how each structures and delivers lesson content for different destinations; used by learners to
-          choose the appropriate layout for their instructional context.
-        </p>
+        <p class="card-description">Explains the four output layouts available in PreseMaker — Accordion, Printable, WordPress, and Markdown — describing how each structures and delivers lesson content for different destinations; used by learners to choose the appropriate layout for their instructional context.</p>
       </div>
 
-      <!-- Artifact 4: Visual Themes -->
+      <!-- Card 5: Topic Detail t3 -->
       <div class="card">
         <div class="card-meta">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
-          <span class="card-name">
-            <a href="content/Generating_Text_Based_interactive_topics_t3.html">Selecting Visual Themes for HTML Output</a>
-          </span>
+        <div class="card-title">
+          <a href="content/Generating_Text_Based_interactive_topics_t3.html">Selecting Visual Themes for HTML Output</a>
         </div>
-        <p class="card-description">
-          Covers how visual themes work in PreseMaker's HTML output, what presentational elements they control such
-          as colors and typography, and how to access theme options; used by learners to style generated HTML lessons
-          to suit their audience or platform.
-        </p>
+        <p class="card-description">Covers how visual themes work in PreseMaker's HTML output, what presentational elements they control such as colors and typography, and how to access theme options; used by learners to style generated HTML lessons to suit their audience or platform.</p>
       </div>
 
-      <!-- Artifact 5: Content Types Overview vs Detail -->
+      <!-- Card 6: Topic Detail t4 -->
       <div class="card">
         <div class="card-meta">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
-          <span class="card-name">
-            <a href="content/Generating_Text_Based_interactive_topics_t4.html">Content Types: Topic Overview versus Topic Detail</a>
-          </span>
+        <div class="card-title">
+          <a href="content/Generating_Text_Based_interactive_topics_t4.html">Content Types: Topic Overview versus Topic Detail</a>
         </div>
-        <p class="card-description">
-          Distinguishes between two content depth levels in PreseMaker — Topic Overview for concise orientation and
-          Topic Detail for thorough, skill-building coverage — and explains when to use each; used by learners to
-          select the appropriate content type for their instructional goals.
-        </p>
+        <p class="card-description">Distinguishes between two content depth levels in PreseMaker — Topic Overview for concise orientation and Topic Detail for thorough, skill-building coverage — and explains when to use each; used by learners to select the appropriate content type for their instructional goals.</p>
       </div>
 
-      <!-- Artifact 6: Specialized Content Types (Topic Detail) -->
+      <!-- Card 7: Topic Detail t5 -->
       <div class="card">
         <div class="card-meta">
           <span class="badge badge-type">Topic Detail</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
-          <span class="card-name">
-            <a href="content/Generating_Text_Based_interactive_topics_t5.html">Specialized Content Types: Lesson Plans, Example Problems, and Suggested Sources</a>
-          </span>
+        <div class="card-title">
+          <a href="content/Generating_Text_Based_interactive_topics_t5.html">Specialized Content Types: Lesson Plans, Example Problems, and Suggested Sources</a>
         </div>
-        <p class="card-description">
-          Describes three specialized content formats in PreseMaker — structured lesson plans, worked example problems,
-          and curated suggested sources — explaining their distinct pedagogical purposes and how to generate them; used
-          by learners to produce instructional materials beyond standard explanatory prose.
-        </p>
+        <p class="card-description">Describes three specialized content formats in PreseMaker — structured lesson plans, worked example problems, and curated suggested sources — explaining their distinct pedagogical purposes and how to generate them; used by learners to produce instructional materials beyond standard explanatory prose.</p>
       </div>
 
-      <!-- Artifact 7: Specialized Content Types (Text Content) -->
+      <!-- Card 8: Text Content -->
       <div class="card">
         <div class="card-meta">
           <span class="badge badge-type">Text Content</span>
           <span class="badge badge-filetype">.html</span>
         </div>
-        <div class="card-title-row">
-          <span class="card-name">
-            <a href="content/Generating_Text_Based_interactive.html">Specialized Content Types: Lesson Plans, Example Problems, and Suggested Sources</a>
-          </span>
+        <div class="card-title">
+          <a href="content/Generating_Text_Based_interactive.html">Specialized Content Types: Lesson Plans, Example Problems, and Suggested Sources</a>
         </div>
-        <p class="card-description">
-          Describes three specialized content formats in PreseMaker — structured lesson plans, worked example problems,
-          and curated suggested sources — explaining their distinct pedagogical purposes and how to generate them; used
-          by learners to produce instructional materials beyond standard explanatory prose.
-        </p>
+        <p class="card-description">Describes three specialized content formats in PreseMaker — structured lesson plans, worked example problems, and curated suggested sources — explaining their distinct pedagogical purposes and how to generate them; used by learners to produce instructional materials beyond standard explanatory prose.</p>
       </div>
 
     </div>
